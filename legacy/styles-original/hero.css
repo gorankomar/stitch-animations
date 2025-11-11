@@ -1,0 +1,130 @@
+:root {
+  --shadow-lg: 7rem -1rem 2rem rgba(0, 0, 0, 0.07);
+}
+
+/* global timing variables */
+.stacked-windows_wrap {
+  --stagger: 0.25s;        /* per-card delay on entrance */
+  --enter-dur: 1.5s;       /* slow entrance */
+  --hover-dur: 0.6s;       /* quick hover */
+  --filter-dur: 0.4s;      /* grayscale/fade speed */
+  --easing: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* safari-safe layer settings */
+.stacked-windows_position {
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* WRAPPER (never change opacity — backdrop stays alive) */
+.stacked-windows_img-wrap {
+  transform: translate3d(0,70%,1px);
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-color: transparent;
+  box-shadow: 7rem 4rem 2rem rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+  transition:
+    transform var(--enter-dur) var(--easing),
+    background-color var(--enter-dur) var(--easing),
+    box-shadow var(--enter-dur) var(--easing),
+    border-color var(--enter-dur) var(--easing);
+  will-change: transform, background-color, box-shadow, border-color;
+  transition-delay: 0s; /* default: no delay */
+}
+
+/* IMG (opacity + grayscale transitions only here) */
+.stacked-windows_img-wrap img {
+  opacity: 0;
+  transition:
+    opacity var(--enter-dur) var(--easing),
+    filter var(--filter-dur) var(--easing);
+  will-change: opacity, filter;
+  transition-delay: 0s; /* default: no delay */
+}
+
+/* ===== ENTRANCE (with stagger) ===== */
+.stacked-windows_wrap.is-inview:not(.is-ready) .stacked-windows_img-wrap {
+  transition-delay: calc(var(--stagger) * var(--i, 0));
+}
+.stacked-windows_wrap.is-inview:not(.is-ready) .stacked-windows_img-wrap img {
+  transition-delay: calc(var(--stagger) * var(--i, 0));
+}
+
+.stacked-windows_wrap.is-inview .stacked-windows_img-wrap {
+  transform: translate3d(0,0,1px);
+  background-color: var(--color-scheme-1--background-o80);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0,0,0,0.1);
+}
+.stacked-windows_wrap.is-inview .stacked-windows_img-wrap img {
+  opacity: 1;
+}
+
+/* ===== AFTER ENTRANCE (fast interactions, NO delay) ===== */
+.stacked-windows_wrap.is-ready .stacked-windows_img-wrap {
+  transition:
+    transform var(--hover-dur) var(--easing),
+    background-color var(--hover-dur) var(--easing),
+    box-shadow var(--hover-dur) var(--easing),
+    border-color var(--hover-dur) var(--easing);
+  transition-delay: 0s;
+}
+.stacked-windows_wrap.is-ready .stacked-windows_img-wrap img {
+  transition:
+    opacity var(--hover-dur) var(--easing),
+    filter var(--filter-dur) var(--easing);
+  transition-delay: 0s;
+}
+
+/* hovered card */
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:hover {
+  transform: translateY(-10%);
+  background-color: color-mix(in srgb, var(--color-scheme-1--background-o80) 50%, transparent);
+  z-index: 5;
+}
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+/* siblings only go grayscale if a card is hovered */
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:not(:hover) {
+  transform: translateY(0);
+  background-color: var(--color-scheme-1--background-o80);
+  z-index: 1;
+}
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:not(:hover) img {
+  filter: grayscale(100%);
+  opacity: 0.52;
+}
+
+/* ===== Webflow Designer – always visible ===== */
+html.wf-design-mode .stacked-windows_img-wrap {
+  transform: none !important;
+  background-color: var(--color-scheme-1--background-o80) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+html.wf-design-mode .stacked-windows_img-wrap img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  .stacked-windows_img-wrap,
+  .stacked-windows_img-wrap img {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
