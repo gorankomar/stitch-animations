@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stitch Animations Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/src/animations/hero/styles.css" />
+    <link rel="stylesheet" href="/src/animations/api/styles.css" />
+    <link rel="stylesheet" href="/src/animations/chart/styles.css" />
+    <link rel="stylesheet" href="/src/animations/dots/styles.css" />
+    <link rel="stylesheet" href="/src/animations/radial/styles.css" />
+    <style>
+      :root {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background-color: #ffffff;
+        color: #0a0a0a;
+        --color-scheme-1--background: #fcfcfc;
+        --color-scheme-1--background-o80: color-mix(in srgb, var(--color-scheme-1--background) 80%, transparent);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #ffffff;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        margin-bottom: 0.5rem;
+      }
+
+      header p {
+        margin: 0 auto;
+        max-width: 640px;
+        color: #2d2d2d;
+      }
+
+      .demo-section {
+        border: 1px solid #d5d5d5;
+        
+        background: #ffffff;
+      }
+
+      .demo-section h2 {
+        margin: 0 0 0.5rem;
+        font-size: 1.35rem;
+      }
+
+      .demo-section p {
+        margin: 0;
+        color: #2d2d2d;
+      }
+
+      .demo-grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      [data-anim='hero'] {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .hero-eyebrow {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #0a0a0a;
+      }
+
+      .hero-orb {
+        width: 200px;
+        aspect-ratio: 1 / 1;
+        border-radius: 4px;
+        background: #0a0a0a;
+      }
+
+      .hero-chip {
+        width: auto;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border: 1px solid #0a0a0a;
+        background: transparent;
+        color: #0a0a0a;
+      }
+
+      .api-demo {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .api-graphic_wrap {
+        width: min(420px, 100%);
+        aspect-ratio: 1 / 1;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .api-graphic_block {
+        border-radius: 0;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .api-graphic_content {
+        position: absolute;
+        inset: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        justify-content: center;
+        color: #0a0a0a;
+      }
+
+      .scale-graph_svg-block {
+        position: relative;
+        width: 100%;
+        max-width: 640px;
+        margin: 1rem auto 0;
+      }
+
+      .scale-graph_number {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 600;
+      }
+
+      .scale-graph_tooltip {
+        position: absolute;
+        pointer-events: none;
+        background: #ffffff;
+        color: #0a0a0a;
+        border: 1px solid #0a0a0a;
+        padding: 0.75rem 1rem;
+      }
+
+      .scale-graph_tooltip-date {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 0.25rem;
+        color: #0a0a0a;
+      }
+
+      .dots_wrap {
+        position: relative;
+        height: 320px;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid #0a0a0a;
+      }
+
+      #dots {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: #ffffff;
+      }
+
+      #sensor {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      @media (pointer: coarse) {
+        #sensor {
+          pointer-events: auto;
+        }
+      }
+
+      .radial_wrap {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: #ffffff;
+        border: 1px solid #0a0a0a;
+        border-radius: 4px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        color: #2d2d2d;
+        font-size: 0.9rem;
+      }
+      .stacked-windows_gradient {
+        z-index: 10;
+        background-image: linear-gradient(180deg, transparent, var(--color-scheme-1--background));
+        opacity: .94;
+        pointer-events: none;
+        height: 70%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Stitch animations playground</h1>
+        <p>
+          Every block below loads a reusable animation module via the shared library. Toggle entries
+          in <code>src/entry/</code> to ship one, some, or all of them.
+        </p>
+      </header>
+
+      <section data-anim="hero" class="demo-section" style="overflow: hidden;">
+        <div
+          class="w-layout-grid header84_card no-bottom-border"
+          style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;"
+          data-reveal-group
+        >
+          <div class="header84_card-content" style="padding:2rem;">
+            <div class="header84_card-content-top">
+              <div class="margin-bottom margin-xsmall">
+                <h1 data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721d6" class="heading-style-h1">The simplest way to build financial products.</h1>
+              </div>
+              <p data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721d8" class="text-size-medium">Stitch is the unified platform to launch and scale. <br />Shaping the new age of banking and payments.</p>
+            </div>
+            <div class="margin-top margin-medium">
+              <div data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721db" class="button-group">
+                <a href="/contact" class="button w-button">Start building</a>
+              </div>
+            </div>
+          </div>
+          <div class="header84_image-wrapper">
+            <div class="stacked-windows_wrap" style="min-height: 50vh;">
+              <div class="stacked-windows_skew">
+                <div class="stacked-windows_position is-1">
+                  <div class="stacked-windows_img-wrap" data-reveal data-reveal-offset="70%" data-reveal-duration="1500ms">
+                    <img src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp" loading="eager" width="1440" height="626" alt="Stitch Platform - Dashboard" srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-800.webp 800w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-1080.webp 1080w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp 1440w" sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
+                  </div>
+                </div>
+                <div class="stacked-windows_position is-2">
+                  <div class="stacked-windows_img-wrap" data-reveal data-reveal-offset="70%" data-reveal-duration="1500ms">
+                    <img src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp" loading="eager" width="1440" height="626" alt="Stitch Platform - Ledgers" srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp 1440w" sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
+                  </div>
+                </div>
+                <div class="stacked-windows_position is-3">
+                  <div class="stacked-windows_img-wrap" data-reveal data-reveal-offset="70%" data-reveal-duration="1500ms">
+                    <img src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp" loading="eager" width="1440" height="626" alt="Stitch Platform - Loans" srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp 1440w" sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
+                  </div>
+                </div>
+              </div>
+              <div class="stacked-windows_gradient"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-anim="api" class="demo-section">
+        <h2>API detail hover</h2>
+        <p>Mouse or touch within the grid to reuse the spring follower + ripple combo.</p>
+        <div class="api-demo">
+          <div class="api-graphic_wrap" data-max-rem="0.65">
+            <div class="api-graphic_track">
+              <div class="api-graphic_block">
+                <div class="api-graphic_ripple"></div>
+                <div class="api-graphic_fill"></div>
+                <div class="api-graphic_content">
+                  <h3>API Response</h3>
+                  <p>Live requests adjust copy decks and components when teams ship updates.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-anim="chart" class="demo-section">
+        <h2>Scaled usage chart</h2>
+        <p>Drag or tap along the sparkline to reveal interpolated values.</p>
+        <div class="scale-graph_meta">
+          <div class="scale-graph_number">120,000+</div>
+          <div class="scale-graph_dates">
+            <span data-date="past">May 04</span>
+            <span aria-hidden="true">→</span>
+            <span data-date="today">May 24</span>
+          </div>
+        </div>
+        <div class="scale-graph_svg-block">
+          <svg viewBox="0 0 640 320">
+            <path
+              id="scale-graph_path"
+              d="M20 260 L120 200 L220 220 L320 140 L420 160 L520 90 L620 120"
+              fill="none"
+              stroke="#38bdf8"
+              stroke-width="8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <g id="scale-graph_dot">
+              <circle cx="0" cy="0" r="10" fill="#0ea5e9"></circle>
+              <circle cx="0" cy="0" r="4" fill="#fff"></circle>
+            </g>
+            <path id="scale-graph_dashed-line" stroke="#94a3b8" stroke-dasharray="6 6"></path>
+          </svg>
+          <div class="scale-graph_tooltip" aria-hidden="true">
+            <p class="scale-graph_tooltip-date">May 20</p>
+            <p class="scale-graph_tooltip-count">18,000</p>
+          </div>
+        </div>
+      </section>
+
+      <section data-anim="dots" class="demo-section">
+        <h2>Ripple dots field</h2>
+        <p>Pointer movement bends the lattice; clicks emit ripples across the grid.</p>
+        <div class="dots_wrap">
+          <canvas id="dots"></canvas>
+          <div id="sensor"></div>
+        </div>
+      </section>
+
+      <section data-anim="radial" class="demo-section">
+        <h2>Radial console</h2>
+        <p>Drag horizontally to spin the gauge with predictive inertia.</p>
+        <div class="radial_wrap">
+          <svg id="radial_svg" width="768" height="768"></svg>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Swap the script tag to load the bundle you need. Default uses the resolver entry
+      (<code>page-all-lite</code>).
+    </footer>
+
+    <script type="module" src="/src/entry/page-all-lite.js"></script>
+  </body>
+</html>

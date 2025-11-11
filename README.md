@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173/public/index.html` to preview the demo markup. The script tag inside the page defaults to the resolver bundle (`page-all-lite`). Swap it with `/src/entry/page-all.js` during development or with an emitted file from `dist/` after running `npm run build`.
+Open `http://localhost:5173/` to preview the demo markup. The script tag inside the page defaults to the resolver bundle (`page-all-lite`). Swap it with `/src/entry/page-all.js` during development or with an emitted file from `dist/` after running `npm run build`.
 
 ## Scripts
 
@@ -24,8 +24,8 @@ Open `http://localhost:5173/public/index.html` to preview the demo markup. The s
 stitch-animations/
 ├─ legacy/                  # Original scripts/styles (read-only references)
 ├─ src/
-│  ├─ lib/                  # Shared utilities
-│  ├─ animations/hero/      # One module per animation
+│  ├─ lib/                  # Shared utilities & effects
+│  ├─ animations/           # One module per animation (hero, api, chart, dots, radial)
 │  └─ entry/                # Bundles: page-all, page-all-lite, feature-*
 ├─ public/index.html        # Demo markup
 ├─ dist/                    # Build output (gitignored)
@@ -34,9 +34,12 @@ stitch-animations/
 ### Shared Utilities
 
 - `src/lib/easing.js` – Canonical easing + timing constants.
-- `src/lib/config.js` – Centralized selectors, class names, thresholds.
+- `src/lib/config.js` – Centralized selectors, class names, thresholds, and data-attr handles.
 - `src/lib/dom.js` – Thin wrappers for `querySelector`, dataset helpers, and attribute builders.
-- `src/lib/mouseFollow.js` – A singleton-friendly pointer engine; call `ensureMouseEngine()` once and subscribe elements via `followMouse(el, options)`.
+- `src/lib/math.js` / `src/lib/motion.js` – Shared math helpers, REM conversion, reduced-motion detection.
+- `src/lib/observer.js` – IntersectionObserver helpers for guarded entrances.
+- `src/lib/raf.js` – RequestAnimationFrame loop helpers.
+- `src/lib/pointer/` – Singleton pointer engine (`ensurePointerEngine`), declarative follower (`followMouse`), and spring follower (`createSpringFollower`) used by multiple animations.
 
 ### Animation Contract
 
@@ -44,7 +47,7 @@ Each animation exposes `init(root = document)` from `src/animations/<name>/index
 
 ```js
 export function init(root = document) {
-  ensureMouseEngine();
+  ensurePointerEngine();
   const section = qs('[data-anim="hero"]', root);
   if (!section) return;
   // wire up DOM + utilities
@@ -53,6 +56,16 @@ export function init(root = document) {
 
 The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`). Entry files import both the JS module and CSS to keep dependencies explicit.
 
+### Available Animations
+
+| Name | Description | Shared effects |
+| --- | --- | --- |
+| `hero` | Lightweight follow chips/orbs powered by the pointer engine. | `pointer/follow`, IntersectionObserver |
+| `api` | Springy card that tracks pointer movement inside its wrap with click ripples. | `pointer/springFollower` |
+| `chart` | SVG sparkline with tooltip + counter easing. | shared DOM helpers |
+| `dots` | Canvas lattice with ripple physics driven by pointer events. | ripple helpers, ResizeObserver |
+| `radial` | Drag-driven radial console with inertia + intro observer. | IntersectionObserver |
+
 ### Entry Points / Bundles
 
 | Entry | Purpose |
@@ -60,6 +73,8 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `src/entry/page-all.js` | Imports and initializes every animation eagerly. |
 | `src/entry/page-all-lite.js` | DOM-aware resolver that dynamic-imports only animations present on the page. |
 | `src/entry/feature-hero.js` | Feature-specific bundle for the hero section. |
+| `src/entry/feature-*.js` | Create additional bundles per animation or per-page mix (e.g., `feature-chart.js`). |
+| `npm run build:hero:single` | Emits `dist/feature-hero.js` + `dist/feature-hero.css` (no shared chunks) for Webflow copy/paste. |
 
 All entry files are exposed to Vite via `vite.config.js`, yielding hashed outputs like `dist/page-all.<hash>.js`. Tree-shaking ensures a `feature-*` build only contains the animation it needs plus shared libs once.
 
@@ -84,7 +99,8 @@ All entry files are exposed to Vite via `vite.config.js`, yielding hashed output
 2. Create `index.js` exporting `init(root = document)` and `styles.css` for scoped CSS.
 3. Import the animation in `src/entry/page-all.js` (and optionally add `feature-<name>.js`).
 4. Register a resolver in `page-all-lite.js` for conditional loading.
-5. Update markup with `data-anim="<name>"` blocks.
+5. Add demo markup to `index.html` (or your host page) with `data-anim="<name>"` blocks plus any data attributes needed by shared effects.
+6. If the animation needs shared behavior, add it to `src/lib/` and keep it stateless/parameterized so multiple modules can reuse it.
 
 ## Legacy Assets
 

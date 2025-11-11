@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #fff;
+}
+
+#dots,
+#sensor {
+  position: fixed;
+  inset: 0;
+}
+
+/* Canvas is visual-only */
+#dots {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+/* Sensor is invisible. Default: OFF (so desktop/UI stays clickable). */
+#sensor {
+  pointer-events: none;
+  background: transparent;
+}
+
+/* On touch devices, enable the sensor to capture immediately. */
+@media (hover: none) and (pointer: coarse) {
+  #sensor {
+    pointer-events: auto;
+    touch-action: none; /* kill scroll/pinch so moves are instant */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dots { display: none; }
+}

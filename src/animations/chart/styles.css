@@ -1,0 +1,45 @@
+/* Base (your box styles already exist in Webflow) */
+.scale-graph_tooltip {
+  --anchor-x: 50%;
+  --x-shift: 0px;                 /* per-show animated offset, set by JS */
+  --y-shift: 0px;                 /* per-show animated offset, set by JS */
+  transition: opacity 340ms ease, transform 920ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Show/hide only flips opacity; JS sets the transform variables */
+.scale-graph_tooltip[aria-hidden="true"]  { opacity: 0; }
+.scale-graph_tooltip[aria-hidden="false"] { opacity: 1; }
+
+/* Anchor transforms for each side, + our per-show shifts */
+.scale-graph_tooltip[data-side="center"]{
+  transform: translate(-50%, -100%) translate(var(--x-shift), var(--y-shift));
+}
+.scale-graph_tooltip[data-side="left"]{    /* tooltip sits RIGHT of dot */
+  transform: translate(0, -50%) translate(var(--x-shift), var(--y-shift));
+}
+.scale-graph_tooltip[data-side="right"]{   /* tooltip sits LEFT of dot */
+  transform: translate(-100%, -50%) translate(var(--x-shift), var(--y-shift));
+}
+
+/* Arrow: keep your two-layer trick; center-mode uses bottom arrow */
+.scale-graph_tooltip::before,
+.scale-graph_tooltip::after{
+  content:""; position:absolute; width:10px; height:10px; transform:rotate(45deg);
+}
+.scale-graph_tooltip[data-side="center"]::before,
+.scale-graph_tooltip[data-side="center"]::after{
+  left:var(--anchor-x,50%); transform:translateX(-50%) rotate(45deg);
+}
+.scale-graph_tooltip[data-side="center"]::before{ bottom:-6px; background:var(--_primitives---colors--neutral-lighter); }
+.scale-graph_tooltip[data-side="center"]::after { bottom:-5px; background:var(--_primitives---colors--white); }
+
+/* Side arrows: vertical middle on the side edge */
+.scale-graph_tooltip[data-side="left"]::before,
+.scale-graph_tooltip[data-side="left"]::after{ top:50%; left:-6px; transform:translateY(-50%) rotate(45deg); }
+.scale-graph_tooltip[data-side="left"]::before{ background:var(--_primitives---colors--neutral-lighter); }
+.scale-graph_tooltip[data-side="left"]::after { left:-5px; background:var(--_primitives---colors--white); }
+
+.scale-graph_tooltip[data-side="right"]::before,
+.scale-graph_tooltip[data-side="right"]::after{ top:50%; right:-6px; transform:translateY(-50%) rotate(45deg); }
+.scale-graph_tooltip[data-side="right"]::before{ background:var(--_primitives---colors--neutral-lighter); }
+.scale-graph_tooltip[data-side="right"]::after { right:-5px; background:var(--_primitives---colors--white); }

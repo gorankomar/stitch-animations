@@ -1,82 +1,174 @@
-[data-anim="hero"] {
+:root {
+  --shadow-lg: 7rem -1rem 2rem rgba(0, 0, 0, 0.07);
+}
+
+/* global timing variables */
+.stacked-windows_wrap {
   position: relative;
-  min-height: 70vh;
-  display: grid;
-  gap: 2rem;
-  place-content: center;
-  text-align: center;
-  padding: 4rem 1.5rem;
-  color: #0f172a;
-  background: radial-gradient(circle at top, #f8fafc, #e2e8f0);
+}
+
+/* safari-safe layer settings */
+.stacked-windows_position {
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 3;
+  flex: none;
+  width: 50svw;
+  min-width: 100vh;
+  position: relative;
+}
+
+.stacked-windows_position.is-2 {
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(5%, -19%, -2px);
+}
+
+.stacked-windows_position.is-3 {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(10%, -38%, -3px);
+}
+
+@media screen and (max-width: 991px) {
+  .stacked-windows_position.is-2 {
+    transform: translate3d(10%, 19%, -2px);
+  }
+  .stacked-windows_position.is-3 {
+    transform: translate3d(20%, 0%, -3px);
+  }
+}
+
+/* WRAPPER (never change opacity — backdrop stays alive) */
+.stacked-windows_img-wrap {
+  --reveal-offset: 70%;
+  --reveal-transform: translate3d(0, var(--reveal-offset), 1px);
+  --reveal-transform-active: translate3d(0, 0, 1px);
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-color: transparent;
+  box-shadow: 7rem 4rem 2rem rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+  transition:
+    transform var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary, var(--easing)),
+    background-color var(--enter-dur) var(--easing),
+    box-shadow var(--enter-dur) var(--easing),
+    border-color var(--enter-dur) var(--easing);
+  will-change: transform, background-color, box-shadow, border-color;
+  transition-delay: 0s; /* default: no delay */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  position: relative;
   overflow: hidden;
 }
 
-[data-anim="hero"] .hero-eyebrow {
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: #475569;
+/* IMG (opacity + grayscale transitions only here) */
+.stacked-windows_img-wrap img {
   opacity: 0;
-  transform: translateY(12px);
-  transition: var(--hero-transition, all 900ms cubic-bezier(0.22, 1, 0.36, 1));
+  transition:
+    opacity var(--enter-dur) var(--easing),
+    filter var(--filter-dur) var(--easing);
+  will-change: opacity, filter;
+  transition-delay: 0s; /* default: no delay */
 }
 
-[data-anim="hero"] h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  margin: 0;
-  line-height: 1;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: var(--hero-transition, all 900ms cubic-bezier(0.22, 1, 0.36, 1));
+/* ===== ENTRANCE (with stagger) ===== */
+.stacked-windows_wrap.is-inview:not(.is-ready) .stacked-windows_img-wrap {
+  transition-delay: calc(var(--stagger) * var(--i, 0));
+}
+.stacked-windows_wrap.is-inview:not(.is-ready) .stacked-windows_img-wrap img {
+  transition-delay: calc(var(--stagger) * var(--i, 0));
 }
 
-[data-anim="hero"] p {
-  max-width: 42ch;
-  margin: 0 auto;
-  font-size: 1.125rem;
-  color: #334155;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: var(--hero-transition, all 900ms cubic-bezier(0.22, 1, 0.36, 1));
+.stacked-windows_wrap.is-inview .stacked-windows_img-wrap {
+  background-color: var(--color-scheme-1--background-o80);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0,0,0,0.1);
 }
-
-[data-anim="hero"] [data-follow] {
-  width: min(280px, 45vw);
-  aspect-ratio: 1 / 1;
-  border-radius: 32px;
-  background: linear-gradient(135deg, #0ea5e9, #6366f1);
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 600ms ease, transform 600ms ease;
-}
-
-[data-anim="hero"] .hero-chip {
-  width: auto;
-  aspect-ratio: auto;
-  padding: 1rem 2.5rem;
-  border-radius: 999px;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
-}
-
-[data-anim="hero"] code {
-  font-family: 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  background: rgba(15, 23, 42, 0.08);
-  border-radius: 0.4rem;
-  padding: 0.15rem 0.4rem;
-}
-
-.is-hero-ready .hero-eyebrow,
-.is-hero-ready h1,
-.is-hero-ready p,
-.is-hero-ready [data-follow] {
+.stacked-windows_wrap.is-inview .stacked-windows_img-wrap img {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+}
+
+/* ===== AFTER ENTRANCE (fast interactions, NO delay) ===== */
+.stacked-windows_wrap.is-ready .stacked-windows_img-wrap {
+  transition:
+    transform var(--hover-dur) var(--easing),
+    background-color var(--hover-dur) var(--easing),
+    box-shadow var(--hover-dur) var(--easing),
+    border-color var(--hover-dur) var(--easing);
+  transition-delay: 0s;
+}
+.stacked-windows_wrap.is-ready .stacked-windows_img-wrap img {
+  transition:
+    opacity var(--hover-dur) var(--easing),
+    filter var(--filter-dur) var(--easing);
+  transition-delay: 0s;
+}
+
+/* hovered card */
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:hover {
+  transform: translate3d(0, -10%, 1px);
+  background-color: color-mix(in srgb, var(--color-scheme-1--background-o80) 50%, transparent);
+  z-index: 5;
+}
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+/* siblings only go grayscale if a card is hovered */
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:not(:hover) {
+  transform: translate3d(0, 0, 1px);
+  background-color: var(--color-scheme-1--background-o80);
+  z-index: 1;
+}
+.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
+  .stacked-windows_img-wrap:not(:hover) img {
+  filter: grayscale(100%);
+  opacity: 0.52;
+}
+
+.stacked-windows_img {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  display: block;
+}
+
+.stacked-windows_skew {
+  position: relative;
+  transform: skewY(8deg);
+}
+
+/* ===== Webflow Designer – always visible ===== */
+html.wf-design-mode .stacked-windows_img-wrap {
+  transform: none !important;
+  background-color: var(--color-scheme-1--background-o80) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-color: rgba(0,0,0,0.1) !important;
+}
+html.wf-design-mode .stacked-windows_img-wrap img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* ===== Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  .stacked-windows_img-wrap,
+  .stacked-windows_img-wrap img {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
 }

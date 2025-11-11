@@ -1,0 +1,1 @@
+#dots,#sensor{position:absolute;top:0;right:0;bottom:0;left:0}#dots{width:100%;height:100%;display:block;pointer-events:none}#sensor{pointer-events:none;background:transparent}@media (hover: none) and (pointer: coarse){#sensor{pointer-events:auto;touch-action:none}}@media (prefers-reduced-motion: reduce){#dots{display:none}}

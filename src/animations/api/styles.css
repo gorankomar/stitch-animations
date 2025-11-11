@@ -1,0 +1,139 @@
+.api-graphic_wrap{
+  /* knobs */
+  --line: #E7E7E7;                   /* solid guides */
+  --dash-color: rgba(75,75,75,.12);  /* dashed crosshair */
+  --t: 1px;                          /* line thickness (px is fine) */
+  --inset: 15.7%;                     /* solid guide offset */
+
+  /* dash system */
+  --cycle: 1rem;                     /* dash + gap tile size */
+  --dash-ratio: .6;                  /* 0–1, share of tile used for dash */
+  --dash-len: calc(var(--cycle)*var(--dash-ratio));
+
+  background-color: transparent;
+  border: var(--t) solid var(--line);
+
+  background:
+    /* dashed center vertical — tile is 1px × cycle, repeat-y */
+    linear-gradient(
+      to bottom,
+      var(--dash-color) 0 var(--dash-len),
+      transparent 0 var(--cycle)
+    ) 50% calc(50% - var(--dash-len)/2) / var(--t) var(--cycle) repeat-y,
+
+    /* dashed center horizontal — tile is cycle × 1px, repeat-x */
+    linear-gradient(
+      to right,
+      var(--dash-color) 0 var(--dash-len),
+      transparent 0 var(--cycle)
+    ) calc(50% - var(--dash-len)/2) 50% / var(--cycle) var(--t) repeat-x,
+
+    /* left inset vertical */
+    linear-gradient(var(--line), var(--line))
+      var(--inset) 0 / var(--t) 100% no-repeat,
+    /* right inset vertical */
+    linear-gradient(var(--line), var(--line))
+      calc(100% - var(--inset)) 0 / var(--t) 100% no-repeat,
+    /* top inset horizontal */
+    linear-gradient(var(--line), var(--line))
+      0 var(--inset) / 100% var(--t) no-repeat,
+    /* bottom inset horizontal */
+    linear-gradient(var(--line), var(--line))
+      0 calc(100% - var(--inset)) / 100% var(--t) no-repeat,
+    #F9F9F9;
+}
+
+.api-graphic_track {
+  will-change: transform;
+  transform: translate3d(0,0,0);
+}
+
+/* OUTER: gradient stroke only */
+.api-graphic_block{
+  --t: 1px;
+
+  position: relative;
+  box-sizing: border-box;
+
+  border: var(--t) solid transparent;
+  border-image: linear-gradient(to bottom right, #D4D4D4, #A0A0A0) 1;
+  
+  will-change: transform;
+  transform: translateZ(0) scale(1);
+
+}
+
+@keyframes pressSubtle {
+  0%   { transform: scale(1) translateY(0); }
+
+  /* slow press down */
+  28%  { transform: scale(0.992) translateY(var(--press-shift, 1px));
+         animation-timing-function: cubic-bezier(.25,.6,.3,1); }
+
+  /* slow rise above baseline */
+  52%  { transform: scale(1.002) translateY(calc(var(--press-shift, 1px) * -0.5));
+         animation-timing-function: cubic-bezier(.2,.8,.2,1); }
+
+  /* small faster rebound down */
+  70%  { transform: scale(0.996) translateY(calc(var(--press-shift, 1px) * 0.35));
+         animation-timing-function: cubic-bezier(.2,.9,.2,1); }
+
+  /* tiny quick rise */
+  85%  { transform: scale(1.001) translateY(calc(var(--press-shift, 1px) * -0.15)); }
+
+  /* settle */
+  100% { transform: scale(1) translateY(0); }
+}
+
+
+.api-graphic_block.is-pressing {
+  animation: pressSubtle 750ms both;
+}
+
+.api-graphic_ripple {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  border: 1px solid var(--color-scheme-1--background);
+  /* same gradient direction/colors as your main border */
+  border-image: linear-gradient(to bottom right, #D4D4D4, #A0A0A0) 1;
+
+  opacity: 0;
+  transform: scale(1);
+  will-change: transform, opacity;
+}
+
+/* play when pressed */
+.api-graphic_ripple.is-ripple {
+  animation: borderRipple 900ms cubic-bezier(.22,1,.36,1) both;
+}
+
+/* keep it inside: scale only a touch; if you want it to overflow, remove overflow:hidden on container(s) */
+@keyframes borderRipple {
+  0%   { opacity: 0.0; transform: scale(1.00); }
+  28%  { opacity: 0.35; transform: scale(1.08); }  /* very slight growth */
+  60%  { opacity: 0.12; transform: scale(1.2); }
+  100% { opacity: 0.0; transform: scale(1.02); }   /* fades out */
+}
+
+/* INNER: translucent gradient fill */
+.api-graphic_fill {
+  position: absolute;
+  inset: -1px;
+  background:
+    /* grid lines */
+    repeating-linear-gradient(
+      to right,
+      rgba(69, 69, 69, .1) 0 1px,
+      transparent 1px 5%
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(69, 69, 69, .1) 0 1px,
+      transparent 1px 5%
+    ),
+    /* underlying gradient fill */
+    linear-gradient(to bottom right, rgba(231,231,231,.4), #AEAEAE);
+  opacity: 0.2;
+}

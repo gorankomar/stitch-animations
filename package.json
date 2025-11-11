@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:all": "vite build --config vite.config.js",
-    "build:hero": "vite build --config vite.config.js --ssrManifest"
+    "build:hero": "vite build --config vite.config.js --ssrManifest",
+    "build:hero:single": "SINGLE_ENTRY=hero vite build"
   },
   "devDependencies": {
     "vite": "^5.0.0"
