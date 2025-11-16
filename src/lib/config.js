@@ -24,5 +24,8 @@ export const DATA_ATTRS = Object.freeze({
   api: 'api',
   chart: 'chart',
   dots: 'dots',
-  radial: 'radial'
+  dotsBulge: 'dots-bulge',
+  orbit: 'orbit',
+  radial: 'radial',
+  cards: 'cards'
 });

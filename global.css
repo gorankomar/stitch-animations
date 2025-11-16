@@ -1,12 +1,12 @@
 :root {
-  --motion-ease-primary: cubic-bezier(.22, 1, .36, 1);
-  --easing: var(--motion-ease-primary);
-  --reveal-offset-default: 5rem;
-  --reveal-duration-default: 700ms;
-  --stagger: 0.25s;
-  --enter-dur: 1.5s;
-  --hover-dur: 0.6s;
-  --filter-dur: 0.4s;
+  --motion-ease-primary: cubic-bezier(.11, .61, .27, .99);
+  --motion-duration-default: 770ms;
+  --motion-duration-fast: calc(var(--motion-duration-default) * 0.6);
+  --reveal-offset-default: 7rem;
+  --reveal-duration-default: var(--motion-duration-default);
+  --reveal-opacity-ratio: .34;
+  --reveal-opacity-duration-default: calc(var(--reveal-duration-default) * var(--reveal-opacity-ratio));
+  --reveal-stagger-default: 200ms;
 }
 
 [data-reveal] {
@@ -16,11 +16,11 @@
   transform: var(--reveal-transform);
   transition:
     transform var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary),
-    opacity var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary);
+    opacity var(--reveal-opacity-duration, var(--reveal-opacity-duration-default)) linear;
   will-change: opacity, transform;
 }
 
-[data-reveal].is-reveal {
+[data-reveal].is-reveal, html.wf-design-mode [data-reveal] {
   opacity: 1;
   transform: var(--reveal-transform-active);
 }

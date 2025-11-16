@@ -41,9 +41,17 @@
     linear-gradient(var(--line), var(--line))
       0 calc(100% - var(--inset)) / 100% var(--t) no-repeat,
     #F9F9F9;
+
+    aspect-ratio: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-self: start
 }
 
 .api-graphic_track {
+  width: 60%;
+  position: relative;
   will-change: transform;
   transform: translate3d(0,0,0);
 }
@@ -51,6 +59,12 @@
 /* OUTER: gradient stroke only */
 .api-graphic_block{
   --t: 1px;
+
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
 
   position: relative;
   box-sizing: border-box;
@@ -102,6 +116,7 @@
   opacity: 0;
   transform: scale(1);
   will-change: transform, opacity;
+  z-index: 2;
 }
 
 /* play when pressed */
@@ -136,4 +151,34 @@
     /* underlying gradient fill */
     linear-gradient(to bottom right, rgba(231,231,231,.4), #AEAEAE);
   opacity: 0.2;
+}
+
+.api-graphic_logo {
+    width: 42%;
+}
+
+.api-graphic_glow {
+  --api-glow-duration: 2200ms;
+  --api-glow-rotation: 0deg;
+  opacity: 0.7;
+  background-image: linear-gradient(90deg, #fff0, #fff 50% 50%, #fff0);
+  position: absolute;
+  inset: -50% 0;
+  transform-origin: 50% 50%;
+  transform: rotate(var(--api-glow-rotation)) translate3d(-120%, 0, 0);
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes apiGraphicGlowSweep {
+  0% {
+    transform: rotate(var(--api-glow-rotation)) translate3d(-120%, 0, 0);
+  }
+  100% {
+    transform: rotate(var(--api-glow-rotation)) translate3d(120%, 0, 0);
+  }
+}
+
+.api-graphic_glow.is-glow-active {
+  animation: apiGraphicGlowSweep var(--api-glow-duration) var(--motion-ease-primary) forwards;
 }

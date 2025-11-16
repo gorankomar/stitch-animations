@@ -9,7 +9,14 @@
     "preview": "vite preview",
     "build:all": "vite build --config vite.config.js",
     "build:hero": "vite build --config vite.config.js --ssrManifest",
-    "build:hero:single": "SINGLE_ENTRY=hero vite build"
+    "build:hero:single": "SINGLE_ENTRY=hero vite build",
+    "build:api:single": "SINGLE_ENTRY=api vite build",
+    "build:chart:single": "SINGLE_ENTRY=chart vite build",
+    "build:dots:single": "SINGLE_ENTRY=dots vite build",
+    "build:dots-bulge:single": "SINGLE_ENTRY=dots-bulge vite build",
+    "build:radial:single": "SINGLE_ENTRY=radial vite build",
+    "build:cards:single": "SINGLE_ENTRY=cards vite build",
+    "build:orbit:single": "SINGLE_ENTRY=orbit vite build"
   },
   "devDependencies": {
     "vite": "^5.0.0"

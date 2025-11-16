@@ -1,6 +1,10 @@
 import { byData } from '../../lib/dom.js';
 import { ATTR, DATA_ATTRS } from '../../lib/config.js';
+import { resolveRevealTimings, ensureSectionReveal } from '../../lib/effects/reveal-groups.js';
+import { whenVisible } from '../../lib/effects/threshold.js';
 import './styles.css';
+
+const DEFAULT_VISIBILITY = 0.5;
 
 export function init(root = document) {
   if (typeof window === 'undefined') return () => {};
@@ -8,9 +12,18 @@ export function init(root = document) {
   const section = root?.querySelector?.(byData(ATTR.anim, DATA_ATTRS.chart));
   if (!section) return () => {};
 
+  const threshold = resolveVisibilityThreshold(section, DEFAULT_VISIBILITY);
+  return whenVisible(section, () => setupChartSection(section, threshold), { threshold });
+}
+
+function setupChartSection(section, sectionThreshold) {
   const wrap = section.querySelector('.scale-graph_svg-block');
   const svg = wrap?.querySelector('svg');
   if (!wrap || !svg) return () => {};
+
+  const timings = resolveRevealTimings();
+  const revealController = ensureSectionReveal(section);
+  revealController.ensure();
 
   // ===== Config =====
   const LAG = 0.07;
@@ -19,7 +32,7 @@ export function init(root = document) {
   const MAX_VAL = 270000;
   const INTRO_VALUE = 170000;
   const INTRO_DURATION = 1000;
-  const OBSERVE_RATIO = 0.5;
+  const observeRatio = resolveVisibilityThreshold(wrap, sectionThreshold ?? DEFAULT_VISIBILITY);
 
   // Tooltip tuning (PIXELS)
   const IDLE_EPSILON_PX = 0.6;
@@ -348,11 +361,14 @@ export function init(root = document) {
     requestAnimationFrame(step);
   }
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && entry.intersectionRatio >= OBSERVE_RATIO) runIntro();
-    });
-  }, { threshold: [OBSERVE_RATIO] });
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= observeRatio) runIntro();
+      });
+    },
+    { threshold: [observeRatio] }
+  );
   io.observe(wrap);
 
   return () => {
@@ -365,5 +381,15 @@ export function init(root = document) {
     if (rafId) {
       window.cancelAnimationFrame(rafId);
     }
+    revealController.cancel();
   };
+}
+
+function resolveVisibilityThreshold(el, fallback) {
+  if (!el) return fallback;
+  const parsed = Number.parseFloat(el.dataset?.visibilityThreshold ?? '');
+  if (!Number.isFinite(parsed)) return fallback;
+  if (parsed <= 0) return 0;
+  if (parsed >= 1) return 1;
+  return parsed;
 }

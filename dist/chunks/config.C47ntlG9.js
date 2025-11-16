@@ -1,2 +1,0 @@
-const s=typeof document<"u"?document:void 0;function t(a,e=s){var n;return((n=e==null?void 0:e.querySelector)==null?void 0:n.call(e,a))??null}function c(a,e=s){return e!=null&&e.querySelectorAll?Array.from(e.querySelectorAll(a)):[]}function f(a,e){return`[data-${a}="${e}"]`}const l=Object.freeze({anim:"anim",follow:"follow",strength:"strength",maxOffset:"maxOffset",axis:"axis"}),r=Object.freeze({hero:"hero",api:"api",chart:"chart",dots:"dots",radial:"radial"});export{l as A,r as D,c as a,f as b,t as q};
-//# sourceMappingURL=config.C47ntlG9.js.map

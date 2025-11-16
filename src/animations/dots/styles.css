@@ -1,5 +1,7 @@
 #dots,
-#sensor {
+#sensor,
+#dots-bulge,
+#sensor-bulge {
   position: absolute;
   inset: 0;
 }
@@ -11,7 +13,19 @@
   pointer-events: none;
 }
 
+#dots-bulge {
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
 #sensor {
+  pointer-events: none;
+  background: transparent;
+}
+
+#sensor-bulge {
   pointer-events: none;
   background: transparent;
 }
@@ -21,10 +35,19 @@
     pointer-events: auto;
     touch-action: none;
   }
+
+  #sensor-bulge {
+    pointer-events: auto;
+    touch-action: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   #dots {
+    display: none;
+  }
+
+  #dots-bulge {
     display: none;
   }
 }

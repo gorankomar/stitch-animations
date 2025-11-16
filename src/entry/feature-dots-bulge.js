@@ -1,10 +1,10 @@
-import '../animations/hero/styles.css';
-import { init as initHero } from '../animations/hero/index.js';
+import '../animations/dots/styles.css';
+import { init as initDotsBulge } from '../animations/dots-bulge/index.js';
 import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 
 function boot() {
   initAutoReveals(document);
-  initHero(document);
+  initDotsBulge(document);
 }
 
 document.addEventListener('DOMContentLoaded', boot, { once: true });

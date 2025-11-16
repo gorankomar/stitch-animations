@@ -1,360 +1,754 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stitch Animations Demo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/src/animations/hero/styles.css" />
-    <link rel="stylesheet" href="/src/animations/api/styles.css" />
-    <link rel="stylesheet" href="/src/animations/chart/styles.css" />
-    <link rel="stylesheet" href="/src/animations/dots/styles.css" />
-    <link rel="stylesheet" href="/src/animations/radial/styles.css" />
-    <style>
-      :root {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        background-color: #ffffff;
-        color: #0a0a0a;
-        --color-scheme-1--background: #fcfcfc;
-        --color-scheme-1--background-o80: color-mix(in srgb, var(--color-scheme-1--background) 80%, transparent);
-      }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        background: #ffffff;
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stitch Animations Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/global.css" />
+  <link rel="stylesheet" href="/src/animations/hero/styles.css" />
+  <link rel="stylesheet" href="/src/animations/api/styles.css" />
+  <link rel="stylesheet" href="/src/animations/chart/styles.css" />
+  <link rel="stylesheet" href="/src/animations/dots/styles.css" />
+  <link rel="stylesheet" href="/src/animations/orbit/styles.css" />
+  <link rel="stylesheet" href="/src/animations/radial/styles.css" />
+  <link rel="stylesheet" href="/src/animations/cards/styles.css" />
+  <style>
+    :root {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #0a0a0a;
+      --color-scheme-1--background: #fcfcfc;
+      --color-scheme-1--background-o80: color-mix(in srgb, var(--color-scheme-1--background) 80%, transparent);
+      --color-scheme-1--border: #e7e7e7;
+    }
 
-      main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 3rem 1.5rem 4rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
-      }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #ffffff;
+    }
 
-      header {
-        text-align: center;
-      }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
 
-      header h1 {
-        font-size: clamp(2.2rem, 4vw, 3rem);
-        margin-bottom: 0.5rem;
-      }
+    header {
+      text-align: center;
+    }
 
-      header p {
-        margin: 0 auto;
-        max-width: 640px;
-        color: #2d2d2d;
-      }
+    header h1 {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 0.5rem;
+    }
 
-      .demo-section {
-        border: 1px solid #d5d5d5;
-        
-        background: #ffffff;
-      }
+    header p {
+      margin: 0 auto;
+      max-width: 640px;
+      color: #2d2d2d;
+    }
 
-      .demo-section h2 {
-        margin: 0 0 0.5rem;
-        font-size: 1.35rem;
-      }
+    .demo-section {
+      border: 1px solid #d5d5d5;
 
-      .demo-section p {
-        margin: 0;
-        color: #2d2d2d;
-      }
+      background: #ffffff;
+    }
 
-      .demo-grid {
-        display: grid;
-        gap: 1.25rem;
-      }
+    .demo-section h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.35rem;
+    }
 
-      [data-anim='hero'] {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
+    .demo-section p {
+      margin: 0;
+      color: #2d2d2d;
+    }
 
-      .hero-eyebrow {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: #0a0a0a;
-      }
+    .demo-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
 
-      .hero-orb {
-        width: 200px;
-        aspect-ratio: 1 / 1;
-        border-radius: 4px;
-        background: #0a0a0a;
-      }
+    [data-anim='hero'] {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-      .hero-chip {
-        width: auto;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        font-size: 1rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        border: 1px solid #0a0a0a;
-        background: transparent;
-        color: #0a0a0a;
-      }
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #0a0a0a;
+    }
 
-      .api-demo {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-      }
+    .hero-orb {
+      width: 200px;
+      aspect-ratio: 1 / 1;
+      border-radius: 4px;
+      background: #0a0a0a;
+    }
 
-      .api-graphic_wrap {
-        width: min(420px, 100%);
-        aspect-ratio: 1 / 1;
-        border-radius: 4px;
-        overflow: hidden;
-      }
+    .hero-chip {
+      width: auto;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1px solid #0a0a0a;
+      background: transparent;
+      color: #0a0a0a;
+    }
 
-      .api-graphic_block {
-        border-radius: 0;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        position: relative;
-      }
+    .api-demo {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+    }
 
-      .api-graphic_content {
-        position: absolute;
-        inset: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        justify-content: center;
-        color: #0a0a0a;
-      }
+    .api-graphic_wrap {
+      width: min(420px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 4px;
+      overflow: hidden;
+    }
 
-      .scale-graph_svg-block {
-        position: relative;
-        width: 100%;
-        max-width: 640px;
-        margin: 1rem auto 0;
-      }
+    .api-graphic_block {
+      border-radius: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
 
-      .scale-graph_number {
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 600;
-      }
+    .api-graphic_content {
+      position: absolute;
+      inset: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      justify-content: center;
+      color: #0a0a0a;
+    }
 
-      .scale-graph_tooltip {
-        position: absolute;
-        pointer-events: none;
-        background: #ffffff;
-        color: #0a0a0a;
-        border: 1px solid #0a0a0a;
-        padding: 0.75rem 1rem;
-      }
+    .scale-graph_number {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+    }
 
-      .scale-graph_tooltip-date {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-bottom: 0.25rem;
-        color: #0a0a0a;
-      }
+    .dots_wrap {
+      position: relative;
+    }
 
-      .dots_wrap {
-        position: relative;
-        height: 320px;
-        border-radius: 4px;
-        overflow: hidden;
-        border: 1px solid #0a0a0a;
-      }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #2d2d2d;
+      font-size: 0.9rem;
+    }
 
-      #dots {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: #ffffff;
-      }
+    .stacked-windows_gradient {
+      z-index: 10;
+      background-image: linear-gradient(180deg, transparent, var(--color-scheme-1--background));
+      opacity: .94;
+      pointer-events: none;
+      height: 70%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+</head>
 
-      #sensor {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-      }
+<body>
+  <main>
+    <header>
+      <h1>Stitch animations playground</h1>
+      <p>
+        Every block below loads a reusable animation module via the shared library. Toggle entries
+        in <code>src/entry/</code> to ship one, some, or all of them.
+      </p>
+    </header>
 
-      @media (pointer: coarse) {
-        #sensor {
-          pointer-events: auto;
-        }
-      }
-
-      .radial_wrap {
-        margin-top: 1rem;
-        padding: 1rem;
-        background: #ffffff;
-        border: 1px solid #0a0a0a;
-        border-radius: 4px;
-      }
-
-      footer {
-        text-align: center;
-        padding: 1rem;
-        color: #2d2d2d;
-        font-size: 0.9rem;
-      }
-      .stacked-windows_gradient {
-        z-index: 10;
-        background-image: linear-gradient(180deg, transparent, var(--color-scheme-1--background));
-        opacity: .94;
-        pointer-events: none;
-        height: 70%;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <header>
-        <h1>Stitch animations playground</h1>
-        <p>
-          Every block below loads a reusable animation module via the shared library. Toggle entries
-          in <code>src/entry/</code> to ship one, some, or all of them.
-        </p>
-      </header>
-
-      <section data-anim="hero" class="demo-section" style="overflow: hidden;">
-        <div
-          class="w-layout-grid header84_card no-bottom-border"
-          style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;"
-          data-reveal-group
-        >
-          <div class="header84_card-content" style="padding:2rem;">
-            <div class="header84_card-content-top">
-              <div class="margin-bottom margin-xsmall">
-                <h1 data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721d6" class="heading-style-h1">The simplest way to build financial products.</h1>
-              </div>
-              <p data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721d8" class="text-size-medium">Stitch is the unified platform to launch and scale. <br />Shaping the new age of banking and payments.</p>
+    <section data-anim="hero" class="demo-section" style="overflow: hidden;">
+      <div class="w-layout-grid header84_card no-bottom-border"
+        style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;" data-reveal-group>
+        <div class="header84_card-content" style="padding:2rem;">
+          <div class="header84_card-content-top">
+            <div class="margin-bottom margin-xsmall">
+              <h1 data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721d6" class="heading-style-h1">The simplest way
+                to build financial products.</h1>
             </div>
-            <div class="margin-top margin-medium">
-              <div data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721db" class="button-group">
-                <a href="/contact" class="button w-button">Start building</a>
-              </div>
-            </div>
+            <p data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721d8" class="text-size-medium">Stitch is the
+              unified platform to launch and scale. <br />Shaping the new age of banking and payments.</p>
           </div>
-          <div class="header84_image-wrapper">
-            <div class="stacked-windows_wrap" style="min-height: 50vh;">
-              <div class="stacked-windows_skew">
-                <div class="stacked-windows_position is-1">
-                  <div class="stacked-windows_img-wrap" data-reveal data-reveal-offset="70%" data-reveal-duration="1500ms">
-                    <img src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp" loading="eager" width="1440" height="626" alt="Stitch Platform - Dashboard" srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-800.webp 800w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-1080.webp 1080w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp 1440w" sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
-                  </div>
-                </div>
-                <div class="stacked-windows_position is-2">
-                  <div class="stacked-windows_img-wrap" data-reveal data-reveal-offset="70%" data-reveal-duration="1500ms">
-                    <img src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp" loading="eager" width="1440" height="626" alt="Stitch Platform - Ledgers" srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp 1440w" sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
-                  </div>
-                </div>
-                <div class="stacked-windows_position is-3">
-                  <div class="stacked-windows_img-wrap" data-reveal data-reveal-offset="70%" data-reveal-duration="1500ms">
-                    <img src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp" loading="eager" width="1440" height="626" alt="Stitch Platform - Loans" srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp 1440w" sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
-                  </div>
-                </div>
-              </div>
-              <div class="stacked-windows_gradient"></div>
+          <div class="margin-top margin-medium">
+            <div data-reveal data-w-id="00eb4823-1796-0b05-7672-bf8d4cf721db" class="button-group">
+              <a href="/contact" class="button w-button">Start building</a>
             </div>
           </div>
         </div>
-      </section>
-
-      <section data-anim="api" class="demo-section">
-        <h2>API detail hover</h2>
-        <p>Mouse or touch within the grid to reuse the spring follower + ripple combo.</p>
-        <div class="api-demo">
-          <div class="api-graphic_wrap" data-max-rem="0.65">
-            <div class="api-graphic_track">
-              <div class="api-graphic_block">
-                <div class="api-graphic_ripple"></div>
-                <div class="api-graphic_fill"></div>
-                <div class="api-graphic_content">
-                  <h3>API Response</h3>
-                  <p>Live requests adjust copy decks and components when teams ship updates.</p>
+        <div class="header84_image-wrapper" style="padding: 10rem 0 0;">
+          <div class="stacked-windows_wrap" style="min-height: 50vh;" data-reveal-offset="120%"
+            data-reveal-duration="1200ms" data-reveal-stagger="0ms">
+            <div class="stacked-windows_skew">
+              <div class="stacked-windows_position">
+                <div class="stacked-windows_img-wrap" data-reveal>
+                  <img
+                    src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp"
+                    loading="eager" width="1440" height="626" alt="Stitch Platform - Dashboard"
+                    srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-800.webp 800w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-1080.webp 1080w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp 1440w"
+                    sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
+                </div>
+              </div>
+              <div class="stacked-windows_position">
+                <div class="stacked-windows_img-wrap" data-reveal>
+                  <img
+                    src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp"
+                    loading="eager" width="1440" height="626" alt="Stitch Platform - Ledgers"
+                    srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp 1440w"
+                    sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
+                </div>
+              </div>
+              <div class="stacked-windows_position">
+                <div class="stacked-windows_img-wrap" data-reveal>
+                  <img
+                    src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp"
+                    loading="eager" width="1440" height="626" alt="Stitch Platform - Loans"
+                    srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp 1440w"
+                    sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
+                </div>
+              </div>
+              <div class="stacked-windows_position">
+                <div class="stacked-windows_img-wrap" data-reveal>
+                  <img
+                    src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp"
+                    loading="eager" width="1440" height="626" alt="Stitch Platform - Ledgers"
+                    srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp 1440w"
+                    sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
+                </div>
+              </div>
+              <div class="stacked-windows_position">
+                <div class="stacked-windows_img-wrap" data-reveal>
+                  <img
+                    src="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp"
+                    loading="eager" width="1440" height="626" alt="Stitch Platform - Ledgers"
+                    srcset="https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp 1440w"
+                    sizes="(max-width: 1440px) 100vw, 1440px" class="stacked-windows_img" />
                 </div>
               </div>
             </div>
+            <div class="stacked-windows_gradient"></div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section data-anim="chart" class="demo-section">
-        <h2>Scaled usage chart</h2>
-        <p>Drag or tap along the sparkline to reveal interpolated values.</p>
-        <div class="scale-graph_meta">
-          <div class="scale-graph_number">120,000+</div>
-          <div class="scale-graph_dates">
-            <span data-date="past">May 04</span>
-            <span aria-hidden="true">→</span>
-            <span data-date="today">May 24</span>
+    <section data-anim="api" class="demo-section" data-reveal-group style="padding: 2rem;">
+      <h2 data-reveal>API detail hover</h2>
+      <p data-reveal>Mouse or touch within the grid to reuse the shared follow motion + ripple combo.</p>
+      <div class="api-demo" data-reveal>
+        <div class="api-graphic_wrap" data-visibility-threshold="0.75" data-follow-root>
+          <div class="api-graphic_track" data-follow-mouse>
+            <div class="api-graphic_block">
+              <div class="api-graphic_fill"></div><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 108 62" width="100%" class="api-graphic_logo">
+                <path fill="#121212"
+                  d="M8.54 23.74a9 9 0 0 1-4.25-.99 8 8 0 0 1-2.98-2.72A9 9 0 0 1 0 15.97l2.88-.2a7 7 0 0 0 .96 2.89 5 5 0 0 0 1.95 1.79q1.22.6 2.82.6t2.69-.38a3.4 3.4 0 0 0 1.63-1.18q.57-.8.57-1.89 0-1.1-.5-1.89a4.3 4.3 0 0 0-1.86-1.53q-1.35-.7-4-1.44a19 19 0 0 1-3.84-1.48 5.4 5.4 0 0 1-2.12-1.95 6 6 0 0 1-.64-2.85q0-1.92.9-3.36A6 6 0 0 1 4.06.83 9 9 0 0 1 8.1 0q2.33 0 4 .96a7 7 0 0 1 2.62 2.56 9 9 0 0 1 1.25 3.71l-2.88.2a7 7 0 0 0-.8-2.44q-.6-1.08-1.67-1.7-1.05-.6-2.59-.6-2.1 0-3.36 1.02a3.2 3.2 0 0 0-1.25 2.63q0 1.05.45 1.76.48.66 1.67 1.21 1.19.52 3.32 1.12 2.79.77 4.42 1.73 1.66.96 2.37 2.3.74 1.32.74 3.2 0 1.8-1 3.17a6.5 6.5 0 0 1-2.75 2.15q-1.76.75-4.1.76m20.7-.5q-2.47-.01-3.68-1.16-1.22-1.15-1.22-3.52V2.3h2.69v16.26q0 1.19.54 1.76.54.54 1.67.54h4.54v2.37zm-10.5-14.6V6.27h15.04v2.37zm26.32 14.6V6.26h2.7v16.96zm-6.81 0v-2.38H53.6v2.37zm.32-14.6V6.27h9.18v2.37zm6.24-5.02V.48h2.81v3.14zm21.52 19.61q-2.46 0-3.68-1.15-1.21-1.15-1.21-3.52V2.3h2.68v16.26q0 1.19.55 1.76.54.54 1.66.54h4.55v2.37zM55.83 8.64V6.27h15.05v2.37zm27 14.98a7.2 7.2 0 0 1-6.85-4.16 11 11 0 0 1-.96-4.7q0-2.7.96-4.68a7 7 0 0 1 2.72-3.07 7.5 7.5 0 0 1 4.13-1.12 8 8 0 0 1 3.36.7q1.48.67 2.43 1.99a8 8 0 0 1 1.31 3.2l-2.81.19q-.39-1.7-1.54-2.6a4.2 4.2 0 0 0-2.75-.92q-2.34 0-3.68 1.7-1.3 1.66-1.31 4.6 0 2.95 1.31 4.64a4.5 4.5 0 0 0 3.68 1.67q1.64 0 2.82-.96a4.7 4.7 0 0 0 1.6-2.88l2.81.19a8 8 0 0 1-1.34 3.3 6.9 6.9 0 0 1-5.89 2.9m11.7-.39V.51h2.69v9.5l-.32-.06q.31-1.4 1.09-2.3a4.5 4.5 0 0 1 1.88-1.31q1.12-.45 2.44-.45 1.82 0 3.07.83 1.28.8 1.92 2.27.67 1.44.67 3.33v10.91h-2.69V13.1q0-2.46-.9-3.65-.85-1.18-2.65-1.18-2.05 0-3.3 1.24-1.2 1.26-1.21 3.62v10.11zM27.25 61.23l6.9-22.72h3.72l6.91 22.72h-2.94L36 41.01l-5.8 20.22zm3.48-6.46.96-2.69h8.64l.96 2.69zm17.11 6.46V38.51h6.91q2.37 0 4.13.83a6 6 0 0 1 2.72 2.4q.96 1.55.96 3.72 0 2.18-.96 3.74a6.3 6.3 0 0 1-2.72 2.37 10 10 0 0 1-4.13.83H50.6v8.83zm2.75-11.52h3.84q2.7 0 3.97-1.09a4 4 0 0 0 1.28-3.16q0-2.1-1.28-3.17-1.27-1.1-3.97-1.09H50.6zm15.48 11.52v-2.69h5.66V41.2h-5.66v-2.69h14.08v2.69h-5.67v17.34h5.67v2.7z">
+                </path>
+              </svg>
+              <div aria-hidden="true" class="api-graphic_glow">
+              </div>
+            </div>
+            <div aria-hidden="true" class="api-graphic_ripple"></div>
           </div>
         </div>
-        <div class="scale-graph_svg-block">
-          <svg viewBox="0 0 640 320">
-            <path
-              id="scale-graph_path"
-              d="M20 260 L120 200 L220 220 L320 140 L420 160 L520 90 L620 120"
-              fill="none"
-              stroke="#38bdf8"
-              stroke-width="8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <g id="scale-graph_dot">
-              <circle cx="0" cy="0" r="10" fill="#0ea5e9"></circle>
-              <circle cx="0" cy="0" r="4" fill="#fff"></circle>
+      </div>
+    </section>
+
+    <section data-anim="chart" class="demo-section" data-reveal-group style="padding: 2rem;">
+      <h2 data-reveal>Scaled usage chart</h2>
+      <p data-reveal>Drag or tap along the sparkline to reveal interpolated values.</p>
+      <div class="scale-graph_wrap" data-visibility-threshold="0.5" style="padding:14rem 0">
+        <div class="scale-graph_txt-block">
+          <div class="scale-graph_eyebrow text-size-large">Your customers</div>
+          <div class="scale-graph_number heading-style-h2">98,520+</div>
+        </div>
+        <div role="tooltip" class="scale-graph_tooltip">
+          <div class="scale-graph_tooltip-date text-size-small">Oct 26, 2025</div>
+          <div class="scale-graph_tooltip-no text-size-tiny"><span class="scale-graph_tooltip-count">11,555</span>
+            customers</div>
+        </div>
+        <div class="scale-graph_svg-block"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 -10 565 224"
+            preserveAspectRatio="xMidYMid meet" width="100%" class="scale-graph_svg">
+            <path fill="url(#a)" fill-opacity=".4"
+              d="M187.953 127.447 77.169 105.278.313 166.952v47.037h564V.579L475.21 33.784l-67.917 42.675-112.454-13.856z">
+            </path>
+            <path fill="#73e2a3"
+              d="M564.312.671A27171 27171 0 0 1 475.82 33.99a27146 27146 0 0 1-67.613 44.384l-.513.328-.587-.076q-55.697-6.676-111.366-13.58-10.713 6.362-21.431 12.714a27228 27228 0 0 1-86.073 50.792l-.606.357-.676-.138a27320 27320 0 0 1-109.346-22.52A27270 27270 0 0 1 .312 167.212v-.582q5.244-4.317 10.49-8.632a26996 26996 0 0 1 65.773-53.924l.418-.342.549.105a27255 27255 0 0 1 109.435 21.235 27274 27274 0 0 1 107.321-63.793l.583-.347.677.084q55.7 7.015 111.371 14.26 33.856-21.661 67.776-43.225l.224-.111A27155 27155 0 0 1 564.312.27z">
+            </path>
+            <path d="m.313 166.924 77-61.935 110 22 108-64 112 14 68-44 89-32.52" id="scale-graph_path"></path>
+            <path stroke="url(#b)" stroke-dasharray="4 4" stroke-opacity=".7"
+              d="M 113.8977279663086 112.30593872070312 V 214" id="scale-graph_dashed-line"
+              style="visibility: visible;"></path>
+            <g filter="url(#c)" id="scale-graph_dot" transform="translate(-181.4152603149414,49.31694030761719)"
+              style="visibility: visible;">
+              <path fill="#3ccb7f"
+                d="M305.313 62.989c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.478-10 10-10 10 4.477 10 10"></path>
             </g>
-            <path id="scale-graph_dashed-line" stroke="#94a3b8" stroke-dasharray="6 6"></path>
-          </svg>
-          <div class="scale-graph_tooltip" aria-hidden="true">
-            <p class="scale-graph_tooltip-date">May 20</p>
-            <p class="scale-graph_tooltip-count">18,000</p>
+            <defs>
+              <linearGradient id="a" x1="290.384" x2="294.618" y1="66.933" y2="256.144" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#d9d9d9" stop-opacity=".45"></stop>
+                <stop stop-color="#d9d9d9" stop-opacity="0" offset="1"></stop>
+              </linearGradient>
+              <linearGradient id="b" x1="295.813" x2="295.813" y1="62.989" y2="213.989" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3ccb7f" stop-opacity=".537"></stop>
+                <stop stop-color="#3ccb7f" stop-opacity="0" offset="1"></stop>
+              </linearGradient>
+              <filter id="c" width="32.4" height="32.4" x="279.113" y="51.789" color-interpolation-filters="sRGB"
+                filterUnits="userSpaceOnUse">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0">
+                </feColorMatrix>
+                <feOffset dy="5"></feOffset>
+                <feGaussianBlur stdDeviation="3.1"></feGaussianBlur>
+                <feComposite in2="hardAlpha" operator="out"></feComposite>
+                <feColorMatrix values="0 0 0 0 0.235294 0 0 0 0 0.796078 0 0 0 0 0.498039 0 0 0 0.41 0"></feColorMatrix>
+                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1"></feBlend>
+                <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"></feBlend>
+              </filter>
+            </defs>
+          </svg></div>
+        <div class="scale-graph_dates">
+          <div data-date="past" class="scale-graph_date text-size-tiny">Oct 22</div>
+          <div data-date="today" class="scale-graph_date text-size-tiny">Nov 12</div>
+        </div>
+      </div>
+    </section>
+
+    <section data-anim="cards" class="demo-section" style="padding: 0;" data-reveal-group>
+      <style>
+        .features-graphic_wrap {
+          isolation: isolate;
+          overflow: hidden;
+          padding: clamp(1.5rem, 4vw, 3.5rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%
+          position: relative;
+        }
+
+        .features-graphic_cc_wrap {
+          position: relative;
+          max-width: 520px;
+          width: 100%;
+          z-index: 2;
+        }
+
+        .features-graphic_cc {
+          width: 100%;
+        }
+
+        .credit-card_wrap {
+          --_credit-card---border:
+            color-mix(in srgb, var(--_primitives---colors--neutral-darkest) 7%, transparent);
+          --_credit-card---background:
+            color-mix(in srgb, var(--_primitives---colors--white) 87%, transparent);
+          --_credit-card---shadow:
+            color-mix(in srgb, var(--_primitives---colors--neutral-darkest) 7%, transparent);
+          --_credit-card---object: var(--_primitives---colors--neutral-darkest);
+          --_credit-card---chip: var(--_credit-card---border);
+          --_credit-card---chip-lines: var(--_credit-card---object);
+          container-type: inline-size;
+        }
+
+        .credit-card {
+          aspect-ratio: 1.586;
+          border-top-style: solid;
+          border-top-width: .125rem;
+          border-top-color: var(--_credit-card---border);
+          border-right-style: solid;
+          border-right-width: .125rem;
+          border-right-color: var(--_credit-card---border);
+          border-bottom-style: solid;
+          border-bottom-width: .125rem;
+          border-bottom-color: var(--_credit-card---border);
+          border-left-style: solid;
+          border-left-width: .125rem;
+          border-left-color: var(--_credit-card---border);
+          background-color: var(--_credit-card---background);
+          box-shadow: 0 2px 30px 0 var(--_credit-card---shadow);
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+          color: var(--_credit-card---object);
+          --_credit-card---border:
+            color-mix(in srgb, var(--_primitives---colors--neutral-darkest) 7%, transparent);
+          --_credit-card---background:
+            color-mix(in srgb, var(--_primitives---colors--white) 87%, transparent);
+          --_credit-card---shadow:
+            color-mix(in srgb, var(--_primitives---colors--neutral-darkest) 7%, transparent);
+          --_credit-card---object: var(--_primitives---colors--neutral-darkest);
+          --_credit-card---chip: var(--_credit-card---border);
+          --_credit-card---chip-lines: var(--_credit-card---object);
+          border-radius: 4.5cqi;
+          width: 100%;
+          padding: 5%;
+          font-size: 2.2cqi;
+          display: flex;
+          position: relative;
+          container-type: inline-size;
+        }
+
+        .credit-card_content {
+          z-index: 1;
+          flex-flow: column;
+          justify-content: space-between;
+          width: 100%;
+          display: flex;
+          position: relative;
+        }
+
+        .credit-card_company-logo {
+          max-width: 30cqi;
+          display: block;
+          overflow: visible !important;
+        }
+
+        .credit-card_company-name {
+          text-align: right;
+          font-size: 4.3cqi;
+          font-weight: 500;
+          display: none;
+        }
+
+        .credit-card_type {
+          width: 100%;
+          height: 20%;
+          display: flex;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+
+        .credit-card_contactless {
+          width: auto;
+          height: auto;
+          display: block;
+          overflow: visible !important;
+        }
+
+        .credit-card_chip-block {
+          background-color: var(--_credit-card---border);
+          border-radius: .25rem;
+          display: none;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .credit-card_digits {
+          text-align: left;
+          font-size: 4.3cqi;
+          font-weight: 500;
+          line-height: .8;
+        }
+
+        .credit-card_provider {
+          justify-content: flex-end;
+          align-items: flex-end;
+          display: flex;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+
+        .credit-card_provider-logo {
+          max-width: 21cqi;
+          overflow: visible !important;
+        }
+
+        .credit-card_provider-logo.is-mc {
+          display: none;
+        }
+
+        .features-graphic_cc_pill_wrap {
+          position: absolute;
+          z-index: 3;
+          width: 210px;
+        }
+
+        .features-graphic_cc_pill {
+          border-radius: 999px;
+          padding: 1rem 1.2rem;
+          background: #ffffff;
+          box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+        }
+
+        .features-graphic_cc_pill_wrap.is-pending {
+          top: clamp(1rem, 5vw, 2.5rem);
+          right: clamp(-2rem, 4vw, -0.5rem);
+        }
+
+        .features-graphic_cc_pill_wrap.is-complete {
+          bottom: clamp(1rem, 5vw, 2rem);
+          left: clamp(-2rem, 4vw, -0.5rem);
+        }
+
+        .features-graphic_cc_pill_label {
+          border-radius: 999px;
+          padding: 0.3rem 0.9rem;
+          font-size: 0.8rem;
+          font-weight: 600;
+        }
+
+        .features-graphic_cc_pill_label.is-pending {
+          background: #fff0dc;
+          color: #9a4b00;
+        }
+
+        .features-graphic_cc_pill_label.is-complete {
+          background: #daf6e4;
+          color: #0d6a3b;
+        }
+
+        .features-graphic_cc_pill_amount {
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+
+        .features-graphic_cc_pill_time {
+          font-size: 0.85rem;
+          color: #596077;
+        }
+
+        .features-graphic_cc_dots,
+        .features-graphic_cc_dots-canvas,
+        .features-graphic_cc_dots-sensor {
+          position: absolute;
+          inset: 0;
+        }
+
+        .features-graphic_cc_dots {
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        .features-graphic_cc_dots-canvas {
+          width: 100%;
+          height: 100%;
+        }
+
+        .features-graphic_cc_dots-sensor {
+          pointer-events: none;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+          .features-graphic_cc_dots-sensor {
+            pointer-events: auto;
+            touch-action: none;
+          }
+        }
+      </style>
+
+      <div data-follow-root class="features-graphic_wrap" data-reveal>
+        <div class="features-graphic_cc_wrap">
+          <div class="features-graphic_cc" data-follow-mouse data-follow-depth="6">
+            <div data-wf--credit-card--variant="light" class="credit-card_wrap">
+              <div class="credit-card">
+                <div class="credit-card_content">
+                  <div data-wf--company-block--variant="logo" class="credit-card_company-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 80 16" width="100%"
+                      class="credit-card_company-logo">
+                      <path fill="currentColor"
+                        d="M51.777 4.017a.3.3 0 0 1-.072.196.24.24 0 0 1-.18.081H49.63v1.98h1.892c.067 0 .132.029.18.08.047.05.074.12.075.192v4.186c0 3.159 2.31 4.763 5.133 3.902a6 6 0 0 0 .672-.248 7 7 0 0 0 .919-.499 5.4 5.4 0 0 0 .672-.515l.209-.195-.943-1.664c-2.315 2.08-4.593 1.713-4.593-1.01V6.545a.3.3 0 0 1 .073-.192.24.24 0 0 1 .178-.08h4.564v-1.98H54.1a.25.25 0 0 1-.179-.08.28.28 0 0 1-.074-.191V1.219l-2.07.619zm17.89 9.33q-.319.285-.673.515a6.2 6.2 0 0 1-2.076.876 6.3 6.3 0 0 1-1.376.142 5.9 5.9 0 0 1-2.184-.378 4.26 4.26 0 0 1-1.609-1.11 4.8 4.8 0 0 1-.968-1.731 7 7 0 0 1-.324-2.193 7.2 7.2 0 0 1 .333-2.283c.2-.638.534-1.22.975-1.7.442-.48.98-.845 1.573-1.068a5 5 0 0 1 1.265-.318 7.95 7.95 0 0 1 4.748.9l-.685 1.896c-.671-.31-1.856-.796-2.886-.796-1.418 0-2.426.452-2.893 1.543a4.56 4.56 0 0 0 .058 3.494c.586 1.198 1.732 1.622 2.89 1.622q1.638 0 3.07-1.33.486.865.975 1.73zM24.66 6.023q1.489 0 3.094 1.116.431-.907.859-1.817a7 7 0 0 0-4.046-1.266 5.8 5.8 0 0 0-1.426.174 3.8 3.8 0 0 0-1.238.548 2.96 2.96 0 0 0-.884.975 2.86 2.86 0 0 0-.346 1.436c-.014.297.027.593.12.872.095.279.239.535.426.754.349.374.765.668 1.225.862q.733.306 1.506.47c1.937.433 2.6.747 2.73 1.336.222.939-.802 1.524-2.315 1.411q-1.686-.127-3.053-1.531l-1.076 1.88c1.2 1.072 2.716 1.65 4.277 1.63 1.383 0 2.444-.32 3.155-.949.347-.294.627-.67.816-1.099a3.3 3.3 0 0 0 .276-1.373 2.45 2.45 0 0 0-.535-1.646 3.6 3.6 0 0 0-1.223-.913c-1.13-.525-2.582-.654-3.512-1.03-.244-.098-.61-.266-.728-.568-.14-.346.086-.664.326-.849.484-.375 1.23-.455 1.783-.425M73.41 8.36a2.94 2.94 0 0 1 .992-1.68 2.73 2.73 0 0 1 1.76-.63c.653.014 1.245.302 1.534.975.25.586.235 1.397.235 1.998v5.625H80V8.733c0-2.412-.528-3.805-1.82-4.38-1.292-.576-3.363-.334-4.538.567a.13.13 0 0 1-.148.011.14.14 0 0 1-.056-.057.16.16 0 0 1-.018-.08V1.229l-2.038.609v12.81h2.034zM13.763 1.506v14.215a.3.3 0 0 1-.071.197.3.3 0 0 1-.083.06.24.24 0 0 1-.099.022H6.934L12 12.855 1.763 6.518v2.263l6.244 3.865a.24.24 0 0 1 .086.09.26.26 0 0 1 0 .248.24.24 0 0 1-.086.09L3.276 16H.253a.24.24 0 0 1-.098-.021.3.3 0 0 1-.083-.061A.27.27 0 0 1 0 15.72V1.506a.3.3 0 0 1 .074-.19.24.24 0 0 1 .179-.078h6.573L1.763 4.369 12 10.707V8.444L5.756 4.58a.23.23 0 0 1-.083-.088.25.25 0 0 1 0-.242.23.23 0 0 1 .083-.088l4.732-2.926h3.022a.24.24 0 0 1 .179.078.27.27 0 0 1 .074.191m24.735 10.008c-2.315 2.08-4.595 1.713-4.595-1.01V6.545a.28.28 0 0 1 .074-.192.25.25 0 0 1 .179-.08h4.564v-1.98h-4.564a.25.25 0 0 1-.18-.08.28.28 0 0 1-.073-.191V1.219l-2.07.619v2.18a.3.3 0 0 1-.07.195.3.3 0 0 1-.083.06.2.2 0 0 1-.097.021h-1.895v1.98h1.893c.067 0 .131.029.179.08.047.05.074.12.074.192v4.186c0 3.159 2.31 4.763 5.135 3.902q.342-.102.67-.248.478-.211.92-.499a5.4 5.4 0 0 0 .672-.515l.208-.195zm5.723-5.239c.067 0 .132.029.179.08.047.05.074.12.074.192v5.853a.28.28 0 0 1-.076.187.25.25 0 0 1-.177.076h-2.893v1.986h8.274v-1.986h-2.817a.24.24 0 0 1-.176-.078.28.28 0 0 1-.073-.19v-8.1h-5.208v1.98zm1.236-3.324c.272 0 .538-.087.764-.249.227-.162.403-.392.507-.662s.131-.566.078-.853a1.5 1.5 0 0 0-.377-.755 1.35 1.35 0 0 0-.705-.403 1.3 1.3 0 0 0-.795.085 1.4 1.4 0 0 0-.617.544 1.56 1.56 0 0 0-.231.82c0 .39.146.765.403 1.042.258.276.608.43.973.43">
+                    </svg>
+                    <div class="credit-card_company-name">Rocket Inc.</div>
+                  </div>
+                  <div data-wf--type--variant="contactless" class="credit-card_type">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 37 60" width="100%"
+                      stroke-width="4" class="credit-card_contactless">
+                      <path stroke="currentColor" stroke-width="4"
+                        d="M1.41 22.63a10 10 0 0 1 0 14.14m7.07-21.21a20 20 0 0 1 0 28.28"></path>
+                      <path stroke="currentColor" stroke-width="4" d="M15.56 8.49a30 30 0 0 1 0 42.42"></path>
+                      <path stroke="currentColor" stroke-width="4" d="M22.63 1.41a40 40 0 0 1 0 56.57"></path>
+                    </svg>
+                    <div class="credit-card_chip-block">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 30" width="100%"
+                        stroke-width="1" class="credit-card_chip">
+                        <path stroke="var(--_credit-card---chip-lines)"
+                          d="M15 10h10m-10 0v5m0-5-5-5H0m25 5v5m0-5 5-5h10m-15 5h-5V0m5 20H15m10 0v-5m0 5 5 5h10m-25-5v-5m0 5-5 5H0m15-5h5v10m-5-15H0m25 0h15"
+                          stroke-width="1"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="credit-card_digits">•••• <span data-random="true" class="credit-card_4-digit">8899</span>
+                  </div>
+                  <div data-wf--provider--variant="visa" class="credit-card_provider">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1920 621" width="100%"
+                      class="credit-card_provider-logo is-visa">
+                      <path fill="#000"
+                        d="M729 11 478 611H314L190 132c-8-29-14-40-37-53C116 59 54 40 0 28l4-17h264c33 0 64 22 71 61l66 347L566 11zm643 404c0-158-219-167-218-238 1-21 21-44 66-50 22-3 83-5 153 27l27-127c-37-14-85-27-145-27-153 0-261 82-262 198-1 87 77 135 136 163 60 30 80 49 80 75 0 40-48 58-93 59-78 1-123-21-159-38l-28 131c36 17 103 31 172 32 163 0 270-80 271-205m405 196h143L1795 11h-133c-29 0-55 17-66 44l-233 556h163l33-90h199zm-174-213 82-225 47 225zM951 11 822 611H667L796 11z">
+                      </path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="var(--_credit-card---object)" viewBox="0 0 117 72"
+                      width="100%" class="credit-card_provider-logo is-mc">
+                      <path
+                        d="M113.06 58.31v-1.16h.47v-.24h-1.19v.24h.46v1.16zm2.31 0v-1.4h-.36l-.42.96-.42-.96h-.37v1.4h.26v-1.06l.39.91h.27l.39-.91v1.06zm-60.31 6.95.87.72a36 36 0 1 1 0-59.96q-.44.35-.87.72a38.77 38.77 0 0 0 0 58.52M80.5 0a36 36 0 0 0-19.93 6.02q.44.35.87.72a38.78 38.78 0 0 1 .01 58.52l-.87.72A36 36 0 1 0 80.5 0">
+                      </path>
+                      <path
+                        d="M58.25 7.71q-.7.54-1.36 1.13A36 36 0 0 0 44.5 36a35.9 35.9 0 0 0 13.75 28.29q.7-.55 1.36-1.13A36 36 0 0 0 72 36 35.9 35.9 0 0 0 58.25 7.71">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-follow-mouse data-follow-depth="8" class="features-graphic_cc_pill_wrap is-pending">
+            <div class="features-graphic_cc_pill">
+              <div class="features-graphic_cc_pill_content">
+                <div class="features-graphic_cc_pill_amount">$1,450.97</div>
+                <div class="features-graphic_cc_pill_time">1 min ago</div>
+              </div>
+              <div class="features-graphic_cc_pill_label is-pending">Pending</div>
+            </div>
+          </div>
+
+          <div data-follow-mouse data-follow-depth="4" class="features-graphic_cc_pill_wrap is-complete">
+            <div class="features-graphic_cc_pill">
+              <div class="features-graphic_cc_pill_content">
+                <div class="features-graphic_cc_pill_amount">$2,400.23</div>
+                <div class="features-graphic_cc_pill_time">1 week ago</div>
+              </div>
+              <div class="features-graphic_cc_pill_label is-complete">Complete</div>
+            </div>
           </div>
         </div>
-      </section>
 
-      <section data-anim="dots" class="demo-section">
-        <h2>Ripple dots field</h2>
-        <p>Pointer movement bends the lattice; clicks emit ripples across the grid.</p>
-        <div class="dots_wrap">
-          <canvas id="dots"></canvas>
-          <div id="sensor"></div>
+        <div aria-hidden="true" class="features-graphic_cc_dots">
+          <canvas class="features-graphic_cc_dots-canvas"></canvas>
+          <div class="features-graphic_cc_dots-sensor"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section data-anim="radial" class="demo-section">
-        <h2>Radial console</h2>
-        <p>Drag horizontally to spin the gauge with predictive inertia.</p>
+    <section data-anim="dots" class="demo-section" data-reveal-group style="padding: 2rem;">
+      <h2 data-reveal>Subtle dots field</h2>
+      <p data-reveal>Nearby dots softly scale and brighten with pointer proximity.</p>
+      <div class="dots_wrap" style="min-height: 70vh;">
+        <canvas id="dots"></canvas>
+        <div id="sensor"></div>
+      </div>
+    </section>
+
+    <section data-anim="dots-bulge" class="demo-section" data-reveal-group style="padding: 2rem;">
+      <h2 data-reveal>Bulge dots field</h2>
+      <p data-reveal>Legacy displacement effect with the full lattice warp and ripple offsets.</p>
+      <div class="dots_wrap" style="min-height: 70vh;">
+        <canvas id="dots-bulge"></canvas>
+        <div id="sensor-bulge"></div>
+      </div>
+    </section>
+
+    <section data-anim="orbit" class="demo-section" data-visibility-threshold="0.5" data-follow-root
+      style="padding: 2rem;">
+      <style>
+        .orbit_dot_inner {
+          background-image: linear-gradient(151.7deg, #fff 15.25%, #dfdfdf 97%);
+          border: 1px solid #e7e7e7;
+          border-radius: 50%;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          position: absolute;
+          inset: 0;
+        }
+      </style>
+      <h2>Orbit spokes</h2>
+      <p>Rings size themselves to the container and reposition each dot on resize.</p>
+      <div
+        style="position: relative; min-height: 60vh; height: clamp(420px, 60vh, 720px); overflow: hidden;">
+        <div class="orbit_wrap" data-orbit-pending="true">
+          <div class="orbit_ring"></div>
+          <div class="orbit_ring"></div>
+          <div class="orbit_ring"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_dot"></div>
+          <div class="orbit_pedestal">
+            <div
+              class="orbit_pedestal_circle orbit_pedestal_circle--outer"
+              data-follow-mouse
+              data-follow-depth="3">
+              <div class="orbit_pedestal_circle_core"></div>
+            </div>
+            <div
+              class="orbit_pedestal_circle orbit_pedestal_circle--middle"
+              data-follow-mouse
+              data-follow-depth="6">
+              <div class="orbit_pedestal_circle_core"></div>
+            </div>
+            <div
+              class="orbit_pedestal_circle orbit_pedestal_circle--inner"
+              data-follow-mouse
+              data-follow-depth="9">
+              <div class="orbit_pedestal_circle_core">
+                <div class="orbit_pedestal_logo" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-anim="radial" class="demo-section" data-reveal-group data-visibility-threshold="0.35"
+      style="padding: 2rem;">
+      <h2 data-reveal>Radial console</h2>
+      <p data-reveal>Drag horizontally to spin the gauge with predictive inertia.</p>
+      <div style="position: relative;min-height: 40vh;background-color: #000;">
         <div class="radial_wrap">
-          <svg id="radial_svg" width="768" height="768"></svg>
+          <canvas id="radial_canvas" width="768" height="768" class="radial_svg"></canvas>
+          <div class="radial_overlay"></div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-      Swap the script tag to load the bundle you need. Default uses the resolver entry
-      (<code>page-all-lite</code>).
-    </footer>
+    <section data-anim class="demo-section" data-reveal-group style="padding: 2rem;">
+      <h2 data-reveal>Just a plain section</h2>
+      <p data-reveal>I'm nothing but a plain text section</p>
+    </section>
+  </main>
 
-    <script type="module" src="/src/entry/page-all-lite.js"></script>
-  </body>
+  <footer>
+    Swap the script tag to load the bundle you need. Default uses the resolver entry
+    (<code>page-all-lite</code>).
+  </footer>
+
+  <script type="module" src="/src/entry/page-all-lite.js"></script>
+</body>
+
 </html>
