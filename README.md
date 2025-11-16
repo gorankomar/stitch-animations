@@ -25,7 +25,7 @@ stitch-animations/
 ├─ legacy/                  # Original scripts/styles (read-only references)
 ├─ src/
 │  ├─ lib/                  # Shared utilities & effects
-│  ├─ animations/           # One module per animation (hero, api, chart, dots, radial)
+│  ├─ animations/           # One module per animation (hero, api, chart, dots, dots-bulge, radial, cards, orbit)
 │  └─ entry/                # Bundles: page-all, page-all-lite, feature-*
 ├─ public/index.html        # Demo markup
 ├─ dist/                    # Build output (gitignored)
@@ -142,6 +142,7 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `chart` | SVG sparkline with tooltip + counter easing. | shared DOM helpers |
 | `dots` | Subtle proximity dots (scale + alpha only). | subtle dots field helper, ResizeObserver |
 | `dots-bulge` | Legacy bulging lattice with full displacement + ripples. | bulge dots helper, ResizeObserver |
+| `orbit` | Multi-ring orbit with parallax dots, ripple trigger, and pedestal badge. | `follow-group`, ripple helper, ResizeObserver |
 | `radial` | Drag-driven radial console with inertia + intro observer. | IntersectionObserver |
 | `cards` | Face unlock inspired credit card stack w/ layered mouse follow + reveal staging. | `follow-group`, IntersectionObserver |
 
@@ -152,8 +153,8 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `src/entry/page-all.js` | Imports and initializes every animation eagerly. |
 | `src/entry/page-all-lite.js` | DOM-aware resolver that dynamic-imports only animations present on the page. |
 | `src/entry/feature-hero.js` | Feature-specific bundle for the hero section. |
-| `src/entry/feature-api.js` / `feature-chart.js` / `feature-dots.js` / `feature-dots-bulge.js` / `feature-radial.js` / `feature-cards.js` | Ready-made single-animation bundles for the remaining demos. |
-| `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`) | Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments. |
+| `src/entry/feature-api.js` / `feature-chart.js` / `feature-dots.js` / `feature-dots-bulge.js` / `feature-radial.js` / `feature-cards.js` / `feature-orbit.js` | Ready-made single-animation bundles for the remaining demos. |
+| `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:orbit`) | Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments. |
 
 All entry files are exposed to Vite via `vite.config.js`, yielding hashed outputs like `dist/page-all.<hash>.js`. Tree-shaking ensures a `feature-*` build only contains the animation it needs plus shared libs once.
 
