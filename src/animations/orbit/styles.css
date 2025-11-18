@@ -1,7 +1,7 @@
 .orbit_wrap {
   --ring-count: 3;
-  --ring-base-radius: 38cqh;
-  --ring-max-radius: 70cqh;
+  --ring-base-radius: 32cqh;
+  --ring-max-radius: 68cqh;
   --ring-border: 1px;
   --ring-max-z: 6;
   --orbit-top-offset: 10cqh;
@@ -132,7 +132,7 @@ html.wf-design-mode .orbit_wrap .orbit_dot {
 }
 
 .orbit_pedestal_circle {
-  --orbit-pedestal-size: clamp(5rem, 18cqh, 6.5rem);
+  --orbit-pedestal-size: clamp(4rem, 18cqh, 5.5rem);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -163,7 +163,7 @@ html.wf-design-mode .orbit_wrap .orbit_dot {
 }
 
 .orbit_pedestal_circle--middle {
-  --orbit-pedestal-size: clamp(7rem, 20cqh, 8rem);
+  --orbit-pedestal-size: clamp(6rem, 20cqh, 7rem);
 }
 
 .orbit_pedestal_circle--middle .orbit_pedestal_circle_core {
@@ -172,7 +172,7 @@ html.wf-design-mode .orbit_wrap .orbit_dot {
 }
 
 .orbit_pedestal_circle--outer {
-  --orbit-pedestal-size: clamp(9rem, 24cqh, 11.5rem);
+  --orbit-pedestal-size: clamp(8rem, 24cqh, 10rem);
 }
 
 .orbit_pedestal_circle--outer .orbit_pedestal_circle_core {

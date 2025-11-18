@@ -3,6 +3,7 @@ import { ATTR, DATA_ATTRS } from '../../lib/config.js';
 import { resolveRevealTimings, ensureSectionReveal } from '../../lib/effects/reveal-groups.js';
 import { whenVisible } from '../../lib/effects/threshold.js';
 import './styles.css';
+import { createValueCounter } from '../../lib/effects/value-counter.js';
 
 const DEFAULT_VISIBILITY = 0.5;
 
@@ -47,9 +48,6 @@ function setupChartSection(section, sectionThreshold) {
   // Input gating
   const MOVE_THRESHOLD_PX = 18;
   const X_PAD = 16;
-
-  // Big-number display duration (ms)
-  const COUNTER_MS = 120;
 
   // ===== Elements =====
   const guidePath = svg.querySelector('#scale-graph_path');
@@ -151,9 +149,10 @@ function setupChartSection(section, sectionThreshold) {
   let targetX = xAtValue(MIN_VAL);
   let currentX = targetX;
 
-  // Big number smoothing state
-  let displayV = MIN_VAL;
-  let lastPrinted = null;
+  const numCounter = createValueCounter({
+    element: numEl,
+    initialValue: MIN_VAL
+  });
 
   let introPlayed = false,
     introDriving = false;
@@ -186,8 +185,6 @@ function setupChartSection(section, sectionThreshold) {
     }
   }
 
-  const COUNTER_STEP = 1 - Math.exp(-16 / COUNTER_MS);
-
   let rafId = null;
   function tick() {
     currentX += (targetX - currentX) * LAG;
@@ -202,12 +199,7 @@ function setupChartSection(section, sectionThreshold) {
     dashed.setAttribute('d', `M ${p.x} ${p.y} V ${bottomY}`);
 
     const targetV = valueFromX(targetX);
-    displayV += (targetV - displayV) * COUNTER_STEP;
-    const shown = Math.round(displayV);
-    if (shown !== lastPrinted) {
-      lastPrinted = shown;
-      numEl.textContent = `${fmtNumber(shown)}+`;
-    }
+    numCounter.setTarget(targetV);
 
     const dynDate = dateFromX(currentX);
     todayEl.setAttribute('data-dynamic-date', fmtLong(dynDate));
@@ -263,10 +255,6 @@ function setupChartSection(section, sectionThreshold) {
         }
 
         if (!tipVisible) {
-          displayV = targetV;
-          lastPrinted = null;
-          numEl.textContent = `${fmtNumber(Math.round(displayV))}+`;
-
           const tipDate = dateFromX(targetX);
           tipDateEl.textContent = fmtLong(tipDate);
           tipCountEl.textContent = fmtNumber(dailyFromY(p.y));
@@ -381,6 +369,7 @@ function setupChartSection(section, sectionThreshold) {
     if (rafId) {
       window.cancelAnimationFrame(rafId);
     }
+    numCounter.dispose();
     revealController.cancel();
   };
 }

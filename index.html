@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/src/animations/orbit/styles.css" />
   <link rel="stylesheet" href="/src/animations/radial/styles.css" />
   <link rel="stylesheet" href="/src/animations/cards/styles.css" />
+  <link rel="stylesheet" href="/src/animations/deposits/styles.css" />
   <style>
     :root {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -69,7 +70,6 @@
 
     .demo-section p {
       margin: 0;
-      color: #2d2d2d;
     }
 
     .demo-grid {
@@ -284,7 +284,7 @@
       <div class="scale-graph_wrap" data-visibility-threshold="0.5" style="padding:14rem 0">
         <div class="scale-graph_txt-block">
           <div class="scale-graph_eyebrow text-size-large">Your customers</div>
-          <div class="scale-graph_number heading-style-h2">98,520+</div>
+                  <div class="scale-graph_number heading-style-h2" data-counter-suffix="+">98,520+</div>
         </div>
         <div role="tooltip" class="scale-graph_tooltip">
           <div class="scale-graph_tooltip-date text-size-small">Oct 26, 2025</div>
@@ -338,7 +338,7 @@
       </div>
     </section>
 
-    <section data-anim="cards" class="demo-section" style="padding: 0;" data-reveal-group>
+    <section data-anim="cards" class="demo-section" style="padding: 0; overflow:hidden" data-reveal-group>
       <style>
         .features-graphic_wrap {
           isolation: isolate;
@@ -650,6 +650,106 @@
       </div>
     </section>
 
+    <section data-anim="deposits" class="demo-section" data-visibility-threshold="0.5"
+      style="padding: 2rem; overflow: hidden;">
+      <h2 data-reveal>Deposits animation</h2>
+      <p data-reveal>Base markup for the iPhone, cards, connector line, and dots background.</p>
+      <div class="deposits_wrap">
+        <div class="features-graphic_cc_dots deposits_background" aria-hidden="true">
+          <canvas class="features-graphic_cc_dots-canvas"></canvas>
+          <div class="features-graphic_cc_dots-sensor"></div>
+        </div>
+        <div class="deposits_content" data-reveal-group>
+          <div class="deposits_phone" data-reveal data-reveal-offset="80%">
+            <div class="deposits_status-bar">
+              <time class="deposits_status-time" data-deposits-time>13:13</time>
+              <div class="deposits_dynamic-island" aria-hidden="true"></div>
+              <div class="deposits_status-icons" aria-hidden="true">
+                <span class="deposits_status-icon deposits_status-icon--cell">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 14">
+                    <path fill="#000"
+                      d="M2.37 8.2c.65 0 1.18.58 1.18 1.28v2.56c0 .7-.53 1.27-1.18 1.27H1.18c-.65 0-1.18-.57-1.18-1.27V9.48c0-.7.53-1.27 1.18-1.27zm5.88-2.65c.65 0 1.18.58 1.18 1.3v5.17c0 .71-.53 1.3-1.18 1.3H7.06c-.65 0-1.18-.59-1.18-1.3V6.84c0-.71.53-1.3 1.18-1.3zm5.99-2.89c.65 0 1.18.57 1.18 1.28v8.1c0 .7-.53 1.27-1.18 1.27h-1.19c-.65 0-1.18-.57-1.18-1.28V3.94c0-.7.53-1.28 1.18-1.28zM20.12 0c.65 0 1.18.56 1.18 1.25v10.81c0 .7-.53 1.25-1.18 1.25h-1.19c-.65 0-1.18-.56-1.18-1.25V1.25c0-.7.53-1.25 1.18-1.25z" />
+                  </svg>
+                </span>
+                <span class="deposits_status-icon deposits_status-icon--wifi">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 14">
+                    <path fill="#000"
+                      d="M6.84 10.02a3.86 3.86 0 0 1 5.34 0q.12.13.12.3 0 .19-.11.3L9.78 13.3a.4.4 0 0 1-.27.12q-.16 0-.27-.12l-2.41-2.67a.44.44 0 0 1 0-.6m-3.35-3.2a8.9 8.9 0 0 1 12.06 0 .4.4 0 0 1 0 .57l-1.42 1.44a.4.4 0 0 1-.54 0 6.1 6.1 0 0 0-8.14 0 .4.4 0 0 1-.54 0L3.47 7.4a.4.4 0 0 1 0-.57M.12 3.57a14.1 14.1 0 0 1 18.78 0q.11.11.12.27t-.12.27l-1.44 1.38a.4.4 0 0 1-.54 0c-2-1.8-4.65-2.8-7.41-2.8s-5.41 1-7.41 2.8a.4.4 0 0 1-.54 0L.12 4.1A.4.4 0 0 1 0 3.84q0-.16.12-.27" />
+                  </svg>
+                </span>
+                <span class="deposits_status-icon deposits_status-icon--battery">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 31 15">
+                    <rect width="26.62" height="13.31" x=".55" y=".55" stroke="#000" stroke-width="1.11" opacity=".35"
+                      rx="4.22" />
+                    <path fill="#000" d="M28.73 5.18V9.6a2.4 2.4 0 0 0 0-4.43" opacity=".4" />
+                    <rect width="23.29" height="9.98" x="2.22" y="2.22" fill="#000" rx="2.77" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="deposits_phone-body" data-reveal-group>
+              <div class="deposits_phone-header" data-reveal-group>
+                <p class="deposits_phone-eyebrow" data-reveal>Add card to digital wallet</p>
+                <div class="deposits_phone-balance" data-reveal>
+                  <span class="deposits_phone-balance_label">Total balance</span>
+                  <span class="deposits_phone-balance_value" data-counter-value="25450"
+                    data-counter-prefix="$" data-counter-decimal="true" data-counter-initial="0">$25,450.00</span>
+                </div>
+              </div>
+              <div class="deposits_phone-wallets" data-reveal-group>
+                <p class="deposits_phone-section" data-reveal>Available Wallets:</p>
+                <div class="deposits_wallet" data-card="6463" data-reveal>
+                  <div class="deposits_wallet-logo">Visa</div>
+                  <div class="deposits_wallet-details">
+                    <span class="deposits_wallet-name">Omar ibn Ali Al-Hussain</span>
+                    <span class="deposits_wallet-meta">•••• 6463 &nbsp;|&nbsp; Expiry 01/29</span>
+                  </div>
+                  <span class="deposits_wallet-arrow">›</span>
+                </div>
+                <div class="deposits_wallet" data-card="7788" data-reveal>
+                  <div class="deposits_wallet-logo">MC</div>
+                  <div class="deposits_wallet-details">
+                    <span class="deposits_wallet-name">Omar ibn Ali Al-Hussain</span>
+                    <span class="deposits_wallet-meta">•••• 7788 &nbsp;|&nbsp; Expiry 04/17</span>
+                  </div>
+                  <span class="deposits_wallet-arrow">›</span>
+                </div>
+                <div class="deposits_wallet" data-card="3215" data-reveal>
+                  <div class="deposits_wallet-logo">Visa</div>
+                  <div class="deposits_wallet-details">
+                    <span class="deposits_wallet-name">Omar ibn Ali Al-Hussain</span>
+                    <span class="deposits_wallet-meta">•••• 3215 &nbsp;|&nbsp; Expiry 01/20</span>
+                  </div>
+                  <span class="deposits_wallet-arrow">›</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="deposits_cards">
+            <div class="deposits_connector" aria-hidden="true">
+              <span class="deposits_connector-node deposits_connector-node--phone"></span>
+              <span class="deposits_connector-line"></span>
+              <span class="deposits_connector-node deposits_connector-node--cards"></span>
+            </div>
+            <div class="deposits_cards-stack" aria-live="polite">
+              <div class="deposits_card" data-card="6463"></div>
+              <div class="deposits_card" data-card="7788"></div>
+              <div class="deposits_card" data-card="3215"></div>
+            </div>
+            <div class="deposits_label">
+              <div class="deposits_label-icon" aria-hidden="true"></div>
+              <span class="deposits_label-label">Added</span>
+            </div>
+            <div class="deposits_ripples" aria-hidden="true">
+              <span class="deposits_ripple" data-index="1"></span>
+              <span class="deposits_ripple" data-index="2"></span>
+              <span class="deposits_ripple" data-index="3"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section data-anim="dots" class="demo-section" data-reveal-group style="padding: 2rem;">
       <h2 data-reveal>Subtle dots field</h2>
       <p data-reveal>Nearby dots softly scale and brighten with pointer proximity.</p>
@@ -684,8 +784,7 @@
       </style>
       <h2>Orbit spokes</h2>
       <p>Rings size themselves to the container and reposition each dot on resize.</p>
-      <div
-        style="position: relative; min-height: 60vh; height: clamp(420px, 60vh, 720px); overflow: hidden;">
+      <div style="position: relative; min-height: 60vh; height: clamp(420px, 60vh, 720px); overflow: hidden;">
         <div class="orbit_wrap" data-orbit-pending="true">
           <div class="orbit_ring"></div>
           <div class="orbit_ring"></div>
@@ -700,22 +799,13 @@
           <div class="orbit_dot"></div>
           <div class="orbit_dot"></div>
           <div class="orbit_pedestal">
-            <div
-              class="orbit_pedestal_circle orbit_pedestal_circle--outer"
-              data-follow-mouse
-              data-follow-depth="3">
+            <div class="orbit_pedestal_circle orbit_pedestal_circle--outer" data-follow-mouse data-follow-depth="3">
               <div class="orbit_pedestal_circle_core"></div>
             </div>
-            <div
-              class="orbit_pedestal_circle orbit_pedestal_circle--middle"
-              data-follow-mouse
-              data-follow-depth="6">
+            <div class="orbit_pedestal_circle orbit_pedestal_circle--middle" data-follow-mouse data-follow-depth="6">
               <div class="orbit_pedestal_circle_core"></div>
             </div>
-            <div
-              class="orbit_pedestal_circle orbit_pedestal_circle--inner"
-              data-follow-mouse
-              data-follow-depth="9">
+            <div class="orbit_pedestal_circle orbit_pedestal_circle--inner" data-follow-mouse data-follow-depth="9">
               <div class="orbit_pedestal_circle_core">
                 <div class="orbit_pedestal_logo" aria-hidden="true"></div>
               </div>

@@ -58,6 +58,13 @@ const resolvers = [
       const module = await import('../animations/cards/index.js');
       module.init(document);
     }
+  },
+  {
+    selector: byData(ATTR.anim, DATA_ATTRS.deposits),
+    load: async () => {
+      const module = await import('../animations/deposits/index.js');
+      module.init(document);
+    }
   }
 ];
 

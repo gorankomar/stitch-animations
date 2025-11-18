@@ -205,6 +205,7 @@ function buildGroupTree(root, options) {
           delay: toMs(readRevealAttr(child, 'revealDelay'), 0),
           stagger: readRevealAttr(child, 'revealStagger')
         });
+        walker(child, bucket);
         return;
       }
       walker(child, bucket);

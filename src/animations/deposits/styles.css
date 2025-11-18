@@ -1,0 +1,288 @@
+.deposits_wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 26rem;
+  isolation: isolate;
+}
+
+.deposits_wrap .features-graphic_cc_dots.deposits_background {
+  z-index: 0;
+  opacity: 0.45;
+}
+
+.deposits_content {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.5rem, 4vw, 3.75rem);
+  align-items: center;
+}
+
+.deposits_phone {
+  position: relative;
+  width: clamp(15rem, 36vw, 17rem);
+  margin: 0 auto;
+  aspect-ratio: 462 / 978;
+  border-radius: clamp(2.5rem, 8cqw, 3.6rem);
+  overflow: hidden;
+  container-type: inline-size;
+  border: clamp(0.2rem, 1.2cqw, 0.34rem) solid #c9c8c8;
+  box-shadow:
+    inset 0 0 0 clamp(0.15rem, 0.9cqw, 0.25rem) #0a0a0a,
+    0 1.25rem 2.5rem rgba(10, 10, 10, 0.2);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding:
+    clamp(0.9rem, 3cqw, 1.6rem)
+    clamp(0.8rem, 3.5cqw, 1.4rem)
+    clamp(1.2rem, 4cqw, 1.8rem);
+}
+
+.deposits_dynamic-island {
+  width: clamp(5rem, 34cqw, 7rem);
+  height: clamp(1.6rem, 4cqw, 2.1rem);
+  background: #000;
+  border-radius: clamp(1.5rem, 5cqw, 2rem);
+  margin: clamp(0.1rem, 1cqw, 0.3rem) auto;
+  justify-self: center;
+}
+
+.deposits_status-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  font-weight: 600;
+  font-size: clamp(0.85rem, 3cqw, 0.9rem);
+  letter-spacing: -0.02em;
+  color: #000;
+  gap: 0.5rem;
+  justify-items: center;
+  margin-bottom: clamp(0.6rem, 2.5cqw, 1rem);
+}
+
+.deposits_status-time {
+  font: inherit;
+}
+
+.deposits_status-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.25rem, 1cqw, 0.35rem);
+}
+
+.deposits_status-icon {
+  display: inline-flex;
+  width: clamp(1rem, 2.75cqw, 1.1rem);
+  height: auto;
+}
+
+.deposits_status-icon--wifi {
+  width: clamp(1.1rem, 3cqw, 1.15rem);
+}
+
+.deposits_status-icon--battery {
+  width: clamp(1.4rem, 4cqw, 1.5rem);
+}
+
+.deposits_status-icon svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.deposits_phone-body {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8rem, 3cqw, 1.25rem);
+}
+
+.deposits_phone-header {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  letter-spacing: -.02em;
+}
+
+.deposits_phone-eyebrow {
+  font-size: 7.7cqi;
+  font-weight: 600;
+  color: #3D3D3D;
+}
+
+.deposits_phone-balance {
+  background: #EFEFEF;
+  border-radius: clamp(0.7rem, 3cqw, 1rem);
+  padding: clamp(1rem, 3cqw, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.35rem, 1.5cqw, 0.45rem);
+}
+
+.deposits_phone-balance_label {
+  font-size: 5cqi;
+  color: #666;
+  font-weight: 500;
+  letter-spacing: 0em;
+}
+
+.deposits_phone-balance_value {
+  font-size: 10cqi;
+  font-weight: 700;
+}
+
+.deposits_phone-section {
+  margin: 0 0 0.65rem;
+  font-size: 4.5cqi;
+  font-weight: 600;
+  color: #3D3D3D;
+}
+
+.deposits_phone-wallets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deposits_wallet {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  border: 0.0625rem solid rgba(13, 13, 13, 0.08);
+  border-radius: clamp(0.7rem, 3cqw, 1rem);
+  padding: clamp(0.5rem, 2.5cqw, 0.75rem) clamp(0.6rem, 3cqw, 0.9rem);
+  background: #fdfdfd;
+}
+
+.deposits_wallet-logo {
+  width: clamp(1.8rem, 7cqw, 2.5rem);
+  height: clamp(1.1rem, 5cqw, 1.75rem);
+  border-radius: clamp(0.4rem, 2cqw, 0.6rem);
+  background: #fff;
+  border: 0.0625rem solid rgba(13, 13, 13, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.5rem, 2.2cqw, 0.65rem);
+  font-weight: 600;
+}
+
+.deposits_wallet-name {
+  display: block;
+  font-size: clamp(0.7rem, 2.5cqw, 0.85rem);
+  font-weight: 600;
+}
+
+.deposits_wallet-meta {
+  display: block;
+  font-size: clamp(0.6rem, 2.1cqw, 0.75rem);
+  color: #6b6b6b;
+}
+
+.deposits_wallet-arrow {
+  font-size: clamp(1rem, 4cqw, 1.25rem);
+  color: #a7a7a7;
+}
+
+.deposits_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.deposits_connector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(13, 13, 13, 0.45);
+}
+
+.deposits_connector-node {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: 0.125rem solid currentColor;
+  background: #fff;
+}
+
+.deposits_connector-line {
+  flex: 1;
+  height: 0.125rem;
+  background: currentColor;
+  min-width: 7.5rem;
+}
+
+.deposits_cards-stack {
+  position: relative;
+  width: clamp(15rem, 38vw, 21.25rem);
+  aspect-ratio: 1.6 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deposits_card {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  border: 0.0625rem solid rgba(13, 13, 13, 0.09);
+  background: linear-gradient(180deg, #fff, #f5f5f5);
+  box-shadow: 0 0.9375rem 2.8125rem rgba(13, 13, 13, 0.18);
+  transform-origin: center;
+}
+
+.deposits_card:nth-child(2) {
+  transform: translateY(0.875rem);
+  opacity: 0.85;
+}
+
+.deposits_card:nth-child(3) {
+  background: #111;
+  color: #fff;
+  transform: translateY(1.75rem);
+}
+
+.deposits_label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999rem;
+  background: #0070ff;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 81, 255, 0.35);
+}
+
+.deposits_label-icon {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 0.125rem solid #fff;
+}
+
+.deposits_ripples {
+  position: absolute;
+  inset: auto 0 -4.375rem;
+  margin: 0 auto;
+  width: clamp(11.25rem, 30vw, 16.25rem);
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.deposits_ripple {
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 999rem;
+  border: 0.0625rem solid rgba(13, 13, 13, 0.35);
+}

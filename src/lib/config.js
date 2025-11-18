@@ -27,5 +27,6 @@ export const DATA_ATTRS = Object.freeze({
   dotsBulge: 'dots-bulge',
   orbit: 'orbit',
   radial: 'radial',
-  cards: 'cards'
+  cards: 'cards',
+  deposits: 'deposits'
 });
