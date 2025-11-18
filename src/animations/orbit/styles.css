@@ -51,6 +51,17 @@ html.wf-design-mode .orbit_wrap .orbit_dot {
   z-index: 600;
 }
 
+.orbit_wrap .orbit_dot_inner {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
 .orbit_ring {
   position: absolute;
   left: 50%;

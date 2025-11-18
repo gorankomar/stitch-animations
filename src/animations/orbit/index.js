@@ -24,8 +24,8 @@ const ANIM = Object.freeze({
   ringDuration: 900,
   ringStagger: 210,
   ringStartScale: 0.1,
-  dotPathDuration: 1100,
-  dotScaleDuration: 900,
+  dotPathDuration: 1800,
+  dotScaleDuration: 1800,
   dotStagger: 90,
   dotRingLag: 120,
   dotPathSteps: 5
@@ -305,29 +305,36 @@ function animateSingleDot(placement, { delay = 0, ease }) {
     fill: 'forwards'
   });
 
-  const scaleAnimation = placement.dot.animate(
-    [
-      { offset: 0, opacity: 0, transform: toDotTransform(0) },
-      { offset: 0.12, opacity: 0.01, transform: toDotTransform(0) },
-      { offset: 0.32, opacity: 1, transform: toDotTransform(1.12) },
-      { offset: 0.52, opacity: 1, transform: toDotTransform(0.92) },
-      { offset: 0.72, opacity: 1, transform: toDotTransform(1.04) },
-      { offset: 1, opacity: 1, transform: toDotTransform(1) }
-    ],
-    {
-      duration: ANIM.dotScaleDuration,
-      delay,
-      easing: ease,
-      fill: 'forwards'
-    }
-  );
+  const innerScaleKeyframes = [
+    { offset: 0, opacity: 1, transform: toInnerTransform(0) },
+    { offset: 0.35, opacity: 1, transform: toInnerTransform(0.2) },
+    { offset: 0.55, opacity: 1, transform: toInnerTransform(0.95) },
+    { offset: 0.68, opacity: 1, transform: toInnerTransform(1.15) },
+    { offset: 0.78, opacity: 1, transform: toInnerTransform(0.87) },
+    { offset: 0.88, opacity: 1, transform: toInnerTransform(1.07) },
+    { offset: 0.94, opacity: 1, transform: toInnerTransform(0.97) },
+    { offset: 0.99, opacity: 1, transform: toInnerTransform(1.02) },
+    { offset: 1, opacity: 1, transform: toInnerTransform(1) }
+  ];
 
-  scaleAnimation.finished
-    .then(() => {
-      scaleAnimation.commitStyles();
-      scaleAnimation.cancel();
-    })
-    .catch(() => {});
+  const scaleAnimation = placement.inner
+    ? placement.inner.animate(innerScaleKeyframes, {
+        duration: ANIM.dotScaleDuration,
+        delay,
+        easing: ease,
+        fill: 'forwards'
+      })
+    : null;
+
+  const cleanupAnimation = (animation) =>
+    animation?.finished
+      .then(() => {
+        animation.commitStyles();
+        animation.cancel();
+      })
+      .catch(() => {});
+
+  cleanupAnimation(scaleAnimation);
 
   return pathAnimation;
 }
@@ -475,11 +482,14 @@ function primeInitialStates(layout) {
     el.style.transform = toRingTransform(ANIM.ringStartScale);
   });
   layout.dotPlacements.forEach((placement) => {
-    placement.dot.style.opacity = '0';
+    placement.dot.style.opacity = '1';
     placement.dot.style.left = formatPx(placement.startX);
     placement.dot.style.top = formatPx(placement.startY);
-    placement.dot.style.transform = toDotTransform(0);
-    if (placement.inner) placement.inner.style.transform = '';
+    placement.dot.style.transform = toDotTransform(1);
+    if (placement.inner) {
+      placement.inner.style.transform = toInnerTransform(0);
+      placement.inner.style.opacity = '1';
+    }
   });
 }
 
@@ -505,7 +515,7 @@ function commitDotState(placement) {
   placement.dot.style.left = formatPx(placement.x);
   placement.dot.style.top = formatPx(placement.y);
   placement.dot.style.transform = toDotTransform(1);
-  if (placement.inner) placement.inner.style.transform = '';
+  if (placement.inner) placement.inner.style.transform = toInnerTransform(1);
 }
 
 function commitPedestalState(layer) {
@@ -640,6 +650,10 @@ function toRingTransform(scale) {
 
 function toDotTransform(scale) {
   return `translate(-50%, -50%) scale(${scale})`;
+}
+
+function toInnerTransform(scale) {
+  return `scale(${scale})`;
 }
 
 function formatPx(value) {
