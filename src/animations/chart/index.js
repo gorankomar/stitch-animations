@@ -1,7 +1,7 @@
 import { byData } from '../../lib/dom.js';
 import { ATTR, DATA_ATTRS } from '../../lib/config.js';
 import { resolveRevealTimings, ensureSectionReveal } from '../../lib/effects/reveal-groups.js';
-import { whenVisible } from '../../lib/effects/threshold.js';
+import { whenVisible, resolveVisibilityThreshold } from '../../lib/effects/threshold.js';
 import './styles.css';
 import { createValueCounter } from '../../lib/effects/value-counter.js';
 
@@ -372,13 +372,4 @@ function setupChartSection(section, sectionThreshold) {
     numCounter.dispose();
     revealController.cancel();
   };
-}
-
-function resolveVisibilityThreshold(el, fallback) {
-  if (!el) return fallback;
-  const parsed = Number.parseFloat(el.dataset?.visibilityThreshold ?? '');
-  if (!Number.isFinite(parsed)) return fallback;
-  if (parsed <= 0) return 0;
-  if (parsed >= 1) return 1;
-  return parsed;
 }

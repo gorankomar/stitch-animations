@@ -1,7 +1,7 @@
 import { byData } from '../../lib/dom.js';
 import { ATTR, DATA_ATTRS } from '../../lib/config.js';
 import { ensureSectionReveal } from '../../lib/effects/reveal-groups.js';
-import { whenVisible } from '../../lib/effects/threshold.js';
+import { whenVisible, resolveVisibilityThreshold } from '../../lib/effects/threshold.js';
 import { createDotsFieldBulge } from '../../lib/effects/dots-field-bulge.js';
 import '../dots/styles.css';
 
@@ -31,14 +31,4 @@ function setupDotsSection(section) {
     disposeDots();
     revealController.cancel();
   };
-}
-
-function resolveVisibilityThreshold(element, fallback) {
-  const raw = element?.dataset?.visibilityThreshold;
-  if (raw == null) return fallback;
-  const parsed = Number.parseFloat(raw);
-  if (!Number.isFinite(parsed)) return fallback;
-  if (parsed <= 0) return 0;
-  if (parsed >= 1) return 1;
-  return parsed;
 }

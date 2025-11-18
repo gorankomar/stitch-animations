@@ -51,15 +51,22 @@ export function whenVisible(target, callback, options = {}) {
   };
 }
 
+export function resolveVisibilityThreshold(target, fallback = DEFAULT_THRESHOLD) {
+  if (typeof fallback !== 'number') {
+    fallback = DEFAULT_THRESHOLD;
+  }
+  const attrValue = target?.dataset?.[DATA_ATTR];
+  if (attrValue != null && attrValue !== '') {
+    return clamp01(attrValue, clamp01(fallback));
+  }
+  return clamp01(fallback);
+}
+
 function resolveThreshold(target, override) {
   if (typeof override === 'number') {
     return clamp01(override);
   }
-  const attrValue = target?.dataset?.[DATA_ATTR];
-  if (attrValue != null) {
-      return clamp01(attrValue);
-  }
-  return DEFAULT_THRESHOLD;
+  return resolveVisibilityThreshold(target, DEFAULT_THRESHOLD);
 }
 
 function buildThresholdList(value) {

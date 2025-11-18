@@ -1,3 +1,5 @@
+import { readMotionEasingCurve } from '../motion.js';
+
 const DEFAULT_OPTIONS = {
   bgColor: 'transparent',
   dotColor: 'rgba(196,200,208,.92)',
@@ -35,7 +37,7 @@ export function createDotsFieldBulge({
 
   const OPT = { ...DEFAULT_OPTIONS, ...options, click: { ...DEFAULT_OPTIONS.click, ...options.click } };
   const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-  const motionEase = resolveMotionEase();
+  const motionEase = readMotionEasingCurve();
   const falloffEase = (t) => 1 - (1 - t) * (1 - t);
 
   let width = 0;
@@ -291,127 +293,5 @@ export function createDotsFieldBulge({
     if (rafId) {
       window.cancelAnimationFrame(rafId);
     }
-  };
-}
-
-function resolveMotionEase() {
-  const fallback = (t) => 1 - Math.pow(1 - t, 3);
-  if (typeof window === 'undefined') return fallback;
-  try {
-    const computed = getComputedStyle(document.documentElement);
-    const raw = computed.getPropertyValue('--motion-ease-primary')?.trim();
-    if (!raw) return fallback;
-    const match = raw.match(/cubic-bezier\(([^)]+)\)/i);
-    if (!match) return fallback;
-    const parts = match[1]
-      .split(',')
-      .map((part) => Number.parseFloat(part.trim()))
-      .filter((num) => Number.isFinite(num));
-    if (parts.length !== 4) return fallback;
-    const easing = cubicBezier(parts[0], parts[1], parts[2], parts[3]);
-    return typeof easing === 'function' ? easing : fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function cubicBezier(p1x, p1y, p2x, p2y) {
-  if (
-    !Number.isFinite(p1x) ||
-    !Number.isFinite(p1y) ||
-    !Number.isFinite(p2x) ||
-    !Number.isFinite(p2y)
-  ) {
-    return null;
-  }
-
-  // From https://github.com/gre/bezier-easing (MIT)
-  const NEWTON_ITERATIONS = 4;
-  const NEWTON_MIN_SLOPE = 0.001;
-  const SUBDIVISION_PRECISION = 0.0000001;
-  const SUBDIVISION_MAX_ITERATIONS = 10;
-  const kSplineTableSize = 11;
-  const kSampleStepSize = 1.0 / (kSplineTableSize - 1);
-
-  const sampleValues = new Float32Array(kSplineTableSize);
-  for (let i = 0; i < kSplineTableSize; i++) {
-    sampleValues[i] = calcBezier(i * kSampleStepSize, p1x, p2x);
-  }
-
-  function A(a1, a2) {
-    return 1.0 - 3.0 * a2 + 3.0 * a1;
-  }
-  function B(a1, a2) {
-    return 3.0 * a2 - 6.0 * a1;
-  }
-  function C(a1) {
-    return 3.0 * a1;
-  }
-
-  function calcBezier(t, a1, a2) {
-    return ((A(a1, a2) * t + B(a1, a2)) * t + C(a1)) * t;
-  }
-  function getSlope(t, a1, a2) {
-    return 3.0 * A(a1, a2) * t * t + 2.0 * B(a1, a2) * t + C(a1);
-  }
-
-  function getTForX(x) {
-    let intervalStart = 0.0;
-    let currentSample = 1;
-    const lastSample = kSplineTableSize - 1;
-
-    for (
-      ;
-      currentSample !== lastSample && sampleValues[currentSample] <= x;
-      ++currentSample
-    ) {
-      intervalStart += kSampleStepSize;
-    }
-    --currentSample;
-
-    const dist =
-      (x - sampleValues[currentSample]) /
-      (sampleValues[currentSample + 1] - sampleValues[currentSample]);
-    const guessForT = intervalStart + dist * kSampleStepSize;
-
-    const initialSlope = getSlope(guessForT, p1x, p2x);
-    if (initialSlope >= NEWTON_MIN_SLOPE) {
-      return newtonRaphsonIterate(x, guessForT);
-    }
-    if (initialSlope === 0) {
-      return guessForT;
-    }
-    return binarySubdivide(x, intervalStart, intervalStart + kSampleStepSize);
-  }
-
-  function newtonRaphsonIterate(x, guessT) {
-    for (let i = 0; i < NEWTON_ITERATIONS; ++i) {
-      const currentSlope = getSlope(guessT, p1x, p2x);
-      if (currentSlope === 0) return guessT;
-      const currentX = calcBezier(guessT, p1x, p2x) - x;
-      guessT -= currentX / currentSlope;
-    }
-    return guessT;
-  }
-
-  function binarySubdivide(x, a, b) {
-    let currentX;
-    let currentT;
-    let i = 0;
-    do {
-      currentT = a + (b - a) / 2;
-      currentX = calcBezier(currentT, p1x, p2x) - x;
-      if (currentX > 0) {
-        b = currentT;
-      } else {
-        a = currentT;
-      }
-    } while (Math.abs(currentX) > SUBDIVISION_PRECISION && ++i < SUBDIVISION_MAX_ITERATIONS);
-    return currentT;
-  }
-
-  return function BezierEasing(x) {
-    if (p1x === p1y && p2x === p2y) return x;
-    return calcBezier(getTForX(x), p1y, p2y);
   };
 }

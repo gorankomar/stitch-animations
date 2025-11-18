@@ -36,13 +36,15 @@ stitch-animations/
 - `src/lib/easing.js` – Canonical easing + timing constants.
 - `src/lib/config.js` – Centralized selectors, class names, thresholds, and data-attr handles.
 - `src/lib/dom.js` – Thin wrappers for `querySelector`, dataset helpers, and attribute builders.
-- `src/lib/math.js` / `src/lib/motion.js` – Shared math helpers, REM conversion, reduced-motion detection.
-- `src/lib/observer.js` – IntersectionObserver helpers for guarded entrances.
+- `src/lib/math.js` / `src/lib/motion.js` – Shared math helpers, REM conversion, reduced-motion detection, and CSS-driven easing readers (`readMotionEaseValue`, `readMotionEasingCurve`).
+- `src/lib/observer.js` – IntersectionObserver helpers plus a debounced `observeResize` wrapper for ResizeObserver fallbacks.
 - `src/lib/raf.js` – RequestAnimationFrame loop helpers.
 - `src/lib/effects/follow-group.js` – Shared pointer-follow engine that lets any `[data-follow-root]` drive one or many `[data-follow-mouse]` layers with depth-aware easing.
 - `src/lib/effects/reveal-groups.js` – Timeline builder that understands `[data-reveal-group]`, nested clusters, and inline overrides.
 - `src/lib/effects/stacked-windows.js` – Layout helper for the stacked window motif (desktop + mobile patterns, auto-indexing, inline CSS vars).
-- `src/lib/effects/threshold.js` – Run animation setups once a section is `X%` visible (default `0.25`, override with `data-visibility-threshold` or options).
+- `src/lib/effects/threshold.js` – Run animation setups once a section is `X%` visible (default `0.25`, override with `data-visibility-threshold` or options) and reuse `resolveVisibilityThreshold()` wherever the attr is read.
+- `src/lib/effects/press-ripple.js` – Pointer-down class toggler that restarts CSS ripple/press animations without duplicating event code.
+- `src/lib/effects/glow-sweep.js` – Template-driven glow spawner that snaps to pointer direction, loops while visible, and respects `data-visibility-threshold`.
 
 ### Effect Recipes
 
@@ -118,6 +120,7 @@ export function init(root = document) {
 - Default threshold is `25%` of the element’s area. Override per-section via `data-visibility-threshold="0.4"` or per call with `{ threshold: 0.4 }`.
 - `setup` should return a cleanup function; `whenVisible` ensures that cleanup runs when the animation is torn down.
 - Under the hood it uses `IntersectionObserver`, but it falls back to immediate execution when the API is unavailable.
+- Need the same logic outside of `whenVisible`? Import `resolveVisibilityThreshold(element, fallback)` from the same module to clamp the attr consistently.
 
 ### Animation Contract
 
@@ -186,7 +189,7 @@ Every section is discovered through `data-anim="<name>"`. The helpers below key 
 | Attribute | Scope | Description |
 | --- | --- | --- |
 | `data-anim="<name>"` | Section wrapper | Registers the block with the resolver so the matching animation module can boot. |
-| `data-visibility-threshold="<0-1>"` | Sections or effect sub-wrappers | Overrides the default IntersectionObserver threshold (see each module for defaults). |
+| `data-visibility-threshold="<0-1>"` | Sections or effect sub-wrappers | Overrides the default IntersectionObserver threshold (see each module for defaults); read it programmatically via `resolveVisibilityThreshold(el, fallback)`. |
 | `data-reveal-group` / `data-reveal` | Any element | Opts into the shared entrance controller. Optional overrides: `data-reveal-delay`, `data-reveal-duration`, `data-reveal-offset`, `data-reveal-stagger`, `data-reveal-ease`, `data-reveal-opacity-duration`. |
 | `data-follow-root` | Container | Enables pointer-follow for all nested `[data-follow-mouse]`. |
 | `data-follow-mouse` | Layer | Marks an element as a follower. Optional tuning: `data-follow-depth`, `data-strength`, `data-max-offset`, `data-axis`. |
@@ -202,7 +205,8 @@ Every section is discovered through `data-anim="<name>"`. The helpers below key 
 
 - Place `data-follow-root` on `.api-graphic_wrap` (or an outer container) and `data-follow-mouse` on `.api-graphic_track`. Optional `data-follow-depth` per badge lets you bias the parallax strength.
 - `data-visibility-threshold` on the wrap caps when the glow loop/ripple becomes active (defaults to `0.5` if unspecified).
-- The glow template is pulled from `.api-graphic_glow`; keep it `aria-hidden` and the script will clone it when needed—no extra API required.
+- The glow template is pulled from `.api-graphic_glow`; keep it `aria-hidden` and the shared `createGlowSweep` helper will clone it when needed—no extra API required.
+- Pointer presses run through `createPressRipple`, so every `[data-follow-root]` wrapper can restart both the button animation (`is-pressing`) and the ripple template (`is-ripple`) without duplicating listeners.
 
 #### Cards stack (`data-anim="cards"`)
 

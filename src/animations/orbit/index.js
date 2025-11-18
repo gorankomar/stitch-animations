@@ -1,8 +1,10 @@
 import { byData, qsa } from '../../lib/dom.js';
 import { ATTR, DATA_ATTRS } from '../../lib/config.js';
 import { ensureSectionReveal } from '../../lib/effects/reveal-groups.js';
-import { whenVisible } from '../../lib/effects/threshold.js';
+import { whenVisible, resolveVisibilityThreshold } from '../../lib/effects/threshold.js';
 import { createFollowGroup } from '../../lib/effects/follow-group.js';
+import { readMotionEaseValue } from '../../lib/motion.js';
+import { observeResize } from '../../lib/observer.js';
 import './styles.css';
 
 const hasWindow = typeof window !== 'undefined';
@@ -64,7 +66,7 @@ function setupOrbit(section) {
   const revealController = ensureSectionReveal(section);
   revealController.ensure();
 
-  const ease = resolveMotionEase(section);
+  const ease = readMotionEaseValue(section, '--motion-ease-primary', FALLBACK_EASE);
   const controllers = wraps.map((wrap) => createOrbitWrapController(wrap));
   controllers.forEach((controller) => controller.observe());
 
@@ -564,39 +566,6 @@ function cancelTrackedAnimations(state, options = {}) {
     state.pendingLayoutReason = null;
     state.requestLayout?.({ force: true, immediate });
   }
-}
-
-function observeResize(element, callback) {
-  if (typeof ResizeObserver === 'function') {
-    let raf;
-    const observer = new ResizeObserver(() => {
-      if (raf != null) cancelFrame(raf);
-      raf = requestFrame(() => {
-        callback();
-        raf = undefined;
-      });
-    });
-    observer.observe(element);
-    return () => observer.disconnect();
-  }
-  const handler = () => callback();
-  window.addEventListener('resize', handler);
-  return () => window.removeEventListener('resize', handler);
-}
-
-function resolveVisibilityThreshold(element, fallback) {
-  const raw = element?.dataset?.visibilityThreshold;
-  if (raw == null) return fallback;
-  const parsed = Number.parseFloat(raw);
-  if (!Number.isFinite(parsed)) return fallback;
-  if (parsed <= 0) return 0;
-  if (parsed >= 1) return 1;
-  return parsed;
-}
-
-function resolveMotionEase(element) {
-  const styles = getComputedStyle(element || document.documentElement);
-  return styles.getPropertyValue('--motion-ease-primary')?.trim() || FALLBACK_EASE;
 }
 
 function readSafeMargin(element) {
