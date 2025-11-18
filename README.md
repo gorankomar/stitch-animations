@@ -145,6 +145,7 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `orbit` | Multi-ring orbit with parallax dots, ripple trigger, and pedestal badge. | `follow-group`, ripple helper, ResizeObserver |
 | `radial` | Drag-driven radial console with inertia + intro observer. | IntersectionObserver |
 | `cards` | Face unlock inspired credit card stack w/ layered mouse follow + reveal staging. | `follow-group`, IntersectionObserver |
+| `deposits` | Hybrid dots background + live counter/time readout inside a phone shell. | dots field helper, value counter |
 
 ### Entry Points / Bundles
 
@@ -175,6 +176,66 @@ All entry files are exposed to Vite via `vite.config.js`, yielding hashed output
   - `data-strength` – lerp factor while the pointer is moving (default range `0.04–0.12` mapped from depth).
   - `data-max-offset` – maximum pixel offset per axis (default range `10–40` mapped from depth).
   - `data-axis` – limit motion to `x`, `y`, or `both`.
+
+### Effect Data Attributes
+
+Every section is discovered through `data-anim="<name>"`. The helpers below key off additional data attributes so you can author markup declaratively.
+
+#### Shared handles
+
+| Attribute | Scope | Description |
+| --- | --- | --- |
+| `data-anim="<name>"` | Section wrapper | Registers the block with the resolver so the matching animation module can boot. |
+| `data-visibility-threshold="<0-1>"` | Sections or effect sub-wrappers | Overrides the default IntersectionObserver threshold (see each module for defaults). |
+| `data-reveal-group` / `data-reveal` | Any element | Opts into the shared entrance controller. Optional overrides: `data-reveal-delay`, `data-reveal-duration`, `data-reveal-offset`, `data-reveal-stagger`, `data-reveal-ease`, `data-reveal-opacity-duration`. |
+| `data-follow-root` | Container | Enables pointer-follow for all nested `[data-follow-mouse]`. |
+| `data-follow-mouse` | Layer | Marks an element as a follower. Optional tuning: `data-follow-depth`, `data-strength`, `data-max-offset`, `data-axis`. |
+| `data-counter-*` | Value labels | Used by `value-counter`: `data-counter-initial`, `data-counter-value`, `data-counter-duration`, `data-counter-prefix`, `data-counter-suffix`, `data-counter-decimals`, `data-counter-locale`, `data-counter-grouping`, `data-counter-snap`. |
+
+#### Hero (`data-anim="hero"`)
+
+- Wrap screens with `.stacked-windows_wrap`; each child `.stacked-windows_img-wrap` can inherit `data-reveal` overrides.
+- Per wrap you can tweak entrance pacing with `data-reveal-duration`, `data-reveal-stagger`, and the module-specific shorthands `data-dur` / `data-stagger` (if present they win over computed CSS custom props).
+- The section only needs `data-reveal-group` + `data-anim="hero"`—layout, class toggles, and ready timers run automatically.
+
+#### API hover (`data-anim="api"`)
+
+- Place `data-follow-root` on `.api-graphic_wrap` (or an outer container) and `data-follow-mouse` on `.api-graphic_track`. Optional `data-follow-depth` per badge lets you bias the parallax strength.
+- `data-visibility-threshold` on the wrap caps when the glow loop/ripple becomes active (defaults to `0.5` if unspecified).
+- The glow template is pulled from `.api-graphic_glow`; keep it `aria-hidden` and the script will clone it when needed—no extra API required.
+
+#### Cards stack (`data-anim="cards"`)
+
+- Same follow data attributes as above; cards, pills, and floating chips simply add `data-follow-mouse` plus (optionally) `data-follow-depth` to layer them.
+- The dots background just needs the standard `.features-graphic_cc_dots-canvas` + `.features-graphic_cc_dots-sensor` pairing; the JS will read them automatically when it sees `data-anim="cards"`.
+
+#### Deposits (`data-anim="deposits"`)
+
+- Reuses the dots background handles plus value counters. The primary balance label accepts the full `data-counter-*` API as shown in the demo (`data-counter-prefix="$"`, `data-counter-initial="0"`, etc.).
+- Any element with `[data-deposits-time]` receives the "live clock" update that runs every ~3s.
+- `data-visibility-threshold` on the section controls when the dots/counter boot (demo uses `0.5`).
+
+#### Chart (`data-anim="chart"`)
+
+- Drop `data-visibility-threshold` on the section or `.scale-graph_wrap` to delay the setup until the sparkline is a certain percentage inside the viewport (`0.5` by default).
+- The large headline number uses a single `data-counter-*` config so you can ship the formatted number in the markup and let the counter animate toward the dataset value.
+- The tooltip date labels use `data-date="past"` and `data-date="today"`—the script rewrites their text nodes based on the generated date range.
+
+#### Dots fields (`data-anim="dots"` / `data-anim="dots-bulge"`)
+
+- Both require the expected `<canvas>` + sensor pair. Each section can override the trigger ratio via `data-visibility-threshold`.
+- The bulge variant reuses the legacy displacement shader, so it simply switches to the alternate helper by opting into `data-anim="dots-bulge"`.
+
+#### Orbit (`data-anim="orbit"`)
+
+- The parent section usually carries `data-follow-root` because the pedestal badge and inner circles are regular `[data-follow-mouse]` followers.
+- Each `.orbit_wrap` should start with `data-orbit-pending="true"` so CSS can keep it hidden until the script computes sizes; the controller removes the attribute once everything is laid out.
+- Optional `data-visibility-threshold` works the same as other effects if you need the orbits to wait longer before animating.
+
+#### Radial console (`data-anim="radial"`)
+
+- Provide `data-visibility-threshold` when you want the drag/inertia logic to wait for a different intersection ratio (defaults to `0.35`).
+- The canvas is referenced via `#radial_canvas` and the helper reads theme colors from CSS custom properties, so only the section + data attr are needed for JS.
 
 ### Adding A New Animation
 
