@@ -16,7 +16,7 @@ Open `http://localhost:5173/` to preview the demo markup. The script tag inside 
 - `npm run dev` – Vite dev server with hot reloading.
 - `npm run build` / `npm run build:all` – Generates hashed bundles for every entry in `src/entry/`.
 - `npm run build:hero` – Example of building with an SSR manifest (handy for feature-specific deployments).
-- `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:deposits`, `:orbit`, `:small-cards`) – Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments.
+- `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:deposits`, `:orbit`, `:small-cards`, `:window-graphic`) – Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments.
 - `npm run preview` – Serves the production build from `dist/`.
 
 ## Project Layout
@@ -26,7 +26,7 @@ stitch-animations/
 ├─ legacy/                  # Original scripts/styles (read-only references)
 ├─ src/
 │  ├─ lib/                  # Shared utilities & effects
-│  ├─ animations/           # One module per animation (hero, api, chart, dots, dots-bulge, radial, cards, orbit)
+│  ├─ animations/           # One module per animation (hero, api, chart, dots, dots-bulge, radial, cards, orbit, window-graphic)
 │  └─ entry/                # Bundles: page-all, page-all-lite, feature-*
 ├─ public/index.html        # Demo markup
 ├─ dist/                    # Build output (gitignored)
@@ -46,6 +46,7 @@ stitch-animations/
 - `src/lib/effects/threshold.js` – Run animation setups once a section is `X%` visible (default `0.25`, override with `data-visibility-threshold` or options) and reuse `resolveVisibilityThreshold()` wherever the attr is read.
 - `src/lib/effects/press-ripple.js` – Pointer-down class toggler that restarts CSS ripple/press animations without duplicating event code.
 - `src/lib/effects/glow-sweep.js` – Template-driven glow spawner that snaps to pointer direction, loops while visible, and respects `data-visibility-threshold`.
+- `src/lib/effects/zoom-lens.js` – Reusable cursor magnifier for dense graphics; opt in with `data-zoom-lens` and tune size/scale/border from markup.
 
 ### Effect Recipes
 
@@ -123,6 +124,26 @@ export function init(root = document) {
 - Under the hood it uses `IntersectionObserver`, but it falls back to immediate execution when the API is unavailable.
 - Need the same logic outside of `whenVisible`? Import `resolveVisibilityThreshold(element, fallback)` from the same module to clamp the attr consistently.
 
+#### Zoom lens
+
+`initZoomLenses(root)` attaches a circular magnifier to any element with `data-zoom-lens`.
+
+```js
+import { initZoomLenses } from '../lib/effects/zoom-lens.js';
+
+const dispose = initZoomLenses(document);
+```
+
+Markup contract:
+
+- `data-zoom-lens` enables the effect on the hovered element.
+- `data-zoom-lens-size="240"` sets the lens diameter in pixels.
+- `data-zoom-lens-scale="1.9"` sets the zoom multiplier.
+- `data-zoom-lens-border="#b8b8b8"` overrides the default gray outline.
+- `data-zoom-lens-target=".selector"` magnifies a specific child instead of the whole host.
+
+The lens uses a cloned DOM mirror rather than a canvas screenshot. While the lens is active, it watches the source with `MutationObserver`, so reveal classes, inline styles, and animated counter text stay synced with the original element.
+
 ### Animation Contract
 
 Each animation exposes `init(root = document)` from `src/animations/<name>/index.js`.
@@ -150,6 +171,8 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `radial` | Drag-driven radial console with inertia + intro observer. | IntersectionObserver |
 | `cards` | Face unlock inspired credit card stack w/ layered mouse follow + reveal staging. | `follow-group`, IntersectionObserver |
 | `deposits` | Hybrid dots background + live counter/time readout inside a phone shell. | dots field helper, value counter |
+| `small-cards` | Compact card cluster using shared follow/reveal utilities. | `follow-group`, IntersectionObserver |
+| `window-graphic` | Dense loan/payment form graphic with reveal sequencing, value counters, current date labels, and optional zoom lens. | reveal groups, value counter, zoom lens |
 
 ### Entry Points / Bundles
 
@@ -158,8 +181,8 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `src/entry/page-all.js` | Imports and initializes every animation eagerly. |
 | `src/entry/page-all-lite.js` | DOM-aware resolver that dynamic-imports only animations present on the page. |
 | `src/entry/feature-hero.js` | Feature-specific bundle for the hero section. |
-| `src/entry/feature-api.js` / `feature-chart.js` / `feature-dots.js` / `feature-dots-bulge.js` / `feature-radial.js` / `feature-cards.js` / `feature-deposits.js` / `feature-orbit.js` / `feature-small-cards.js` | Ready-made single-animation bundles for the remaining demos. |
-| `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:deposits`, `:orbit`, `:small-cards`) | Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments. |
+| `src/entry/feature-api.js` / `feature-chart.js` / `feature-dots.js` / `feature-dots-bulge.js` / `feature-radial.js` / `feature-cards.js` / `feature-deposits.js` / `feature-orbit.js` / `feature-small-cards.js` / `feature-window-graphic.js` | Ready-made single-animation bundles for the remaining demos. |
+| `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:deposits`, `:orbit`, `:small-cards`, `:window-graphic`) | Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments. |
 
 All entry files are exposed to Vite via `vite.config.js`, yielding hashed outputs like `dist/page-all.<hash>.js`. Tree-shaking ensures a `feature-*` build only contains the animation it needs plus shared libs once.
 
@@ -197,6 +220,7 @@ Future docs note: planned Webflow-facing tooltip copy, optional attribute behavi
 | `data-follow-root` | Container | Enables pointer-follow for all nested `[data-follow-mouse]`. |
 | `data-follow-mouse` | Layer | Marks an element as a follower. Optional tuning: `data-follow-depth`, `data-strength`, `data-max-offset`, `data-axis`. |
 | `data-counter-*` | Value labels | Used by `value-counter`: `data-counter-initial`, `data-counter-value`, `data-counter-duration`, `data-counter-prefix`, `data-counter-suffix`, `data-counter-decimals`, `data-counter-locale`, `data-counter-grouping`, `data-counter-snap`. |
+| `data-zoom-lens` | Dense graphic wrapper | Enables the reusable magnifier. Optional tuning: `data-zoom-lens-size`, `data-zoom-lens-scale`, `data-zoom-lens-border`, `data-zoom-lens-target`. |
 
 #### Hero (`data-anim="hero"`)
 
@@ -238,6 +262,13 @@ Future docs note: planned Webflow-facing tooltip copy, optional attribute behavi
 - The parent section usually carries `data-follow-root` because the pedestal badge and inner circles are regular `[data-follow-mouse]` followers.
 - Each `.orbit_wrap` should start with `data-orbit-pending="true"` so CSS can keep it hidden until the script computes sizes; the controller removes the attribute once everything is laid out.
 - Optional `data-visibility-threshold` works the same as other effects if you need the orbits to wait longer before animating.
+
+#### Window graphic (`data-anim="window-graphic"`)
+
+- Add `data-reveal-group` to the section and `data-reveal` only to the exact elements you want sequenced. The window-graphic module no longer injects reveal targets automatically.
+- Value labels use `data-value` plus optional `data-format`. Adjacent `[data-decimal]` nodes can either stay static or animate when `data-animate="true"`.
+- Date labels use `data-date="true"` and optional `data-time="true"` to render the current date/time.
+- Add `data-zoom-lens` to the graphic wrapper for the magnifier. The demo uses `data-zoom-lens-size="240"` and `data-zoom-lens-scale="1.9"`.
 
 #### Radial console (`data-anim="radial"`)
 
