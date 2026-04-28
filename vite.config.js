@@ -11,7 +11,14 @@ const SINGLE_ENTRIES = {
   'dots-bulge': { input: entry('feature-dots-bulge'), fileBase: 'feature-dots-bulge', globalName: 'FeatureDotsBulge' },
   radial: { input: entry('feature-radial'), fileBase: 'feature-radial', globalName: 'FeatureRadial' },
   cards: { input: entry('feature-cards'), fileBase: 'feature-cards', globalName: 'FeatureCards' },
-  orbit: { input: entry('feature-orbit'), fileBase: 'feature-orbit', globalName: 'FeatureOrbit' }
+  deposits: { input: entry('feature-deposits'), fileBase: 'feature-deposits', globalName: 'FeatureDeposits' },
+  orbit: { input: entry('feature-orbit'), fileBase: 'feature-orbit', globalName: 'FeatureOrbit' },
+  'small-cards': { input: entry('feature-small-cards'), fileBase: 'feature-small-cards', globalName: 'FeatureSmallCards' },
+  'window-graphic': {
+    input: entry('feature-window-graphic'),
+    fileBase: 'feature-window-graphic',
+    globalName: 'FeatureWindowGraphic'
+  }
 };
 
 const singleKey = process.env.SINGLE_ENTRY;
@@ -76,7 +83,10 @@ export default defineConfig({
             'feature-dots-bulge': entry('feature-dots-bulge'),
             'feature-radial': entry('feature-radial'),
             'feature-cards': entry('feature-cards'),
-            'feature-orbit': entry('feature-orbit')
+            'feature-deposits': entry('feature-deposits'),
+            'feature-orbit': entry('feature-orbit'),
+            'feature-small-cards': entry('feature-small-cards'),
+            'feature-window-graphic': entry('feature-window-graphic')
           },
           output: sharedOutput
         }

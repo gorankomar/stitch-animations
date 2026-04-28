@@ -919,6 +919,7 @@ function buildParityDistribution(ringInfo, dotCount, outerPrefersEven) {
     cursor += 1;
   }
 
+  enforceDescendingCounts(ringInfo, counts);
   return counts;
 }
 
@@ -943,6 +944,27 @@ function allocateDotsByWeight(ringInfo, dotCount) {
 
   if (remaining > 0) {
     counts[ringCount - 1] += remaining;
+  }
+
+  enforceDescendingCounts(ringInfo, counts);
+  return counts;
+}
+
+function enforceDescendingCounts(ringInfo, counts) {
+  if (!ringInfo?.length || !counts?.length) return counts;
+  const ordered = ringInfo
+    .map((info, index) => ({ index, radius: info.radius ?? 0 }))
+    .sort((a, b) => b.radius - a.radius);
+
+  for (let i = 0; i < ordered.length; i++) {
+    const largerIdx = ordered[i].index;
+    for (let j = i + 1; j < ordered.length; j++) {
+      const smallerIdx = ordered[j].index;
+      while (counts[largerIdx] < counts[smallerIdx] && counts[smallerIdx] - 2 >= 1) {
+        counts[largerIdx] += 2;
+        counts[smallerIdx] -= 2;
+      }
+    }
   }
 
   return counts;

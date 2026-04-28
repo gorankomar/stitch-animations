@@ -65,6 +65,20 @@ const resolvers = [
       const module = await import('../animations/deposits/index.js');
       module.init(document);
     }
+  },
+  {
+    selector: byData(ATTR.anim, DATA_ATTRS.smallCards),
+    load: async () => {
+      const module = await import('../animations/small-cards/index.js');
+      module.init(document);
+    }
+  },
+  {
+    selector: byData(ATTR.anim, DATA_ATTRS.windowGraphic),
+    load: async () => {
+      const module = await import('../animations/window-graphic/index.js');
+      module.init(document);
+    }
   }
 ];
 

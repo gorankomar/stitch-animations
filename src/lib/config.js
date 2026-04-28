@@ -28,5 +28,7 @@ export const DATA_ATTRS = Object.freeze({
   orbit: 'orbit',
   radial: 'radial',
   cards: 'cards',
-  deposits: 'deposits'
+  deposits: 'deposits',
+  smallCards: 'small-cards',
+  windowGraphic: 'window-graphic'
 });

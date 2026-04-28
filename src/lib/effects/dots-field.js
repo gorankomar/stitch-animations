@@ -1,30 +1,18 @@
 import { clamp } from '../math.js';
-import { readMotionEasingCurve } from '../motion.js';
-
 const DEFAULT_OPTIONS = {
   bgColor: 'transparent',
-  dotColor: 'rgba(196,200,208,.92)',
+  dotColor: 'rgba(196,200,208,.5)',
   baseSize: 1.2,
-  scaleBoost: 1,
-  baseAlpha: 1,
-  minAlpha: 0.12,
+  baseAlpha: 0.52,
+  highlightAlpha: 0.92,
+  minAlpha: 0.25,
   gap: 20,
-  radius: 520,
-  spring: 0.05,
-  damping: 0.5,
-  click: {
-    speed: 900,
-    wavelength: 340,
-    timeDecay: 3.4,
-    distFalloff: 0.0012,
-    amp: 0.12,
-    sizeScale: 12,
-    alphaScale: 0.45,
-    offsetScale: 50,
-    centerDipRadius: 7,
-    centerDipAmp: 1.2
-  },
-  retreatMs: 350
+  radius: 200,
+  outsideFade: 500,
+  blurWidth: 0.5,
+  spring: 0.015,
+  damping: 0.78,
+  transitionMs: 700
 };
 
 export function createDotsField({
@@ -38,9 +26,8 @@ export function createDotsField({
   const ctx = canvas.getContext('2d');
   if (!ctx) return () => {};
 
-  const OPT = { ...DEFAULT_OPTIONS, ...options, click: { ...DEFAULT_OPTIONS.click, ...options.click } };
+  const OPT = { ...DEFAULT_OPTIONS, ...options };
   const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-  const motionEase = readMotionEasingCurve();
   const falloffEase = (t) => 1 - (1 - t) * (1 - t);
 
   let width = 0;
@@ -50,30 +37,60 @@ export function createDotsField({
   const OFF = { x: -9999, y: -9999 };
   const target = { x: OFF.x, y: OFF.y };
   const pointer = { x: OFF.x, y: OFF.y, vx: 0, vy: 0 };
+  let pointerActive = false;
+  let retreatCenter = { x: OFF.x, y: OFF.y };
+  let effectProgress = 0;
+  let effectTarget = 0;
 
-  let retreating = false;
-  let retreatStart = 0;
-  let retreatFromX = 0;
-  let retreatFromY = 0;
-
-  const ripples = [];
-  const nowSec = () => performance.now() / 1000;
   const nowMs = () => performance.now();
+  let lastStepMs = nowMs();
 
   function resize() {
+    const prevPixelWidth = canvas.width || 0;
+    const prevPixelHeight = canvas.height || 0;
+    let snapshot = null;
+    if (prevPixelWidth && prevPixelHeight) {
+      const buffer = document.createElement('canvas');
+      buffer.width = prevPixelWidth;
+      buffer.height = prevPixelHeight;
+      const bufferCtx = buffer.getContext('2d');
+      if (bufferCtx) {
+        bufferCtx.drawImage(canvas, 0, 0);
+        snapshot = buffer;
+      }
+    }
+
     width = canvas.clientWidth;
     height = canvas.clientHeight;
     canvas.width = Math.floor(width * DPR);
     canvas.height = Math.floor(height * DPR);
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
 
+    if (snapshot) {
+      ctx.save();
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.drawImage(
+        snapshot,
+        0,
+        0,
+        prevPixelWidth,
+        prevPixelHeight,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+      ctx.restore();
+    }
     const pad = OPT.radius + OPT.gap;
-    const startX = -pad;
-    const startY = -pad;
-    const endX = width + pad;
-    const endY = height + pad;
-    const cols = Math.ceil((endX - startX) / OPT.gap) + 1;
-    const rows = Math.ceil((endY - startY) / OPT.gap) + 1;
+    const spanX = width + pad * 2;
+    const spanY = height + pad * 2;
+    const cols = Math.ceil(spanX / OPT.gap) + 1;
+    const rows = Math.ceil(spanY / OPT.gap) + 1;
+    const gridWidth = (cols - 1) * OPT.gap;
+    const gridHeight = (rows - 1) * OPT.gap;
+    const startX = -pad + (spanX - gridWidth) / 2;
+    const startY = -pad + (spanY - gridHeight) / 2;
 
     points = [];
     for (let r = 0; r < rows; r++) {
@@ -83,72 +100,96 @@ export function createDotsField({
     }
   }
 
-  function pointerInfluence(px, py) {
-    const dx = px - pointer.x;
-    const dy = py - pointer.y;
-    const R = OPT.radius;
-    const d2 = dx * dx + dy * dy;
-    if (d2 >= R * R) return null;
-    const d = Math.sqrt(d2) || 0.0001;
-    const t = 1 - d / R;
-    const influence = falloffEase(t);
-    return { influence, nx: dx / d, ny: dy / d };
-  }
+  function hoverAlphaAt(px, py) {
+    if (effectProgress <= 0.0001) return OPT.baseAlpha;
+    const center = pointerActive ? pointer : retreatCenter;
+    const dx = px - center.x;
+    const dy = py - center.y;
+    const dist = Math.hypot(dx, dy);
+    const innerRadius = Math.max(0, OPT.radius);
+    const radius = innerRadius > 0 ? innerRadius : 0.0001;
+    let alpha = OPT.baseAlpha;
 
-  function rippleValueAt(px, py, tNow) {
-    if (!ripples.length) return 0;
-    const c = OPT.click;
-    const k = (2 * Math.PI) / c.wavelength;
-    let sum = 0;
-    for (let i = ripples.length - 1; i >= 0; i--) {
-      const ripple = ripples[i];
-      const dt = tNow - ripple.t0;
-      if (dt < 0) continue;
-      if (dt > 1.7) {
-        ripples.splice(i, 1);
-        continue;
-      }
-
-      const dx = px - ripple.x;
-      const dy = py - ripple.y;
-      const dist = Math.hypot(dx, dy);
-      const phase = k * (dist - c.speed * dt);
-      const timeEnv = Math.exp(-c.timeDecay * dt);
-      const distEnv = Math.exp(-c.distFalloff * dist);
-      sum += c.amp * Math.sin(phase) * timeEnv * distEnv;
-
-      const tC = Math.min(1, dist / c.centerDipRadius);
-      const smooth = tC * tC * (3 - 2 * tC);
-      sum -= (1 - smooth) * c.centerDipAmp * timeEnv;
+    if (innerRadius > 0 && dist <= radius) {
+      const t = clamp(1 - dist / radius, 0, 1);
+      const eased = falloffEase(t) * effectProgress;
+      alpha = OPT.baseAlpha + (OPT.highlightAlpha - OPT.baseAlpha) * eased;
     }
-    return sum;
+
+    const outsideRange = OPT.outsideFade;
+    if (outsideRange <= 0) return clamp(alpha, OPT.minAlpha, OPT.highlightAlpha);
+    const extra = dist - radius;
+    if (extra <= 0) return clamp(alpha, OPT.minAlpha, OPT.highlightAlpha);
+
+    const normalized = clamp(extra / outsideRange, 0, 1);
+    const front = clamp(1 - effectProgress, 0, 1);
+    if (normalized <= front) return clamp(alpha, OPT.minAlpha, OPT.highlightAlpha);
+
+    const bandWidth = Math.max(0.01, Math.min(1, OPT.blurWidth ?? 0.35));
+    const end = Math.min(1, front + bandWidth);
+    if (normalized >= end) return OPT.minAlpha;
+    const t = (normalized - front) / Math.max(1e-4, end - front);
+    const eased = t * t * (3 - 2 * t);
+    const faded = OPT.minAlpha + (alpha - OPT.minAlpha) * (1 - eased);
+    return clamp(faded, OPT.minAlpha, OPT.highlightAlpha);
   }
 
   function beginRetreat() {
-    retreating = true;
-    retreatStart = nowMs();
-    retreatFromX = target.x;
-    retreatFromY = target.y;
+    if (!pointerActive && effectTarget === 0) return;
+    retreatCenter = { x: pointer.x, y: pointer.y };
+    pointerActive = false;
+    setHoverTargets(false);
   }
 
   const localRectTarget = sensor;
   const pointerToLocal = (clientX, clientY) => {
     const rect = localRectTarget.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
     return {
-      x: clientX - rect.left,
-      y: clientY - rect.top
+      x,
+      y,
+      inside: x >= 0 && x <= rect.width && y >= 0 && y <= rect.height
     };
+  };
+
+  const syncPointer = (pos) => {
+    pointer.x = pos.x;
+    pointer.y = pos.y;
+    pointer.vx = 0;
+    pointer.vy = 0;
+  };
+
+  const setHoverTargets = (active) => {
+    effectTarget = active ? 1 : 0;
+  };
+  setHoverTargets(false);
+
+  const engagePointer = (pos) => {
+    if (!pos) return;
+    if (!pointerActive) {
+      syncPointer(pos);
+      pointerActive = true;
+      setHoverTargets(true);
+    }
+    retreatCenter = { x: pos.x, y: pos.y };
+    target.x = pos.x;
+    target.y = pos.y;
+  };
+
+  const smoothToward = (value, targetValue, durationMs, dtSeconds) => {
+    if (!isFinite(durationMs) || durationMs <= 0) return targetValue;
+    const tau = Math.max(1e-4, durationMs / 1000);
+    const alpha = 1 - Math.exp(-dtSeconds / tau);
+    return value + (targetValue - value) * alpha;
   };
 
   let rafId = null;
   function step() {
-    if (retreating) {
-      const t = Math.min(1, (nowMs() - retreatStart) / OPT.retreatMs);
-      const eased = motionEase(t);
-      target.x = retreatFromX + (OFF.x - retreatFromX) * eased;
-      target.y = retreatFromY + (OFF.y - retreatFromY) * eased;
-      if (t >= 1) retreating = false;
-    }
+    const frameMs = nowMs();
+    const dt = Math.min(0.1, Math.max(0, (frameMs - lastStepMs) / 1000));
+    lastStepMs = frameMs;
+    effectProgress = smoothToward(effectProgress, effectTarget, OPT.transitionMs, dt);
 
     const ax = (target.x - pointer.x) * OPT.spring;
     const ay = (target.y - pointer.y) * OPT.spring;
@@ -165,55 +206,16 @@ export function createDotsField({
     }
 
     ctx.fillStyle = OPT.dotColor;
-    const tNow = nowSec();
 
     for (let i = 0; i < points.length; i++) {
       const point = points[i];
-      let px = point.x;
-      let py = point.y;
-      let scale = 1;
-      let alpha = OPT.baseAlpha;
-
-      const influence = pointerInfluence(point.x, point.y);
-      if (influence) {
-        const infl = influence.influence;
-        scale += infl * OPT.scaleBoost;
-        alpha = OPT.baseAlpha - infl * (OPT.baseAlpha - OPT.minAlpha);
-      }
-
-      const rippleValue = rippleValueAt(point.x, point.y, tNow);
-      if (rippleValue !== 0) {
-        let nearest = null;
-        let nearestD2 = Infinity;
-        for (let j = 0; j < ripples.length; j++) {
-          const dx = point.x - ripples[j].x;
-          const dy = point.y - ripples[j].y;
-          const d2 = dx * dx + dy * dy;
-          if (d2 < nearestD2) {
-            nearestD2 = d2;
-            nearest = ripples[j];
-          }
-        }
-        if (nearest) {
-          const dx = point.x - nearest.x;
-          const dy = point.y - nearest.y;
-          const dist = Math.hypot(dx, dy) || 0.0001;
-          const nx = dx / dist;
-          const ny = dy / dist;
-          const push = rippleValue * OPT.click.offsetScale * -1;
-          px += nx * push;
-          py += ny * push;
-        }
-        scale += rippleValue * OPT.click.sizeScale;
-        alpha -= rippleValue * OPT.click.alphaScale;
-      }
-
-      const finalAlpha = clamp(alpha, OPT.minAlpha, OPT.baseAlpha);
-      const radius = Math.max(0.12, OPT.baseSize * scale);
+      const hoverAlpha = hoverAlphaAt(point.x, point.y);
+      const finalAlpha = clamp(hoverAlpha, OPT.minAlpha, OPT.highlightAlpha);
+      if (finalAlpha <= 0) continue;
 
       ctx.globalAlpha = finalAlpha;
       ctx.beginPath();
-      ctx.arc(px, py, radius, 0, Math.PI * 2);
+      ctx.arc(point.x, point.y, Math.max(0.12, OPT.baseSize), 0, Math.PI * 2);
       ctx.fill();
     }
     ctx.globalAlpha = 1;
@@ -230,46 +232,59 @@ export function createDotsField({
 
   const mouseMove = (event) => {
     const pos = pointerToLocal(event.clientX, event.clientY);
-    target.x = pos.x;
-    target.y = pos.y;
+    if (!pos.inside) {
+      if (pointerActive) beginRetreat();
+      return;
+    }
+    engagePointer(pos);
   };
-  const mouseDown = (event) => {
+  const mousePointerDown = (event) => {
+    if (event.pointerType && event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
+    if (event.button !== undefined && event.button !== 0) return;
     const pos = pointerToLocal(event.clientX, event.clientY);
-    ripples.push({ x: pos.x, y: pos.y, t0: nowSec() });
+    if (!pos.inside) return;
+    engagePointer(pos);
   };
   const mouseLeave = () => beginRetreat();
 
   addGlobal(pointerTarget, 'mousemove', mouseMove, { passive: true });
-  addGlobal(pointerTarget, 'mousedown', mouseDown, { passive: true });
+  addGlobal(pointerTarget, 'pointerdown', mousePointerDown, { passive: true });
   addGlobal(pointerTarget, 'mouseleave', mouseLeave, { passive: true });
 
   const sensorDown = (event) => {
-    retreating = false;
     sensor.setPointerCapture?.(event.pointerId);
     const pos = pointerToLocal(event.clientX, event.clientY);
-    target.x = pos.x;
-    target.y = pos.y;
+    if (!pos.inside) {
+      beginRetreat();
+      return;
+    }
+    engagePointer(pos);
   };
 
   const sensorMove = (event) => {
     const events = event.getCoalescedEvents ? event.getCoalescedEvents() : [event];
     for (const ev of events) {
       const pos = pointerToLocal(ev.clientX, ev.clientY);
-      target.x = pos.x;
-      target.y = pos.y;
+      engagePointer(pos);
     }
     if (event.pointerType !== 'mouse') event.preventDefault();
   };
 
   const sensorUp = (event) => {
-    const pos = pointerToLocal(event.clientX, event.clientY);
-    ripples.push({ x: pos.x, y: pos.y, t0: nowSec() });
-    beginRetreat();
+    if (event.pointerType !== 'mouse') {
+      beginRetreat();
+    }
     sensor.releasePointerCapture?.(event.pointerId);
   };
 
   const sensorLeave = () => beginRetreat();
+  const sensorEnter = (event) => {
+    const pos = pointerToLocal(event.clientX, event.clientY);
+    if (!pos.inside) return;
+    engagePointer(pos);
+  };
 
+  sensor.addEventListener('pointerenter', sensorEnter, { passive: true });
   sensor.addEventListener('pointerdown', sensorDown, { passive: true });
   sensor.addEventListener('pointermove', sensorMove, { passive: false });
   sensor.addEventListener('pointerup', sensorUp, { passive: false });
@@ -297,6 +312,7 @@ export function createDotsField({
     sensor.removeEventListener('pointerup', sensorUp);
     sensor.removeEventListener('pointercancel', sensorLeave);
     sensor.removeEventListener('pointerleave', sensorLeave);
+    sensor.removeEventListener('pointerenter', sensorEnter);
     document.removeEventListener('visibilitychange', onVisibility);
     ro.disconnect();
     if (rafId) {

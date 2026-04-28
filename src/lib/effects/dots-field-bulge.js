@@ -11,15 +11,15 @@ const DEFAULT_OPTIONS = {
   spring: 0.07,
   damping: 0.52,
   click: {
-    speed: 900,
-    wavelength: 340,
-    timeDecay: 3.4,
-    distFalloff: 0.0012,
-    amp: 0.12,
-    sizeScale: 12,
-    offsetScale: 60,
-    centerDipRadius: 7,
-    centerDipAmp: 1.2
+    speed: 450,
+    wavelength: 640,
+    timeDecay: 2.1,
+    distFalloff: 0.00045,
+    amp: 0.055,
+    sizeScale: 5,
+    offsetScale: 22,
+    centerDipRadius: 14,
+    centerDipAmp: 0.35
   },
   retreatMs: 350
 };

@@ -16,6 +16,7 @@ Open `http://localhost:5173/` to preview the demo markup. The script tag inside 
 - `npm run dev` – Vite dev server with hot reloading.
 - `npm run build` / `npm run build:all` – Generates hashed bundles for every entry in `src/entry/`.
 - `npm run build:hero` – Example of building with an SSR manifest (handy for feature-specific deployments).
+- `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:deposits`, `:orbit`, `:small-cards`) – Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments.
 - `npm run preview` – Serves the production build from `dist/`.
 
 ## Project Layout
@@ -157,8 +158,8 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `src/entry/page-all.js` | Imports and initializes every animation eagerly. |
 | `src/entry/page-all-lite.js` | DOM-aware resolver that dynamic-imports only animations present on the page. |
 | `src/entry/feature-hero.js` | Feature-specific bundle for the hero section. |
-| `src/entry/feature-api.js` / `feature-chart.js` / `feature-dots.js` / `feature-dots-bulge.js` / `feature-radial.js` / `feature-cards.js` / `feature-orbit.js` | Ready-made single-animation bundles for the remaining demos. |
-| `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:orbit`) | Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments. |
+| `src/entry/feature-api.js` / `feature-chart.js` / `feature-dots.js` / `feature-dots-bulge.js` / `feature-radial.js` / `feature-cards.js` / `feature-deposits.js` / `feature-orbit.js` / `feature-small-cards.js` | Ready-made single-animation bundles for the remaining demos. |
+| `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:deposits`, `:orbit`, `:small-cards`) | Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments. |
 
 All entry files are exposed to Vite via `vite.config.js`, yielding hashed outputs like `dist/page-all.<hash>.js`. Tree-shaking ensures a `feature-*` build only contains the animation it needs plus shared libs once.
 
@@ -183,6 +184,8 @@ All entry files are exposed to Vite via `vite.config.js`, yielding hashed output
 ### Effect Data Attributes
 
 Every section is discovered through `data-anim="<name>"`. The helpers below key off additional data attributes so you can author markup declaratively.
+
+Future docs note: planned Webflow-facing tooltip copy, optional attribute behavior, and editor-safe toggles are tracked in [docs/future-builds.md](/Volumes/WD40/Soo.ba%20Dropbox/Soo.ba%20Studio/Goran/Projects/Stitch/Code/stitch-animations/docs/future-builds.md).
 
 #### Shared handles
 

@@ -1,6 +1,6 @@
 import { byData, qsa } from '../../lib/dom.js';
 import { ATTR, DATA_ATTRS } from '../../lib/config.js';
-import { ensureSectionReveal } from '../../lib/effects/reveal-groups.js';
+import { ensureSectionReveal, releaseSectionReveal } from '../../lib/effects/reveal-groups.js';
 import { whenVisible } from '../../lib/effects/threshold.js';
 import { createDotsField } from '../../lib/effects/dots-field.js';
 import {
@@ -24,6 +24,11 @@ export function init(root = document) {
 }
 
 function setupDepositsSection(section) {
+  const didUpdateRevealTargets = ensureRippleReveal(section);
+  if (didUpdateRevealTargets) {
+    releaseSectionReveal(section);
+  }
+
   const revealController = ensureSectionReveal(section);
   revealController.ensure();
 
@@ -72,6 +77,38 @@ function setupDepositsSection(section) {
     balanceCounter?.dispose();
     revealController.cancel();
   };
+}
+
+function ensureRippleReveal(section) {
+  const ripples = section.querySelector('.deposits_ripples');
+  if (!ripples) return false;
+
+  let didUpdate = false;
+
+  if (!ripples.hasAttribute('data-reveal-group')) {
+    ripples.setAttribute('data-reveal-group', '');
+    didUpdate = true;
+  }
+
+  if (!ripples.dataset.revealStagger) {
+    ripples.dataset.revealStagger = '220ms';
+    didUpdate = true;
+  }
+
+  const items = ripples.querySelectorAll('.deposits_ripple');
+  items.forEach((node) => {
+    if (!node.hasAttribute('data-reveal')) {
+      node.setAttribute('data-reveal', '');
+      didUpdate = true;
+    }
+
+    if (!node.dataset.revealDuration) {
+      node.dataset.revealDuration = '1400ms';
+      didUpdate = true;
+    }
+  });
+
+  return didUpdate;
 }
 
 function setupLiveTime(displays) {

@@ -1,111 +1,139 @@
 .deposits_wrap {
-  position: relative;
-  overflow: hidden;
-  min-height: 26rem;
+  width: 100%;
+  height: 100%;
+  container-type: inline-size;
   isolation: isolate;
-}
-
-.deposits_wrap .features-graphic_cc_dots.deposits_background {
-  z-index: 0;
-  opacity: 0.45;
 }
 
 .deposits_content {
   position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
-  gap: clamp(1.5rem, 3vw, 3rem);
-  padding: clamp(1.5rem, 4vw, 3.75rem);
-  align-items: center;
+  grid-template-columns:
+    0.25fr
+    1fr
+    1fr
+    0.25fr
+    1fr
+    1fr
+    0.25fr;
+  grid-template-rows: 3fr .75fr;
+  grid-template-areas:
+    'gap-left phone phone gap-mid cards cards gap-right'
+    'gap-left phone phone connector connector empty gap-right';
+  align-items: stretch;
+  justify-items: stretch;
+  --deposits-gap: clamp(1rem, 4vw, 2.5rem);
+  --deposits-phone-width: min(100%, clamp(14rem, 32cqw, 24rem));
+  --deposits-card-stack-width: min(100%, clamp(12rem, 30cqw, 22rem));
+  --deposits-connector-gap: 1.5rem;
 }
 
 .deposits_phone {
+  grid-area: phone;
   position: relative;
-  width: clamp(15rem, 36vw, 17rem);
-  margin: 0 auto;
-  aspect-ratio: 462 / 978;
-  border-radius: clamp(2.5rem, 8cqw, 3.6rem);
+  z-index: 1;
+  --deposits-phone-shadow-y: 1rem;
+  --deposits-card-radius: min(1.5rem, 4cqi);
+  align-self: end;
+  justify-self: center;
+  top: var(--deposits-phone-shadow-y);
+  width: var(--deposits-phone-width);
+  font-size: max(0.72rem, min(0.9rem, 1.4cqw));
+  margin: 0;
+  border-radius: min(4rem, 7cqw) min(4rem, 7cqw) 0 0;
   overflow: hidden;
   container-type: inline-size;
-  border: clamp(0.2rem, 1.2cqw, 0.34rem) solid #c9c8c8;
+  --deposits-phone-border: max(0.16rem, min(0.28rem, 1cqw));
+  border: var(--deposits-phone-border) solid #c9c8c8;
+  border-bottom: 0;
   box-shadow:
-    inset 0 0 0 clamp(0.15rem, 0.9cqw, 0.25rem) #0a0a0a,
-    0 1.25rem 2.5rem rgba(10, 10, 10, 0.2);
+    inset 0 0 0 max(0.15rem, min(0.25rem, 0.9cqw)) #0a0a0a,
+    0 var(--deposits-phone-shadow-y) calc(var(--deposits-phone-shadow-y) * 1.8) rgba(10, 10, 10, 0.18);
   background: #fff;
   display: flex;
   flex-direction: column;
-  position: relative;
   padding:
-    clamp(0.9rem, 3cqw, 1.6rem)
-    clamp(0.8rem, 3.5cqw, 1.4rem)
-    clamp(1.2rem, 4cqw, 1.8rem);
+    min(1.25rem, 2.5cqw) min(1.4rem, 3.5cqw) min(2rem, 5cqw);
+  --reveal-transform: translate3d(0%, var(--reveal-offset, var(--reveal-offset-default)), 0);
+  --reveal-transform-active: translate3d(0%, 0, 0);
 }
 
 .deposits_dynamic-island {
-  width: clamp(5rem, 34cqw, 7rem);
-  height: clamp(1.6rem, 4cqw, 2.1rem);
+  width: 27cqw;
+  height: 7.7cqw;
   background: #000;
-  border-radius: clamp(1.5rem, 5cqw, 2rem);
-  margin: clamp(0.1rem, 1cqw, 0.3rem) auto;
+  border-radius: 999px;
+  margin: min(0.3rem, 1cqw) auto;
   justify-self: center;
+  padding: 0;
 }
 
 .deposits_status-bar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   font-weight: 600;
-  font-size: clamp(0.85rem, 3cqw, 0.9rem);
+  font-size: 5.4cqi;
   letter-spacing: -0.02em;
   color: #000;
-  gap: 0.5rem;
+  gap: min(0.2rem, 1.2cqi);
   justify-items: center;
-  margin-bottom: clamp(0.6rem, 2.5cqw, 1rem);
+  margin-bottom: min(1rem, 2.5cqw);
+  line-height: 1;
 }
 
 .deposits_status-time {
-  font: inherit;
+  font-size: .85em;
 }
 
 .deposits_status-icons {
   display: inline-flex;
-  align-items: center;
-  gap: clamp(0.25rem, 1cqw, 0.35rem);
+  align-items: start;
+  gap: min(0.18rem, 0.8cqi);
 }
 
 .deposits_status-icon {
   display: inline-flex;
-  width: clamp(1rem, 2.75cqw, 1.1rem);
-  height: auto;
+  --icon-height: min(1.3rem, 7cqi);
+  height: var(--icon-height);
+  width: calc(var(--icon-height) * var(--icon-ratio, 1));
+}
+
+.deposits_status-icon--cell {
+  --icon-ratio: 0.71875;
 }
 
 .deposits_status-icon--wifi {
-  width: clamp(1.1rem, 3cqw, 1.15rem);
+  --icon-ratio: 0.65625;
 }
 
 .deposits_status-icon--battery {
-  width: clamp(1.4rem, 4cqw, 1.5rem);
+  --icon-ratio: 0.96875;
 }
 
 .deposits_status-icon svg {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  overflow: visible !important;
 }
 
 .deposits_phone-body {
-  padding: 1rem 0;
+  padding: min(0.8rem, 2cqi) 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(0.8rem, 3cqw, 1.25rem);
+  gap: min(0.9rem, 2.2cqi);
 }
 
 .deposits_phone-header {
-  margin: 0 0 0.5rem;
+  margin: 0 0 min(1.25rem, 5cqi);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: min(1.25rem, 5cqi);
   letter-spacing: -.02em;
 }
 
@@ -117,11 +145,11 @@
 
 .deposits_phone-balance {
   background: #EFEFEF;
-  border-radius: clamp(0.7rem, 3cqw, 1rem);
-  padding: clamp(1rem, 3cqw, 1.25rem);
+  border-radius: var(--deposits-card-radius);
+  padding: min(1.25rem, 5cqi);
   display: flex;
   flex-direction: column;
-  gap: clamp(0.35rem, 1.5cqw, 0.45rem);
+  gap: min(0.2rem, 0.9cqi);
 }
 
 .deposits_phone-balance_label {
@@ -134,10 +162,10 @@
 .deposits_phone-balance_value {
   font-size: 10cqi;
   font-weight: 700;
+  color: #000;
 }
 
 .deposits_phone-section {
-  margin: 0 0 0.65rem;
   font-size: 4.5cqi;
   font-weight: 600;
   color: #3D3D3D;
@@ -146,120 +174,212 @@
 .deposits_phone-wallets {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: min(1.25rem, 2.5cqi);
 }
 
 .deposits_wallet {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 0.75rem;
+  gap: min(1.25rem, 4cqi);
   align-items: center;
-  border: 0.0625rem solid rgba(13, 13, 13, 0.08);
-  border-radius: clamp(0.7rem, 3cqw, 1rem);
-  padding: clamp(0.5rem, 2.5cqw, 0.75rem) clamp(0.6rem, 3cqw, 0.9rem);
-  background: #fdfdfd;
+  justify-content: space-between;
+  background-image: linear-gradient(135deg, #ededed, #e2e2e200);
+  border: 0.0625rem solid #e7e7e7;
+  border-radius: var(--deposits-card-radius);
+  padding: min(0.65rem, 2cqi) min(1.25rem, 4cqi);
+  font-size: min(0.9em, 3.8cqi);
 }
 
 .deposits_wallet-logo {
-  width: clamp(1.8rem, 7cqw, 2.5rem);
-  height: clamp(1.1rem, 5cqw, 1.75rem);
-  border-radius: clamp(0.4rem, 2cqw, 0.6rem);
-  background: #fff;
-  border: 0.0625rem solid rgba(13, 13, 13, 0.1);
+  width: min(1.5rem, 12cqi);
+  aspect-ratio: 34 / 24;
+  background-color: #fff;
+  border: 0.0625rem solid #eee;
+  border-radius: min(0.5rem, 1.5cqi);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(0.5rem, 2.2cqw, 0.65rem);
-  font-weight: 600;
+  padding: min(0.25rem, 1.25cqi) min(0.29rem, 2cqi);
+}
+
+.deposits_wallet-details {
+  white-space: nowrap;
+  flex: 1;
+  font-size: 3.7cqi;
+  line-height: 1.4;
 }
 
 .deposits_wallet-name {
-  display: block;
-  font-size: clamp(0.7rem, 2.5cqw, 0.85rem);
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.97em;
+}
+
+.deposits_wallet-meta-block {
+  display: flex;
+  gap: min(0.7ch, 1.2cqw);
+  font-size: 0.78em;
 }
 
 .deposits_wallet-meta {
-  display: block;
-  font-size: clamp(0.6rem, 2.1cqw, 0.75rem);
   color: #6b6b6b;
 }
 
 .deposits_wallet-arrow {
-  font-size: clamp(1rem, 4cqw, 1.25rem);
+  width: min(1rem, 2cqw);
+  display: flex;
   color: #a7a7a7;
 }
 
 .deposits_cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
+  grid-area: cards;
+  align-self: end;
+  justify-self: center;
+  width: 100%;
+  max-width: var(--deposits-card-stack-width);
   position: relative;
+  isolation: isolate;
 }
 
 .deposits_connector {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(13, 13, 13, 0.45);
+  grid-area: connector;
+  position: relative;
+  width: 90%;
+  height: 50%;
+  left: 10%;
+  border-bottom: 0.125rem solid #d1d1d1;
+  border-right: 0.125rem solid #d1d1d1;
+  border-radius: 0 0 0.5rem;
+  pointer-events: none;
+  z-index: -1;
+  align-self: center;
+  --deposits-connector-dot-size: min(0.5rem, 2cqw);
+  --deposits-connector-clip-pad: min(0.6rem, 2.2cqw);
+  --deposits-connector-clip-top-start: calc(100% - var(--deposits-connector-dot-size));
+  --deposits-connector-clip-delay: 0ms;
+  clip-path: inset(
+    var(--deposits-connector-clip-top-start)
+    100%
+    calc(-1 * var(--deposits-connector-clip-pad))
+    calc(-1 * var(--deposits-connector-clip-pad))
+  );
+  -webkit-clip-path: inset(
+    var(--deposits-connector-clip-top-start)
+    100%
+    calc(-1 * var(--deposits-connector-clip-pad))
+    calc(-1 * var(--deposits-connector-clip-pad))
+  );
+  animation: none;
+  will-change: clip-path;
 }
 
-.deposits_connector-node {
-  width: 0.5rem;
-  height: 0.5rem;
+.deposits_connector::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.0625rem;
+  width: min(.5rem, 2cqw);
+  height: min(.5rem, 2cqw);
   border-radius: 50%;
-  border: 0.125rem solid currentColor;
-  background: #fff;
+  background: #d1d1d1;
+  box-sizing: border-box;
+  transform: translate(-50%, 50%);
 }
 
-.deposits_connector-line {
-  flex: 1;
-  height: 0.125rem;
-  background: currentColor;
-  min-width: 7.5rem;
+.deposits_connector::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: min(.35rem, 1.6cqw) solid transparent;
+  border-right: min(.35rem, 1.6cqw) solid transparent;
+  border-bottom: min(.45rem, 2.1cqw) solid #d1d1d1;
+  transform: translate(calc(50% + 0.03125rem), -25%);
+}
+
+.deposits_connector.is-reveal {
+  animation: deposits-connector-reveal
+    var(--reveal-duration, var(--reveal-duration-default))
+    var(--motion-ease-primary)
+    var(--deposits-connector-clip-delay)
+    forwards;
+}
+
+@keyframes deposits-connector-reveal {
+  0% {
+    clip-path: inset(
+      var(--deposits-connector-clip-top-start)
+      100%
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+    );
+    -webkit-clip-path: inset(
+      var(--deposits-connector-clip-top-start)
+      100%
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+    );
+  }
+  40% {
+    clip-path: inset(
+      var(--deposits-connector-clip-top-start)
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+    );
+    -webkit-clip-path: inset(
+      var(--deposits-connector-clip-top-start)
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+    );
+  }
+  100% {
+    clip-path: inset(
+      0
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+    );
+    -webkit-clip-path: inset(
+      0
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+      calc(-1 * var(--deposits-connector-clip-pad))
+    );
+  }
 }
 
 .deposits_cards-stack {
   position: relative;
-  width: clamp(15rem, 38vw, 21.25rem);
-  aspect-ratio: 1.6 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: min(100%, var(--deposits-card-stack-width));
+  z-index: 2;
 }
 
-.deposits_card {
-  position: absolute;
+.deposits_cards-stack .credit-card_wrap {
+  position: relative;
   inset: 0;
-  border-radius: 1.5rem;
-  border: 0.0625rem solid rgba(13, 13, 13, 0.09);
-  background: linear-gradient(180deg, #fff, #f5f5f5);
-  box-shadow: 0 0.9375rem 2.8125rem rgba(13, 13, 13, 0.18);
-  transform-origin: center;
+  width: 100%;
+  z-index: 3;
 }
 
-.deposits_card:nth-child(2) {
-  transform: translateY(0.875rem);
-  opacity: 0.85;
+.deposits_cards-stack .credit-card_wrap:nth-child(2) {
+  --reveal-opacity-duration: 0ms!important;
+  position: absolute;
+  top: -20%;
+  z-index: 2;
 }
 
-.deposits_card:nth-child(3) {
-  background: #111;
-  color: #fff;
-  transform: translateY(1.75rem);
+.deposits_cards-stack .credit-card_wrap:nth-child(3) {
+  --reveal-opacity-duration: 0ms!important;
+  position: absolute;
+  top: -40%;
+  z-index: 1;
 }
 
 .deposits_label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.85rem;
-  border-radius: 999rem;
-  background: #0070ff;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 0.625rem 1.875rem rgba(0, 81, 255, 0.35);
+  display: none;
 }
 
 .deposits_label-icon {
@@ -271,18 +391,45 @@
 
 .deposits_ripples {
   position: absolute;
-  inset: auto 0 -4.375rem;
-  margin: 0 auto;
-  width: clamp(11.25rem, 30vw, 16.25rem);
-  display: flex;
-  justify-content: space-between;
-  opacity: 0.3;
+  inset: 0;
   pointer-events: none;
+  z-index: 0;
+  overflow: visible;
 }
 
 .deposits_ripple {
-  width: 0.875rem;
-  height: 0.875rem;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: var(--deposits-ripple-size, 100%);
+  aspect-ratio: 1 / 1;
   border-radius: 999rem;
-  border: 0.0625rem solid rgba(13, 13, 13, 0.35);
+  border: 0.0625rem solid rgba(13, 13, 13, .05);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+  transition-property: transform, opacity;
+  transition-duration: var(--reveal-duration, var(--reveal-duration-default, 1200ms));
+  transition-timing-function: var(--motion-ease-primary, cubic-bezier(.2,.7,.2,1));
+  will-change: transform, opacity;
+}
+
+.deposits_ripple.is-reveal {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.deposits_ripple[data-index='1'] {
+  --deposits-ripple-index: 1;
+  --deposits-ripple-size: 108%;
+}
+
+.deposits_ripple[data-index='2'] {
+  --deposits-ripple-index: 2;
+  --deposits-ripple-size: 250%;
+}
+
+.deposits_ripple[data-index='3'] {
+  --deposits-ripple-index: 3;
+  --deposits-ripple-size: 470%;
 }

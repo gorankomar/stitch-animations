@@ -284,7 +284,7 @@
       <div class="scale-graph_wrap" data-visibility-threshold="0.5" style="padding:14rem 0">
         <div class="scale-graph_txt-block">
           <div class="scale-graph_eyebrow text-size-large">Your customers</div>
-                  <div class="scale-graph_number heading-style-h2" data-counter-suffix="+">98,520+</div>
+          <div class="scale-graph_number heading-style-h2" data-counter-suffix="+">98,520+</div>
         </div>
         <div role="tooltip" class="scale-graph_tooltip">
           <div class="scale-graph_tooltip-date text-size-small">Oct 26, 2025</div>
@@ -338,7 +338,8 @@
       </div>
     </section>
 
-    <section data-anim="cards" class="demo-section" style="padding: 0; overflow:hidden" data-reveal-group>
+    <section data-anim="cards" class="demo-section" style="padding: 2rem; overflow:hidden; display: flex;"
+      data-reveal-group>
       <style>
         .features-graphic_wrap {
           isolation: isolate;
@@ -480,10 +481,6 @@
           overflow: visible !important;
         }
 
-        .credit-card_provider-logo.is-mc {
-          display: none;
-        }
-
         .features-graphic_cc_pill_wrap {
           position: absolute;
           z-index: 3;
@@ -567,8 +564,8 @@
         }
       </style>
 
-      <div data-follow-root class="features-graphic_wrap" data-reveal>
-        <div class="features-graphic_cc_wrap">
+      <div data-follow-root class="features-graphic_wrap">
+        <div class="features-graphic_cc_wrap" data-reveal>
           <div class="features-graphic_cc" data-follow-mouse data-follow-depth="6">
             <div data-wf--credit-card--variant="light" class="credit-card_wrap">
               <div class="credit-card">
@@ -652,100 +649,498 @@
 
     <section data-anim="deposits" class="demo-section" data-visibility-threshold="0.5"
       style="padding: 2rem; overflow: hidden;">
+      <style>
+        .deposits_wrap {
+          position: relative;
+          overflow: hidden;
+          min-height: 34rem;
+          isolation: isolate;
+        }
+
+        .deposits_wrap .features-graphic_cc_dots.deposits_background {
+          z-index: 0;
+        }
+      </style>
       <h2 data-reveal>Deposits animation</h2>
       <p data-reveal>Base markup for the iPhone, cards, connector line, and dots background.</p>
-      <div class="deposits_wrap">
+      <div class="deposits_wrap" style="overflow: hidden;">
         <div class="features-graphic_cc_dots deposits_background" aria-hidden="true">
           <canvas class="features-graphic_cc_dots-canvas"></canvas>
           <div class="features-graphic_cc_dots-sensor"></div>
         </div>
-        <div class="deposits_content" data-reveal-group>
+        <div class="deposits_content">
           <div class="deposits_phone" data-reveal data-reveal-offset="80%">
             <div class="deposits_status-bar">
               <time class="deposits_status-time" data-deposits-time>13:13</time>
               <div class="deposits_dynamic-island" aria-hidden="true"></div>
               <div class="deposits_status-icons" aria-hidden="true">
                 <span class="deposits_status-icon deposits_status-icon--cell">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 14">
-                    <path fill="#000"
-                      d="M2.37 8.2c.65 0 1.18.58 1.18 1.28v2.56c0 .7-.53 1.27-1.18 1.27H1.18c-.65 0-1.18-.57-1.18-1.27V9.48c0-.7.53-1.27 1.18-1.27zm5.88-2.65c.65 0 1.18.58 1.18 1.3v5.17c0 .71-.53 1.3-1.18 1.3H7.06c-.65 0-1.18-.59-1.18-1.3V6.84c0-.71.53-1.3 1.18-1.3zm5.99-2.89c.65 0 1.18.57 1.18 1.28v8.1c0 .7-.53 1.27-1.18 1.27h-1.19c-.65 0-1.18-.57-1.18-1.28V3.94c0-.7.53-1.28 1.18-1.28zM20.12 0c.65 0 1.18.56 1.18 1.25v10.81c0 .7-.53 1.25-1.18 1.25h-1.19c-.65 0-1.18-.56-1.18-1.25V1.25c0-.7.53-1.25 1.18-1.25z" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 23 32">
+                    <path fill="currentColor"
+                      d="M3.37 17.2c.65 0 1.18.58 1.18 1.28v2.56c0 .7-.53 1.27-1.18 1.27H2.18c-.65 0-1.18-.57-1.18-1.27v-2.56c0-.7.53-1.27 1.18-1.27zm5.88-2.65c.65 0 1.18.58 1.18 1.3v5.17c0 .71-.53 1.3-1.18 1.3H8.06c-.65 0-1.18-.59-1.18-1.3v-5.18c0-.71.53-1.3 1.18-1.3zm5.99-2.89c.65 0 1.18.57 1.18 1.28v8.1c0 .7-.53 1.27-1.18 1.27h-1.19c-.65 0-1.18-.57-1.18-1.28v-8.09c0-.7.53-1.28 1.18-1.28zM21.12 9c.65 0 1.18.56 1.18 1.25v10.81c0 .7-.53 1.25-1.18 1.25h-1.19c-.65 0-1.18-.56-1.18-1.25V10.25c0-.7.53-1.25 1.18-1.25z" />
                   </svg>
                 </span>
                 <span class="deposits_status-icon deposits_status-icon--wifi">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 14">
-                    <path fill="#000"
-                      d="M6.84 10.02a3.86 3.86 0 0 1 5.34 0q.12.13.12.3 0 .19-.11.3L9.78 13.3a.4.4 0 0 1-.27.12q-.16 0-.27-.12l-2.41-2.67a.44.44 0 0 1 0-.6m-3.35-3.2a8.9 8.9 0 0 1 12.06 0 .4.4 0 0 1 0 .57l-1.42 1.44a.4.4 0 0 1-.54 0 6.1 6.1 0 0 0-8.14 0 .4.4 0 0 1-.54 0L3.47 7.4a.4.4 0 0 1 0-.57M.12 3.57a14.1 14.1 0 0 1 18.78 0q.11.11.12.27t-.12.27l-1.44 1.38a.4.4 0 0 1-.54 0c-2-1.8-4.65-2.8-7.41-2.8s-5.41 1-7.41 2.8a.4.4 0 0 1-.54 0L.12 4.1A.4.4 0 0 1 0 3.84q0-.16.12-.27" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 32">
+                    <path fill="currentColor"
+                      d="M7.84 19.02a3.86 3.86 0 0 1 5.34 0q.12.13.12.3 0 .19-.11.3l-2.41 2.68a.4.4 0 0 1-.27.12q-.16 0-.27-.12l-2.41-2.67a.4.4 0 0 1-.12-.3q0-.19.13-.3m-3.36-3.18a8.9 8.9 0 0 1 12.06 0 .4.4 0 0 1 0 .56l-1.42 1.44a.4.4 0 0 1-.54 0 6.1 6.1 0 0 0-8.14 0 .4.4 0 0 1-.54 0L4.47 16.4a.4.4 0 0 1 0-.56m-3.36-3.27a14.1 14.1 0 0 1 18.78 0q.1.11.12.27 0 .16-.12.27l-1.44 1.38a.4.4 0 0 1-.54 0c-2-1.8-4.65-2.8-7.41-2.8s-5.41 1-7.41 2.8a.4.4 0 0 1-.54 0L1.12 13.1a.4.4 0 0 1-.12-.27q0-.16.12-.27" />
                   </svg>
                 </span>
                 <span class="deposits_status-icon deposits_status-icon--battery">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 31 15">
-                    <rect width="26.62" height="13.31" x=".55" y=".55" stroke="#000" stroke-width="1.11" opacity=".35"
-                      rx="4.22" />
-                    <path fill="#000" d="M28.73 5.18V9.6a2.4 2.4 0 0 0 0-4.43" opacity=".4" />
-                    <rect width="23.29" height="9.98" x="2.22" y="2.22" fill="#000" rx="2.77" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 31 32">
+                    <rect width="26.62" height="13.31" x="1.25" y="9.55" stroke="currentColor" stroke-width="1.11"
+                      opacity=".35" rx="4.22" />
+                    <path fill="currentColor" d="M29.43 14.18v4.43a2.4 2.4 0 0 0 0-4.43" opacity=".4" />
+                    <path fill="currentColor"
+                      d="M2.92 15.66c0-1.56 0-2.33.3-2.93q.42-.8 1.22-1.2c.6-.31 1.37-.31 2.92-.31h10.42c1.55 0 2.33 0 2.92.3.52.27.95.7 1.21 1.21.3.6.3 1.37.3 2.93v1.1c0 1.56 0 2.33-.3 2.93q-.41.8-1.21 1.21c-.6.3-1.37.3-2.92.3H7.36c-1.55 0-2.33 0-2.92-.3a3 3 0 0 1-1.21-1.21c-.3-.6-.3-1.37-.3-2.92z" />
                   </svg>
                 </span>
               </div>
             </div>
-            <div class="deposits_phone-body" data-reveal-group>
-              <div class="deposits_phone-header" data-reveal-group>
+            <div class="deposits_phone-body">
+              <div class="deposits_phone-header">
                 <p class="deposits_phone-eyebrow" data-reveal>Add card to digital wallet</p>
                 <div class="deposits_phone-balance" data-reveal>
                   <span class="deposits_phone-balance_label">Total balance</span>
-                  <span class="deposits_phone-balance_value" data-counter-value="25450"
-                    data-counter-prefix="$" data-counter-decimal="true" data-counter-initial="0">$25,450.00</span>
+                  <span class="deposits_phone-balance_value" data-counter-value="25450" data-counter-prefix="$"
+                    data-counter-decimal="true">$25,450.00</span>
                 </div>
               </div>
-              <div class="deposits_phone-wallets" data-reveal-group>
+              <div class="deposits_phone-wallets">
                 <p class="deposits_phone-section" data-reveal>Available Wallets:</p>
                 <div class="deposits_wallet" data-card="6463" data-reveal>
-                  <div class="deposits_wallet-logo">Visa</div>
+                  <div class="deposits_wallet-logo" style="background-color: #fff;"><svg
+                      data-wf--visa--variant="original-color" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 1920 621" width="100%" class="credit-card_provider-logo is-visa">
+                      <path
+                        d="M729 11 478 611H314L190 132c-8-29-14-40-37-53C116 59 54 40 0 28l4-17h264c33 0 64 22 71 61l66 347L566 11zm643 404c0-158-219-167-218-238 1-21 21-44 66-50 22-3 83-5 153 27l27-127c-37-14-85-27-145-27-153 0-261 82-262 198-1 87 77 135 136 163 60 30 80 49 80 75 0 40-48 58-93 59-78 1-123-21-159-38l-28 131c36 17 103 31 172 32 163 0 270-80 271-205m405 196h143L1795 11h-133c-29 0-55 17-66 44l-233 556h163l33-90h199zm-174-213 82-225 47 225zM951 11 822 611H667L796 11z"
+                        fill="#172B85" class="visa-path w-variant-38b1ae7a-4f13-aa55-332b-003703086840"></path>
+                    </svg></div>
                   <div class="deposits_wallet-details">
                     <span class="deposits_wallet-name">Omar ibn Ali Al-Hussain</span>
-                    <span class="deposits_wallet-meta">•••• 6463 &nbsp;|&nbsp; Expiry 01/29</span>
+                    <div class="deposits_wallet-meta-block">
+                      <div class="deposits_wallet-meta">••••</div>
+                      <div data-card-number="" class="deposits_wallet-meta">6463<br></div>
+                      <div class="deposits_wallet-meta">&nbsp;I</div>
+                      <div class="deposits_wallet-meta">&nbsp;Expiry</div>
+                      <div data-card-date="" class="deposits_wallet-meta">01/29</div>
+                    </div>
                   </div>
-                  <span class="deposits_wallet-arrow">›</span>
+                  <span class="deposits_wallet-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 5 8" width="100%" class="deposits_wallet-arrow-svg">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M.5 7.5 4 4 .5.5">
+                      </path>
+                    </svg></span>
                 </div>
                 <div class="deposits_wallet" data-card="7788" data-reveal>
-                  <div class="deposits_wallet-logo">MC</div>
+                  <div class="deposits_wallet-logo" style="background-color: #fff;"><svg
+                      data-wf--mastercard--variant="original-color" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 117 72" width="100%" class="credit-card_provider-logo is-mc">
+                      <path d="M74 7.7H42.5v56.61H74z" fill="#ff5f00"></path>
+                      <path d="M44.5 36A36 36 0 0 1 58.25 7.7a36 36 0 1 0 0 56.6A36 36 0 0 1 44.5 36" fill="#eb001b">
+                      </path>
+                      <path
+                        d="M116.49 36a36 36 0 0 1-58.25 28.3A36 36 0 0 0 71.99 36 36 36 0 0 0 58.24 7.7 36 36 0 0 1 116.49 36"
+                        fill="#f79e1b"></path>
+                    </svg></div>
                   <div class="deposits_wallet-details">
                     <span class="deposits_wallet-name">Omar ibn Ali Al-Hussain</span>
-                    <span class="deposits_wallet-meta">•••• 7788 &nbsp;|&nbsp; Expiry 04/17</span>
+                    <div class="deposits_wallet-meta-block">
+                      <div class="deposits_wallet-meta">••••</div>
+                      <div data-card-number="" class="deposits_wallet-meta">6463<br></div>
+                      <div class="deposits_wallet-meta">&nbsp;I</div>
+                      <div class="deposits_wallet-meta">&nbsp;Expiry</div>
+                      <div data-card-date="" class="deposits_wallet-meta">01/29</div>
+                    </div>
                   </div>
-                  <span class="deposits_wallet-arrow">›</span>
+                  <span class="deposits_wallet-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 5 8" width="100%" class="deposits_wallet-arrow-svg">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M.5 7.5 4 4 .5.5">
+                      </path>
+                    </svg></span>
                 </div>
                 <div class="deposits_wallet" data-card="3215" data-reveal>
-                  <div class="deposits_wallet-logo">Visa</div>
+                  <div class="deposits_wallet-logo" style="background-color: #fff;"><svg
+                      data-wf--visa--variant="original-color" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 1920 621" width="100%" class="credit-card_provider-logo is-visa">
+                      <path
+                        d="M729 11 478 611H314L190 132c-8-29-14-40-37-53C116 59 54 40 0 28l4-17h264c33 0 64 22 71 61l66 347L566 11zm643 404c0-158-219-167-218-238 1-21 21-44 66-50 22-3 83-5 153 27l27-127c-37-14-85-27-145-27-153 0-261 82-262 198-1 87 77 135 136 163 60 30 80 49 80 75 0 40-48 58-93 59-78 1-123-21-159-38l-28 131c36 17 103 31 172 32 163 0 270-80 271-205m405 196h143L1795 11h-133c-29 0-55 17-66 44l-233 556h163l33-90h199zm-174-213 82-225 47 225zM951 11 822 611H667L796 11z"
+                        fill="#172B85" class="visa-path w-variant-38b1ae7a-4f13-aa55-332b-003703086840"></path>
+                    </svg></div>
                   <div class="deposits_wallet-details">
                     <span class="deposits_wallet-name">Omar ibn Ali Al-Hussain</span>
-                    <span class="deposits_wallet-meta">•••• 3215 &nbsp;|&nbsp; Expiry 01/20</span>
+                    <div class="deposits_wallet-meta-block">
+                      <div class="deposits_wallet-meta">••••</div>
+                      <div data-card-number="" class="deposits_wallet-meta">6463<br></div>
+                      <div class="deposits_wallet-meta">&nbsp;I</div>
+                      <div class="deposits_wallet-meta">&nbsp;Expiry</div>
+                      <div data-card-date="" class="deposits_wallet-meta">01/29</div>
+                    </div>
                   </div>
-                  <span class="deposits_wallet-arrow">›</span>
+                  <span class="deposits_wallet-arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 5 8" width="100%" class="deposits_wallet-arrow-svg">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M.5 7.5 4 4 .5.5">
+                      </path>
+                    </svg></span>
                 </div>
               </div>
             </div>
           </div>
+          <div class="deposits_connector" aria-hidden="true" data-reveal data-reveal-offset="0%">
+          </div>
           <div class="deposits_cards">
-            <div class="deposits_connector" aria-hidden="true">
-              <span class="deposits_connector-node deposits_connector-node--phone"></span>
-              <span class="deposits_connector-line"></span>
-              <span class="deposits_connector-node deposits_connector-node--cards"></span>
-            </div>
             <div class="deposits_cards-stack" aria-live="polite">
-              <div class="deposits_card" data-card="6463"></div>
-              <div class="deposits_card" data-card="7788"></div>
-              <div class="deposits_card" data-card="3215"></div>
+              <div data-wf--credit-card--variant="dark" data-reveal
+                class="credit-card_wrap w-variant-e73ae07e-3c06-8a41-9896-4c934f3577ba">
+                <div class="credit-card w-variant-e73ae07e-3c06-8a41-9896-4c934f3577ba">
+                  <div class="credit-card_content">
+                    <div class="credit-card_digits">•••• <span data-random="true"
+                        class="credit-card_4-digit">8899</span></div>
+                    <div data-wf--provider--variant="visa" class="credit-card_provider">
+                      <div class="credit-card_provider-switch is-visa"><svg data-wf--visa--variant="inherit-color"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1920 621" width="100%"
+                          class="credit-card_provider-logo is-visa">
+                          <path
+                            d="M729 11 478 611H314L190 132c-8-29-14-40-37-53C116 59 54 40 0 28l4-17h264c33 0 64 22 71 61l66 347L566 11zm643 404c0-158-219-167-218-238 1-21 21-44 66-50 22-3 83-5 153 27l27-127c-37-14-85-27-145-27-153 0-261 82-262 198-1 87 77 135 136 163 60 30 80 49 80 75 0 40-48 58-93 59-78 1-123-21-159-38l-28 131c36 17 103 31 172 32 163 0 270-80 271-205m405 196h143L1795 11h-133c-29 0-55 17-66 44l-233 556h163l33-90h199zm-174-213 82-225 47 225zM951 11 822 611H667L796 11z"
+                            fill="currentColor" class="visa-path"></path>
+                        </svg></div>
+                      <div class="credit-card_provider-switch is-mc"><svg data-wf--mastercard--variant="inherit-color"
+                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 117 72" width="100%"
+                          class="credit-card_provider-logo is-mc">
+                          <g class="mc-path is-current-color">
+                            <path
+                              d="m55.06 65.26.87.72a36 36 0 1 1 0-59.96q-.44.35-.87.72a38.77 38.77 0 0 0 0 58.52M80.5 0a36 36 0 0 0-19.93 6.02q.44.35.87.72a38.78 38.78 0 0 1 .01 58.52l-.87.72A36 36 0 1 0 80.5 0">
+                            </path>
+                            <path
+                              d="M58.25 7.71q-.7.54-1.36 1.13A36 36 0 0 0 44.5 36a35.9 35.9 0 0 0 13.75 28.29q.7-.55 1.36-1.13A36 36 0 0 0 72 36 35.9 35.9 0 0 0 58.25 7.71">
+                            </path>
+                          </g>
+                          <g class="mc-path is-original-color">
+                            <path d="M74 7.7H42.5v56.61H74z" fill="#ff5f00"></path>
+                            <path d="M44.5 36A36 36 0 0 1 58.25 7.7a36 36 0 1 0 0 56.6A36 36 0 0 1 44.5 36"
+                              fill="#eb001b"></path>
+                            <path
+                              d="M116.49 36a36 36 0 0 1-58.25 28.3A36 36 0 0 0 71.99 36 36 36 0 0 0 58.24 7.7 36 36 0 0 1 116.49 36"
+                              fill="#f79e1b"></path>
+                          </g>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-wf--credit-card--variant="light" class="credit-card_wrap" data-reveal data-reveal-offset="20%">
+                <div class="credit-card">
+                  <div class="credit-card_content">
+                    <div class="credit-card_digits">•••• <span data-random="true"
+                        class="credit-card_4-digit">8899</span></div>
+                    <div data-wf--provider--variant="visa" class="credit-card_provider">
+                      <div class="credit-card_provider-switch is-visa"><svg data-wf--visa--variant="inherit-color"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1920 621" width="100%"
+                          class="credit-card_provider-logo is-visa">
+                          <path
+                            d="M729 11 478 611H314L190 132c-8-29-14-40-37-53C116 59 54 40 0 28l4-17h264c33 0 64 22 71 61l66 347L566 11zm643 404c0-158-219-167-218-238 1-21 21-44 66-50 22-3 83-5 153 27l27-127c-37-14-85-27-145-27-153 0-261 82-262 198-1 87 77 135 136 163 60 30 80 49 80 75 0 40-48 58-93 59-78 1-123-21-159-38l-28 131c36 17 103 31 172 32 163 0 270-80 271-205m405 196h143L1795 11h-133c-29 0-55 17-66 44l-233 556h163l33-90h199zm-174-213 82-225 47 225zM951 11 822 611H667L796 11z"
+                            fill="currentColor" class="visa-path"></path>
+                        </svg></div>
+                      <div class="credit-card_provider-switch is-mc"><svg data-wf--mastercard--variant="inherit-color"
+                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 117 72" width="100%"
+                          class="credit-card_provider-logo is-mc">
+                          <g class="mc-path is-current-color">
+                            <path
+                              d="m55.06 65.26.87.72a36 36 0 1 1 0-59.96q-.44.35-.87.72a38.77 38.77 0 0 0 0 58.52M80.5 0a36 36 0 0 0-19.93 6.02q.44.35.87.72a38.78 38.78 0 0 1 .01 58.52l-.87.72A36 36 0 1 0 80.5 0">
+                            </path>
+                            <path
+                              d="M58.25 7.71q-.7.54-1.36 1.13A36 36 0 0 0 44.5 36a35.9 35.9 0 0 0 13.75 28.29q.7-.55 1.36-1.13A36 36 0 0 0 72 36 35.9 35.9 0 0 0 58.25 7.71">
+                            </path>
+                          </g>
+                          <g class="mc-path is-original-color">
+                            <path d="M74 7.7H42.5v56.61H74z" fill="#ff5f00"></path>
+                            <path d="M44.5 36A36 36 0 0 1 58.25 7.7a36 36 0 1 0 0 56.6A36 36 0 0 1 44.5 36"
+                              fill="#eb001b"></path>
+                            <path
+                              d="M116.49 36a36 36 0 0 1-58.25 28.3A36 36 0 0 0 71.99 36 36 36 0 0 0 58.24 7.7 36 36 0 0 1 116.49 36"
+                              fill="#f79e1b"></path>
+                          </g>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-wf--credit-card--variant="light" class="credit-card_wrap" data-reveal data-reveal-offset="20%">
+                <div class="credit-card">
+                  <div class="credit-card_content">
+                    <div class="credit-card_digits">•••• <span data-random="true"
+                        class="credit-card_4-digit">8899</span></div>
+                    <div data-wf--provider--variant="visa" class="credit-card_provider">
+                      <div class="credit-card_provider-switch is-visa"><svg data-wf--visa--variant="inherit-color"
+                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1920 621" width="100%"
+                          class="credit-card_provider-logo is-visa">
+                          <path
+                            d="M729 11 478 611H314L190 132c-8-29-14-40-37-53C116 59 54 40 0 28l4-17h264c33 0 64 22 71 61l66 347L566 11zm643 404c0-158-219-167-218-238 1-21 21-44 66-50 22-3 83-5 153 27l27-127c-37-14-85-27-145-27-153 0-261 82-262 198-1 87 77 135 136 163 60 30 80 49 80 75 0 40-48 58-93 59-78 1-123-21-159-38l-28 131c36 17 103 31 172 32 163 0 270-80 271-205m405 196h143L1795 11h-133c-29 0-55 17-66 44l-233 556h163l33-90h199zm-174-213 82-225 47 225zM951 11 822 611H667L796 11z"
+                            fill="currentColor" class="visa-path"></path>
+                        </svg></div>
+                      <div class="credit-card_provider-switch is-mc"><svg data-wf--mastercard--variant="inherit-color"
+                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 117 72" width="100%"
+                          class="credit-card_provider-logo is-mc">
+                          <g class="mc-path is-current-color">
+                            <path
+                              d="m55.06 65.26.87.72a36 36 0 1 1 0-59.96q-.44.35-.87.72a38.77 38.77 0 0 0 0 58.52M80.5 0a36 36 0 0 0-19.93 6.02q.44.35.87.72a38.78 38.78 0 0 1 .01 58.52l-.87.72A36 36 0 1 0 80.5 0">
+                            </path>
+                            <path
+                              d="M58.25 7.71q-.7.54-1.36 1.13A36 36 0 0 0 44.5 36a35.9 35.9 0 0 0 13.75 28.29q.7-.55 1.36-1.13A36 36 0 0 0 72 36 35.9 35.9 0 0 0 58.25 7.71">
+                            </path>
+                          </g>
+                          <g class="mc-path is-original-color">
+                            <path d="M74 7.7H42.5v56.61H74z" fill="#ff5f00"></path>
+                            <path d="M44.5 36A36 36 0 0 1 58.25 7.7a36 36 0 1 0 0 56.6A36 36 0 0 1 44.5 36"
+                              fill="#eb001b"></path>
+                            <path
+                              d="M116.49 36a36 36 0 0 1-58.25 28.3A36 36 0 0 0 71.99 36 36 36 0 0 0 58.24 7.7 36 36 0 0 1 116.49 36"
+                              fill="#f79e1b"></path>
+                          </g>
+                        </svg></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="deposits_label">
               <div class="deposits_label-icon" aria-hidden="true"></div>
               <span class="deposits_label-label">Added</span>
             </div>
-            <div class="deposits_ripples" aria-hidden="true">
-              <span class="deposits_ripple" data-index="1"></span>
-              <span class="deposits_ripple" data-index="2"></span>
-              <span class="deposits_ripple" data-index="3"></span>
+            <div class="deposits_ripples" aria-hidden="true" data-reveal-group>
+              <span class="deposits_ripple" data-index="1" data-reveal></span>
+              <span class="deposits_ripple" data-index="2" data-reveal></span>
+              <span class="deposits_ripple" data-index="3" data-reveal></span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-anim="small-cards" class="demo-section" data-visibility-threshold="0.7" style="padding: 2rem;">
+      <style>
+        .small-card_block {
+          grid-column-gap: 12%;
+          grid-row-gap: 12%;
+          background-image: linear-gradient(#fff, #f2f2f2);
+          border: 1px solid #e7e7e7;
+          border-radius: 7.5%;
+          flex-flow: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          position: relative;
+          box-shadow: 0 10px 20px #0000001a;
+          container-type: inline-size;
+        }
+
+        .small-card_container {
+          aspect-ratio: 1;
+          width: 29%;
+          position: absolute;
+        }
+
+        .small-card_container.is-1 {
+          z-index: 3;
+          transform: translate(-70%, -40%);
+        }
+
+        .small-card_container.is-2 {
+          z-index: 2;
+          transform: translate(70%, 40%);
+        }
+
+        .small-cards_arrows {
+          z-index: 1;
+          aspect-ratio: 1;
+          width: 20%;
+          position: absolute;
+          transform: rotate(45deg);
+        }
+
+        .small-cards_arrow {
+          position: absolute;
+          overflow: visible !important;
+        }
+
+        .small-cards_arrow.is-1 {
+          bottom: 0;
+          left: 0;
+          transform: translate(20%, 100%);
+        }
+
+        .small-cards_arrow.is-2 {
+          top: 0;
+          right: 0;
+          transform: translate(-20%, -100%) rotate(180deg);
+        }
+
+        .features-graphic_wrap.is-gradient {
+          background-image: linear-gradient(45deg, #e7e7e75e, #fff 50%, #e7e7e75e);
+        }
+
+        .small-card_icon {
+    aspect-ratio: 1;
+    width: 29%;
+    position: relative;
+}
+.small-card_icon_inner {
+    z-index: 10;
+    background-image: linear-gradient(331.7deg, #fcfcfc, #f1f1f1);
+    border: 1px solid #efefef;
+    border-radius: .375rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    inset: 0;
+}
+.small-card_icon_wrap {
+    aspect-ratio: 1;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.orbit_dot_icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible !important;
+}
+.small-card_txt-block {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+}
+.small-card_label.text-size-tiny {
+    font-size: 6.7cqi;
+}
+.small-card_label {
+    color: #5d5d5d;
+    text-transform: uppercase;
+}
+.small-card_value-block {
+    white-space: nowrap;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 10cqi;
+    font-weight: 600;
+    display: flex;
+}
+.features-graphic_wrap.is-rounded {
+    border-radius: .5rem;
+}
+
+.features-graphic_wrap {
+    justify-content: center;
+    align-items: flex-start;
+    height: 60vmin;
+    min-height: 50rem;
+    padding: 1.5rem 0;
+    display: flex;
+    position: relative;
+}
+.small-cards_wrap {
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+      </style>
+      <div class="features-graphic_wrap is-gradient is-rounded" data-follow-root>
+        <div data-wf--2-small-cards--variant="" class="small-cards_wrap">
+          <div class="small-card_container is-1">
+            <div class="small-card_block" data-follow-mouse data-follow-depth="3" data-strength="0.045"
+              data-max-offset="14">
+              <div class="small-card_icon">
+                <div class="small-card_icon_inner">
+                  <div class="small-card_icon_wrap"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 20 20" width="100%" vector-effect="non-scaling-stroke" stroke-width="1.6"
+                      stroke-linecap="round" stroke-linejoin="round" class="orbit_dot_icon">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                        d="M18.33 8.33H1.67m7.5 3.34H5M1.67 6.83v6.34c0 .93 0 1.4.18 1.75q.25.49.73.73c.35.18.82.18 1.75.18h11.34c.93 0 1.4 0 1.75-.18q.48-.25.73-.73c.18-.35.18-.82.18-1.75V6.83c0-.93 0-1.4-.18-1.75a1.7 1.7 0 0 0-.73-.73c-.35-.18-.82-.18-1.75-.18H4.33c-.93 0-1.4 0-1.75.18q-.48.25-.73.73c-.18.35-.18.82-.18 1.75">
+                      </path>
+                    </svg></div>
+                </div>
+              </div>
+              <div class="small-card_txt-block">
+                <div class="small-card_label text-size-tiny">Bank Balance</div>
+                <div class="small-card_value-block">
+                                    <div class="small-card_value">$</div>
+                                    <div data-format="true" data-value="98453" class="small-card_value">98453</div>
+                                    <div class="small-card_value">.</div>
+                                    <div data-animate="false" data-decimal="00" class="small-card_value">00</div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="small-card_container is-2">
+            <div class="small-card_block" data-follow-mouse data-follow-depth="2" data-strength="0.025"
+              data-max-offset="12">
+              <div class="small-card_icon">
+                <div class="small-card_icon_inner">
+                  <div class="small-card_icon_wrap"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 20 20" width="100%" vector-effect="non-scaling-stroke" stroke-width="1.6"
+                      stroke-linecap="round" stroke-linejoin="round" class="orbit_dot_icon">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                        d="M18.33 8.33H1.67m7.5 3.34H5M1.67 6.83v6.34c0 .93 0 1.4.18 1.75q.25.49.73.73c.35.18.82.18 1.75.18h11.34c.93 0 1.4 0 1.75-.18q.48-.25.73-.73c.18-.35.18-.82.18-1.75V6.83c0-.93 0-1.4-.18-1.75a1.7 1.7 0 0 0-.73-.73c-.35-.18-.82-.18-1.75-.18H4.33c-.93 0-1.4 0-1.75.18q-.48.25-.73.73c-.18.35-.18.82-.18 1.75">
+                      </path>
+                    </svg></div>
+                </div>
+              </div>
+              <div class="small-card_txt-block">
+                <div class="small-card_label text-size-tiny">Ledger Balance</div>
+                <div class="small-card_value-block">
+                                    <div class="small-card_value">$</div>
+                                    <div data-format="true" data-value="98453" class="small-card_value">98453</div>
+                                    <div class="small-card_value">.</div>
+                                    <div data-animate="true" data-decimal="00" class="small-card_value">00</div>
+                                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="small-cards_arrows"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 24"
+              width="100%" class="small-cards_arrow is-1">
+              <path fill="url(#cards-arrow-gradient)"
+                d="M2.43 1.12A1.5 1.5 0 1 0 .57 3.48L1.5 2.3zm100.49 5.35a1.5 1.5 0 0 0-.92-1.91L89.26.09a1.5 1.5 0 0 0-1 2.83L99.6 6.89l-4 11.32a1.5 1.5 0 1 0 2.83 1zM1.5 2.3.57 3.48c20.14 15.9 36.8 21.17 52.94 20.21 16.01-.95 31.31-8.05 48.64-16.36l-.65-1.36-.65-1.35C83.43 13 68.65 19.8 53.33 20.7c-15.22.9-31.18-4-50.9-19.58z">
+              </path>
+              <defs>
+                <linearGradient id="cards-arrow-gradient" x1="1.5" x2="101.5" y1="12.3" y2="12.3"
+                  gradientUnits="userSpaceOnUse">
+                  <stop offset=".14" stop-color="#fff" stop-opacity="0"></stop>
+                  <stop offset="1" stop-color="#d1d1d1"></stop>
+                </linearGradient>
+              </defs>
+            </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 24" width="100%"
+              class="small-cards_arrow is-2">
+              <path fill="url(#cards-arrow-gradient)"
+                d="M2.43 1.12A1.5 1.5 0 1 0 .57 3.48L1.5 2.3zm100.49 5.35a1.5 1.5 0 0 0-.92-1.91L89.26.09a1.5 1.5 0 0 0-1 2.83L99.6 6.89l-4 11.32a1.5 1.5 0 1 0 2.83 1zM1.5 2.3.57 3.48c20.14 15.9 36.8 21.17 52.94 20.21 16.01-.95 31.31-8.05 48.64-16.36l-.65-1.36-.65-1.35C83.43 13 68.65 19.8 53.33 20.7c-15.22.9-31.18-4-50.9-19.58z">
+              </path>
+              <defs>
+                <linearGradient id="cards-arrow-gradient" x1="1.5" x2="101.5" y1="12.3" y2="12.3"
+                  gradientUnits="userSpaceOnUse">
+                  <stop offset=".14" stop-color="#fff" stop-opacity="0"></stop>
+                  <stop offset="1" stop-color="#d1d1d1"></stop>
+                </linearGradient>
+              </defs>
+            </svg></div>
+        </div>
+        <div class="features-graphic_cc_dots pointer-events-none"><canvas
+            class="features-graphic_cc_dots-canvas"></canvas>
+          <div class="features-graphic_cc_dots-sensor"></div>
+        </div>
+        <div class="hide w-embed w-script">
+          <script>
+
+          </script>
         </div>
       </div>
     </section>
@@ -824,6 +1219,485 @@
           <canvas id="radial_canvas" width="768" height="768" class="radial_svg"></canvas>
           <div class="radial_overlay"></div>
         </div>
+      </div>
+    </section>
+
+    <section data-anim="window-graphic" class="demo-section" data-reveal-group data-visibility-threshold="0.7"
+      style="padding: 2rem">
+      <h2>Window Graphic</h2>
+      <div class="features-graphic_wrap is-gradient is-rounded overflow-hidden u-container-inline-size" style="min-height: 80vh;">
+        <div class="hide w-embed">
+          <style>
+            .features-graphic_grid-bg {
+              --grid-size: 8cqi;
+              --grid-line: 1px;
+
+              background:
+                radial-gradient(140% 120% at 0% 0%,
+                  #e6e6e6 0%,
+                  rgba(251, 251, 251, 0.35) 55%,
+                  rgba(251, 251, 251, 0) 100%);
+
+              -webkit-mask-image:
+                repeating-linear-gradient(to right,
+                  #000 0,
+                  #000 var(--grid-line),
+                  transparent var(--grid-line),
+                  transparent var(--grid-size)),
+                repeating-linear-gradient(to bottom,
+                  #000 0,
+                  #000 var(--grid-line),
+                  transparent var(--grid-line),
+                  transparent var(--grid-size));
+              -webkit-mask-position: 50% 50%, 50% 50%;
+
+              mask-image:
+                repeating-linear-gradient(to right,
+                  #000 0,
+                  #000 var(--grid-line),
+                  transparent var(--grid-line),
+                  transparent var(--grid-size)),
+                repeating-linear-gradient(to bottom,
+                  #000 0,
+                  #000 var(--grid-line),
+                  transparent var(--grid-line),
+                  transparent var(--grid-size));
+              mask-position: 50% 50%, 50% 50%;
+            }
+
+            [data-anim="window-graphic"] {
+              --color-scheme-1--background: #fcfcfc;
+              --color-scheme-1--background-o80: color-mix(in srgb, var(--color-scheme-1--background) 80%, transparent);
+              --color-scheme-1--border: #e7e7e7;
+              --color-scheme-1--heading: #121212;
+              --_primitives---colors--white: #fff;
+              --_primitives---opacity--neutral-darkest-60: #0009;
+              --_primitives---opacity--neutral-darkest-40: #0006;
+              --label--blue-light: #e6f6fc;
+              --label--blue: #0054fc;
+            }
+
+            [data-anim="window-graphic"] * {
+              box-sizing: border-box;
+            }
+
+            [data-anim="window-graphic"] h4,
+            [data-anim="window-graphic"] h5,
+            [data-anim="window-graphic"] p {
+              margin: 0;
+              line-height: 1.5;
+            }
+
+            [data-anim="window-graphic"] h4,
+            [data-anim="window-graphic"] h5 {
+              line-height: 1.3;
+            }
+
+            [data-anim="window-graphic"] .overflow-hidden {
+              overflow: hidden;
+            }
+
+            [data-anim="window-graphic"] .margin-left {
+              margin-top: 0;
+              margin-bottom: 0;
+              margin-right: 0;
+            }
+
+            [data-anim="window-graphic"] .margin-left.margin-xxxsmall {
+              margin: 0 0 0 .25rem;
+            }
+
+            [data-anim="window-graphic"] .features-graphic_wrap {
+              justify-content: center;
+              align-items: flex-start;
+              height: 25vmin;
+              min-height: 20rem;
+              padding-top: 1.5rem;
+              padding-bottom: 1.5rem;
+              display: flex;
+              position: relative;
+            }
+
+            [data-anim="window-graphic"] .features-graphic_wrap.is-rounded {
+              border-radius: .5rem;
+            }
+
+            [data-anim="window-graphic"] .features-graphic_wrap.is-gradient {
+              background-image: linear-gradient(45deg, #e7e7e75e, #fff 50%, #e7e7e75e);
+            }
+
+            [data-anim="window-graphic"] .features-graphic_grid-bg {
+              z-index: 1;
+              opacity: .43;
+              pointer-events: none;
+              position: absolute;
+              inset: -1px;
+              container-type: inline-size;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_container {
+              z-index: 2;
+              flex-flow: column;
+              width: calc(100% - 14cqi);
+              display: flex;
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: translate(12cqi, 6cqi);
+              container-type: inline-size;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_outer {
+              background-image: radial-gradient(circle at 0 100%, #e1e1e1, #fcfcfc);
+              border-radius: 4cqi;
+              height: 100%;
+              padding: 1.5cqi;
+              box-shadow: 0 0 10px #0000000d;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_outer[data-reveal] {
+              --reveal-transform: translate3d(0, 70rem, 0);
+            }
+
+            [data-anim="window-graphic"] .window-graphic_inner {
+              background-color: var(--_primitives---colors--white);
+              height: 100%;
+              color: var(--_primitives---opacity--neutral-darkest-60);
+              grid-column-gap: 3cqi;
+              grid-row-gap: 3cqi;
+              border-radius: 2.5cqi;
+              flex-flow: column;
+              padding: 4cqi;
+              font-size: 2cqi;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_title {
+              color: var(--color-scheme-1--heading);
+              font-size: 3.4cqi;
+              font-weight: 600;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_subtitle {
+              color: var(--_primitives---opacity--neutral-darkest-40);
+            }
+
+            [data-anim="window-graphic"] .window-graphic_date-block {
+              align-items: baseline;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_date {
+              color: var(--color-scheme-1--heading);
+              white-space: nowrap;
+              font-weight: 600;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_content-block {
+              grid-column-gap: 3cqi;
+              grid-row-gap: 3cqi;
+              flex-flow: row;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_main-block {
+              grid-column-gap: 2cqi;
+              grid-row-gap: 2cqi;
+              flex-flow: column;
+              flex: 1;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_side-block {
+              border: 1px solid var(--color-scheme-1--border);
+              background-color: var(--color-scheme-1--background);
+              border-radius: 1.5cqi;
+              width: 35%;
+              padding: 2.5cqi;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_form-block {
+              grid-column-gap: 2cqi;
+              grid-row-gap: 2cqi;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_form-slot {
+              grid-column-gap: 2cqi;
+              grid-row-gap: 2cqi;
+              flex-flow: column;
+              flex: 1;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_side-title {
+              border-bottom: 1px solid var(--color-scheme-1--border);
+              color: var(--color-scheme-1--heading);
+              margin-bottom: 1.5cqi;
+              padding-bottom: 1.15cqi;
+              font-size: 2.23cqi;
+              font-weight: 600;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_side-label,
+            [data-anim="window-graphic"] .window-graphic_form-label {
+              font-weight: 600;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_side-slot {
+              grid-column-gap: 1.15cqi;
+              grid-row-gap: 1.15cqi;
+              flex-flow: column;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_side-value,
+            [data-anim="window-graphic"] .window-graphic_form-value {
+              white-space: nowrap;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_side-value-block {
+              align-items: baseline;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .u-label {
+              background-color: var(--label--blue-light);
+              color: var(--label--blue);
+              border-radius: .5cqi;
+              padding: 0 1cqi;
+            }
+
+            [data-anim="window-graphic"] .u-container-inline-size {
+              container-type: inline-size;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_form-content {
+              grid-column-gap: .75cqi;
+              grid-row-gap: .75cqi;
+              flex-flow: column;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_form-input-block {
+              background-color: #f9f9f9;
+              border: 1px solid #d1d1d1;
+              border-radius: 1.5cqi;
+              align-items: baseline;
+              padding: 0 1.5cqi;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_form-value {
+              padding: 1.5cqi 0;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_form-value.is-prefix {
+              border-right: 1px solid #d1d1d1;
+              margin-right: 1.5cqi;
+              padding: 1.5cqi 1.5cqi 1.5cqi 0;
+            }
+
+            [data-anim="window-graphic"] .window-graphic_form-textarea-block {
+              border: 1px solid #d1d1d1;
+              border-radius: 1.5cqi;
+              align-items: baseline;
+              padding: 0 1.5cqi 5cqi;
+              display: flex;
+            }
+
+            [data-anim="window-graphic"] .features-graphic_gradient-bottom {
+              z-index: 3;
+              background-image: linear-gradient(180deg, #fcfcfc00, var(--color-scheme-1--background-o80));
+              pointer-events: none;
+              height: 50%;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+            }
+
+            @media screen and (max-width: 991px) {
+              [data-anim="window-graphic"] .features-graphic_wrap {
+                justify-content: center;
+                align-items: center;
+                height: 30vmin;
+                min-height: 16rem;
+                display: flex;
+              }
+            }
+
+            @media screen and (max-width: 767px) {
+              [data-anim="window-graphic"] .features-graphic_wrap {
+                height: 25vmax;
+                min-height: 18rem;
+              }
+            }
+
+            @media screen and (max-width: 479px) {
+              [data-anim="window-graphic"] .features-graphic_wrap {
+                height: 20vmax;
+                min-height: 14rem;
+              }
+            }
+          </style>
+        </div>
+        <div class="features-graphic_grid-bg"></div>
+        <div class="window-graphic_container">
+          <div class="window-graphic_outer" data-reveal>
+            <div class="window-graphic_inner">
+              <div class="window-graphic_title-block" data-reveal>
+                <h4 class="window-graphic_title">New Personal Loan</h4>
+                <p class="window-graphic_subtitle">Record a payment against the loan account.</p>
+              </div>
+              <div class="window-graphic_content-block">
+                <div class="window-graphic_main-block">
+                  <div class="window-graphic_date-block" data-reveal>
+                    <p class="window-graphic_date">Balances for pay off as of&nbsp;</p>
+                    <p data-date="true" class="window-graphic_date">Apr 25, 2026</p>
+                  </div>
+                  <div class="window-graphic_form-block">
+                    <div class="window-graphic_form-slot">
+                      <div class="window-graphic_form-content" data-reveal>
+                        <p class="window-graphic_form-label">Principal amount</p>
+                        <div class="window-graphic_form-input-block">
+                          <p class="window-graphic_form-value is-prefix">USD</p>
+                          <p data-value="50958" data-format="true" class="window-graphic_form-value is-value">50958</p>
+                          <p class="window-graphic_form-value">.</p>
+                          <p data-animate="false" data-decimal="00" class="window-graphic_form-value">00</p>
+                        </div>
+                      </div>
+                      <div class="window-graphic_form-content" data-reveal>
+                        <p class="window-graphic_form-label">Fee amount</p>
+                        <div class="window-graphic_form-input-block">
+                          <p class="window-graphic_form-value is-prefix">USD</p>
+                          <p data-value="0" data-format="true" class="window-graphic_form-value is-value">0</p>
+                          <p class="window-graphic_form-value">.</p>
+                          <p data-animate="false" data-decimal="00" class="window-graphic_form-value">00</p>
+                        </div>
+                      </div>
+                      <div class="window-graphic_form-content" data-reveal>
+                        <p class="window-graphic_form-label">Penalty amount</p>
+                        <div class="window-graphic_form-input-block">
+                          <p class="window-graphic_form-value is-prefix">USD</p>
+                          <p data-value="896" data-format="true" class="window-graphic_form-value is-value">896</p>
+                          <p class="window-graphic_form-value">.</p>
+                          <p data-animate="true" data-decimal="06" class="window-graphic_form-value">06</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="window-graphic_form-slot">
+                      <div class="window-graphic_form-content" data-reveal>
+                        <p class="window-graphic_form-label">Interest amount</p>
+                        <div class="window-graphic_form-input-block">
+                          <p class="window-graphic_form-value is-prefix">USD</p>
+                          <p data-value="3664" data-format="true" class="window-graphic_form-value is-value">3664</p>
+                          <p class="window-graphic_form-value">.</p>
+                          <p data-animate="true" data-decimal="71" class="window-graphic_form-value">71</p>
+                        </div>
+                      </div>
+                      <div class="window-graphic_form-content" data-reveal>
+                        <p class="window-graphic_form-label">Insurance amount</p>
+                        <div class="window-graphic_form-input-block">
+                          <p class="window-graphic_form-value is-prefix">USD</p>
+                          <p data-value="4000" data-format="true" class="window-graphic_form-value is-value">4000</p>
+                          <p class="window-graphic_form-value">.</p>
+                          <p data-animate="false" data-decimal="00" class="window-graphic_form-value">00</p>
+                        </div>
+                      </div>
+                      <div class="window-graphic_form-content" data-reveal>
+                        <p class="window-graphic_form-label">Pay off amount</p>
+                        <div class="window-graphic_form-input-block">
+                          <p class="window-graphic_form-value is-prefix">USD</p>
+                          <p data-value="55854" data-format="true" class="window-graphic_form-value is-value">55854</p>
+                          <p class="window-graphic_form-value">.</p>
+                          <p data-animate="true" data-decimal="91" class="window-graphic_form-value">91</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="window-graphic_form-content" data-reveal>
+                    <p class="window-graphic_form-label">Description</p>
+                    <div class="window-graphic_form-textarea-block">
+                      <p class="window-graphic_form-value is-value">Enter a description...</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="window-graphic_side-block" data-reveal>
+                  <h5 class="window-graphic_side-title" data-reveal>Current loan details</h5>
+                  <div class="window-graphic_side-slot">
+                    <div class="window-graphic_side-content" data-reveal>
+                      <p class="window-graphic_side-label">Loan amount</p>
+                      <div class="window-graphic_side-value-block">
+                        <p class="window-graphic_side-value">USD</p>
+                        <p class="window-graphic_side-value">&nbsp;</p>
+                        <p data-time="false" data-format="true" data-value="80000" data-date="false" class="window-graphic_side-value">80000</p>
+                        <p class="window-graphic_side-value">.</p>
+                        <p data-animate="false" data-decimal="00" class="window-graphic_side-value">00</p>
+                      </div>
+                    </div>
+                    <div class="window-graphic_side-content" data-reveal>
+                      <p class="window-graphic_side-label">Term</p>
+                      <div class="window-graphic_side-value-block">
+                        <p data-time="false" data-format="false" data-value="36" data-date="false" class="window-graphic_side-value">36</p>
+                        <p class="window-graphic_side-value">&nbsp;months</p>
+                      </div>
+                    </div>
+                    <div class="window-graphic_side-content" data-reveal>
+                      <p class="window-graphic_side-label">Pricing</p>
+                      <div class="window-graphic_side-value-block">
+                        <p data-time="false" data-format="true" data-value="3" data-date="false" class="window-graphic_side-value">3</p>
+                        <p class="window-graphic_side-value">.</p>
+                        <p data-animate="true" data-decimal="91" class="window-graphic_side-value">91</p>
+                        <p class="window-graphic_side-value">%</p>
+                        <div class="margin-left margin-xxxsmall">
+                          <p data-wf--label--variant="blue" class="u-label">Fixed</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="window-graphic_side-content" data-reveal>
+                      <p class="window-graphic_side-label">Disbursment time</p>
+                      <div class="window-graphic_side-value-block">
+                        <p data-time="true" data-format="false" data-value="{{current date}}" data-date="true" class="window-graphic_side-value">{{current date}}</p>
+                      </div>
+                    </div>
+                    <div class="window-graphic_side-content" data-reveal>
+                      <p class="window-graphic_side-label">Total due</p>
+                      <div class="window-graphic_side-value-block">
+                        <p class="window-graphic_side-value">USD</p>
+                        <p class="window-graphic_side-value">&nbsp;</p>
+                        <p data-time="false" data-format="true" data-value="2482" data-date="false" class="window-graphic_side-value">2482</p>
+                        <p class="window-graphic_side-value">.</p>
+                        <p data-animate="true" data-decimal="89" class="window-graphic_side-value">89</p>
+                      </div>
+                    </div>
+                    <div class="window-graphic_side-content" data-reveal>
+                      <p class="window-graphic_side-label">Total paid</p>
+                      <div class="window-graphic_side-value-block">
+                        <p class="window-graphic_side-value">USD</p>
+                        <p class="window-graphic_side-value">&nbsp;</p>
+                        <p data-time="false" data-format="true" data-value="34760" data-date="false" class="window-graphic_side-value">34760</p>
+                        <p class="window-graphic_side-value">.</p>
+                        <p data-animate="false" data-decimal="00" class="window-graphic_side-value">00</p>
+                      </div>
+                    </div>
+                    <div class="window-graphic_side-content" data-reveal>
+                      <p class="window-graphic_side-label">Total outstanding</p>
+                      <div class="window-graphic_side-value-block">
+                        <p class="window-graphic_side-value">USD</p>
+                        <p class="window-graphic_side-value">&nbsp;</p>
+                        <p data-time="false" data-format="true" data-value="54623" data-date="false" class="window-graphic_side-value">54623</p>
+                        <p class="window-graphic_side-value">.</p>
+                        <p data-animate="false" data-decimal="00" class="window-graphic_side-value">00</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="features-graphic_gradient-bottom"></div>
       </div>
     </section>
 

@@ -16,7 +16,10 @@
     "build:dots-bulge:single": "SINGLE_ENTRY=dots-bulge vite build",
     "build:radial:single": "SINGLE_ENTRY=radial vite build",
     "build:cards:single": "SINGLE_ENTRY=cards vite build",
-    "build:orbit:single": "SINGLE_ENTRY=orbit vite build"
+    "build:deposits:single": "SINGLE_ENTRY=deposits vite build",
+    "build:orbit:single": "SINGLE_ENTRY=orbit vite build",
+    "build:small-cards:single": "SINGLE_ENTRY=small-cards vite build",
+    "build:window-graphic:single": "SINGLE_ENTRY=window-graphic vite build"
   },
   "devDependencies": {
     "vite": "^5.0.0"
