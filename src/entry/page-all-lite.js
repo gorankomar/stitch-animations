@@ -1,6 +1,7 @@
 import { byData } from '../lib/dom.js';
 import { ATTR, DATA_ATTRS } from '../lib/config.js';
 import { initAutoReveals } from '../lib/effects/auto-reveal.js';
+import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
   {
@@ -84,6 +85,7 @@ const resolvers = [
 
 document.addEventListener('DOMContentLoaded', async () => {
   initAutoReveals(document);
+  initZoomLenses(document);
   await Promise.all(
     resolvers.map(async ({ selector, load }) => {
       if (document.querySelector(selector)) {

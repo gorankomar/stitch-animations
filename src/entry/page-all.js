@@ -19,6 +19,7 @@ import { init as initDeposits } from '../animations/deposits/index.js';
 import { init as initSmallCards } from '../animations/small-cards/index.js';
 import { init as initWindowGraphic } from '../animations/window-graphic/index.js';
 import { initAutoReveals } from '../lib/effects/auto-reveal.js';
+import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 function ready(fn) {
   if (document.readyState === 'loading') {
@@ -30,6 +31,7 @@ function ready(fn) {
 
 ready(() => {
   initAutoReveals(document);
+  initZoomLenses(document);
   [
     initHero,
     initApi,
