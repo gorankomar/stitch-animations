@@ -28,8 +28,8 @@ stitch-animations/
 │  ├─ lib/                  # Shared utilities & effects
 │  ├─ animations/           # One module per animation (hero, api, chart, dots, dots-bulge, radial, cards, orbit, window-graphic)
 │  └─ entry/                # Bundles: page-all, page-all-lite, feature-*
-├─ public/index.html        # Demo markup
-├─ dist/                    # Build output (gitignored)
+├─ index.html               # Demo markup
+├─ dist/                    # Build output committed for CDN usage
 ```
 
 ### Shared Utilities
@@ -184,7 +184,17 @@ The paired CSS lives next to the module (e.g., `src/animations/hero/styles.css`)
 | `src/entry/feature-api.js` / `feature-chart.js` / `feature-dots.js` / `feature-dots-bulge.js` / `feature-radial.js` / `feature-cards.js` / `feature-deposits.js` / `feature-orbit.js` / `feature-small-cards.js` / `feature-window-graphic.js` | Ready-made single-animation bundles for the remaining demos. |
 | `npm run build:hero:single` (and `:api`, `:chart`, `:dots`, `:dots-bulge`, `:radial`, `:cards`, `:deposits`, `:orbit`, `:small-cards`, `:window-graphic`) | Emits `dist/feature-*.js` + `dist/feature-*.css` (no shared chunks) for copy/paste deployments. |
 
-All entry files are exposed to Vite via `vite.config.js`, yielding hashed outputs like `dist/page-all.<hash>.js`. Tree-shaking ensures a `feature-*` build only contains the animation it needs plus shared libs once.
+All entry files are exposed to Vite via `vite.config.js`, yielding stable entry outputs like `dist/page-all-lite.js` plus hashed shared chunks. Tree-shaking ensures a `feature-*` build only contains the animation it needs plus shared libs once.
+
+### Webflow / CDN Usage
+
+GitHub does not serve repository JavaScript as a production CDN, but committed `dist/` files can be loaded through jsDelivr:
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/gorankomar/stitch-animations@main/dist/page-all-lite.js"></script>
+```
+
+Use `page-all-lite.js` for Webflow pages. It scans for `data-anim="<name>"` sections and loads only the matching animation chunks from `dist/chunks/`.
 
 ### Authoring Markup
 

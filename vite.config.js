@@ -26,7 +26,7 @@ const singleTarget = singleKey && SINGLE_ENTRIES[singleKey];
 const isSingleBuild = Boolean(singleTarget);
 
 const sharedOutput = {
-  entryFileNames: `[name].[hash].js`,
+  entryFileNames: `[name].js`,
   chunkFileNames: `chunks/[name].[hash].js`,
   assetFileNames: (assetInfo) => {
     const originalName = assetInfo?.name ?? 'asset';
@@ -50,6 +50,7 @@ const singleOutput = (fileBase) => ({
 });
 
 export default defineConfig({
+  base: './',
   publicDir: 'public',
   build: {
     outDir: 'dist',

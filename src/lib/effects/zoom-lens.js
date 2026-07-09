@@ -4,7 +4,9 @@ const SELECTOR = '[data-zoom-lens]';
 const LENS_ATTR = 'data-zoom-lens-ui';
 const DEFAULT_SIZE = 220;
 const DEFAULT_SCALE = 1.8;
-const DEFAULT_BORDER = '#b8b8b8';
+const DEFAULT_BORDER = '#D1D1D1';
+const DEFAULT_SHADOW_ALPHA = 0.2;
+const EDGE_BUFFER_PX = 2;
 const STYLE_ID = 'stitch-zoom-lens-styles';
 const HOST_CACHE = new WeakMap();
 
@@ -38,6 +40,7 @@ function createZoomLens(host) {
     clone: null,
     observer: null,
     rafId: null,
+    apertureSize: 0,
     x: 0,
     y: 0,
     sourceX: 0,
@@ -98,6 +101,9 @@ function createZoomLens(host) {
 }
 
 function activate(state, event) {
+  state.lens.classList.remove('is-shrinking');
+  state.apertureSize = 0;
+
   if (!state.host.contains(state.lens)) {
     state.host.append(state.lens);
   }
@@ -109,11 +115,14 @@ function activate(state, event) {
   updatePointer(state, event);
 
   state.active = true;
+  render(state);
   state.lens.classList.add('is-active');
-  scheduleRender(state);
 }
 
 function deactivate(state) {
+  if (state.apertureSize > 0) {
+    state.lens.classList.add('is-shrinking');
+  }
   state.active = false;
   state.lens.classList.remove('is-active');
   if (state.rafId !== null) {
@@ -309,15 +318,35 @@ function render(state) {
   const size = readNumber(state.host.dataset.zoomLensSize, DEFAULT_SIZE);
   const scale = readNumber(state.host.dataset.zoomLensScale, DEFAULT_SCALE);
   const radius = size / 2;
+  const edgeSize = resolveEdgeSize(state);
+  const apertureSize = Math.min(size, edgeSize);
+  const apertureRatio = size > 0 ? clamp01(apertureSize / size) : 0;
   const border = state.host.dataset.zoomLensBorder || DEFAULT_BORDER;
   const translateX = radius - state.sourceX * scale;
   const translateY = radius - state.sourceY * scale;
+  const isShrinking = apertureSize < state.apertureSize - 0.5;
 
-  state.lens.style.width = `${size}px`;
-  state.lens.style.height = `${size}px`;
+  state.lens.style.setProperty('--stitch-zoom-lens-size', `${size}px`);
+  state.lens.style.setProperty('--stitch-zoom-lens-aperture-size', `${apertureSize}px`);
+  state.lens.style.setProperty('--stitch-zoom-lens-edge-size', `${edgeSize}px`);
+  state.lens.style.setProperty(
+    '--stitch-zoom-lens-shadow-alpha',
+    String(DEFAULT_SHADOW_ALPHA * apertureRatio)
+  );
   state.lens.style.borderColor = border;
-  state.lens.style.transform = `translate3d(${state.x - radius}px, ${state.y - radius}px, 0)`;
+  state.lens.style.left = `${state.x}px`;
+  state.lens.style.top = `${state.y}px`;
+  state.lens.classList.toggle('is-shrinking', isShrinking);
+  state.apertureSize = apertureSize;
   state.clone.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`;
+}
+
+function resolveEdgeSize(state) {
+  const rect = state.hostRect;
+  if (!rect) return Number.POSITIVE_INFINITY;
+
+  const edgeDistance = Math.min(state.x, state.y, rect.width - state.x, rect.height - state.y);
+  return Math.max(0, (edgeDistance - EDGE_BUFFER_PX) * 2);
 }
 
 function resolveSource(host) {
@@ -335,6 +364,13 @@ function readNumber(value, fallback) {
   return Number.isFinite(number) && number > 0 ? number : fallback;
 }
 
+function clamp01(value) {
+  if (!Number.isFinite(value)) return 0;
+  if (value <= 0) return 0;
+  if (value >= 1) return 1;
+  return value;
+}
+
 function ensureStyles() {
   if (document.getElementById(STYLE_ID)) return;
 
@@ -346,28 +382,49 @@ function ensureStyles() {
       top: 0;
       left: 0;
       z-index: 20;
+      width: 0;
+      height: 0;
+      max-width: var(--stitch-zoom-lens-edge-size, var(--stitch-zoom-lens-size, ${DEFAULT_SIZE}px));
+      max-height: var(--stitch-zoom-lens-edge-size, var(--stitch-zoom-lens-size, ${DEFAULT_SIZE}px));
       border: 1px solid ${DEFAULT_BORDER};
       border-radius: 999px;
       background: #fff;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, .12);
+      box-shadow: 6px 15px 30px rgba(0, 0, 0, var(--stitch-zoom-lens-shadow-alpha, ${DEFAULT_SHADOW_ALPHA}));
       opacity: 0;
       overflow: hidden;
       pointer-events: none;
-      transform: translate3d(-9999px, -9999px, 0);
-      transition: opacity 160ms ease;
-      will-change: transform;
+      transform: translate3d(-50%, -50%, 0);
+      transition:
+        width 700ms var(--motion-ease-primary, cubic-bezier(.11, .61, .27, .99)),
+        height 700ms var(--motion-ease-primary, cubic-bezier(.11, .61, .27, .99)),
+        opacity 160ms ease;
+      transform-origin: 50% 50%;
+      will-change: top, left, width, height;
     }
 
     .stitch-zoom-lens.is-active {
+      width: var(--stitch-zoom-lens-aperture-size, var(--stitch-zoom-lens-size, ${DEFAULT_SIZE}px));
+      height: var(--stitch-zoom-lens-aperture-size, var(--stitch-zoom-lens-size, ${DEFAULT_SIZE}px));
       opacity: 1;
+    }
+
+    .stitch-zoom-lens.is-shrinking {
+      transition:
+        width 700ms cubic-bezier(.73, .01, .89, .39),
+        height 700ms cubic-bezier(.73, .01, .89, .39),
+        opacity 160ms ease;
     }
 
     .stitch-zoom-lens_frame {
       position: absolute;
-      inset: 0;
+      top: 50%;
+      left: 50%;
+      width: var(--stitch-zoom-lens-size, ${DEFAULT_SIZE}px);
+      height: var(--stitch-zoom-lens-size, ${DEFAULT_SIZE}px);
       overflow: hidden;
       border-radius: inherit;
       contain: strict;
+      transform: translate3d(-50%, -50%, 0);
     }
 
     .stitch-zoom-lens_source {
