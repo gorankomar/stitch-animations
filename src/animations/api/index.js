@@ -29,8 +29,11 @@ function setupApiSection(section) {
   revealController.ensure();
 
   const cleanups = [() => revealController.cancel()];
+  const wraps = section.matches?.('.api-graphic_wrap')
+    ? [section]
+    : qsa('.api-graphic_wrap', section);
 
-  qsa('.api-graphic_wrap', section).forEach((wrap) => {
+  wraps.forEach((wrap) => {
     const track = wrap.querySelector('[data-follow-mouse]');
     const block = wrap.querySelector('.api-graphic_block');
     const ripple = wrap.querySelector('.api-graphic_ripple');
