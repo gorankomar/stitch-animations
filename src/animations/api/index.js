@@ -34,13 +34,18 @@ function setupApiSection(section) {
     : qsa('.api-graphic_wrap', section);
 
   wraps.forEach((wrap) => {
-    const track = wrap.querySelector('[data-follow-mouse]');
+    const track = wrap.querySelector('[data-follow-mouse]') || wrap.querySelector('.api-graphic_track');
     const block = wrap.querySelector('.api-graphic_block');
     const ripple = wrap.querySelector('.api-graphic_ripple');
     const glowTemplate = wrap.querySelector('.api-graphic_glow');
     if (!track || !block) return;
 
-    cleanups.push(createFollowGroup({ root: wrap }));
+    cleanups.push(
+      createFollowGroup({
+        root: wrap,
+        selector: track.matches('[data-follow-mouse]') ? '[data-follow-mouse]' : '.api-graphic_track'
+      })
+    );
     cleanups.push(
       createPressRipple({
         trigger: wrap,
