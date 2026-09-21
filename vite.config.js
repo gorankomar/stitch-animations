@@ -4,6 +4,9 @@ import path, { resolve } from 'node:path';
 const entry = (name) => resolve(process.cwd(), `src/entry/${name}.js`);
 
 const SINGLE_ENTRIES = {
+  access: { input: entry('feature-access'), fileBase: 'feature-access', globalName: 'FeatureAccess' },
+  reference: { input: entry('feature-reference'), fileBase: 'feature-reference', globalName: 'FeatureReference' },
+  webhook: { input: entry('feature-webhook'), fileBase: 'feature-webhook', globalName: 'FeatureWebhook' },
   hero: { input: entry('feature-hero'), fileBase: 'feature-hero', globalName: 'FeatureHero' },
   api: { input: entry('feature-api'), fileBase: 'feature-api', globalName: 'FeatureApi' },
   chart: { input: entry('feature-chart'), fileBase: 'feature-chart', globalName: 'FeatureChart' },
@@ -75,6 +78,9 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-access': entry('feature-access'),
+            'feature-reference': entry('feature-reference'),
+            'feature-webhook': entry('feature-webhook'),
             'page-all': entry('page-all'),
             'page-all-lite': entry('page-all-lite'),
             'feature-hero': entry('feature-hero'),

@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:webhook:single": "SINGLE_ENTRY=webhook vite build",
+    "build:reference:single": "SINGLE_ENTRY=reference vite build",
+    "build:access:single": "SINGLE_ENTRY=access vite build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",

@@ -1,3 +1,9 @@
+import '../animations/access/styles.css';
+import { init as initAccess } from '../animations/access/index.js';
+import '../animations/reference/styles.css';
+import { init as initReference } from '../animations/reference/index.js';
+import '../animations/webhook/styles.css';
+import { init as initWebhook } from '../animations/webhook/index.js';
 import '../animations/hero/styles.css';
 import '../animations/api/styles.css';
 import '../animations/chart/styles.css';
@@ -33,6 +39,9 @@ ready(() => {
   initAutoReveals(document);
   initZoomLenses(document);
   [
+    initAccess,
+    initReference,
+    initWebhook,
     initHero,
     initApi,
     initChart,

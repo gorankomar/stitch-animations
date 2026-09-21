@@ -20,6 +20,9 @@ export const THRESHOLDS = Object.freeze({
 });
 
 export const DATA_ATTRS = Object.freeze({
+  access: 'access',
+  reference: 'reference',
+  webhook: 'webhook',
   hero: 'hero',
   api: 'api',
   chart: 'chart',

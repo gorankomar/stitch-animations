@@ -1,0 +1,6 @@
+@import '../../lib/effects/connector.css';
+[data-reference-stage] { position: relative; isolation: isolate; }
+.reference-connector { z-index: 2; }
+.reference-connector__pulse { stroke-linecap: butt; }
+.reference-connector circle { fill: var(--reference-line-color, #d2d2d2); }
+.reference-connector__fill { fill: var(--reference-pulse-color, var(--_primitives---colors--primary-blue, #3342ff)); }

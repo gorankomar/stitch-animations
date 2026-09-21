@@ -46,7 +46,7 @@ stitch-animations/
 - `src/lib/effects/threshold.js` – Run animation setups once a section is `X%` visible (default `0.25`, override with `data-visibility-threshold` or options) and reuse `resolveVisibilityThreshold()` wherever the attr is read.
 - `src/lib/effects/press-ripple.js` – Pointer-down class toggler that restarts CSS ripple/press animations without duplicating event code.
 - `src/lib/effects/glow-sweep.js` – Template-driven glow spawner that snaps to pointer direction, loops while visible, and respects `data-visibility-threshold`.
-- `src/lib/effects/zoom-lens.js` – Reusable cursor magnifier for dense graphics; opt in with `data-zoom-lens` and tune size/scale/border from markup.
+- `src/lib/effects/zoom-lens.js` – Reusable cursor magnifier for dense graphics; opt in with `data-zoom-lens="true"` and tune size/scale/border from markup.
 
 ### Effect Recipes
 
@@ -126,7 +126,7 @@ export function init(root = document) {
 
 #### Zoom lens
 
-`initZoomLenses(root)` attaches a circular magnifier to any element with `data-zoom-lens`.
+`initZoomLenses(root)` attaches a circular magnifier to any element with `data-zoom-lens="true"`.
 
 ```js
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
@@ -136,7 +136,7 @@ const dispose = initZoomLenses(document);
 
 Markup contract:
 
-- `data-zoom-lens` enables the effect on the hovered element.
+- `data-zoom-lens="true"` enables the effect on the hovered element; `data-zoom-lens="false"` leaves it disabled. The value is case-insensitive.
 - `data-zoom-lens-size="240"` sets the lens diameter in pixels.
 - `data-zoom-lens-scale="1.9"` sets the zoom multiplier.
 - `data-zoom-lens-border="#b8b8b8"` overrides the default gray outline.
@@ -230,7 +230,7 @@ Future docs note: planned Webflow-facing tooltip copy, optional attribute behavi
 | `data-follow-root` | Container | Enables pointer-follow for all nested `[data-follow-mouse]`. |
 | `data-follow-mouse` | Layer | Marks an element as a follower. Optional tuning: `data-follow-depth`, `data-strength`, `data-max-offset`, `data-axis`. |
 | `data-counter-*` | Value labels | Used by `value-counter`: `data-counter-initial`, `data-counter-value`, `data-counter-duration`, `data-counter-prefix`, `data-counter-suffix`, `data-counter-decimals`, `data-counter-locale`, `data-counter-grouping`, `data-counter-snap`. |
-| `data-zoom-lens` | Dense graphic wrapper | Enables the reusable magnifier. Optional tuning: `data-zoom-lens-size`, `data-zoom-lens-scale`, `data-zoom-lens-border`, `data-zoom-lens-target`. |
+| `data-zoom-lens="true"` | Dense graphic wrapper | Enables the reusable magnifier. Set it to `false` to disable it. Optional tuning: `data-zoom-lens-size`, `data-zoom-lens-scale`, `data-zoom-lens-border`, `data-zoom-lens-target`. |
 
 #### Hero (`data-anim="hero"`)
 
@@ -278,7 +278,7 @@ Future docs note: planned Webflow-facing tooltip copy, optional attribute behavi
 - Add `data-reveal-group` to the section and `data-reveal` only to the exact elements you want sequenced. The window-graphic module no longer injects reveal targets automatically.
 - Value labels use `data-value` plus optional `data-format`. Adjacent `[data-decimal]` nodes can either stay static or animate when `data-animate="true"`.
 - Date labels use `data-date="true"` and optional `data-time="true"` to render the current date/time.
-- Add `data-zoom-lens` to the graphic wrapper for the magnifier. The demo uses `data-zoom-lens-size="240"` and `data-zoom-lens-scale="1.9"`.
+- Add `data-zoom-lens="true"` to the graphic wrapper for the magnifier. Set it to `false` to disable it. The demo uses `data-zoom-lens-size="240"` and `data-zoom-lens-scale="1.9"`.
 
 #### Radial console (`data-anim="radial"`)
 
@@ -297,3 +297,29 @@ Future docs note: planned Webflow-facing tooltip copy, optional attribute behavi
 ## Legacy Assets
 
 Original files now live under `legacy/scripts-original/` and `legacy/styles-original/` unchanged for reference. Treat them as read-only while porting logic into the new modules.
+
+### Webhook (`data-anim="webhook"`)
+
+The local demo is at `/#webhook`. Put two bubbles inside `[data-webhook-stage]`, marking the upper/source bubble `data-webhook-from` and the lower/destination bubble `data-webhook-to`. The module generates an SVG connector from the source's bottom center to the destination's top center. Both left-to-right and right-to-left layouts work; placement and bubble appearance are controlled by your host CSS. Keep a vertical gap between the bubbles.
+
+Load `src/animations/webhook/styles.css` (or its built equivalent) for the connector's structural styles. The demo-only bubble styles live in `index.html` so Webflow can supply its own styling. The animation uses CSS `translate` on the two bubble elements; use inner wrappers for any additional translate effects.
+
+Bubbles drift by a few pixels at different speeds. Hovering anywhere in the Webhook section adds eased movement away from the pointer: bubbles near the cursor stay steadier, while farther bubbles travel more (up to 26px). Leaving the section eases them back to their idle drift. Every 4.5 seconds, a continuous blue band passes through the source dot, connector, and destination dot. Each dot fills from top to bottom as the head passes and clears from top to bottom as the tail passes. Dot fills and line movement share the same measured path position. Customize connector colors with `--webhook-line-color` and `--webhook-pulse-color`. Motion pauses offscreen and in hidden tabs; reduced-motion preferences disable drift and pulses. Multiple stages are supported. Build a standalone bundle with `npm run build:webhook:single`.
+
+### Reference (`data-anim="reference"`)
+
+The local demo is at `/#reference`. Inside `[data-reference-stage]`, mark the hub `data-reference-center` and the four cards `data-reference-card="left-top"`, `"left-bottom"`, `"right-top"`, and `"right-bottom"`. Position the cards on their named sides with room for the connectors. Layout and card styling live in the demo markup; Webflow can provide its own styles. Load the structural `reference/styles.css` alongside the animation.
+
+Two blue pulses leave the hub simultaneously every 4.8 seconds, reach the left/right junctions together, and split into upper/lower branches. Source dots fill outward in sync with the pulse. Gray connectors fade toward the outside cards, and blue pulses follow the same gradient fade. All five boxes drift independently and repel from the pointer over the whole section; distant cards move more. The module owns their CSS `translate` property. Motion pauses offscreen/in hidden tabs and respects reduced motion. Multiple stages are supported.
+
+Customize `--reference-line-color` and `--reference-pulse-color`. Build a standalone bundle with `npm run build:reference:single`.
+
+### Access (`data-anim="access"`)
+
+Preview at `/#access`. Wrap rows in `[data-access-stage]`. Each `[data-access-row="view|publish|delete"]` contains a `[data-access-label]` and three `[data-access-option="view|publish|delete"]` elements, each with a `[data-access-status]` circle. Add `data-access-reveal` to the avatar group, label, logo, and each option in entrance order. Load `access/styles.css` for structural connectors, entrance motion, and status states; appearance/layout is supplied separately in the local demo for replacement by Webflow styles. Mark the circular logo wrapper with `data-access-logo`. The pulse splits around its upper and lower outlines, rejoins at the right edge, and continues to the selected permission.
+
+Rows reveal from right to left with staggered parts. Placeholder avatars enter individually from increasingly spaced positions, settling into an overlapping group before the label appears. Once all entrances finish, pulses start at 0, 0.5, and 1 second, respectively. Each travels for 2.1 seconds, including the split around the logo outline, to its matching arrow, switching only that option to a blue check. Checks hold until the 5.5-second pulse cycle resets. No hover movement. The animation pauses offscreen/in hidden tabs and shows the final permissions immediately for reduced-motion users. This is a visual demo, not access-control enforcement.
+
+Customize `--access-line-color` and `--access-pulse-color`. Build with `npm run build:access:single`.
+
+The Webhook, Reference, and Access pulse colors default to the Webflow token `--_primitives---colors--primary-blue`, with `#3342ff` as the local fallback. Per-animation pulse-color overrides still take precedence.

@@ -1,0 +1,9 @@
+@import '../../lib/effects/connector.css';
+/* Structural styles: bubble appearance and placement belong to the host page. */
+[data-webhook-stage] { position: relative; isolation: isolate; }
+.webhook-connector { z-index: 2; }
+.webhook-connector__track { stroke: var(--webhook-line-color, #d2d2d2); }
+.webhook-connector__pulse { stroke: var(--webhook-pulse-color, var(--_primitives---colors--primary-blue, #3342ff)); stroke-dasharray: 12 200; stroke-linecap: butt; opacity: 0; }
+.webhook-connector circle { fill: var(--webhook-line-color, #d2d2d2); }
+
+.webhook-connector__fill { fill: var(--webhook-pulse-color, var(--_primitives---colors--primary-blue, #3342ff)); }

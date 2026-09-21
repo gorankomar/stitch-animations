@@ -5,6 +5,27 @@ import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
   {
+    selector: byData(ATTR.anim, DATA_ATTRS.access),
+    load: async () => {
+      const module = await import('../animations/access/index.js');
+      module.init(document);
+    }
+  },
+  {
+    selector: byData(ATTR.anim, DATA_ATTRS.reference),
+    load: async () => {
+      const module = await import('../animations/reference/index.js');
+      module.init(document);
+    }
+  },
+  {
+    selector: byData(ATTR.anim, DATA_ATTRS.webhook),
+    load: async () => {
+      const module = await import('../animations/webhook/index.js');
+      module.init(document);
+    }
+  },
+  {
     selector: byData(ATTR.anim, DATA_ATTRS.hero),
     load: async () => {
       const module = await import('../animations/hero/index.js');

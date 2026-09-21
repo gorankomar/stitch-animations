@@ -1,6 +1,6 @@
 import { qsa } from '../dom.js';
 
-const SELECTOR = '[data-zoom-lens]';
+const SELECTOR = '[data-zoom-lens="true" i]';
 const LENS_ATTR = 'data-zoom-lens-ui';
 const DEFAULT_SIZE = 220;
 const DEFAULT_SCALE = 1.8;

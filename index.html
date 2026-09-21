@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="/src/animations/radial/styles.css" />
   <link rel="stylesheet" href="/src/animations/cards/styles.css" />
   <link rel="stylesheet" href="/src/animations/deposits/styles.css" />
+  <link rel="stylesheet" href="/src/animations/webhook/styles.css" />
+  <link rel="stylesheet" href="/src/animations/reference/styles.css" />
+  <link rel="stylesheet" href="/src/animations/access/styles.css" />
   <style>
     :root {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -1225,7 +1228,7 @@
     <section data-anim="window-graphic" class="demo-section" data-reveal-group data-visibility-threshold="0.7"
       style="padding: 2rem">
       <h2>Window Graphic</h2>
-      <div class="features-graphic_wrap is-gradient is-rounded overflow-hidden u-container-inline-size" data-zoom-lens data-zoom-lens-size="240" data-zoom-lens-scale="1.9" style="min-height: 80vh;">
+      <div class="features-graphic_wrap is-gradient is-rounded overflow-hidden u-container-inline-size" data-zoom-lens="true" data-zoom-lens-size="240" data-zoom-lens-scale="1.9" style="min-height: 80vh;">
         <div class="hide w-embed">
           <style>
             .features-graphic_grid-bg {
@@ -1704,6 +1707,63 @@
     <section data-anim class="demo-section" data-reveal-group style="padding: 2rem;">
       <h2 data-reveal>Just a plain section</h2>
       <p data-reveal>I'm nothing but a plain text section</p>
+    </section>
+    <section id="webhook" data-anim="webhook" class="demo-section" style="padding: 2rem;">
+      <h2>Webhook</h2>
+      <div class="webhook-demo" data-webhook-stage>
+        <div class="webhook-demo__bubble" data-webhook-from>Transaction</div>
+        <div class="webhook-demo__bubble" data-webhook-to>Email</div>
+      </div>
+      <style>
+        .webhook-demo { height: clamp(300px, 40vw, 420px); margin-top: 1.5rem; background: #f7f7f7; border-radius: 16px; }
+        .webhook-demo__bubble { position: absolute; width: 48%; box-sizing: border-box; padding: 28px 20px; border-radius: 16px; background: linear-gradient(#fff, #fafafa); box-shadow: 0 12px 28px #0000000c; font-size: clamp(16px, 2.4vw, 26px); font-weight: 500; text-align: center; }
+        .webhook-demo [data-webhook-from] { top: 16%; left: 6%; }
+        .webhook-demo [data-webhook-to] { bottom: 16%; right: 6%; }
+      </style>
+    </section>
+    <section id="reference" data-anim="reference" class="demo-section" style="padding: 2rem;">
+      <h2>Reference</h2>
+      <div class="reference-demo" data-reference-stage>
+        <div class="reference-demo__center" data-reference-center aria-label="Stitch">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 17" aria-hidden="true"><path fill="currentColor" d="M0 16.9999h22v-4.2623H0zM0 4.26h22V0H0zm0 6.3451h22V8.4716H0z"/></svg>
+        </div>
+        <div class="reference-demo__card" data-reference-card="left-top">Ledgers</div>
+        <div class="reference-demo__card" data-reference-card="left-bottom">Deposits</div>
+        <div class="reference-demo__card" data-reference-card="right-top">Cards</div>
+        <div class="reference-demo__card" data-reference-card="right-bottom">Loans</div>
+      </div>
+      <style>
+        .reference-demo { height: clamp(360px, 48vw, 540px); margin-top: 1rem; }
+        .reference-demo__center, .reference-demo__card { position: absolute; display: grid; place-items: center; box-sizing: border-box; background: linear-gradient(#fff, #f6f6f6); border: 1px solid #ececec; box-shadow: 0 20px 36px #0000000a; font-weight: 500; }
+        .reference-demo__center { left: 40%; top: 34%; width: 20%; height: 32%; border-radius: 24px; }
+        .reference-demo__center svg { width: 46%; height: auto; }
+        .reference-demo__card { width: 21%; height: 22%; border-radius: 16px; font-size: clamp(12px, 2vw, 22px); }
+        .reference-demo [data-reference-card="left-top"] { left: 4%; top: 9%; }
+        .reference-demo [data-reference-card="left-bottom"] { left: 4%; bottom: 9%; }
+        .reference-demo [data-reference-card="right-top"] { right: 4%; top: 9%; }
+        .reference-demo [data-reference-card="right-bottom"] { right: 4%; bottom: 9%; }
+      </style>
+    </section>
+    <section id="access" data-anim="access" class="demo-section" style="padding: 2rem;">
+      <h2>Access</h2>
+      <div class="access-demo" data-access-stage><div class="access-demo__row" data-access-row="view"><div class="access-demo__avatars" data-access-avatars data-access-reveal aria-label="Placeholder users"><span class="access-demo__avatar" aria-hidden="true"></span></div><div class="access-demo__label" data-access-label data-access-reveal>Read only</div><div class="access-demo__logo" data-access-logo data-access-reveal aria-label="Stitch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 17" aria-hidden="true"><path fill="currentColor" d="M0 16.9999h22v-4.2623H0zM0 4.26h22V0H0zm0 6.3451h22V8.4716H0z"/></svg></div><div class="access-demo__options"><div class="access-demo__option" data-access-option="view" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>View</span></div><div class="access-demo__option" data-access-option="publish" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>Publish</span></div><div class="access-demo__option" data-access-option="delete" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>Delete</span></div></div></div>
+<div class="access-demo__row" data-access-row="publish"><div class="access-demo__avatars" data-access-avatars data-access-reveal aria-label="Placeholder users"><span class="access-demo__avatar" aria-hidden="true"></span><span class="access-demo__avatar" aria-hidden="true"></span><span class="access-demo__avatar" aria-hidden="true"></span></div><div class="access-demo__label" data-access-label data-access-reveal>Publish</div><div class="access-demo__logo" data-access-logo data-access-reveal aria-label="Stitch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 17" aria-hidden="true"><path fill="currentColor" d="M0 16.9999h22v-4.2623H0zM0 4.26h22V0H0zm0 6.3451h22V8.4716H0z"/></svg></div><div class="access-demo__options"><div class="access-demo__option" data-access-option="view" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>View</span></div><div class="access-demo__option" data-access-option="publish" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>Publish</span></div><div class="access-demo__option" data-access-option="delete" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>Delete</span></div></div></div>
+<div class="access-demo__row" data-access-row="delete"><div class="access-demo__avatars" data-access-avatars data-access-reveal aria-label="Placeholder users"><span class="access-demo__avatar" aria-hidden="true"></span><span class="access-demo__avatar" aria-hidden="true"></span><span class="access-demo__avatar" aria-hidden="true"></span></div><div class="access-demo__label" data-access-label data-access-reveal>Delete</div><div class="access-demo__logo" data-access-logo data-access-reveal aria-label="Stitch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 17" aria-hidden="true"><path fill="currentColor" d="M0 16.9999h22v-4.2623H0zM0 4.26h22V0H0zm0 6.3451h22V8.4716H0z"/></svg></div><div class="access-demo__options"><div class="access-demo__option" data-access-option="view" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>View</span></div><div class="access-demo__option" data-access-option="publish" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>Publish</span></div><div class="access-demo__option" data-access-option="delete" data-access-reveal><span data-access-status role="img" aria-label="Not allowed"></span><span>Delete</span></div></div></div></div>
+      <style>
+        .access-demo { display: grid; gap: 32px; padding: 24px 0; }
+        .access-demo__row { display: grid; grid-template-columns: 20% 25% 25% 30%; align-items: center; min-height: 200px; }
+        .access-demo__avatars { display: flex; justify-content: flex-end; padding-right: 16px; }
+        .access-demo__avatar { flex-shrink: 0; width: clamp(20px, 4.5vw, 54px); aspect-ratio: 1; border-radius: 50%; background: #dedbea; border: 3px solid white; margin-left: -12px; }
+        .access-demo__avatar:nth-child(2) { background: #d7e4e9; }
+        .access-demo__avatar:nth-child(3) { background: #e9d9d7; }
+        .access-demo__label { justify-self: start; background: white; padding: 6px 10px 6px 0; font-size: clamp(12px, 2vw, 24px); }
+        .access-demo__logo { width: 74%; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(#fff, #f5f5f5); border: 2px solid #eee; display: grid; place-items: center; box-shadow: 0 18px 30px #0000000c; }
+        .access-demo__logo svg { width: 45%; }
+        .access-demo__options { display: grid; gap: 16px; padding-left: 30%; }
+        .access-demo__option { display: flex; gap: 12px; align-items: center; font-size: clamp(12px, 1.7vw, 20px); }
+        .access-demo [data-access-status] { display: grid; place-items: center; width: clamp(24px, 4vw, 40px); aspect-ratio: 1; flex-shrink: 0; border-radius: 50%; color: white; font: 30px/1 Arial, sans-serif; }
+        @media (max-width: 600px) { .access-demo__row { grid-template-columns: 16% 26% 23% 35%; min-height: 170px; } .access-demo__options { padding-left: 20%; } .access-demo__option { gap: 6px; } .access-demo__avatars { padding-right: 6px; } .access-demo [data-access-status] { font-size: 22px; } }
+      </style>
     </section>
   </main>
 
