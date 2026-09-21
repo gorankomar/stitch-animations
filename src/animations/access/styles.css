@@ -9,12 +9,12 @@
 .is-granted [data-access-status]::before { content: '✓'; }
 .access-is-pending:not(.access-is-ready) [data-access-reveal] { opacity: 0; transform: translateX(var(--access-enter-x, 18px)); }
 .access-is-ready [data-access-reveal] { animation: access-enter 550ms both; animation-delay: var(--access-delay, 0s); }
-.access-is-pending .access-connector { z-index: -1; }
-.access-is-ready .access-connector { z-index: -1; }
+.access-is-pending .access-connector { opacity: 0; }
+.access-is-ready .access-connector { opacity: 1; transition: opacity 500ms 700ms; }
 @keyframes access-enter { from { opacity: 0; transform: translateX(var(--access-enter-x, 18px)); } to { opacity: 1; transform: translateX(0); } }
 @media (prefers-reduced-motion: reduce) {
   .access-is-pending [data-access-reveal], .access-is-ready [data-access-reveal] { animation: none; opacity: 1; transform: none; }
-  .access-is-pending .access-connector { z-index: -1; }
+  .access-is-pending .access-connector { opacity: 1; transition: none; }
   [data-access-status] { transition: none; }
 }
 
