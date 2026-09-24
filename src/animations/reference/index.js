@@ -29,7 +29,7 @@ function setup(stage) {
   });
   stage.prepend(svg);
   let time = 0, reduced = false;
-  const floating = createRepelFloat(stage, nodes, i => ({ travel: i ? 28 : 16, ease: 3.5 + i * 0.6, speedX: 0.45 + i * 0.07, speedY: 0.62 - i * 0.05, phaseX: i, phaseY: i * 2, amplitudeX: 2, amplitudeY: 3 }));
+  const floating = createRepelFloat(stage, cards, () => ({ travel: 28, ease: 5 }));
 
   function draw() {
     const bounds = svg.getBoundingClientRect();

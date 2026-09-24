@@ -20,7 +20,7 @@ function setup(stage) {
   const dotFills = [start.lastElementChild, end.lastElementChild];
   const clamp = value => Math.max(0, Math.min(1, value));
   let time = 0, reduced = false;
-  const floating = createRepelFloat(stage, bubbles, i => ({ travel: 26, ease: 5, speedX: i ? 0.71 : 0.53, speedY: i ? 0.49 : 0.67, phaseX: i * 2, phaseY: i, amplitudeX: 3, amplitudeY: 4 }));
+  const floating = createRepelFloat(stage, bubbles, () => ({ travel: 26, ease: 5 }));
 
   function draw() {
     const bounds = svg.getBoundingClientRect();
