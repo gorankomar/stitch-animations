@@ -1,3 +1,4 @@
+import { init as initCollections } from '../animations/collections/index.js';
 import '../animations/access/styles.css';
 import { init as initAccess } from '../animations/access/index.js';
 import '../animations/reference/styles.css';
@@ -39,6 +40,7 @@ ready(() => {
   initAutoReveals(document);
   initZoomLenses(document);
   [
+    initCollections,
     initAccess,
     initReference,
     initWebhook,

@@ -1,0 +1,35 @@
+.financial_phone-position {position:absolute; left:5.8%; top:15.1%; width:58.14%; z-index:1;}
+.deposits_phone.financial_phone-shell {position:relative; top:0px; width:100%; min-height:126cqi; margin-top:0px; margin-right:0px; margin-bottom:0px; margin-left:0px; border-top-left-radius:9.3cqi; border-top-right-radius:9.3cqi; border-bottom-left-radius:0px; border-bottom-right-radius:0px; border-top-width:0.5cqi; border-right-width:0.5cqi; border-bottom-width:0px; border-left-width:0.5cqi; border-top-style:solid; border-right-style:solid; border-left-style:solid; border-top-color:#c9c8c8; border-right-color:#c9c8c8; border-left-color:#c9c8c8; box-shadow:inset 0px 0px 0px 1.3cqi #0a0a0a,0px 1cqi 2cqi rgba(10,10,10,0.18); background-color:#ffffff; padding-top:2.5cqi; padding-right:2.3cqi; padding-bottom:0px; padding-left:2.3cqi; overflow:hidden; display:flex; flex-direction:column; container-type:inline-size;}
+.financial_phone-content {padding-top:2.5cqi; padding-right:4.5cqi; padding-bottom:4cqi; padding-left:4.5cqi;}
+.financial_accounts {width:100%; container-type:inline-size; display:flex; flex-direction:column; color:#3d3d3d; font-family:Inter,sans-serif;}
+.financial_profile {display:flex; align-items:center; column-gap:5cqi; margin-bottom:8.3cqi;}
+.financial_avatar {width:13.333cqi; height:13.333cqi; border-radius:50%; background-color:#3d3d3d; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.financial_user-icon {width:10cqi; height:10cqi; display:block;}
+.financial_profile-name {font-size:5.833cqi; font-weight:500; line-height:1.3; white-space:nowrap;}
+.financial_accounts-title {font-size:11.667cqi; font-weight:700; line-height:1; margin-bottom:10cqi;}
+.financial_wallet {width:100%; background-color:#ffffff; border:0.417cqi solid #e7e7e7; border-radius:3.333cqi; box-shadow:0px 1.667cqi 4.167cqi rgba(0,0,0,0.1); overflow:hidden;}
+.financial_wallet-heading {background-color:#e7e7e7; padding:1.667cqi 8.333cqi; font-size:6.667cqi; line-height:2.5; white-space:nowrap;}
+.financial_wallet-body {padding:8.333cqi; display:flex; flex-direction:column; row-gap:5cqi;}
+.financial_wallet-details {display:flex; flex-direction:column; row-gap:2.5cqi;}
+.financial_wallet-name {display:flex; align-items:center; column-gap:3.333cqi; font-size:5cqi; font-weight:600; line-height:1.2; white-space:nowrap;}
+.financial_logo {width:6.667cqi; height:6.667cqi; display:block;}
+.financial_balance {font-size:4.167cqi; line-height:1.2; color:#5d5d5d; white-space:nowrap;}
+.financial_divider {width:100%; height:0.389cqi; display:block;}
+.financial_connect {display:flex; align-items:center; column-gap:0.833cqi; padding:3.333cqi 5cqi; border-radius:1.667cqi; background-color:#f5fbff;}
+.financial_connect-copy {display:flex; flex-direction:column; row-gap:2.5cqi; flex-grow:1; min-width:0px;}
+.financial_connect-title {display:flex; align-items:center; column-gap:1.667cqi; font-size:4.167cqi; line-height:1.2; color:#009aff; white-space:nowrap;}
+.financial_link-icon {display:block; width:5cqi; height:5cqi;}
+.financial_connect-description {font-size:3.333cqi; line-height:1.2; color:#000000; white-space:nowrap;}
+.financial_chevron {display:block; width:8.333cqi; height:8.333cqi; flex-shrink:0;}
+.financial_api-panel {position:absolute; left:44.574%; top:34.483%; width:51.163%; height:10.345%; padding:2.326cqi 1.938cqi; display:flex; align-items:center; column-gap:2.326cqi; background-color:#5d5d5d; border-radius:1.55cqi; overflow:hidden; box-shadow:0px 0.775cqi 1.938cqi rgba(0,0,0,0.1); z-index:2;}
+.financial_get-badge {display:flex; align-items:center; justify-content:center; width:8.14cqi; height:4.651cqi; flex-shrink:0; border:0.194cqi solid #aaf0c4; border-radius:0.775cqi; background-color:#edfcf2; color:#087443; font-family:Inter,sans-serif; font-size:2.326cqi; line-height:1; font-weight:600;}
+.financial_api-text {font-family:Inconsolata,monospace; font-size:2.326cqi; line-height:1.21; color:#6bdbff; white-space:pre; flex-shrink:0;}
+.financial_json-panel {position:absolute; left:44.574%; top:46.983%; width:51.163%; height:42.672%; padding:1.55cqi 2.326cqi; background-color:#5d5d5d; border-radius:1.55cqi; overflow:hidden; box-shadow:0px 1.55cqi 2.95cqi rgba(0,0,0,0.25); z-index:2;}
+.financial_json-viewport {height:100%; overflow:hidden;}
+.financial_json-track {font-family:Inconsolata,monospace; font-size:2.326cqi; line-height:1.21; white-space:pre; color:#6bdbff;}
+.financial_code-line {height:2.815cqi; white-space:pre;}
+.financial_code-key {color:#6bdbff;}
+.financial_code-string {color:#fff3c3;}
+.financial_code-number {color:#16b364;}
+.financial_code-null {color:#ffffff;}
+.financial_panel-fade {position:absolute; top:0px; right:0px; width:95.455%; height:100%; background-image:linear-gradient(90deg,rgba(93,93,93,0) 41.743%,#5d5d5d 100%); pointer-events:none;}

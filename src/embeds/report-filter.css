@@ -1,0 +1,5 @@
+/* The visibility property removes the arrow from rendered component instances. */
+.report-filter:not(:has(.report-filter_arrow)),
+.report-filter:has(.report-filter_arrow.w-condition-invisible) {
+  padding-right: 2.094cqi;
+}

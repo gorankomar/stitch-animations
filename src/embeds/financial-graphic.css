@@ -1,0 +1,11 @@
+/* Portable motion only. The layout remains editable in Webflow. */
+[data-financial-graphic] [data-financial-json] { will-change:transform; }
+[data-financial-graphic] .financial_code-line { white-space:pre; }
+[data-financial-graphic] .financial_code-line {
+  height: auto;
+  min-height: 0;
+  line-height: 1.21;
+}
+@media (prefers-reduced-motion:reduce) {
+  [data-financial-graphic] [data-financial-json] { will-change:auto; transform:none; }
+}

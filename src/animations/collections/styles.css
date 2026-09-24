@@ -1,0 +1,46 @@
+[data-collections-stage] {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1.12;
+  container-type: inline-size;
+  border-radius: 24px;
+  background: #fafafa;
+}
+[data-collections-stage]::after {
+  content: '';
+  position: absolute;
+  z-index: 100;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, #fff 1%, #fff0 24%), linear-gradient(270deg, #ffffffb3, #fff0 18%);
+}
+[data-collection-card] {
+  position: absolute;
+  box-sizing: border-box;
+  left: 24%;
+  top: 28%;
+  width: 82%;
+  height: 73%;
+  padding: 6.5%;
+  border: 1px solid #f1f1f1;
+  border-radius: 3.4cqw;
+  background: #fff;
+  box-shadow: -12px -14px 50px #00000006, 0 12px 28px #00000004;
+  color: #484848;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  will-change: transform, opacity;
+}
+[data-collection-card] h3 { font-size: 4.8cqw; font-weight: 600; letter-spacing: -.035em; margin: 0 0 6cqw; color: #303030; }
+.collection-label { font-size: 3.6cqw; margin: 3.7cqw 0 2cqw; }
+.collection-field { border: 1px solid #dedede; border-radius: 2cqw; padding: 3cqw; font-size: 3.5cqw; color: #aaa; }
+.collection-field--select { display: flex; justify-content: space-between; color: #626262; }
+.collection-field--textarea { min-height: 12cqw; }
+.collection-upload { border: 1px solid #e8e8e8; border-radius: 2.3cqw; min-height: 28cqw; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2cqw; font-size: 3.4cqw; white-space: nowrap; color: #aaa; }
+.collection-upload svg { width: 6cqw; height: 6cqw; padding: 2cqw; border: 1px solid #eee; border-radius: 2cqw; margin-bottom: 1cqw; }
+.collection-upload strong { color: #8aafff; font-weight: 500; }
+.collection-upload small { font-size: 2.8cqw; color: #bcbcbc; }
+.collection-record { display: flex; align-items: center; justify-content: space-between; padding: 3cqw 0; border-bottom: 1px solid #eee; font-size: 3.2cqw; }
+.collection-record span:last-child { color: #999; }
+@media (prefers-reduced-motion: reduce) { [data-collection-card] { will-change: auto; } }

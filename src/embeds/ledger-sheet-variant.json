@@ -1,0 +1,54 @@
+{
+  "report-graphic": {
+    "aspect-ratio": "540 / 402",
+    "border-top-left-radius": "8px",
+    "border-top-right-radius": "8px",
+    "border-bottom-left-radius": "8px",
+    "border-bottom-right-radius": "8px",
+    "background-image": "radial-gradient(ellipse at 99% 0%,#f9f9f9 0%,#fff 41%,#f9f9f9 95%)"
+  },
+  "report-graphic_window": {
+    "left": "12.962963%",
+    "top": "12.962963cqi",
+    "width": "104.62963%",
+    "border-top-width": "1.851852cqi",
+    "border-right-width": "1.851852cqi",
+    "border-bottom-width": "1.851852cqi",
+    "border-left-width": "1.851852cqi",
+    "border-top-left-radius": "2.777778cqi",
+    "border-top-right-radius": "2.777778cqi",
+    "border-bottom-left-radius": "2.777778cqi",
+    "border-bottom-right-radius": "2.777778cqi",
+    "box-shadow": "0 0 .925926cqi rgba(0,0,0,.1)"
+  },
+  "report-graphic_inner": {
+    "padding-top": "3.669725%",
+    "padding-right": "3.669725%",
+    "padding-bottom": "3.669725%",
+    "padding-left": "3.669725%",
+    "grid-row-gap": "2.962963cqi",
+    "grid-column-gap": "2.962963cqi"
+  },
+  "report-graphic_title": {
+    "font-size": "3.168317cqi",
+    "line-height": "1.5",
+    "font-weight": "700"
+  },
+  "report-graphic_toolbar": {
+    "display": "none"
+  },
+  "report-graphic_fade": {
+    "display": "none"
+  },
+  "report-graphic_grid": {
+    "width": "55%",
+    "height": "83.084577%",
+    "left": "-.555556%",
+    "right": "auto",
+    "bottom": "auto",
+    "background-image": "url(\"https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6ab567762b8c289c888dc116_Ledger%20Sheet%20%E2%80%94%20Figma%20Grid.svg\")",
+    "background-size": "100% 100%",
+    "background-repeat": "no-repeat",
+    "transform": "scaleX(-1)"
+  }
+}

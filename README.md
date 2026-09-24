@@ -323,3 +323,27 @@ Rows reveal from right to left with staggered parts. Placeholder avatars enter i
 Customize `--access-line-color` and `--access-pulse-color`. Build with `npm run build:access:single`.
 
 The Webhook, Reference, and Access pulse colors default to the Webflow token `--_primitives---colors--primary-blue`, with `#3342ff` as the local fallback. Per-animation pulse-color overrides still take precedence.
+
+### Collections (local motion study)
+
+Open `/collections.html` on the local dev server for the isolated preview, or scroll to
+`#collections` in the main playground. The replay button restarts the entrance.
+The windows rise into view at 25% visibility, hold for 1.6 seconds, then the front
+window slides out through the bottom-right corner as the remaining windows move
+forward. It returns behind the stack, followed by a 3.5-second hold before each
+subsequent swap. There is no idle floating.
+
+The animation lives in `src/animations/collections/`. Add or remove
+`[data-collection-card]` children inside `[data-collections-stage]` to change the
+number of windows; the stack spacing automatically fits the same footprint.
+Offscreen sections and hidden tabs pause, and reduced-motion preferences display
+a static stack. No Webflow integration is included in this study.
+
+### Shared code typing and scroll
+
+Financial Architecture and Change Due Date reuse `createCodeScrollEffect` from
+`src/lib/effects/code-scroll.js`. Both compiled entries import the same small
+`dist/effect-code-scroll.js` module. See [effect API and release workflow](docs/code-scroll.md).
+
+Run `npm test` and `npm run build:all` to validate and compile all animations
+and Webflow embeds. No new animation dependency is required.

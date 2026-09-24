@@ -8,9 +8,9 @@
     "build:reference:single": "SINGLE_ENTRY=reference vite build",
     "build:access:single": "SINGLE_ENTRY=access vite build",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/build-embeds.mjs",
     "preview": "vite preview",
-    "build:all": "vite build --config vite.config.js",
+    "build:all": "vite build --config vite.config.js && node scripts/build-embeds.mjs",
     "build:hero": "vite build --config vite.config.js --ssrManifest",
     "build:hero:single": "SINGLE_ENTRY=hero vite build",
     "build:api:single": "SINGLE_ENTRY=api vite build",
@@ -22,7 +22,8 @@
     "build:deposits:single": "SINGLE_ENTRY=deposits vite build",
     "build:orbit:single": "SINGLE_ENTRY=orbit vite build",
     "build:small-cards:single": "SINGLE_ENTRY=small-cards vite build",
-    "build:window-graphic:single": "SINGLE_ENTRY=window-graphic vite build"
+    "build:window-graphic:single": "SINGLE_ENTRY=window-graphic vite build",
+    "test": "node --test tests/*.test.js"
   },
   "devDependencies": {
     "vite": "^5.0.0"

@@ -4,6 +4,7 @@ import path, { resolve } from 'node:path';
 const entry = (name) => resolve(process.cwd(), `src/entry/${name}.js`);
 
 const SINGLE_ENTRIES = {
+  collections: { input: entry('feature-collections'), fileBase: 'feature-collections', globalName: 'FeatureCollections' },
   access: { input: entry('feature-access'), fileBase: 'feature-access', globalName: 'FeatureAccess' },
   reference: { input: entry('feature-reference'), fileBase: 'feature-reference', globalName: 'FeatureReference' },
   webhook: { input: entry('feature-webhook'), fileBase: 'feature-webhook', globalName: 'FeatureWebhook' },
@@ -78,6 +79,10 @@ export default defineConfig({
         }
       : {
           input: {
+            'effect-code-scroll': resolve(process.cwd(), 'src/lib/effects/code-scroll.js'),
+            'feature-due-date': resolve(process.cwd(), 'src/embeds/due-date-graphic.js'),
+            'feature-financial': resolve(process.cwd(), 'src/embeds/financial-graphic.js'),
+            'feature-collections': entry('feature-collections'),
             'feature-access': entry('feature-access'),
             'feature-reference': entry('feature-reference'),
             'feature-webhook': entry('feature-webhook'),
@@ -95,6 +100,7 @@ export default defineConfig({
             'feature-small-cards': entry('feature-small-cards'),
             'feature-window-graphic': entry('feature-window-graphic')
           },
+          preserveEntrySignatures: 'strict',
           output: sharedOutput
         }
   }

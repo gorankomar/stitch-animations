@@ -5,6 +5,13 @@ import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
   {
+    selector: '[data-anim="collections"]',
+    load: async () => {
+      const module = await import('../animations/collections/index.js');
+      module.init(document);
+    }
+  },
+  {
     selector: byData(ATTR.anim, DATA_ATTRS.access),
     load: async () => {
       const module = await import('../animations/access/index.js');

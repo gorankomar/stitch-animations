@@ -1,0 +1,16 @@
+/* Scoped to the audit sheet; native rows and Label variants stay editable. */
+.report-graphic:has(.ledger-sheet) .report-graphic_grid {
+  background: url("https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6ab567762b8c289c888dc116_Ledger%20Sheet%20%E2%80%94%20Figma%20Grid.svg") 0 0 / 100% 100% no-repeat;
+  -webkit-mask-image:none; mask-image:none;
+}
+.ledger-sheet .u-label {font-size:inherit;line-height:inherit;margin:0;padding:0 1.363636cqi;border-radius:.909091cqi;}
+.report-graphic.is-report-ready .ledger-sheet_row > * {
+ opacity:0;transform:translate3d(0,1cqi,0);
+ transition:opacity 260ms linear,transform 620ms cubic-bezier(.11,.61,.27,.99);
+}
+.report-graphic.is-report-ready .ledger-sheet_row > :nth-child(2){transition-delay:50ms;}
+.report-graphic.is-report-ready .ledger-sheet_row > :nth-child(3){transition-delay:100ms;}
+.report-graphic.is-report-ready .ledger-sheet_row > :nth-child(4){transition-delay:150ms;}
+.report-graphic.is-report-ready .ledger-sheet_row.is-reveal > *,
+html.wf-design-mode .report-graphic.is-report-ready .ledger-sheet_row > * {opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.report-graphic.is-report-ready .ledger-sheet_row > *{opacity:1;transform:none;transition:none;}}
