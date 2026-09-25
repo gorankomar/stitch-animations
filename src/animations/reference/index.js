@@ -1,5 +1,4 @@
 import './styles.css';
-import { createRepelFloat } from '../../lib/effects/repel-float.js';
 import { NS, make, createGradient, setPath, pathLength, paintPulse, fillDot, roundedPath } from '../../lib/effects/connector.js';
 import { animateStage, stageInitializer } from '../../lib/effects/animation-stage.js';
 let nextId = 0;
@@ -29,7 +28,6 @@ function setup(stage) {
   });
   stage.prepend(svg);
   let time = 0, reduced = false;
-  const floating = createRepelFloat(stage, cards, () => ({ travel: 28, ease: 5 }));
 
   function draw() {
     const bounds = svg.getBoundingClientRect();
@@ -71,9 +69,9 @@ function setup(stage) {
 
   const stop = animateStage(stage, { nodes: nodes, update(state) {
     time = state.time; reduced = state.reduced;
-    floating.update(time, state.dt, reduced); draw();
+    draw();
   } });
-  return () => { stop(); floating.dispose(); svg.remove(); };
+  return () => { stop(); svg.remove(); };
 }
 
 export const init = stageInitializer('[data-anim="reference"] [data-reference-stage]', setup);

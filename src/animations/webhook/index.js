@@ -1,5 +1,4 @@
 import './styles.css';
-import { createRepelFloat } from '../../lib/effects/repel-float.js';
 import { NS, setPath, pathLength, paintPulse, fillDot, roundedPath } from '../../lib/effects/connector.js';
 import { animateStage, stageInitializer } from '../../lib/effects/animation-stage.js';
 let connectorId = 0;
@@ -20,7 +19,6 @@ function setup(stage) {
   const dotFills = [start.lastElementChild, end.lastElementChild];
   const clamp = value => Math.max(0, Math.min(1, value));
   let time = 0, reduced = false;
-  const floating = createRepelFloat(stage, bubbles, () => ({ travel: 26, ease: 5 }));
 
   function draw() {
     const bounds = svg.getBoundingClientRect();
@@ -53,9 +51,9 @@ function setup(stage) {
 
   const stop = animateStage(stage, { nodes: bubbles, update(state) {
     time = state.time; reduced = state.reduced;
-    floating.update(time, state.dt, reduced); draw();
+    draw();
   } });
-  return () => { stop(); floating.dispose(); svg.remove(); };
+  return () => { stop(); svg.remove(); };
 }
 
 export const init = stageInitializer('[data-anim="webhook"] [data-webhook-stage]', setup);

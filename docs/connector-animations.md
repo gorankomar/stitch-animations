@@ -22,11 +22,11 @@ The local index contains complete examples. Access status circles get their X/ch
 
 - `src/lib/effects/connector.js`: SVG creation, gradient stops, rounded routes, cached path lengths, traveling pulse bands, directional dot fills.
 - `src/lib/effects/connector.css`: SVG positioning and stroke structure.
-- `src/lib/effects/repel-float.js`: pointer repulsion, independent drift, smoothing, restoring inline styles on disposal.
+- `src/lib/effects/card-lift.css`: shared direct hover lift and soft shadow for Webhook boxes and Reference product cards. No pointer tracking or movement of neighboring cards.
 - `src/lib/effects/animation-stage.js`: mounting, disposal, visibility clock, resize invalidation, reduced motion, hidden-tab pausing.
 
 Animation modules retain only their layout-specific routing, colors and timing. Static Access geometry is measured during entrance and after resize; pulse frames reuse it. Path lengths are recomputed only when path geometry changes. The multi-entry build shares helpers through common chunks; standalone builds include the helpers they need.
 
-For a future animation, define its stage selector with `stageInitializer`, build SVG geometry using connector helpers, and call `animateStage` with an update callback. Return a disposer for the clock, pointer effect and generated SVG. Use `createRepelFloat` only when interaction is needed. `paintPulse` takes positions in path units; branch offsets keep split pulses synchronized. `fillDot` consumes the same head/tail positions.
+For a future animation, define its stage selector with `stageInitializer`, build SVG geometry using connector helpers, and call `animateStage` with an update callback. Return a disposer for the clock and generated SVG. The shared card-lift stylesheet supplies direct hover feedback without pointer listeners. `paintPulse` takes positions in path units; branch offsets keep split pulses synchronized. `fillDot` consumes the same head/tail positions.
 
 Run `node --test tests/connector.test.js` and `npm run build`. Single-feature scripts use `npm run build:<name>:single`; build to a separate output directory when preserving a multi-entry export.

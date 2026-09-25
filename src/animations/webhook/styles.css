@@ -1,3 +1,4 @@
+@import '../../lib/effects/card-lift.css';
 @import '../../lib/effects/connector.css';
 /* Structural styles: bubble appearance and placement belong to the host page. */
 [data-webhook-stage] { position: relative; isolation: isolate; }

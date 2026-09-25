@@ -1,3 +1,4 @@
+@import '../../lib/effects/card-lift.css';
 @import '../../lib/effects/connector.css';
 [data-reference-stage] { position: relative; isolation: isolate; }
 .reference-connector { z-index: 2; }

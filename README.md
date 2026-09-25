@@ -310,7 +310,7 @@ Bubbles drift by a few pixels at different speeds. Hovering anywhere in the Webh
 
 The local demo is at `/#reference`. Inside `[data-reference-stage]`, mark the hub `data-reference-center` and the four cards `data-reference-card="left-top"`, `"left-bottom"`, `"right-top"`, and `"right-bottom"`. Position the cards on their named sides with room for the connectors. Layout and card styling live in the demo markup; Webflow can provide its own styles. Load the structural `reference/styles.css` alongside the animation.
 
-Two blue pulses leave the hub simultaneously every 4.8 seconds, reach the left/right junctions together, and split into upper/lower branches. Source dots fill outward in sync with the pulse. Gray connectors fade toward the outside cards, and blue pulses follow the same gradient fade. All five boxes drift independently and repel from the pointer over the whole section; distant cards move more. The module owns their CSS `translate` property. Motion pauses offscreen/in hidden tabs and respects reduced motion. Multiple stages are supported.
+Two blue pulses leave the hub simultaneously every 4.8 seconds, reach the left/right junctions together, and split into upper/lower branches. Source dots fill outward in sync with the pulse. Gray connectors fade toward the outside cards, and blue pulses follow the same gradient fade. Only the hovered product card lifts slightly and gains a soft shadow; the central hub and other cards stay still. Webhook boxes use the same shared CSS hover effect. Motion pauses offscreen/in hidden tabs and respects reduced motion. Multiple stages are supported.
 
 Customize `--reference-line-color` and `--reference-pulse-color`. Build a standalone bundle with `npm run build:reference:single`.
 
