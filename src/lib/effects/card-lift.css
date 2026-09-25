@@ -1,15 +1,15 @@
 /* Direct card hover, shared by both connector illustrations. */
-:is([data-webhook-stage], [data-reference-stage]) :is([data-webhook-from], [data-webhook-to], [data-reference-card]) {
+:is([data-webhook-stage], [data-reference-stage]) :is([data-webhook-from], [data-webhook-to], [data-reference-card], [data-reference-center]) {
   transition: translate 400ms ease, box-shadow 400ms ease;
 }
 @media (hover: hover) and (pointer: fine) {
-  :is([data-webhook-stage], [data-reference-stage]) :is([data-webhook-from], [data-webhook-to], [data-reference-card]):hover {
+  :is([data-webhook-stage], [data-reference-stage]) :is([data-webhook-from], [data-webhook-to], [data-reference-card], [data-reference-center]):hover {
     translate: 0 -4px;
     box-shadow: 0 10px 25px rgba(51, 66, 255, .09);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  :is([data-webhook-stage], [data-reference-stage]) :is([data-webhook-from], [data-webhook-to], [data-reference-card]) {
+  :is([data-webhook-stage], [data-reference-stage]) :is([data-webhook-from], [data-webhook-to], [data-reference-card], [data-reference-center]) {
     translate: none;
     transition: none;
   }
