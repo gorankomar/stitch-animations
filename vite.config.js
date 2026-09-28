@@ -79,6 +79,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-create-card': resolve(process.cwd(), 'src/embeds/create-card.js'),
             'effect-code-scroll': resolve(process.cwd(), 'src/lib/effects/code-scroll.js'),
             'feature-due-date': resolve(process.cwd(), 'src/embeds/due-date-graphic.js'),
             'feature-financial': resolve(process.cwd(), 'src/embeds/financial-graphic.js'),

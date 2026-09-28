@@ -43,3 +43,20 @@ Replace the existing embed in each Webflow component; do not append the new
 loader alongside its former inline implementation. Each graphic initializes its
 instances once and owns the rest of its animation. A CDN failure leaves static
 HTML visible. Webflow publication is separate from pushing this repository.
+
+## Create New Card and the page loader
+
+Create New Card (`[data-create-card]`) is the third consumer of this effect. It
+uses seven visible rows and the same typing and scroll pacing, with 33 source
+rows. Its five original Figma routes carry independent 4.9–8.11 second pulse
+periods and uneven start offsets, moving at 48 design pixels per second.
+
+`page-all-lite.js` now discovers all three code graphics automatically, even when
+loaded after DOMContentLoaded. Portable component module loaders may remain:
+using the same commit-pinned URLs means ES modules are evaluated once. Each
+component also guards against repeated initialization. Keep every component's
+loader on the same release to share one `effect-code-scroll.js` download.
+
+Build the new preview with `node scripts/build-create-card-embed.mjs` and open
+`/create-card.html`. The source SVGs are in `src/embeds/assets/create-card/`;
+static fallback layers are preserved, and motion traces use their original paths.

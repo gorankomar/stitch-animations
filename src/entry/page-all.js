@@ -1,3 +1,6 @@
+import '../embeds/create-card.js';
+import '../embeds/due-date-graphic.js';
+import '../embeds/financial-graphic.js';
 import { init as initCollections } from '../animations/collections/index.js';
 import '../animations/access/styles.css';
 import { init as initAccess } from '../animations/access/index.js';

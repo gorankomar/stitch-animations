@@ -4,6 +4,9 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-create-card]', load: () => import('../embeds/create-card.js')},
+  {selector: '[data-due-graphic]', load: () => import('../embeds/due-date-graphic.js')},
+  {selector: '[data-financial-graphic]', load: () => import('../embeds/financial-graphic.js')},
   {
     selector: '[data-anim="collections"]',
     load: async () => {
@@ -111,7 +114,7 @@ const resolvers = [
   }
 ];
 
-document.addEventListener('DOMContentLoaded', async () => {
+async function boot() {
   initAutoReveals(document);
   initZoomLenses(document);
   await Promise.all(
@@ -121,4 +124,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     })
   );
-});
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true});
+else boot();

@@ -1,0 +1,28 @@
+.create-card_graphic,.create-card_graphic *{box-sizing:border-box}
+.create-card_graphic{position:relative;width:100%;aspect-ratio:258/232;container-type:inline-size;overflow:hidden;border-radius:3.101% / 3.448%;background:linear-gradient(228.037deg,rgba(233,249,255,.37),rgba(255,255,255,.37) 48.599%,rgba(233,249,255,.37)),#fff;font-family:Inter,sans-serif}
+.create-card_lines{position:absolute;inset:0;pointer-events:none}
+.create-card_asset{position:absolute;display:block;max-width:none}
+.create-card_pulses{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.create-card_graphic[data-card-motion="running"] [data-card-static-pulse]{opacity:0}
+.create-card_window{position:absolute;left:6.976744%;top:25.215517%;width:86.046512%;height:50%;border-radius:2.326cqi;box-shadow:0 1.550cqi 1.938cqi #0000001a;overflow:hidden;background:white}
+.create-card_header{display:flex;align-items:center;justify-content:space-between;height:7.752cqi;padding:0.775cqi 2.326cqi 0 3.876cqi;background:#efefef}
+.create-card_title{font-size:2.326cqi;font-weight:400;line-height:6.977cqi;letter-spacing:0.233cqi;color:#454545;white-space:nowrap}
+.create-card_chevron{display:block;width:4.651cqi;height:4.651cqi;transform:rotate(90deg);flex:none}
+.create-card_body{height:37.209cqi;padding:2.326cqi 3.876cqi;background:#fff}
+.create-card_viewport{height:100%;overflow:hidden}
+.create-card_track{display:block;white-space:normal;font-family:Inconsolata,monospace;font-size:2.326cqi;font-weight:400;color:#a881ff;will-change:transform}
+.create-card_row{display:flex;flex-shrink:0;height:4.651163cqi;min-height:4.651163cqi;margin:0;padding:0;line-height:4.651163cqi;white-space:pre;font-size:inherit}
+.create-card_number{width:3.488cqi;flex-shrink:0}
+.create-card_blue{color:#0070ff}.create-card_gray{color:#454545}
+.create-card_graphic>.w-embed{display:none}
+@media(prefers-reduced-motion:reduce){.create-card_track{will-change:auto}}
+.create-card_asset-2015{left:34.759690%;top:0.646552%;width:11.007752%;height:24.568966%;}
+.create-card_asset-2021{left:34.759690%;top:0.215517%;width:11.007752%;height:25.000000%;}
+.create-card_asset-2016{left:39.410853%;top:0.646552%;width:11.395349%;height:24.568966%;}
+.create-card_asset-2020{left:39.410853%;top:0.646552%;width:11.395349%;height:24.568966%;}
+.create-card_asset-2017{left:64.604651%;top:0.215517%;width:28.449612%;height:25.431034%;}
+.create-card_asset-2022{left:64.604651%;top:0.215517%;width:28.449612%;height:25.431034%;}
+.create-card_asset-2025{left:5.116279%;top:74.568966%;width:60.930233%;height:22.931034%;}
+.create-card_asset-2024{left:5.116279%;top:74.568966%;width:60.910465%;height:22.932500%;}
+.create-card_asset-2018{left:0.465116%;top:74.568966%;width:61.705426%;height:17.758621%;}
+.create-card_asset-2023{left:0.465116%;top:74.568966%;width:61.317829%;height:17.758621%;}
