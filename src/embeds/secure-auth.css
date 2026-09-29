@@ -1,11 +1,13 @@
 /* Webflow owns layout and appearance; these rules only drive animation state. */
 .secure_graphic { --secure-open: 1; --secure-selected: 1; }
+.secure_graphic [data-stitch-toggle] > div { transition: left 240ms cubic-bezier(.11,.61,.27,.99), transform 240ms cubic-bezier(.11,.61,.27,.99); }
 .secure_auth { height: calc(28.294574cqi * var(--secure-open)); overflow: hidden; opacity: var(--secure-open); }
 [data-stitch-toggle][data-state="active"] { background-color: #0ed948; }
 [data-stitch-toggle][data-state="active"] > div { left: 100%; transform: translateX(-100%); }
 .secure_radio-advanced { background-color: color-mix(in srgb, #121212 calc(var(--secure-selected) * 100%), white); border-color: color-mix(in srgb, #121212 calc(var(--secure-selected) * 100%), #e7e7e7); }
 .secure_radio-dot { opacity: var(--secure-selected); }
 @media (prefers-reduced-motion: reduce) {
+  .secure_graphic [data-stitch-toggle] > div { transition: none; }
   .secure_cursor { display: none; }
   .secure_auth { height: 28.294574cqi; opacity: 1; }
   .secure_radio-advanced { background-color: #121212; border-color: #121212; }
