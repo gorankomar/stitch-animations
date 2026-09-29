@@ -79,6 +79,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-card-controls': resolve(process.cwd(), 'src/embeds/card-controls.js'),
             'feature-secure-auth': resolve(process.cwd(), 'src/embeds/secure-auth.js'),
             'feature-create-card': resolve(process.cwd(), 'src/embeds/create-card.js'),
             'effect-code-scroll': resolve(process.cwd(), 'src/lib/effects/code-scroll.js'),

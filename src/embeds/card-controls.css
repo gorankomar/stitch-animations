@@ -1,0 +1,28 @@
+/* Motion only. All dimensions, fonts, colors and base shadows live in Webflow. */
+[data-card-controls] {
+  --card-lift-distance: -1.2cqi;
+  --card-lift-shadow: 0 2cqi 5cqi rgba(51, 66, 255, .09);
+}
+[data-card-controls].is-motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(2cqi);
+  transition: opacity var(--reveal-opacity-duration, 490ms) ease,
+    transform var(--reveal-duration, 700ms) cubic-bezier(.11,.61,.27,.99);
+}
+[data-card-controls].is-motion-ready [data-reveal].is-reveal {
+  opacity: 1;
+  transform: none;
+}
+[data-card-controls] [data-stitch-toggle] {
+  transition: background-color 240ms ease;
+}
+[data-card-controls] [data-stitch-toggle] > div {
+  transition: left 240ms cubic-bezier(.11,.61,.27,.99), transform 240ms cubic-bezier(.11,.61,.27,.99);
+}
+[data-card-controls] [data-stitch-toggle][data-state="active"] { background-color: #0ed948; }
+[data-card-controls] [data-stitch-toggle][data-state="active"] > div { left: 100%; transform: translateX(-100%); }
+@media (prefers-reduced-motion: reduce) {
+  [data-card-controls].is-motion-ready [data-reveal] { opacity: 1; transform: none; transition: none; }
+  [data-card-controls] [data-stitch-toggle], [data-card-controls] [data-stitch-toggle] > div { transition: none; }
+  [data-card-controls] .card-controls_cursor { display: none; }
+}
