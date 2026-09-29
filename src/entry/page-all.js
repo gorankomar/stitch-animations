@@ -1,3 +1,4 @@
+import '../embeds/secure-auth.js';
 import '../embeds/create-card.js';
 import '../embeds/due-date-graphic.js';
 import '../embeds/financial-graphic.js';
