@@ -4,6 +4,7 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-card-controls]', load: () => import('../embeds/card-controls.js')},
   {selector: '[data-secure-auth]', load: () => import('../embeds/secure-auth.js')},
   {selector: '[data-create-card]', load: () => import('../embeds/create-card.js')},
   {selector: '[data-due-graphic]', load: () => import('../embeds/due-date-graphic.js')},
