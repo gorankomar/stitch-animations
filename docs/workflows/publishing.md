@@ -2,7 +2,7 @@
 
 ## Four completion stages
 
-Use the stage explicitly requested by the user. Without one, default to **save locally**. If the user only says “publish” and the destination cannot be established from the current task, ask staging or production before publishing.
+Use the stage explicitly requested by the user. Without one, default to **save locally**, except a request to create a Figma illustration in Webflow defaults to **save to Webflow (draft)** per [illustration creation](illustration-creation.md). If the user only says “publish” and the destination cannot be established from the current task, ask staging or production before publishing.
 
 | Request | Agent action | Completion evidence |
 | --- | --- | --- |

@@ -1,11 +1,9 @@
-# Figma to animation
+# Figma to illustration or animation
 
-Inputs: Figma selection URL, desired motion, named effects, and requested completion stage.
+Start with [illustration creation](illustration-creation.md). A Figma illustration request defaults to a static, fluid, aspect-ratio-preserving Webflow draft. Animation is opt-in. Native Webflow styling plus scoped in-component CSS must render the supplied Figma appearance even if motion code fails.
 
-1. Read the Figma design-to-code skill before requesting design context. Inspect the supplied node, dimensions, layers, assets, and screenshot; inspect an existing component when changing one.
-2. Read [SVG handling](svg-handling.md) for vector assets and the [effect catalog](../effects/index.md) for named effects. Preserve visual structure unless the request changes it.
-3. Follow [animation changes](animation-changes.md). Keep layout/native Webflow styling separate from structural motion styles. Store original assets beside the existing component assets.
-4. Add the Figma URL/node, preview route, source paths, selectors, effects, and tunable options to component notes. Unknown references stay explicitly unknown.
-5. Compare the local result with Figma at desktop and 393px mobile. Check asset loading, overflow, multiple instances, reduced motion, and offscreen/hidden-tab behavior.
-
-Completion: local implementation and verified preview by default. Report visual differences or unavailable reference access. Use [Webflow integration](webflow-integration.md) only when requested.
+1. Inspect the supplied selection using the Figma design-to-code skill and existing component notes.
+2. Follow [SVG handling](svg-handling.md) for vectors and delivery choice.
+3. Create and verify the static Webflow composition using the illustration procedure.
+4. Only if animation is requested, consult the [effect catalog](../effects/index.md) and [animation changes](animation-changes.md); preserve the static fallback and style ownership.
+5. Complete the requested [saving/publishing stage](publishing.md), with Webflow draft as the default for illustration creation. Record durable facts in component notes.

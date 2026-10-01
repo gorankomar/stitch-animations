@@ -1,6 +1,6 @@
 # Effect catalog
 
-Prompt names select these canonical implementations. Paths are repository-relative. Read only the selected helper and its current consumer before composing it.
+Prompt names select these canonical implementations. Paths are repository-relative. Read only the selected helper and its current consumer before composing it. Follow [motion defaults](../workflows/motion-defaults.md) for new/revisited behavior; existing hardcoded easings are not the project default.
 
 | Prompt name | Source under src/lib/effects/ | Contract and example |
 | --- | --- | --- |
