@@ -5,6 +5,7 @@
 - Local preview: route and command.
 - Webflow: site/page/component identities, native properties/slots/variants.
 - Contract: root/child selectors, options/defaults, required CSS/modules.
+- SVG delivery: inline/image decision and reason; original/optimized paths, SVGO version/config, numeric precision, transform precision, bytes, exceptions, visual comparison sizes/result.
 - Effects: catalog names, timing overrides, transform ownership.
 - Lifecycle: initialization, duplicate guards, cleanup, visibility/reduced motion.
 - Verification scenarios: visual comparison, mobile, repeated instances, relevant tests.
