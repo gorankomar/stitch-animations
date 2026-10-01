@@ -20,8 +20,3 @@ The later source-only commit replaces sample credential values in local markup.
 Build: `npm run build:all`. Local preview: `/create-card.html`.
 Portable CSS: `dist/embeds/create-card-styles.html`; add the commit-pinned
 feature-create-card.js module loader when installing the native component.
-
-Verified: Webflow Preview at desktop and 393px mobile, code progression and
-looping, five staggered pulses, original asset positions; local asset loading and
-66 rows including loop copies. Existing 10 tests and the complete build pass.
-Webflow remains a draft; no site publication was performed.

@@ -23,7 +23,9 @@
     "build:orbit:single": "SINGLE_ENTRY=orbit vite build",
     "build:small-cards:single": "SINGLE_ENTRY=small-cards vite build",
     "build:window-graphic:single": "SINGLE_ENTRY=window-graphic vite build",
-    "test": "node --test tests/*.test.js"
+    "test": "node --test tests/*.test.js",
+    "check:shared-release": "node scripts/check-shared-release.mjs",
+    "validate:release": "npm run build:all && npm test && npm run check:shared-release"
   },
   "devDependencies": {
     "vite": "^5.0.0"

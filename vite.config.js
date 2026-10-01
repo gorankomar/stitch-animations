@@ -59,6 +59,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    manifest: !isSingleBuild,
     inlineDynamicImports: isSingleBuild,
     lib: isSingleBuild
       ? {

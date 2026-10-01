@@ -1,3 +1,17 @@
+# Stitch project instructions
+
+Keep prompts focused on the desired result. Read only the documents relevant to the task.
+
+## Project map and routing
+
+- src/animations: animation modules; src/embeds: component markup/motion/styles/assets; src/lib/effects: canonical shared effects; src/entry: shared and feature loaders. Keep this structure. legacy is read-only reference.
+- Figma selection → docs/workflows/figma-to-animation.md; SVG work → docs/workflows/svg-handling.md.
+- New/changed motion → docs/workflows/animation-changes.md and docs/effects/index.md. Reuse before creating. “Reveal”, “Card Hover”, and “Pointer Follow” mean the cataloged implementations.
+- Component lookup → docs/components/index.md. Short prompts/handoffs → docs/prompt-guide.md.
+- Webflow changes → docs/workflows/webflow-integration.md. Release work → docs/workflows/shared-release.md.
+- Default completion is local preview. Distinguish local, saved Webflow draft, and published-and-verified. Durable decisions belong in component notes; publication evidence belongs in docs/releases.
+- npm run dev previews locally; npm test checks behavior; npm run validate:release tests/builds/checks the full shared release.
+
 # Shared animation releases
 
 - This repository is edited by multiple chats. Fetch origin before starting release work and base the release on current `origin/main`; preserve unrelated working-tree edits.
