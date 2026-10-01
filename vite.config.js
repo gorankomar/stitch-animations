@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-omnichannel-origination': resolve(process.cwd(), 'src/embeds/omnichannel-origination.js'),
             'feature-country-flags': resolve(process.cwd(), 'src/embeds/country-flags.js'),
             'feature-product-variety': resolve(process.cwd(), 'src/embeds/product-variety.js'),
             'feature-card-controls': resolve(process.cwd(), 'src/embeds/card-controls.js'),

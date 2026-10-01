@@ -1,0 +1,24 @@
+/* Shared row geometry: ignore publisher formatting between rows and reserve
+   space for empty rows while the typing effect writes their content. */
+:is([data-financial-json], [data-due-track]) {
+  display: block;
+  white-space: normal;
+  line-height: var(--stitch-code-line-height, 1.25em);
+  will-change: transform;
+}
+:is([data-financial-json], [data-due-track]) > :is(.financial_code-line, .due_code-line) {
+  display: flex;
+  box-sizing: border-box;
+  height: var(--stitch-code-line-height, 1.25em);
+  min-height: var(--stitch-code-line-height, 1.25em);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  line-height: var(--stitch-code-line-height, 1.25em);
+  white-space: pre;
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  :is([data-financial-json], [data-due-track]) { will-change: auto; }
+}

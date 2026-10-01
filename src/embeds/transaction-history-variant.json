@@ -1,0 +1,35 @@
+{
+  "report-graphic": {
+    "aspect-ratio": "540/402",
+    "background-color": "#fff",
+    "border-radius": "1.481481cqi"
+  },
+  "report-graphic_window": {
+    "left": "9.259259%",
+    "width": "81.481481%",
+    "top": "7.407407cqi",
+    "border-width": ".370371cqi",
+    "border-color": "#efefef",
+    "border-radius": "1.851852cqi",
+    "background-color": "#f9f9f9",
+    "box-shadow": "0 0 1.851852cqi rgba(0,0,0,.08)"
+  },
+  "report-graphic_inner": {
+    "padding": "4.128440%",
+    "grid-row-gap": "2.962963cqi",
+    "grid-column-gap": "2.962963cqi"
+  },
+  "report-graphic_title": {
+    "font-size": "3.75cqi",
+    "line-height": "1.333333"
+  },
+  "report-graphic_content": {
+    "display": "flex",
+    "flex-direction": "column",
+    "grid-row-gap": "0",
+    "grid-column-gap": "0"
+  },
+  "report-graphic_fade": {
+    "background-image": "linear-gradient(180deg,rgba(255,255,255,0) 50%,#fff 110.34%)"
+  }
+}

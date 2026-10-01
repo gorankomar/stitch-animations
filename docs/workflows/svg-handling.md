@@ -4,6 +4,8 @@ Inputs: original SVG/Figma vector export, intended displayed size, parts that ne
 
 ## Choose delivery before optimizing
 
+When creating reusable SVG icon components in Webflow, expose **Stroke Weight** as an editable component property bound to the SVG `stroke-width` attribute. Preserve the original default stroke weight in SVG user units; child paths must inherit it rather than retain hardcoded overrides. Organize new reusable icon components under **SVG → Icons**. Use separate exported variants when the source geometry or default stroke differs; do not redraw supplied vectors.
+
 Follow an explicitly requested format. Otherwise ask the user whether to use an inline SVG or an external SVG image, briefly recommending the appropriate choice and explaining why. Continue inspecting/exporting original assets while awaiting the answer; do not finalize format-dependent optimization or integration until answered.
 
 | Intended use | Recommendation |

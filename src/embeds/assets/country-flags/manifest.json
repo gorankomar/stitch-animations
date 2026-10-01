@@ -1,0 +1,191 @@
+[
+  {
+    "country": "United Arab Emirates",
+    "nodeId": "340:3608",
+    "file": "united-arab-emirates.svg",
+    "originalBytes": 642,
+    "optimizedBytes": 481
+  },
+  {
+    "country": "United States of America",
+    "nodeId": "340:3597",
+    "file": "united-states-of-america.svg",
+    "originalBytes": 861,
+    "optimizedBytes": 749
+  },
+  {
+    "country": "Saudi Arabia",
+    "nodeId": "340:3768",
+    "file": "saudi-arabia.svg",
+    "originalBytes": 23948,
+    "optimizedBytes": 12309
+  },
+  {
+    "country": "India",
+    "nodeId": "340:4088",
+    "file": "india.svg",
+    "originalBytes": 876,
+    "optimizedBytes": 627
+  },
+  {
+    "country": "Singapore",
+    "nodeId": "340:3745",
+    "file": "singapore.svg",
+    "originalBytes": 532,
+    "optimizedBytes": 467
+  },
+  {
+    "country": "Malaysia",
+    "nodeId": "340:3979",
+    "file": "malaysia.svg",
+    "originalBytes": 963,
+    "optimizedBytes": 570
+  },
+  {
+    "country": "Liberia",
+    "nodeId": "340:4013",
+    "file": "liberia.svg",
+    "originalBytes": 787,
+    "optimizedBytes": 676
+  },
+  {
+    "country": "Brazil",
+    "nodeId": "340:4353",
+    "file": "brazil.svg",
+    "originalBytes": 646,
+    "optimizedBytes": 477
+  },
+  {
+    "country": "Japan",
+    "nodeId": "340:4059",
+    "file": "japan.svg",
+    "originalBytes": 282,
+    "optimizedBytes": 209
+  },
+  {
+    "country": "United Kingdom",
+    "nodeId": "340:3601",
+    "file": "united-kingdom.svg",
+    "originalBytes": 987,
+    "optimizedBytes": 829
+  },
+  {
+    "country": "Canada",
+    "nodeId": "340:4321",
+    "file": "canada.svg",
+    "originalBytes": 1495,
+    "optimizedBytes": 821
+  },
+  {
+    "country": "France",
+    "nodeId": "340:4168",
+    "file": "france.svg",
+    "originalBytes": 458,
+    "optimizedBytes": 403
+  },
+  {
+    "country": "Germany",
+    "nodeId": "340:4154",
+    "file": "germany.svg",
+    "originalBytes": 460,
+    "optimizedBytes": 405
+  },
+  {
+    "country": "Spain",
+    "nodeId": "340:3689",
+    "file": "spain.svg",
+    "originalBytes": 1556,
+    "optimizedBytes": 1290
+  },
+  {
+    "country": "Italy",
+    "nodeId": "340:4068",
+    "file": "italy.svg",
+    "originalBytes": 458,
+    "optimizedBytes": 403
+  },
+  {
+    "country": "Australia",
+    "nodeId": "340:4441",
+    "file": "australia.svg",
+    "originalBytes": 959,
+    "optimizedBytes": 700
+  },
+  {
+    "country": "South Korea",
+    "nodeId": "340:3707",
+    "file": "south-korea.svg",
+    "originalBytes": 755,
+    "optimizedBytes": 603
+  },
+  {
+    "country": "South Africa",
+    "nodeId": "340:3711",
+    "file": "south-africa.svg",
+    "originalBytes": 1193,
+    "optimizedBytes": 871
+  },
+  {
+    "country": "Mexico",
+    "nodeId": "340:3950",
+    "file": "mexico.svg",
+    "originalBytes": 776,
+    "optimizedBytes": 545
+  },
+  {
+    "country": "Argentina",
+    "nodeId": "340:4437",
+    "file": "argentina.svg",
+    "originalBytes": 637,
+    "optimizedBytes": 405
+  },
+  {
+    "country": "Sweden",
+    "nodeId": "340:3671",
+    "file": "sweden.svg",
+    "originalBytes": 392,
+    "optimizedBytes": 341
+  },
+  {
+    "country": "Switzerland",
+    "nodeId": "340:3669",
+    "file": "switzerland.svg",
+    "originalBytes": 248,
+    "optimizedBytes": 233
+  },
+  {
+    "country": "Netherlands",
+    "nodeId": "340:3894",
+    "file": "netherlands.svg",
+    "originalBytes": 458,
+    "optimizedBytes": 402
+  },
+  {
+    "country": "Turkey",
+    "nodeId": "340:3631",
+    "file": "turkey.svg",
+    "originalBytes": 644,
+    "optimizedBytes": 444
+  },
+  {
+    "country": "Egypt",
+    "nodeId": "340:4216",
+    "file": "egypt.svg",
+    "originalBytes": 678,
+    "optimizedBytes": 507
+  },
+  {
+    "country": "Qatar",
+    "nodeId": "340:3803",
+    "file": "qatar.svg",
+    "originalBytes": 487,
+    "optimizedBytes": 335
+  },
+  {
+    "country": "Indonesia",
+    "nodeId": "340:4086",
+    "file": "indonesia.svg",
+    "originalBytes": 229,
+    "optimizedBytes": 217
+  }
+]

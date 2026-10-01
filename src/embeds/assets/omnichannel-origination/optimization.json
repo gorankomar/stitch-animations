@@ -1,0 +1,143 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "removeUnusedNS",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "convertShapeToPath",
+      "sortAttrs",
+      "sortDefsChildren",
+      "removeDimensions"
+    ]
+  },
+  "exceptions": [
+    "removeXMLNS",
+    "cleanupIds",
+    "removeHiddenElems",
+    "removeViewBox",
+    "removeTitle",
+    "removeDesc",
+    "mergePaths",
+    "collapseGroups",
+    "removeEmptyContainers",
+    "removeDimensions: root dimensions restored during integration"
+  ],
+  "manifest": [
+    {
+      "file": "imgActivityHeart.svg",
+      "originalBytes": 807,
+      "optimizedBytes": 501
+    },
+    {
+      "file": "imgBarChart08.svg",
+      "originalBytes": 511,
+      "optimizedBytes": 356
+    },
+    {
+      "file": "imgBarChartSquare01.svg",
+      "originalBytes": 824,
+      "optimizedBytes": 553
+    },
+    {
+      "file": "imgCar01.svg",
+      "originalBytes": 1481,
+      "optimizedBytes": 782
+    },
+    {
+      "file": "imgCar2.svg",
+      "originalBytes": 1515,
+      "optimizedBytes": 716
+    },
+    {
+      "file": "imgClock.svg",
+      "originalBytes": 602,
+      "optimizedBytes": 427
+    },
+    {
+      "file": "imgDownload01.svg",
+      "originalBytes": 702,
+      "optimizedBytes": 539
+    },
+    {
+      "file": "imgEllipse330.svg",
+      "originalBytes": 285,
+      "optimizedBytes": 247
+    },
+    {
+      "file": "imgEllipse331.svg",
+      "originalBytes": 364,
+      "optimizedBytes": 322
+    },
+    {
+      "file": "imgEllipse332.svg",
+      "originalBytes": 282,
+      "optimizedBytes": 244
+    },
+    {
+      "file": "imgFile06.svg",
+      "originalBytes": 1008,
+      "optimizedBytes": 559
+    },
+    {
+      "file": "imgFingerprint04.svg",
+      "originalBytes": 909,
+      "optimizedBytes": 474
+    },
+    {
+      "file": "imgLuggage02.svg",
+      "originalBytes": 1667,
+      "optimizedBytes": 849
+    },
+    {
+      "file": "imgLuggage3.svg",
+      "originalBytes": 1834,
+      "optimizedBytes": 909
+    },
+    {
+      "file": "imgLuggage4.svg",
+      "originalBytes": 1834,
+      "optimizedBytes": 909
+    },
+    {
+      "file": "imgSafe.svg",
+      "originalBytes": 1004,
+      "optimizedBytes": 574
+    },
+    {
+      "file": "imgStar01.svg",
+      "originalBytes": 1867,
+      "optimizedBytes": 753
+    }
+  ]
+}

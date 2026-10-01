@@ -4,6 +4,10 @@ Inputs: Figma selection URL, target Webflow component/page if known, requested c
 
 ## Defaults and destination
 
+Create and verify every new illustration in the **Animations Playground** Webflow page (site `6823036cd77b3093eaf9154d`, page `6ab4079ac7ca32e3a6c168c8`). Create reusable components as needed and add requested animation there before inserting them into other pages. Save as a draft unless another completion stage is explicitly requested.
+
+Use the body font family configured in Webflow for all illustration text. Do not copy the Figma illustration's font family. Preserve its proportional text metrics, hierarchy, and intended wrapping using the site's body font.
+
 A request to create a graphic/illustration from a Figma link means **create it in Webflow and save a draft** unless the user specifies local-only work or another completion stage. Do not stop at a local mockup when Webflow creation is requested. Follow [publishing stages](publishing.md); a Figma link alone does not authorize staging/production publication.
 
 **Static by default.** Do not add reveal, hover, pointer follow, idle loops, or other motion unless requested. Do not register a static graphic with the automatic data-anim reveal loader. If animation is requested, build and verify the static graphic first, then enhance it.
@@ -32,6 +36,8 @@ The illustration scales as one composition with its parent's available width; he
 **Webflow is the source of truth for deployed visual styles.** Apply all supported base layout, typography, color, border, shadow, responsive sizing, and static/fallback styles directly in native Webflow styles.
 
 If a needed property, selector, pseudo-element, keyframe, or other special CSS cannot be expressed through the available native Webflow controls, include only that CSS in a scoped style embed **inside the component/graphic**. For example, if the current controls cannot express container-type, supply that declaration locally in the component. The graphic must carry its own exceptions rather than rely on site-wide or CDN CSS for appearance.
+
+Keep fallback-only scoped CSS in a **separate style-only HtmlEmbed** from animation scripts. Webflow Designer treats script-containing embeds as placeholders and may not render CSS placed in the same embed. Verify the actual Designer canvas as well as Preview; a working Preview does not prove the Designer fallback.
 
 Local preview CSS is exclusively for local preview. Do not copy preview styles into a production embed, import them through the deployed loader, or use their successful rendering as proof that Webflow is styled. Recreate supported values in Webflow, then verify there. Existing repository styles/builders may predate this policy: update only the requested component, do not bulk migrate unrelated components.
 
