@@ -8,8 +8,8 @@ Keep prompts focused on the desired result. Read only the documents relevant to 
 - Figma selection → docs/workflows/figma-to-animation.md; SVG work → docs/workflows/svg-handling.md.
 - New/changed motion → docs/workflows/animation-changes.md and docs/effects/index.md. Reuse before creating. “Reveal”, “Card Hover”, and “Pointer Follow” mean the cataloged implementations.
 - Component lookup → docs/components/index.md. Short prompts/handoffs → docs/prompt-guide.md.
-- Webflow changes → docs/workflows/webflow-integration.md. Release work → docs/workflows/shared-release.md.
-- Default completion is local preview. Distinguish local, saved Webflow draft, and published-and-verified. Durable decisions belong in component notes; publication evidence belongs in docs/releases.
+- Saving/publishing stages → docs/workflows/publishing.md. Webflow changes → docs/workflows/webflow-integration.md. Release work → docs/workflows/shared-release.md.
+- Default: save locally. Other stages: save to Webflow (draft), publish to staging, publish to production. Publishing includes agent-owned synchronization of the site-wide footer, playground, and component loader SHAs; never ask the user to update them manually. Active CDN is commit-pinned jsDelivr while the admin resolves S3/CloudFront CORS. Read publishing.md for domain selection and verification. Durable decisions belong in component notes; publication evidence belongs in docs/releases.
 - npm run dev previews locally; npm test checks behavior; npm run validate:release tests/builds/checks the full shared release.
 
 # Shared animation releases

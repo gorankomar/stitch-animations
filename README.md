@@ -20,7 +20,7 @@ Open http://localhost:5173/ for the playground. Component preview routes are in 
 - [Effect catalog](docs/effects/index.md)
 - [Figma to animation](docs/workflows/figma-to-animation.md) and [SVG handling](docs/workflows/svg-handling.md)
 - [Animation changes](docs/workflows/animation-changes.md)
-- [Webflow integration](docs/workflows/webflow-integration.md) and [shared release](docs/workflows/shared-release.md)
+- [Saving and publishing stages](docs/workflows/publishing.md), [Webflow integration](docs/workflows/webflow-integration.md), and [shared release](docs/workflows/shared-release.md)
 - [Detailed markup and animation recipes](docs/animation-recipes.md), [connector guide](docs/connector-animations.md), [code scroll API](docs/code-scroll.md)
 - [Release records](docs/releases/README.md) and [future work](docs/future-builds.md)
 
