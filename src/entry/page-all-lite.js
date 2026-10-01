@@ -4,6 +4,7 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-country-flags]', load: () => import('../embeds/country-flags.js')},
   {selector: '[data-product-variety]', load: () => import('../embeds/product-variety.js')},
   {selector: '[data-card-controls]', load: () => import('../embeds/card-controls.js')},
   {selector: '[data-secure-auth]', load: () => import('../embeds/secure-auth.js')},
