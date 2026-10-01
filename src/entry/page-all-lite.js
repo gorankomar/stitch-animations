@@ -1,3 +1,4 @@
+import '../embeds/country-flags.js';
 import { byData } from '../lib/dom.js';
 import { ATTR, DATA_ATTRS } from '../lib/config.js';
 import { initAutoReveals } from '../lib/effects/auto-reveal.js';

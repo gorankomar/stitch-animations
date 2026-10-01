@@ -1,3 +1,4 @@
+import '../embeds/country-flags.js';
 import '../embeds/card-controls.js';
 import '../embeds/secure-auth.js';
 import '../embeds/create-card.js';
