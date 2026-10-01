@@ -4,6 +4,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 
 | Component | Notes |
 | --- | --- |
+| Omnichannel Origination | [OMNICHANNEL-ORIGINATION.md](../../src/embeds/OMNICHANNEL-ORIGINATION.md) |
 | Real-Time Balance Management | [BALANCE.md](../../src/embeds/BALANCE.md) |
 | Card Controls | [CARD-CONTROLS.md](../../src/embeds/CARD-CONTROLS.md) |
 | Collections — Window Stack | [COLLECTIONS.md](../../src/embeds/COLLECTIONS.md) |

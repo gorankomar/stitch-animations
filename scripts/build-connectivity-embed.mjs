@@ -1,0 +1,14 @@
+import { build } from 'esbuild';
+import { fileURLToPath } from 'node:url';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+const root = new URL('../', import.meta.url);
+const js = await build({ entryPoints: [fileURLToPath(new URL('src/embeds/embedded-connectivity.js', root))], bundle: true, write: false, minify: true, format: 'iife', target: 'es2020' });
+const css = await readFile(new URL('src/embeds/embedded-connectivity.css', root), 'utf8');
+const markup = await readFile(new URL('src/embeds/embedded-connectivity-markup.html', root), 'utf8');
+const embed = `<style>${css}</style>\n<script>${js.outputFiles[0].text}</script>`;
+await mkdir(new URL('dist/embeds/', root), { recursive: true });
+await writeFile(new URL('dist/embeds/embedded-connectivity.html', root), embed);
+await writeFile(new URL('dist/embeds/embedded-connectivity-styles.html', root), `<style>${css}</style>` + await readFile(new URL('src/embeds/embedded-connectivity-connections.html', root), 'utf8'));
+await writeFile(new URL('dist/embeds/embedded-connectivity-motion.html', root), `<script>${js.outputFiles[0].text}</script>`);
+await writeFile(new URL('embedded-connectivity.html', root), `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Embedded Connectivity</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fafafa;font:14px system-ui}main{width:min(516px,calc(100vw - 40px))}h1{font-size:18px;font-weight:500;text-align:center;margin:0 0 32px}</style><main><h1>Embedded Connectivity</h1>${markup}</main>${embed}</html>`);
+console.log('Built Embedded Connectivity embed and preview');

@@ -20,9 +20,10 @@ Repository global.css and src/lib/easing.js currently contain local defaults, in
 | Property being animated | Default easing |
 | --- | --- |
 | Opacity (any start/end values, fade in or out) | linear |
+| Continuous directional loops (marquees moving left/right, repeating outward rings) | linear |
 | Translation, position, scale, rotation, and other non-opacity animated properties | var(--motion-ease-primary) / its resolved equivalent |
 
-The rule applies in both directions, entrance/exit, hover/return, and to new/revisited effects. Explicitly specified timings and easing override the default; record them in component notes. Continuous loops, constant-speed pulses, and physical/inertia effects may need different timing, but do not silently select linear or a spring simply because it is common: retain an already approved behavior or confirm/document the requested exception.
+The rule applies in both directions, entrance/exit, hover/return, and to new/revisited effects. Explicitly specified timings and easing override the default; record them in component notes. Continuous directional loops use linear easing to maintain constant speed through the loop seam. Coordinate repeating outward rings with a shared duration and separated phases so rings cannot overtake or overlap one another. Physical/inertia effects retain their approved cataloged behavior; document other explicitly requested exceptions.
 
 ## CSS and native Webflow
 

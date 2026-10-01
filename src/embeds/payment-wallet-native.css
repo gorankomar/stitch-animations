@@ -1,0 +1,32 @@
+.pw-graphic { position:relative; width:100%; aspect-ratio:540/402; container-type:inline-size; overflow:hidden; border-radius:.5rem; background-image:linear-gradient(229.48deg,rgba(237,252,242,.37) 1.53%,rgba(255,255,255,.37) 51.11%,rgba(237,252,242,.37) 106.79%); font-family:inherit; color:#000; }
+.pw-payment { position:absolute; left:19.259%; top:7.463%; width:66.667%; display:flex; flex-direction:column; align-items:center; row-gap:4.444cqi; padding-top:5.926cqi; padding-right:3.704cqi; padding-bottom:5.926cqi; padding-left:3.704cqi; border-top-width:.370cqi; border-right-width:.370cqi; border-bottom-width:.370cqi; border-left-width:.370cqi; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-left-style:solid; border-top-color:#efefef; border-right-color:#efefef; border-bottom-color:#efefef; border-left-color:#efefef; border-radius:1.852cqi; background-color:#f9f9f9; box-shadow:0 0 1.852cqi rgba(0,0,0,.1); }
+.pw-payment_header { display:flex; flex-direction:column; align-items:center; row-gap:.741cqi; }
+.pw-payment_amount { font-size:4.444cqi; line-height:5.185cqi; font-weight:700; white-space:nowrap; }
+.pw-payment_badge { padding-right:1.111cqi; padding-left:1.111cqi; background-color:#f2f2f2; border-radius:.741cqi; color:#4b4b4b; font-size:1.852cqi; line-height:3.333cqi; font-weight:500; }
+.pw-payment_content { width:100%; display:flex; flex-direction:column; row-gap:2.593cqi; }
+.pw-payment_table { display:flex; flex-direction:column; row-gap:.926cqi; }
+.pw-payment_row { display:flex; flex-direction:column; row-gap:.926cqi; }
+.pw-payment_row-content { display:flex; justify-content:space-between; align-items:center; font-size:1.852cqi; line-height:2.778cqi; font-weight:500; }
+.pw-payment_value { color:#3d3d3d; white-space:nowrap; }
+.pw-payment_divider { display:block; width:100%; height:.093cqi; }
+.pw-payment_details { display:flex; flex-direction:column; row-gap:.926cqi; padding-top:2.778cqi; padding-right:2.778cqi; padding-bottom:2.778cqi; padding-left:2.778cqi; background-color:#e7e7e7; border-radius:1.111cqi; font-size:1.852cqi; line-height:2.778cqi; font-weight:500; }
+.pw-payment_detail-top { display:flex; flex-direction:column; row-gap:.370cqi; }
+.pw-payment_detail-row { display:flex; justify-content:space-between; align-items:center; }
+.pw-payment_status { display:flex; align-items:center; column-gap:1.481cqi; }
+.pw-payment_bold { font-weight:700; }
+.pw-payment_check { width:1.852cqi; height:1.852cqi; }
+.pw-payment_icon { width:2.222cqi; height:2.222cqi; }
+.pw-payment_detail-divider { display:block; width:100%; height:.093cqi; }
+.pw-payment_meta { display:flex; flex-direction:column; row-gap:1.111cqi; }
+.pw-payment_caption { font-size:1.481cqi; line-height:2.222cqi; }
+.pw-payment_meta-row { display:flex; align-items:center; column-gap:1.481cqi; }
+.pw-payment_dot { width:1.481cqi; height:1.481cqi; }
+.pw-graphic_fade { position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(180deg,rgba(255,255,255,0) 74.569%,#fff 110.34%); }
+.pw-wallet_position { position:absolute; left:13.333%; top:51.99%; width:38.148%; }
+.pw-wallet { display:flex; flex-direction:column; align-items:center; padding-top:2.593cqi; padding-right:3.704cqi; padding-bottom:2.593cqi; padding-left:3.704cqi; border-top-width:.556cqi; border-right-width:.556cqi; border-bottom-width:.556cqi; border-left-width:.556cqi; border-top-style:solid; border-right-style:solid; border-bottom-style:solid; border-left-style:solid; border-top-color:#e7e7e7; border-right-color:#e7e7e7; border-bottom-color:#e7e7e7; border-left-color:#e7e7e7; border-radius:1.481cqi; background-image:linear-gradient(0deg,#f2f2f2,#fff); box-shadow:0 1.852cqi 1.852cqi rgba(0,0,0,.1); }
+.pw-wallet_header { display:flex; align-items:center; column-gap:.741cqi; font-size:1.852cqi; line-height:2.778cqi; margin-bottom:1.852cqi; }
+.pw-wallet_logo { font-size:2.037cqi; }
+.pw-wallet_balance { font-size:4.630cqi; line-height:4.444cqi; font-weight:600; white-space:nowrap; margin-bottom:1.111cqi; }
+.pw-wallet_transactions { font-size:1.481cqi; line-height:2.778cqi; color:#0070ff; font-weight:500; margin-bottom:1.852cqi; }
+.pw-wallet_actions { display:flex; width:100%; column-gap:1.481cqi; }
+.pw-wallet_button { display:flex; justify-content:center; align-items:center; flex-grow:1; flex-shrink:1; flex-basis:0%; padding-top:1.481cqi; padding-right:1.481cqi; padding-bottom:1.481cqi; padding-left:1.481cqi; background-color:#4b4b4b; border-radius:.741cqi; color:#fff; font-size:1.852cqi; line-height:2.222cqi; font-weight:500; white-space:nowrap; box-shadow:0 .185cqi .370cqi rgba(16,24,40,.05); }

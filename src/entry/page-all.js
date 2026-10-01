@@ -1,3 +1,4 @@
+import '../embeds/omnichannel-origination.js';
 import '../embeds/country-flags.js';
 import '../embeds/product-variety.js';
 import '../embeds/card-controls.js';
