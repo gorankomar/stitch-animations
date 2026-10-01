@@ -1,0 +1,8 @@
+.country-flags_graphic { box-sizing: border-box; position: relative; display: flex; align-items: center; justify-content: center; width: 258px; max-width: 100%; height: 232px; overflow: hidden; border: 1px solid #f9f9f9; border-radius: 8px; background: linear-gradient(228deg,rgba(237,252,242,.37),rgba(255,255,255,.37) 48.599%,rgba(237,252,242,.37)),#fff; }
+.country-flags_card { box-sizing: content-box; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 12px; border: 5px solid #fcfcfc; border-radius: 6px; background: #fff; box-shadow: 0 0 5px rgba(0,0,0,.1); }
+.country-flags_rows { display: flex; flex-direction: column; gap: 10px; width: 146px; }
+.country-flags_row { width: 146px; height: 30px; overflow: hidden; }
+.country-flags_track { display: flex; width: max-content; }
+.country-flags_sequence { box-sizing: content-box; display: flex; flex: 0 0 auto; gap: 10px; padding-right: 10px; }
+.country-flags_flag { display: block; flex: 0 0 42px; width: 42px; height: 30px; border-radius: 2px; box-shadow: 0 2px 5px rgba(0,0,0,.12); }
+.country-flags_caption { margin: 0; color: #5d5d5d; font-family: Inter,sans-serif; font-weight: 500; font-size: 12px; line-height: 15px; text-align: center; }

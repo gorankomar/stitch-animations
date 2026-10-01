@@ -79,6 +79,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-country-flags': resolve(process.cwd(), 'src/embeds/country-flags.js'),
             'feature-product-variety': resolve(process.cwd(), 'src/embeds/product-variety.js'),
             'feature-card-controls': resolve(process.cwd(), 'src/embeds/card-controls.js'),
             'feature-secure-auth': resolve(process.cwd(), 'src/embeds/secure-auth.js'),
