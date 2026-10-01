@@ -1,4 +1,3 @@
-import './country-flags.css';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
 
 // Modulo repeats a complete nine-flag sequence including its trailing gap.
