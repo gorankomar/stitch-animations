@@ -1,3 +1,4 @@
+import '../embeds/buy-now-pay-later.js';
 import '../embeds/credit-check.js';
 import '../embeds/user-onboarding.js';
 import '../embeds/omnichannel-origination.js';

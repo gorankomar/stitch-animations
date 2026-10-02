@@ -1,0 +1,34 @@
+<style>/* Only component selectors and progressive motion exceptions; native layout stays in Webflow. */
+.bnpl{container-type:inline-size;writing-mode:horizontal-tb;--card-lift-distance:-.74074cqi;--card-lift-shadow:-.74074cqi 1.85185cqi 2.40741cqi rgba(0,0,0,.2)}
+.bnpl-frame{aspect-ratio:540/278}
+.bnpl-line-svg{display:block}
+/* Reusable component internals require scoped selectors to preserve other consumers. */
+.bnpl-phone .financial_phone-shell{width:100%;min-height:100%;height:100%;top:0;container-type:normal;border-radius:7.22222cqi 7.22222cqi 0 0;padding:2.77778cqi 1.85185cqi 0;box-shadow:inset 0 0 0 1.2963cqi #0a0a0a;border-width:.37037cqi}
+.bnpl-phone .phone-shell_status-bar{display:flex;justify-content:center;height:3.33333cqi;padding:0}
+.bnpl-phone .phone-shell_status-time,.bnpl-phone .phone-shell_status-icons{display:none}
+.bnpl-phone .phone-shell_dynamic-island{width:11.66667cqi;height:3.33333cqi;position:static;border-radius:99px;background:#000;margin:0 auto}
+.bnpl-badge .u-label{font-size:1.11111cqi;line-height:2.22222cqi;padding:0 1.11111cqi;border-radius:.74074cqi;margin:0}
+.bnpl-card-slot .credit-card_wrap{width:100%;height:100%;container-type:inline-size;font-size:inherit}
+.bnpl-card-slot .credit-card{width:100%;height:100%;border-radius:4.80769cqi;opacity:1;transform:none;transition:none}
+.bnpl-card-slot .credit-card_content{font-size:inherit}
+.bnpl-flash svg{width:100%;height:100%;display:block}
+.bnpl-chevron svg{display:block}
+.bnpl[data-bnpl-ready] [data-bnpl-reveal]{opacity:0;transform:translateY(2.22222cqi);transition:transform var(--motion-duration-default) var(--motion-ease-primary),opacity var(--reveal-opacity-duration) linear}
+.bnpl[data-bnpl-ready] [data-bnpl-reveal].is-reveal{opacity:1;transform:none}
+.bnpl [data-card-lift]{transition:translate var(--motion-duration-default) var(--motion-ease-primary),box-shadow var(--motion-duration-default) var(--motion-ease-primary)}
+@media(hover:hover) and (pointer:fine){.bnpl [data-card-lift]:hover{translate:0 var(--card-lift-distance);box-shadow:var(--card-lift-shadow)}}
+@media(prefers-reduced-motion:reduce){.bnpl[data-bnpl-ready] [data-bnpl-reveal]{opacity:1;transform:none;transition:none}.bnpl [data-card-lift]{translate:none;transition:none}}
+.bnpl-card-slot .credit-card_content{position:relative;width:100%;height:100%;padding:0}
+.bnpl-card-slot .credit-card_company-block{position:absolute;left:0;top:1.92308cqi;width:100%}
+.bnpl-card-slot .stitch-logo__holder.is-smaller{font-size:5.76923cqi}
+.bnpl-card-slot .credit-card_type{position:absolute;left:0;top:19.23077cqi;width:100%;height:5.28846cqi}
+.bnpl-card-slot .credit-card_contactless{width:4.32692cqi;height:5.28846cqi}
+.bnpl-card-slot .credit-card_digits{position:absolute;left:0;bottom:0;width:100%;font-size:4.32692cqi;line-height:5.76923cqi;height:8.17308cqi;align-items:center}
+.bnpl-card-slot .credit-card_4-digit{font-size:inherit;line-height:inherit}
+.bnpl-card-slot .credit-card_provider{width:20.67308cqi;height:6.25cqi}
+.bnpl-card-slot .credit-card{padding:4.80769cqi 6.73077cqi}
+.bnpl-card-slot .credit-card{container-type:normal}
+.bnpl>.w-embed{display:none}
+
+.bnpl[data-bnpl-pulses-ready] :is([data-bnpl-line="1"],[data-bnpl-line="3"],[data-bnpl-line="5"],[data-bnpl-line="7"],[data-bnpl-line="9"]){visibility:hidden}
+</style>

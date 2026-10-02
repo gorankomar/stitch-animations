@@ -15,3 +15,5 @@ await import('./build-country-flags.mjs');
 await import('./build-user-onboarding-embed.mjs');
 
 await import('./build-credit-check-embed.mjs');
+
+await import('./build-buy-now-pay-later-embed.mjs');

@@ -1,0 +1,1853 @@
+{
+  "id": {
+    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+    "element": "338737c6-9856-35a7-af5f-0441afd721c0"
+  },
+  "type": "Block",
+  "styleNames": [
+    "bnpl"
+  ],
+  "attributes": {
+    "data-buy-now-pay-later": ""
+  },
+  "settings": {
+    "tag": "div",
+    "visibility": true,
+    "block": {
+      "tag": "div"
+    }
+  },
+  "children": [
+    {
+      "id": {
+        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+        "element": "338737c6-9856-35a7-af5f-0441afd721c1"
+      },
+      "type": "Block",
+      "styleNames": [
+        "bnpl-frame"
+      ],
+      "settings": {
+        "tag": "div",
+        "visibility": true,
+        "block": {
+          "tag": "div"
+        }
+      },
+      "children": [
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd721c2"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-lines"
+          ],
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          },
+          "children": [
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd721c3"
+              },
+              "type": "DOM",
+              "attributes": {
+                "aria-hidden": "true",
+                "fill": "none",
+                "height": "100%",
+                "width": "100%",
+                "viewBox": "0 0 540 278",
+                "xmlns": "http://www.w3.org/2000/svg",
+                "class": "bnpl-line-svg"
+              },
+              "settings": {
+                "tag": "svg",
+                "visibility": true,
+                "dom": {
+                  "tag": "svg"
+                }
+              },
+              "children": [
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721c4"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(-16 194.5) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721c5"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "#CEF0FF",
+                        "d": "M55.7 179V100.149C55.7 98.4926 54.3569 97.1494 52.7 97.1494H3.2C1.54315 97.1494 0.2 95.8063 0.2 94.1494V0",
+                        "id": "bnpl-0-Vector-2015",
+                        "data-bnpl-line": "0"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721c6"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(-16 194.5) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721c7"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-1-paint0_linear_0_27)",
+                        "d": "M55.7 179V100.149C55.7 98.4926 54.3569 97.1494 52.7 97.1494H3.2C1.54315 97.1494 0.2 95.8063 0.2 94.1494V0",
+                        "id": "bnpl-1-Vector-2021",
+                        "data-bnpl-line": "1"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721c8"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721c9"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "152.747",
+                            "x2": "47.613",
+                            "y1": "90.6933",
+                            "x1": "47.613",
+                            "id": "bnpl-1-paint0_linear_0_27"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721ca"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721cb"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#009AFF",
+                                "offset": "0.45"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721cc"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721cd"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(-15.85 156) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721ce"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-2-paint0_linear_0_36)",
+                        "d": "M40.2 170V81C40.2 79.3431 38.8569 78 37.2 78H3.2C1.54315 78 0.2 76.6569 0.2 75L0.2 0",
+                        "id": "bnpl-2-Vector-2016",
+                        "data-bnpl-line": "2"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721cf"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721d0"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "170",
+                            "x2": "20.2",
+                            "y1": "0",
+                            "x1": "20.2",
+                            "id": "bnpl-2-paint0_linear_0_36"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721d1"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "white"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721d2"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#CEF0FF",
+                                "offset": "0.533661"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721d3"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "white",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721d4"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(-16 156) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721d5"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-3-paint0_linear_0_29)",
+                        "d": "M40.2 170V80.6494C40.2 78.9926 38.8569 77.6494 37.2 77.6494H3.2C1.54315 77.6494 0.2 76.3063 0.2 74.6494V0",
+                        "id": "bnpl-3-Vector-2020",
+                        "data-bnpl-line": "3"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721d6"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721d7"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "145.067",
+                            "x2": "25.4174",
+                            "y1": "86.1333",
+                            "x1": "25.4174",
+                            "id": "bnpl-3-paint0_linear_0_29"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721d8"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721d9"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#009AFF",
+                                "offset": "0.45"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721da"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721db"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(-19 75.5) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721dc"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "#CEF0FF",
+                        "d": "M0.2 182.351V156C0.2 154.344 1.54315 153 3.2 153H52.7C54.3568 153 55.7 151.657 55.7 150V0",
+                        "id": "bnpl-4-Vector-2017",
+                        "data-bnpl-line": "4"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721dd"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(-19 75.5) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721de"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-5-paint0_linear_0_26)",
+                        "d": "M0.2 182.352L0.2 155.002C0.2 153.345 1.54315 152.002 3.2 152.002H52.7C54.3568 152.002 55.7 150.659 55.7 149.002V0",
+                        "id": "bnpl-5-Vector-2022",
+                        "data-bnpl-line": "5"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721df"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721e0"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "130.171",
+                            "x2": "60.2",
+                            "y1": "64.3804",
+                            "x1": "60.2",
+                            "id": "bnpl-5-paint0_linear_0_26"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721e1"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721e2"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#009AFF",
+                                "offset": "0.45"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721e3"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721e4"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(356 349) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721e5"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-6-paint0_linear_0_25)",
+                        "d": "M208.5 0V96.9827C208.5 98.6396 207.157 99.9827 205.5 99.9827H152.548C150.891 99.9827 149.548 101.326 149.548 102.983V153C149.548 154.657 148.205 156 146.548 156H0",
+                        "id": "bnpl-6-Vector-2025",
+                        "data-bnpl-line": "6"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721e6"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721e7"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "116.436",
+                            "x2": "-9.50852",
+                            "y1": "15.9574",
+                            "x1": "266.629",
+                            "id": "bnpl-6-paint0_linear_0_25"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721e8"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "#CEF0FF",
+                                "offset": "0.263626"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721e9"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#CEF0FF",
+                                "offset": "0.402258"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721ea"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#CEF0FF",
+                                "offset": "0.661586"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721eb"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "#CEF0FF",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721ec"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(396.5 349) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721ed"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-7-paint0_linear_0_23)",
+                        "d": "M207 0V56.4834C207 58.1403 205.657 59.4834 204 59.4834L152.518 59.4832C150.873 59.4832 149.534 60.8079 149.518 62.4527L149.008 112.531C148.992 114.176 147.654 115.5 146.009 115.5H0",
+                        "id": "bnpl-7-Vector-2024",
+                        "data-bnpl-line": "7"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721ee"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721ef"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "99.7292",
+                            "x2": "127.51",
+                            "y1": "39.2009",
+                            "x1": "159.674",
+                            "id": "bnpl-7-paint0_linear_0_23"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721f0"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721f1"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#009AFF",
+                                "offset": "0.47861"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721f2"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721f3"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(347 318) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721f4"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-8-paint0_linear_0_28)",
+                        "d": "M165 0V80.069C165 81.7259 163.657 83.0691 162 83.069L99 83.0689C97.3432 83.0689 96 84.4121 96 86.0689V137.917C96 139.574 94.6569 140.917 93 140.917H0",
+                        "id": "bnpl-8-Vector-2018",
+                        "data-bnpl-line": "8"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721f5"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721f6"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "54.9096",
+                            "x2": "-18.4285",
+                            "y1": "-4.11803",
+                            "x1": "199.278",
+                            "id": "bnpl-8-paint0_linear_0_28"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721f7"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "#CEF0FF",
+                                "offset": "0.263626"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721f8"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#CEF0FF",
+                                "offset": "0.402258"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721f9"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#CEF0FF",
+                                "offset": "0.661586"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721fa"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "#CEF0FF",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd721fb"
+                  },
+                  "type": "DOM",
+                  "attributes": {
+                    "transform": "translate(347 318) rotate(-90)"
+                  },
+                  "settings": {
+                    "tag": "g",
+                    "visibility": true,
+                    "dom": {
+                      "tag": "g"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721fc"
+                      },
+                      "type": "DOM",
+                      "attributes": {
+                        "stroke-width": "0.4",
+                        "stroke": "url(#bnpl-9-paint0_linear_0_20)",
+                        "d": "M165 0V80.0688C165 81.7256 163.657 83.0688 162 83.0688L99 83.0687C97.3431 83.0687 96 84.4119 96 86.0687V138.5C96 140.157 94.6569 141.5 93 141.5H0",
+                        "id": "bnpl-9-Vector-2023",
+                        "data-bnpl-line": "9"
+                      },
+                      "settings": {
+                        "tag": "path",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "path"
+                        }
+                      }
+                    },
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd721fd"
+                      },
+                      "type": "DOM",
+                      "settings": {
+                        "tag": "defs",
+                        "visibility": true,
+                        "dom": {
+                          "tag": "defs"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd721fe"
+                          },
+                          "type": "DOM",
+                          "attributes": {
+                            "gradientUnits": "userSpaceOnUse",
+                            "y2": "111.895",
+                            "x2": "84.3204",
+                            "y1": "59.8194",
+                            "x1": "120.961",
+                            "id": "bnpl-9-paint0_linear_0_20"
+                          },
+                          "settings": {
+                            "tag": "lineargradient",
+                            "visibility": true,
+                            "dom": {
+                              "tag": "lineargradient"
+                            }
+                          },
+                          "children": [
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd721ff"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd72200"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-color": "#009AFF",
+                                "offset": "0.47861"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            },
+                            {
+                              "id": {
+                                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                                "element": "338737c6-9856-35a7-af5f-0441afd72201"
+                              },
+                              "type": "DOM",
+                              "attributes": {
+                                "stop-opacity": "0",
+                                "stop-color": "white",
+                                "offset": "1"
+                              },
+                              "settings": {
+                                "tag": "stop",
+                                "visibility": true,
+                                "dom": {
+                                  "tag": "stop"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd72202"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-phone"
+          ],
+          "attributes": {
+            "data-bnpl-reveal": ""
+          },
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          },
+          "children": [
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd72203"
+              },
+              "type": "ComponentInstance",
+              "instanceDetails": {
+                "type": "ComponentInstance",
+                "id": "1c1389ab-bbf2-a9be-4610-270e7e43b058",
+                "name": "Phone Shell",
+                "props": [],
+                "slots": [
+                  {
+                    "id": {
+                      "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                      "element": "338737c6-9856-35a7-af5f-0441afd72203",
+                      "slot": "fcb1d429-b385-0dad-337d-cde9a8645483"
+                    },
+                    "name": "Slot",
+                    "children": []
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd72204"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-header"
+          ],
+          "attributes": {
+            "data-bnpl-reveal": ""
+          },
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          },
+          "children": [
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd72205"
+              },
+              "type": "Block",
+              "styleNames": [
+                "bnpl-chevron"
+              ],
+              "settings": {
+                "tag": "div",
+                "visibility": true,
+                "block": {
+                  "tag": "div"
+                }
+              },
+              "children": [
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd72206"
+                  },
+                  "type": "ComponentInstance",
+                  "instanceDetails": {
+                    "type": "ComponentInstance",
+                    "id": "49e61838-f585-e72c-fab0-027c728679e5",
+                    "name": "Icon - Chevron Left",
+                    "props": [
+                      {
+                        "propId": "1e55b17d-266a-a088-8b1a-14fcc1009e28",
+                        "value": {
+                          "sourceType": "prop",
+                          "propId": "2fc908f6-a358-6869-e22b-4b05bb3823a7"
+                        },
+                        "hasOverride": true,
+                        "name": "Stroke Width"
+                      },
+                      {
+                        "propId": "6caaf7ef-ef26-66f9-a525-96b75687237f",
+                        "value": {
+                          "sourceType": "prop",
+                          "propId": "e1d810fd-f225-e75b-9514-46007e522b42"
+                        },
+                        "hasOverride": true,
+                        "name": "Width"
+                      },
+                      {
+                        "propId": "80b0e427-b4ab-87f6-7382-40dd445ace3a",
+                        "value": {
+                          "sourceType": "prop",
+                          "propId": "ea17d934-97c1-54f9-7386-06a44b6ab306"
+                        },
+                        "hasOverride": true,
+                        "name": "Height"
+                      },
+                      {
+                        "propId": "84113244-5400-8421-79ea-68051df54115",
+                        "value": {
+                          "sourceType": "prop",
+                          "propId": "6ef6e4c3-24cc-466e-2759-27db98dd09f6"
+                        },
+                        "hasOverride": true,
+                        "name": "Color"
+                      }
+                    ],
+                    "slots": []
+                  }
+                }
+              ]
+            },
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd72207"
+              },
+              "type": "Block",
+              "styleNames": [
+                "bnpl-title"
+              ],
+              "settings": {
+                "tag": "div",
+                "visibility": true,
+                "block": {
+                  "tag": "div"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd72209"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-badge"
+          ],
+          "attributes": {
+            "data-bnpl-reveal": ""
+          },
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          },
+          "children": [
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd7220a"
+              },
+              "type": "ComponentInstance",
+              "instanceDetails": {
+                "type": "ComponentInstance",
+                "id": "fedfee7f-20d9-ac0d-844d-bf845044fd37",
+                "name": "Label",
+                "props": [
+                  {
+                    "propId": "a776969e-27da-597a-cf99-13bf0b65c1a2",
+                    "value": {
+                      "sourceType": "prop",
+                      "propId": "8727560d-4a8b-d0b1-013c-f834d225db1a"
+                    },
+                    "hasOverride": true,
+                    "name": "Variant"
+                  },
+                  {
+                    "propId": "65ff8866-346e-724f-fd11-d366c60b1a05",
+                    "value": {
+                      "sourceType": "prop",
+                      "propId": "35785ba7-7ca6-273a-da1a-11ab3de848cc"
+                    },
+                    "hasOverride": true,
+                    "name": "Label"
+                  }
+                ],
+                "slots": []
+              }
+            }
+          ]
+        },
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd7220c"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-card-position"
+          ],
+          "attributes": {
+            "data-bnpl-reveal": ""
+          },
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          },
+          "children": [
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd7220d"
+              },
+              "type": "Block",
+              "styleNames": [
+                "bnpl-card-follow"
+              ],
+              "attributes": {
+                "data-strength": "0.035",
+                "data-follow-mouse": ""
+              },
+              "settings": {
+                "tag": "div",
+                "visibility": true,
+                "block": {
+                  "tag": "div"
+                }
+              },
+              "children": [
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd7220e"
+                  },
+                  "type": "Block",
+                  "styleNames": [
+                    "bnpl-card-hover"
+                  ],
+                  "attributes": {
+                    "data-card-lift": ""
+                  },
+                  "settings": {
+                    "tag": "div",
+                    "visibility": true,
+                    "block": {
+                      "tag": "div"
+                    }
+                  },
+                  "children": [
+                    {
+                      "id": {
+                        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                        "element": "338737c6-9856-35a7-af5f-0441afd7220f"
+                      },
+                      "type": "Block",
+                      "styleNames": [
+                        "bnpl-card-slot"
+                      ],
+                      "settings": {
+                        "tag": "div",
+                        "visibility": true,
+                        "block": {
+                          "tag": "div"
+                        }
+                      },
+                      "children": [
+                        {
+                          "id": {
+                            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                            "element": "338737c6-9856-35a7-af5f-0441afd72210"
+                          },
+                          "type": "ComponentInstance",
+                          "instanceDetails": {
+                            "type": "ComponentInstance",
+                            "id": "ddf5ec98-7371-1bc2-9e16-1f4ac115394a",
+                            "name": "Credit Card",
+                            "props": [
+                              {
+                                "propId": "9942e362-a795-feae-1867-3490aa31508f",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "3b5cbaee-5db5-efa2-3919-072bf76fe30e"
+                                },
+                                "hasOverride": true,
+                                "name": "Variant"
+                              },
+                              {
+                                "propId": "b0171abc-44df-55c1-71f1-0121b5306d8e",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "8b89e7e8-7e5c-2f61-da64-39b6951b38bd"
+                                },
+                                "hasOverride": true,
+                                "name": "Visibility"
+                              },
+                              {
+                                "propId": "4840bc1e-5a16-9adb-626b-e947e421266d",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "53b2f4b7-e5b1-b443-6baf-9ab4897dbbd4"
+                                },
+                                "hasOverride": true,
+                                "name": "Logo or Name"
+                              },
+                              {
+                                "propId": "c4b5e00a-95bf-1a0e-ec04-8751316ad2e5",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "1887709a-0e50-3157-fbbc-a1d17eb234da"
+                                },
+                                "hasOverride": true,
+                                "name": "Company Name"
+                              },
+                              {
+                                "propId": "8ecb052a-11ca-2383-066c-628ea6d68eeb",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "fbea4b63-3da5-7c23-561a-b8088f648edb"
+                                },
+                                "hasOverride": true,
+                                "name": "Rotate 4-digits"
+                              },
+                              {
+                                "propId": "168c24cd-8fdb-8a05-1d08-7136924e77ad",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "4fbc891a-744e-4ccb-6659-1ae1a7eb16a6"
+                                },
+                                "hasOverride": true,
+                                "name": "Variant"
+                              },
+                              {
+                                "propId": "64d65e3e-e08c-54c4-adc7-1e942adfa82e",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "0b0683c5-7854-ca6b-e6b7-8d4ca86b1a77"
+                                },
+                                "hasOverride": true,
+                                "name": "Golden Chip"
+                              },
+                              {
+                                "propId": "1137d1c4-c6f8-d4e6-caff-f76685052c16",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "4bbe5f4b-8f51-9dc8-7a0b-f5565e78ca75"
+                                },
+                                "hasOverride": true,
+                                "name": "Visibility"
+                              },
+                              {
+                                "propId": "d50de363-025b-0ad9-0fe0-d00711ea1051",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "de252ed6-d472-4075-8f62-0967a60923b7"
+                                },
+                                "hasOverride": true,
+                                "name": "Variant"
+                              },
+                              {
+                                "propId": "b99e7a15-03da-3757-8660-f9ea44738aac",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "25ea157e-cc59-e7a5-f647-bfdbd9939496"
+                                },
+                                "hasOverride": true,
+                                "name": "Visibility"
+                              },
+                              {
+                                "propId": "343b6d35-e3b4-6589-54c1-8fa0f7481bcd",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "3ab208a1-dce5-1932-7685-bb2d98730cad"
+                                },
+                                "hasOverride": true,
+                                "name": "Visa Color"
+                              },
+                              {
+                                "propId": "5fe02941-8535-880f-c81f-590c580de684",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "a1a45889-692f-3d61-394d-304265fdb945"
+                                },
+                                "hasOverride": true,
+                                "name": "MC Color"
+                              },
+                              {
+                                "propId": "1770f83f-3eea-0eb9-7e09-266fa801adea",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "6298cced-7702-ec0b-fa30-dd4cd284612b"
+                                },
+                                "hasOverride": true,
+                                "name": "Reveal"
+                              },
+                              {
+                                "propId": "581ffd56-c50b-9399-b294-b45094c60209",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "83700eba-b86f-f0ee-e0c4-d2e2fb0044c1"
+                                },
+                                "hasOverride": true,
+                                "name": "Offset"
+                              },
+                              {
+                                "propId": "54222c54-8bea-21ca-94b3-caa34c46d36b",
+                                "value": {
+                                  "sourceType": "prop",
+                                  "propId": "ac67e405-9a1c-78ae-a363-3b2057610065"
+                                },
+                                "hasOverride": true,
+                                "name": "Delay"
+                              }
+                            ],
+                            "slots": []
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd72211"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-message"
+          ],
+          "attributes": {
+            "data-bnpl-reveal": ""
+          },
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          },
+          "children": [
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd72212"
+              },
+              "type": "Block",
+              "styleNames": [
+                "bnpl-flash"
+              ],
+              "settings": {
+                "tag": "div",
+                "visibility": true,
+                "block": {
+                  "tag": "div"
+                }
+              },
+              "children": [
+                {
+                  "id": {
+                    "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                    "element": "338737c6-9856-35a7-af5f-0441afd72213"
+                  },
+                  "type": "ComponentInstance",
+                  "instanceDetails": {
+                    "type": "ComponentInstance",
+                    "id": "d14ec127-3127-fc60-ace8-f2c7089be522",
+                    "name": "Icon - Flash",
+                    "props": [],
+                    "slots": []
+                  }
+                }
+              ]
+            },
+            {
+              "id": {
+                "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+                "element": "338737c6-9856-35a7-af5f-0441afd72214"
+              },
+              "type": "Block",
+              "settings": {
+                "tag": "div",
+                "visibility": true,
+                "block": {
+                  "tag": "div"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd72216"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-checkout"
+          ],
+          "attributes": {
+            "data-bnpl-reveal": ""
+          },
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          }
+        },
+        {
+          "id": {
+            "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+            "element": "338737c6-9856-35a7-af5f-0441afd72218"
+          },
+          "type": "Block",
+          "styleNames": [
+            "bnpl-fade"
+          ],
+          "settings": {
+            "tag": "div",
+            "visibility": true,
+            "block": {
+              "tag": "div"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": {
+        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+        "element": "338737c6-9856-35a7-af5f-0441afd72219"
+      },
+      "type": "HtmlEmbed",
+      "settings": {
+        "visibility": true
+      }
+    },
+    {
+      "id": {
+        "component": "338737c6-9856-35a7-af5f-0441afd721c0",
+        "element": "338737c6-9856-35a7-af5f-0441afd7221a"
+      },
+      "type": "HtmlEmbed",
+      "settings": {
+        "visibility": true
+      }
+    }
+  ]
+}
