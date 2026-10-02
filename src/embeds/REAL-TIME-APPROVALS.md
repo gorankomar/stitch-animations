@@ -30,3 +30,14 @@ Verification on 2026-10-02: npm test 44/44 passed; standalone motion bundle buil
 Shared multi-entry build verified in /tmp/rta-shared-build to preserve unrelated working-tree dist edits. node scripts/check-shared-release.mjs /tmp/rta-shared-build passed, including Product Variety/wallet swap, Country Flags and local dependencies. Saved Webflow motion code was read back and matched the local standalone bundle exactly. git diff --check passed.
 
 Connector layer 3 sits above both card wrappers at layer 2. Cursor uses layer 4 for interaction, then layer 1 before moving inward at 17 seconds; hide restores layer 1.
+
+
+## Optimized avatar delivery — 2026-10-02
+
+Confirmed the four portraits and order against the supplied Figma avatar frame `373:1698` (children `373:1699`, `373:1701`, `373:1703`, `373:1705`). Existing 640 × 640 PNG masters remain in `assets/real-time-approvals/avatar-{1..4}.png`. Delivery markup and local preview now use matching 128 × 128 WebPs, generated with `scripts/optimize-raster.mjs`, profile `tiny`, quality 65, method 6, sharp YUV, lossless alpha, and ICC preservation. Encoder: cwebp 1.5.0 / libsharpyuv 0.4.1. Per-image sizes/settings and same-dimension PNG comparison bytes are recorded in `optimization.json`.
+
+The four WebPs total 10,258 bytes versus 1,426,003 bytes for the PNG masters (99.28% smaller, including resizing). 128 pixels supports up to 64 CSS pixels at 2× density; revisit export sizing if a future placement exceeds that. Actual desktop parent was 594.40625 pixels with 39.625-pixel avatars at both the 1467-pixel Designer and 1993-pixel Preview widths. Mobile Preview at 393 pixels gave a 345-pixel parent and 23-pixel avatars. All four loaded at natural width 128, using the new WebP CDN URLs. PNG/WebP visual comparison on white and final circular component slots confirmed face detail, alpha edges, order, crop, and overlap.
+
+Uploaded through Webflow Data API/S3 (four 201 responses), then verified CDN bytes exactly against local files. New asset IDs/URLs are in `webflow-assets.json`; old PNG identities are retained in `webflow-assets-png-masters.json`. Updated the component's four image prop defaults, preserving their bindings and editability. Read-back confirmed the Playground instance inherits all four new defaults without overrides. Current Playground instance ID is `2492fe98-2fa0-fa69-5837-e5f12c006a05` (the older instance identity above is historical).
+
+Saved to Webflow (draft), verified after Designer reload and in actual desktop/mobile Preview with custom code enabled; the existing animation ran with the replacement images. Screenshot evidence: `/private/tmp/rta-webp-webflow-preview.png` and `/private/tmp/rta-webp-webflow-mobile.png`. No loader URLs changed and no domain was published. Full shared release validation passed: 45 tests, all entries/embeds built, Product Variety/wallet swap and Country Flags/dependency checks passed; regenerated tracked distribution files were unchanged.
