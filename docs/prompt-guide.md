@@ -8,6 +8,7 @@ Use a component name or Figma link, desired result, effect names, and completion
 - “Update Country Flags with this behavior: [description]. Save a Webflow draft.”
 - “Save these changes locally.”
 - “Save these changes to Webflow.”
+- “Push and merge everything we changed in this chat.”
 - “Push these changes to middle. I’ll publish.”
 - “Update the site-settings jsDelivr SHA and save; I’ll choose the domains and publish.”
 - “Publish these changes to staging.”
@@ -18,3 +19,5 @@ Stages and loader updates follow [saving and publishing](workflows/publishing.md
 Keep one chat per coherent feature or release. Continue small refinements in that chat. For unfinished work, create a short task note under docs/tasks/<task>.md with: goal, links/component, accepted decisions, branch/commit and actual working state, verification performed, remaining work, and requested completion stage. Never include credentials. Read live repository state again when resuming.
 
 Completed decisions move to component notes; publication evidence moves to release records. Keep ordinary workflows as documents; add custom skills only when repeated use justifies them.
+
+“Push and merge” includes all approved changes from the chat, including documentation and instructions, and finishes with a validated merge into main. “Middle” includes that GitHub work plus saved shared loader updates; the user publishes afterward.

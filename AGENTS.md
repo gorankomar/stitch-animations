@@ -14,6 +14,11 @@ Established reusable components must retain their internal appearance unless the
 - Default: save locally except Figma illustration creation defaults to a Webflow draft. Other stages: save to Webflow (draft/Animations Playground), middle (agent saves the verified jsDelivr SHA in site settings and matching draft loaders; user publishes), publish to staging, publish to production. Middle and publishing include agent-owned synchronization of the site-wide footer and Playground page-settings shared loader SHA, plus removal of redundant component feature-module scripts and inline animation runtimes covered by page-all-lite. Verify Webflow Preview with only the shared page loader; preserve styles and unrelated code. Never ask the user to update URLs or remove scripts manually. Active CDN is commit-pinned jsDelivr while the admin resolves S3/CloudFront CORS. Read publishing.md for domain selection and verification. Durable decisions belong in component notes; publication evidence belongs in docs/releases.
 - npm run dev previews locally; npm test checks behavior; npm run validate:release tests/builds/checks the full shared release.
 
+# GitHub completion scope
+
+- “Push and merge” includes all approved work from the current chat: animation source, assets, reusable effects, documentation, project instructions, tests, and fresh generated distribution files. Fetch current main, resolve conflicts, validate, push, and merge into main without asking the user to perform Git steps. Preserve unrelated work from other chats; do not silently omit chat-owned documentation.
+- “Middle” includes that same GitHub completion scope plus saved and verified Webflow shared loader updates; publication remains with the user. Visual approval alone does not authorize publication.
+
 # Shared animation releases
 
 - This repository is edited by multiple chats. Fetch origin before starting release work and base the release on current `origin/main`; preserve unrelated working-tree edits.

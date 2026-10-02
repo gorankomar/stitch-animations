@@ -47,7 +47,8 @@ by the current immutable shared loader. Explicit card padding/gap/box-sizing
 and row overflow values prevent that old stylesheet changing the composition.
 No style embed, shared-loader change, or animation runtime change is required.
 `country-flags-native.css` records these native styles for reference; it is not
-imported by the deployed animation or the old standalone preview builder.
+imported by the deployed animation. The current standalone preview/drop-in
+builder uses this reference CSS and the same frame/combo-class structure.
 
 Verified in Webflow Designer and Preview: mobile parent width 345px gives a
 345 × 310.23px frame, 56.16 × 40.11px flags and 16.05px caption. Desktop Preview
@@ -64,3 +65,9 @@ its right edge by 0.387597cqi (1px at the 258px design width). This removes
 fractional-pixel slivers of the fourth flag caused by independent rounding of
 flag widths and gaps. The inset scales with the component and does not change
 row geometry, sequence measurements, or the animation runtime.
+
+Published to staging and the Stitch.co production domains on 2026-10-02.
+The merged shared loader no longer imports the legacy Country Flags CSS;
+native styles and fluid combo classes remain authoritative. Publication
+evidence and the immutable release are recorded in
+`docs/releases/2026-10-02-country-flags.md`.

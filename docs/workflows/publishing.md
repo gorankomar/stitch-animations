@@ -20,6 +20,12 @@ Publishing authorization includes the necessary release preparation, GitHub push
 
 Known site: Stitch Website, site ID 6823036cd77b3093eaf9154d. Playground page ID: 6ab4079ac7ca32e3a6c168c8. Exact staging/production domains are not documented here: inspect the site's configured domains and current task authorization. Never guess or select every domain by default. If multiple production domains exist and authorized scope is unclear, ask which ones.
 
+## GitHub scope
+
+“Push and merge” means complete all approved changes made in the chat, including source, assets, shared effects, documentation, instructions, tests, and regenerated dist files. Fetch current main, preserve newer merged work, resolve conflicts, validate the combined release, push, and merge into main. Do not restrict the commit to the named animation while leaving its documentation behind. Preserve unrelated unapproved work from other chats separately.
+
+“Middle” includes this full chat scope and the saved Webflow loader synchronization described above. A GitHub-only push-and-merge request does not request Webflow loader changes or publication.
+
 ## Active shared loader and hosting policy
 
 The “light script” is **dist/page-all-lite.js**. It scans matching markup and imports only needed feature modules. Those modules reuse shared effects and may reference further chunks, CSS, and assets; the entry file alone is not the full release. Build/publish the complete dependency set.
