@@ -1,6 +1,6 @@
 [
   {
-    "name": "Icon - Origination Bar Chart Square",
+    "name": "Icon - Bar Chart Square",
     "file": "imgBarChartSquare01",
     "componentId": "6697decc-cff1-c7f4-30e6-8c6f29665720",
     "svgRoot": {
@@ -11,7 +11,7 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Bar Chart",
+    "name": "Icon - Bar Chart",
     "file": "imgBarChart08",
     "componentId": "228c4275-65fb-04fa-1259-613fcde3e030",
     "svgRoot": {
@@ -22,18 +22,20 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Clock",
+    "name": "Icon - Clock",
     "file": "imgClock",
-    "componentId": "243130f8-9bc1-7d49-ebce-f9027c2c1d98",
+    "componentId": "b1ffb55a-d15e-db98-94c1-664e5f5122e5",
     "svgRoot": {
-      "component": "243130f8-9bc1-7d49-ebce-f9027c2c1d98",
-      "element": "eea659d4-1da3-8bf8-bc91-45dec2ca0e94"
+      "component": "b1ffb55a-d15e-db98-94c1-664e5f5122e5",
+      "element": "b1ffb55a-d15e-db98-94c1-664e5f5122e5"
     },
-    "strokePropertyId": "175fbdfc-a858-3360-877c-3e5e97d0149c",
-    "defaultWeight": "1"
+    "strokePropertyId": "7e282fb6-0255-b691-e587-39e77f4b0f6d",
+    "defaultWeight": "1.5",
+    "instanceColor": "#000",
+    "consolidatedFrom": "243130f8-9bc1-7d49-ebce-f9027c2c1d98"
   },
   {
-    "name": "Icon - Origination Luggage",
+    "name": "Icon - Luggage",
     "file": "imgLuggage02",
     "componentId": "168a431e-fa09-165d-ba44-22cf848d5173",
     "svgRoot": {
@@ -44,7 +46,7 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Car",
+    "name": "Icon - Car",
     "file": "imgCar01",
     "componentId": "76af4008-4900-c671-7b7f-918f92db5255",
     "svgRoot": {
@@ -55,7 +57,7 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Safe",
+    "name": "Icon - Safe",
     "file": "imgSafe",
     "componentId": "5eaa5400-d393-1f8a-bb1d-989f7141c7c7",
     "svgRoot": {
@@ -66,7 +68,7 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Activity Heart",
+    "name": "Icon - Activity Heart",
     "file": "imgActivityHeart",
     "componentId": "8e974de9-a280-5918-7f63-3f2dbd8f289b",
     "svgRoot": {
@@ -77,7 +79,7 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination File",
+    "name": "Icon - File",
     "file": "imgFile06",
     "componentId": "18eee085-dd26-1b0f-4481-1578f180f84f",
     "svgRoot": {
@@ -88,7 +90,7 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Star",
+    "name": "Icon - Star",
     "file": "imgStar01",
     "componentId": "50cf3fc7-55b1-c421-fbe2-eb62c44d7f40",
     "svgRoot": {
@@ -99,7 +101,7 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Fingerprint",
+    "name": "Icon - Fingerprint",
     "file": "imgFingerprint04",
     "componentId": "1d250e45-43a0-3663-7ea2-9ceae083114e",
     "svgRoot": {
@@ -110,47 +112,55 @@
     "defaultWeight": "1"
   },
   {
-    "name": "Icon - Origination Luggage Small",
+    "name": "Icon - Luggage",
     "file": "imgLuggage3",
-    "componentId": "f2d12d50-d15c-2ca0-8ff8-1d66f484fd26",
+    "componentId": "168a431e-fa09-165d-ba44-22cf848d5173",
     "svgRoot": {
-      "component": "f2d12d50-d15c-2ca0-8ff8-1d66f484fd26",
-      "element": "feee9a23-d951-8486-7a33-8a9fbce5fc22"
+      "component": "168a431e-fa09-165d-ba44-22cf848d5173",
+      "element": "99cb337d-f728-4280-e348-94651db24810"
     },
-    "strokePropertyId": "1696b2f2-b9a5-b806-6f28-1f9c5e9aacd9",
-    "defaultWeight": ".4"
+    "strokePropertyId": "77fc65dc-aba7-a234-88a5-c311ae12baab",
+    "defaultWeight": ".8",
+    "instanceColor": "#000",
+    "consolidatedFrom": "f2d12d50-d15c-2ca0-8ff8-1d66f484fd26"
   },
   {
-    "name": "Icon - Origination Car Small",
+    "name": "Icon - Car",
     "file": "imgCar2",
-    "componentId": "ea46d136-6986-0ad3-8f07-b423d4cbd2ec",
+    "componentId": "76af4008-4900-c671-7b7f-918f92db5255",
     "svgRoot": {
-      "component": "ea46d136-6986-0ad3-8f07-b423d4cbd2ec",
-      "element": "3a9ef94f-8034-6b1a-bab8-6364f60db936"
+      "component": "76af4008-4900-c671-7b7f-918f92db5255",
+      "element": "e5635f04-a00a-e3b1-3f60-2f2a5de0a630"
     },
-    "strokePropertyId": "97776534-5e49-d37e-9af6-6b184a526ec6",
-    "defaultWeight": ".5"
+    "strokePropertyId": "3cdd48a8-c5a0-0ab7-51a8-aebb4bd76760",
+    "defaultWeight": "1",
+    "instanceColor": "#000",
+    "consolidatedFrom": "ea46d136-6986-0ad3-8f07-b423d4cbd2ec"
   },
   {
-    "name": "Icon - Origination Luggage Small White",
+    "name": "Icon - Luggage",
     "file": "imgLuggage4",
-    "componentId": "3677ef0d-feed-b69e-47cd-9cb55bdae6eb",
+    "componentId": "168a431e-fa09-165d-ba44-22cf848d5173",
     "svgRoot": {
-      "component": "3677ef0d-feed-b69e-47cd-9cb55bdae6eb",
-      "element": "c22b4db1-0b51-fa61-61e4-8fe8104f71bb"
+      "component": "168a431e-fa09-165d-ba44-22cf848d5173",
+      "element": "99cb337d-f728-4280-e348-94651db24810"
     },
-    "strokePropertyId": "0b2f5fc2-90b1-a654-a518-b5ab8aa08072",
-    "defaultWeight": ".5"
+    "strokePropertyId": "77fc65dc-aba7-a234-88a5-c311ae12baab",
+    "defaultWeight": "1",
+    "instanceColor": "#fff",
+    "consolidatedFrom": "3677ef0d-feed-b69e-47cd-9cb55bdae6eb"
   },
   {
-    "name": "Icon - Origination Download",
+    "name": "Icon - Download",
     "file": "imgDownload01",
-    "componentId": "60f7a148-c014-4192-d9d6-273b1be1a936",
+    "componentId": "8431505a-d419-b6d6-dd56-0b6bed374f2b",
     "svgRoot": {
-      "component": "60f7a148-c014-4192-d9d6-273b1be1a936",
-      "element": "e2d6bae5-064c-afbd-9596-876f41c76fdf"
+      "component": "8431505a-d419-b6d6-dd56-0b6bed374f2b",
+      "element": "8431505a-d419-b6d6-dd56-0b6bed374f2b"
     },
-    "strokePropertyId": "8a373ed7-35d4-38db-ed2a-5d7314baba92",
-    "defaultWeight": ".6"
+    "strokePropertyId": "2ae512c3-f8a1-01e0-6892-c911dd422e0d",
+    "defaultWeight": "1.8",
+    "instanceColor": "#0070ff",
+    "consolidatedFrom": "60f7a148-c014-4192-d9d6-273b1be1a936"
   }
 ]

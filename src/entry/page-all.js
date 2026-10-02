@@ -2,6 +2,7 @@ import '../embeds/real-time-approvals.js';
 import '../embeds/buy-now-pay-later.js';
 import '../embeds/credit-check.js';
 import '../embeds/user-onboarding.js';
+import '../embeds/consumer-verification.js';
 import '../embeds/omnichannel-origination.js';
 import '../embeds/country-flags.js';
 import '../embeds/product-variety.js';

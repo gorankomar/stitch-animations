@@ -56,3 +56,7 @@ Keep the full static Figma fallback visible until motion setup succeeds. Easing 
 Confirm the movement track's configured/resolved easing equals Global Styles and opacity uses linear. Check combined opacity/movement, reverse/exit motion, default/fast duration selection, reduced motion, and failed setup fallback. Record token references and any explicitly approved exceptions in component notes.
 
 This procedure sets future implementation defaults. It does not claim that every existing effect has already been migrated or that the live embed was inspected during this documentation update. Apply it to new/revisited effects; broad migration requires its own requested task.
+
+## Pulses on fading lines
+
+By default, a traveling pulse inherits the spatial fade of the line it follows. Preserve the source gradient stops and stop-opacity values while applying the canonical pulse blue (or configured color). Do not replace a fading line with a uniformly opaque pulse. The shared Path Pulse effect enables fadeWithSource by default; explicit exceptions may disable it.

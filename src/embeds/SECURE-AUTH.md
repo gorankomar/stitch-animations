@@ -1,6 +1,6 @@
 # 3D Secure Authentication
 
-The native header is the shared Window Header component, also used by User Onboarding. It retains the secure_header, secure_dots, and secure_dot CSS with original Secure defaults. See [User Onboarding](USER-ONBOARDING.md#shared-window-header).
+The native three-dot header is now the shared Window Header component, also used by User Onboarding. Its existing `secure_header`, `secure_dots`, and `secure_dot` CSS is retained with parameterized sizing/background and original Secure defaults. See [User Onboarding notes](USER-ONBOARDING.md#shared-window-header).
 
 Figma: file PCbd0DyXWAD2cDANtl7bpH, graphic 294:1507, toggle reference 294:1555.
 

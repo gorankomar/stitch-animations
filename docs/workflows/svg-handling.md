@@ -4,9 +4,13 @@ Inputs: original SVG/Figma vector export, intended displayed size, parts that ne
 
 ## Choose delivery before optimizing
 
-When creating reusable SVG icon components in Webflow, expose **Stroke Weight** as an editable component property bound to the SVG `stroke-width` attribute. Preserve the original default stroke weight in SVG user units; child paths must inherit it rather than retain hardcoded overrides. Organize new reusable icon components under **SVG → Icons**. Use separate exported variants when the source geometry or default stroke differs; do not redraw supplied vectors.
+Icons default to inline SVG in reusable Webflow components in the existing **Icons** folder. Search the whole component library before creating an icon. Reuse the same semantic shape regardless of export viewBox, size, color or default stroke; those differences are properties, not reasons for duplicate components. Use plain semantic names without size suffixes or illustration prefixes. Keep genuinely different shapes separate.
 
-Follow an explicitly requested format. Otherwise ask the user whether to use an inline SVG or an external SVG image, briefly recommending the appropriate choice and explaining why. Continue inspecting/exporting original assets while awaiting the answer; do not finalize format-dependent optimization or integration until answered.
+Expose editable **Stroke Width**, **Width**, **Height** and **Color** where applicable. Bind stroke width at the SVG root and let stroked paths inherit it. Account for viewBox scaling when preserving an instance's displayed stroke weight. Filled silhouettes retain their fill and do not gain outlines. Preserve established instance appearance when extending an existing component.
+
+Icon wrapper divs use native flex with align-items:center and justify-content:center; SVGs render as blocks and scale within their parent. Avoid inline baseline offsets. Before removing duplicates, replace all uses with canonical components and verify instance counts are zero. Verify both the edited illustration and other consumers at desktop/mobile sizes.
+
+For other SVG artwork, follow an explicitly requested format. Otherwise ask whether to use inline SVG or an external SVG image, recommending the appropriate choice. Continue inspecting/exporting assets while awaiting the answer.
 
 | Intended use | Recommendation |
 | --- | --- |

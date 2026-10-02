@@ -46,6 +46,13 @@
     "file": "chunks/motion.IWie3mGq.js",
     "name": "motion"
   },
+  "_path-pulse.CLxdvZoL.js": {
+    "file": "chunks/path-pulse.CLxdvZoL.js",
+    "name": "path-pulse",
+    "imports": [
+      "_connector.CbYSk2rO.js"
+    ]
+  },
   "_reveal-groups.TjVq1IXZ.js": {
     "file": "chunks/reveal-groups.TjVq1IXZ.js",
     "name": "reveal-groups"
@@ -292,10 +299,11 @@
       "_animation-stage.Bp3UDTgL.js",
       "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
-      "_connector.CbYSk2rO.js",
+      "_path-pulse.CLxdvZoL.js",
       "_easing.CJR8aMe3.js",
       "_dom.DgX39f3a.js",
-      "_math.DB99t-US.js"
+      "_math.DB99t-US.js",
+      "_connector.CbYSk2rO.js"
     ]
   },
   "src/embeds/card-controls.js": {
@@ -315,6 +323,18 @@
     ],
     "css": [
       "styles/feature-card-controls.CSN3jM4v.css"
+    ]
+  },
+  "src/embeds/consumer-verification.js": {
+    "file": "feature-consumer-verification.js",
+    "name": "feature-consumer-verification",
+    "src": "src/embeds/consumer-verification.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Bp3UDTgL.js",
+      "_path-pulse.CLxdvZoL.js",
+      "_connector.CbYSk2rO.js"
     ]
   },
   "src/embeds/country-flags.js": {
@@ -659,6 +679,7 @@
       "src/embeds/buy-now-pay-later.js",
       "src/embeds/credit-check.js",
       "src/embeds/user-onboarding.js",
+      "src/embeds/consumer-verification.js",
       "src/embeds/omnichannel-origination.js",
       "src/embeds/country-flags.js",
       "src/embeds/product-variety.js",
@@ -694,6 +715,7 @@
       "src/embeds/buy-now-pay-later.js",
       "src/embeds/credit-check.js",
       "src/embeds/user-onboarding.js",
+      "src/embeds/consumer-verification.js",
       "src/embeds/omnichannel-origination.js",
       "src/embeds/country-flags.js",
       "src/embeds/product-variety.js",
@@ -726,6 +748,7 @@
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js",
+      "_path-pulse.CLxdvZoL.js",
       "_connector.CbYSk2rO.js",
       "src/lib/effects/code-scroll.js",
       "_value-counter.BXLPe_ym.js",

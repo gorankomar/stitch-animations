@@ -8,6 +8,7 @@ const resolvers = [
   {selector: '[data-buy-now-pay-later]', load: () => import('../embeds/buy-now-pay-later.js')},
   {selector: '[data-credit-check]', load: () => import('../embeds/credit-check.js')},
   {selector: '[data-user-onboarding]', load: () => import('../embeds/user-onboarding.js')},
+  {selector: '[data-consumer-verification]', load: () => import('../embeds/consumer-verification.js')},
   {selector: '[data-omnichannel-origination]', load: () => import('../embeds/omnichannel-origination.js')},
   {selector: '[data-country-flags]', load: () => import('../embeds/country-flags.js')},
   {selector: '[data-product-variety]', load: () => import('../embeds/product-variety.js')},

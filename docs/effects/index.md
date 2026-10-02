@@ -11,6 +11,7 @@ Prompt names select these canonical implementations. Paths are repository-relati
 | Visibility Trigger | threshold.js | whenVisible(target, setup, options); setup returns cleanup. data-visibility-threshold defaults to 0.25. |
 | Animation Stage | animation-stage.js | stageInitializer / animateStage provide per-instance lifecycle and visibility clocks. Country Flags and connectors are examples. |
 | Code Scroll | code-scroll.js | createCodeScrollEffect(track, options): render/showAll/dispose; caller owns clock. Consumer supplies CSS, including code-scroll.css where required. [API](../code-scroll.md). |
+| Path Pulse | path-pulse.js | createPathPulse(path, options): update(time,reduced)/dispose; existing SVG curve, randomized gaps, configurable span/speed/color/reverse/end. Defaults 40 SVG units, 72 units/s, canonical primary blue; Consumer Verification uses span 7.8, speed 61.2. Source gradient opacity is inherited by default (fadeWithSource); only its color changes. Caller owns Animation Stage clock. |
 | Connectors / Pulses | connector.js and connector.css | Measured paths, pulse bands, dot fill; stage owns clock/cleanup. [Guide](../connector-animations.md). |
 | Wallet Swap | wallet-swap.js | createWalletSwap(root): setEnabled/dispose; Product Variety blue/gray children and its CSS geometry. |
 | Stacked Windows | stacked-windows.js | createStackedWindowsController(wrap) returns disposer; stacked-windows_position / stacked-windows_img-wrap. Options in recipes. |
