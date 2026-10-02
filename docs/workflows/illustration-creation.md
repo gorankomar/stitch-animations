@@ -19,6 +19,8 @@ A request to create a graphic/illustration from a Figma link means **create it i
 3. Build the complete static composition in native Webflow elements and styles. Its default visible state must match the supplied Figma selection, including text/content, positions, opacity, transforms, artwork, and layering. Do not depend on JavaScript to create essential artwork or populate fallback text.
 4. Save and verify this static composition before adding requested motion. Record Figma URL/node, dimensions, component identity, sizing contract, assets, and special CSS in component notes.
 
+For raster images within the supplied illustration, follow [raster image optimization](raster-image-optimization.md): export a PNG master and deliver a visually verified optimized WebP. Choose dimensions and compression from the image's maximum rendered size and content, including stronger compression for tiny photographic avatars.
+
 ## Fluid size and aspect ratio
 
 The illustration scales as one composition with its parent's available width; height follows the original W/H aspect ratio. Do not stretch independently to fill mismatched width and height. If the parent constrains both dimensions, fit the composition within it while preserving its ratio rather than distort or crop it unless requested.

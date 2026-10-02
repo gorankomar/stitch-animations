@@ -1,0 +1,170 @@
+[
+  {
+    "input": "src/embeds/assets/real-time-approvals/avatar-1.png",
+    "output": "src/embeds/assets/real-time-approvals/avatar-1.webp",
+    "encoder": "cwebp 1.5.0\nlibsharpyuv: 0.4.1",
+    "profile": "tiny",
+    "quality": 65,
+    "sourceDimensions": [
+      640,
+      640
+    ],
+    "outputDimensions": [
+      128,
+      128
+    ],
+    "sourceBytes": 378358,
+    "outputBytes": 2254,
+    "flags": [
+      "-q",
+      "65",
+      "-m",
+      "6",
+      "-sharp_yuv",
+      "-alpha_q",
+      "100",
+      "-metadata",
+      "icc",
+      "-resize",
+      "128",
+      "0"
+    ],
+    "visualVerification": "2026-10-02: PNG/WebP comparison on white; Webflow desktop/mobile Preview, all four sources loaded at 128px, original crop/overlap preserved",
+    "resizedPngBytes": 18489,
+    "figmaNode": "373:1699",
+    "maxObservedCssDimensions": [
+      39.625,
+      39.625
+    ],
+    "supportedCssSizeAt2x": [
+      64,
+      64
+    ]
+  },
+  {
+    "input": "src/embeds/assets/real-time-approvals/avatar-2.png",
+    "output": "src/embeds/assets/real-time-approvals/avatar-2.webp",
+    "encoder": "cwebp 1.5.0\nlibsharpyuv: 0.4.1",
+    "profile": "tiny",
+    "quality": 65,
+    "sourceDimensions": [
+      640,
+      640
+    ],
+    "outputDimensions": [
+      128,
+      128
+    ],
+    "sourceBytes": 249342,
+    "outputBytes": 2224,
+    "flags": [
+      "-q",
+      "65",
+      "-m",
+      "6",
+      "-sharp_yuv",
+      "-alpha_q",
+      "100",
+      "-metadata",
+      "icc",
+      "-resize",
+      "128",
+      "0"
+    ],
+    "visualVerification": "2026-10-02: PNG/WebP comparison on white; Webflow desktop/mobile Preview, all four sources loaded at 128px, original crop/overlap preserved",
+    "resizedPngBytes": 16428,
+    "figmaNode": "373:1701",
+    "maxObservedCssDimensions": [
+      39.625,
+      39.625
+    ],
+    "supportedCssSizeAt2x": [
+      64,
+      64
+    ]
+  },
+  {
+    "input": "src/embeds/assets/real-time-approvals/avatar-3.png",
+    "output": "src/embeds/assets/real-time-approvals/avatar-3.webp",
+    "encoder": "cwebp 1.5.0\nlibsharpyuv: 0.4.1",
+    "profile": "tiny",
+    "quality": 65,
+    "sourceDimensions": [
+      640,
+      640
+    ],
+    "outputDimensions": [
+      128,
+      128
+    ],
+    "sourceBytes": 379243,
+    "outputBytes": 2558,
+    "flags": [
+      "-q",
+      "65",
+      "-m",
+      "6",
+      "-sharp_yuv",
+      "-alpha_q",
+      "100",
+      "-metadata",
+      "icc",
+      "-resize",
+      "128",
+      "0"
+    ],
+    "visualVerification": "2026-10-02: PNG/WebP comparison on white; Webflow desktop/mobile Preview, all four sources loaded at 128px, original crop/overlap preserved",
+    "resizedPngBytes": 18163,
+    "figmaNode": "373:1703",
+    "maxObservedCssDimensions": [
+      39.625,
+      39.625
+    ],
+    "supportedCssSizeAt2x": [
+      64,
+      64
+    ]
+  },
+  {
+    "input": "src/embeds/assets/real-time-approvals/avatar-4.png",
+    "output": "src/embeds/assets/real-time-approvals/avatar-4.webp",
+    "encoder": "cwebp 1.5.0\nlibsharpyuv: 0.4.1",
+    "profile": "tiny",
+    "quality": 65,
+    "sourceDimensions": [
+      640,
+      640
+    ],
+    "outputDimensions": [
+      128,
+      128
+    ],
+    "sourceBytes": 419060,
+    "outputBytes": 3222,
+    "flags": [
+      "-q",
+      "65",
+      "-m",
+      "6",
+      "-sharp_yuv",
+      "-alpha_q",
+      "100",
+      "-metadata",
+      "icc",
+      "-resize",
+      "128",
+      "0"
+    ],
+    "visualVerification": "2026-10-02: PNG/WebP comparison on white; Webflow desktop/mobile Preview, all four sources loaded at 128px, original crop/overlap preserved",
+    "resizedPngBytes": 21170,
+    "figmaNode": "373:1705",
+    "maxObservedCssDimensions": [
+      39.625,
+      39.625
+    ],
+    "supportedCssSizeAt2x": [
+      64,
+      64
+    ]
+  }
+]
