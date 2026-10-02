@@ -74,4 +74,3 @@ intermediate counter states, exact final amounts, all 15 completed reveals,
 gentle pointer-follow movement, ABC Diatype body-font inheritance, logo height
 matching its wrapper font size, all SVG assets present, and no graphic overflow.
 The existing 18 tests pass; the portable runtime builds successfully.
-

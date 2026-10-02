@@ -69,7 +69,7 @@ Markup contract:
 
 - Wrap any cluster that should resolve as a block with `data-reveal-group`. Siblings on the same level wait for one another, so you can chain rows/columns deterministically.
 - Groups can be nested. Child groups finish before the parent moves on to the next sibling.
-- Data attributes cascade down to children:  
+- Data attributes cascade down to children:
   - `data-reveal-stagger` – override per-element offset inside the group (default `var(--reveal-stagger-default)`).
   - `data-reveal-delay` – pause before the group or the individual element starts.
   - Elements keep the existing overrides: `data-reveal-duration`, `data-reveal-offset`, `data-reveal-ease`, `data-reveal-opacity-duration`.
