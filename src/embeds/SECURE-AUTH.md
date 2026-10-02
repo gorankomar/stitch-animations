@@ -1,5 +1,7 @@
 # 3D Secure Authentication
 
+The native header is the shared Window Header component, also used by User Onboarding. It retains the secure_header, secure_dots, and secure_dot CSS with original Secure defaults. See [User Onboarding](USER-ONBOARDING.md#shared-window-header).
+
 Figma: file PCbd0DyXWAD2cDANtl7bpH, graphic 294:1507, toggle reference 294:1555.
 
 Native Webflow layout in Animations Playground. Uses the existing Icons / Icon - Bank component and Controls / Toggle (Inactive and Active variants). The toggle is a visual component, not a functional form input. The graphic is exposed as one accessible illustration.
