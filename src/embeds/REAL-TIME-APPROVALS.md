@@ -1,0 +1,32 @@
+# Real-Time Approvals
+
+Source: https://www.figma.com/design/PCbd0DyXWAD2cDANtl7bpH/Stitch-Animation-Elements?node-id=373-1659
+Design frame: 540 × 324. Parent width determines all geometry; native styles use cqi and preserve aspect ratio. Text inherits the Webflow body font. Local preview: /real-time-approvals.html.
+
+Requested behavior: reveal loan card first, begin connector draw, reveal approval card upward. Loan title and slider rows reveal sequentially. Approval contents reveal bottom to top, avatars and +65 right to left. Entrance runs once; after entrance an 18-second cursor loop drags amount 12,000 → 95,000 USD and time 3 → 14 weeks, returns amount then time to their original values, and hides behind the loan card. Amount scale extends the original maximum 80,000 to 100,000 to fit the requested target. Values use the same progress as their thumb and cursor. Approval hover uses the cataloged Card Hover attribute with component-scoped live motion tokens. Connector height follows the hovered card's measured rectangle.
+
+Sources: real-time-approvals.js, real-time-approvals-markup.html, real-time-approvals-native.css, real-time-approvals.css. Native CSS is for local preview and native Webflow import; unsupported scoped CSS stays in a separate style-only component embed. Build standalone motion with node scripts/build-real-time-approvals-embed.mjs. Both shared entries and Vite multi-entry input register the module. No shared CDN release or site-wide loader update has been performed.
+
+Shared Demo Cursor: src/lib/effects/demo-cursor.js. Caller owns visibility clock, movement easing, artwork, frame sizing, and stacking. render accepts design-space coordinates, opacity, pressed, and behind. dispose restores prior inline styles. The new illustration reuses the established 3D Secure/Card Controls cursor silhouette, including its rounded white outline. Existing cursor consumers have not been migrated.
+
+Webflow body font verified in Designer: Abcdiatype, Arial, sans-serif. Local preview includes copies of the same regular and medium font files. Live Global Styles inspected 2026-10-02: --motion-ease-primary cubic-bezier(.11, .61, .27, .99), --motion-duration-default 770ms; opacity is linear. Animation Stage owns offscreen/hidden-tab pauses, resize and reduced motion. Reduced motion shows initial values and all content with a hidden cursor. Cleanup restores initial text and transforms.
+
+Preserved original slider/connector SVGs and all four avatars under assets/real-time-approvals. Four avatars uploaded through Webflow's Data API (201 responses); identities recorded in webflow-assets.json. No temporary Figma URLs in markup.
+
+## Webflow identity and verification
+
+Saved to Webflow (draft), Animations Playground page 6ab4079ac7ca32e3a6c168c8, Stitch Website site 6823036cd77b3093eaf9154d. Reusable component: Real-Time Approvals, group Animations, component efbfa115-7f0a-e3bb-cac8-9c5b29dae204. Playground instance efbfa115-7f0a-e3bb-cac8-9c5b29dae203. Four editable avatar image props were generated when the component was created.
+
+The component contains native Webflow layout/typography/background/border/shadow styles, preserved inline slider and connector geometry, a separate style-only embed (element efbfa115-7f0a-e3bb-cac8-9c5b29dae248) and a standalone motion embed (efbfa115-7f0a-e3bb-cac8-9c5b29dae249). The portable IIFE requires no CDN feature release for this draft. The Symbol.for('stitch.real-time-approvals.init') mount registry prevents a later shared loader from creating a second clock. Site-wide footer and shared preview loader URLs were not changed. Nothing was published.
+
+SVG originals are retained without destructive optimization; their tiny exported shape structure is needed for independently addressing slider fill/thumb and morphing the connector. All inline IDs are removed so repeated instances have no collisions. Root SVG width/height attributes remain exported dimensions for the sliders; wrapper transforms scale the complete artwork, including JS-disabled fallback. The connector's lower leg and endpoint coordinates, root dimensions/viewBox and reveal clipping are transient motion state; stroke and dot radii retain the source proportions.
+
+Connector reveal traces vertical then horizontal; measured loan bottom and approval button position anchor both endpoints, including hover. Separate entrance and hover wrappers avoid transform conflicts. Avatars enter from the right in reverse order and retain the original front-to-back overlap. Timing scales with the live default duration token; the current loop is 18 seconds after a 3.5-second entrance.
+
+Browser testing exposed two defects in src/lib/motion.js's shared cubicBezier helper: a missing final multiplication in its polynomial and an undefined subdivision step constant. Both are corrected, and exact endpoints are returned before numerical iteration. Regression tests cover the live primary curve and a flat-slope curve. This fix affects callers of that existing helper; it does not change the site's CSS motion tokens.
+
+Verification on 2026-10-02: npm test 44/44 passed; standalone motion bundle built; scripts/verify-real-time-approvals.mjs passed sequential entrance, continuous thumb/cursor alignment, peak values, return loop, adaptive hover connector, offscreen pause, reduced motion, responsive repeated instances, cleanup and JS-disabled fallback. Native static Designer verified all four assets loaded, SVG geometry, site font and visible fallback. Actual Webflow Preview verified a running loop on desktop (540×324) and mobile (345×207 at the 393px breakpoint), proportional SVG/text sizing and live changing values. Desktop Preview restored for handoff. Screenshot evidence: /tmp/real-time-approvals-webflow-draft.png.
+
+Shared multi-entry build verified in /tmp/rta-shared-build to preserve unrelated working-tree dist edits. node scripts/check-shared-release.mjs /tmp/rta-shared-build passed, including Product Variety/wallet swap, Country Flags and local dependencies. Saved Webflow motion code was read back and matched the local standalone bundle exactly. git diff --check passed.
+
+Connector sits at layer 3, above both card wrappers at layer 2. Demo Cursor uses layer 4 during interaction and layer 1 from the start of the inward exit (17 seconds), matching the entrance mask; hide also restores layer 1. Middle release uses the shared feature module instead of the draft IIFE.
