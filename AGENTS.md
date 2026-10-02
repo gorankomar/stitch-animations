@@ -2,6 +2,8 @@
 
 Keep prompts focused on the desired result. Read only the documents relevant to the task.
 
+Established reusable components must retain their internal appearance unless the user explicitly requests changes. Use supported variants/props and outer layout/motion wrappers; avoid illustration CSS overriding component descendants. See docs/workflows/component-preservation-complaint.md for the recorded Credit Card complaint and integration rule.
+
 ## Project map and routing
 
 - src/animations: animation modules; src/embeds: component markup/motion/styles/assets; src/lib/effects: canonical shared effects; src/entry: shared and feature loaders. Keep this structure. legacy is read-only reference.
@@ -9,7 +11,7 @@ Keep prompts focused on the desired result. Read only the documents relevant to 
 - New/changed motion → docs/workflows/animation-changes.md, docs/workflows/motion-defaults.md, and docs/effects/index.md. Use Global Styles --motion-ease-primary for non-opacity motion; opacity is linear, unless explicitly specified otherwise. Read durations from the same global tokens. Reuse before creating. “Reveal”, “Card Hover”, and “Pointer Follow” mean the cataloged implementations.
 - Component lookup → docs/components/index.md. Short prompts/handoffs → docs/prompt-guide.md.
 - Saving/publishing stages → docs/workflows/publishing.md. Webflow changes → docs/workflows/webflow-integration.md. Release work → docs/workflows/shared-release.md.
-- Default: save locally except Figma illustration creation defaults to a Webflow draft. Other stages: save to Webflow (draft), publish to staging, publish to production. Publishing includes agent-owned synchronization of the site-wide footer, playground, and component loader SHAs; never ask the user to update them manually. Active CDN is commit-pinned jsDelivr while the admin resolves S3/CloudFront CORS. Read publishing.md for domain selection and verification. Durable decisions belong in component notes; publication evidence belongs in docs/releases.
+- Default: save locally except Figma illustration creation defaults to a Webflow draft. Other stages: save to Webflow (draft/Animations Playground), middle (agent saves the verified jsDelivr SHA in site settings and matching draft loaders; user publishes), publish to staging, publish to production. Middle and publishing include agent-owned synchronization of the site-wide footer, playground, and component loader SHAs; never ask the user to update them manually. Active CDN is commit-pinned jsDelivr while the admin resolves S3/CloudFront CORS. Read publishing.md for domain selection and verification. Durable decisions belong in component notes; publication evidence belongs in docs/releases.
 - npm run dev previews locally; npm test checks behavior; npm run validate:release tests/builds/checks the full shared release.
 
 # Shared animation releases

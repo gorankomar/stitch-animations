@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-buy-now-pay-later': resolve(process.cwd(), 'src/embeds/buy-now-pay-later.js'),
             'feature-credit-check': resolve(process.cwd(), 'src/embeds/credit-check.js'),
             'feature-user-onboarding': resolve(process.cwd(), 'src/embeds/user-onboarding.js'),
             'feature-omnichannel-origination': resolve(process.cwd(), 'src/embeds/omnichannel-origination.js'),
