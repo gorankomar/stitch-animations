@@ -4,6 +4,7 @@ Prompt names select these canonical implementations. Paths are repository-relati
 
 | Prompt name | Source under src/lib/effects/ | Contract and example |
 | --- | --- | --- |
+| Demo Cursor | demo-cursor.js | createDemoCursor(element, {designWidth, frame}): render({x,y,opacity,pressed,behind}) / hide() / dispose(). Caller owns clock and easing. sampleCursor interpolates design-space waypoints. Real-Time Approvals consumer; cursor artwork belongs to native component styles. |
 | Reveal | reveal-groups.js | createRevealController({root}); ensure() starts; cancel()/reset() clear work. data-reveal children, optional nested data-reveal-group. Requires entrance styles in global.css. |
 | Card Hover | card-lift.css | Import CSS; add data-card-lift. Tune --card-lift-distance / --card-lift-shadow. Fine-pointer hover and reduced-motion support; no JS cleanup. |
 | Pointer Follow | follow-group.js | createFollowGroup({root}) returns disposer. data-follow-mouse children; data-follow-depth layers, data-strength responsiveness, data-max-offset travel in px, data-axis x/y/both. Caller gates visibility/reduced motion. |

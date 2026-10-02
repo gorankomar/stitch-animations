@@ -76,10 +76,11 @@ export function cubicBezier(p1x, p1y, p2x, p2y) {
     if (initialSlope === 0) {
       return guessForT;
     }
-    return binarySubdivide(x, intervalStart, intervalStart + kSampleStepSize, p1x, p2x);
+    return binarySubdivide(x, intervalStart, intervalStart + SPLINE_STEP, p1x, p2x);
   };
 
   return (x) => {
+    if (x === 0 || x === 1) return x;
     if (p1x === p1y && p2x === p2y) return x;
     return calcBezier(getTForX(x), p1y, p2y);
   };
@@ -97,7 +98,7 @@ function parseCubicBezier(raw) {
 }
 
 function calcBezier(t, a1, a2) {
-  return ((1 - 3 * a2 + 3 * a1) * t + (3 * a2 - 6 * a1)) * t + 3 * a1;
+  return (((1 - 3 * a2 + 3 * a1) * t + (3 * a2 - 6 * a1)) * t + 3 * a1) * t;
 }
 
 function getSlope(t, a1, a2) {

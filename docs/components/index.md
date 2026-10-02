@@ -4,6 +4,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 
 | Component | Notes |
 | --- | --- |
+| Real-Time Approvals | [REAL-TIME-APPROVALS.md](../../src/embeds/REAL-TIME-APPROVALS.md) |
 | Omnichannel Origination | [OMNICHANNEL-ORIGINATION.md](../../src/embeds/OMNICHANNEL-ORIGINATION.md) |
 | Real-Time Balance Management | [BALANCE.md](../../src/embeds/BALANCE.md) |
 | Card Controls | [CARD-CONTROLS.md](../../src/embeds/CARD-CONTROLS.md) |
