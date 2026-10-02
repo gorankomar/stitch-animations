@@ -3,10 +3,10 @@
 Use one module loader before the closing body tag:
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/gh/gorankomar/stitch-animations@main/dist/page-all-lite.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/gh/gorankomar/stitch-animations@COMMIT_SHA/dist/page-all-lite.js"></script>
 ```
 
-The loader detects sections, loads the matching animation, and automatically loads the structural CSS for Webhook, Reference, and Access. Do not also load their standalone scripts on the same page. For production, replace `main` with a tested commit SHA to pin the code and avoid CDN cache delays.
+The loader detects sections, loads the matching animation, and automatically loads the structural CSS for Webhook, Reference, and Access. Do not also load their standalone scripts on the same page. For production, replace `COMMIT_SHA` with a tested full commit SHA to pin the code and avoid CDN cache delays.
 
 You supply card appearance and layout in Webflow. Stages need explicit height; positioned cards need room for the lines. Keep stages free of padding/borders (put those on an outer wrapper). The generated SVG fills the stage. Webhook/Reference own the cards' CSS `translate`; put other transforms on nested wrappers. The blue defaults to `var(--_primitives---colors--primary-blue, #3342ff)`.
 

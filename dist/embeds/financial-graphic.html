@@ -1,13 +1,30 @@
-<style>/* Portable motion only. The layout remains editable in Webflow. */
-[data-financial-graphic] [data-financial-json] { will-change:transform; }
-[data-financial-graphic] .financial_code-line { white-space:pre; }
-[data-financial-graphic] .financial_code-line {
-  height: auto;
-  min-height: 0;
-  line-height: 1.21;
-}
+<style>/* Layout stays editable in Webflow; row geometry lives in code-scroll.css. */
 @media (prefers-reduced-motion:reduce) {
-  [data-financial-graphic] [data-financial-json] { will-change:auto; transform:none; }
+  [data-financial-graphic] [data-financial-json] { transform:none; }
+}
+/* Shared row geometry: ignore publisher formatting between rows and reserve
+   space for empty rows while the typing effect writes their content. */
+:is([data-financial-json], [data-due-track]) {
+  display: block;
+  white-space: normal;
+  line-height: var(--stitch-code-line-height, 1.25em);
+  will-change: transform;
+}
+:is([data-financial-json], [data-due-track]) > :is(.financial_code-line, .due_code-line) {
+  display: flex;
+  box-sizing: border-box;
+  height: var(--stitch-code-line-height, 1.25em);
+  min-height: var(--stitch-code-line-height, 1.25em);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: inherit;
+  line-height: var(--stitch-code-line-height, 1.25em);
+  white-space: pre;
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  :is([data-financial-json], [data-due-track]) { will-change: auto; }
 }
 </style>
-<script type="module" src="https://cdn.jsdelivr.net/gh/gorankomar/stitch-animations@c64f507595c299e856e9c09949c4f23a18f254c0/dist/feature-financial.js"></script>
+<script type="module" src="/dist/feature-financial.js"></script>

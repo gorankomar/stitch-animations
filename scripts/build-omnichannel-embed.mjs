@@ -1,0 +1,12 @@
+import {build} from 'esbuild';
+import fs from 'node:fs/promises';
+const result=await build({entryPoints:['src/embeds/omnichannel-origination.js'],bundle:true,write:false,minify:true,format:'iife',target:'es2020'});
+const motion=`<script>${result.outputFiles[0].text}</script>`;
+const scoped='<style>.oo-container{container-type:inline-size;writing-mode:horizontal-tb}</style>';
+await fs.mkdir('dist/embeds',{recursive:true});
+await fs.writeFile('dist/embeds/omnichannel-origination-styles.html',scoped);
+await fs.writeFile('dist/embeds/omnichannel-origination-motion.html',motion);
+const markup=await fs.readFile('src/embeds/omnichannel-origination-markup.html','utf8');
+const css=await fs.readFile('src/embeds/omnichannel-origination-native.css','utf8');
+await fs.writeFile('omnichannel-origination.html',`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Omnichannel Origination</title><style>body{margin:0;padding:40px;background:#fafafa;font-family:Arial,sans-serif}:root{--motion-ease-primary:cubic-bezier(.11,.61,.27,.99);--motion-duration-default:770ms}main{width:516px;max-width:100%;margin:auto}h1{font-size:20px;font-weight:500}${css}</style><main><h1>Omnichannel Origination</h1>${markup}</main>${scoped}${motion}</html>`);
+console.log('Built self-contained motion embed; native preview CSS remains local.');

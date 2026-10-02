@@ -1,0 +1,511 @@
+{
+  "siteId": "6823036cd77b3093eaf9154d",
+  "folder": "Icons",
+  "components": [
+    {
+      "id": "3f4a63f1-9a28-a99a-8bf0-5d655bbc5bc7",
+      "name": "Icon - Wallet"
+    },
+    {
+      "id": "fd8a1f68-8543-c54a-9972-e899218fdc46",
+      "name": "Icon - Bank Note",
+      "properties": {
+        "Stroke Width": "d37f25c1-594b-d914-682b-55d5f23bd5ac",
+        "Width": "36167087-c18e-cb1c-4fcc-2c2e0b9d8000",
+        "Height": "a06537fc-cb96-8642-452f-aac40775a45c",
+        "Color": "985174c9-467c-1a1b-6dd6-83507e8aad57"
+      }
+    },
+    {
+      "id": "f2ff1db7-5821-b2a0-5b8a-a004c78596d6",
+      "name": "Icon - User Switch"
+    },
+    {
+      "id": "88fc1d79-e750-95a7-060b-7124490de6de",
+      "name": "Icon - Rocket"
+    },
+    {
+      "id": "fa1f212a-a63f-5dfe-d38a-694aea97c25c",
+      "name": "Icon - Credit Card"
+    },
+    {
+      "id": "befe83b4-97fc-9c1e-cacb-693a593e2ca7",
+      "name": "Icon - Three Layers"
+    },
+    {
+      "id": "d30d2de0-bdc4-1e25-71fd-956c0d79a50c",
+      "name": "Icon - Terminal Browser"
+    },
+    {
+      "id": "313fe205-d3e6-0f85-db90-c47e910d8514",
+      "name": "Icon - Stacked Coins"
+    },
+    {
+      "id": "d14ec127-3127-fc60-ace8-f2c7089be522",
+      "name": "Icon - Flash"
+    },
+    {
+      "id": "c811bb20-4fa4-c379-6432-c67c5a28bf06",
+      "name": "Icon Holder"
+    },
+    {
+      "id": "82b88e49-b0db-1532-c670-ec1cf6363abd",
+      "name": "Icon - Bank"
+    },
+    {
+      "id": "7c5260cc-0eb2-2d34-a834-c81065411f34",
+      "name": "Icon - Book Open"
+    },
+    {
+      "id": "0d2ac5ce-7703-b11c-b0e5-c2f9932a8b59",
+      "name": "Icon - Transactions"
+    },
+    {
+      "id": "6f5ab9c6-c499-c214-239f-0438d5120107",
+      "name": "Icon - Mail"
+    },
+    {
+      "id": "7cacf953-9acf-e547-038f-4127ea14d492",
+      "name": "Icon - Edit"
+    },
+    {
+      "id": "aecd8322-34e7-28af-9b43-0ed27ee66ad6",
+      "name": "Icon - Trash"
+    },
+    {
+      "id": "b441baa1-0aac-9303-f5c6-d7f275d0d4bf",
+      "name": "Icon - Ledgers"
+    },
+    {
+      "id": "06dfd7c8-cfd7-2252-7f0c-8517f565b72e",
+      "name": "Icon - Check"
+    },
+    {
+      "id": "40cf491e-6ecf-70ae-584c-13239aa54510",
+      "name": "Icon - X"
+    },
+    {
+      "id": "8431505a-d419-b6d6-dd56-0b6bed374f2b",
+      "name": "Icon - Download",
+      "properties": {
+        "Stroke Width": "2ae512c3-f8a1-01e0-6892-c911dd422e0d",
+        "Width": "a9628d28-7d77-6be1-b4ff-e35c023f2fb0",
+        "Height": "edde9f63-753e-0e76-5571-83ec57197116",
+        "Color": "3ef8a1b2-ffda-29c9-f89f-1f6d8b64ea70"
+      }
+    },
+    {
+      "id": "7ddc60a8-686b-5b7e-a104-dfe7c9f257cd",
+      "name": "Icon - Calendar"
+    },
+    {
+      "id": "eb4b3563-ac33-7ebc-e615-0bbc26c94b7e",
+      "name": "Icon - Chevron Down"
+    },
+    {
+      "id": "5b0b1153-8c5e-48e1-9c9a-21b1bb5aa83f",
+      "name": "Icon - Dots"
+    },
+    {
+      "id": "d488191b-ca50-3a27-5263-73411ee91d5a",
+      "name": "Icon - User"
+    },
+    {
+      "id": "b1ffb55a-d15e-db98-94c1-664e5f5122e5",
+      "name": "Icon - Clock",
+      "properties": {
+        "Stroke Width": "7e282fb6-0255-b691-e587-39e77f4b0f6d",
+        "Width": "030d4bae-1ca1-9f19-d050-22e383824861",
+        "Height": "cc029453-a03a-d89e-beed-426325e87f76",
+        "Color": "eb8f6927-3293-59da-2023-116a77d55ff4"
+      }
+    },
+    {
+      "id": "04e35af8-75e5-b4f5-2974-f7f8c8f5e585",
+      "name": "Icon - Plus Circle"
+    },
+    {
+      "id": "76ab3986-cb4f-7457-db82-fab36b90d7b4",
+      "name": "Icon - User Filled"
+    },
+    {
+      "id": "6697decc-cff1-c7f4-30e6-8c6f29665720",
+      "name": "Icon - Bar Chart Square"
+    },
+    {
+      "id": "228c4275-65fb-04fa-1259-613fcde3e030",
+      "name": "Icon - Bar Chart"
+    },
+    {
+      "id": "168a431e-fa09-165d-ba44-22cf848d5173",
+      "name": "Icon - Luggage",
+      "properties": {
+        "Stroke Width": "77fc65dc-aba7-a234-88a5-c311ae12baab",
+        "Width": "6bdd1317-998f-4326-be9a-5c1bb440092e",
+        "Height": "3aac67c7-c698-6f45-b1ac-50ecaa208c10",
+        "Color": "1e853b22-45cd-fcbb-6c93-ec431d2d3eaa"
+      }
+    },
+    {
+      "id": "76af4008-4900-c671-7b7f-918f92db5255",
+      "name": "Icon - Car",
+      "properties": {
+        "Stroke Width": "3cdd48a8-c5a0-0ab7-51a8-aebb4bd76760",
+        "Width": "7ca605e9-30c2-2e37-81d2-906d122c3f7b",
+        "Height": "d9ebf3b4-f5b6-306c-aaee-68100c93de34",
+        "Color": "745cc06c-a4c8-8a02-19d9-e86277c196d9"
+      }
+    },
+    {
+      "id": "5eaa5400-d393-1f8a-bb1d-989f7141c7c7",
+      "name": "Icon - Safe"
+    },
+    {
+      "id": "8e974de9-a280-5918-7f63-3f2dbd8f289b",
+      "name": "Icon - Activity Heart"
+    },
+    {
+      "id": "18eee085-dd26-1b0f-4481-1578f180f84f",
+      "name": "Icon - File",
+      "properties": {
+        "Stroke Width": "ad684124-a371-2e33-7cfe-06f71ac2b17c",
+        "Width": "10bc9778-a142-8f0f-12b3-c3453a82688f",
+        "Height": "dd0dfa43-3c85-6b71-873e-d6534a32cf5c",
+        "Color": "0208b497-ee76-399c-c3f4-33cdc1076111"
+      }
+    },
+    {
+      "id": "50cf3fc7-55b1-c421-fbe2-eb62c44d7f40",
+      "name": "Icon - Star"
+    },
+    {
+      "id": "1d250e45-43a0-3663-7ea2-9ceae083114e",
+      "name": "Icon - Fingerprint",
+      "properties": {
+        "Stroke Width": "57083f3b-02d6-887d-e457-503176585c96",
+        "Width": "59cf5463-c49c-98e4-22b3-204c620856ea",
+        "Height": "92e2c57a-3f1d-8cde-0e1f-432ce150ad66",
+        "Color": "b0d10391-868c-5d94-2ac6-30d78e17cbfb"
+      }
+    }
+  ],
+  "removed": [
+    "3c9eddde-9e52-f782-d7ce-27d518b26596",
+    "ad2109ce-f86e-bbaf-9f72-ef299458494d",
+    "6470bb9e-eec3-43fd-5570-4a066a286fb9",
+    "3ca25c16-cf20-569e-e78b-bba6d8df9f4e",
+    "f2d12d50-d15c-2ca0-8ff8-1d66f484fd26",
+    "3677ef0d-feed-b69e-47cd-9cb55bdae6eb",
+    "ea46d136-6986-0ad3-8f07-b423d4cbd2ec",
+    "243130f8-9bc1-7d49-ebce-f9027c2c1d98",
+    "60f7a148-c014-4192-d9d6-273b1be1a936"
+  ],
+  "migrations": [
+    {
+      "scope": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+      "old": {
+        "id": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "848541a4-4523-9666-cc7c-3261f146883d"
+        },
+        "parent": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "2ad5dd85-1f01-0661-65c3-9f02cee398f2"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "3c9eddde-9e52-f782-d7ce-27d518b26596",
+          "name": "Icon - File 12",
+          "props": [
+            {
+              "propId": "0efcc950-106c-8137-41ee-60bfd578200f",
+              "value": "0.7",
+              "hasOverride": false,
+              "name": "Stroke Width"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "18eee085-dd26-1b0f-4481-1578f180f84f",
+      "stroke": "0.9333333333333332",
+      "color": "#000",
+      "newId": {
+        "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+        "element": "8fa71d02-04d4-5636-f777-179e22d768ed"
+      }
+    },
+    {
+      "scope": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+      "old": {
+        "id": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "bfa41f5b-8515-0b2e-f776-e7357c3996a5"
+        },
+        "parent": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "2ad5dd85-1f01-0661-65c3-9f02cee398fd"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "ad2109ce-f86e-bbaf-9f72-ef299458494d",
+          "name": "Icon - Bank Note 12",
+          "props": [
+            {
+              "propId": "20728666-e1bb-6d96-bfce-0a2ebcf34b02",
+              "value": "0.7",
+              "hasOverride": false,
+              "name": "Stroke Width"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "fd8a1f68-8543-c54a-9972-e899218fdc46",
+      "stroke": "1.1666666666666667",
+      "color": "#000",
+      "newId": {
+        "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+        "element": "1c7db983-ed6a-ed75-1c59-b5f8eba669ed"
+      }
+    },
+    {
+      "scope": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+      "old": {
+        "id": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "f23a777c-cde2-515a-1c0d-bd5cf7d1b71a"
+        },
+        "parent": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "2ad5dd85-1f01-0661-65c3-9f02cee39908"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "6470bb9e-eec3-43fd-5570-4a066a286fb9",
+          "name": "Icon - Fingerprint 12",
+          "props": [
+            {
+              "propId": "a2a5f162-2b49-6fd1-7e03-8920c01c0c93",
+              "value": "0.7",
+              "hasOverride": false,
+              "name": "Stroke Width"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "1d250e45-43a0-3663-7ea2-9ceae083114e",
+      "stroke": "0.9333333333333332",
+      "color": "#000",
+      "newId": {
+        "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+        "element": "455aad99-d1b9-eac1-1dad-2582e7ddf2bc"
+      }
+    },
+    {
+      "scope": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+      "old": {
+        "id": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "54383fff-bec7-f1f1-1f62-26ae7e8c544a"
+        },
+        "parent": {
+          "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+          "element": "2ad5dd85-1f01-0661-65c3-9f02cee39913"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "3ca25c16-cf20-569e-e78b-bba6d8df9f4e",
+          "name": "Icon - Luggage 12",
+          "props": [
+            {
+              "propId": "7f8f8b57-d296-ce82-e867-4dcbfb6dbeb8",
+              "value": "0.7",
+              "hasOverride": false,
+              "name": "Stroke Width"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "168a431e-fa09-165d-ba44-22cf848d5173",
+      "stroke": "0.9333333333333332",
+      "color": "#000",
+      "newId": {
+        "component": "1d49d028-7723-b526-2ae9-d8395012fdb2",
+        "element": "1b42df6a-9c38-0a42-0297-40422f5e5c57"
+      }
+    },
+    {
+      "scope": "fc1ac059-511b-233e-7141-92eee67bd409",
+      "old": {
+        "id": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "2ab2a71a-4b97-20fd-c7b1-b14e60acda0d"
+        },
+        "parent": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "6375e7c6-b763-32b5-d2d6-8aab242dffda"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "f2d12d50-d15c-2ca0-8ff8-1d66f484fd26",
+          "name": "Icon - Origination Luggage Small",
+          "props": [
+            {
+              "propId": "1696b2f2-b9a5-b806-6f28-1f9c5e9aacd9",
+              "value": ".4",
+              "hasOverride": false,
+              "name": "Stroke Weight"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "168a431e-fa09-165d-ba44-22cf848d5173",
+      "stroke": ".8",
+      "color": "#000",
+      "newId": {
+        "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+        "element": "b8dddb83-8a1b-ea33-00d9-c0f45169a1f0"
+      }
+    },
+    {
+      "scope": "fc1ac059-511b-233e-7141-92eee67bd409",
+      "old": {
+        "id": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "6185c1aa-1d8e-05d2-3a3e-ce01ea1ffb06"
+        },
+        "parent": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "6375e7c6-b763-32b5-d2d6-8aab242dffe2"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "ea46d136-6986-0ad3-8f07-b423d4cbd2ec",
+          "name": "Icon - Origination Car Small",
+          "props": [
+            {
+              "propId": "97776534-5e49-d37e-9af6-6b184a526ec6",
+              "value": ".5",
+              "hasOverride": false,
+              "name": "Stroke Weight"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "76af4008-4900-c671-7b7f-918f92db5255",
+      "stroke": "1",
+      "color": "#000",
+      "newId": {
+        "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+        "element": "dbf5d9cb-34ce-45fb-7a3a-e9e22ee9359c"
+      }
+    },
+    {
+      "scope": "fc1ac059-511b-233e-7141-92eee67bd409",
+      "old": {
+        "id": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "f6651ba9-7723-e52a-a0d8-d2580d5e7f2e"
+        },
+        "parent": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "6375e7c6-b763-32b5-d2d6-8aab242dffea"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "3677ef0d-feed-b69e-47cd-9cb55bdae6eb",
+          "name": "Icon - Origination Luggage Small White",
+          "props": [
+            {
+              "propId": "0b2f5fc2-90b1-a654-a518-b5ab8aa08072",
+              "value": ".5",
+              "hasOverride": false,
+              "name": "Stroke Weight"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "168a431e-fa09-165d-ba44-22cf848d5173",
+      "stroke": "1",
+      "color": "#fff",
+      "newId": {
+        "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+        "element": "8a0e0e30-3cab-e293-57b8-a807925f1569"
+      }
+    },
+    {
+      "scope": "fc1ac059-511b-233e-7141-92eee67bd409",
+      "old": {
+        "id": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "ac116f3a-a7db-af85-fce4-22b9613f8281"
+        },
+        "parent": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "6375e7c6-b763-32b5-d2d6-8aab242dff9e"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "243130f8-9bc1-7d49-ebce-f9027c2c1d98",
+          "name": "Icon - Origination Clock",
+          "props": [
+            {
+              "propId": "175fbdfc-a858-3360-877c-3e5e97d0149c",
+              "value": "1",
+              "hasOverride": false,
+              "name": "Stroke Weight"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "b1ffb55a-d15e-db98-94c1-664e5f5122e5",
+      "stroke": "1.5",
+      "color": "#000",
+      "newId": {
+        "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+        "element": "309bc1ef-6744-d304-88d8-ce37031f7388"
+      }
+    },
+    {
+      "scope": "fc1ac059-511b-233e-7141-92eee67bd409",
+      "old": {
+        "id": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "124ac139-c6bf-2308-b773-892075ca12d2"
+        },
+        "parent": {
+          "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+          "element": "6375e7c6-b763-32b5-d2d6-8aab242dfffb"
+        },
+        "details": {
+          "type": "ComponentInstance",
+          "id": "60f7a148-c014-4192-d9d6-273b1be1a936",
+          "name": "Icon - Origination Download",
+          "props": [
+            {
+              "propId": "8a373ed7-35d4-38db-ed2a-5d7314baba92",
+              "value": ".6",
+              "hasOverride": false,
+              "name": "Stroke Weight"
+            }
+          ],
+          "slots": []
+        }
+      },
+      "target": "8431505a-d419-b6d6-dd56-0b6bed374f2b",
+      "stroke": "1.8",
+      "color": "#0070ff",
+      "newId": {
+        "component": "fc1ac059-511b-233e-7141-92eee67bd409",
+        "element": "ee174a63-7d73-0866-f0a7-ff60e387db3d"
+      }
+    }
+  ]
+}

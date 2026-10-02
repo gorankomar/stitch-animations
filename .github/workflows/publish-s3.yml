@@ -26,11 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test
-
-      - name: Build production assets
-        run: npm run build:all
+      - name: Validate shared release
+        run: npm run validate:release
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4

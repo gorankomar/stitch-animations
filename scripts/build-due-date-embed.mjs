@@ -1,6 +1,6 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {moduleScript} from './embed-module.mjs';
-const css=await readFile('src/embeds/due-date-graphic.css','utf8');
+const css=await readFile('src/embeds/due-date-graphic.css','utf8') + await readFile('src/lib/effects/code-scroll.css','utf8');
 const markup=await readFile('src/embeds/due-date-graphic-markup.html','utf8');
 const style=`<style>.due_graphic,.due_graphic *{box-sizing:border-box}${css}</style>`;
 await mkdir('dist/embeds',{recursive:true});

@@ -2,7 +2,7 @@
 
 Webflow component: **Animations → Collections — Window Stack**
 Component ID: `88e6f662-b5ee-3682-da72-a4d510d4cfc9`.
-Placed on the draft **Animations Playground**, beside Financial Architecture.
+Placed on the **Animations Playground**, beside Financial Architecture.
 Only the graphic is included; no full content card was built or changed.
 
 Figma source: Stitch Animation Elements, graphic `256:12908`, reference card
@@ -24,7 +24,3 @@ The hidden HTML Embed travels with the component. Rebuild its JavaScript with
 `dist/embeds/collections-graphic.html`. Layout CSS is mirrored in
 `src/embeds/collections-graphic.css` but maintained as native Webflow styles.
 Source images are saved in `src/embeds/assets/collections/`.
-
-Verified in Webflow Preview on desktop and at 393px mobile: 258 × 232 stage,
-loaded original assets, correct window dimensions, and alternating front/back
-positions. Saved as draft without publishing.

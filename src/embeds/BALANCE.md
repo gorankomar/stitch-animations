@@ -38,8 +38,3 @@ node scripts/build-balance-embed.mjs
 Copy `dist/embeds/balance-graphic.html` into the component's hidden HTML Embed.
 Layout and typography remain native Webflow styles. Original reference: Figma
 Stitch Website Live, illustration 20001783:47131, full card 20001767:50495.
-
-Verified in Webflow Preview at desktop and 393px mobile: exact final amounts,
-correct ledger variant rows, no page or ledger overflow, hover lift, running pulse
-animations, and a fresh entrance showing zero, intermediate, then final amounts.
-Saved as draft; no site publish was performed.

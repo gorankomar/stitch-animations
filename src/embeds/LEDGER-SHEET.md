@@ -2,7 +2,7 @@
 
 Figma: `PCbd0DyXWAD2cDANtl7bpH`, node `256:12638`.
 
-Webflow draft: Animations Playground, site `6823036cd77b3093eaf9154d`, page `6ab4079ac7ca32e3a6c168c8`.
+Webflow page: Animations Playground, site `6823036cd77b3093eaf9154d`, page `6ab4079ac7ca32e3a6c168c8`.
 
 Use **Report Graphic**, variant **Audit sheet**, Title **General Ledger**. Leave Filters and Action slots empty. Put **Ledger Sheet** into Content. Turn off Action Visibility and Bottom Fade Visibility.
 
@@ -17,5 +17,3 @@ Component IDs:
 - Ledger Sheet Row: `b77c465a-315d-ea3c-7172-92a6b2c21bc2`
 - Report Graphic Audit sheet variant: `c7a67b19-06d0-a352-2082-680ec009c1ad`
 - Playground Report Graphic instance: `32f164f2-2ead-05cb-c618-bb9be3839be5`
-
-Changes are saved as a draft and are not published.

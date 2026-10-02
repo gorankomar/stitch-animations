@@ -1,0 +1,163 @@
+.country-flags_graphic.is-fluid {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-top-color: #f9f9f9;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #f9f9f9;
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #f9f9f9;
+  border-left-style: solid;
+  border-left-width: 0px;
+  border-left-color: #f9f9f9;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  background-color: transparent;
+  background-image: none;
+  overflow-x: visible;
+  overflow-y: visible;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  container-type: inline-size;
+  writing-mode: horizontal-tb;
+}
+
+.country-flags_card.is-fluid {
+  display: flex;
+  padding-bottom: 4.651163cqi;
+  flex-direction: column;
+  align-items: center;
+  border-top-style: solid;
+  border-top-width: 1.937984cqi;
+  border-top-color: hsla(0, 0.00%, 81.96%, 0.32);
+  border-right-style: solid;
+  border-right-width: 1.937984cqi;
+  border-right-color: hsla(0, 0.00%, 81.96%, 0.32);
+  border-bottom-style: solid;
+  border-bottom-width: 1.937984cqi;
+  border-bottom-color: hsla(0, 0.00%, 81.96%, 0.32);
+  border-left-style: solid;
+  border-left-width: 1.937984cqi;
+  border-left-color: hsla(0, 0.00%, 81.96%, 0.32);
+  border-top-left-radius: 4.651163cqi;
+  border-top-right-radius: 4.651163cqi;
+  border-bottom-left-radius: 4.651163cqi;
+  border-bottom-right-radius: 4.651163cqi;
+  background-color: #fff;
+  box-shadow: 0 0 1.937984cqi 0 rgba(0,0,0,.1);
+  width: 68.992248cqi;
+  flex-shrink: 0;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+  box-sizing: border-box;
+}
+
+.country-flags_rows.is-fluid {
+  clip-path: inset(0 0.387597cqi 0 0);
+  display: flex;
+  overflow: hidden;
+  padding-top: 4.651163cqi;
+  padding-bottom: 4.651163cqi;
+  flex-direction: column;
+  grid-column-gap: 3.875969cqi;
+  grid-row-gap: 3.875969cqi;
+  width: 100%;
+}
+
+.country-flags_row.is-fluid {
+  width: 65.116279cqi;
+  height: 11.627907cqi;
+  padding-right: 4.651163cqi;
+  padding-left: 4.651163cqi;
+  flex-shrink: 0;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.country-flags_track.is-fluid {
+  display: flex;
+  width: max-content;
+}
+
+.country-flags_sequence.is-fluid {
+  display: flex;
+  box-sizing: content-box;
+  padding-right: 3.875969cqi;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  grid-column-gap: 3.875969cqi;
+  grid-row-gap: 3.875969cqi;
+}
+
+.country-flags_flag.is-fluid {
+  display: block;
+  width: 16.279070cqi;
+  height: 11.627907cqi;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 16.279070cqi;
+  border-top-left-radius: 0.775194cqi;
+  border-top-right-radius: 0.775194cqi;
+  border-bottom-left-radius: 0.775194cqi;
+  border-bottom-right-radius: 0.775194cqi;
+  box-shadow: 0 0.775194cqi 1.937984cqi 0 rgba(0,0,0,.12);
+}
+
+.country-flags_caption.is-fluid {
+  color: #5d5d5d;
+  font-size: 4.651163cqi;
+  line-height: 1.25;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.country-flags_frame {
+  position: relative;
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-top-style: solid;
+  border-top-width: 0.387597cqi;
+  border-top-color: #f9f9f9;
+  border-right-style: solid;
+  border-right-width: 0.387597cqi;
+  border-right-color: #f9f9f9;
+  border-bottom-style: solid;
+  border-bottom-width: 0.387597cqi;
+  border-bottom-color: #f9f9f9;
+  border-left-style: solid;
+  border-left-width: 0.387597cqi;
+  border-left-color: #f9f9f9;
+  border-top-left-radius: 3.100775cqi;
+  border-top-right-radius: 3.100775cqi;
+  border-bottom-left-radius: 3.100775cqi;
+  border-bottom-right-radius: 3.100775cqi;
+  background-color: #fff;
+  background-image: linear-gradient(228deg, rgba(237,252,242,.37), rgba(255,255,255,.37) 48.599%, rgba(237,252,242,.37));
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 258 / 232;
+  box-sizing: border-box;
+}

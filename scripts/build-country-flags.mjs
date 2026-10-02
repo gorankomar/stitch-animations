@@ -1,0 +1,14 @@
+import { build } from 'vite';
+import fs from 'node:fs/promises';
+const manifests=JSON.parse(await fs.readFile('src/embeds/assets/country-flags/manifest.json','utf8'));
+const assets=JSON.parse(await fs.readFile('src/embeds/assets/country-flags/webflow-assets.json','utf8'));
+const rows=[[0,1,2,9,10,11,12,13,14],[3,4,5,15,16,17,18,19,20],[6,7,8,21,22,23,24,25,26]];
+const img=(index,cdn)=>{const f=manifests[index];const src=cdn?assets.find(a=>a.file===f.file).url:'src/embeds/assets/country-flags/'+f.file;return `<img class="country-flags_flag" src="${src}" alt="${f.country}" width="42" height="30" loading="eager">`;};
+const markup=cdn=>`<div class="country-flags_graphic" data-country-flags="" data-speed="12" role="img" aria-label="Global coverage across 100 plus countries"><div class="country-flags_card"><div class="country-flags_rows" aria-hidden="true">${rows.map((r,i)=>`<div class="country-flags_row" data-country-flags-row="" data-direction="${i===1?'right':'left'}" data-phase="${[10,0,-25][i]}"><div class="country-flags_track"><div class="country-flags_sequence">${r.map(index=>img(index,cdn)).join('')}</div></div></div>`).join('')}</div><p class="country-flags_caption">100+ more countries</p></div></div>`;
+await fs.writeFile('src/embeds/country-flags-markup.html',markup(false)+'\n');
+await fs.writeFile('src/embeds/country-flags-webflow.html',markup(true)+'\n');
+await fs.writeFile('country-flags.html',`<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Country flags preview</title><style>body{margin:0;background:#f4f6f5;font-family:Inter,sans-serif}.preview{display:grid;place-items:center;min-height:100vh}</style></head><body><div style="height:110vh"></div><main class="preview">${markup(false)}</main><script type="module" src="/src/embeds/country-flags.js"></script></body></html>`);
+await build({configFile:false,build:{outDir:'dist',emptyOutDir:false,sourcemap:true,lib:{entry:'src/embeds/country-flags.js',name:'CountryFlags',formats:['iife'],fileName:()=> 'country-flags-preview.js'},rollupOptions:{output:{assetFileNames:'country-flags-preview.[ext]'}}}});
+await fs.mkdir('dist/embeds',{recursive:true});
+const inlineScript=(await fs.readFile('dist/country-flags-preview.js','utf8')).replace(/\/\/# sourceMappingURL=.*$/m,'');
+await fs.writeFile('dist/embeds/country-flags.html',`<style>${await fs.readFile('src/embeds/country-flags.css','utf8')}</style>\n${markup(true)}\n<script>${inlineScript}</script>`);

@@ -1,0 +1,15 @@
+# Shared release
+
+Active CDN: commit-pinned jsDelivr until the admin fixes and we verify S3/CloudFront CORS. Follow [saving and publishing](publishing.md) for destination and agent-owned loader updates.
+
+Inputs: requested completion stage, approved features, repository state, current loader URLs, target Webflow pages/components, and user-authorized publish domains.
+
+1. Fetch origin and inspect current origin/main plus all working-tree edits. Preserve unrelated work; prepare an isolated release checkout based on current origin/main and combine only approved changes. Never point the site-wide loader at a feature branch based on older main.
+2. Run npm run validate:release in that checkout. This builds every shared entry/embed, runs tests against fresh artifacts, then checks dependency closure and Product Variety/wallet swap plus Country Flags inclusion. Single-feature builds are insufficient.
+3. Review and merge the release before changing site-wide URLs. Commit the fresh generated dist assets to the release before merging; verify that the merged SHA contains them. Use that full commit SHA for immutable jsDelivr URLs and publish all dependent chunks/styles/assets together. S3 CI output alone does not update GitHub-hosted assets.
+4. Update and save the existing Webflow site-settings footer loader and the Playground page-settings shared preview loader to the same immutable release. Remove redundant component feature-module scripts and inline animation runtimes once their features are included in page-all-lite, preserving styles, native markup and unrelated code. Verify Preview through the shared page loader after removal. Only explicitly requested standalone portable embeds need STITCH_ASSET_BASE and regenerated module loaders; do not install those redundant loaders in shared-loader site components.
+5. Inspect served loader, chunks, CSS, and assets. CloudFront upload success is insufficient: compare served bytes with release artifacts before selecting CloudFront as active loader. Preserve old immutable assets for rollback; the current S3 sync uses --delete and a mutable prefix, so do not treat it as immutable hosting.
+6. Preserve unrelated Webflow code. For middle, stop after verifying the saved footer and matching draft loaders; leave domain selection and publication to the user. For staging/production, publish only to authorized domains. Verify each published page's actual loader URL, required shared interactions, and the changed component. Roll back loader and matching embeds together to the last verified immutable release if verification fails.
+7. Record commit, URLs, domains, checks, and outcome in a dated release record. Do not claim completion for unverified serving or publishing.
+
+Completion: release merged and CDN content verified; middle complete when matching Webflow draft loader URLs are saved and verified, with user publication and live-site verification pending; Webflow published-and-verified only when authorized. For a staging/production request, if domains or publication authorization are missing, finish the reviewable release preparation and request the missing information before publication.

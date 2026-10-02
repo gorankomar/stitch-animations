@@ -1,0 +1,121 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "removeUnusedNS",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "convertShapeToPath",
+      "sortAttrs",
+      "sortDefsChildren"
+    ]
+  },
+  "exceptions": [
+    "removeXMLNS",
+    "cleanupIds",
+    "mergePaths",
+    "collapseGroups",
+    "removeHiddenElems",
+    "removeViewBox",
+    "removeDimensions",
+    "removeTitle",
+    "removeDesc"
+  ],
+  "manifest": [
+    {
+      "name": "right-top",
+      "w": 59.45,
+      "h": 122.25,
+      "x": 173.3,
+      "y": -5.5,
+      "flip": false,
+      "originalBytes": 3414,
+      "optimizedBytes": 3528
+    },
+    {
+      "name": "right-bottom",
+      "w": 61.46,
+      "h": 115.75,
+      "x": 170.79,
+      "y": 116.25,
+      "flip": false,
+      "originalBytes": 3639,
+      "optimizedBytes": 3685
+    },
+    {
+      "name": "left-bottom",
+      "w": 62.45,
+      "h": 116.25,
+      "x": 21.8,
+      "y": 116.25,
+      "flip": true,
+      "originalBytes": 3619,
+      "optimizedBytes": 3649
+    },
+    {
+      "name": "left-top",
+      "w": 59.45,
+      "h": 116.25,
+      "x": 21.8,
+      "y": 0.5,
+      "flip": true,
+      "originalBytes": 3439,
+      "optimizedBytes": 3517
+    },
+    {
+      "name": "user",
+      "originalBytes": 759,
+      "optimizedBytes": 475
+    },
+    {
+      "name": "file",
+      "originalBytes": 828,
+      "optimizedBytes": 579
+    },
+    {
+      "name": "bank-note",
+      "originalBytes": 1187,
+      "optimizedBytes": 678
+    },
+    {
+      "name": "fingerprint",
+      "originalBytes": 852,
+      "optimizedBytes": 490
+    },
+    {
+      "name": "luggage",
+      "originalBytes": 1535,
+      "optimizedBytes": 867
+    }
+  ]
+}
