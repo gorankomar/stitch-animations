@@ -3,12 +3,12 @@
     "file": "chunks/animation-stage.Bp3UDTgL.js",
     "name": "animation-stage"
   },
-  "_auto-reveal.qp9K6zHp.js": {
-    "file": "chunks/auto-reveal.qp9K6zHp.js",
+  "_auto-reveal.B8Z3XL9A.js": {
+    "file": "chunks/auto-reveal.B8Z3XL9A.js",
     "name": "auto-reveal",
     "imports": [
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js"
+      "_reveal-groups.TjVq1IXZ.js"
     ]
   },
   "_connector.HeJJCw9w.js": {
@@ -26,6 +26,10 @@
       "_math.DB99t-US.js"
     ]
   },
+  "_easing.BUsciq49.js": {
+    "file": "chunks/easing.BUsciq49.js",
+    "name": "easing"
+  },
   "_follow-group.DCIpy6nZ.js": {
     "file": "chunks/follow-group.DCIpy6nZ.js",
     "name": "follow-group",
@@ -42,8 +46,8 @@
     "file": "chunks/motion.B4hTxLhb.js",
     "name": "motion"
   },
-  "_reveal-groups.1asMwffv.js": {
-    "file": "chunks/reveal-groups.1asMwffv.js",
+  "_reveal-groups.TjVq1IXZ.js": {
+    "file": "chunks/reveal-groups.TjVq1IXZ.js",
     "name": "reveal-groups"
   },
   "_styles.!~{00a}~.js": {
@@ -75,16 +79,16 @@
     ]
   },
   "src/animations/api/index.js": {
-    "file": "chunks/index.BvNGK1X2.js",
+    "file": "chunks/index.hwMxSGty.js",
     "name": "index",
     "src": "src/animations/api/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_motion.B4hTxLhb.js",
       "_follow-group.DCIpy6nZ.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_math.DB99t-US.js"
     ],
     "css": [
@@ -92,14 +96,14 @@
     ]
   },
   "src/animations/cards/index.js": {
-    "file": "chunks/index.Bti631cm.js",
+    "file": "chunks/index.DACftUMY.js",
     "name": "index",
     "src": "src/animations/cards/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
       "_dots-field.B2ed_e2p.js",
       "_math.DB99t-US.js"
@@ -109,14 +113,14 @@
     ]
   },
   "src/animations/chart/index.js": {
-    "file": "chunks/index.aLyg27d2.js",
+    "file": "chunks/index.DbvTdNXm.js",
     "name": "index",
     "src": "src/animations/chart/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_value-counter.BXLPe_ym.js"
     ],
     "css": [
@@ -133,14 +137,14 @@
     ]
   },
   "src/animations/deposits/index.js": {
-    "file": "chunks/index.DROdnIKE.js",
+    "file": "chunks/index.0B2LIpWX.js",
     "name": "index",
     "src": "src/animations/deposits/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_dots-field.B2ed_e2p.js",
       "_value-counter.BXLPe_ym.js",
       "_math.DB99t-US.js"
@@ -150,14 +154,14 @@
     ]
   },
   "src/animations/dots-bulge/index.js": {
-    "file": "chunks/index.CgAmmS4t.js",
+    "file": "chunks/index.CB4maaeu.js",
     "name": "index",
     "src": "src/animations/dots-bulge/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_motion.B4hTxLhb.js"
     ],
     "css": [
@@ -165,14 +169,14 @@
     ]
   },
   "src/animations/dots/index.js": {
-    "file": "chunks/index.DA99h5ZK.js",
+    "file": "chunks/index.lOWwnqYK.js",
     "name": "index",
     "src": "src/animations/dots/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_dots-field.B2ed_e2p.js",
       "_math.DB99t-US.js"
     ],
@@ -181,28 +185,28 @@
     ]
   },
   "src/animations/hero/index.js": {
-    "file": "chunks/index.DaO2CsL6.js",
+    "file": "chunks/index.B1A6IEa_.js",
     "name": "index",
     "src": "src/animations/hero/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js"
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js"
     ],
     "css": [
       "styles/index.ohWrKW7g.css"
     ]
   },
   "src/animations/orbit/index.js": {
-    "file": "chunks/index.CgFZL-K_.js",
+    "file": "chunks/index.CSWQG02X.js",
     "name": "index",
     "src": "src/animations/orbit/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
       "_motion.B4hTxLhb.js",
       "_math.DB99t-US.js"
@@ -212,14 +216,14 @@
     ]
   },
   "src/animations/radial/index.js": {
-    "file": "chunks/index.3c_eyDtP.js",
+    "file": "chunks/index.BDK_Db2L.js",
     "name": "index",
     "src": "src/animations/radial/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js"
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js"
     ],
     "css": [
       "styles/index.DYw-LbKO.css"
@@ -239,14 +243,14 @@
     ]
   },
   "src/animations/small-cards/index.js": {
-    "file": "chunks/index.BsAGEGVG.js",
+    "file": "chunks/index.CQ95_fU_.js",
     "name": "index",
     "src": "src/animations/small-cards/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_dots-field.B2ed_e2p.js",
       "_follow-group.DCIpy6nZ.js",
       "_value-counter.BXLPe_ym.js",
@@ -267,14 +271,14 @@
     ]
   },
   "src/animations/window-graphic/index.js": {
-    "file": "chunks/index.DE6YH2bU.js",
+    "file": "chunks/index.BMdyvjqM.js",
     "name": "index",
     "src": "src/animations/window-graphic/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
-      "_reveal-groups.1asMwffv.js",
+      "_auto-reveal.B8Z3XL9A.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_value-counter.BXLPe_ym.js"
     ]
   },
@@ -286,7 +290,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Bp3UDTgL.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "src/lib/effects/code-scroll.js",
       "_follow-group.DCIpy6nZ.js",
       "_connector.HeJJCw9w.js",
@@ -334,7 +338,8 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "src/lib/effects/code-scroll.js"
+      "src/lib/effects/code-scroll.js",
+      "_easing.BUsciq49.js"
     ]
   },
   "src/embeds/omnichannel-origination.js": {
@@ -358,7 +363,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Bp3UDTgL.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js"
@@ -376,6 +381,21 @@
     "imports": [
       "_animation-stage.Bp3UDTgL.js",
       "_follow-group.DCIpy6nZ.js",
+      "_dom.DgX39f3a.js",
+      "_math.DB99t-US.js"
+    ]
+  },
+  "src/embeds/user-onboarding.js": {
+    "file": "feature-user-onboarding.js",
+    "name": "feature-user-onboarding",
+    "src": "src/embeds/user-onboarding.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Bp3UDTgL.js",
+      "_reveal-groups.TjVq1IXZ.js",
+      "_follow-group.DCIpy6nZ.js",
+      "_easing.BUsciq49.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js"
     ]
@@ -398,12 +418,12 @@
     "isEntry": true,
     "imports": [
       "src/animations/api/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
       "_motion.B4hTxLhb.js",
       "_follow-group.DCIpy6nZ.js",
       "_math.DB99t-US.js",
-      "_reveal-groups.1asMwffv.js"
+      "_reveal-groups.TjVq1IXZ.js"
     ]
   },
   "src/entry/feature-cards.js": {
@@ -413,9 +433,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/cards/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
       "_math.DB99t-US.js",
       "_dots-field.B2ed_e2p.js"
@@ -428,9 +448,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/chart/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_value-counter.BXLPe_ym.js"
     ]
   },
@@ -450,9 +470,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/deposits/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_dots-field.B2ed_e2p.js",
       "_math.DB99t-US.js",
       "_value-counter.BXLPe_ym.js"
@@ -465,9 +485,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/dots-bulge/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_motion.B4hTxLhb.js"
     ],
     "css": [
@@ -481,9 +501,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/dots/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_dots-field.B2ed_e2p.js",
       "_math.DB99t-US.js"
     ],
@@ -498,9 +518,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/hero/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js"
+      "_reveal-groups.TjVq1IXZ.js"
     ]
   },
   "src/entry/feature-orbit.js": {
@@ -510,9 +530,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/orbit/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
       "_math.DB99t-US.js",
       "_motion.B4hTxLhb.js"
@@ -525,9 +545,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/radial/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js"
+      "_reveal-groups.TjVq1IXZ.js"
     ]
   },
   "src/entry/feature-reference.js": {
@@ -548,9 +568,9 @@
     "isEntry": true,
     "imports": [
       "src/animations/small-cards/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_dots-field.B2ed_e2p.js",
       "_math.DB99t-US.js",
       "_follow-group.DCIpy6nZ.js",
@@ -575,10 +595,10 @@
     "isEntry": true,
     "imports": [
       "src/animations/window-graphic/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_zoom-lens.C8Anf7pm.js",
       "_dom.DgX39f3a.js",
-      "_reveal-groups.1asMwffv.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_value-counter.BXLPe_ym.js"
     ]
   },
@@ -589,11 +609,12 @@
     "isEntry": true,
     "imports": [
       "_dom.DgX39f3a.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_zoom-lens.C8Anf7pm.js",
-      "_reveal-groups.1asMwffv.js"
+      "_reveal-groups.TjVq1IXZ.js"
     ],
     "dynamicImports": [
+      "src/embeds/user-onboarding.js",
       "src/embeds/omnichannel-origination.js",
       "src/embeds/country-flags.js",
       "src/embeds/product-variety.js",
@@ -625,6 +646,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/user-onboarding.js",
       "src/embeds/omnichannel-origination.js",
       "src/embeds/country-flags.js",
       "src/embeds/product-variety.js",
@@ -648,13 +670,14 @@
       "src/animations/dots-bulge/index.js",
       "src/animations/small-cards/index.js",
       "src/animations/window-graphic/index.js",
-      "_auto-reveal.qp9K6zHp.js",
+      "_auto-reveal.B8Z3XL9A.js",
       "_zoom-lens.C8Anf7pm.js",
+      "_animation-stage.Bp3UDTgL.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js",
-      "_animation-stage.Bp3UDTgL.js",
-      "_reveal-groups.1asMwffv.js",
+      "_easing.BUsciq49.js",
       "src/lib/effects/code-scroll.js",
       "_connector.HeJJCw9w.js",
       "_motion.B4hTxLhb.js",
