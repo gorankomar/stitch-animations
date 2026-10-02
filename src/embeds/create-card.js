@@ -1,3 +1,4 @@
+import { createSoftPathPulse } from '../lib/effects/soft-path-pulse.js';
 import { createCodeScrollEffect } from '../lib/effects/code-scroll.js';
 const initialized = window.__stitchCreateCard ||= new WeakSet();
 const NS = 'http://www.w3.org/2000/svg';
@@ -22,33 +23,18 @@ function setup(root) {
     const group=document.createElementNS(NS,'g');
     group.setAttribute('transform',`translate(${asset.dataset.cardOrigin.replace(',', ' ')})`);
     svg.append(group);
-    const segments=Array.from({length:28},(_,i)=>{
-      const p=document.createElementNS(NS,'path');
-      p.setAttribute('d',asset.dataset.cardPath);p.setAttribute('fill','none');
-      p.setAttribute('stroke','#55bbff');p.setAttribute('stroke-width','.55');
-      p.setAttribute('opacity',String(Math.sin((i+.5)/28*Math.PI)**1.5));
-      group.append(p);return p;
-    });
-    return {group,segments,...pulseTimings[index]};
+    const path=document.createElementNS(NS,'path');
+    path.setAttribute('d',asset.dataset.cardPath);path.setAttribute('fill','none');
+    path.setAttribute('stroke-width','.55');group.append(path);
+    const {delay,period}=pulseTimings[index];
+    return {group,effect:createSoftPathPulse(path,{start:delay/1000,period:period/1000})};
   });
   root.querySelector('.create-card_lines').append(svg);
-  routes.forEach(route=>{
-    route.length=route.segments[0].getTotalLength();
-    route.duration=(route.length+32)/48*1000;
-    route.segments.forEach(p=>p.setAttribute('stroke-dasharray',`1.2 ${route.length+100}`));
-  });
   const motion=matchMedia('(prefers-reduced-motion: reduce)');
   let elapsed=0,last=null,raf=0,visible=false,disposed=false;
   function render(){
     effect?.render(elapsed);
-    routes.forEach(route=>{
-      const time=elapsed-route.delay,phase=((time%route.period)+route.period)%route.period;
-      const active=time>=0&&phase<route.duration;
-      route.group.style.visibility=active?'visible':'hidden';
-      if(!active)return;
-      const head=phase/1000*48;
-      route.segments.forEach((p,i)=>p.setAttribute('stroke-dashoffset',String(-(head-i*1.15))));
-    });
+    routes.forEach(route=>route.effect.update(elapsed/1000));
   }
   function frame(now){
     raf=0;if(!root.isConnected){dispose();return;}
@@ -64,7 +50,7 @@ function setup(root) {
   }
   const observer=new IntersectionObserver(entries=>{visible=entries.some(e=>e.isIntersecting);sync();},{threshold:0});
   observer.observe(root);document.addEventListener('visibilitychange',sync);motion.addEventListener('change',sync);sync();
-  function dispose(){disposed=true;cancelAnimationFrame(raf);observer.disconnect();document.removeEventListener('visibilitychange',sync);motion.removeEventListener('change',sync);effect?.dispose();svg.remove();delete root.dataset.cardMotion;initialized.delete(root);}
+  function dispose(){disposed=true;cancelAnimationFrame(raf);observer.disconnect();document.removeEventListener('visibilitychange',sync);motion.removeEventListener('change',sync);effect?.dispose();routes.forEach(route=>route.effect.dispose());svg.remove();delete root.dataset.cardMotion;initialized.delete(root);}
 }
 function boot(){init();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();

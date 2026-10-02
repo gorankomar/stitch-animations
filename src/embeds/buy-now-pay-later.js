@@ -1,7 +1,7 @@
 import { stageInitializer } from '../lib/effects/animation-stage.js';
 import { createRevealController } from '../lib/effects/reveal-groups.js';
 import { createFollowGroup } from '../lib/effects/follow-group.js';
-import { createPathPulse } from '../lib/effects/path-pulse.js';
+import { createSoftPathPulse } from '../lib/effects/soft-path-pulse.js';
 import { getDefaultDurationMs } from '../lib/easing.js';
 
 const key = Symbol.for('stitch.buy-now-pay-later.init');
@@ -60,10 +60,10 @@ function setup(root) {
   try {
     // Animate cloned base paths; the full original Figma line/pulse appearance remains fallback.
     svg.querySelectorAll('[data-bnpl-line]').forEach((source,i)=>{
-      if([1,3,5,9].includes(i))return;
+      if(![0,2,4,6,8].includes(Number(source.getAttribute('data-bnpl-line'))))return;
       const node=source.cloneNode(true);node.removeAttribute('id');node.removeAttribute('data-bnpl-line');node.setAttribute('data-bnpl-pulse','');
       source.parentNode.append(node);
-      try {pulses.push({node,effect:createPathPulse(node,{span:32,speed:48,color:'#009aff',start:i*.31,reverse:i<6})});} catch(e){node.remove();throw e;}
+      try {pulses.push({node,effect:createSoftPathPulse(node,{span:32,speed:48,color:'#55bbff',start:i*.31,reverse:i<6})});} catch(e){node.remove();throw e;}
     });
     observer=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;sync();},{threshold:0});observer.observe(root);
     resize=new ResizeObserver(()=>{follow?.();follow=null;sync();});resize.observe(root);

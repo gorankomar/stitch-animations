@@ -20,3 +20,5 @@ The later source-only commit replaces sample credential values in local markup.
 Build: `npm run build:all`. Local preview: `/create-card.html`.
 Portable CSS: `dist/embeds/create-card-styles.html`; add the commit-pinned
 feature-create-card.js module loader when installing the native component.
+
+The pulse implementation is now the canonical `src/lib/effects/soft-path-pulse.js`, shared with Buy Now Pay Later. It retains the original blue color, fading profile, independent periods and 48-unit/s travel. Caller cleanup disposes generated samples.

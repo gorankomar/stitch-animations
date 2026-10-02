@@ -15,7 +15,7 @@ function fixture({reduced=false,failObserver=false,failPulse=false}={}) {
  root.querySelectorAll=s=>s==='[data-bnpl-reveal]'?rows:[];
  const generated=[];
  const source=()=>{const n=node();n.getTotalLength=()=>{if(failPulse)throw Error('missing geometry');return 140;};n.parentNode={append(n){generated.push(n);}};n.remove=()=>generated.splice(generated.indexOf(n),1);n.cloneNode=()=>{const c=source();c.style={};return c;};return n;};
- svg.querySelectorAll=s=>s==='[data-bnpl-line]'?Array.from({length:10},source):[];
+ svg.querySelectorAll=s=>s==='[data-bnpl-line]'?Array.from({length:10},(_,i)=>{const n=source();n.setAttribute('data-bnpl-line',String(i));return n;}):[];
  const media={matches:reduced,addEventListener(k,fn){events.set(k,fn);},removeEventListener(k){events.delete(k);}};
  const fine={matches:false,addEventListener(){},removeEventListener(){}};
  const docEvents=new Map();globalThis.document={documentElement:{},hidden:false,addEventListener(k,fn){docEvents.set(k,fn);},removeEventListener(k){docEvents.delete(k);}};
@@ -30,8 +30,8 @@ function fixture({reduced=false,failObserver=false,failPulse=false}={}) {
  visible(value=true){observers[0].fn([{isIntersecting:value}]);},
  restore(){for(const [k,v] of saved)v===undefined?delete globalThis[k]:globalThis[k]=v;}};
 }
-test('one mount owns six reveals and pulses; teardown restores styled fallback',()=>{
- const f=fixture();try{const d=init(f.root);init(f.root);assert.equal(f.observers.length,1);assert.equal(f.generated.length,6);f.visible();assert.equal(f.timers.size,6);assert.ok(f.root.attrs.has('data-bnpl-ready'));d();assert.equal(f.generated.length,0);assert.equal(f.timers.size,0);assert.equal(f.frames.size,0);assert.equal(f.docEvents.size,0);assert.equal(f.rows[0].getAttribute('style'),'color: red');assert.ok(!f.root.attrs.has('data-bnpl-ready'));const again=init(f.root);assert.equal(f.observers.length,2);again();}finally{f.restore();}
+test('one mount owns six reveals and five soft pulses; teardown restores styled fallback',()=>{
+ const f=fixture();try{const d=init(f.root);init(f.root);assert.equal(f.observers.length,1);assert.equal(f.generated.length,140);f.visible();assert.equal(f.timers.size,6);assert.ok(f.root.attrs.has('data-bnpl-ready'));d();assert.equal(f.generated.length,0);assert.equal(f.timers.size,0);assert.equal(f.frames.size,0);assert.equal(f.docEvents.size,0);assert.equal(f.rows[0].getAttribute('style'),'color: red');assert.ok(!f.root.attrs.has('data-bnpl-ready'));const again=init(f.root);assert.equal(f.observers.length,2);again();}finally{f.restore();}
 });
 test('reduced motion restores original layers and cancels pending entrance and clocks',()=>{
  const f=fixture();try{const d=init(f.root);f.visible();f.media.matches=true;f.events.get('change')();assert.equal(f.timers.size,0);assert.equal(f.frames.size,0);assert.ok(!f.root.attrs.has('data-bnpl-ready'));assert.ok(!f.root.attrs.has('data-bnpl-pulses-ready'));d();}finally{f.restore();}
