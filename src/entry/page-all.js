@@ -1,3 +1,4 @@
+import '../embeds/credit-check.js';
 import '../embeds/user-onboarding.js';
 import '../embeds/omnichannel-origination.js';
 import '../embeds/country-flags.js';

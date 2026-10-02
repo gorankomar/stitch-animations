@@ -321,6 +321,19 @@
       "src/lib/effects/code-scroll.js"
     ]
   },
+  "src/embeds/credit-check.js": {
+    "file": "feature-credit-check.js",
+    "name": "feature-credit-check",
+    "src": "src/embeds/credit-check.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Bp3UDTgL.js",
+      "_easing.BUsciq49.js",
+      "_reveal-groups.TjVq1IXZ.js",
+      "_connector.HeJJCw9w.js"
+    ]
+  },
   "src/embeds/due-date-graphic.js": {
     "file": "feature-due-date.js",
     "name": "feature-due-date",
@@ -614,6 +627,7 @@
       "_reveal-groups.TjVq1IXZ.js"
     ],
     "dynamicImports": [
+      "src/embeds/credit-check.js",
       "src/embeds/user-onboarding.js",
       "src/embeds/omnichannel-origination.js",
       "src/embeds/country-flags.js",
@@ -646,6 +660,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/credit-check.js",
       "src/embeds/user-onboarding.js",
       "src/embeds/omnichannel-origination.js",
       "src/embeds/country-flags.js",
@@ -673,13 +688,13 @@
       "_auto-reveal.B8Z3XL9A.js",
       "_zoom-lens.C8Anf7pm.js",
       "_animation-stage.Bp3UDTgL.js",
+      "_easing.BUsciq49.js",
       "_reveal-groups.TjVq1IXZ.js",
+      "_connector.HeJJCw9w.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js",
-      "_easing.BUsciq49.js",
       "src/lib/effects/code-scroll.js",
-      "_connector.HeJJCw9w.js",
       "_motion.B4hTxLhb.js",
       "_value-counter.BXLPe_ym.js",
       "_dots-field.B2ed_e2p.js"

@@ -13,3 +13,5 @@ await import('./build-secure-auth-embed.mjs');
 await import('./build-country-flags.mjs');
 
 await import('./build-user-onboarding-embed.mjs');
+
+await import('./build-credit-check-embed.mjs');

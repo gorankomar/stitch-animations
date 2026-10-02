@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-credit-check': resolve(process.cwd(), 'src/embeds/credit-check.js'),
             'feature-user-onboarding': resolve(process.cwd(), 'src/embeds/user-onboarding.js'),
             'feature-omnichannel-origination': resolve(process.cwd(), 'src/embeds/omnichannel-origination.js'),
             'feature-country-flags': resolve(process.cwd(), 'src/embeds/country-flags.js'),
