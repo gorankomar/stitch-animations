@@ -1,0 +1,16 @@
+<style>/* Scoped adapter of the canonical Card Hover and Reveal styles.
+   Native Webflow classes own appearance; this file supplies container sizing,
+   readiness-gated entrance states, and token-based interaction transitions. */
+[data-credit-check]{container-type:inline-size;writing-mode:horizontal-tb}
+[data-credit-check] [data-cc-reveal]{opacity:1;transform:none}
+[data-credit-check][data-cc-ready] [data-cc-reveal]{opacity:0;transform:translate3d(0,2.222222cqi,0);transition:transform var(--motion-duration-default) var(--motion-ease-primary),opacity var(--reveal-opacity-duration, var(--reveal-opacity-duration-default)) linear}
+[data-credit-check][data-cc-ready] [data-cc-reveal].is-reveal{opacity:1;transform:none}
+[data-credit-check] :is([data-card-lift],.cc-card){--card-lift-distance:-.740741cqi;transition:translate var(--motion-duration-fast) var(--motion-ease-primary),box-shadow var(--motion-duration-fast) var(--motion-ease-primary)}
+@media(hover:hover) and (pointer:fine){[data-credit-check] :is([data-card-lift],.cc-card):hover{translate:0 var(--card-lift-distance);box-shadow:0 1.851852cqi 4.629630cqi rgba(51,66,255,.09)}}
+[data-credit-check] .cc-icon svg,[data-credit-check] .cc-flag svg,[data-credit-check] .cc-plus-position svg,[data-credit-check] .cc-close-position svg{display:block;width:100%;height:100%;max-width:none}
+[data-credit-check] .cc-icon>div,[data-credit-check] .cc-flag>div{width:100%;height:100%}
+[data-credit-check] .cc-add{pointer-events:auto}
+[data-credit-check] .cc-connector-live{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:visible;pointer-events:none}
+[data-credit-check][data-cc-connector-ready] .cc-connector{visibility:hidden}
+@media(prefers-reduced-motion:reduce){[data-credit-check][data-cc-ready] [data-cc-reveal]{opacity:1;transform:none;transition:none}[data-credit-check] :is([data-card-lift],.cc-card){translate:none;transition:none}}
+</style>

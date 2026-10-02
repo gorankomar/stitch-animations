@@ -15,6 +15,9 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Payment — Stitch Wallet | [PAYMENT-WALLET.md](../../src/embeds/PAYMENT-WALLET.md) |
 | Report Graphic Webflow component | [README.md](../../src/embeds/README.md) |
 | 3D Secure Authentication | [SECURE-AUTH.md](../../src/embeds/SECURE-AUTH.md) |
+| Credit Check | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
+| CC Card | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
+| CC Badge | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
 | User Onboarding | [USER-ONBOARDING.md](../../src/embeds/USER-ONBOARDING.md) |
 | Transaction history | [TRANSACTION-HISTORY.md](../../src/embeds/TRANSACTION-HISTORY.md) |
 
