@@ -182,10 +182,10 @@
                             "id": "bnpl-1-paint0_linear_0_27"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
@@ -317,10 +317,10 @@
                             "id": "bnpl-2-paint0_linear_0_36"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
@@ -450,10 +450,10 @@
                             "id": "bnpl-3-paint0_linear_0_29"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
@@ -625,10 +625,10 @@
                             "id": "bnpl-5-paint0_linear_0_26"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
@@ -760,10 +760,10 @@
                             "id": "bnpl-6-paint0_linear_0_25"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
@@ -914,10 +914,10 @@
                             "id": "bnpl-7-paint0_linear_0_23"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
@@ -1049,10 +1049,10 @@
                             "id": "bnpl-8-paint0_linear_0_28"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
@@ -1203,10 +1203,10 @@
                             "id": "bnpl-9-paint0_linear_0_20"
                           },
                           "settings": {
-                            "tag": "lineargradient",
+                            "tag": "linearGradient",
                             "visibility": true,
                             "dom": {
-                              "tag": "lineargradient"
+                              "tag": "linearGradient"
                             }
                           },
                           "children": [
