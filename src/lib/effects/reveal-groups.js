@@ -43,7 +43,7 @@ export function createRevealTrack(element, { frame = element.parentElement, mode
 }
 
 // Hard entrances overlap by default; explicit target/group stagger wins.
-export const HARD_REVEAL_STAGGER_MS = 250;
+export const HARD_REVEAL_STAGGER_MS = 100;
 export function resolveRevealStagger(mode, override, softDefault = 200) {
   return toMs(override, mode === 'hard' ? HARD_REVEAL_STAGGER_MS : softDefault);
 }

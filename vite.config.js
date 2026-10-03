@@ -81,14 +81,14 @@ export default defineConfig({
       : {
           input: {
             'feature-instant-virtual-cards': resolve(process.cwd(), 'src/embeds/instant-virtual-cards.js'),
+            'feature-income-verification': resolve(process.cwd(), 'src/embeds/income-verification.js'),
             'feature-email-statement': resolve(process.cwd(), 'src/embeds/email-statement.js'),
             'feature-real-time-approvals': resolve(process.cwd(), 'src/embeds/real-time-approvals.js'),
             'feature-buy-now-pay-later': resolve(process.cwd(), 'src/embeds/buy-now-pay-later.js'),
-            'feature-credit-check': resolve(process.cwd(), 'src/embeds/credit-check.js'),
             'feature-revolving-credit': resolve(process.cwd(), 'src/embeds/revolving-credit.js'),
+            'feature-credit-check': resolve(process.cwd(), 'src/embeds/credit-check.js'),
             'feature-user-onboarding': resolve(process.cwd(), 'src/embeds/user-onboarding.js'),
             'feature-consumer-verification': resolve(process.cwd(), 'src/embeds/consumer-verification.js'),
-            'feature-income-verification': resolve(process.cwd(), 'src/embeds/income-verification.js'),
             'feature-omnichannel-origination': resolve(process.cwd(), 'src/embeds/omnichannel-origination.js'),
             'feature-country-flags': resolve(process.cwd(), 'src/embeds/country-flags.js'),
             'feature-product-variety': resolve(process.cwd(), 'src/embeds/product-variety.js'),
