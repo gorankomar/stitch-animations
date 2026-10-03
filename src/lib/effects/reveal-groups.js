@@ -45,6 +45,9 @@ export function createRevealTrack(element, { frame = element.parentElement, mode
 // Hard entrances overlap by default; explicit target/group stagger wins.
 export const HARD_REVEAL_STAGGER_MS = 340;
 export function resolveRevealStagger(mode, override, softDefault = 200) {
+  // Controller timings are already milliseconds; attribute strings retain
+  // toMs's seconds/ms parsing. Re-parsing 200 as seconds stalls row reveals.
+  if (typeof override === 'number' && Number.isFinite(override)) return override;
   return toMs(override, mode === 'hard' ? HARD_REVEAL_STAGGER_MS : softDefault);
 }
 

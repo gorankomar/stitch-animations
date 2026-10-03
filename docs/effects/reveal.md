@@ -12,6 +12,8 @@ On each target, set `data-reveal`, `data-reveal-mode="soft|hard"`, and optionall
 
 `createRevealController({root})` retains its grouped `ensure()/cancel()/reset()` contract and existing delay/stagger/duration attributes. Hard targets use movement-only WAAPI tracks and preserve opacity. Hard Reveal defaults to 340ms between starts, so entrances overlap; explicit `data-reveal-stagger` on a target/group or controller timing overrides still take precedence. Soft Reveal keeps its existing global stagger. `cancel()` cancels their animations and restores inline transforms. Consumers own visibility/reduced-motion gating; use Animation Stage for more involved choreography.
 
+Numeric controller `timings.stagger` values are already milliseconds (for example, `200` means 200ms). Attribute strings retain the existing time parsing (`200ms` or `.2s`). Do not pass resolved numeric milliseconds through the string seconds parser. Regression coverage in `tests/reveal-groups.test.js` checks the full nine-row User Onboarding and three-layer Credit Check schedules, completion classes, repeated ensure and cancellation.
+
 ```html
 <div data-reveal-frame style="overflow:hidden">
   <div data-reveal data-reveal-mode="hard" data-reveal-direction="right-to-left">
