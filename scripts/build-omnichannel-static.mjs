@@ -21,7 +21,7 @@ const rows=[
 ];
 let inside='';
 for(const [i,file] of ['imgEllipse330','imgEllipse331','imgEllipse332'].entries()){
- let svg=(await fs.readFile(`${base}/${file}.svg`,'utf8')).replace(/\sid="[^"]+"/g,'').replace('<svg ', '<svg class="oo-ring-svg" aria-hidden="true" ');
+ let svg=(await fs.readFile(`${base}/${file}.svg`,'utf8')).replace(/\sid="[^"]+"/g,'').replace(/<circle /g, '<circle vector-effect="non-scaling-stroke" ').replace('<svg ', '<svg class="oo-ring-svg" aria-hidden="true" ');
  inside+=`<div class="oo-ring oo-ring-${i}" data-oo-ring="${i}">${svg}</div>`;
 }
 rows.forEach((items,i)=>{const itemMarkup=items.map(([file,label])=>`<div class="oo-item"><div class="oo-icon" data-oo-icon="${file}">${icon(file)}</div><p class="oo-label">${label}</p></div>`).join('');inside+=`<div class="oo-row oo-row-${i}" data-oo-row="${i}"><div class="oo-track" data-oo-track=""><div class="oo-sequence" data-oo-sequence="">${itemMarkup}</div></div></div>`});

@@ -1,0 +1,75 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "removeUnusedNS",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "convertShapeToPath",
+      "sortAttrs",
+      "sortDefsChildren",
+      "removeDimensions"
+    ]
+  },
+  "exception": "Retain root dimensions; add non-scaling-stroke as explicitly requested.",
+  "manifest": [
+    {
+      "name": "outer",
+      "width": "528",
+      "originalBytes": 1265,
+      "optimizedBytes": 1198,
+      "hash": "f6b78ae17d60f4426d6c81ca7eded567"
+    },
+    {
+      "name": "middle",
+      "width": "420",
+      "originalBytes": 1262,
+      "optimizedBytes": 1198,
+      "hash": "0b981a57065beb32fbd2a394333f70f6"
+    },
+    {
+      "name": "inner",
+      "width": "304",
+      "originalBytes": 1263,
+      "optimizedBytes": 1198,
+      "hash": "0c6f5ebf31fa505deaf62bff6ccb20a7"
+    },
+    {
+      "name": "badge",
+      "width": "152",
+      "originalBytes": 261,
+      "optimizedBytes": 285,
+      "hash": "be4402688cb5b405c360cced60252959"
+    }
+  ]
+}

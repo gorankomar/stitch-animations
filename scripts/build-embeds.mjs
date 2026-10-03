@@ -26,3 +26,5 @@ await import('./build-income-verification.mjs');
 await import('./build-instant-virtual-cards.mjs');
 
 await import('./build-dynamic-funding.mjs');
+
+await import('./build-3ds-enabled-security.mjs');

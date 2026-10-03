@@ -1,0 +1,18 @@
+{
+  "outer": {
+    "id": "6ac173cdbf32bbaed3c9dad6",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6ac173cdbf32bbaed3c9dad6_3ds-enabled-security-outer.svg"
+  },
+  "middle": {
+    "id": "6ac173cdcc5dc2993e93c7fc",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6ac173cdcc5dc2993e93c7fc_3ds-enabled-security-middle.svg"
+  },
+  "inner": {
+    "id": "6ac173cd2d4cbfcdcb08c0ed",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6ac173cd2d4cbfcdcb08c0ed_3ds-enabled-security-inner.svg"
+  },
+  "badge": {
+    "id": "6ac173cdb4e015b1ba65c3a9",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6ac173cdb4e015b1ba65c3a9_3ds-enabled-security-badge.svg"
+  }
+}

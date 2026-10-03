@@ -4,6 +4,7 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-3ds-enabled-security]', load: () => import('../embeds/3ds-enabled-security.js')},
   {selector: '[data-dynamic-funding]', load: () => import('../embeds/dynamic-funding.js')},
   {selector: '[data-instant-virtual-cards]', load: () => import('../embeds/instant-virtual-cards.js')},
   {selector: '[data-income-verification]', load: () => import('../embeds/income-verification.js')},

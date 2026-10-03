@@ -1,3 +1,4 @@
+import '../embeds/3ds-enabled-security.js';
 import '../embeds/dynamic-funding.js';
 import '../embeds/instant-virtual-cards.js';
 import '../embeds/income-verification.js';
