@@ -45,3 +45,7 @@ Icon consolidation (2026-10-02, draft): all reusable icon components moved to Ic
 ## Constant-stroke shared rings (2026-10-03)
 - At the user's explicit request during 3DS-enabled security creation, the draft portable runtime now uses the canonical Expanding Rings viewport-size mode: sizing:{designWidth:258,center:{x:129,y:129}}. Same diameters, radial progression, phases, fades and duration. Inline ring SVG strokes have vector-effect=non-scaling-stroke and explicit stroke-width=1. The outline stays 1 CSS px through growth and responsive sizing. Original artwork, rows, card motion and pointer follow remain.
 - Native SVG attributes and existing script-only runtime updated in the saved Webflow draft. Full existing browser regression passed, including mobile, full ring cycle and lifecycle/fallback checks. No loader URL updates or publication.
+
+## Middle delivery (2026-10-03)
+
+Merged release `8a6457b36b338d35f961877de66879c6c3edc795` is saved in both Webflow shared loaders. The component portable runtime is now empty; the shared resolver initializes motion. Desktop/mobile Preview and CDN bytes verified. User publication remains pending. See [release evidence](../../docs/releases/2026-10-03-3ds-enabled-security-middle.md).

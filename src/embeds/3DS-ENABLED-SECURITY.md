@@ -25,3 +25,7 @@
 - All 76 repository tests passed. Full shared build verified in `/tmp/3ds-shared-build`; dependency check retained Product Variety/wallet swap and Country Flags. Shared dist remains a future release concern; portable draft artifacts saved here.
 
 Completion stage: saved to Webflow (draft). No domains published.
+
+## Middle delivery (2026-10-03)
+
+Merged release `8a6457b36b338d35f961877de66879c6c3edc795` is saved in both Webflow shared loaders. The component portable runtime is now empty; the shared resolver initializes motion. Desktop/mobile Preview and CDN bytes verified. User publication remains pending. See [release evidence](../../docs/releases/2026-10-03-3ds-enabled-security-middle.md).
