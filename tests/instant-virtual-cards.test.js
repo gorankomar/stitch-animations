@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { revealOffset, createRevealTrack } from '../src/lib/effects/reveal-groups.js';
-import { virtualCardState } from '../src/embeds/instant-virtual-cards.js';
+import { virtualCardState, virtualCardTimeline } from '../src/embeds/instant-virtual-cards.js';
 
 test('Hard Reveal fully clears all four frame edges', () => {
   const frame = { left: 10, top: 20, right: 550, bottom: 298 };
@@ -19,37 +19,39 @@ test('Hard Reveal preserves opacity, remeasures and restores wrapper transforms'
   width = 800; track.measure(); track.render(0); assert.match(element.style.transform, /749px/);
   track.dispose(); assert.equal(element.style.transform, ''); assert.equal(element.style.opacity, '.8');
 });
-test('Cards and controls enter sequentially before the cursor enables and counts', () => {
+test('Cards enter once and the cursor makes one continuous visit per cycle', () => {
+  const timing = virtualCardTimeline(1);
   assert.deepEqual(virtualCardState(.5, 1).reveals, [.5, 0, 0, 0]);
-  const entered = virtualCardState(4, 1);
-  assert.deepEqual(entered.reveals, [1, 1, 1, 1]);
-  assert.equal(entered.enabled, false); assert.equal(entered.expansion, 0); assert.equal(entered.count, 0);
+  assert.deepEqual(virtualCardState(4, 1).reveals, [1, 1, 1, 1]);
+  assert.equal(virtualCardState(4, 1).enabled, false);
   assert.equal(virtualCardState(4.3, 1).behind, true);
   assert.equal(virtualCardState(5.2, 1).pressed, true);
   assert.equal(virtualCardState(5.75, 1).count, .5);
-  const final = virtualCardState(8, 1);
-  assert.equal(final.enabled, true); assert.equal(final.expansion, 1); assert.equal(final.count, 1); assert.equal(final.cursorOpacity, 0);
+  for (const t of [5.35, 6, timing.holdEnd, timing.off, timing.exitStart]) {
+    const state = virtualCardState(t, 1);
+    assert.equal(state.cursorOpacity, 1); assert.equal(state.behind, false);
+  }
+  assert.equal(virtualCardState(timing.off, 1).enabled, false);
+  assert.equal(virtualCardState(timing.off, 1).pressed, true);
+  assert.equal(virtualCardState(timing.off + .5, 1).expansion, .5);
+  const rest = virtualCardState(timing.exitEnd, 1);
+  assert.equal(rest.behind, true); assert.equal(rest.count, 0); assert.equal(rest.expansion, 0);
   const reduced = virtualCardState(0, 1, true);
-  assert.deepEqual(reduced.reveals, [1, 1, 1, 1]); assert.equal(reduced.count, 1); assert.equal(reduced.cursorOpacity, 0);
+  assert.equal(reduced.count, 1); assert.equal(reduced.cursorOpacity, 0);
 });
 
-test('control loop brings the cursor back to disable the toggle and never replays the entrances', () => {
-  for (const t of [4, 4.3, 5.2, 5.75, 6.5, 8, 9.5, 10.5, 11.99]) {
-    const first = virtualCardState(t, 1);
-    const second = virtualCardState(t + 10, 1);
-    for (const key of ['enabled','expansion','count','cursorOpacity','behind','pressed']) {
-      if (typeof first[key] === 'number') assert.ok(Math.abs(second[key] - first[key]) < 1e-10);
-      else assert.equal(second[key], first[key]);
+test('cursor holds 1.5 seconds, rests concealed for 3 seconds and repeats the original entrance', () => {
+  const duration = .77, timing = virtualCardTimeline(duration);
+  assert.ok(Math.abs((timing.holdEnd - timing.holdStart) * duration - 1.5) < 1e-10);
+  assert.ok(Math.abs((4 + timing.period - timing.exitEnd) * duration - 3) < 1e-10);
+  for (const phase of [4, 4.3, 4.8, 5.25, timing.holdEnd, timing.off, timing.exitEnd + 1]) {
+    const first = virtualCardState(phase * duration, duration);
+    const repeat = virtualCardState((phase + timing.period) * duration, duration);
+    for (const key of ['cursorOpacity', 'behind', 'enabled', 'expansion', 'count', 'pressed']) {
+      if (typeof first[key] === 'number') assert.ok(Math.abs(first[key] - repeat[key]) < 1e-10);
+      else assert.equal(first[key], repeat[key]);
     }
-    assert.deepEqual(second.reveals, [1,1,1,1]);
-  }
-  const collapsing = virtualCardState(9.5, 1);
-  assert.ok(Math.abs(collapsing.cursorOpacity - .4) < 1e-10); assert.equal(collapsing.expansion, .5); assert.equal(collapsing.count, 1);
-  const reset = virtualCardState(10, 1);
-  assert.equal(reset.expansion, 0); assert.equal(reset.count, 0); assert.equal(reset.enabled, false);
-  for (const t of [13.999999,14,14.000001]) {
-    const seam = virtualCardState(t, 1);
-    assert.equal(seam.behind,true); assert.equal(seam.expansion,0); assert.equal(seam.count,0);
+    assert.deepEqual(repeat.reveals, [1, 1, 1, 1]);
   }
 });
 
@@ -65,7 +67,7 @@ function fixture({ reduced = false, failObserver = false } = {}) {
   amount.textContent = '$3,650'; toggle.firstElementChild = thumb; cursor.firstElementChild = node();
   const reveals = [node(),node(),node(),node()];
   root.matches = s => s === '[data-instant-virtual-cards]';
-  const nodes = { '.ivc-frame': frame, '.ivc-details': details, '.ivc-amount': amount, '[data-ivc-toggle="limit"] [data-stitch-toggle]': toggle, '.ivc-cursor': cursor };
+  const nodes = { '.ivc-frame': frame, '.ivc-details': details, '.ivc-amount': amount, '[data-ivc-toggle="limit"] [data-stitch-toggle]': toggle, '.ivc-cursor': cursor, '.ivc-front': frame };
   root.querySelector = s => nodes[s]; root.querySelectorAll = s => s === '[data-ivc-reveal]' ? reveals : [];
   const media = { matches: reduced, addEventListener(k,fn) { listeners.set(k,fn); }, removeEventListener(k) { listeners.delete(k); } };
   globalThis.document = { hidden: false, documentElement: {}, addEventListener(k,fn) { listeners.set(k,fn); }, removeEventListener(k) { listeners.delete(k); } };
@@ -100,52 +102,29 @@ test('setup failure preserves fully visible cards and spending amount', () => {
   finally { console.error=log;f.restore(); }
 });
 
- test('cursor returns for both toggle clicks on every repeated cycle', () => {
-  for (const cycle of [0, 1, 2, 5]) {
-    for (const click of [5.25, 9]) {
-      const state = virtualCardState(click + cycle * 10, 1);
-      assert.equal(state.cursorOpacity, 1);
-      assert.equal(state.pressed, true);
-      assert.equal(state.behind, false);
-    }
-    assert.equal(virtualCardState(11 + cycle * 10, 1).behind, true);
-  }
-});
-
-test('cursor exits fade linearly and loops retain the entrance with a longer rest', () => {
-  assert.equal(virtualCardState(4, 1).cursorOpacity, 1);
-  assert.equal(virtualCardState(4.3, 1).behind, true);
-  for (const start of [5.45, 9.2]) {
-    assert.equal(virtualCardState(start, 1).cursorOpacity, 1);
-    assert.ok(Math.abs(virtualCardState(start + .25, 1).cursorOpacity - .5) < 1e-10);
-    assert.equal(virtualCardState(start + .5, 1).cursorOpacity, 0);
-  }
-  for (const t of [0, 3.99, 6, 7, 10, 12, 13.99]) assert.equal(virtualCardState(t, 1).cursorOpacity, 0);
-  const duration = .77, period = 8 * duration + 2;
-  for (const phase of [4, 4.3, 4.8, 5.25]) {
-    const first = virtualCardState(phase * duration, duration);
-    const repeat = virtualCardState(phase * duration + period, duration);
-    assert.ok(Math.abs(first.cursorOpacity - repeat.cursorOpacity) < 1e-10);
-    assert.equal(first.behind, repeat.behind);
-  }
-});
-
-test('rendered cursor exits stay within a small down-right movement on repeated loops', () => {
+test('rendered cursor holds visibly, revisits the toggle, then returns diagonally behind the card', () => {
   const f = fixture();
   try {
     const dispose = init(f.root); f.visible(); f.tick(100);
-    let fadingFrames = 0;
+    const duration = .77, timing = virtualCardTimeline(duration);
+    const holds = [], exits = [];
     for (let ms = 10; ms <= 18000; ms += 10) {
       f.tick(100 + ms);
-      const opacity = Number(f.cursor.style.opacity);
-      if (opacity > 0 && opacity < 1) {
-        fadingFrames++;
-        const [x, y] = f.cursor.style.transform.match(/translate3d\(([^,]+),([^,]+),/).slice(1).map(parseFloat);
-        assert.ok(x >= 334.8 - 1e-6 && x <= 352.8 + 1e-6);
-        assert.ok(y >= 144.56 - 1e-6 && y <= 158.56 + 1e-6);
+      const state = virtualCardState(ms / 1000, duration);
+      const point = f.cursor.style.transform.match(/translate3d\(([^,]+),([^,]+),/).slice(1).map(parseFloat);
+      if (state.cycleTime > timing.holdStart && state.cycleTime < timing.holdEnd) {
+        holds.push(point); assert.equal(Number(f.cursor.style.opacity), 1);
         assert.equal(f.cursor.style.zIndex, '4');
       }
+      if (state.cycleTime > timing.exitStart && state.cycleTime < timing.exitEnd) {
+        exits.push(point);
+        // Straight-line interpolation between toggle and concealed resting point.
+        assert.ok(Math.abs((point[0] - 334.8) / 15.2 - (point[1] - 144.56) / 35.44) < 1e-6);
+        assert.equal(Number(f.cursor.style.opacity), 1);
+      }
     }
-    assert.ok(fadingFrames > 100); dispose();
+    assert.ok(holds.length > 200); assert.ok(exits.length > 100);
+    assert.ok(holds.every(([x,y]) => Math.abs(x - 366.8) < 1e-6 && Math.abs(y - 182.56) < 1e-6));
+    dispose();
   } finally { f.restore(); }
 });

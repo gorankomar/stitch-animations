@@ -9,24 +9,32 @@ import { getDefaultDurationMs } from '../lib/easing.js';
 export const SMALL_OFF = '6d33b6ed-2ff0-ac4e-61ec-7cd7a7cc1f46';
 export const SMALL_ON = '68174060-c1d7-47b9-5e20-0e9fe0a59faa';
 
+export function virtualCardTimeline(duration) {
+  const holdStart = 5.95;
+  const holdEnd = holdStart + 1.5 / duration;
+  const off = holdEnd + .65;
+  const exitStart = off + .2;
+  const exitEnd = exitStart + 1;
+  return { holdStart, holdEnd, off, exitStart, exitEnd, period: exitEnd - 4 + 3 / duration };
+}
+
 export function virtualCardState(time, duration, reduced = false) {
   const t = time / duration;
-  // Entrances run once; two explicit extra seconds extend the rest.
-  const cycleTime = t < 4 ? t : 4 + (t - 4) % (8 + 2 / duration);
-  const expansion = reduced ? 1 : cycleTime < 9
-    ? clampProgress(cycleTime - 5.25) : 1 - clampProgress(cycleTime - 9);
+  const timing = virtualCardTimeline(duration);
+  // One continuous cursor visit, followed by three seconds concealed rest.
+  const cycleTime = t < 4 ? t : 4 + (t - 4) % timing.period;
+  const expansion = reduced ? 1 : cycleTime < timing.off
+    ? clampProgress(cycleTime - 5.25) : 1 - clampProgress(cycleTime - timing.off);
   return {
     cycleTime,
     reveals: [0, 1, 2, 3].map(index => reduced ? 1 : clampProgress(t - index)),
-    enabled: reduced || (cycleTime >= 5.25 && cycleTime < 9),
+    enabled: reduced || (cycleTime >= 5.25 && cycleTime < timing.off),
     expansion,
-    count: reduced ? 1 : cycleTime >= 10 ? 0 : clampProgress(cycleTime - 5.25),
-    // Entrance is concealed by the card; exits use a short linear fade.
-    cursorOpacity: reduced || cycleTime < 4 ? 0 : cycleTime < 8.15
-      ? 1 - clampProgress((cycleTime - 5.45) / .5)
-      : 1 - clampProgress((cycleTime - 9.2) / .5),
-    behind: cycleTime < 4.65 || (cycleTime >= 7.95 && cycleTime < 8.65) || cycleTime >= 9.7,
-    pressed: (cycleTime >= 5.15 && cycleTime < 5.35) || (cycleTime >= 8.9 && cycleTime < 9.1)
+    count: reduced ? 1 : cycleTime >= timing.off + 1 ? 0 : clampProgress(cycleTime - 5.25),
+    cursorOpacity: reduced || cycleTime < 4 ? 0 : 1,
+    behind: cycleTime < 4.65 || cycleTime >= timing.exitEnd,
+    exiting: cycleTime >= timing.exitStart,
+    pressed: (cycleTime >= 5.15 && cycleTime < 5.35) || (cycleTime >= timing.off - .1 && cycleTime < timing.off + .1)
   };
 }
 
@@ -89,16 +97,23 @@ export const init = stageInitializer('[data-instant-virtual-cards]', root => {
       const bounds = frame.getBoundingClientRect(), box = toggle.getBoundingClientRect();
       const scale = bounds.width / 540;
       const target = { x: (box.left + box.width * .62 - bounds.left) / scale, y: (box.top + box.height * .52 - bounds.top) / scale };
+      const timing = virtualCardTimeline(duration);
+      const rest = { x: 350, y: 180 };
+      const hover = { x: target.x + 32, y: target.y + 38 };
       const path = [
-        { time: 4, x: 350, y: 180 }, { time: 4.65, x: 415, y: 166 },
+        { time: 4, ...rest }, { time: 4.65, x: 415, y: 166 },
         { time: 5.05, ...target }, { time: 5.45, ...target },
-        { time: 5.95, x: target.x + 18, y: target.y + 14 },
-        // Reposition while invisible; every entrance starts behind the card.
-        { time: 7.95, x: 350, y: 180 }, { time: 8.15, x: 350, y: 180 },
-        { time: 8.65, x: 415, y: 166 }, { time: 8.85, ...target },
-        { time: 9.2, ...target }, { time: 9.7, x: target.x + 18, y: target.y + 14 }
+        { time: timing.holdStart, ...hover }, { time: timing.holdEnd, ...hover },
+        { time: timing.off - .15, ...target }, { time: timing.exitStart, ...target },
+        { time: timing.exitEnd, ...rest }
       ];
-      cursor.render({ ...sampleCursor(path, state.cycleTime, ease), opacity: state.cursorOpacity, pressed: state.pressed, behind: state.behind });
+      const position = sampleCursor(path, state.cycleTime, ease);
+      // Drop below the card just before crossing its right edge, keeping the
+      // diagonal return continuous and clear of the now-collapsing box.
+      const front = root.querySelector('.ivc-front').getBoundingClientRect();
+      const frontEdge = (front.right - bounds.left) / scale;
+      cursor.render({ ...position, opacity: state.cursorOpacity, pressed: state.pressed,
+        behind: state.behind || (state.exiting && position.x <= frontEdge + 6) });
       const shouldFollow = !reduced && state.reveals[1] === 1 && !document.hidden && matchMedia('(hover: hover) and (pointer: fine)').matches;
       if (following !== shouldFollow || (dirty && following)) {
         disposeFollow(); following = shouldFollow;
