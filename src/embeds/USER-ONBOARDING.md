@@ -11,6 +11,8 @@
 - Lifecycle: visibility and document visibility pause loading and entrance tracks; fine-pointer gating controls Pointer Follow. Reduced motion restores the static illustration. Cleanup disconnects observers, cancels animations, and restores row styles.
 - Verification: 28 repository tests passed; full shared build and shared-release inclusion check passed. Browser checks cover entrance properties/easing, pointer response, looping/loading pause, reduced motion, desktop/mobile scaling, repeated instances/cleanup, and JavaScript-disabled fallback. Saved Webflow preview was checked at desktop and mobile widths. Draft only; no publication or site-wide loader change.
 
+Reveal timing correction (2026-10-03): the shared controller preserves numeric millisecond staggers. The prior conversion treated the supplied 200ms stagger as 200 seconds, leaving only the first row visible for minutes. The nine rows now start at 0–1600ms in 200ms steps. Local browser verification confirmed all nine rows reach opacity 1; regression tests cover the scheduled delays. No native appearance or motion tokens changed. Webflow loader delivery is pending.
+
 ## Shared Window Header
 
 Webflow component `ddfe87bb-c2ac-4af5-3576-dab6fd3ab680` is extracted from the existing Secure header and is nested in both 3D Secure Authentication and User Onboarding. It retains `secure_header`, `secure_dots`, and `secure_dot` native styles. Preview equivalents live in `window-header-preview.css` and `window-header-markup.html`.
