@@ -42,6 +42,12 @@ export function createRevealTrack(element, { frame = element.parentElement, mode
   };
 }
 
+// Hard entrances overlap by default; explicit target/group stagger wins.
+export const HARD_REVEAL_STAGGER_MS = 100;
+export function resolveRevealStagger(mode, override, softDefault = 200) {
+  return toMs(override, mode === 'hard' ? HARD_REVEAL_STAGGER_MS : softDefault);
+}
+
 const REVEAL_SELECTOR = '[data-reveal]';
 const REVEAL_GROUP_SELECTOR = '[data-reveal-group]';
 const REVEAL_CLASS = 'is-reveal';
@@ -155,7 +161,8 @@ export function createRevealController(options = {}) {
       if (!revealBuffer.length) return;
       let localCursor = 0;
       revealBuffer.forEach((node) => {
-        const elementStagger = toMs(node.stagger, group.stagger);
+        const mode = readRevealAttr(node.el, 'revealMode') || options.mode || 'soft';
+        const elementStagger = resolveRevealStagger(mode, node.stagger ?? options.timings?.stagger, group.stagger);
         const delayFromGroup = localCursor + node.delay;
         const revealDelay = cursor + delayFromGroup;
         const duration = applyRevealOverrides(node.el, timings);
@@ -222,9 +229,6 @@ export function ensureSectionReveal(section, options = {}) {
     root: section,
     ...options
   };
-  if (!controllerOptions.timings) {
-    controllerOptions.timings = resolveRevealTimings();
-  }
   controller = createRevealController(controllerOptions);
   SECTION_CACHE.set(section, controller);
   return controller;
