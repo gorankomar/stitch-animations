@@ -376,6 +376,17 @@
       "src/lib/effects/code-scroll.js"
     ]
   },
+  "src/embeds/email-statement.js": {
+    "file": "feature-email-statement.js",
+    "name": "feature-email-statement",
+    "src": "src/embeds/email-statement.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_reveal-groups.TjVq1IXZ.js",
+      "_animation-stage.Bp3UDTgL.js"
+    ]
+  },
   "src/embeds/financial-graphic.js": {
     "file": "feature-financial.js",
     "name": "feature-financial",
@@ -684,6 +695,7 @@
       "_reveal-groups.TjVq1IXZ.js"
     ],
     "dynamicImports": [
+      "src/embeds/email-statement.js",
       "src/embeds/revolving-credit.js",
       "src/embeds/real-time-approvals.js",
       "src/embeds/buy-now-pay-later.js",
@@ -721,6 +733,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/email-statement.js",
       "src/embeds/real-time-approvals.js",
       "src/embeds/buy-now-pay-later.js",
       "src/embeds/credit-check.js",
@@ -752,10 +765,10 @@
       "_auto-reveal.B8Z3XL9A.js",
       "_zoom-lens.C8Anf7pm.js",
       "src/embeds/revolving-credit.js",
+      "_reveal-groups.TjVq1IXZ.js",
       "_animation-stage.Bp3UDTgL.js",
       "_easing.CJR8aMe3.js",
       "_motion.IWie3mGq.js",
-      "_reveal-groups.TjVq1IXZ.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js",

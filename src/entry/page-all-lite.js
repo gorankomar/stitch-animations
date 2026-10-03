@@ -4,6 +4,7 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-email-statement]', load: () => import('../embeds/email-statement.js')},
   {selector: '[data-revolving-credit]', load: () => import('../embeds/revolving-credit.js')},
   {selector: '[data-real-time-approvals]', load: () => import('../embeds/real-time-approvals.js')},
   {selector: '[data-buy-now-pay-later]', load: () => import('../embeds/buy-now-pay-later.js')},

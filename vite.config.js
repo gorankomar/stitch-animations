@@ -80,8 +80,10 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-email-statement': resolve(process.cwd(), 'src/embeds/email-statement.js'),
             'feature-real-time-approvals': resolve(process.cwd(), 'src/embeds/real-time-approvals.js'),
             'feature-buy-now-pay-later': resolve(process.cwd(), 'src/embeds/buy-now-pay-later.js'),
+            'feature-revolving-credit': resolve(process.cwd(), 'src/embeds/revolving-credit.js'),
             'feature-credit-check': resolve(process.cwd(), 'src/embeds/credit-check.js'),
             'feature-user-onboarding': resolve(process.cwd(), 'src/embeds/user-onboarding.js'),
             'feature-consumer-verification': resolve(process.cwd(), 'src/embeds/consumer-verification.js'),
