@@ -75,7 +75,7 @@ function fixture({ reduced = false, failObserver = false } = {}) {
   globalThis.IntersectionObserver = class { constructor(fn) { if(failObserver) throw Error('setup failure');this.fn=fn;observers.push(this); } observe() {} disconnect() { this.disconnected = true; } };
   globalThis.ResizeObserver = class { observe() {} disconnect() {} };
   globalThis.requestAnimationFrame = fn => { frames.set(++next,fn); return next; };globalThis.cancelAnimationFrame = id => frames.delete(id);
-  return { root, amount, details, reveals, media, frames, observers, listeners,
+  return { root, amount, details, cursor, reveals, media, frames, observers, listeners,
     visible(v=true) { observers.at(-1).fn([{ isIntersecting:v, intersectionRatio:v?1:0 }]); },
     tick(now) { const [id,fn]=frames.entries().next().value;frames.delete(id);fn(now); },
     restore() { for(const [key,value] of saved) value === undefined ? delete globalThis[key] : globalThis[key]=value; } };
@@ -128,4 +128,24 @@ test('cursor exits fade linearly and loops retain the entrance with a longer res
     assert.ok(Math.abs(first.cursorOpacity - repeat.cursorOpacity) < 1e-10);
     assert.equal(first.behind, repeat.behind);
   }
+});
+
+test('rendered cursor exits stay within a small down-right movement on repeated loops', () => {
+  const f = fixture();
+  try {
+    const dispose = init(f.root); f.visible(); f.tick(100);
+    let fadingFrames = 0;
+    for (let ms = 10; ms <= 18000; ms += 10) {
+      f.tick(100 + ms);
+      const opacity = Number(f.cursor.style.opacity);
+      if (opacity > 0 && opacity < 1) {
+        fadingFrames++;
+        const [x, y] = f.cursor.style.transform.match(/translate3d\(([^,]+),([^,]+),/).slice(1).map(parseFloat);
+        assert.ok(x >= 334.8 - 1e-6 && x <= 352.8 + 1e-6);
+        assert.ok(y >= 144.56 - 1e-6 && y <= 158.56 + 1e-6);
+        assert.equal(f.cursor.style.zIndex, '4');
+      }
+    }
+    assert.ok(fadingFrames > 100); dispose();
+  } finally { f.restore(); }
 });
