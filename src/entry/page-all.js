@@ -1,3 +1,6 @@
+import '../embeds/instant-virtual-cards.js';
+import '../embeds/income-verification.js';
+import '../embeds/email-statement.js';
 import '../embeds/real-time-approvals.js';
 import '../embeds/buy-now-pay-later.js';
 import '../embeds/credit-check.js';
@@ -70,3 +73,5 @@ ready(() => {
     initWindowGraphic
   ].forEach((fn) => fn(document));
 });
+
+import '../embeds/revolving-credit.js';

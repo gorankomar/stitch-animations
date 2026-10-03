@@ -16,3 +16,11 @@ await import('./build-user-onboarding-embed.mjs');
 await import('./build-credit-check-embed.mjs');
 await import('./build-buy-now-pay-later-embed.mjs');
 await import('./build-real-time-approvals-embed.mjs');
+
+await import('./build-revolving-credit-embed.mjs');
+
+await import('./build-email-statement.mjs');
+
+await import('./build-income-verification.mjs');
+
+await import('./build-instant-virtual-cards.mjs');

@@ -1,7 +1,7 @@
 const {chromium}=await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
-const browser=await chromium.launch({headless:true});
+const browser=await chromium.launch({headless:true,...(process.env.BROWSER_EXECUTABLE?{executablePath:process.env.BROWSER_EXECUTABLE}:{})});
 const page=await browser.newPage({viewport:{width:1000,height:850}});
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.goto((process.env.OMNICHANNEL_PREVIEW_URL || 'http://127.0.0.1:5173/omnichannel-origination.html'));

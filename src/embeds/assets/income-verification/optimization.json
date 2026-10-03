@@ -1,0 +1,113 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "removeUnusedNS",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "convertShapeToPath",
+      "sortAttrs",
+      "sortDefsChildren",
+      "removeDimensions"
+    ]
+  },
+  "exceptions": [
+    "removeXMLNS",
+    "cleanupIds",
+    "removeHiddenElems",
+    "removeViewBox",
+    "removeTitle",
+    "removeDesc",
+    "mergePaths",
+    "collapseGroups",
+    "removeEmptyContainers",
+    "removeDimensions: root dimensions restored during integration"
+  ],
+  "manifest": [
+    {
+      "file": "imgBarChart08.svg",
+      "originalBytes": 537,
+      "optimizedBytes": 388
+    },
+    {
+      "file": "imgClock.svg",
+      "originalBytes": 610,
+      "optimizedBytes": 433
+    },
+    {
+      "file": "imgEllipse330.svg",
+      "originalBytes": 284,
+      "optimizedBytes": 246
+    },
+    {
+      "file": "imgEllipse331.svg",
+      "originalBytes": 284,
+      "optimizedBytes": 246
+    },
+    {
+      "file": "imgEllipse332.svg",
+      "originalBytes": 284,
+      "optimizedBytes": 246
+    },
+    {
+      "file": "imgFile06.svg",
+      "originalBytes": 1014,
+      "optimizedBytes": 556
+    },
+    {
+      "file": "imgFillNo.svg",
+      "originalBytes": 1278,
+      "optimizedBytes": 735
+    },
+    {
+      "file": "imgFingerprint04.svg",
+      "originalBytes": 916,
+      "optimizedBytes": 477
+    },
+    {
+      "file": "imgLuggage02.svg",
+      "originalBytes": 1746,
+      "optimizedBytes": 853
+    },
+    {
+      "file": "imgSafe.svg",
+      "originalBytes": 1107,
+      "optimizedBytes": 601
+    },
+    {
+      "file": "imgStar01.svg",
+      "originalBytes": 1879,
+      "optimizedBytes": 748
+    }
+  ]
+}

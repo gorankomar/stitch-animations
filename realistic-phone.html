@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Realistic Phone Experiment</title>
+  <link rel="stylesheet" href="/src/embeds/realistic-phone-native.css">
+  <link rel="stylesheet" href="/src/embeds/realistic-phone.css">
+  <style>body{font-family:system-ui,sans-serif;margin:2rem;background:#f6f6f8}main{display:flex;align-items:flex-start;gap:3rem;flex-wrap:wrap}.sample{max-width:100%}label{display:block;margin-bottom:1rem}</style>
+</head>
+<body>
+  <h1>Realistic phone experiment</h1>
+  <label><input id="status" type="checkbox" checked> Show status bar</label>
+  <main></main>
+  <script type="module">
+    const markup = await (await fetch('/src/embeds/realistic-phone-markup.html')).text();
+    const stage = document.querySelector('main');
+    for (const width of [160, 245, 400]) {
+      const sample = document.createElement('div');
+      sample.className = 'sample';
+      sample.style.width = `${width}px`;
+      sample.innerHTML = `<p>${width}px parent width</p>${markup}`;
+      stage.append(sample);
+    }
+    for (const [id, attribute] of [['status','data-rp-show-status']]) {
+      document.getElementById(id).addEventListener('change', event => {
+        document.querySelectorAll('[data-rp-phone]').forEach(phone => phone.setAttribute(attribute, String(event.target.checked)));
+      });
+    }
+    await import('/src/embeds/realistic-phone-clock.js');
+  </script>
+</body>
+</html>
