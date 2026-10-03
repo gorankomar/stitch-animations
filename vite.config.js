@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-instant-virtual-cards': resolve(process.cwd(), 'src/embeds/instant-virtual-cards.js'),
             'feature-income-verification': resolve(process.cwd(), 'src/embeds/income-verification.js'),
             'feature-email-statement': resolve(process.cwd(), 'src/embeds/email-statement.js'),
             'feature-real-time-approvals': resolve(process.cwd(), 'src/embeds/real-time-approvals.js'),

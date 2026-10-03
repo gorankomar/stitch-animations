@@ -9,7 +9,7 @@
   --reveal-stagger-default: 200ms;
 }
 
-[data-reveal]:not([data-reveal="false"]) {
+[data-reveal]:not([data-reveal="false"]):not([data-reveal-mode="hard"]) {
   opacity: 0;
   --reveal-transform: translate3d(0, var(--reveal-offset, var(--reveal-offset-default)), 0);
   --reveal-transform-active: translate3d(0, 0, 0);
@@ -20,7 +20,7 @@
   will-change: opacity, transform;
 }
 
-[data-reveal]:not([data-reveal="false"]).is-reveal, html.wf-design-mode [data-reveal]:not([data-reveal="false"]) {
+[data-reveal]:not([data-reveal="false"]):not([data-reveal-mode="hard"]).is-reveal, html.wf-design-mode [data-reveal]:not([data-reveal="false"]):not([data-reveal-mode="hard"]) {
   opacity: 1;
   transform: var(--reveal-transform-active);
 }

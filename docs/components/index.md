@@ -10,6 +10,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Omnichannel Origination | [OMNICHANNEL-ORIGINATION.md](../../src/embeds/OMNICHANNEL-ORIGINATION.md) |
 | Real-Time Approvals | [REAL-TIME-APPROVALS.md](../../src/embeds/REAL-TIME-APPROVALS.md) |
 | Real-Time Balance Management | [BALANCE.md](../../src/embeds/BALANCE.md) |
+| Instant Virtual Cards | [INSTANT-VIRTUAL-CARDS.md](../../src/embeds/INSTANT-VIRTUAL-CARDS.md) |
 | Card Controls | [CARD-CONTROLS.md](../../src/embeds/CARD-CONTROLS.md) |
 | Collections — Window Stack | [COLLECTIONS.md](../../src/embeds/COLLECTIONS.md) |
 | Country flags | [COUNTRY-FLAGS.md](../../src/embeds/COUNTRY-FLAGS.md) |
