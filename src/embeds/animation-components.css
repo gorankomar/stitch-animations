@@ -1,0 +1,17 @@
+/* Global Styles → Animation Components. Reuse this class on a native background block. */
+.features-graphic_grid-bg {
+  --grid-size: 8cqi;
+  --grid-line: 1px;
+  background: radial-gradient(140% 120% at 0% 0%, #e6e6e6 0%, rgba(251, 251, 251, .35) 55%, rgba(251, 251, 251, 0) 100%);
+  -webkit-mask-image: repeating-linear-gradient(to right, #000 0, #000 var(--grid-line), transparent var(--grid-line), transparent var(--grid-size)), repeating-linear-gradient(to bottom, #000 0, #000 var(--grid-line), transparent var(--grid-line), transparent var(--grid-size));
+  -webkit-mask-position: 50% 50%, 50% 50%;
+  mask-image: repeating-linear-gradient(to right, #000 0, #000 var(--grid-line), transparent var(--grid-line), transparent var(--grid-size)), repeating-linear-gradient(to bottom, #000 0, #000 var(--grid-line), transparent var(--grid-line), transparent var(--grid-size));
+  mask-position: 50% 50%, 50% 50%;
+}
+/* Email Statement uses one full-frame grid. Outer geometry stays component-scoped. */
+.es-container .features-graphic_grid-bg {position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+/* Transient SVG overlay; the reusable check icon is untouched underneath. */
+.es-check {position:relative}
+.es-check .es-send-animation {position:absolute;inset:0;display:block;width:100%;height:100%;overflow:visible;pointer-events:none}
+.es-check[data-es-sending]>:not(.es-send-animation) {visibility:hidden}
