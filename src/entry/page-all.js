@@ -1,3 +1,4 @@
+import '../embeds/instant-virtual-cards.js';
 import '../embeds/income-verification.js';
 import '../embeds/email-statement.js';
 import '../embeds/real-time-approvals.js';
