@@ -4,6 +4,10 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-instant-virtual-cards]', load: () => import('../embeds/instant-virtual-cards.js')},
+  {selector: '[data-email-statement]', load: () => import('../embeds/email-statement.js')},
+  {selector: '[data-revolving-credit]', load: () => import('../embeds/revolving-credit.js')},
+  {selector: '[data-income-verification]', load: () => import('../embeds/income-verification.js')},
   {selector: '[data-real-time-approvals]', load: () => import('../embeds/real-time-approvals.js')},
   {selector: '[data-buy-now-pay-later]', load: () => import('../embeds/buy-now-pay-later.js')},
   {selector: '[data-credit-check]', load: () => import('../embeds/credit-check.js')},

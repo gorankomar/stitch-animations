@@ -1,0 +1,1 @@
+(()=>{if(window.__rpPhoneClock)return;window.__rpPhoneClock=true;const format=new Intl.DateTimeFormat(undefined,{hour:"2-digit",minute:"2-digit",hourCycle:"h23"});const update=()=>{document.querySelectorAll("[data-rp-time]").forEach(node=>{node.textContent=format.format(new Date());});};update();document.addEventListener("visibilitychange",update);setInterval(update,1000);})();

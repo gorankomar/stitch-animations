@@ -4,17 +4,22 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 
 | Component | Notes |
 | --- | --- |
+| Email Statement | [EMAIL-STATEMENT.md](../../src/embeds/EMAIL-STATEMENT.md) |
 | Consumer Verification Label / Center Label | [CONSUMER-VERIFICATION.md](../../src/embeds/CONSUMER-VERIFICATION.md) |
 | Consumer Verification | [CONSUMER-VERIFICATION.md](../../src/embeds/CONSUMER-VERIFICATION.md) |
+| Income Verification / Verification Document Item | [INCOME-VERIFICATION.md](../../src/embeds/INCOME-VERIFICATION.md) |
 | Omnichannel Origination | [OMNICHANNEL-ORIGINATION.md](../../src/embeds/OMNICHANNEL-ORIGINATION.md) |
 | Real-Time Approvals | [REAL-TIME-APPROVALS.md](../../src/embeds/REAL-TIME-APPROVALS.md) |
 | Real-Time Balance Management | [BALANCE.md](../../src/embeds/BALANCE.md) |
+| Instant Virtual Cards | [INSTANT-VIRTUAL-CARDS.md](../../src/embeds/INSTANT-VIRTUAL-CARDS.md) |
 | Card Controls | [CARD-CONTROLS.md](../../src/embeds/CARD-CONTROLS.md) |
 | Collections — Window Stack | [COLLECTIONS.md](../../src/embeds/COLLECTIONS.md) |
 | Country flags | [COUNTRY-FLAGS.md](../../src/embeds/COUNTRY-FLAGS.md) |
 | Create New Card | [CREATE-NEW-CARD.md](../../src/embeds/CREATE-NEW-CARD.md) |
 | Buy Now Pay Later | [BUY-NOW-PAY-LATER.md](../../src/embeds/BUY-NOW-PAY-LATER.md) |
 | Credit Check | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
+| Revolving Credit | [REVOLVING-CREDIT.md](../../src/embeds/REVOLVING-CREDIT.md) |
+| Credit Product Label | [REVOLVING-CREDIT.md](../../src/embeds/REVOLVING-CREDIT.md) |
 | CC Card | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
 | CC Badge | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
 | Embedded Connectivity | [EMBEDDED-CONNECTIVITY.md](../../src/embeds/EMBEDDED-CONNECTIVITY.md) |
@@ -24,6 +29,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | 3D Secure Authentication | [SECURE-AUTH.md](../../src/embeds/SECURE-AUTH.md) |
 | Transaction history | [TRANSACTION-HISTORY.md](../../src/embeds/TRANSACTION-HISTORY.md) |
 | User Onboarding | [USER-ONBOARDING.md](../../src/embeds/USER-ONBOARDING.md) |
+| Phone Shell — Realistic Experiment | [REALISTIC-PHONE.md](../../src/embeds/REALISTIC-PHONE.md) |
 
 ## Playground animation modules
 

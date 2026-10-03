@@ -1,15 +1,17 @@
 // One visibility-aware clock per stage, with resize and reduced-motion handling.
 export function animateStage(stage, { nodes = [], threshold = 0, start = () => {}, update }) {
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  let frame = 0, previous = 0, time = 0, visible = false, started = false, dirty = true;
+  let frame = 0, previous = 0, time = 0, visible = false, started = false, dirty = true, disposed = false;
   function tick(now) {
+    if (disposed) return;
     frame = 0;
     const dt = previous ? Math.min((now - previous) / 1000, 0.05) : 0;
     previous = now; time += dt;
     update({ time, dt, reduced: motion.matches, dirty }); dirty = false;
-    if (visible && !document.hidden && !motion.matches) frame = requestAnimationFrame(tick);
+    if (!disposed && visible && !document.hidden && !motion.matches) frame = requestAnimationFrame(tick);
   }
   function resume() {
+    if (disposed) return;
     cancelAnimationFrame(frame); frame = 0; previous = 0;
     if (visible && !document.hidden) frame = requestAnimationFrame(tick);
   }
@@ -24,6 +26,7 @@ export function animateStage(stage, { nodes = [], threshold = 0, start = () => {
   [stage, ...nodes].forEach(node => resize.observe(node));
   motion.addEventListener('change', invalidate); document.addEventListener('visibilitychange', resume);
   return () => {
+    disposed = true;
     cancelAnimationFrame(frame); observer.disconnect(); resize.disconnect();
     motion.removeEventListener('change', invalidate); document.removeEventListener('visibilitychange', resume);
   };
