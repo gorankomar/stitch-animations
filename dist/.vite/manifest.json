@@ -429,6 +429,19 @@
       "_motion.IWie3mGq.js"
     ]
   },
+  "src/embeds/revolving-credit.js": {
+    "file": "feature-revolving-credit.js",
+    "name": "feature-revolving-credit",
+    "src": "src/embeds/revolving-credit.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Bp3UDTgL.js",
+      "_reveal-groups.TjVq1IXZ.js",
+      "_motion.IWie3mGq.js",
+      "_soft-path-pulse.CsdMiLK-.js"
+    ]
+  },
   "src/embeds/secure-auth.js": {
     "file": "feature-secure-auth.js",
     "name": "feature-secure-auth",
@@ -671,6 +684,7 @@
       "_reveal-groups.TjVq1IXZ.js"
     ],
     "dynamicImports": [
+      "src/embeds/revolving-credit.js",
       "src/embeds/real-time-approvals.js",
       "src/embeds/buy-now-pay-later.js",
       "src/embeds/credit-check.js",
@@ -737,6 +751,7 @@
       "src/animations/window-graphic/index.js",
       "_auto-reveal.B8Z3XL9A.js",
       "_zoom-lens.C8Anf7pm.js",
+      "src/embeds/revolving-credit.js",
       "_animation-stage.Bp3UDTgL.js",
       "_easing.CJR8aMe3.js",
       "_motion.IWie3mGq.js",

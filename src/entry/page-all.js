@@ -70,3 +70,5 @@ ready(() => {
     initWindowGraphic
   ].forEach((fn) => fn(document));
 });
+
+import '../embeds/revolving-credit.js';

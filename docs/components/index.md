@@ -15,6 +15,8 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Create New Card | [CREATE-NEW-CARD.md](../../src/embeds/CREATE-NEW-CARD.md) |
 | Buy Now Pay Later | [BUY-NOW-PAY-LATER.md](../../src/embeds/BUY-NOW-PAY-LATER.md) |
 | Credit Check | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
+| Revolving Credit | [REVOLVING-CREDIT.md](../../src/embeds/REVOLVING-CREDIT.md) |
+| Credit Product Label | [REVOLVING-CREDIT.md](../../src/embeds/REVOLVING-CREDIT.md) |
 | CC Card | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
 | CC Badge | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
 | Embedded Connectivity | [EMBEDDED-CONNECTIVITY.md](../../src/embeds/EMBEDDED-CONNECTIVITY.md) |

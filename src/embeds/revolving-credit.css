@@ -1,0 +1,9 @@
+[data-revolving-credit] {container-type:inline-size;writing-mode:horizontal-tb;}
+[data-revolving-credit] .rc-route-svg {display:block;width:100%;height:auto;}
+[data-revolving-credit] [data-rc-reveal] {transition:transform var(--motion-duration-default) var(--motion-ease-primary),opacity var(--reveal-opacity-duration, var(--reveal-opacity-duration-default)) linear;}
+[data-revolving-credit][data-rc-ready] [data-rc-reveal]:not(.is-reveal) {transform:translateY(3.333333cqi);opacity:0;}
+[data-revolving-credit][data-rc-pulses-ready] [data-rc-route="1"], [data-revolving-credit][data-rc-pulses-ready] [data-rc-route="2"] {opacity:0;}
+[data-revolving-credit] .rc-label-anchor {translate:0 -50%;}
+[data-revolving-credit] .rc-label-second {--rc-label-ink-opacity:.4;}
+[data-revolving-credit] .rc-credit-text, [data-revolving-credit] .rc-coins {opacity:var(--rc-label-ink-opacity,1);}
+[data-revolving-credit] .rc-credit-label {box-shadow:0 .740741cqi .740741cqi rgba(16,24,40,calc(.1 * var(--rc-label-ink-opacity,1))),0 .37037cqi .37037cqi rgba(16,24,40,calc(.06 * var(--rc-label-ink-opacity,1)));}

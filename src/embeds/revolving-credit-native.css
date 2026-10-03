@@ -1,0 +1,18 @@
+.rc {width:100%;min-width:0;position:relative;}
+.rc-frame {width:100%;aspect-ratio:540 / 278;position:relative;overflow:hidden;border-radius:1.481481cqi;background-image:linear-gradient(212.48369deg,rgba(233,249,255,.37) 0%,rgba(255,255,255,.37) 48.599%,rgba(233,249,255,.37) 100%);background-color:#fff;}
+.rc-routes {position:absolute;top:0%;left:0%;width:100%;height:100%;pointer-events:none;}
+.rc-card-position {position:absolute;left:28.888889%;top:-20.197302%;width:55.555556%;z-index:2;}
+.rc-reveal {width:100%;}
+.rc-card-follow {width:100%;}
+.rc-card-lift {width:100%;}
+.rc-credit-label {display:flex;align-items:center;column-gap:1.851852cqi;padding-top:1.851852cqi;padding-bottom:1.851852cqi;padding-left:2.777778cqi;padding-right:2.777778cqi;border-top:0.185185cqi solid #e7e7e7;border-right:0.185185cqi solid #e7e7e7;border-bottom:0.185185cqi solid #e7e7e7;border-left:0.185185cqi solid #e7e7e7;border-radius:1.111111cqi;background-color:#fff;box-shadow:0 0.740741cqi 0.740741cqi rgba(16,24,40,.1),0 0.37037cqi 0.37037cqi rgba(16,24,40,.06);}
+.rc-coins {width:2.962963cqi;height:2.962963cqi;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rc-credit-text {font-size:2.222222cqi;line-height:1.5;font-weight:500;color:#121212;white-space:nowrap;}
+
+.rc-labels {position:absolute;left:0%;top:0%;width:100%;height:100%;}
+.rc-label-position {position:absolute;left:23.148148%;top:67.945%;}
+.rc-label-anchor {width:max-content;}
+.rc-label-motion {transform-origin:left center;}
+.rc-label-second {transform:translateY(9.259259cqi) scale(.82);opacity:1;}
+.rc-label-hidden {opacity:0;}
+.rc-runtime {display:none;}
