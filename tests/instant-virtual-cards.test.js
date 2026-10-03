@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { revealOffset, createRevealTrack } from '../src/lib/effects/reveal-groups.js';
+import { revealOffset, createRevealTrack, resolveRevealStagger } from '../src/lib/effects/reveal-groups.js';
 import { virtualCardState, virtualCardTimeline } from '../src/embeds/instant-virtual-cards.js';
 
 test('Hard Reveal fully clears all four frame edges', () => {
@@ -21,20 +21,21 @@ test('Hard Reveal preserves opacity, remeasures and restores wrapper transforms'
 });
 test('Cards enter once and the cursor makes one continuous visit per cycle', () => {
   const timing = virtualCardTimeline(1);
-  assert.deepEqual(virtualCardState(.5, 1).reveals, [.5, 0, 0, 0]);
+  const phase = t => virtualCardState(t - 4 + timing.revealEnd, 1);
+  assert.deepEqual(virtualCardState(.5, 1).reveals, [.5, .4, .3, .2]);
   assert.deepEqual(virtualCardState(4, 1).reveals, [1, 1, 1, 1]);
-  assert.equal(virtualCardState(4, 1).enabled, false);
-  assert.equal(virtualCardState(4.3, 1).behind, true);
-  assert.equal(virtualCardState(5.2, 1).pressed, true);
-  assert.equal(virtualCardState(5.75, 1).count, .5);
+  assert.equal(phase(4).enabled, false);
+  assert.equal(phase(4.3).behind, true);
+  assert.equal(phase(5.2).pressed, true);
+  assert.equal(phase(5.75).count, .5);
   for (const t of [5.35, 6, timing.holdEnd, timing.off, timing.exitStart]) {
-    const state = virtualCardState(t, 1);
+    const state = phase(t);
     assert.equal(state.cursorOpacity, 1); assert.equal(state.behind, false);
   }
-  assert.equal(virtualCardState(timing.off, 1).enabled, false);
-  assert.equal(virtualCardState(timing.off, 1).pressed, true);
-  assert.equal(virtualCardState(timing.off + .5, 1).expansion, .5);
-  const rest = virtualCardState(timing.exitEnd, 1);
+  assert.equal(phase(timing.off).enabled, false);
+  assert.equal(phase(timing.off).pressed, true);
+  assert.equal(phase(timing.off + .5).expansion, .5);
+  const rest = phase(timing.exitEnd);
   assert.equal(rest.behind, true); assert.equal(rest.count, 0); assert.equal(rest.expansion, 0);
   const reduced = virtualCardState(0, 1, true);
   assert.equal(reduced.count, 1); assert.equal(reduced.cursorOpacity, 0);
@@ -45,8 +46,8 @@ test('cursor holds 1.5 seconds, rests concealed for 3 seconds and repeats the or
   assert.ok(Math.abs((timing.holdEnd - timing.holdStart) * duration - 1.5) < 1e-10);
   assert.ok(Math.abs((4 + timing.period - timing.exitEnd) * duration - 3) < 1e-10);
   for (const phase of [4, 4.3, 4.8, 5.25, timing.holdEnd, timing.off, timing.exitEnd + 1]) {
-    const first = virtualCardState(phase * duration, duration);
-    const repeat = virtualCardState((phase + timing.period) * duration, duration);
+    const first = virtualCardState((phase - 4 + timing.revealEnd) * duration, duration);
+    const repeat = virtualCardState((phase - 4 + timing.revealEnd + timing.period) * duration, duration);
     for (const key of ['cursorOpacity', 'behind', 'enabled', 'expansion', 'count', 'pressed']) {
       if (typeof first[key] === 'number') assert.ok(Math.abs(first[key] - repeat[key]) < 1e-10);
       else assert.equal(first[key], repeat[key]);
@@ -127,4 +128,17 @@ test('rendered cursor holds visibly, revisits the toggle, then returns diagonall
     assert.ok(holds.every(([x,y]) => Math.abs(x - 366.8) < 1e-6 && Math.abs(y - 182.56) < 1e-6));
     dispose();
   } finally { f.restore(); }
+});
+
+test('Hard Reveal defaults to overlapping 100ms starts and honors explicit staggers', () => {
+  assert.equal(resolveRevealStagger('hard'), 100);
+  assert.equal(resolveRevealStagger('soft', undefined, 200), 200);
+  assert.equal(resolveRevealStagger('hard', '250ms'), 250);
+  assert.equal(resolveRevealStagger('hard', '0ms'), 0);
+  const duration = .77, timing = virtualCardTimeline(duration);
+  assert.ok(Math.abs(timing.revealEnd * duration - 1.07) < 1e-10);
+  const moving = virtualCardState(.4, duration);
+  assert.ok(moving.reveals.every(progress => progress > 0 && progress < 1));
+  assert.equal(moving.cursorOpacity, 0);
+  assert.equal(virtualCardState(1.07, duration).cycleTime, 4);
 });

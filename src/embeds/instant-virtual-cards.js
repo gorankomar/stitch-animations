@@ -1,5 +1,5 @@
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
-import { createRevealTrack } from '../lib/effects/reveal-groups.js';
+import { createRevealTrack, HARD_REVEAL_STAGGER_MS } from '../lib/effects/reveal-groups.js';
 import { createDemoCursor, sampleCursor, clampProgress } from '../lib/effects/demo-cursor.js';
 import { createFollowGroup } from '../lib/effects/follow-group.js';
 import { createValueCounter } from '../lib/effects/value-counter.js';
@@ -15,19 +15,19 @@ export function virtualCardTimeline(duration) {
   const off = holdEnd + .65;
   const exitStart = off + .2;
   const exitEnd = exitStart + 1;
-  return { holdStart, holdEnd, off, exitStart, exitEnd, period: exitEnd - 4 + 3 / duration };
+  return { revealEnd: 1 + 3 * HARD_REVEAL_STAGGER_MS / (duration * 1000), holdStart, holdEnd, off, exitStart, exitEnd, period: exitEnd - 4 + 3 / duration };
 }
 
 export function virtualCardState(time, duration, reduced = false) {
   const t = time / duration;
   const timing = virtualCardTimeline(duration);
   // One continuous cursor visit, followed by three seconds concealed rest.
-  const cycleTime = t < 4 ? t : 4 + (t - 4) % timing.period;
+  const cycleTime = t < timing.revealEnd ? t + 4 - timing.revealEnd : 4 + (t - timing.revealEnd) % timing.period;
   const expansion = reduced ? 1 : cycleTime < timing.off
     ? clampProgress(cycleTime - 5.25) : 1 - clampProgress(cycleTime - timing.off);
   return {
     cycleTime,
-    reveals: [0, 1, 2, 3].map(index => reduced ? 1 : clampProgress(t - index)),
+    reveals: [0, 1, 2, 3].map(index => reduced ? 1 : clampProgress(t - index * HARD_REVEAL_STAGGER_MS / (duration * 1000))),
     enabled: reduced || (cycleTime >= 5.25 && cycleTime < timing.off),
     expansion,
     count: reduced ? 1 : cycleTime >= timing.off + 1 ? 0 : clampProgress(cycleTime - 5.25),
