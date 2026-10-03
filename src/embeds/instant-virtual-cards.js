@@ -11,8 +11,8 @@ export const SMALL_ON = '68174060-c1d7-47b9-5e20-0e9fe0a59faa';
 
 export function virtualCardState(time, duration, reduced = false) {
   const t = time / duration;
-  // Entrances run once; an explicit extra second extends the concealed rest.
-  const cycleTime = t < 4 ? t : 4 + (t - 4) % (8 + 1 / duration);
+  // Entrances run once; two explicit extra seconds extend the rest.
+  const cycleTime = t < 4 ? t : 4 + (t - 4) % (8 + 2 / duration);
   const expansion = reduced ? 1 : cycleTime < 9
     ? clampProgress(cycleTime - 5.25) : 1 - clampProgress(cycleTime - 9);
   return {
@@ -21,9 +21,11 @@ export function virtualCardState(time, duration, reduced = false) {
     enabled: reduced || (cycleTime >= 5.25 && cycleTime < 9),
     expansion,
     count: reduced ? 1 : cycleTime >= 10 ? 0 : clampProgress(cycleTime - 5.25),
-    // The cursor stays opaque and rests beneath the Dark Blue card.
-    cursorOpacity: reduced ? 0 : 1,
-    behind: cycleTime < 4.65 || (cycleTime >= 7.4 && cycleTime < 8.65) || cycleTime >= 10.8,
+    // Entrance is concealed by the card; exits use a short linear fade.
+    cursorOpacity: reduced || cycleTime < 4 ? 0 : cycleTime < 8.15
+      ? 1 - clampProgress((cycleTime - 5.45) / .5)
+      : 1 - clampProgress((cycleTime - 9.2) / .5),
+    behind: cycleTime < 4.65 || (cycleTime >= 7.95 && cycleTime < 8.65) || cycleTime >= 9.7,
     pressed: (cycleTime >= 5.15 && cycleTime < 5.35) || (cycleTime >= 8.9 && cycleTime < 9.1)
   };
 }
@@ -89,13 +91,12 @@ export const init = stageInitializer('[data-instant-virtual-cards]', root => {
       const target = { x: (box.left + box.width * .62 - bounds.left) / scale, y: (box.top + box.height * .52 - bounds.top) / scale };
       const path = [
         { time: 4, x: 350, y: 180 }, { time: 4.65, x: 415, y: 166 },
-        { time: 5.05, ...target }, { time: 6.25, ...target },
-        { time: 6.55, x: 510, y: target.y }, { time: 6.95, x: 510, y: 215 },
-        { time: 7.4, x: 415, y: 215 }, { time: 7.9, x: 350, y: 215 },
-        { time: 8.15, x: 350, y: 215 }, { time: 8.65, x: 415, y: 166 },
-        { time: 8.85, ...target }, { time: 9.75, ...target },
-        { time: 10.05, x: 510, y: target.y }, { time: 10.4, x: 510, y: 215 },
-        { time: 10.8, x: 415, y: 215 }, { time: 11.25, x: 350, y: 215 }
+        { time: 5.05, ...target }, { time: 5.45, ...target },
+        { time: 5.95, x: target.x + 18, y: target.y + 14 },
+        // Reposition while invisible; every entrance starts behind the card.
+        { time: 7.95, x: 350, y: 180 }, { time: 8.15, x: 350, y: 180 },
+        { time: 8.65, x: 415, y: 166 }, { time: 8.85, ...target },
+        { time: 9.2, ...target }, { time: 9.7, x: target.x + 18, y: target.y + 14 }
       ];
       cursor.render({ ...sampleCursor(path, state.cycleTime, ease), opacity: state.cursorOpacity, pressed: state.pressed, behind: state.behind });
       const shouldFollow = !reduced && state.reveals[1] === 1 && !document.hidden && matchMedia('(hover: hover) and (pointer: fine)').matches;
