@@ -10,7 +10,7 @@ Keep a single reusable effect family in `src/lib/effects/reveal-groups.js`.
 
 On each target, set `data-reveal`, `data-reveal-mode="soft|hard"`, and optionally `data-reveal-direction`. Directions are `right-to-left`, `left-to-right`, `top-to-bottom`, and `bottom-to-top` (default). The frame carries `data-reveal-frame` and native overflow clipping. Existing markup without mode/direction retains its prior behavior. Use target-level Hard attributes so the Global Styles soft-only entrance selectors exclude those targets, including before JavaScript loads.
 
-`createRevealController({root})` retains its grouped `ensure()/cancel()/reset()` contract and existing delay/stagger/duration attributes. Hard targets use movement-only WAAPI tracks and preserve opacity. Hard Reveal defaults to 100ms between starts, so entrances overlap; explicit `data-reveal-stagger` on a target/group or controller timing overrides still take precedence. Soft Reveal keeps its existing global stagger. `cancel()` cancels their animations and restores inline transforms. Consumers own visibility/reduced-motion gating; use Animation Stage for more involved choreography.
+`createRevealController({root})` retains its grouped `ensure()/cancel()/reset()` contract and existing delay/stagger/duration attributes. Hard targets use movement-only WAAPI tracks and preserve opacity. Hard Reveal defaults to 340ms between starts, so entrances overlap; explicit `data-reveal-stagger` on a target/group or controller timing overrides still take precedence. Soft Reveal keeps its existing global stagger. `cancel()` cancels their animations and restores inline transforms. Consumers own visibility/reduced-motion gating; use Animation Stage for more involved choreography.
 
 ```html
 <div data-reveal-frame style="overflow:hidden">
@@ -29,7 +29,7 @@ On each target, set `data-reveal`, `data-reveal-mode="soft|hard"`, and optionall
 - `keyframes()`: movement-only endpoints for Hard grouped controller.
 - `dispose()`: restore the original inline transform/opacity.
 
-`offset` is Soft's distance in pixels; `bleed` is optional extra Hard clearance for shadows. Target data attributes supply the default mode/direction. Caller owns the clock and timing; use exported `HARD_REVEAL_STAGGER_MS` (100) for overlapping Hard starts, token resolution, reduced-motion fallback and setup failure cleanup. These tracks need no entrance CSS and remain visible until setup succeeds. Instant Virtual Cards uses custom `data-ivc-reveal` selectors to avoid the older generic soft hiding rule.
+`offset` is Soft's distance in pixels; `bleed` is optional extra Hard clearance for shadows. Target data attributes supply the default mode/direction. Caller owns the clock and timing; use exported `HARD_REVEAL_STAGGER_MS` (340) for overlapping Hard starts, token resolution, reduced-motion fallback and setup failure cleanup. These tracks need no entrance CSS and remain visible until setup succeeds. Instant Virtual Cards uses custom `data-ivc-reveal` selectors to avoid the older generic soft hiding rule.
 
 `revealOffset({mode,direction,frame,element,offset,bleed})` is the pure geometry helper shared by both APIs. The tests verify all four clipping boundaries, opacity preservation and resize remeasurement.
 

@@ -1,0 +1,14 @@
+.df-illustration{width:100%;min-width:0;container-type:inline-size}
+.df-frame{position:relative;width:100%;aspect-ratio:526 / 278;overflow:hidden;border-radius:1.520913cqi;background-color:#fff}
+.df-grid{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.df-card{position:absolute;left:21.482889733840306%;top:13.66906474820144%;width:57.03422053231939%;z-index:1}
+.df-uber{position:absolute;left:56.65399239543726%;top:24.46043165467626%;width:34.22053231939163%;z-index:2}
+.df-netflix{position:absolute;left:9.125475285171103%;top:64.38848920863309%;width:38.02281368821293%;z-index:3}
+.df-follow{width:100%}
+.df-box{display:flex;align-items:center;column-gap:3.802281cqi;padding-top:2.281369cqi;padding-bottom:2.281369cqi;padding-left:3.041825cqi;padding-right:3.041825cqi;box-sizing:border-box;width:100%;background-color:#f9f9f9;border-radius:1.140684cqi;border-width:0.095057cqi;border-style:solid;border-color:#e7e7e7;box-shadow:-1.140684cqi 0.570342cqi 0.95057cqi rgba(0,0,0,.1)}
+.df-logo-uber{display:block;width:8.937262cqi;height:3.069582cqi;flex-shrink:0}
+.df-logo-netflix{display:block;width:10.456274cqi;height:4.372624cqi;flex-shrink:0}
+.df-details{display:flex;flex-direction:column;row-gap:0.95057cqi;min-width:0;flex-grow:1}
+.df-amount{font-size:2.661597cqi;font-weight:600;line-height:2.471483cqi;color:#121212;white-space:nowrap}
+.df-approved{font-size:1.901141cqi;font-weight:400;line-height:1.901141cqi;color:#16b364}
+.df-declined{font-size:1.901141cqi;font-weight:400;line-height:1.901141cqi;color:#ff2b2b}

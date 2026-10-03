@@ -22,7 +22,7 @@ test('Hard Reveal preserves opacity, remeasures and restores wrapper transforms'
 test('Cards enter once and the cursor makes one continuous visit per cycle', () => {
   const timing = virtualCardTimeline(1);
   const phase = t => virtualCardState(t - 4 + timing.revealEnd, 1);
-  assert.deepEqual(virtualCardState(.5, 1).reveals, [.5, .4, .3, .2]);
+  assert.deepEqual(virtualCardState(.5, 1).reveals.map(value => Math.round(value * 100) / 100), [.5, .16, 0, 0]);
   assert.deepEqual(virtualCardState(4, 1).reveals, [1, 1, 1, 1]);
   assert.equal(phase(4).enabled, false);
   assert.equal(phase(4.3).behind, true);
@@ -130,15 +130,16 @@ test('rendered cursor holds visibly, revisits the toggle, then returns diagonall
   } finally { f.restore(); }
 });
 
-test('Hard Reveal defaults to overlapping 100ms starts and honors explicit staggers', () => {
-  assert.equal(resolveRevealStagger('hard'), 100);
+test('Hard Reveal defaults to overlapping 340ms starts and honors explicit staggers', () => {
+  assert.equal(resolveRevealStagger('hard'), 340);
   assert.equal(resolveRevealStagger('soft', undefined, 200), 200);
   assert.equal(resolveRevealStagger('hard', '250ms'), 250);
   assert.equal(resolveRevealStagger('hard', '0ms'), 0);
   const duration = .77, timing = virtualCardTimeline(duration);
-  assert.ok(Math.abs(timing.revealEnd * duration - 1.07) < 1e-10);
-  const moving = virtualCardState(.4, duration);
-  assert.ok(moving.reveals.every(progress => progress > 0 && progress < 1));
+  assert.ok(Math.abs(timing.revealEnd * duration - 1.79) < 1e-10);
+  const moving = virtualCardState(1.05, duration);
+  assert.equal(moving.reveals[0], 1);
+  assert.ok(moving.reveals.slice(1).every(progress => progress > 0 && progress < 1));
   assert.equal(moving.cursorOpacity, 0);
-  assert.equal(virtualCardState(1.07, duration).cycleTime, 4);
+  assert.ok(Math.abs(virtualCardState(1.79, duration).cycleTime - 4) < 1e-10);
 });

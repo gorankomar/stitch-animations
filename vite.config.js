@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-dynamic-funding': resolve(process.cwd(), 'src/embeds/dynamic-funding.js'),
             'feature-instant-virtual-cards': resolve(process.cwd(), 'src/embeds/instant-virtual-cards.js'),
             'feature-income-verification': resolve(process.cwd(), 'src/embeds/income-verification.js'),
             'feature-email-statement': resolve(process.cwd(), 'src/embeds/email-statement.js'),
