@@ -14,4 +14,4 @@
 - Local preview: /realistic-phone.html with npm run dev; 160px, 245px and 400px parent examples and the status visibility control.
 - Refinement: original homepage SVG geometry retained; icons inset 8.5%, clock 4cqi, island top 2.7cqi. Time always reflects visitor local time; no separate time control.
 - Verification: refined draft checked in Webflow Preview at desktop and 393px mobile widths; icons align with the live local clock and island. Designer exposes only Show status bar plus the content Slot.
-- Completion is a Webflow draft. No publication, GitHub merge, or site/page loader changes authorized or performed.
+- Initial completion was a Webflow draft. Source and documentation were subsequently included in the consolidated project GitHub/middle release on 2026-10-03; see [release evidence](../../docs/releases/2026-10-03-project-middle.md). Webflow publication remains with the user.
