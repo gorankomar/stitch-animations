@@ -27,14 +27,12 @@ Cataloged Pointer Follow is enabled only for fine-pointer hover and after both c
 
 ## Delivery and verification
 
-Local route: `/instant-virtual-cards.html` shows 540px and 320px parents at the same viewport. Build the draft-only portable runtime with `node scripts/build-instant-virtual-cards.mjs`. The component currently carries that runtime in HtmlEmbed `19d1d8d5-ae48-5459-7d5f-d904e1c17c70`. It uses the same Symbol mount guard as the registered shared feature.
+Local route: `/instant-virtual-cards.html` shows 540px and 320px parents at the same viewport. Build the draft-only portable runtime with `node scripts/build-instant-virtual-cards.mjs`. The draft runtime was removed at middle from HtmlEmbed `19d1d8d5-ae48-5459-7d5f-d904e1c17c70`. It uses the same Symbol mount guard as the registered shared feature.
 
-Both shared page entries and Vite's shared build register this module. Before middle/publication, build and merge the complete current-main release and remove the draft inline runtime when synchronizing loaders, per publishing.md. No shared loader URL was changed by this draft creation.
+Both shared page entries and Vite's shared build register this module. Middle uses the merged shared page loader alone; no component inline runtime remains.
 
 2026-10-03: static Designer and Webflow Preview checked at desktop 630 × 324.33 and mobile 345 × 177.61. Local parents measured 540 × 278 and 320 × 164.73, with label font 10px/5.92593px. Preview pointer test measured rear translation 4.27/-4.05px versus front 9.62/-9.11px at the same pointer location. Custom-code-disabled Preview retained all four elements at opacity 1, transform none, and the full amount. Node tests cover four directions, opacity preservation, resize geometry, sequencing, cursor timing, reduced motion, duplicate ownership, offscreen pause, cleanup and setup failure. Full suite: 67 tests passing. Browser-level JS-disabled and reduced-motion emulation are not independently verified; lifecycle tests and custom-code-disabled Webflow Preview cover those fallback paths.
 
 Cursor loop follow-up: the cursor also returns to click the toggle off at reset, remains visible through collapse, and exits before reappearing behind the box for the next count-up. Both clicks are verified across repeated cycles; 69 tests pass. Updated native Webflow draft runtime; no publication.
-
-Cursor exit clearance: from the toggle, route right to x510, descend to y215 below the fully expanded spending box, then move left behind the Dark Blue card. Lower stacking begins only on the final leftward segment, preserving the complete visible path around the box.
 
 Cursor exit clearance: from the toggle, route right to x510, descend to y215 below the fully expanded spending box, then move left behind the Dark Blue card. Lower stacking begins only on the final leftward segment, preserving the complete visible path around the box.
