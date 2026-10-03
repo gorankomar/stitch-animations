@@ -23,7 +23,7 @@ export function virtualCardState(time, duration, reduced = false) {
     count: reduced ? 1 : cycleTime >= 10 ? 0 : clampProgress(cycleTime - 5.25),
     // The cursor stays opaque and rests beneath the Dark Blue card.
     cursorOpacity: reduced ? 0 : 1,
-    behind: cycleTime < 4.65 || (cycleTime >= 6.55 && cycleTime < 8.65) || cycleTime >= 10.15,
+    behind: cycleTime < 4.65 || (cycleTime >= 7.4 && cycleTime < 8.65) || cycleTime >= 10.8,
     pressed: (cycleTime >= 5.15 && cycleTime < 5.35) || (cycleTime >= 8.9 && cycleTime < 9.1)
   };
 }
@@ -90,10 +90,12 @@ export const init = stageInitializer('[data-instant-virtual-cards]', root => {
       const path = [
         { time: 4, x: 350, y: 180 }, { time: 4.65, x: 415, y: 166 },
         { time: 5.05, ...target }, { time: 6.25, ...target },
-        { time: 6.55, x: 415, y: 166 }, { time: 7.05, x: 350, y: 180 },
-        { time: 8.15, x: 350, y: 180 }, { time: 8.65, x: 415, y: 166 },
+        { time: 6.55, x: 510, y: target.y }, { time: 6.95, x: 510, y: 215 },
+        { time: 7.4, x: 415, y: 215 }, { time: 7.9, x: 350, y: 215 },
+        { time: 8.15, x: 350, y: 215 }, { time: 8.65, x: 415, y: 166 },
         { time: 8.85, ...target }, { time: 9.75, ...target },
-        { time: 10.15, x: 415, y: 166 }, { time: 10.75, x: 350, y: 180 }
+        { time: 10.05, x: 510, y: target.y }, { time: 10.4, x: 510, y: 215 },
+        { time: 10.8, x: 415, y: 215 }, { time: 11.25, x: 350, y: 215 }
       ];
       cursor.render({ ...sampleCursor(path, state.cycleTime, ease), opacity: state.cursorOpacity, pressed: state.pressed, behind: state.behind });
       const shouldFollow = !reduced && state.reveals[1] === 1 && !document.hidden && matchMedia('(hover: hover) and (pointer: fine)').matches;
