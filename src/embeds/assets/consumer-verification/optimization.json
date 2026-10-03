@@ -54,43 +54,43 @@
   "manifest": [
     {
       "name": "right-top",
-      "w": 59.45,
-      "h": 122.25,
-      "x": 173.3,
-      "y": -5.5,
+      "w": 131.4,
+      "h": 145.25,
+      "x": 326,
+      "y": -3.84,
       "flip": false,
-      "originalBytes": 3414,
-      "optimizedBytes": 3528
+      "originalBytes": 3434,
+      "optimizedBytes": 3769
     },
     {
       "name": "right-bottom",
-      "w": 61.46,
-      "h": 115.75,
-      "x": 170.79,
-      "y": 116.25,
+      "w": 136.41,
+      "h": 144.25,
+      "x": 323,
+      "y": 135.11,
       "flip": false,
-      "originalBytes": 3639,
-      "optimizedBytes": 3685
+      "originalBytes": 3622,
+      "optimizedBytes": 3886
     },
     {
       "name": "left-bottom",
-      "w": 62.45,
-      "h": 116.25,
-      "x": 21.8,
-      "y": 116.25,
+      "w": 136.41,
+      "h": 144.25,
+      "x": 78,
+      "y": 135.11,
       "flip": true,
-      "originalBytes": 3619,
-      "optimizedBytes": 3649
+      "originalBytes": 3622,
+      "optimizedBytes": 3862
     },
     {
       "name": "left-top",
-      "w": 59.45,
-      "h": 116.25,
-      "x": 21.8,
-      "y": 0.5,
+      "w": 131.4,
+      "h": 145.25,
+      "x": 80,
+      "y": -3.84,
       "flip": true,
-      "originalBytes": 3439,
-      "optimizedBytes": 3517
+      "originalBytes": 3434,
+      "optimizedBytes": 3745
     },
     {
       "name": "user",
