@@ -113,7 +113,7 @@ test('setup failure preserves fully visible cards and spending amount', () => {
 });
 
 test('cursor stays opaque and waits an extra second behind the card', () => {
-  for (const t of [4, 7.1, 8, 11, 12, 12.99]) {
+  for (const t of [4, 7.9, 8, 11, 12, 12.99]) {
     const state = virtualCardState(t, 1);
     assert.equal(state.cursorOpacity, 1); assert.equal(state.behind, true);
   }
