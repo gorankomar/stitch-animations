@@ -28,7 +28,7 @@ test('Cards and controls enter sequentially before the cursor enables and counts
   assert.equal(virtualCardState(5.2, 1).pressed, true);
   assert.equal(virtualCardState(5.75, 1).count, .5);
   const final = virtualCardState(8, 1);
-  assert.equal(final.enabled, true); assert.equal(final.expansion, 1); assert.equal(final.count, 1); assert.equal(final.behind, true);
+  assert.equal(final.enabled, true); assert.equal(final.expansion, 1); assert.equal(final.count, 1); assert.equal(final.cursorOpacity, 0);
   const reduced = virtualCardState(0, 1, true);
   assert.deepEqual(reduced.reveals, [1, 1, 1, 1]); assert.equal(reduced.count, 1); assert.equal(reduced.cursorOpacity, 0);
 });
@@ -36,7 +36,7 @@ test('Cards and controls enter sequentially before the cursor enables and counts
 test('control loop brings the cursor back to disable the toggle and never replays the entrances', () => {
   for (const t of [4, 4.3, 5.2, 5.75, 6.5, 8, 9.5, 10.5, 11.99]) {
     const first = virtualCardState(t, 1);
-    const second = virtualCardState(t + 9, 1);
+    const second = virtualCardState(t + 10, 1);
     for (const key of ['enabled','expansion','count','cursorOpacity','behind','pressed']) {
       if (typeof first[key] === 'number') assert.ok(Math.abs(second[key] - first[key]) < 1e-10);
       else assert.equal(second[key], first[key]);
@@ -44,10 +44,10 @@ test('control loop brings the cursor back to disable the toggle and never replay
     assert.deepEqual(second.reveals, [1,1,1,1]);
   }
   const collapsing = virtualCardState(9.5, 1);
-  assert.equal(collapsing.cursorOpacity, 1); assert.equal(collapsing.expansion, .5); assert.equal(collapsing.count, 1);
+  assert.ok(Math.abs(collapsing.cursorOpacity - .4) < 1e-10); assert.equal(collapsing.expansion, .5); assert.equal(collapsing.count, 1);
   const reset = virtualCardState(10, 1);
   assert.equal(reset.expansion, 0); assert.equal(reset.count, 0); assert.equal(reset.enabled, false);
-  for (const t of [12.999999,13,13.000001]) {
+  for (const t of [13.999999,14,14.000001]) {
     const seam = virtualCardState(t, 1);
     assert.equal(seam.behind,true); assert.equal(seam.expansion,0); assert.equal(seam.count,0);
   }
@@ -103,20 +103,29 @@ test('setup failure preserves fully visible cards and spending amount', () => {
  test('cursor returns for both toggle clicks on every repeated cycle', () => {
   for (const cycle of [0, 1, 2, 5]) {
     for (const click of [5.25, 9]) {
-      const state = virtualCardState(click + cycle * 9, 1);
+      const state = virtualCardState(click + cycle * 10, 1);
       assert.equal(state.cursorOpacity, 1);
       assert.equal(state.pressed, true);
       assert.equal(state.behind, false);
     }
-    assert.equal(virtualCardState(11 + cycle * 9, 1).behind, true);
+    assert.equal(virtualCardState(11 + cycle * 10, 1).behind, true);
   }
 });
 
-test('cursor stays opaque and waits an extra second behind the card', () => {
-  for (const t of [4, 7.9, 8, 11, 12, 12.99]) {
-    const state = virtualCardState(t, 1);
-    assert.equal(state.cursorOpacity, 1); assert.equal(state.behind, true);
+test('cursor exits fade linearly and loops retain the entrance with a longer rest', () => {
+  assert.equal(virtualCardState(4, 1).cursorOpacity, 1);
+  assert.equal(virtualCardState(4.3, 1).behind, true);
+  for (const start of [5.45, 9.2]) {
+    assert.equal(virtualCardState(start, 1).cursorOpacity, 1);
+    assert.ok(Math.abs(virtualCardState(start + .25, 1).cursorOpacity - .5) < 1e-10);
+    assert.equal(virtualCardState(start + .5, 1).cursorOpacity, 0);
   }
-  const duration = .77, period = 8 * duration + 1;
-  assert.ok(Math.abs(virtualCardState(5.25 * duration + period, duration).cycleTime - 5.25) < 1e-10);
+  for (const t of [0, 3.99, 6, 7, 10, 12, 13.99]) assert.equal(virtualCardState(t, 1).cursorOpacity, 0);
+  const duration = .77, period = 8 * duration + 2;
+  for (const phase of [4, 4.3, 4.8, 5.25]) {
+    const first = virtualCardState(phase * duration, duration);
+    const repeat = virtualCardState(phase * duration + period, duration);
+    assert.ok(Math.abs(first.cursorOpacity - repeat.cursorOpacity) < 1e-10);
+    assert.equal(first.behind, repeat.behind);
+  }
 });
