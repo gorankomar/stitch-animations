@@ -20,3 +20,5 @@ await import('./build-real-time-approvals-embed.mjs');
 await import('./build-revolving-credit-embed.mjs');
 
 await import('./build-email-statement.mjs');
+
+await import('./build-income-verification.mjs');

@@ -398,6 +398,19 @@
       "_easing.CJR8aMe3.js"
     ]
   },
+  "src/embeds/income-verification.js": {
+    "file": "feature-income-verification.js",
+    "name": "feature-income-verification",
+    "src": "src/embeds/income-verification.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_follow-group.DCIpy6nZ.js",
+      "_animation-stage.Bp3UDTgL.js",
+      "_dom.DgX39f3a.js",
+      "_math.DB99t-US.js"
+    ]
+  },
   "src/embeds/omnichannel-origination.js": {
     "file": "feature-omnichannel-origination.js",
     "name": "feature-omnichannel-origination",
@@ -695,6 +708,7 @@
       "_reveal-groups.TjVq1IXZ.js"
     ],
     "dynamicImports": [
+      "src/embeds/income-verification.js",
       "src/embeds/email-statement.js",
       "src/embeds/revolving-credit.js",
       "src/embeds/real-time-approvals.js",
@@ -733,6 +747,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/income-verification.js",
       "src/embeds/email-statement.js",
       "src/embeds/real-time-approvals.js",
       "src/embeds/buy-now-pay-later.js",
@@ -765,13 +780,13 @@
       "_auto-reveal.B8Z3XL9A.js",
       "_zoom-lens.C8Anf7pm.js",
       "src/embeds/revolving-credit.js",
-      "_reveal-groups.TjVq1IXZ.js",
-      "_animation-stage.Bp3UDTgL.js",
-      "_easing.CJR8aMe3.js",
-      "_motion.IWie3mGq.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js",
+      "_animation-stage.Bp3UDTgL.js",
+      "_reveal-groups.TjVq1IXZ.js",
+      "_easing.CJR8aMe3.js",
+      "_motion.IWie3mGq.js",
       "_soft-path-pulse.CsdMiLK-.js",
       "_connector.CbYSk2rO.js",
       "src/lib/effects/code-scroll.js",

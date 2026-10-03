@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-income-verification': resolve(process.cwd(), 'src/embeds/income-verification.js'),
             'feature-email-statement': resolve(process.cwd(), 'src/embeds/email-statement.js'),
             'feature-real-time-approvals': resolve(process.cwd(), 'src/embeds/real-time-approvals.js'),
             'feature-buy-now-pay-later': resolve(process.cwd(), 'src/embeds/buy-now-pay-later.js'),

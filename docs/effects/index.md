@@ -39,3 +39,5 @@ The shared loader mounts Reveal on data-anim sections. Import card-lift.css thro
 Pointer Follow's data-follow-root is a consumer convention, not automatic mounting by the helper. Attribute presence enables followers: data-follow-mouse=false still matches. Call the returned disposer at teardown.
 
 See [animation recipes](../animation-recipes.md) for detailed markup and tuning. Add new reusable effects here with their contract, CSS, options, example consumer, and cleanup.
+
+Income Verification uses `seamless-marquee.js` (`createSeamlessMarquee`) and `expanding-rings.js` (`createExpandingRings`). The consumer owns visibility, resizing, animation cancellation and generated-node cleanup. Marquee directions alternate left/right/left; cycles use linear easing.
