@@ -34,8 +34,8 @@
     "file": "chunks/easing.BUsciq49.js",
     "name": "easing"
   },
-  "_expanding-rings.BwNdMml_.js": {
-    "file": "chunks/expanding-rings.BwNdMml_.js",
+  "_expanding-rings.KCV49Jke.js": {
+    "file": "chunks/expanding-rings.KCV49Jke.js",
     "name": "expanding-rings"
   },
   "_follow-group.DCIpy6nZ.js": {
@@ -60,6 +60,10 @@
     "imports": [
       "_easing.BUsciq49.js"
     ]
+  },
+  "_seamless-marquee.3JGbAH9P.js": {
+    "file": "chunks/seamless-marquee.3JGbAH9P.js",
+    "name": "seamless-marquee"
   },
   "_soft-path-pulse.CsdMiLK-.js": {
     "file": "chunks/soft-path-pulse.CsdMiLK-.js",
@@ -308,6 +312,17 @@
       "_easing.BUsciq49.js"
     ]
   },
+  "src/embeds/3ds-enabled-security.js": {
+    "file": "feature-3ds-enabled-security.js",
+    "name": "feature-3ds-enabled-security",
+    "src": "src/embeds/3ds-enabled-security.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_expanding-rings.KCV49Jke.js",
+      "_animation-stage.iEnA391a.js"
+    ]
+  },
   "src/embeds/buy-now-pay-later.js": {
     "file": "feature-buy-now-pay-later.js",
     "name": "feature-buy-now-pay-later",
@@ -446,7 +461,8 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_expanding-rings.BwNdMml_.js",
+      "_seamless-marquee.3JGbAH9P.js",
+      "_expanding-rings.KCV49Jke.js",
       "_follow-group.DCIpy6nZ.js",
       "_animation-stage.iEnA391a.js",
       "_dom.DgX39f3a.js",
@@ -478,7 +494,8 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_expanding-rings.BwNdMml_.js",
+      "_seamless-marquee.3JGbAH9P.js",
+      "_expanding-rings.KCV49Jke.js",
       "_follow-group.DCIpy6nZ.js",
       "_animation-stage.iEnA391a.js",
       "_dom.DgX39f3a.js",
@@ -784,6 +801,7 @@
       "_easing.BUsciq49.js"
     ],
     "dynamicImports": [
+      "src/embeds/3ds-enabled-security.js",
       "src/embeds/dynamic-funding.js",
       "src/embeds/instant-virtual-cards.js",
       "src/embeds/income-verification.js",
@@ -825,6 +843,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/3ds-enabled-security.js",
       "src/embeds/dynamic-funding.js",
       "src/embeds/instant-virtual-cards.js",
       "src/embeds/income-verification.js",
@@ -860,6 +879,7 @@
       "_auto-reveal.DEogAm4o.js",
       "_zoom-lens.C8Anf7pm.js",
       "src/embeds/revolving-credit.js",
+      "_expanding-rings.KCV49Jke.js",
       "_animation-stage.iEnA391a.js",
       "_reveal-groups.4bW0_E-y.js",
       "_easing.BUsciq49.js",
@@ -869,7 +889,7 @@
       "_value-counter.BXLPe_ym.js",
       "_motion.ej7ozAXT.js",
       "_demo-cursor.CiMQYEry.js",
-      "_expanding-rings.BwNdMml_.js",
+      "_seamless-marquee.3JGbAH9P.js",
       "_soft-path-pulse.CsdMiLK-.js",
       "_connector.CbYSk2rO.js",
       "src/lib/effects/code-scroll.js",

@@ -19,7 +19,7 @@ assert.equal(await root.locator('[data-oo-ring]').count(),3);
 const ringCheck=await root.evaluate(n=>{
  const rings=[...n.querySelectorAll('[data-oo-ring]')];
  const animations=rings.map(r=>r.getAnimations());
- const movement=animations.map(as=>as.find(a=>a.effect.getKeyframes().some(k=>k.transform)));
+ const movement=animations.map(as=>as.find(a=>a.effect.getKeyframes().some(k=>k.transform || k.width)));
  const fading=animations.map(as=>as.find(a=>a.effect.getKeyframes().some(k=>k.opacity!==undefined)));
  const cycle=movement[0].effect.getTiming().duration;
  const start=movement.map(a=>a.currentTime);

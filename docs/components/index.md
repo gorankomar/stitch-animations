@@ -8,6 +8,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Consumer Verification Label / Center Label | [CONSUMER-VERIFICATION.md](../../src/embeds/CONSUMER-VERIFICATION.md) |
 | Consumer Verification | [CONSUMER-VERIFICATION.md](../../src/embeds/CONSUMER-VERIFICATION.md) |
 | Income Verification / Verification Document Item | [INCOME-VERIFICATION.md](../../src/embeds/INCOME-VERIFICATION.md) |
+| 3DS-enabled security | [3DS-ENABLED-SECURITY.md](../../src/embeds/3DS-ENABLED-SECURITY.md) |
 | Omnichannel Origination | [OMNICHANNEL-ORIGINATION.md](../../src/embeds/OMNICHANNEL-ORIGINATION.md) |
 | Real-Time Approvals | [REAL-TIME-APPROVALS.md](../../src/embeds/REAL-TIME-APPROVALS.md) |
 | Real-Time Balance Management | [BALANCE.md](../../src/embeds/BALANCE.md) |
