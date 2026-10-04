@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const b = await chromium.launch({headless:true,...(process.env.BROWSER_EXECUTABLE ? { executablePath:process.env.BROWSER_EXECUTABLE } : {})});
+const p=await b.newPage({viewport:{width:1000,height:800}}),errors=[];p.on('pageerror',e=>errors.push(e.message));
+await p.route('**/@vite/client', route=>route.fulfill({body:'',contentType:'application/javascript'}));
+await p.route('**/rules-flow.html', async route => { const response = await route.fetch(); await route.fulfill({response, body:(await response.text()).replace('<main>', '<main style="margin-top:684px">')}); });
+await p.goto('http://127.0.0.1:5173/rules-flow.html');await p.waitForSelector('[data-rf-ready]');
+const root=p.locator('[data-rules-flow]').first();
+const initialBox=await root.boundingBox();assert.ok((800-initialBox.y)/initialBox.height<.5);
+await p.waitForTimeout(900);assert.equal(await root.locator('.rf-background').evaluate(n=>getComputedStyle(n).opacity),'0');
+await p.evaluate(()=>document.querySelector('main').style.marginTop='0');
+assert.equal(await root.locator('.rf-front-entrance').evaluate(n=>getComputedStyle(n).opacity),'1');
+const first=await root.locator('.rf-background').evaluate(n=>getComputedStyle(n).opacity);assert.ok(+first<1);
+await p.waitForTimeout(900);assert.equal(await root.locator('.rf-background').evaluate(n=>getComputedStyle(n).opacity),'1');
+assert.equal(await root.locator('.rf-front-entrance').evaluate(n=>getComputedStyle(n).opacity),'1');
+await p.evaluate(()=>document.querySelector('main').style.marginTop='2000px');await p.waitForTimeout(100);const paused=await root.locator('.rf-activate').getAttribute('style');await p.waitForTimeout(200);assert.equal(await root.locator('.rf-activate').getAttribute('style'),paused);await p.evaluate(()=>document.querySelector('main').style.marginTop='0');await p.waitForTimeout(100);await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,value:true});document.dispatchEvent(new Event('visibilitychange'));});await p.waitForTimeout(100);const hidden=await root.locator('.rf-trigger').getAttribute('style');await p.waitForTimeout(200);assert.equal(await root.locator('.rf-trigger').getAttribute('style'),hidden);await p.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'));});await p.waitForTimeout(6200);assert.equal(await root.locator('[data-reveal]').evaluateAll(ns=>ns.every(n=>getComputedStyle(n).opacity==='1')),true);
+const bounds=await root.boundingBox();await p.mouse.move(bounds.x+bounds.width*.85,bounds.y+bounds.height*.5);await p.waitForTimeout(300);assert.notEqual(await root.locator('[data-follow-mouse]').evaluate(n=>getComputedStyle(n).transform),'none');
+await root.screenshot({path:'/tmp/rules-flow-motion-complete.png'});
+await p.emulateMedia({reducedMotion:'reduce'});await p.waitForTimeout(100);assert.equal(await root.locator('[data-follow-mouse]').evaluate(n=>getComputedStyle(n).transform),'none');
+await p.evaluate(async()=>{const main=document.querySelector('main'),copy=main.cloneNode(true);copy.style.width='270px';document.body.append(copy);await import('/src/embeds/rules-flow.js').then(m=>m.init(copy));});
+const sizes=await p.locator('.rf-frame').evaluateAll(ns=>ns.map(n=>({w:n.getBoundingClientRect().width,h:n.getBoundingClientRect().height,font:parseFloat(getComputedStyle(n.querySelector('.rf-title')).fontSize)})));assert.ok(sizes.every(x=>Math.abs(x.w/x.h-540/278)<.01));assert.ok(Math.abs(sizes[1].font/sizes[0].font-.5)<.01);
+for(const w of [320,420,740]){await p.setViewportSize({width:w,height:800});await p.waitForTimeout(50);assert.ok(await root.locator('img').evaluateAll(ns=>ns.every(n=>n.naturalWidth>0)));await root.screenshot({path:`/tmp/rules-flow-${w}.png`});}
+await p.evaluate(async()=>{const m=await import('/src/embeds/rules-flow.js');const d=m.init();m.init();d();});assert.equal(await root.getAttribute('data-rf-ready'),null);assert.equal(await root.locator('[data-reveal]').evaluateAll(ns=>ns.every(n=>!n.style.transform&&!n.style.opacity)),true);
+const ctx=await b.newContext({javaScriptEnabled:false}),fallback=await ctx.newPage();await fallback.goto('http://127.0.0.1:5173/rules-flow.html');assert.equal(await fallback.locator('[data-reveal]').evaluateAll(ns=>ns.every(n=>getComputedStyle(n).opacity==='1')),true);
+const failed=await b.newPage();await failed.route('**/src/embeds/rules-flow.js*',r=>r.abort());await failed.goto('http://127.0.0.1:5173/rules-flow.html');assert.equal(await failed.locator('[data-reveal]').evaluateAll(ns=>ns.every(n=>getComputedStyle(n).opacity==='1')),true);
+const partial=await b.newPage();await partial.addInitScript(()=>{window.IntersectionObserver=class{constructor(){throw Error('setup unavailable')}}});await partial.goto('http://127.0.0.1:5173/rules-flow.html');assert.equal(await partial.locator('[data-reveal]').evaluateAll(ns=>ns.every(n=>!n.style.transform&&!n.style.opacity)),true);
+assert.deepEqual(errors,[]);console.log('Passed staggered entrances, Hard opacity preservation, Pointer Follow, reduced motion, responsive dual instances, duplicate mounting/disposal, JS-disabled/module-blocked/partial-failure fallback.');await b.close();

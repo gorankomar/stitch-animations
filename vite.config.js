@@ -89,6 +89,7 @@ export default defineConfig({
             'feature-buy-now-pay-later': resolve(process.cwd(), 'src/embeds/buy-now-pay-later.js'),
             'feature-revolving-credit': resolve(process.cwd(), 'src/embeds/revolving-credit.js'),
             'feature-credit-check': resolve(process.cwd(), 'src/embeds/credit-check.js'),
+            'feature-rules-flow': resolve(process.cwd(), 'src/embeds/rules-flow.js'),
             'feature-user-onboarding': resolve(process.cwd(), 'src/embeds/user-onboarding.js'),
             'feature-consumer-verification': resolve(process.cwd(), 'src/embeds/consumer-verification.js'),
             'feature-omnichannel-origination': resolve(process.cwd(), 'src/embeds/omnichannel-origination.js'),
