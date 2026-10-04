@@ -31,6 +31,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | 3D Secure Authentication | [SECURE-AUTH.md](../../src/embeds/SECURE-AUTH.md) |
 | Transaction history | [TRANSACTION-HISTORY.md](../../src/embeds/TRANSACTION-HISTORY.md) |
 | User Onboarding | [USER-ONBOARDING.md](../../src/embeds/USER-ONBOARDING.md) |
+| Rules Flow | [RULES-FLOW.md](../../src/embeds/RULES-FLOW.md) |
 | Phone Shell — Realistic Experiment | [REALISTIC-PHONE.md](../../src/embeds/REALISTIC-PHONE.md) |
 
 ## Playground animation modules

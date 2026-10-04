@@ -28,3 +28,5 @@ await import('./build-instant-virtual-cards.mjs');
 await import('./build-dynamic-funding.mjs');
 
 await import('./build-3ds-enabled-security.mjs');
+
+await import('./build-rules-flow-embed.mjs');
