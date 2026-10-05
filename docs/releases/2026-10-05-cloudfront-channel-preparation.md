@@ -31,3 +31,7 @@ Selected/published domains: none. Known configured production domains: stitch.co
 - No new release directory, channel pointer, invalidation, S3 configuration or production animation release was deployed from this chat.
 
 Next: admin applies/confirms the handoff; enable and bootstrap staging; agent checks browser interactions; user authorizes initial production channel bootstrap; agent installs/verifies both Webflow draft routers; publish only authorized domains. Record actual GitHub merge/run outcomes and subsequent deployment/publication evidence separately.
+
+## GitHub completion evidence
+
+[PR #31](https://github.com/gorankomar/stitch-animations/pull/31) merged as `94430636fe79ff7da47189ecb3f045e250c89a44`. Local main was fast-forwarded to the merged revision. [Actions run 37292042977](https://github.com/gorankomar/stitch-animations/actions/runs/37292042977) completed successfully: full shared-release validation, manifest preparation and artifact retention passed. Its job steps explicitly show AWS credential setup, immutable upload and staging activation were SKIPPED because channel deployment is not enabled; the production activation job was also skipped. This proves preparation/build retention, not AWS deployment. The live root was untouched.
