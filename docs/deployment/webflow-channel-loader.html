@@ -1,0 +1,13 @@
+<!-- Install only after BOTH channel endpoints are initialized and verified. -->
+<script>
+(function () {
+  if (document.getElementById('stitch-code-page-loader')) return;
+  var productionHosts = ['stitch.co', 'www.stitch.co', 'stitch.sa', 'www.stitch.sa'];
+  var channel = productionHosts.indexOf(window.location.hostname) >= 0 ? 'production' : 'staging';
+  var script = document.createElement('script');
+  script.id = 'stitch-code-page-loader';
+  script.type = 'module';
+  script.src = 'https://d280qq257tic0i.cloudfront.net/Stitch+Animations/channels/' + channel + '/page-all-lite.js';
+  document.body.appendChild(script);
+})();
+</script>

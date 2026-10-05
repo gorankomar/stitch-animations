@@ -2,42 +2,103 @@ name: Build and publish animations
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
+    inputs:
+      operation:
+        description: Upload current main, promote a staged release, or restore a prior release
+        type: choice
+        options: [upload, promote, rollback]
+        default: upload
+      channel:
+        description: Target channel (production requires explicit manual dispatch)
+        type: choice
+        options: [staging, production]
+        default: staging
+      release:
+        description: Full previously uploaded release SHA (required for promote/rollback)
+        type: string
 
 permissions:
   contents: read
 
+# Uploads, promotions, and rollbacks must never race each other.
+concurrency:
+  group: stitch-cloudfront-release
+  cancel-in-progress: false
+
+env:
+  STITCH_S3_BUCKET: stitch-website-animations
+  STITCH_S3_PREFIX: Stitch Animations
+  STITCH_CDN_BASE: https://d280qq257tic0i.cloudfront.net/Stitch+Animations/
+  STITCH_CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.STITCH_CLOUDFRONT_DISTRIBUTION_ID }}
+
 jobs:
-  publish:
+  upload:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || inputs.operation == 'upload')
     runs-on: ubuntu-latest
-
+    env:
+      STITCH_VERIFY_ORIGINS: https://stitch-website.webflow.io
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Validate shared release
+      - run: npm ci
+      - name: Validate complete shared release
         run: npm run validate:release
-
+      - name: Prepare checksummed release manifest
+        run: node scripts/cloudfront-release.mjs prepare "$GITHUB_SHA"
+      - name: Retain build while AWS migration is pending
+        uses: actions/upload-artifact@v4
+        with:
+          name: stitch-release-${{ github.sha }}
+          path: dist/
+          include-hidden-files: true
+          retention-days: 30
       - name: Configure AWS credentials
+        if: vars.STITCH_CHANNELS_ENABLED == 'true'
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+      - name: Upload immutable release and verify CDN bytes and CORS
+        if: vars.STITCH_CHANNELS_ENABLED == 'true'
+        run: node scripts/cloudfront-release.mjs upload "$GITHUB_SHA"
+      - name: Activate staging only
+        if: vars.STITCH_CHANNELS_ENABLED == 'true'
+        run: node scripts/cloudfront-release.mjs activate "$GITHUB_SHA" staging
+      - name: Explain pending AWS setup
+        if: vars.STITCH_CHANNELS_ENABLED != 'true'
+        run: echo 'Validated build retained. AWS channel deployment disabled until admin setup; existing live prefix is untouched.'
 
-      - name: Publish dist to S3
-        run: >-
-          aws s3 sync dist/
-          "s3://stitch-website-animations/Stitch Animations/"
-          --delete
+  activate:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch' && inputs.operation != 'upload'
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.channel }}
+    env:
+      STITCH_RELEASE: ${{ inputs.release }}
+      STITCH_CHANNEL: ${{ inputs.channel }}
+      STITCH_ROLLBACK: ${{ inputs.operation == 'rollback' && 'true' || 'false' }}
+      STITCH_VERIFY_ORIGINS: ${{ inputs.channel == 'production' && 'https://www.stitch.co,https://stitch.co,https://www.stitch.sa,https://stitch.sa' || 'https://stitch-website.webflow.io' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Require completed admin setup and explicit release
+        env:
+          STITCH_CHANNELS_ENABLED: ${{ vars.STITCH_CHANNELS_ENABLED }}
+        run: |
+          test "$STITCH_CHANNELS_ENABLED" = 'true'
+          test -n "$STITCH_CLOUDFRONT_DISTRIBUTION_ID"
+          test -n "$STITCH_RELEASE"
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+      - name: Verify retained release, activate channel, and wait for invalidation
+        run: node scripts/cloudfront-release.mjs activate "$STITCH_RELEASE" "$STITCH_CHANNEL"

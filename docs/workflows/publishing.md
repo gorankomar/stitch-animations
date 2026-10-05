@@ -26,19 +26,23 @@ Known site: Stitch Website, site ID 6823036cd77b3093eaf9154d. Playground page ID
 
 “Middle” includes this full chat scope and the saved Webflow loader synchronization described above. A GitHub-only push-and-merge request does not request Webflow loader changes or publication.
 
-## Active shared loader and hosting policy
+## CloudFront migration and permanent release channels
+
+The permanent channel architecture is approved; follow [CloudFront releases](cloudfront-releases.md) and [AWS admin handoff](../deployment/aws-admin-handoff.md). Staging root CloudFront delivery/CORS was verified on 2026-10-05. AWS channel setup and production-origin verification are still pending. During migration, preserve the verified existing loader; do not install uninitialized channel URLs. After verified cutover, the channel procedure supersedes routine jsDelivr SHA replacement in the stages/table and synchronization steps below. Middle prepares staging only; production channel activation needs production authorization because it changes live animations without a Webflow publish. The older instructions below remain the commit-pinned fallback procedure.
+
+## Legacy shared loader and fallback hosting policy
 
 The “light script” is **dist/page-all-lite.js**. It scans matching markup and imports only needed feature modules. Those modules reuse shared effects and may reference further chunks, CSS, and assets; the entry file alone is not the full release. Build/publish the complete dependency set.
 
-**Active delivery: GitHub through jsDelivr, pinned to the full merged commit SHA.**
+**Fallback delivery: GitHub through jsDelivr, pinned to the full merged commit SHA.**
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/gh/gorankomar/stitch-animations@FULL_MERGED_SHA/dist/page-all-lite.js"></script>
 ```
 
-User-reported status on 2026-10-01: S3 upload works, but cross-origin module loading from site domains is blocked by an unresolved S3/CloudFront CORS/domain issue. The admin is working on it. Continue using jsDelivr until the fix is confirmed and delivery is verified in a browser on the intended origins. Do not switch providers because an S3 deployment succeeded. This is reported operational status, not a diagnosis independently verified here.
+User-reported status on 2026-10-01: S3 upload works, but cross-origin module loading from site domains is blocked by an unresolved S3/CloudFront CORS/domain issue. The admin is working on it. Staging browser verification on 2026-10-05 confirmed CloudFront delivery now works for that origin; production-origin and channel cutover verification remain required. Do not switch providers because an S3 deployment succeeded. This is reported operational status, not a diagnosis independently verified here.
 
-S3 remains an upload destination through the existing CI workflow. CDN upload, GitHub merge, Webflow draft save, staging publication, and production publication are distinct states. Changing to S3/CloudFront is a separate hosting decision requiring verification of immutable assets, edge freshness, module/CSS dependencies, and actual cross-origin browser requests. Do not expand CORS or change infrastructure as part of ordinary publication.
+S3 remains an upload destination through the gated release-channel workflow; before admin enablement CI retains the validated build without changing S3. CDN upload, GitHub merge, Webflow draft save, staging publication, and production publication are distinct states. Changing to S3/CloudFront is a separate hosting decision requiring verification of immutable assets, edge freshness, module/CSS dependencies, and actual cross-origin browser requests. Do not expand CORS or change infrastructure as part of ordinary publication.
 
 ## Agent-owned loader synchronization
 

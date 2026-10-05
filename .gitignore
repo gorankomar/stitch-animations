@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 
 node_modules
+
+# CI creates this with the final merged release SHA.
+dist/release.json
