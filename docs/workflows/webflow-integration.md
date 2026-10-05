@@ -10,6 +10,10 @@ Inputs: component/page identity, approved local behavior, requested stage ([save
 
 Completion: explicitly report saved locally, saved to Webflow (draft), middle saved — ready for user publication, staging published-and-verified, or production published-and-verified. A repository push or CDN upload does not establish Webflow publication. Record evidence using [release records](../releases/README.md).
 
+## Permanent channel migration
+
+Follow [CloudFront releases](cloudfront-releases.md). After both channel endpoints are initialized and verified, replace the existing site-wide shared-loader block and Playground resolver with the prepared environment router. Preserve all unrelated custom code. The shared script ID prevents duplicate initialization. Verify Preview and publish only authorized domains. Routine releases then change channel pointers through GitHub Actions; SHA replacement in Webflow is only used for the pinned fallback procedure above.
+
 ## Animations Playground layout
 
 Features Wrapper uses the page-specific native `playground-features-grid` class: two equal columns, 20px gaps, top-aligned cells, and one column below 768px. Place existing component instances directly in the grid wherever possible; retain parents carrying preview settings or required sizing, including `cv-shell-wide` (540:324) and `cv-shell` (258:232). Keep Phone Shell — Realistic Experiment in its separate section outside the grid. Reorganizing the Playground must not change component definitions, slot contents, motion, or shared loader URLs.
