@@ -1,23 +1,18 @@
 # Short prompts and handoffs
 
-Use a component name or Figma link, desired result, effect names, and completion stage. Project instructions provide the process.
+Use a component name or Figma link, desired result, effect names, and one of the two normal release commands. Project instructions supply the process.
 
-- “Create this illustration in Webflow: [Figma link].” (Static, fluid, saved draft.)
-- “Create this illustration: [Figma link]. Animate with Reveal and Card Hover.” (Same static fallback, requested motion, saved Webflow draft.)
+- “Create this illustration in Webflow: [Figma link].” (Static, fluid, saved draft; no publication implied.)
+- “Create this illustration: [Figma link]. Animate with Reveal and Card Hover.” (Static fallback, requested motion, saved Webflow draft.)
 - “Implement this Figma selection: [link]. Use Reveal and Card Hover. Local preview.”
-- “Update Country Flags with this behavior: [description]. Save a Webflow draft.”
-- “Save these changes locally.”
-- “Save these changes to Webflow.”
-- “Push and merge everything we changed in this chat.”
-- “Push these changes to middle. I’ll publish.”
-- “Update the site-settings jsDelivr SHA and save; I’ll choose the domains and publish.”
+- “Test this in the Animations Playground.” (Preparation; establish staging scope if new JavaScript must be released.)
 - “Publish these changes to staging.”
 - “Publish these changes to production.”
 
-Stages and loader updates follow [saving and publishing](workflows/publishing.md). These short prompts are sufficient for middle without domain selection. For staging/production, the agent asks for the target only when authorized domains are unknown or ambiguous. Middle prepares and saves the verified shared release in Webflow site settings, synchronizes matching draft loaders, and stops before publication; the user chooses domains and publishes. Publishing automatically includes the site-wide footer SHA update and synchronization of preview/component loaders. jsDelivr is the active source while S3/CloudFront CORS awaits the admin fix.
+Normal workflow: Figma → saved Webflow draft/Playground → staging → production. Local experiments remain available. Explicit “save locally”, “save a Webflow draft”, “do not publish” and “I'll publish” constraints are still honored. “Middle” is retired as a normal stage; old middle requests mean staging animation preparation and saved drafts, stopping before Webflow publication or production promotion.
 
-Keep one chat per coherent feature or release. Continue small refinements in that chat. For unfinished work, create a short task note under docs/tasks/<task>.md with: goal, links/component, accepted decisions, branch/commit and actual working state, verification performed, remaining work, and requested completion stage. Never include credentials. Read live repository state again when resuming.
+Follow [publishing](workflows/publishing.md). The agent handles necessary release preparation, merge/upload, destination activation, required Webflow publication and verification. Permanent channel routers eliminate routine Webflow SHA edits. Production promotes the exact verified staging animation release and needs the protected GitHub review; it does not rebuild a different release. Animation-only changes need no Webflow publish; page-only changes can reuse an existing verified release.
 
-Completed decisions move to component notes; publication evidence moves to release records. Keep ordinary workflows as documents; add custom skills only when repeated use justifies them.
+“Push and merge everything we changed in this chat” includes all approved source, assets, effects, documentation, instructions, tests and fresh outputs. Main activates staging automatically; production and Webflow publication need their own authorization. Preserve unrelated work.
 
-“Push and merge” includes all approved changes from the chat, including documentation and instructions, and finishes with a validated merge into main. “Middle” includes that GitHub work plus saved shared loader updates; the user publishes afterward.
+Keep one chat per coherent feature/release. For unfinished work, create a short note under docs/tasks/<task>.md with goal, links/component, accepted decisions, actual branch/commit/working state, verification, remaining work and requested destination. Never include credentials. Read live repository state again when resuming. Completed decisions move to component notes; publication evidence moves to release records.

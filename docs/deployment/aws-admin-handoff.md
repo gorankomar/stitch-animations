@@ -1,6 +1,6 @@
 # AWS admin handoff: permanent staging and production animation loaders
 
-Prepared 2026-10-05. Existing staging loader and CORS were verified in a browser. This document requests configuration; it does not claim those changes have been applied.
+Prepared 2026-10-05; configuration/bootstrap and published router cutover completed and verified on 2026-10-06. This handoff is retained as infrastructure reference. Use docs/workflows/publishing.md for the current two-destination workflow and docs/releases/2026-10-06-cloudfront-cutover.md for verification evidence. The original setup checklist below is historical, not pending work.
 
 ## Existing infrastructure and proposed paths
 

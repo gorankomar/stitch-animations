@@ -1,18 +1,13 @@
 # Webflow integration
 
-Inputs: component/page identity, approved local behavior, requested stage ([save locally, save to Webflow/Playground draft, middle, staging, or production](publishing.md)), and authorized domains for publishing.
+Inputs: requested component/page, approved behavior, preparation or release destination, and authorized domains. See [publishing](publishing.md).
 
-1. Read component notes and inspect the current native component, properties, slots, assets, and custom code. Preserve unrelated custom code and native editability.
-2. For graphics, follow [illustration creation](illustration-creation.md): static by default, proportional sizing, native Webflow styles, and Figma-visible fallback without JS. Add scoped in-component CSS only for unsupported native styles. Map requested motion to documented data attributes. Use existing components/assets where suitable. Replace the component's prior implementation rather than appending duplicate initialization.
-3. Build the matching embed using its documented builder if required, excluding local-preview-only styles; do not overwrite native styling with generated preview CSS. For middle or a published change, follow [shared release](shared-release.md) before changing a site-wide loader.
-4. At middle or publication, remove component-level animation scripts and inline runtimes already resolved by page-all-lite. Preserve style-only embeds and unrelated custom code; for mixed embeds, remove only the animation script. The Playground page-settings shared loader provides Preview initialization with custom code enabled. Verify Webflow Preview at desktop/mobile, all variants, repeated instances, and reduced motion. Keep playground and site-wide shared loaders on the same immutable release.
-5. Follow [saving and publishing](publishing.md). For middle, the agent saves and verifies the site-wide footer SHA and the matching Playground page-settings shared loader, then stops for the user to publish. For a staging/production request, the agent updates the site-wide footer SHA and synchronizes the shared preview URL before publishing to the selected domains; the user does not edit URLs manually.
-
-Completion: explicitly report saved locally, saved to Webflow (draft), middle saved — ready for user publication, staging published-and-verified, or production published-and-verified. A repository push or CDN upload does not establish Webflow publication. Record evidence using [release records](../releases/README.md).
-
-## Permanent channel migration
-
-Follow [CloudFront releases](cloudfront-releases.md). After both channel endpoints are initialized and verified, replace the existing site-wide shared-loader block and Playground resolver with the prepared environment router. Preserve all unrelated custom code. The shared script ID prevents duplicate initialization. Verify Preview and publish only authorized domains. Routine releases then change channel pointers through GitHub Actions; SHA replacement in Webflow is only used for the pinned fallback procedure above.
+1. Read relevant component notes and inspect native properties/slots/code. Preserve reusable component internals and unrelated custom code. For illustrations follow [illustration creation](illustration-creation.md); keep proportional scaling, native styling and visible fallback.
+2. Save requested markup/style changes as drafts and use supported motion attributes. New compiled animation code must be validated/merged and activated on staging before the permanent Playground loader can run it; a draft alone does not deploy JavaScript. Local code remains local unless staging is authorized.
+3. Keep the permanent environment router in the site-wide footer and Playground page footer. It selects staging for Preview/staging and production for configured production hosts. The shared script ID prevents duplicate initialization on published Playground pages. Do not edit loader SHAs for normal releases.
+4. Remove redundant feature-module/inline animation scripts covered by page-all-lite, preserving native markup, attributes and style-only embeds. For mixed embeds remove only the redundant script. Verify Preview through the shared loader, including desktop/mobile, variants, repeats and reduced motion where relevant.
+5. **Publish to staging:** complete the staging animation release when needed and publish required Webflow page changes only to staging; verify the live result. **Publish to production:** promote the exact staging-tested release when needed, pass the protected production review, and publish required page changes only to authorized production domains. Coordinate animation/page changes for compatibility; do not publish unrelated drafts. Animation-only releases do not need a Webflow publish.
+6. Record the exact animation SHA and the separate Webflow saved/published state. CDN deployment or draft save alone does not establish page publication. Report preparation-only work as saved locally/saved to Webflow draft, and completed releases as staging/production release verified.
 
 ## Animations Playground layout
 
