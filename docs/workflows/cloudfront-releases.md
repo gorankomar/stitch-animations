@@ -2,9 +2,11 @@
 
 Approved architecture on 2026-10-05: permanent staging/production Webflow URLs importing retained, immutable release directories. AWS configuration and endpoint bootstrap are prerequisites to cutover. See [admin handoff](../deployment/aws-admin-handoff.md).
 
-## Transitional state
+## Active state
 
-Staging currently serves the legacy CloudFront root `https://d280qq257tic0i.cloudfront.net/Stitch+Animations/page-all-lite.js`; the Playground draft has been aligned to that URL. Staging entry and 67 JS/CSS dependencies matched the local artifacts at commit `678038b06de2c6ddfe2d88a0f447b2d7542a652c`; that does not identify which original commit AWS built. Production origin CORS and new release/channel endpoints have not yet been verified. Never describe migration as complete until bootstrap, draft saves, and authorized domain publication have been verified. Do not install URLs that have not been initialized.
+Cutover verified on 2026-10-06. The saved site-wide and Playground footer routers match the prepared environment router. Published home pages on staging, www.stitch.co and www.stitch.sa include the new router with no active legacy shared-loader tag. Staging and production both serve release `418f5b3456270c678384990e6db49ffb70c8e175` at verification time; future releases can deliberately differ. See [cutover evidence](../releases/2026-10-06-cloudfront-cutover.md).
+
+Normal release requests are publish to staging and publish to production. Local work and Webflow drafts remain preparation. AWS setup is complete as reported by the admin and confirmed by successful upload/promotion plus served-file/CORS checks; [admin handoff](../deployment/aws-admin-handoff.md) is retained for infrastructure reference, not as a pending setup checklist.
 
 ## Release procedure after cutover
 
@@ -17,7 +19,7 @@ Staging currently serves the legacy CloudFront root `https://d280qq257tic0i.clou
 - Rollback is the same manually authorized channel switch to a previous verified retained SHA; it can bypass the current staging match. No rebuild and no routine Webflow URL edits are needed.
 - One-time Webflow loader routing chooses production only for the four configured production hosts and staging for the staging/Preview host. The identical router and `stitch-code-page-loader` ID prevent site/footer and Playground duplication. New production hosts must be added explicitly.
 - Re-read Webflow saved custom code before draft/publication work; preserve unrelated code. Keep Preview using staging. Remove redundant component runtimes covered by the shared loader, preserving styles and markup.
-- A **middle** request prepares/merges/uploads the release and activates/verifies staging; production activation and Webflow publication remain with the user unless separately authorized. A GitHub-only merge can update staging after enablement but never production. If AWS setup is pending, build retention is preparation, not middle completion.
+- “Middle” is a legacy preparation-only alias: staging animation preparation plus saved Webflow drafts, stopping before page publication or production activation. Use publish to staging/production for normal releases; a GitHub-only merge can activate staging but never production.
 - Webflow page publication and channel activation are distinct. Publishing production pages does not automatically promote animations; promoting animations does not publish page drafts. Select only authorized Webflow domains and record both states separately.
 - Keep jsDelivr pinned SHA delivery as the verified fallback if needed. Provider changes require served-file and browser verification, plus explicit production authorization for live activation.
 
