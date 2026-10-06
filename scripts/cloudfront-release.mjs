@@ -74,7 +74,13 @@ try {
           aws(['s3', 'cp', oldFile, `s3://${bucket}/${prefix}/channel-history/${channel}/${Date.now()}-${match[1]}.js`, '--content-type', 'text/javascript', '--cache-control', 'public,max-age=31536000,immutable']);
           console.log(`Previous ${channel} release: ${match[1]}`);
         }
-      } else if (previous.status !== 404) throw new Error(`Existing channel HTTP ${previous.status}`);
+      } else if ([403, 404].includes(previous.status)) {
+        // A private S3 origin can return 403 for an absent key. Authenticated
+        // listing distinguishes absence from a real CDN/origin permission fault.
+        const listing = JSON.parse(aws(['s3api', 'list-objects-v2', '--bucket', bucket, '--prefix', key, '--output', 'json']));
+        if (listing.Contents?.some(object => object.Key === key)) throw new Error(`Existing channel HTTP ${previous.status}: object exists in S3; fix CloudFront access before activation.`);
+        console.log(`Initializing absent ${channel} channel (confirmed by authenticated S3 listing).`);
+      } else throw new Error(`Existing channel HTTP ${previous.status}`);
       changedChannel = channel;
       aws(['s3', 'cp', filename, `s3://${bucket}/${key}`, '--content-type', 'text/javascript', '--cache-control', 'no-cache,max-age=0,must-revalidate']);
       const result = JSON.parse(aws(['cloudfront', 'create-invalidation', '--distribution-id', distribution, '--paths', invalidationPath]));

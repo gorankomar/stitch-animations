@@ -56,10 +56,10 @@ test('activation verifies dependencies before writing and waits for invalidation
   try {
     const log = path.join(dir, 'calls.jsonl');
     const awsFile = path.join(dir, 'aws');
-    await writeFile(awsFile, `#!${process.execPath}\nconst fs=require('node:fs');const args=process.argv.slice(2);fs.appendFileSync(process.env.MOCK_LOG,JSON.stringify(args)+'\\n');console.log(JSON.stringify({Invalidation:{Id:'mock'}}));\n`);
+    await writeFile(awsFile, `#!${process.execPath}\nconst fs=require('node:fs');const args=process.argv.slice(2);fs.appendFileSync(process.env.MOCK_LOG,JSON.stringify(args)+'\\n');console.log(JSON.stringify(args[0]==='s3api'?{Contents:process.env.MOCK_OBJECT_EXISTS?[{Key:'Stitch Animations/channels/production/page-all-lite.js'}]:[]}:{Invalidation:{Id:'mock'}}));\n`);
     await chmod(awsFile, 0o755);
     const preload = path.join(dir, 'http.mjs');
-    await writeFile(preload, `const manifest=${JSON.stringify(manifest)};const expected=${JSON.stringify(loaderSource(release))};globalThis.fetch=async url=>{const value=String(url);const headers={'access-control-allow-origin':'*','content-type':'text/javascript','cache-control':'no-cache,max-age=0,must-revalidate'};if(value.endsWith('release.json'))return new Response(JSON.stringify(manifest),{headers});if(value.includes('/releases/'))return new Response(process.env.MOCK_STALE?'old':${JSON.stringify(bytes)},{headers});if(value.includes('/channels/staging/')&&process.env.MOCK_UNSTAGED)return new Response('old',{headers});return new Response(expected,{headers});};`);
+    await writeFile(preload, `const manifest=${JSON.stringify(manifest)};const expected=${JSON.stringify(loaderSource(release))};const fs=await import('node:fs');globalThis.fetch=async url=>{const value=String(url);const headers={'access-control-allow-origin':'*','content-type':'text/javascript','cache-control':'no-cache,max-age=0,must-revalidate'};if(value.endsWith('release.json'))return new Response(JSON.stringify(manifest),{headers});if(value.includes('/releases/'))return new Response(process.env.MOCK_STALE?'old':${JSON.stringify(bytes)},{headers});if(value.includes('/channels/production/')&&process.env.MOCK_MISSING&&!(fs.existsSync(process.env.MOCK_LOG)&&fs.readFileSync(process.env.MOCK_LOG,'utf8').includes('[\"s3\",\"cp\"')))return new Response('AccessDenied',{status:403,headers});if(value.includes('/channels/staging/')&&process.env.MOCK_UNSTAGED)return new Response('old',{headers});return new Response(expected,{headers});};`);
     const env = { ...process.env, PATH: `${dir}:${process.env.PATH}`, MOCK_LOG: log, STITCH_CDN_BASE: 'https://cdn.example/Stitch+Animations/', STITCH_S3_BUCKET: 'test-bucket', STITCH_S3_PREFIX: 'Stitch Animations', STITCH_CLOUDFRONT_DISTRIBUTION_ID: 'test-dist', STITCH_VERIFY_ORIGINS: 'https://staging.example', STITCH_ROLLBACK: 'false' };
     const run = extra => execFileSync(process.execPath, ['--import', preload, cli, 'activate', release, 'production'], { env: { ...env, ...extra }, encoding: 'utf8', stdio: 'pipe' });
     assert.throws(() => run({ MOCK_STALE: 'true' }), /bytes differ/);
@@ -72,5 +72,13 @@ test('activation verifies dependencies before writing and waits for invalidation
     assert.equal(calls[2].at(-1), '/Stitch+Animations/channels/production/page-all-lite.js');
     await writeFile(log, '');
     assert.match(run({ MOCK_UNSTAGED: 'true', STITCH_ROLLBACK: 'true' }), /Activated production/);
+    await writeFile(log, '');
+    assert.match(run({ MOCK_MISSING: 'true' }), /Initializing absent production channel/);
+    const bootstrapCalls = (await readFile(log, 'utf8')).trim().split('\n').map(s => JSON.parse(s));
+    assert.deepEqual(bootstrapCalls.map(a => a.slice(0, 2)), [['cloudfront', 'get-distribution'], ['s3api', 'list-objects-v2'], ['s3', 'cp'], ['cloudfront', 'create-invalidation'], ['cloudfront', 'wait']]);
+    await writeFile(log, '');
+    assert.throws(() => run({ MOCK_MISSING: 'true', MOCK_OBJECT_EXISTS: 'true' }), /object exists in S3/);
+    const deniedCalls = (await readFile(log, 'utf8')).trim().split('\n').map(s => JSON.parse(s));
+    assert(deniedCalls.every(args => args[0] !== 's3'));
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
