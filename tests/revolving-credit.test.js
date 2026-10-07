@@ -48,7 +48,7 @@ for(const option of ['failObserver','failPulse'])test(`${option} restores fallba
 test("missing global tokens preserve visible fallback without mounting motion",()=>{const f=fixture({missingTokens:true});try{const d=init(f.root);assert.equal(f.generated.length,0);assert.equal(f.observers.length,0);assert.ok(!f.root.attrs.has("data-rc-ready"));d();}finally{f.restore();}});
 
  test('five labels take the centered slot in order and return without a visible loop seam',()=>{
-  const duration=770, step=duration*10, ease=t=>t;
+  const duration=770, step=duration*5, ease=t=>t;
   for(let turn=0;turn<10;turn++) {
    assert.deepEqual(sampleCreditLabel(turn*step,turn%5,duration,ease),{y:0,scale:1,opacity:1});
    const above=sampleCreditLabel((turn+1)*step,turn%5,duration,ease);
@@ -58,6 +58,6 @@ test("missing global tokens preserve visible fallback without mounting motion",(
   for(let i=0;i<5;i++) assert.deepEqual(sampleCreditLabel(0,i,duration,ease),sampleCreditLabel(step*5,i,duration,ease));
  });
  test('translation and scale use the supplied curve while opacity interpolates linearly',()=>{
-  const p=sampleCreditLabel(770*8,0,770,()=>.8);
+  const p=sampleCreditLabel(770*4,0,770,()=>.8);
   assert.equal(p.y,-40); assert.equal(p.opacity,.7); assert.ok(Math.abs(p.scale-.856)<1e-10);
  });

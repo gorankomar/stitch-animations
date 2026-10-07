@@ -10,17 +10,17 @@ test('original three amounts start above, centered, and below; spare rows are co
 test('every amount advances upward into the center and the five-item seam repeats exactly',()=>{
   for(let turn=0;turn<10;turn++) {
     const active=(turn+1)%5;
-    assert.equal(sampleWalletLabel(turn*7700,active,770,t=>t).y,0);
-    assert.equal(sampleWalletLabel((turn+1)*7700,active,770,t=>t).y,-57);
+    assert.equal(sampleWalletLabel(turn*3850,active,770,t=>t).y,0);
+    assert.equal(sampleWalletLabel((turn+1)*3850,active,770,t=>t).y,-57);
   }
-  for(let i=0;i<5;i++)assert.deepEqual(sampleWalletLabel(0,i,770,t=>t),sampleWalletLabel(38500,i,770,t=>t));
+  for(let i=0;i<5;i++)assert.deepEqual(sampleWalletLabel(0,i,770,t=>t),sampleWalletLabel(19250,i,770,t=>t));
 });
 test('invisible recycling stays invisible and easing does not affect the opacity clock',()=>{
-  for(let t=0;t<=7700;t+=77) {
+  for(let t=0;t<=3850;t+=77) {
     const p=sampleWalletLabel(t,3,770,x=>x);
     assert.ok(p.y>=0 || p.opacity===0);
   }
-  const outgoing=sampleWalletLabel(770*8,0,770,()=>.8);
+  const outgoing=sampleWalletLabel(770*4,0,770,()=>.8);
   assert.equal(outgoing.y,-102.6);assert.equal(outgoing.opacity,.5);
 });
 test('carousel starts only after all three staggered hard entrances finish',()=>{
