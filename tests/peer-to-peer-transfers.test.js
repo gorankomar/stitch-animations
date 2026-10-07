@@ -10,7 +10,7 @@ function fixture({missingTokens=false,failObserver=false,reduced=false}={}) {
   value.dataset.p2pValue='8500';value.textContent='$8,500';follower.dataset.maxOffset='6';
   root.matches=s=>s==='[data-peer-to-peer-transfers]';
   root.querySelector=s=>({'.p2p-frame':frame,'.rp-screen':frame,'[data-p2p-value]':value,'.dw-card-follow':follower})[s];
-  root.querySelectorAll=s=>({'[data-p2p-hard]':rows,'[data-p2p-soft]':rows,'[data-p2p-label]':labels,'[data-p2p-label-reveal]':entrances})[s]||[];
+  root.querySelectorAll=s=>({'[data-p2p-hard]':rows.slice(0,3),'[data-p2p-soft]':rows,'[data-p2p-label]':labels,'[data-p2p-label-reveal]':entrances})[s]||[];
   const media={matches:reduced,addEventListener(k,fn){events.set('motion',fn)},removeEventListener(){events.delete('motion')}};
   globalThis.document={hidden:false,addEventListener(k,fn){events.set(k,fn)},removeEventListener(k){events.delete(k)}};
   globalThis.matchMedia=s=>s.includes('reduce')?media:{matches:false};
