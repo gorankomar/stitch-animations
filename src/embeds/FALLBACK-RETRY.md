@@ -32,3 +32,7 @@ Behavior tests cover four visible slots, fixed visible scale, entering/exiting s
 Saved locally and to Webflow draft. New compiled motion is registered in page-all, page-all-lite and the multi-entry build. No GitHub push/merge, staging activation, production promotion or Webflow publication is authorized/performed in this chat. Playground's permanent staging loader cannot run the new module until a staging release is authorized, merged and activated. Do not add an inline runtime or change its permanent URLs to bypass that boundary.
 
 Playground page metadata was verified draft=true after edits. Its public staging path returned HTTP404 on 2026-10-07; no page publication was performed.
+
+## Staging release — 2026-10-07
+
+User authorized staging. PR39 merged all chat-owned implementation and distribution files; feature release `cae53fa557e4a0c7128d36702149600acc0f6359` was activated and verified in desktop/mobile Playground Preview. Production remained unchanged, and Playground stayed a draft with no Webflow publication. See docs/releases/2026-10-07-fallback-retry-staging.md for deployment evidence; earlier draft-only statements describe preparation history.
