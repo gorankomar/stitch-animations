@@ -82,7 +82,7 @@ export const init = stageInitializer('[data-digital-wallet]', root => {
         hardTracks.forEach((track,i) => track.render(i<3?clamp((ms-timing.labelsStart-(2-i)*HARD_REVEAL_STAGGER_MS)/duration):1,ease));
         const loopTime = Math.max(0,ms-timing.loopStart);
         labels.forEach((node,i) => {
-          const pose = sampleWalletLabel(loopTime + (ms >= timing.loopStart ? duration*6 : 0),i,duration,ease);
+          const pose = sampleWalletLabel(loopTime + (ms >= timing.loopStart ? duration*3 : 0),i,duration,ease);
           node.style.transform = `translateY(${pose.y/5.4}cqi) scale(${pose.scale})`;
           node.style.opacity = String(pose.opacity); node.style.visibility = pose.opacity === 0 ? 'hidden':'visible';
         });

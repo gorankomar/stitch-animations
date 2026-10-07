@@ -1,6 +1,6 @@
 // Five slots: active, below, hidden incoming, hidden outgoing, above.
 export function sampleUpwardCarousel(time, index, duration, ease, {spacing = 50, adjacentScale = .82, adjacentOpacity = .4} = {}) {
-  const hold = duration * 6, move = duration * 4, step = hold + move;
+  const hold = duration * 3, move = duration * 2, step = hold + move;
   const turn = Math.floor(time / step);
   const progress = Math.max(0, (time % step - hold) / move);
   const slot = ((index - turn) % 5 + 5) % 5;

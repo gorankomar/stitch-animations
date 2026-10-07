@@ -73,8 +73,8 @@
     "file": "styles/styles.VjsnFFRN.css",
     "src": "_styles.!~{00a}~.js"
   },
-  "_upward-carousel.C2jcfc0K.js": {
-    "file": "chunks/upward-carousel.C2jcfc0K.js",
+  "_upward-carousel.DPDYtD30.js": {
+    "file": "chunks/upward-carousel.DPDYtD30.js",
     "name": "upward-carousel"
   },
   "_value-counter.BXLPe_ym.js": {
@@ -419,7 +419,7 @@
       "_reveal-groups.BlHF0DaQ.js",
       "_value-counter.BXLPe_ym.js",
       "_follow-group.DCIpy6nZ.js",
-      "_upward-carousel.C2jcfc0K.js",
+      "_upward-carousel.DPDYtD30.js",
       "_motion.D7xsNJ3J.js",
       "_easing.BUsciq49.js",
       "_dom.DgX39f3a.js",
@@ -534,7 +534,7 @@
       "_animation-stage.iEnA391a.js",
       "_reveal-groups.BlHF0DaQ.js",
       "_value-counter.BXLPe_ym.js",
-      "_upward-carousel.C2jcfc0K.js",
+      "_upward-carousel.DPDYtD30.js",
       "_motion.D7xsNJ3J.js",
       "_easing.BUsciq49.js"
     ]
@@ -581,7 +581,7 @@
       "_reveal-groups.BlHF0DaQ.js",
       "_motion.D7xsNJ3J.js",
       "_soft-path-pulse.CsdMiLK-.js",
-      "_upward-carousel.C2jcfc0K.js",
+      "_upward-carousel.DPDYtD30.js",
       "_easing.BUsciq49.js"
     ]
   },
@@ -965,7 +965,7 @@
       "_math.DB99t-US.js",
       "_motion.D7xsNJ3J.js",
       "_value-counter.BXLPe_ym.js",
-      "_upward-carousel.C2jcfc0K.js",
+      "_upward-carousel.DPDYtD30.js",
       "_expanding-rings.KCV49Jke.js",
       "_demo-cursor.CiMQYEry.js",
       "_seamless-marquee.3JGbAH9P.js",
