@@ -4,6 +4,9 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-top-ups]', load: () => import('../embeds/top-ups.js')},
+  {selector: '[data-peer-to-peer-transfers]', load: () => import('../embeds/peer-to-peer-transfers.js')},
+  {selector: '[data-digital-wallet]', load: () => import('../embeds/digital-wallet.js')},
   {selector: '[data-rules-flow]', load: () => import('../embeds/rules-flow.js')},
   {selector: '[data-3ds-enabled-security]', load: () => import('../embeds/3ds-enabled-security.js')},
   {selector: '[data-dynamic-funding]', load: () => import('../embeds/dynamic-funding.js')},

@@ -73,6 +73,10 @@
     "file": "styles/styles.VjsnFFRN.css",
     "src": "_styles.!~{00a}~.js"
   },
+  "_upward-carousel.C2jcfc0K.js": {
+    "file": "chunks/upward-carousel.C2jcfc0K.js",
+    "name": "upward-carousel"
+  },
   "_value-counter.BXLPe_ym.js": {
     "file": "chunks/value-counter.BXLPe_ym.js",
     "name": "value-counter"
@@ -404,6 +408,24 @@
       "_connector.CbYSk2rO.js"
     ]
   },
+  "src/embeds/digital-wallet.js": {
+    "file": "feature-digital-wallet.js",
+    "name": "feature-digital-wallet",
+    "src": "src/embeds/digital-wallet.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.iEnA391a.js",
+      "_reveal-groups.BlHF0DaQ.js",
+      "_value-counter.BXLPe_ym.js",
+      "_follow-group.DCIpy6nZ.js",
+      "_upward-carousel.C2jcfc0K.js",
+      "_motion.D7xsNJ3J.js",
+      "_easing.BUsciq49.js",
+      "_dom.DgX39f3a.js",
+      "_math.DB99t-US.js"
+    ]
+  },
   "src/embeds/due-date-graphic.js": {
     "file": "feature-due-date.js",
     "name": "feature-due-date",
@@ -502,6 +524,21 @@
       "_math.DB99t-US.js"
     ]
   },
+  "src/embeds/peer-to-peer-transfers.js": {
+    "file": "feature-peer-to-peer-transfers.js",
+    "name": "feature-peer-to-peer-transfers",
+    "src": "src/embeds/peer-to-peer-transfers.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.iEnA391a.js",
+      "_reveal-groups.BlHF0DaQ.js",
+      "_value-counter.BXLPe_ym.js",
+      "_upward-carousel.C2jcfc0K.js",
+      "_motion.D7xsNJ3J.js",
+      "_easing.BUsciq49.js"
+    ]
+  },
   "src/embeds/product-variety.js": {
     "file": "feature-product-variety.js",
     "name": "feature-product-variety",
@@ -544,6 +581,7 @@
       "_reveal-groups.BlHF0DaQ.js",
       "_motion.D7xsNJ3J.js",
       "_soft-path-pulse.CsdMiLK-.js",
+      "_upward-carousel.C2jcfc0K.js",
       "_easing.BUsciq49.js"
     ]
   },
@@ -572,6 +610,22 @@
     "imports": [
       "_animation-stage.iEnA391a.js",
       "_follow-group.DCIpy6nZ.js",
+      "_dom.DgX39f3a.js",
+      "_math.DB99t-US.js"
+    ]
+  },
+  "src/embeds/top-ups.js": {
+    "file": "feature-top-ups.js",
+    "name": "feature-top-ups",
+    "src": "src/embeds/top-ups.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.iEnA391a.js",
+      "_reveal-groups.BlHF0DaQ.js",
+      "_follow-group.DCIpy6nZ.js",
+      "_motion.D7xsNJ3J.js",
+      "_easing.BUsciq49.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js"
     ]
@@ -817,6 +871,9 @@
       "_easing.BUsciq49.js"
     ],
     "dynamicImports": [
+      "src/embeds/top-ups.js",
+      "src/embeds/peer-to-peer-transfers.js",
+      "src/embeds/digital-wallet.js",
       "src/embeds/rules-flow.js",
       "src/embeds/3ds-enabled-security.js",
       "src/embeds/dynamic-funding.js",
@@ -860,6 +917,9 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/top-ups.js",
+      "src/embeds/peer-to-peer-transfers.js",
+      "src/embeds/digital-wallet.js",
       "src/embeds/3ds-enabled-security.js",
       "src/embeds/dynamic-funding.js",
       "src/embeds/instant-virtual-cards.js",
@@ -897,15 +957,16 @@
       "_auto-reveal.CPDX375z.js",
       "_zoom-lens.C8Anf7pm.js",
       "src/embeds/revolving-credit.js",
-      "_expanding-rings.KCV49Jke.js",
       "_animation-stage.iEnA391a.js",
       "_reveal-groups.BlHF0DaQ.js",
       "_easing.BUsciq49.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js",
-      "_value-counter.BXLPe_ym.js",
       "_motion.D7xsNJ3J.js",
+      "_value-counter.BXLPe_ym.js",
+      "_upward-carousel.C2jcfc0K.js",
+      "_expanding-rings.KCV49Jke.js",
       "_demo-cursor.CiMQYEry.js",
       "_seamless-marquee.3JGbAH9P.js",
       "_soft-path-pulse.CsdMiLK-.js",

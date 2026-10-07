@@ -1,3 +1,6 @@
+import '../embeds/top-ups.js';
+import '../embeds/peer-to-peer-transfers.js';
+import '../embeds/digital-wallet.js';
 import '../embeds/3ds-enabled-security.js';
 import '../embeds/dynamic-funding.js';
 import '../embeds/instant-virtual-cards.js';

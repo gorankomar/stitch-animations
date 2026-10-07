@@ -1,0 +1,2 @@
+function M(c,f,y,m,{spacing:s=50,adjacentScale:a=.82,adjacentOpacity:e=.4}={}){const l=y*6,p=y*4,r=l+p,x=Math.floor(c/r),n=Math.max(0,(c%r-l)/p),i=((f-x)%5+5)%5,h=[{y:0,scale:1,opacity:1},{y:s,scale:a,opacity:e},{y:s*2,scale:.72,opacity:0},{y:-s*2,scale:.72,opacity:0},{y:-s,scale:a,opacity:e}],o=h[i],t=h[(i+4)%5],u=m(n);return{y:o.y+(t.y-o.y)*u,scale:o.scale+(t.scale-o.scale)*u,opacity:o.opacity+(t.opacity-o.opacity)*n}}export{M as s};
+//# sourceMappingURL=upward-carousel.C2jcfc0K.js.map

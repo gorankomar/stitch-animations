@@ -1,0 +1,19 @@
+ .tu{width:100%;min-width:0;position:relative;container-type:inline-size;writing-mode:horizontal-tb}
+.tu-frame{width:100%;aspect-ratio:540 / 278;position:relative;overflow:hidden;border-radius:1.481481cqi;background-color:#fff;background-image:linear-gradient(212.48369deg,rgba(233,249,255,.37) 0%,rgba(255,255,255,.37) 48.599%,rgba(233,249,255,.37) 100%)}
+.tu-card-position{position:absolute;left:17.407407%;top:8.633094%;width:55.555556%;z-index:1}
+.tu-panel-position{position:absolute;left:46.296296%;top:25.539568%;width:47.407407%;z-index:2}
+.tu-label-position{position:absolute;left:6.666667%;top:32.733813%;z-index:3}
+.tu-reveal{width:100%}.tu-follow{width:100%}
+.tu-panel{display:flex;flex-direction:column;align-items:stretch;row-gap:2.222222cqi;padding:2.962963cqi;background-color:#fff;border:0.185185cqi solid #e7e7e7;border-radius:1.851852cqi;box-shadow:0 1.851852cqi 1.851852cqi rgba(0,0,0,.1);box-sizing:border-box}
+.tu-title{font-size:2.592593cqi;line-height:3.111111cqi;font-weight:600;color:#000}
+.tu-caption{font-size:1.851852cqi;line-height:2.222222cqi;font-weight:500;color:#000;margin-bottom:-1.111111cqi}
+.tu-input{display:flex;align-items:center;column-gap:.740741cqi;padding:1.111111cqi 1.481481cqi;background-color:#fcfcfc;border:.185185cqi solid #e7e7e7;border-radius:1.111111cqi;font-size:1.851852cqi;line-height:3.333333cqi;font-weight:500}
+.tu-currency{color:#888}.tu-amount{color:#4b4b4b}
+.tu-options{display:grid;grid-template-columns:1fr 1fr 1fr;column-gap:1.666667cqi;row-gap:1.851852cqi}
+.tu-option{padding:.740741cqi 1.481481cqi;border:.185185cqi solid #e7e7e7;border-radius:1.111111cqi;background-color:#f9f9f9;color:#888;font-size:1.851852cqi;line-height:3.333333cqi;font-weight:500;text-align:center;white-space:nowrap}
+.tu-selected{background-color:#121212;color:#fff;border-color:#121212}
+.tu-label{display:flex;align-items:center;justify-content:center;column-gap:1.481481cqi;padding:2.222222cqi;border:.185185cqi solid #efefef;border-radius:1.481481cqi;background-color:#fff;box-shadow:-.925926cqi .925926cqi 1.851852cqi rgba(16,24,40,.1)}
+.tu-dot-slot{width:1.851852cqi;height:1.851852cqi;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tu-label-text{font-size:2.222222cqi;line-height:2.222222cqi;font-weight:500;color:#000;white-space:nowrap}
+
+.tu-dot-fill{display:block;width:1.481481cqi;height:1.481481cqi;min-width:0;min-height:0;border-radius:50%;background-color:#009aff;flex-shrink:0}
