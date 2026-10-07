@@ -14,3 +14,5 @@
 ## Staging release — 2026-10-07
 
 User authorized publishing all four illustrations and their related source, assets, documentation, tests and generated distribution files to GitHub and staging. Full release validation passes 97/97 tests and shared dependency verification. The shared carousel retains the established 6×duration hold / 4×duration move, preserving Revolving Credit behavior. See docs/releases/2026-10-07-digital-wallets-staging.md for final delivery evidence; earlier draft-only delivery statements above describe preparation history.
+
+User clarified release delivery: activate staging animation channel and verify Playground Preview; do not publish Webflow pages for this preparation workflow. Playground remains staged for publication. GitHub PR #34 merged all related files; staging release 63198d21e27cc21fe8bee99598713257a1e265dd verified served, with production unchanged.
