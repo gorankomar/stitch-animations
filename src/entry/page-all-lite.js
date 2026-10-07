@@ -4,6 +4,7 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-fallback-retry]', load: () => import('../embeds/fallback-retry.js')},
   {selector: '[data-top-ups]', load: () => import('../embeds/top-ups.js')},
   {selector: '[data-peer-to-peer-transfers]', load: () => import('../embeds/peer-to-peer-transfers.js')},
   {selector: '[data-digital-wallet]', load: () => import('../embeds/digital-wallet.js')},

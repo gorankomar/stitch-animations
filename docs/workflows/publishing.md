@@ -21,6 +21,10 @@ If the user says only “publish” and the destination is unclear, ask staging 
 - **Middle is retired as a normal stage.** If an older prompt says “middle” or “I'll publish”, interpret it as preparation: merge/upload/verify the staging animation release and save the requested Webflow drafts, then stop before Webflow publication or production activation. Report the exact states; do not change permanent URLs or ask the user to replace a SHA.
 - A GitHub-only push/merge updates staging animations through the enabled main workflow; it does not authorize production promotion or publishing Webflow drafts. All approved chat-owned source/assets/effects/docs/instructions/tests and fresh dist outputs belong in that merge; preserve unrelated work.
 
+## Playground must remain a draft
+
+User requirement recorded 2026-10-07: **Animations Playground must never be published; always keep it a draft.** Staging animation-channel activation is separate and does not publish this page. Exclude Playground from Webflow page publication, including site-wide publication; preserve its draft flag. Verify draft status before and after authorized publication of other pages.
+
 ## Permanent loaders
 
 CloudFront channel delivery is active and the Webflow router cutover was verified on 2026-10-06. See [CloudFront releases](cloudfront-releases.md), [shared release](shared-release.md), and the [cutover record](../releases/2026-10-06-cloudfront-cutover.md).

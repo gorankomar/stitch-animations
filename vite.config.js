@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-fallback-retry': resolve(process.cwd(), 'src/embeds/fallback-retry.js'),
             'feature-top-ups': resolve(process.cwd(), 'src/embeds/top-ups.js'),
             'feature-peer-to-peer-transfers': resolve(process.cwd(), 'src/embeds/peer-to-peer-transfers.js'),
             'feature-digital-wallet': resolve(process.cwd(), 'src/embeds/digital-wallet.js'),

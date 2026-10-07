@@ -4,6 +4,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 
 | Component | Notes |
 | --- | --- |
+| Fallback and Retry Logic | [FALLBACK-RETRY.md](../../src/embeds/FALLBACK-RETRY.md) |
 | Top-ups | [TOP-UPS.md](../../src/embeds/TOP-UPS.md) |
 | Email Statement | [EMAIL-STATEMENT.md](../../src/embeds/EMAIL-STATEMENT.md) |
 | Consumer Verification Label / Center Label | [CONSUMER-VERIFICATION.md](../../src/embeds/CONSUMER-VERIFICATION.md) |
