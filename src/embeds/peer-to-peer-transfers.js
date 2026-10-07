@@ -15,7 +15,7 @@ export const init = stageInitializer('[data-peer-to-peer-transfers]', root => {
   const labels=[...root.querySelectorAll('[data-p2p-label]')];
   const entrances=[...root.querySelectorAll('[data-p2p-label-reveal]')];
   const value=root.querySelector('[data-p2p-value]');
-  if(!frame||!phone||!value||hard.length!==4||soft.length!==4||labels.length!==5||entrances.length!==5)return;
+  if(!frame||!phone||!value||![3,4].includes(hard.length)||soft.length!==4||labels.length!==5||entrances.length!==5)return;
   const css=getComputedStyle(root), duration=toMs(css.getPropertyValue('--motion-duration-default'),0);
   const curve=css.getPropertyValue('--motion-ease-primary').trim().match(/^cubic-bezier\(([^)]+)\)$/)?.[1].split(',').map(Number);
   if(!(duration>0)||curve?.length!==4||!curve.every(Number.isFinite))return;
