@@ -4,6 +4,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 
 | Component | Notes |
 | --- | --- |
+| Top-ups | [TOP-UPS.md](../../src/embeds/TOP-UPS.md) |
 | Email Statement | [EMAIL-STATEMENT.md](../../src/embeds/EMAIL-STATEMENT.md) |
 | Consumer Verification Label / Center Label | [CONSUMER-VERIFICATION.md](../../src/embeds/CONSUMER-VERIFICATION.md) |
 | Consumer Verification | [CONSUMER-VERIFICATION.md](../../src/embeds/CONSUMER-VERIFICATION.md) |
@@ -20,6 +21,9 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Create New Card | [CREATE-NEW-CARD.md](../../src/embeds/CREATE-NEW-CARD.md) |
 | Buy Now Pay Later | [BUY-NOW-PAY-LATER.md](../../src/embeds/BUY-NOW-PAY-LATER.md) |
 | Credit Check | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
+| Peer-to-Peer Transfers | [PEER-TO-PEER-TRANSFERS.md](../../src/embeds/PEER-TO-PEER-TRANSFERS.md) |
+| Wallet / Wallet Graphic | [WALLET.md](../../src/embeds/WALLET.md) |
+| Digital Wallet | [DIGITAL-WALLET.md](../../src/embeds/DIGITAL-WALLET.md) |
 | Revolving Credit | [REVOLVING-CREDIT.md](../../src/embeds/REVOLVING-CREDIT.md) |
 | Credit Product Label | [REVOLVING-CREDIT.md](../../src/embeds/REVOLVING-CREDIT.md) |
 | CC Card | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |

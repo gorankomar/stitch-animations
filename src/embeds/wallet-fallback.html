@@ -1,0 +1,7 @@
+<style>
+/* Visible native fallback until the shared Reveal controller initializes each target. */
+[data-wallet-graphic] [data-reveal]:not([style*="--reveal-transform:"]){opacity:1!important;transform:none!important}
+[data-wallet-graphic] .features-graphic_grid-bg:not([style*="--reveal-transform:"]),
+[data-wallet-graphic] .features-graphic_grid-bg.is-reveal{opacity:.43!important}
+@media(prefers-reduced-motion:reduce){[data-wallet-graphic] [data-reveal]{opacity:1!important;transform:none!important;transition:none}[data-wallet-graphic] .features-graphic_grid-bg{opacity:.43!important}}
+</style>

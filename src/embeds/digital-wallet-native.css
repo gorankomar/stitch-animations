@@ -1,0 +1,20 @@
+.dw{width:100%;min-width:0;position:relative}
+.dw-frame{width:100%;aspect-ratio:540 / 278;position:relative;overflow:hidden;border-radius:1.481481cqi;background-color:#fff;background-image:linear-gradient(218.976deg,rgba(237,252,242,.37) 1.5346%,rgba(255,255,255,.37) 51.111%,rgba(237,252,242,.37) 106.79%)}
+.dw-grid{position:absolute;left:0;top:0;width:70.185185%;height:153.597122%;pointer-events:none;opacity:1}
+.dw-panel{position:absolute;left:11.666667%;top:7.553957%;width:64.814815%;height:59.406829cqi;background-color:#fff;border:0.555556cqi solid #f9f9f9;border-radius:2.962963cqi;box-shadow:0 0.157778cqi 0.157778cqi rgba(42,51,69,.04),0 0.473519cqi 0.473519cqi rgba(42,51,70,.04),0 0.947037cqi 0.947037cqi rgba(42,51,70,.04),0 1.893889cqi 1.893889cqi rgba(14,63,126,.04),0 3.787963cqi 3.787963cqi rgba(14,63,126,.04);box-sizing:border-box}
+.dw-title-position{position:absolute;left:26.111111%;top:16.187050%;width:35.925926%}
+.dw-value-position{position:absolute;left:26.111111%;top:25.179856%;width:35.925926%}
+.dw-card-position{position:absolute;left:16.296296%;top:47.444921%;width:55.555556%}
+.dw-title{font-size:2.592593cqi;line-height:3.888889cqi;font-weight:400;color:#454545;opacity:.5;text-align:center}
+.dw-value{font-size:5.185185cqi;line-height:6.481481cqi;font-weight:600;color:#001536;text-align:center;white-space:nowrap}
+.dw-reveal{width:100%}
+.dw-card-follow{width:100%}
+.dw-label-position{position:absolute;left:61.851852%;top:53.237410%;width:30.185185cqi;height:10.740741cqi;z-index:3}
+.dw-label-motion{width:100%;transform-origin:center center}
+.dw-label{display:flex;align-items:center;justify-content:center;column-gap:1.111111cqi;height:10.740741cqi;box-sizing:border-box;padding-left:2.777778cqi;padding-right:2.777778cqi;background-color:#fff;border:0.185185cqi solid #e7e7e7;border-radius:1.851852cqi;box-shadow:0 0.740741cqi 0.740741cqi rgba(16,24,40,.1),0 0.370370cqi 0.370370cqi rgba(16,24,40,.06)}
+.dw-label-text{font-size:3.333333cqi;line-height:5.185185cqi;font-weight:500;color:#121212;white-space:nowrap}
+.dw-plus-slot{width:3.333333cqi;height:3.333333cqi;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dw-label-above{transform:translateY(-10.555556cqi) scale(.724);opacity:1}
+.dw-label-below{transform:translateY(10.555556cqi) scale(.73);opacity:1}
+.dw-label-hidden{visibility:hidden;opacity:0}
+.dw-fade{position:absolute;left:-1.296296%;top:-4.316547%;width:104.074074%;height:104.316547%;background-image:linear-gradient(to bottom,rgba(255,255,255,0) 63.448%,#fff 152.07%);pointer-events:none;z-index:4}

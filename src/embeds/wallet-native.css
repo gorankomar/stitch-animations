@@ -1,0 +1,25 @@
+.wallet-graphic{width:100%;min-width:0;container-type:inline-size;writing-mode:horizontal-tb}
+.wallet-frame{width:100%;aspect-ratio:540 / 278;position:relative;overflow:clip;border-radius:1.481481cqi;background-color:#fff;background-image:linear-gradient(218.976deg,rgba(237,252,242,.37) 1.5346%,rgba(255,255,255,.37) 51.111%,rgba(237,252,242,.37) 106.79%)}
+.wallet-window-position{position:absolute;left:4.074074%;top:7.913669%;width:106.111111%;z-index:1}
+.wallet-window-reveal{width:100%}
+.wallet-title{font-size:3.333333cqi;line-height:4cqi;font-weight:600;color:#3d3d3d}
+.wallet-columns{display:flex;align-items:flex-start;column-gap:1.111111cqi}
+.wallet-left{width:42.592593cqi;flex-shrink:0;display:flex;flex-direction:column;row-gap:1.481481cqi}
+.wallet-card{width:100%}
+.wallet-billing{display:flex;align-items:center;column-gap:1.481481cqi;padding:1.851852cqi;background-color:#f8f8f8;border-radius:1.481481cqi}
+.wallet-bank-icon{width:3.703704cqi;height:3.703704cqi;flex-shrink:0;color:#888;display:flex;align-items:center;justify-content:center;border:.185185cqi solid #e7e7e7;border-radius:.370370cqi}
+.wallet-billing-copy{font-size:1.481481cqi;line-height:2.222222cqi;color:#888;white-space:nowrap}
+.wallet-expenses{width:51.851852cqi;flex-shrink:0;display:flex;flex-direction:column;row-gap:2.222222cqi;padding:2.407407cqi;border:.185185cqi solid #e7e7e7;border-radius:2.222222cqi;background-color:#fff}
+.wallet-expenses-title{font-size:2.222222cqi;line-height:2.777778cqi;font-weight:600;color:#121212}
+.wallet-search{display:flex;align-items:center;column-gap:1.111111cqi;padding:1.481481cqi;border:.185185cqi solid #d6d6d6;border-radius:1.111111cqi;color:#888;font-size:2.037037cqi;line-height:2.407407cqi}
+.wallet-search-icon{width:2.222222cqi;height:2.222222cqi;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wallet-rows{display:flex;flex-direction:column}
+.wallet-row{display:flex;align-items:flex-start;column-gap:1.851852cqi;padding-top:1.111111cqi;padding-bottom:1.111111cqi;border-bottom:.185185cqi solid #f5f5f5;font-size:1.481481cqi;line-height:2.222222cqi;color:#121212}
+.wallet-date{width:4.629630cqi;flex-shrink:0}
+.wallet-description{flex-grow:1}
+.wallet-value{white-space:nowrap;color:#888}
+.wallet-positive{color:#00a76f}
+.wallet-fade-bottom{position:absolute;left:0;right:0;top:0;bottom:0;z-index:2;pointer-events:none;background-image:linear-gradient(to bottom,rgba(255,255,255,0) 77.759%,#fff 137.76%)}
+.wallet-fade-right{position:absolute;left:0;right:0;top:0;bottom:0;z-index:2;pointer-events:none;background-image:linear-gradient(to right,rgba(255,255,255,0) 61.944%,#fff 111.48%)}
+
+.wallet-search-symbol{position:relative;width:100%;height:100%}.wallet-search-ring{position:absolute;left:0;top:0;width:75%;height:75%;border:.222222cqi solid #888;border-radius:50%}.wallet-search-handle{position:absolute;left:65%;top:70%;width:40%;height:.222222cqi;transform:rotate(45deg);background-color:#888}
