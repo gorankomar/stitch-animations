@@ -1,3 +1,4 @@
+import { createIssuerFocus } from './issuer-routing-focus.js';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
 import { createRevealTrack } from '../lib/effects/reveal-groups.js';
 import { createSoftPathPulse } from '../lib/effects/soft-path-pulse.js';
@@ -55,7 +56,7 @@ export const init = stageInitializer('[data-issuer-routing]', root => {
   const starts = nodes.map(node => Number(node.dataset.irReveal) * stagger);
   const pulseStart = Math.max(...starts) + duration + stagger;
   const tracks = [], pulses = [];
-  let stop, stopDots, restoreArtwork, disposed = false;
+  let stop, stopDots, stopFocus, restoreArtwork, disposed = false;
   const dots = root.querySelector('.ir-dots');
   const canvas = root.querySelector('[data-ir-dots]');
   const savedDots = dots?.style.backgroundImage;
@@ -69,7 +70,7 @@ export const init = stageInitializer('[data-issuer-routing]', root => {
   };
   const cleanup = () => {
     if (disposed) return;
-    disposed = true; stop?.();
+    disposed = true; stop?.(); stopFocus?.();
     tracks.forEach(track => track.dispose()); pulses.forEach(pulse => pulse.dispose());
     root.removeAttribute('data-ir-ready');
     restoreArtwork?.(); stopDots?.(); if (dots) dots.style.backgroundImage = savedDots;
@@ -86,6 +87,7 @@ export const init = stageInitializer('[data-issuer-routing]', root => {
     const lengths = Object.fromEntries(paths.map(path => [path.dataset.irPulse, path.getTotalLength()]));
     const schedule = issuerPulseSchedule(lengths);
     paths.forEach(path => pulses.push(createSoftPathPulse(path, { start: pulseStart + schedule.starts[path.dataset.irPulse], period: schedule.period })));
+    stopFocus = createIssuerFocus(root);
     stop = animateStage(root, { threshold: .25, update({ time, reduced, dirty }) {
       if (disposed) return;
       try {
