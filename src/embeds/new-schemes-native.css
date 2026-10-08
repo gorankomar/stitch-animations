@@ -1,0 +1,38 @@
+.ns-shell{width:100%;min-width:0;container-type:inline-size;writing-mode:horizontal-tb;direction:ltr}
+.ns-frame{position:relative;width:100%;aspect-ratio:540 / 278;overflow:hidden;border-radius:1.481481cqi;background-color:#fff;background-image:linear-gradient(216.01477deg,rgba(231,231,231,.37),rgba(255,255,255,.37) 51.725%,rgba(231,231,231,.37));font-family:inherit}
+.ns-grid{position:absolute;right:0;bottom:-18.345324%;width:72.222222%;height:159.712230%;transform:scaleY(-1);pointer-events:none}
+.ns-position{position:absolute;width:40.185185%;z-index:2}
+.ns-position-saudi{left:7.407407%;top:6.834532%}
+.ns-position-nigeria{left:52.407407%;top:12.949640%}
+.ns-panel{position:relative;background-color:#f9f9f9;border-radius:2.222222cqi;padding-top:2.962963cqi;padding-bottom:2.962963cqi;padding-left:2.962963cqi;padding-right:2.962963cqi;box-shadow:inset 0 0 0 .185185cqi #efefef;display:flex;flex-direction:column;row-gap:1.851852cqi}
+.ns-heading{display:flex;align-items:center;column-gap:1.851852cqi;height:3.148148cqi}
+.ns-flag{width:4.814815cqi;height:3.148148cqi;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:.277778cqi}
+.ns-flag-art{display:block;width:100%;height:100%;object-fit:fill}
+.ns-label{font-size:1.851852cqi;font-weight:500;line-height:1.2;color:#000;white-space:nowrap}
+.ns-options{display:flex;flex-direction:column;row-gap:1.481481cqi}
+.ns-row{width:100%;height:7.407407cqi;display:flex;align-items:center;column-gap:1.851852cqi;padding-left:1.851852cqi;padding-right:1.851852cqi;border-radius:1.481481cqi;background-color:#fff;box-shadow:inset 0 0 0 .185185cqi #efefef}
+.ns-row-nigeria{height:8.148148cqi}
+.ns-check{width:2.592593cqi;height:2.592593cqi;border-radius:50%;flex-shrink:0;background-color:#fff;box-shadow:inset 0 0 0 .259259cqi #e7e7e7;display:flex;align-items:center;justify-content:center}
+.ns-checked{background-color:#3d3d3d;box-shadow:inset 0 0 0 .259259cqi #3d3d3d}
+.ns-tick{color:#fff;width:1.944444cqi;height:1.944444cqi;display:block;opacity:0}
+.ns-checked .ns-tick{opacity:1}
+.ns-method{position:relative;width:6.296296cqi;height:4.444444cqi;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:.740741cqi;background-color:#fff;box-shadow:inset 0 0 0 .185185cqi #f2f4f7;margin-right:-.370370cqi;color:#1434cb;overflow:hidden}
+.ns-art{display:block;object-fit:contain}
+.ns-art-credit-card{width:4.074074cqi;height:4.074074cqi}
+.ns-art-mada{width:4.420370cqi;height:1.687037cqi}
+.ns-art-visa{width:6.296296cqi;height:4.444444cqi}
+.ns-art-mastercard{width:4.140741cqi;height:2.481481cqi}
+.ns-method-verve{background-color:#00425f}
+.ns-verve-crop{position:relative;width:5.555556cqi;height:1.851852cqi;overflow:hidden}.ns-art-verve{position:absolute;width:108.51%;height:125%;left:-4.26%;top:-12.5%}
+.ns-art-afrigo{width:4.578889cqi;height:1.851852cqi}
+.ns-cursor{position:absolute;left:0;top:0;width:3.333333cqi;height:4.074074cqi;opacity:0;pointer-events:none}
+.ns-cursor-shape{width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 22'%3E%3Cpath d='M1.35 1.25c-.45-.36-1.1.05-.96.62l4.46 18.05c.14.59.98.66 1.23.11l3.07-6.76 7.2-1.7c.59-.14.74-.91.27-1.29Z' fill='%23121212' stroke='white' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat}
+.ns-logo-scale{display:flex;align-items:center;justify-content:center;flex-shrink:0;transform-origin:center}
+
+.ns-logo-place{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ns-logo-place-credit-card{width:4.074074cqi;height:4.074074cqi;color:#121212}
+.ns-logo-place-visa{width:4.679630cqi;height:1.518148cqi;color:#172b85}
+.ns-logo-place-mastercard{width:4.140741cqi;height:2.481481cqi}
+.ns-logo-place-mada{width:95.987px;height:32.038px;transform:scale(calc(4.420370cqi / 95.987px));transform-origin:center}
+.ns-logo-place-verve{position:absolute;width:6.028333cqi;height:2.314815cqi}
+.ns-logo-place-afrigo{width:4.578889cqi;height:1.851852cqi}

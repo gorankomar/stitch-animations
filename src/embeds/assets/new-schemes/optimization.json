@@ -1,0 +1,103 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupIds",
+      "removeUselessDefs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "cleanupEnableBackground",
+      "removeHiddenElems",
+      "removeEmptyText",
+      "convertShapeToPath",
+      "convertEllipseToCircle",
+      "moveElemsAttrsToGroup",
+      "moveGroupAttrsToElems",
+      "collapseGroups",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "removeEmptyAttrs",
+      "removeEmptyContainers",
+      "mergePaths",
+      "removeUnusedNS",
+      "sortAttrs",
+      "sortDefsChildren",
+      "removeTitle",
+      "removeDesc"
+    ]
+  },
+  "exceptions": [
+    "Preserve xmlns, viewBox and root dimensions",
+    "Nigeria clipping ID uses a semantic namespace; standalone artwork preserves root dimensions"
+  ],
+  "manifest": [
+    {
+      "file": "check.svg",
+      "originalBytes": 340,
+      "optimizedBytes": 292
+    },
+    {
+      "file": "credit-card.svg",
+      "originalBytes": 996,
+      "optimizedBytes": 533
+    },
+    {
+      "file": "grid.svg",
+      "originalBytes": 3674,
+      "optimizedBytes": 2460
+    },
+    {
+      "file": "mada.svg",
+      "originalBytes": 5463,
+      "optimizedBytes": 2012
+    },
+    {
+      "file": "mastercard.svg",
+      "originalBytes": 1191,
+      "optimizedBytes": 565
+    },
+    {
+      "file": "nigeria.svg",
+      "originalBytes": 506,
+      "optimizedBytes": 418
+    },
+    {
+      "file": "saudi-arabia.svg",
+      "originalBytes": 1726,
+      "optimizedBytes": 860
+    },
+    {
+      "file": "visa.svg",
+      "originalBytes": 1518,
+      "optimizedBytes": 875
+    }
+  ]
+}

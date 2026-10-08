@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+const assets=JSON.parse(await fs.readFile('src/embeds/assets/new-schemes/webflow-assets.json','utf8'));
+let html=await fs.readFile('src/embeds/new-schemes-markup.html','utf8');
+html=html.replace('/src/embeds/assets/new-schemes/grid.svg',assets.find(a=>a.file==='grid.svg').url);
+html=html.replace(/<div class="ns-method ns-method-([^" ]+)" data-ns-slot="([^" ]+)">.*?<\/div>(?=<div class="ns-label")/g,(_,name,slot)=>`<div class="ns-method ns-method-${name}"><div class="ns-logo-place ns-logo-place-${name}" data-ns-slot="${slot}"></div></div>`);
+html=html.replace(/(<div class="ns-flag" data-ns-slot="[^" ]+">)<img[^>]+>/g,'$1');
+html=html.replace(/<img class="ns-tick"[^>]+>/g,'<div class="ns-tick" data-ns-slot="check"></div>');
+await fs.writeFile('src/embeds/new-schemes-webflow-markup.html',html);
+const motion=await fs.readFile('src/embeds/new-schemes-motion.css','utf8');
+await fs.writeFile('src/embeds/new-schemes-scoped-style.html','<style>[data-new-schemes] .ns-checked .ns-tick{opacity:1}[data-new-schemes] .ns-logo-place-verve{clip-path:inset(10% 4%)}'+motion+'</style>\n');

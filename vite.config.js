@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-new-schemes': resolve(process.cwd(), 'src/embeds/new-schemes.js'),
             'feature-issuer-routing': resolve(process.cwd(), 'src/embeds/issuer-routing.js'),
             'feature-fallback-retry': resolve(process.cwd(), 'src/embeds/fallback-retry.js'),
             'feature-top-ups': resolve(process.cwd(), 'src/embeds/top-ups.js'),
