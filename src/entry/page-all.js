@@ -1,3 +1,4 @@
+import '../embeds/new-schemes.js';
 import '../embeds/issuer-routing.js';
 import '../embeds/fallback-retry.js';
 import '../embeds/top-ups.js';
