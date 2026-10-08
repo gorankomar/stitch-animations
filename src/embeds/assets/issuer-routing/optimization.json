@@ -1,0 +1,118 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupIds",
+      "removeUselessDefs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "cleanupEnableBackground",
+      "removeHiddenElems",
+      "removeEmptyText",
+      "convertShapeToPath",
+      "convertEllipseToCircle",
+      "moveElemsAttrsToGroup",
+      "moveGroupAttrsToElems",
+      "collapseGroups",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "removeEmptyAttrs",
+      "removeEmptyContainers",
+      "mergePaths",
+      "removeUnusedNS",
+      "sortAttrs",
+      "sortDefsChildren",
+      "removeTitle",
+      "removeDesc"
+    ]
+  },
+  "exceptions": [
+    "Preserve xmlns, viewBox and root dimensions",
+    "Pulse centerlines are separate overlays; exported filled connector outlines remain unchanged"
+  ],
+  "manifest": [
+    {
+      "file": "apple-pay.svg",
+      "originalBytes": 2649,
+      "optimizedBytes": 1319
+    },
+    {
+      "file": "cards.svg",
+      "originalBytes": 995,
+      "optimizedBytes": 579
+    },
+    {
+      "file": "country-connectors.svg",
+      "originalBytes": 1929,
+      "optimizedBytes": 764
+    },
+    {
+      "file": "dots.svg",
+      "originalBytes": 322117,
+      "optimizedBytes": 205604
+    },
+    {
+      "file": "eu-connectors.svg",
+      "originalBytes": 50897,
+      "optimizedBytes": 826
+    },
+    {
+      "file": "eu.svg",
+      "originalBytes": 2347,
+      "optimizedBytes": 1144
+    },
+    {
+      "file": "ksa-connectors.svg",
+      "originalBytes": 50897,
+      "optimizedBytes": 826
+    },
+    {
+      "file": "ksa.svg",
+      "originalBytes": 1733,
+      "optimizedBytes": 913
+    },
+    {
+      "file": "mada.svg",
+      "originalBytes": 5495,
+      "optimizedBytes": 2042
+    },
+    {
+      "file": "stripe.svg",
+      "originalBytes": 2310,
+      "optimizedBytes": 1176
+    },
+    {
+      "file": "visa.svg",
+      "originalBytes": 1432,
+      "optimizedBytes": 802
+    }
+  ]
+}
