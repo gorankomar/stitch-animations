@@ -48,3 +48,5 @@ For hero, api, chart, dots, dots-bulge, orbit, radial, cards, deposits, small-ca
 Root: data-product-variety. Source: src/embeds/product-variety.js and product-variety.css. Shared Wallet Swap, Reveal, and Pointer Follow; the module owns mounting/cleanup. Tests: tests/wallet-swap.test.js. Figma reference, local preview route, and exact Webflow identity are not recorded here; inspect the current component before integration.
 
 - Income Verification: [notes](../../src/embeds/INCOME-VERIFICATION.md), alternating three-row background marquee and expanding rings.
+
+- Issuer routing: [notes](../../src/embeds/ISSUER-ROUTING.md), right-to-left reveal and branching payment pulse.

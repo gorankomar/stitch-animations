@@ -1,0 +1,15 @@
+# Issuer routing
+
+Figma: https://www.figma.com/design/PCbd0DyXWAD2cDANtl7bpH/Stitch-Animation-Elements?node-id=438-1495
+
+Native Webflow component `37d19064-4323-4de0-ae11-4e006eef2403`, group Animations, saved on Animations Playground (`6ab4079ac7ca32e3a6c168c8`). Playground must remain a draft. No Webflow publication, staging activation, production activation or loader change was requested or performed.
+
+540 × 278 composition scales proportionally with container width. All appearance is native Webflow styling; `issuer-routing-native.css` is the local reference. Body font inherits the site. Existing Credit Card, Visa and Mada components retain their internal appearance; supported Stroke width and outer scaling wrappers provide the Figma sizes. The supplied graphic uses KSA/EU flags, rather than maps, and the payment logo is Mada.
+
+New reusable components: Apple Pay `ce877f57-a9dd-be5d-6129-eb3921832ab8`, Stripe `ecc2f3c9-e479-b782-ae56-cec9b13f4490`, European Union Flag `739c4a2b-c3d7-435e-20b6-360dcd580cf0`, Saudi Arabia Flag `bdb4d721-5442-125f-eee3-d4bc9a18394f`. The existing Saudi country-flags asset has a different green and aspect ratio; this reusable flag preserves the supplied artwork.
+
+`issuer-routing.js` uses canonical Reveal, Soft Path Pulse, animation stage and filled Dots Field effects. Every element and connector reveals from right to left using live Global Styles tokens. No hover effects. Dots use `interactive:false`, drawing only on resize. Blue pulses begin after reveal, split at each junction and continue beneath opaque country cards. The loop clears the last tail before restarting. Offscreen/hidden stages pause; reduced motion and unavailable JavaScript leave the entire static graphic visible. SVG references are namespaced per mounted instance and restored on disposal.
+
+Original SVG masters and optimized delivery copies live in `assets/issuer-routing`. `scripts/prepare-issuer-routing.mjs` records SVGO settings and byte sizes in `optimization.json`. Original/optimized pairs were visually compared at rendered sizes with no visible changes. Native designer checked at 436px, 345px and a simultaneous 270px instance; local animated preview at 540px and 345px. Tests cover split timing, cleanup/remount, visibility, reduced motion and partial failures.
+
+Local preview: `/issuer-routing-preview.html`; static fallback: `/issuer-routing-static-preview.html`; SVG comparison: `/issuer-routing-assets-preview.html`. Shared entries and standalone `feature-issuer-routing` are built locally. The saved Webflow draft needs an authorized staging release of the new compiled motion before Playground Preview can animate it. Permanent loaders remain unchanged.

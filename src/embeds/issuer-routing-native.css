@@ -1,0 +1,34 @@
+
+.ir-shell{width:100%;min-width:0;container-type:inline-size;direction:ltr;writing-mode:horizontal-tb}
+.ir-frame{position:relative;width:100%;aspect-ratio:540 / 278;overflow:hidden;border-radius:1.481481cqi;background-image:linear-gradient(216.01477deg,rgba(231,231,231,.37),rgba(255,255,255,.37) 51.725%,rgba(231,231,231,.37));background-color:#fff}
+.ir-dots{position:absolute;left:1.666667%;top:-1.079137%;width:96.296296%;height:114.108633%;background-image:radial-gradient(circle,rgba(196,200,208,.26) .111111cqi,transparent .14cqi);background-size:2.962963cqi 2.962963cqi;mask-image:linear-gradient(110deg,#000,transparent 80%);pointer-events:none}
+.ir-line{position:absolute;z-index:1;pointer-events:none}
+.ir-line-svg{display:block;width:100%;height:100%}
+.ir-position{position:absolute;z-index:2}
+.ir-card{display:flex;background-color:#fff;border-radius:1.111111cqi;align-items:center;justify-content:flex-start}
+.ir-cards{flex-direction:column;align-items:flex-start;justify-content:center;padding-top:1.851852cqi;padding-bottom:1.851852cqi;padding-left:2.777778cqi;padding-right:2.777778cqi;row-gap:.925926cqi;box-shadow:0 .37037cqi .925926cqi rgba(0,0,0,.1)}
+.ir-card-icon{width:5.925926cqi;height:5.925926cqi;display:flex;align-items:center;justify-content:center;color:#454545}
+.ir-country{width:100%;height:6.111111cqi;border-top-width:.185185cqi;border-right-width:.185185cqi;border-bottom-width:.185185cqi;border-left-width:.185185cqi;border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-color:#e7e7e7;border-right-color:#e7e7e7;border-bottom-color:#e7e7e7;border-left-color:#e7e7e7;padding-left:1.481481cqi;padding-right:1.481481cqi;column-gap:1.481481cqi}
+.ir-payment{width:100%;height:7.407407cqi;border-top-width:.185185cqi;border-right-width:.185185cqi;border-bottom-width:.185185cqi;border-left-width:.185185cqi;border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-color:#e7e7e7;border-right-color:#e7e7e7;border-bottom-color:#e7e7e7;border-left-color:#e7e7e7;padding-left:1.481481cqi;padding-right:2.962963cqi;column-gap:1.481481cqi}
+.ir-title{font-size:2.037037cqi;line-height:2.464815cqi;font-weight:500;color:#121212;white-space:nowrap;margin-top:0;margin-bottom:0}
+.ir-caption{font-size:1.296296cqi;line-height:1.568519cqi;font-weight:500;color:#888;white-space:nowrap;margin-top:0;margin-bottom:0}
+.ir-copy{display:flex;flex-direction:column;row-gap:.37037cqi;align-items:flex-start;justify-content:center}
+.ir-flag{width:5.185185cqi;height:3.148148cqi;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ir-method{width:7.037037cqi;height:4.444444cqi;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#1434cb}
+.ir-art{display:block;width:100%;height:100%;object-fit:contain}
+.ir-pulses{position:absolute;left:0;top:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.ir-line-country-connectors{left:29.975309%;top:25.918849%;width:7.135796%;height:48.162230%}
+.ir-line-ksa-connectors{left:51.827161%;top:16.386475%;width:6.765426%;height:20.824173%}
+.ir-line-eu-connectors{left:51.827161%;top:62.789353%;width:6.765426%;height:20.824173%}
+.ir-position-cards{left:18.888889%;top:37.194245%;width:11.481481%}
+.ir-position-ksa{left:37.407407%;top:20.863309%;width:14.814815%}
+.ir-position-eu{left:37.407407%;top:67.266187%;width:14.814815%}
+.ir-position-visa{left:58.888889%;top:9.892086%;width:21.851852%}
+.ir-position-mada{left:58.888889%;top:29.676259%;width:21.851852%}
+.ir-position-apple-pay{left:58.888889%;top:56.294964%;width:21.851852%}
+.ir-position-stripe{left:58.888889%;top:76.079137%;width:21.851852%}
+.ir-country-eu{padding-left:2.037037cqi;padding-right:2.037037cqi}
+
+.ir-dot-canvas{opacity:0;display:block;width:100%;height:100%;position:absolute;left:0;top:0;pointer-events:none}
+
+.ir-mada-art{display:block;width:5.160704cqi;height:1.970519cqi}

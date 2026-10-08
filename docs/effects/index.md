@@ -24,7 +24,7 @@ Prompt names select these canonical implementations. Paths are repository-relati
 | Press Ripple | press-ripple.js | Shared press class behavior; reuse API consumer markup and ripple CSS. |
 | Glow Sweep | glow-sweep.js | Template-driven sweeps; API/orbit consumers supply markup and cleanup examples. |
 | Value Counter | value-counter.js | Shared timing/formatting; chart/window-graphic consumers supply examples. |
-| Dots / Bulge Dots | dots-field.js / dots-field-bulge.js | Distinct subtle and displacement effects; use corresponding animation markup/CSS. |
+| Dots / Bulge Dots | dots-field.js / dots-field-bulge.js | Distinct subtle and displacement effects; use corresponding animation markup/CSS. Dots Field accepts `interactive:false` for a static filled background that redraws on resize without pointer listeners or a frame clock (Issuer routing). |
 | Repel Float | repel-float.js | Shared repulsion/idle movement; inspect consumer and cleanup API. |
 
 ## Minimal composition

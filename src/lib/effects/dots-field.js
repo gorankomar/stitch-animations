@@ -19,6 +19,7 @@ export function createDotsField({
   canvas,
   sensor,
   pointerTarget = window,
+  interactive = true,
   options = {}
 } = {}) {
   if (typeof window === 'undefined' || !canvas || !sensor) return () => {};
@@ -98,6 +99,27 @@ export function createDotsField({
         points.push({ x: startX + c * OPT.gap, y: startY + r * OPT.gap });
       }
     }
+  }
+
+  // The same filled field can be used as a non-interactive background. It
+  // draws only on resize and installs no pointer listeners or animation clock.
+  if (!interactive) {
+    const draw = () => {
+      resize();
+      ctx.clearRect(0, 0, width, height);
+      if (OPT.bgColor !== 'transparent') {
+        ctx.fillStyle = OPT.bgColor; ctx.fillRect(0, 0, width, height);
+      }
+      ctx.fillStyle = OPT.dotColor; ctx.globalAlpha = OPT.baseAlpha;
+      for (const point of points) {
+        ctx.beginPath(); ctx.arc(point.x, point.y, Math.max(0.12, OPT.baseSize), 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    };
+    const observer = new ResizeObserver(draw);
+    try { observer.observe(canvas); draw(); }
+    catch (error) { observer.disconnect(); throw error; }
+    return () => observer.disconnect();
   }
 
   function hoverAlphaAt(px, py) {
