@@ -1,0 +1,9 @@
+[data-worldwide-markets] { container-type:inline-size; writing-mode:horizontal-tb; }
+[data-worldwide-markets] .wm-grid { --grid-size:14.72868cqi; --grid-line:.03876cqi; }
+[data-worldwide-markets] .wm-mask { mask-size:100% 100%; mask-repeat:no-repeat; mask-mode:alpha; -webkit-mask-size:100% 100%; -webkit-mask-repeat:no-repeat; }
+[data-worldwide-markets][data-wm-ready] .wm-mask { opacity:1; }
+[data-worldwide-markets][data-wm-ready] .wm-fade { opacity:0; }
+@media(prefers-reduced-motion:reduce) {
+  [data-worldwide-markets][data-wm-ready] .wm-mask { opacity:0; }
+  [data-worldwide-markets][data-wm-ready] .wm-fade { opacity:1; }
+}

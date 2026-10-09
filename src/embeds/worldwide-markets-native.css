@@ -1,0 +1,10 @@
+.wm { width:100%; min-width:0; }
+.wm-frame { position:relative; width:100%; aspect-ratio:258 / 232; overflow:hidden; border-radius:3.100775cqi; background-image:linear-gradient(135deg,#f6f6f6 0%,#fff 48.5989%,#f6f6f6 100%); }
+.wm-grid { position:absolute; left:-16.5274%; top:-50.0741%; width:119.3798%; height:150%; }
+.wm-map-position { position:absolute; left:3.17597%; top:20.18454%; width:93.57639%; height:59.40608%; transform:scaleX(-1); }
+.wm-map { display:block; width:100%; height:auto; }
+.wm-mask { position:absolute; inset:0; overflow:hidden; opacity:0; pointer-events:none; }
+.wm-glow { position:absolute; top:0; left:0; width:75%; height:100%; background-image:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.9) 50%,rgba(255,255,255,0) 100%); }
+.wm-fade { position:absolute; left:-0.6359%; top:-0.07408%; width:100.7752%; height:100%; pointer-events:none; }
+.wm-fade-left { background-image:linear-gradient(90deg,#fff 0%,rgba(255,255,255,0) 50%); }
+.wm-fade-right { background-image:linear-gradient(270deg,#fff -3.01%,rgba(255,255,255,0) 50%); }
