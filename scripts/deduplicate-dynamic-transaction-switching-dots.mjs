@@ -1,0 +1,4 @@
+import fs from 'node:fs/promises';
+const file='src/embeds/assets/dynamic-transaction-switching/dots.svg';let original=await fs.readFile(file,'utf8');const mapping=new Map(),keep=new Map();original=original.replace(/<linearGradient\b[^>]*>[\s\S]*?<\/linearGradient>/g,g=>{const id=g.match(/id="([^"]+)"/)[1],key=g.replace(/id="[^"]+"/,'');if(keep.has(key)){mapping.set(id,keep.get(key));return '';}keep.set(key,id);return g;});for(const[id,canonical]of mapping)original=original.replaceAll(`url(#${id})`,`url(#${canonical})`);
+for(const id of [...original.matchAll(/id="([^"]+)"/g)].map(m=>m[1]).filter(id=>!id.startsWith('dts-dots-')))original=original.replaceAll(`id="${id}"`,`id="dts-dots-${id}"`).replaceAll(`url(#${id})`,`url(#dts-dots-${id})`);
+await fs.writeFile(file,original);console.log({bytes:original.length,gradients:keep.size});
