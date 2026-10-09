@@ -5,6 +5,7 @@ import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
   {selector: '[data-new-schemes]', load: () => import('../embeds/new-schemes.js')},
+  {selector: '[data-dynamic-transaction-switching]', load: () => import('../embeds/dynamic-transaction-switching.js')},
   {selector: '[data-issuer-routing]', load: () => import('../embeds/issuer-routing.js')},
   {selector: '[data-fallback-retry]', load: () => import('../embeds/fallback-retry.js')},
   {selector: '[data-top-ups]', load: () => import('../embeds/top-ups.js')},

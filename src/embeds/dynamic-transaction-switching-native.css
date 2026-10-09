@@ -1,0 +1,25 @@
+.dts-root{width:100%;min-width:0}
+.dts-frame{position:relative;width:100%;aspect-ratio:540 / 278;overflow:hidden;border-radius:1.4814814814814814cqi;background-image:linear-gradient(216.01477deg,rgba(231,231,231,.37) 0%,rgba(255,255,255,.37) 51.725%,rgba(231,231,231,.37) 106.43%),linear-gradient(90deg,#fff,#fff)}
+.dts-dots{position:absolute;left:1.4814814814814814cqi;top:2.222222222222222cqi;width:96.29629629629629cqi;height:58.74477037037037cqi;pointer-events:none;background-image:radial-gradient(circle,rgba(196,200,208,.26) .111111cqi,transparent .111111cqi);background-size:2.962963cqi 2.962963cqi}
+.dts-connectors{position:absolute;left:0%;top:0%;width:100%;height:100%;pointer-events:none;z-index:2}
+.dts-dots-canvas{width:100%;height:100%;display:block;opacity:0}
+.dts-network-box{position:absolute;left:0%;top:0%;width:100%;height:100%;display:flex;justify-content:center;align-items:center;border-width:0.18518518518518517cqi;border-style:solid;border-color:#eaecf0;border-radius:1.111111111111111cqi;background-image:linear-gradient(0deg,#f2f2f2,#fff);opacity:1;z-index:1}
+.dts-box-giropay{position:absolute;left:11.851851851851851cqi;top:-7.037037037037036cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-giropay{width:10cqi;height:7.037037037037036cqi;display:flex;align-items:center;justify-content:center}
+.dts-box-visa{position:absolute;left:41.666666666666664cqi;top:-7.222222222222221cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-visa{width:10cqi;height:7.037037037037036cqi;display:flex;align-items:center;justify-content:center;background-color:#fff;border-radius:0.7407407407407407cqi}
+.dts-box-unionpay{position:absolute;left:71.48148148148148cqi;top:-7.037037037037036cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-unionpay{width:10cqi;height:7.037037037037036cqi;display:flex;align-items:center;justify-content:center}
+.dts-box-mada{position:absolute;left:11.851851851851851cqi;top:17.407407407407405cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-mada{width:12.6cqi;height:3.8314814814814815cqi;display:flex;align-items:center;justify-content:center}
+.dts-box-stitch{position:absolute;left:41.85185185185185cqi;top:17.59259259259259cqi;width:16.296296296296294cqi;height:16.296296296296294cqi;display:flex;justify-content:center;align-items:center;border-width:0.18518518518518517cqi;border-style:solid;border-color:#e7e7e7;border-radius:3.333333333333333cqi;background-image:linear-gradient(0deg,#f2f2f2,#fff);opacity:1;box-shadow:0 1.8518518518518516cqi 1.8518518518518516cqi rgba(0,0,0,.1);z-index:3}
+.dts-stitch-tile{width:11.851851851851851cqi;height:11.851851851851851cqi;background-color:#000;border-radius:1.6592592592592592cqi;display:flex;justify-content:center;align-items:center;color:#fff}
+.dts-logo-stitch{width:7.685185185185185cqi;height:6.2745098039215685cqi;display:flex;align-items:center;justify-content:center}
+.dts-box-amex{position:absolute;left:71.48148148148148cqi;top:17.407407407407405cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-amex{width:10cqi;height:7.037037037037036cqi;display:flex;align-items:center;justify-content:center}
+.dts-box-stcpay{position:absolute;left:11.851851851851851cqi;top:41.666666666666664cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-stcpay{width:10cqi;height:7.037037037037036cqi;display:flex;align-items:center;justify-content:center}
+.dts-box-mastercard{position:absolute;left:41.666666666666664cqi;top:42.03703703703703cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-mastercard{width:10cqi;height:7.037037037037036cqi;display:flex;align-items:center;justify-content:center;background-color:#fff;border-radius:0.7407407407407407cqi}
+.dts-box-stripe{position:absolute;left:71.48148148148148cqi;top:41.666666666666664cqi;width:16.666666666666664cqi;height:16.666666666666664cqi;z-index:1}
+.dts-logo-stripe{width:10cqi;height:7.037037037037036cqi;display:flex;align-items:center;justify-content:center}

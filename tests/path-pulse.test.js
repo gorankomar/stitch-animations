@@ -10,3 +10,13 @@ test('reverse pulse travels inward at configurable speed and length, then waits 
  pulse.update(4.6,true);assert.equal(node.style.opacity,'0');pulse.dispose();assert.deepEqual(node.style,{});
 });
 test('shared defaults have canonical blue and validate invalid speed',()=>{assert.equal(pulseDefaults.span,40);assert.match(pulseDefaults.color,/primary-blue/);assert.throws(()=>createPathPulse(path(),{speed:0}));});
+test('fixed periods keep delayed branches phase locked over repeated cycles',()=>{
+ const node=path(),pulse=createPathPulse(node,{span:12,speed:60,start:1,period:5});
+ pulse.update(.9);assert.equal(node.style.opacity,'0');
+ pulse.update(1.5);const first=node.style.strokeDashoffset;assert.equal(node.style.opacity,'1');
+ pulse.update(6.5);assert.equal(node.style.strokeDashoffset,first);
+ pulse.update(11.5);assert.equal(node.style.strokeDashoffset,first);
+ pulse.update(4);assert.equal(node.style.opacity,'0');
+ pulse.dispose();assert.deepEqual(node.style,{});
+ assert.throws(()=>createPathPulse(path(),{period:-1}));
+});

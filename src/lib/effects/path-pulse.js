@@ -2,7 +2,8 @@ let gradientId = 0;
 import { paintPulse } from './connector.js';
 export const pulseDefaults = Object.freeze({ span: 40, speed: 72, color: 'var(--_primitives---colors--primary-blue, #3342ff)', minDelay: .6, maxDelay: 3.2, fadeWithSource: true });
 // Existing SVG geometry remains untouched. The caller owns visibility and time.
-export function createPathPulse(path, { span = pulseDefaults.span, speed = pulseDefaults.speed, color = pulseDefaults.color, reverse = false, start = 0, random = Math.random, minDelay = pulseDefaults.minDelay, maxDelay = pulseDefaults.maxDelay, end, fadeWithSource = pulseDefaults.fadeWithSource } = {}) {
+export function createPathPulse(path, { span = pulseDefaults.span, speed = pulseDefaults.speed, color = pulseDefaults.color, reverse = false, start = 0, random = Math.random, minDelay = pulseDefaults.minDelay, maxDelay = pulseDefaults.maxDelay, end, period, fadeWithSource = pulseDefaults.fadeWithSource } = {}) {
+  if (period !== undefined && !(period > 0)) throw new Error('Invalid pulse period');
   if (!(span > 0 && speed > 0 && minDelay >= 0 && maxDelay >= minDelay)) throw new Error('Invalid pulse options');
   const length = path.getTotalLength();
   const saved = path.getAttribute('style');
@@ -27,9 +28,10 @@ export function createPathPulse(path, { span = pulseDefaults.span, speed = pulse
   return {
     update(time, reduced = false) {
       if (reduced) { path.style.opacity = '0'; return; }
-      if (time >= next + travel) next = time + minDelay + random() * (maxDelay - minDelay);
-      const head = (time - next) * speed;
-      paintPulse(path, { head: reverse ? rangeEnd + span - head : head, span, length, active: head >= 0 && head <= rangeEnd + span });
+      if (!period && time >= next + travel) next = time + minDelay + random() * (maxDelay - minDelay);
+      const phase = period ? ((time - start) % period + period) % period : time - next;
+      const head = phase * speed;
+      paintPulse(path, { head: reverse ? rangeEnd + span - head : head, span, length, active: time >= start && head >= 0 && head <= rangeEnd + span });
     },
     dispose() { gradient?.remove(); if (saved === null) path.removeAttribute('style'); else path.setAttribute('style', saved); }
   };

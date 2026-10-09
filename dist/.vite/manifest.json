@@ -15,8 +15,8 @@
     "file": "chunks/connector.CbYSk2rO.js",
     "name": "connector"
   },
-  "_demo-cursor.N1ohg3cU.js": {
-    "file": "chunks/demo-cursor.N1ohg3cU.js",
+  "_demo-cursor.CiMQYEry.js": {
+    "file": "chunks/demo-cursor.CiMQYEry.js",
     "name": "demo-cursor"
   },
   "_dom.DgX39f3a.js": {
@@ -54,6 +54,13 @@
     "file": "chunks/motion.D7xsNJ3J.js",
     "name": "motion"
   },
+  "_path-pulse.BGc1pa4x.js": {
+    "file": "chunks/path-pulse.BGc1pa4x.js",
+    "name": "path-pulse",
+    "imports": [
+      "_connector.CbYSk2rO.js"
+    ]
+  },
   "_reveal-groups.Io_vnT59.js": {
     "file": "chunks/reveal-groups.Io_vnT59.js",
     "name": "reveal-groups",
@@ -70,9 +77,9 @@
     "file": "chunks/soft-path-pulse.CsdMiLK-.js",
     "name": "soft-path-pulse"
   },
-  "_styles.!~{00a}~.js": {
+  "_styles.!~{00p}~.js": {
     "file": "styles/styles.VjsnFFRN.css",
-    "src": "_styles.!~{00a}~.js"
+    "src": "_styles.!~{00p}~.js"
   },
   "_time.SyV53jPj.js": {
     "file": "chunks/time.SyV53jPj.js",
@@ -389,6 +396,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.iEnA391a.js",
+      "_path-pulse.BGc1pa4x.js",
       "_connector.CbYSk2rO.js"
     ]
   },
@@ -474,6 +482,22 @@
       "_math.DB99t-US.js"
     ]
   },
+  "src/embeds/dynamic-transaction-switching.js": {
+    "file": "feature-dynamic-transaction-switching.js",
+    "name": "feature-dynamic-transaction-switching",
+    "src": "src/embeds/dynamic-transaction-switching.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.iEnA391a.js",
+      "_path-pulse.BGc1pa4x.js",
+      "_dots-field.Cna3brYf.js",
+      "_motion.D7xsNJ3J.js",
+      "_time.SyV53jPj.js",
+      "_connector.CbYSk2rO.js",
+      "_math.DB99t-US.js"
+    ]
+  },
   "src/embeds/email-statement.js": {
     "file": "feature-email-statement.js",
     "name": "feature-email-statement",
@@ -537,7 +561,7 @@
     "imports": [
       "_animation-stage.iEnA391a.js",
       "_reveal-groups.Io_vnT59.js",
-      "_demo-cursor.N1ohg3cU.js",
+      "_demo-cursor.CiMQYEry.js",
       "_follow-group.DCIpy6nZ.js",
       "_value-counter.BXLPe_ym.js",
       "_motion.D7xsNJ3J.js",
@@ -572,7 +596,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.iEnA391a.js",
-      "_demo-cursor.N1ohg3cU.js",
+      "_demo-cursor.CiMQYEry.js",
       "_reveal-groups.Io_vnT59.js",
       "_easing.CJR8aMe3.js",
       "_time.SyV53jPj.js",
@@ -637,7 +661,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.iEnA391a.js",
-      "_demo-cursor.N1ohg3cU.js",
+      "_demo-cursor.CiMQYEry.js",
       "_easing.CJR8aMe3.js",
       "_motion.D7xsNJ3J.js"
     ]
@@ -960,6 +984,7 @@
     ],
     "dynamicImports": [
       "src/embeds/new-schemes.js",
+      "src/embeds/dynamic-transaction-switching.js",
       "src/embeds/issuer-routing.js",
       "src/embeds/fallback-retry.js",
       "src/embeds/top-ups.js",
@@ -1008,6 +1033,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/dynamic-transaction-switching.js",
       "src/embeds/new-schemes.js",
       "src/embeds/issuer-routing.js",
       "src/embeds/fallback-retry.js",
@@ -1052,21 +1078,22 @@
       "_zoom-lens.C8Anf7pm.js",
       "src/embeds/revolving-credit.js",
       "_animation-stage.iEnA391a.js",
-      "_demo-cursor.N1ohg3cU.js",
-      "_reveal-groups.Io_vnT59.js",
-      "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
-      "_motion.D7xsNJ3J.js",
-      "_soft-path-pulse.CsdMiLK-.js",
+      "_path-pulse.BGc1pa4x.js",
+      "_connector.CbYSk2rO.js",
       "_dots-field.Cna3brYf.js",
       "_math.DB99t-US.js",
+      "_motion.D7xsNJ3J.js",
+      "_time.SyV53jPj.js",
+      "_demo-cursor.CiMQYEry.js",
+      "_reveal-groups.Io_vnT59.js",
+      "_easing.CJR8aMe3.js",
+      "_soft-path-pulse.CsdMiLK-.js",
       "_upward-carousel.5gdOrkXc.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_value-counter.BXLPe_ym.js",
       "_expanding-rings.KCV49Jke.js",
       "_seamless-marquee.3JGbAH9P.js",
-      "_connector.CbYSk2rO.js",
       "src/lib/effects/code-scroll.js"
     ],
     "css": [

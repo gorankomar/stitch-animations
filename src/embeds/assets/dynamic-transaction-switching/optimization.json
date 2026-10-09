@@ -1,0 +1,142 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupIds",
+      "removeUselessDefs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "cleanupEnableBackground",
+      "removeHiddenElems",
+      "removeEmptyText",
+      "convertShapeToPath",
+      "convertEllipseToCircle",
+      "moveElemsAttrsToGroup",
+      "moveGroupAttrsToElems",
+      "collapseGroups",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "removeEmptyAttrs",
+      "removeEmptyContainers",
+      "mergePaths",
+      "removeUnusedNS",
+      "sortAttrs",
+      "sortDefsChildren",
+      "removeTitle",
+      "removeDesc"
+    ]
+  },
+  "exceptions": [
+    "Preserve original xmlns, dimensions, gradients and viewBox. Inline references are namespaced per instance."
+  ],
+  "manifest": [
+    {
+      "file": "amex.svg",
+      "originalBytes": 1244,
+      "optimizedBytes": 811
+    },
+    {
+      "file": "bottom.svg",
+      "originalBytes": 732,
+      "optimizedBytes": 481
+    },
+    {
+      "file": "branch-bottom.svg",
+      "originalBytes": 582,
+      "optimizedBytes": 443
+    },
+    {
+      "file": "branch-top.svg",
+      "originalBytes": 582,
+      "optimizedBytes": 443
+    },
+    {
+      "file": "dots.svg",
+      "originalBytes": 322117,
+      "optimizedBytes": 205604
+    },
+    {
+      "file": "giropay.svg",
+      "originalBytes": 3670,
+      "optimizedBytes": 1764
+    },
+    {
+      "file": "left.svg",
+      "originalBytes": 732,
+      "optimizedBytes": 481
+    },
+    {
+      "file": "mada.svg",
+      "originalBytes": 5406,
+      "optimizedBytes": 2364
+    },
+    {
+      "file": "mastercard.svg",
+      "originalBytes": 1252,
+      "optimizedBytes": 670
+    },
+    {
+      "file": "right.svg",
+      "originalBytes": 732,
+      "optimizedBytes": 481
+    },
+    {
+      "file": "stcpay.svg",
+      "originalBytes": 5591,
+      "optimizedBytes": 1629
+    },
+    {
+      "file": "stitch.svg",
+      "originalBytes": 506,
+      "optimizedBytes": 315
+    },
+    {
+      "file": "stripe.svg",
+      "originalBytes": 2296,
+      "optimizedBytes": 1237
+    },
+    {
+      "file": "top.svg",
+      "originalBytes": 732,
+      "optimizedBytes": 481
+    },
+    {
+      "file": "unionpay.svg",
+      "originalBytes": 12330,
+      "optimizedBytes": 4573
+    },
+    {
+      "file": "visa.svg",
+      "originalBytes": 1445,
+      "optimizedBytes": 835
+    }
+  ]
+}
