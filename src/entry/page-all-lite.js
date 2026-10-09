@@ -4,6 +4,7 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
+  {selector: '[data-worldwide-markets]', load: () => import('../embeds/worldwide-markets.js')},
   {selector: '[data-new-schemes]', load: () => import('../embeds/new-schemes.js')},
   {selector: '[data-dynamic-transaction-switching]', load: () => import('../embeds/dynamic-transaction-switching.js')},
   {selector: '[data-issuer-routing]', load: () => import('../embeds/issuer-routing.js')},

@@ -21,6 +21,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Collections — Window Stack | [COLLECTIONS.md](../../src/embeds/COLLECTIONS.md) |
 | New schemes support | [NEW-SCHEMES.md](../../src/embeds/NEW-SCHEMES.md) |
 | Country flags | [COUNTRY-FLAGS.md](../../src/embeds/COUNTRY-FLAGS.md) |
+| Worldwide Markets | [WORLDWIDE-MARKETS.md](../../src/embeds/WORLDWIDE-MARKETS.md) |
 | Create New Card | [CREATE-NEW-CARD.md](../../src/embeds/CREATE-NEW-CARD.md) |
 | Buy Now Pay Later | [BUY-NOW-PAY-LATER.md](../../src/embeds/BUY-NOW-PAY-LATER.md) |
 | Credit Check | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |

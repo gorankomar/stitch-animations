@@ -16,15 +16,24 @@ export function animateStage(stage, { nodes = [], threshold = 0, start = () => {
     if (visible && !document.hidden) frame = requestAnimationFrame(tick);
   }
   function invalidate() { dirty = true; resume(); }
-  const observer = new IntersectionObserver(([entry]) => {
-    visible = entry.isIntersecting && entry.intersectionRatio >= threshold;
-    if (visible && !started) { started = true; start(); }
-    resume();
-  }, { threshold });
-  observer.observe(stage);
-  const resize = new ResizeObserver(invalidate);
-  [stage, ...nodes].forEach(node => resize.observe(node));
-  motion.addEventListener('change', invalidate); document.addEventListener('visibilitychange', resume);
+  let observer, resize;
+  try {
+    observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting && entry.intersectionRatio >= threshold;
+      if (visible && !started) { started = true; start(); }
+      resume();
+    }, { threshold });
+    observer.observe(stage);
+    resize = new ResizeObserver(invalidate);
+    [stage, ...nodes].forEach(node => resize.observe(node));
+    motion.addEventListener('change', invalidate); document.addEventListener('visibilitychange', resume);
+  } catch (error) {
+    disposed = true;
+    cancelAnimationFrame(frame);
+    observer?.disconnect(); resize?.disconnect();
+    motion.removeEventListener('change', invalidate); document.removeEventListener('visibilitychange', resume);
+    throw error;
+  }
   return () => {
     disposed = true;
     cancelAnimationFrame(frame); observer.disconnect(); resize.disconnect();

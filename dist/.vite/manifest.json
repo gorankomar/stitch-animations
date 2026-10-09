@@ -1,6 +1,6 @@
 {
-  "_animation-stage.iEnA391a.js": {
-    "file": "chunks/animation-stage.iEnA391a.js",
+  "_animation-stage.Cs_CHp-U.js": {
+    "file": "chunks/animation-stage.Cs_CHp-U.js",
     "name": "animation-stage"
   },
   "_auto-reveal.C04pmRpD.js": {
@@ -101,13 +101,13 @@
     ]
   },
   "src/animations/access/index.js": {
-    "file": "chunks/index.AnU09sZR.js",
+    "file": "chunks/index.CLFb_HbQ.js",
     "name": "index",
     "src": "src/animations/access/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_connector.CbYSk2rO.js",
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ],
     "css": [
       "styles/index._VSpLHAq.css"
@@ -283,13 +283,13 @@
     ]
   },
   "src/animations/reference/index.js": {
-    "file": "chunks/index.P4yO8N23.js",
+    "file": "chunks/index.DRx-zz92.js",
     "name": "index",
     "src": "src/animations/reference/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_connector.CbYSk2rO.js",
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ],
     "css": [
       "styles/index.CU8FwjsS.css"
@@ -313,13 +313,13 @@
     ]
   },
   "src/animations/webhook/index.js": {
-    "file": "chunks/index.HlR-yQ2s.js",
+    "file": "chunks/index.CQPbNiG0.js",
     "name": "index",
     "src": "src/animations/webhook/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_connector.CbYSk2rO.js",
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ],
     "css": [
       "styles/index.C4uz-dYA.css"
@@ -347,7 +347,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_expanding-rings.KCV49Jke.js",
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ]
   },
   "src/embeds/buy-now-pay-later.js": {
@@ -357,7 +357,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_follow-group.DCIpy6nZ.js",
       "_soft-path-pulse.CsdMiLK-.js",
@@ -374,7 +374,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "src/lib/effects/code-scroll.js",
       "_follow-group.DCIpy6nZ.js",
@@ -395,7 +395,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_path-pulse.BGc1pa4x.js",
       "_connector.CbYSk2rO.js"
     ]
@@ -407,7 +407,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ]
   },
   "src/embeds/create-card.js": {
@@ -428,7 +428,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_easing.CJR8aMe3.js",
       "_reveal-groups.Io_vnT59.js",
       "_connector.CbYSk2rO.js",
@@ -442,7 +442,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_value-counter.BXLPe_ym.js",
       "_follow-group.DCIpy6nZ.js",
@@ -471,7 +471,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_follow-group.DCIpy6nZ.js",
       "_value-counter.BXLPe_ym.js",
@@ -489,7 +489,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_path-pulse.BGc1pa4x.js",
       "_dots-field.Cna3brYf.js",
       "_motion.D7xsNJ3J.js",
@@ -506,7 +506,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_reveal-groups.Io_vnT59.js",
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_time.SyV53jPj.js",
       "_easing.CJR8aMe3.js"
     ]
@@ -518,7 +518,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_upward-carousel.5gdOrkXc.js",
       "_dots-field.Cna3brYf.js",
       "_motion.D7xsNJ3J.js",
@@ -547,7 +547,7 @@
       "_seamless-marquee.3JGbAH9P.js",
       "_expanding-rings.KCV49Jke.js",
       "_follow-group.DCIpy6nZ.js",
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js"
     ]
@@ -559,7 +559,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_demo-cursor.CiMQYEry.js",
       "_follow-group.DCIpy6nZ.js",
@@ -578,7 +578,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_soft-path-pulse.CsdMiLK-.js",
       "_dots-field.Cna3brYf.js",
@@ -595,7 +595,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_demo-cursor.CiMQYEry.js",
       "_reveal-groups.Io_vnT59.js",
       "_easing.CJR8aMe3.js",
@@ -613,7 +613,7 @@
       "_seamless-marquee.3JGbAH9P.js",
       "_expanding-rings.KCV49Jke.js",
       "_follow-group.DCIpy6nZ.js",
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js"
     ]
@@ -625,7 +625,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_value-counter.BXLPe_ym.js",
       "_upward-carousel.5gdOrkXc.js",
@@ -641,7 +641,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_follow-group.DCIpy6nZ.js",
       "_time.SyV53jPj.js",
@@ -660,7 +660,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_demo-cursor.CiMQYEry.js",
       "_easing.CJR8aMe3.js",
       "_motion.D7xsNJ3J.js"
@@ -673,7 +673,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_motion.D7xsNJ3J.js",
       "_soft-path-pulse.CsdMiLK-.js",
@@ -689,7 +689,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_follow-group.DCIpy6nZ.js",
       "_motion.D7xsNJ3J.js",
@@ -706,7 +706,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js"
@@ -719,7 +719,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_follow-group.DCIpy6nZ.js",
       "_motion.D7xsNJ3J.js",
@@ -736,13 +736,23 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_reveal-groups.Io_vnT59.js",
       "_follow-group.DCIpy6nZ.js",
       "_easing.CJR8aMe3.js",
       "_time.SyV53jPj.js",
       "_dom.DgX39f3a.js",
       "_math.DB99t-US.js"
+    ]
+  },
+  "src/embeds/worldwide-markets.js": {
+    "file": "feature-worldwide-markets.js",
+    "name": "feature-worldwide-markets",
+    "src": "src/embeds/worldwide-markets.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Cs_CHp-U.js"
     ]
   },
   "src/entry/feature-access.js": {
@@ -753,7 +763,7 @@
     "imports": [
       "src/animations/access/index.js",
       "_connector.CbYSk2rO.js",
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ]
   },
   "src/entry/feature-api.js": {
@@ -921,7 +931,7 @@
     "imports": [
       "src/animations/reference/index.js",
       "_connector.CbYSk2rO.js",
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ]
   },
   "src/entry/feature-small-cards.js": {
@@ -950,7 +960,7 @@
     "imports": [
       "src/animations/webhook/index.js",
       "_connector.CbYSk2rO.js",
-      "_animation-stage.iEnA391a.js"
+      "_animation-stage.Cs_CHp-U.js"
     ]
   },
   "src/entry/feature-window-graphic.js": {
@@ -983,6 +993,7 @@
       "_easing.CJR8aMe3.js"
     ],
     "dynamicImports": [
+      "src/embeds/worldwide-markets.js",
       "src/embeds/new-schemes.js",
       "src/embeds/dynamic-transaction-switching.js",
       "src/embeds/issuer-routing.js",
@@ -1033,6 +1044,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/worldwide-markets.js",
       "src/embeds/dynamic-transaction-switching.js",
       "src/embeds/new-schemes.js",
       "src/embeds/issuer-routing.js",
@@ -1077,7 +1089,7 @@
       "_auto-reveal.C04pmRpD.js",
       "_zoom-lens.C8Anf7pm.js",
       "src/embeds/revolving-credit.js",
-      "_animation-stage.iEnA391a.js",
+      "_animation-stage.Cs_CHp-U.js",
       "_path-pulse.BGc1pa4x.js",
       "_connector.CbYSk2rO.js",
       "_dots-field.Cna3brYf.js",

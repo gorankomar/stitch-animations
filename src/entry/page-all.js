@@ -1,3 +1,4 @@
+import '../embeds/worldwide-markets.js';
 import '../embeds/dynamic-transaction-switching.js';
 import '../embeds/new-schemes.js';
 import '../embeds/issuer-routing.js';

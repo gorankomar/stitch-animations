@@ -1,0 +1,62 @@
+{
+  "version": "4.1.0",
+  "config": {
+    "multipass": true,
+    "floatPrecision": 2,
+    "plugins": [
+      "removeDoctype",
+      "removeXMLProcInst",
+      "removeComments",
+      "removeMetadata",
+      "removeEditorsNSData",
+      "cleanupAttrs",
+      "mergeStyles",
+      "inlineStyles",
+      "minifyStyles",
+      "convertStyleToAttrs",
+      "cleanupIds",
+      "removeUselessDefs",
+      "cleanupNumericValues",
+      "cleanupListOfValues",
+      "convertColors",
+      "removeUnknownsAndDefaults",
+      "removeNonInheritableGroupAttrs",
+      "removeUselessStrokeAndFill",
+      "cleanupEnableBackground",
+      "removeHiddenElems",
+      "removeEmptyText",
+      "convertShapeToPath",
+      "convertEllipseToCircle",
+      "moveElemsAttrsToGroup",
+      "moveGroupAttrsToElems",
+      "collapseGroups",
+      {
+        "name": "convertPathData",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      {
+        "name": "convertTransform",
+        "params": {
+          "floatPrecision": 2,
+          "transformPrecision": 8
+        }
+      },
+      "removeEmptyAttrs",
+      "removeEmptyContainers",
+      "mergePaths",
+      "removeUnusedNS",
+      "sortAttrs",
+      "sortDefsChildren",
+      "removeTitle",
+      "removeDesc"
+    ]
+  },
+  "exceptions": [
+    "Keep xmlns, viewBox and root dimensions. Static geometry may merge; motion uses the whole image as an alpha mask."
+  ],
+  "originalBytes": 298794,
+  "optimizedBytes": 90471
+}

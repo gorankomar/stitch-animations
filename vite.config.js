@@ -81,6 +81,7 @@ export default defineConfig({
       : {
           input: {
             'feature-dynamic-transaction-switching': resolve(process.cwd(), 'src/embeds/dynamic-transaction-switching.js'),
+            'feature-worldwide-markets': resolve(process.cwd(), 'src/embeds/worldwide-markets.js'),
             'feature-new-schemes': resolve(process.cwd(), 'src/embeds/new-schemes.js'),
             'feature-issuer-routing': resolve(process.cwd(), 'src/embeds/issuer-routing.js'),
             'feature-fallback-retry': resolve(process.cwd(), 'src/embeds/fallback-retry.js'),
