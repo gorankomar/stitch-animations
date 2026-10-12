@@ -60,3 +60,13 @@ Do not remove the runtime before its replacement is available on staging.
 Preview: /embedded-connectivity.html. Focused behavior tests cover connector/card
 response, ring phases/timing, heartbeat keyframes, repeat mount, visibility, hidden
 tabs, reduced motion and endpoint geometry.
+
+## Shared staging integration (2026-10-12)
+
+Both shared entries and the multi-entry build now register Embedded Connectivity.
+The Webflow hidden portable runtime is empty; the permanent staging loader owns
+initialization. The separate style/connector embed retains its native layout and
+artwork, with only obsolete ripple pseudo-element rules removed. No reusable
+Provider or Stitch Icon internals changed. Desktop/mobile Webflow Preview verified
+changing ring/hub transforms through one shared loader. Animations Playground
+remains unpublished. See [staging evidence](../../docs/releases/2026-10-12-embedded-connectivity-staging.md).
