@@ -8,6 +8,7 @@ await import('./build-due-date-embed.mjs');
 await import('./build-connectivity-embed.mjs');
 await import('./build-transaction-embed.mjs');
 await import('./build-create-card-embed.mjs');
+await import('./build-build-for-devs-preview.mjs');
 
 await import('./build-secure-auth-embed.mjs');
 await import('./build-country-flags.mjs');

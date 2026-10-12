@@ -88,6 +88,7 @@ export default defineConfig({
             'feature-top-ups': resolve(process.cwd(), 'src/embeds/top-ups.js'),
             'feature-peer-to-peer-transfers': resolve(process.cwd(), 'src/embeds/peer-to-peer-transfers.js'),
             'feature-digital-wallet': resolve(process.cwd(), 'src/embeds/digital-wallet.js'),
+            'feature-embedded-connectivity': resolve(process.cwd(), 'src/embeds/embedded-connectivity.js'),
             'feature-3ds-enabled-security': resolve(process.cwd(), 'src/embeds/3ds-enabled-security.js'),
             'feature-dynamic-funding': resolve(process.cwd(), 'src/embeds/dynamic-funding.js'),
             'feature-instant-virtual-cards': resolve(process.cwd(), 'src/embeds/instant-virtual-cards.js'),

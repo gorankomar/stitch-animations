@@ -23,6 +23,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Country flags | [COUNTRY-FLAGS.md](../../src/embeds/COUNTRY-FLAGS.md) |
 | Worldwide Markets | [WORLDWIDE-MARKETS.md](../../src/embeds/WORLDWIDE-MARKETS.md) |
 | Create New Card | [CREATE-NEW-CARD.md](../../src/embeds/CREATE-NEW-CARD.md) |
+| Build for Devs | [BUILD-FOR-DEVS.md](../../src/embeds/BUILD-FOR-DEVS.md) |
 | Buy Now Pay Later | [BUY-NOW-PAY-LATER.md](../../src/embeds/BUY-NOW-PAY-LATER.md) |
 | Credit Check | [CREDIT-CHECK.md](../../src/embeds/CREDIT-CHECK.md) |
 | Peer-to-Peer Transfers | [PEER-TO-PEER-TRANSFERS.md](../../src/embeds/PEER-TO-PEER-TRANSFERS.md) |
