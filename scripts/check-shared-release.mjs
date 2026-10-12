@@ -11,7 +11,7 @@ export function checkSharedRelease(directory = 'dist') {
   try { manifest = JSON.parse(readFileSync(resolve(root, '.vite/manifest.json'), 'utf8')); }
   catch { throw new Error('Shared release check failed: missing or invalid .vite/manifest.json; run the full build.'); }
   const outputs = new Map(Object.values(manifest).map(item => [item.file, item]));
-  const requiredSources = ['src/embeds/product-variety.js', 'src/lib/effects/wallet-swap.js', 'src/embeds/country-flags.js'];
+  const requiredSources = ['src/embeds/embedded-connectivity.js', 'src/embeds/product-variety.js', 'src/lib/effects/wallet-swap.js', 'src/embeds/country-flags.js'];
   for (const entry of ['page-all.js', 'page-all-lite.js']) {
     const visited = new Set(), sources = new Set(), css = new Set();
     let emitted = '';

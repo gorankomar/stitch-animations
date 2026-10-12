@@ -17,7 +17,7 @@ function fixture(t) {
     write(`${name}.map`, JSON.stringify({sources:[]}));
   }
   write('chunks/features.js', 'const selectors = ["data-product-variety", "product-variety_blue", "data-country-flags"];');
-  write('chunks/features.js.map', JSON.stringify({sources:['../../src/embeds/product-variety.js','../../src/lib/effects/wallet-swap.js','../../src/embeds/country-flags.js']}));
+  write('chunks/features.js.map', JSON.stringify({sources:['../../src/embeds/embedded-connectivity.js','../../src/embeds/product-variety.js','../../src/lib/effects/wallet-swap.js','../../src/embeds/country-flags.js']}));
   write('styles.css', '.product-variety {color:blue}');
   return {dir, write};
 }
@@ -48,4 +48,10 @@ test('manifest supplies eagerly extracted CSS and catches missing styles', t => 
   assert.match(checkSharedRelease(dir), /verified/);
   rmSync(join(dir,'styles.css'));
   assert.throws(() => checkSharedRelease(dir), /missing dependency styles.css/);
+});
+
+test('Embedded Connectivity must be compiled before removing its portable runtime', t => {
+  const {dir,write} = fixture(t);
+  write('chunks/features.js.map', JSON.stringify({sources:['../../src/embeds/product-variety.js','../../src/lib/effects/wallet-swap.js','../../src/embeds/country-flags.js']}));
+  assert.throws(() => checkSharedRelease(dir), /missing compiled src\/embeds\/embedded-connectivity.js/);
 });
