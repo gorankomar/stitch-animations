@@ -1,0 +1,27 @@
+/* Local preview only; supported base rules are native Webflow styles. */
+.bfd-shell{width:100%;min-width:0;container-type:inline-size}
+.bfd-graphic{position:relative;width:100%;aspect-ratio:258/232;overflow:hidden;border-radius:3.101cqi;background:linear-gradient(228.037deg,rgba(233,249,255,.37),rgba(255,255,255,.37) 48.599%,rgba(233,249,255,.37)),#fff}
+.bfd-lines{position:absolute;inset:0;pointer-events:none}
+.bfd-asset{position:absolute;display:block;max-width:none}
+.bfd-window{position:absolute;left:6.976744%;top:18.103448%;width:85.658915%;height:63.793103%;border-radius:2.326cqi;box-shadow:0 1.550cqi 1.938cqi #0000001a;overflow:hidden;background:#fff}
+.bfd-header{display:flex;align-items:center;height:8.139535cqi;padding:0.775194cqi 2.325581cqi 0 3.875969cqi;gap:2.325581cqi;background:#efefef}
+.bfd-dots{display:flex;align-items:center;gap:1.550388cqi;flex:none}
+.bfd-dot{display:block;width:1.937984cqi;height:1.937984cqi;border-radius:50%;background:#d1d1d1}
+.bfd-title{flex:1;font-size:2.325581cqi;font-weight:400;line-height:6.976744cqi;letter-spacing:0.232558cqi;color:#454545}
+.bfd-chevron{width:1.550388cqi;height:1.550388cqi;border-right:0.310078cqi solid #454545;border-bottom:0.310078cqi solid #454545;transform:rotate(45deg);margin-right:1.162791cqi;margin-top:-0.775194cqi}
+.bfd-body{height:49.224806cqi;padding:2.325581cqi 3.875969cqi;background:#fff}
+.bfd-viewport{height:100%;overflow:hidden}
+.bfd-track{display:block;font-family:inherit;font-size:2.558140cqi;font-weight:400;color:#4b4b4b}
+.bfd-row{display:block;height:3.410853cqi;min-height:3.410853cqi;line-height:3.410853cqi;margin:0;padding:0;white-space:pre;font-size:inherit}
+.bfd-green{color:#099250}.bfd-teal{color:#2bd6c3}.bfd-purple{color:#7218e9}
+.bfd-asset-2015{left:34.759690%;top:0.215517%;width:11.007752%;height:18.103448%;}
+.bfd-asset-2021{left:34.759690%;top:0.215517%;width:11.007752%;height:18.103448%;}
+.bfd-asset-2016{left:39.410853%;top:0.215517%;width:11.395349%;height:18.103448%;}
+.bfd-asset-2020{left:39.410853%;top:0.215517%;width:11.395349%;height:18.103448%;}
+.bfd-asset-2017{left:64.604651%;top:-1.077586%;width:28.449612%;height:19.396552%;}
+.bfd-asset-2022{left:64.604651%;top:-1.077586%;width:28.449612%;height:19.396552%;}
+.bfd-asset-2025{left:3.565891%;top:81.896552%;width:43.488372%;height:15.603448%;}
+.bfd-asset-2024{left:3.565891%;top:81.896552%;width:43.453488%;height:15.604569%;}
+.bfd-asset-2018{left:0.465116%;top:81.896552%;width:39.224806%;height:12.155172%;}
+.bfd-asset-2023{left:0.465116%;top:81.896552%;width:38.837209%;height:12.155172%;}
+.bfd-pair{display:block;height:6.821705cqi;min-height:6.821705cqi;line-height:3.410853cqi;margin:0;padding:0;font-size:inherit}.bfd-code-line{display:block;height:3.410853cqi;line-height:3.410853cqi;white-space:pre}

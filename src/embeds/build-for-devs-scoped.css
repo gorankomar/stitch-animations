@@ -1,0 +1,8 @@
+.bfd-shell,.bfd-shell *{box-sizing:border-box}
+.bfd-shell{container-type:inline-size;writing-mode:horizontal-tb}
+.bfd-graphic .create-card_pulses{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.bfd-graphic[data-card-motion="running"] [data-card-static-pulse]{opacity:0}
+.bfd-graphic>.w-embed{display:none}
+.bfd-row{white-space:pre}
+
+.bfd-code-line{white-space:pre}
