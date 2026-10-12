@@ -1,3 +1,4 @@
+import { createExpandingRings } from '../lib/effects/expanding-rings.js';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
 
 // One shared clock keeps pulse arrival, card response and ring propagation in sync.
@@ -10,16 +11,35 @@ export function endpoint(name, push) {
   const scale = 1 + push * .012, move = push * 1.2;
   return { top: [129, 44 - move + 15.5 * scale], right: [206 + move - 20.5 * scale, 118], bottom: [129, 190 + move - 15.5 * scale], left: [51 - move + 20.5 * scale, 118] }[name];
 }
-export function wave(time, start, amplitude) {
-  const progress = (time - start) / 1.8;
-  return progress > 0 && progress < 1 ? { scale: 1 + progress * amplitude, opacity: Math.sin(Math.PI * progress) ** 2 * .55 } : { scale: 1, opacity: 0 };
-}
 export const init = stageInitializer('[data-embedded-connectivity]', stage => {
   const cards = [...stage.querySelectorAll('[data-ec-card]')];
   const rings = [...stage.querySelectorAll('[data-ec-ring]')];
   const pulses = [...stage.querySelectorAll('[data-ec-pulse]')];
   const direction = { top: [0, -1], right: [1, 0], bottom: [0, 1], left: [-1, 0] };
-  const ringMotion = { inner: [1.35, .09], middle: [1.75, .045], outer: [2.15, .02] };
+  const hub = stage.querySelector('.ec-hub');
+  const animations = [], phases = [];
+  function cancelMotion() {
+    animations.splice(0).forEach(animation => animation.cancel());
+    phases.length = 0;
+  }
+  function setupMotion() {
+    const tokens = getComputedStyle(stage);
+    const easing = tokens.getPropertyValue('--motion-ease-primary').trim();
+    const value = tokens.getPropertyValue('--motion-duration-default').trim();
+    const duration = Number.parseFloat(value) * (value.endsWith('ms') ? 1 : 1000);
+    if (!hub || rings.length !== 3 || !easing || !Number.isFinite(duration) || duration <= 0 || !CSS.supports('animation-timing-function', easing)) return;
+    try {
+      createExpandingRings({ rings, duration, diameters: [288, 222, 152], minimum: 152, range: 152 * 216 / 170, animations });
+      const heartbeat = hub.animate([1, 1.055, 1, 1.035, 1, 1].map((scale, i) => ({
+        offset: [0, .1, .22, .32, .48, 1][i], transform: `scale(${scale})`, easing
+      })), { duration: duration * 2.4, iterations: Infinity });
+      heartbeat.pause(); animations.push(heartbeat);
+      animations.forEach(animation => phases.push(animation.currentTime || 0));
+    } catch (error) {
+      cancelMotion();
+      console.warn('Embedded Connectivity retained its static fallback.', error);
+    }
+  }
   const starts = { top: [129, 86], right: [161, 118], bottom: [129, 151], left: [96, 118] };
   const lines = [...stage.querySelectorAll('[data-ec-line]')];
   const dots = [...stage.querySelectorAll('[data-ec-dot]')];
@@ -27,6 +47,9 @@ export const init = stageInitializer('[data-embedded-connectivity]', stage => {
   const stop = animateStage(stage, {
     threshold: .25,
     update({ time, reduced }) {
+      if (reduced) cancelMotion();
+      else if (!animations.length) setupMotion();
+      animations.forEach((animation, i) => { animation.currentTime = time * 1000 + phases[i]; });
       const t = time % cycle;
       // Pulse head reaches the provider at 1.35s; the tail then clears.
       const travel = (t - .25) / 1.1;
@@ -51,18 +74,13 @@ export const init = stageInitializer('[data-embedded-connectivity]', stage => {
         const [x, y] = endpoint(gradient.dataset.ecGradient, push);
         gradient.setAttribute('x2', x); gradient.setAttribute('y2', y);
       });
-      rings.forEach(ring => {
-        const [start, amplitude] = ringMotion[ring.dataset.ecRing];
-        const state = wave(reduced ? 0 : t, start, amplitude);
-        ring.style.setProperty('--ec-wave-scale', state.scale);
-        ring.style.setProperty('--ec-wave-opacity', state.opacity);
-      });
+
     }
   });
   return () => {
     stop();
+    cancelMotion();
     cards.forEach(node => node.style.removeProperty('transform'));
-    rings.forEach(node => { node.style.removeProperty('--ec-wave-scale'); node.style.removeProperty('--ec-wave-opacity'); });
     pulses.forEach(node => { node.style.removeProperty('opacity'); node.style.removeProperty('stroke-dashoffset'); });
   };
 });

@@ -11,16 +11,27 @@ globalThis.requestAnimationFrame = fn => { frames.set(++nextFrame, fn); return n
 globalThis.cancelAnimationFrame = id => frames.delete(id);
 globalThis.IntersectionObserver = class { constructor(fn) { this.changed = fn; observers.push(this); } observe() {} disconnect() {} };
 globalThis.ResizeObserver = class { observe() {} disconnect() {} };
-const { init, endpoint, wave } = await import('../src/embeds/embedded-connectivity.js');
+const { init, endpoint } = await import('../src/embeds/embedded-connectivity.js');
 const style = () => ({ setProperty(name, value) { this[name] = value; }, removeProperty(name) { delete this[name.replace(/-([a-z])/g, (_, c) => c.toUpperCase())]; } });
+globalThis.getComputedStyle = () => ({ getPropertyValue: name => name === '--motion-ease-primary' ? 'cubic-bezier(.11,.61,.27,.99)' : '770ms' });
+globalThis.CSS = { supports: () => true };
+function animated(node) {
+  node.tracks = [];
+  node.animate = (keyframes, options) => {
+    const track = { keyframes, options, currentTime: 0, pause() {}, cancel() { this.cancelled = true; } };
+    node.tracks.push(track); return track;
+  };
+  return node;
+}
 function fixture() {
   const cards = ['top', 'right', 'bottom', 'left'].map(ecCard => ({ dataset: { ecCard }, style: style() }));
-  const rings = ['outer', 'middle', 'inner'].map(ecRing => ({ dataset: { ecRing }, style: style() }));
+  const rings = ['outer', 'middle', 'inner'].map(ecRing => animated({ dataset: { ecRing }, style: style() }));
   const pulses = cards.map(card => ({ dataset: { ecPulse: card.dataset.ecCard }, style: style(), setAttribute() {} }));
-  const stage = { querySelectorAll(selector) { return selector === '[data-ec-card]' ? cards : selector === '[data-ec-ring]' ? rings : selector === '[data-ec-pulse]' ? pulses : []; } };
+  const hub = animated({ style: style() });
+  const stage = { querySelector() { return hub; }, querySelectorAll(selector) { return selector === '[data-ec-card]' ? cards : selector === '[data-ec-ring]' ? rings : selector === '[data-ec-pulse]' ? pulses : []; } };
   const root = { querySelectorAll() { return [stage]; } };
   const dispose = init(root), observer = observers.at(-1);
-  return { cards, rings, pulses, root, dispose, observer };
+  return { cards, rings, hub, pulses, root, dispose, observer };
 }
 function advance(seconds) {
   for (let i = 0; i < Math.round(seconds * 60); i++) {
@@ -30,7 +41,7 @@ function advance(seconds) {
 }
 const scale = node => Number(node.style.transform.match(/scale\(([^)]+)\)/)[1]);
 
-test('one outward pulse drives directional card response and diminishing rings', () => {
+test('outward connector pulses retain card response alongside expanding rings and heartbeat', () => {
   const f = fixture();
   f.observer.changed([{ isIntersecting: true, intersectionRatio: 1 }]);
   advance(.8);
@@ -44,10 +55,15 @@ test('one outward pulse drives directional card response and diminishing rings',
   assert.match(f.cards[2].style.transform, /translate\(0cqi, 0\./);
   assert.match(f.cards[3].style.transform, /translate\(-/);
   assert.ok(scale(f.cards[0]) > 1 && scale(f.cards[0]) <= 1.012);
-  assert.ok(f.rings[2].style['--ec-wave-scale'] > f.rings[1].style['--ec-wave-scale']);
+  assert.ok(f.rings.every(r => r.tracks.length === 2));
+  assert.equal(f.rings[0].tracks[0].options.duration, 770 * 24);
+  assert.equal(f.rings[0].tracks[0].options.easing, 'linear');
+  assert.ok(f.rings[0].tracks[0].currentTime > f.rings[1].tracks[0].currentTime);
+  assert.equal(f.hub.tracks[0].options.duration, 770 * 2.4);
+  assert.equal(f.hub.tracks[0].keyframes[1].transform, 'scale(1.055)');
   advance(2);
   assert.ok(f.cards.every(c => scale(c) === 1));
-  assert.ok(f.rings.every(r => r.style['--ec-wave-opacity'] === 0));
+  assert.ok(f.rings.every(r => r.tracks.every(t => Boolean(t.cancelled) === motion.matches)));
   assert.ok(f.pulses.every(p => p.style.opacity === '0'));
   f.dispose();
 });
@@ -64,13 +80,14 @@ test('repeat mounts stay single; offscreen and hidden states pause; reduced moti
   document.hidden = false; events.get('visibilitychange')();
   motion.matches = true; motion.changed(); advance(.1);
   assert.ok(f.cards.every(c => scale(c) === 1));
-  assert.ok(f.rings.every(r => r.style['--ec-wave-opacity'] === 0));
+  assert.ok(f.rings.every(r => r.tracks.every(t => t.cancelled)));
+  assert.ok(f.hub.tracks.every(t => t.cancelled));
   assert.ok(f.pulses.every(p => p.style.opacity === '0')); assert.equal(frames.size, 0);
   f.dispose(); motion.matches = false;
 });
 
 
-test('dots stay centered on moving border strokes and waves only expand while visible', () => {
+test('dots stay centered on moving border strokes', () => {
   for (const push of [0, .25, .75, 1]) {
     const s = 1 + push * .012, m = push * 1.2;
     assert.deepEqual(endpoint('top', push), [129, 44 - m + 15.5 * s]);
@@ -78,11 +95,4 @@ test('dots stay centered on moving border strokes and waves only expand while vi
     assert.deepEqual(endpoint('bottom', push), [129, 190 + m - 15.5 * s]);
     assert.deepEqual(endpoint('left', push), [51 - m + 20.5 * s, 118]);
   }
-  let previous = 1;
-  for (let t = 1.36; t < 3.15; t += .05) {
-    const state = wave(t, 1.35, .09);
-    assert.ok(state.scale > previous); previous = state.scale;
-    assert.ok(state.opacity > 0);
-  }
-  assert.equal(wave(3.16, 1.35, .09).opacity, 0);
 });

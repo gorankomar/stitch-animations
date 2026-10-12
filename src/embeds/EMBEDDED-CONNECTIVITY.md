@@ -35,3 +35,28 @@ Install `dist/embeds/embedded-connectivity-styles.html` as a script-free HTML em
 Connector endpoints use each facing box border's centerline, including the box's outward translation and scale. Gray and blue paths share a 0.5-unit width and transparent-to-solid gradients. Decorative ripple overlays expand only outward, then disappear before resetting; the original concentric rings remain intact as the static illustration. Inner, middle and outer waves start at 1.35, 1.75 and 2.15 seconds, with progressively smaller expansion.
 
 Pulse visibility follow-up: outward travel now lasts 1.1 seconds with a 55%-length trail. Both connector gradients reach full opacity at 55% of the path, retaining the transparent hub end and identical 0.5-unit strokes. Arrival remains at 1.35 seconds to preserve the card/ripple synchronization.
+
+## Local motion revision (2026-10-12)
+
+Local review only; Webflow drafts, shared channels and GitHub remain unchanged.
+Replaces the small decorative ripple overlays with canonical Expanding Rings,
+using actual circle diameters 288/222/152, minimum 152, range 152×216/170,
+and the same default-duration×24 timing and separated phases as 3DS. Existing
+ring artwork stays intact; the wrapper owns transform and opacity.
+EC Hub uses the 3DS double heartbeat: scales 1/1.055/1/1.035/1/1 at
+offsets 0/.1/.22/.32/.48/1, default-duration×2.4, primary easing per segment.
+The hub wrapper owns scale; provider components and logo internals are untouched.
+Existing connector travel and provider response remain. All paused WAAPI tracks
+are driven by Animation Stage's visibility-aware clock and cancelled on reduced
+motion or disposal. Missing tokens/setup failure retain static ring/hub artwork.
+Live Global Styles read through Webflow on this date: primary cubic-bezier
+(.11,.61,.27,.99), default 770ms. Those tokens are defined only in local preview
+page styles; deployed runtime reads inherited values per instance.
+
+Hidden Webflow embed af4b5411-a269-f201-6422-3c70717cc771 contains only the
+old portable animation script. Remove its script during authorized shared-loader
+integration, retaining separate style/connector embed d220e029-9608-bf75-f375-faf9d7992d81.
+Do not remove the runtime before its replacement is available on staging.
+Preview: /embedded-connectivity.html. Focused behavior tests cover connector/card
+response, ring phases/timing, heartbeat keyframes, repeat mount, visibility, hidden
+tabs, reduced motion and endpoint geometry.

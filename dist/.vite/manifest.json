@@ -511,6 +511,17 @@
       "_easing.CJR8aMe3.js"
     ]
   },
+  "src/embeds/embedded-connectivity.js": {
+    "file": "feature-embedded-connectivity.js",
+    "name": "feature-embedded-connectivity",
+    "src": "src/embeds/embedded-connectivity.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_expanding-rings.KCV49Jke.js",
+      "_animation-stage.Cs_CHp-U.js"
+    ]
+  },
   "src/embeds/fallback-retry.js": {
     "file": "feature-fallback-retry.js",
     "name": "feature-fallback-retry",
@@ -993,6 +1004,7 @@
       "_easing.CJR8aMe3.js"
     ],
     "dynamicImports": [
+      "src/embeds/embedded-connectivity.js",
       "src/embeds/worldwide-markets.js",
       "src/embeds/new-schemes.js",
       "src/embeds/dynamic-transaction-switching.js",
@@ -1044,6 +1056,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/embedded-connectivity.js",
       "src/embeds/worldwide-markets.js",
       "src/embeds/dynamic-transaction-switching.js",
       "src/embeds/new-schemes.js",
@@ -1089,6 +1102,7 @@
       "_auto-reveal.C04pmRpD.js",
       "_zoom-lens.C8Anf7pm.js",
       "src/embeds/revolving-credit.js",
+      "_expanding-rings.KCV49Jke.js",
       "_animation-stage.Cs_CHp-U.js",
       "_path-pulse.BGc1pa4x.js",
       "_connector.CbYSk2rO.js",
@@ -1104,7 +1118,6 @@
       "_follow-group.DCIpy6nZ.js",
       "_dom.DgX39f3a.js",
       "_value-counter.BXLPe_ym.js",
-      "_expanding-rings.KCV49Jke.js",
       "_seamless-marquee.3JGbAH9P.js",
       "src/lib/effects/code-scroll.js"
     ],
