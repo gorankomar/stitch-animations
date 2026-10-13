@@ -388,6 +388,24 @@
       "styles/feature-card-controls.CSN3jM4v.css"
     ]
   },
+  "src/embeds/cards-your-way.js": {
+    "file": "feature-cards-your-way.js",
+    "name": "feature-cards-your-way",
+    "src": "src/embeds/cards-your-way.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Cs_CHp-U.js",
+      "_reveal-groups.Io_vnT59.js",
+      "_follow-group.DCIpy6nZ.js",
+      "_dots-field.Cna3brYf.js",
+      "_motion.D7xsNJ3J.js",
+      "_easing.CJR8aMe3.js",
+      "_time.SyV53jPj.js",
+      "_dom.DgX39f3a.js",
+      "_math.DB99t-US.js"
+    ]
+  },
   "src/embeds/consumer-verification.js": {
     "file": "feature-consumer-verification.js",
     "name": "feature-consumer-verification",
@@ -1036,6 +1054,7 @@
       "src/embeds/rules-flow.js",
       "src/embeds/3ds-enabled-security.js",
       "src/embeds/dynamic-funding.js",
+      "src/embeds/cards-your-way.js",
       "src/embeds/instant-virtual-cards.js",
       "src/embeds/income-verification.js",
       "src/embeds/email-statement.js",
@@ -1089,6 +1108,7 @@
       "src/embeds/3ds-enabled-security.js",
       "src/embeds/dynamic-funding.js",
       "src/embeds/instant-virtual-cards.js",
+      "src/embeds/cards-your-way.js",
       "src/embeds/income-verification.js",
       "src/embeds/email-statement.js",
       "src/embeds/real-time-approvals.js",

@@ -17,6 +17,7 @@ const resolvers = [
   {selector: '[data-rules-flow]', load: () => import('../embeds/rules-flow.js')},
   {selector: '[data-3ds-enabled-security]', load: () => import('../embeds/3ds-enabled-security.js')},
   {selector: '[data-dynamic-funding]', load: () => import('../embeds/dynamic-funding.js')},
+  {selector: '[data-cards-your-way]', load: () => import('../embeds/cards-your-way.js')},
   {selector: '[data-instant-virtual-cards]', load: () => import('../embeds/instant-virtual-cards.js')},
   {selector: '[data-income-verification]', load: () => import('../embeds/income-verification.js')},
   {selector: '[data-email-statement]', load: () => import('../embeds/email-statement.js')},

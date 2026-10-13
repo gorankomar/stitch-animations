@@ -92,6 +92,7 @@ export default defineConfig({
             'feature-embedded-connectivity': resolve(process.cwd(), 'src/embeds/embedded-connectivity.js'),
             'feature-3ds-enabled-security': resolve(process.cwd(), 'src/embeds/3ds-enabled-security.js'),
             'feature-dynamic-funding': resolve(process.cwd(), 'src/embeds/dynamic-funding.js'),
+            'feature-cards-your-way': resolve(process.cwd(), 'src/embeds/cards-your-way.js'),
             'feature-instant-virtual-cards': resolve(process.cwd(), 'src/embeds/instant-virtual-cards.js'),
             'feature-income-verification': resolve(process.cwd(), 'src/embeds/income-verification.js'),
             'feature-email-statement': resolve(process.cwd(), 'src/embeds/email-statement.js'),
