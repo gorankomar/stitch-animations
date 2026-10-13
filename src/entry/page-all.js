@@ -1,4 +1,5 @@
 import '../embeds/embedded-connectivity.js';
+import '../embeds/deposits-wallet.js';
 import '../embeds/worldwide-markets.js';
 import '../embeds/dynamic-transaction-switching.js';
 import '../embeds/new-schemes.js';

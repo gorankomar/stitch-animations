@@ -1,0 +1,11 @@
+[data-deposits-wallet] .deposits_wallet{display:grid;grid-template-columns:auto 1fr auto;gap:min(1.25rem,4cqi);align-items:center;justify-content:space-between;background-image:linear-gradient(135deg,#ededed,#e2e2e200);border:.0625rem solid #e7e7e7;border-radius:var(--deposits-card-radius);padding:min(.65rem,2cqi) min(1.25rem,4cqi);font-size:min(.9em,3.8cqi)}[data-deposits-wallet] .deposits_wallet-logo{width:min(1.5rem,12cqi);aspect-ratio:34 / 24;background-color:#fff;border:.0625rem solid #eee;border-radius:min(.5rem,1.5cqi);display:inline-flex;align-items:center;justify-content:center;padding:min(.25rem,1.25cqi) min(.29rem,2cqi)}[data-deposits-wallet] .deposits_wallet-details{white-space:nowrap;flex:1;font-size:3.7cqi;line-height:1.4}[data-deposits-wallet] .deposits_wallet-name{font-weight:500;font-size:.97em}[data-deposits-wallet] .deposits_wallet-meta-block{display:flex;gap:min(.7ch,1.2cqw);font-size:.78em}[data-deposits-wallet] .deposits_wallet-meta{color:#6b6b6b}[data-deposits-wallet] .deposits_wallet-arrow{width:min(1rem,2cqw);display:flex;color:#a7a7a7}
+[data-deposits-wallet] .dw-screen{--deposits-card-radius:min(1.5rem,4cqi);padding:0 5%;width:100%;box-sizing:border-box;font-size:7.7cqi;}
+[data-deposits-wallet] .dw-wallet-position > [data-reveal]{opacity:1!important;transform:none!important;transition:none!important;}
+[data-deposits-wallet] .dw-added-fill{transform:scaleX(1);}
+[data-deposits-wallet][data-dw-ready] .dw-added-fill{transform:scaleX(var(--dw-added-progress,0));opacity:var(--dw-added-opacity,1);}
+
+[data-deposits-wallet] .deposits_wallet-logo.is-visa{display:flex;}
+[data-deposits-wallet] .deposits_wallet-logo.is-mc{display:none;}
+[data-deposits-wallet] .deposits_wallet-logo.is-visa.w-variant-88b4eacd-e316-74d0-ef5d-2221e89e5ef9{display:none;}
+[data-deposits-wallet] .deposits_wallet-logo.is-mc.w-variant-88b4eacd-e316-74d0-ef5d-2221e89e5ef9{display:flex;}
+

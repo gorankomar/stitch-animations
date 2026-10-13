@@ -42,6 +42,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | User Onboarding | [USER-ONBOARDING.md](../../src/embeds/USER-ONBOARDING.md) |
 | Rules Flow | [RULES-FLOW.md](../../src/embeds/RULES-FLOW.md) |
 | Phone Shell — Realistic Experiment | [REALISTIC-PHONE.md](../../src/embeds/REALISTIC-PHONE.md) |
+| Deposits — Digital Wallet | [DEPOSITS-WALLET.md](../../src/embeds/DEPOSITS-WALLET.md) |
 
 ## Playground animation modules
 
