@@ -16,6 +16,7 @@ Use existing source and notes as truth. Missing Figma references stay unknown. U
 | Real-Time Balance Management | [BALANCE.md](../../src/embeds/BALANCE.md) |
 | Dynamic transaction switching | [DYNAMIC-TRANSACTION-SWITCHING.md](../../src/embeds/DYNAMIC-TRANSACTION-SWITCHING.md) |
 | Dynamic funding | [DYNAMIC-FUNDING.md](../../src/embeds/DYNAMIC-FUNDING.md) |
+| Cards, your way | [CARDS-YOUR-WAY.md](../../src/embeds/CARDS-YOUR-WAY.md) |
 | Instant Virtual Cards | [INSTANT-VIRTUAL-CARDS.md](../../src/embeds/INSTANT-VIRTUAL-CARDS.md) |
 | Card Controls | [CARD-CONTROLS.md](../../src/embeds/CARD-CONTROLS.md) |
 | Collections — Window Stack | [COLLECTIONS.md](../../src/embeds/COLLECTIONS.md) |
