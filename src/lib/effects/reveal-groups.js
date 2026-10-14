@@ -195,7 +195,13 @@ export function createRevealController(options = {}) {
   const ensure = () => {
     if (!hasStarted) {
       hasStarted = true;
-      try { lastDuration = startGroup(rootGroup, 0); }
+      try {
+        // Static content stays visible until a controller owns its entrance.
+        revealEls.forEach((el) => el.classList.add('is-reveal-ready'));
+        // Commit the entrance state before the first zero-delay class toggle.
+        revealEls[0]?.getBoundingClientRect?.();
+        lastDuration = startGroup(rootGroup, 0);
+      }
       catch (error) { cancel(); throw error; }
       finishAt = performance.now() + lastDuration;
       return lastDuration;
@@ -207,7 +213,10 @@ export function createRevealController(options = {}) {
     hardAnimations.splice(0).forEach(({ animation, track }) => { animation.cancel(); track.dispose(); });
     timeouts.forEach((id) => window.clearTimeout(id));
     timeouts.clear();
-    revealEls.forEach((el) => el.classList.remove(className));
+    revealEls.forEach((el) => {
+      el.classList.remove(className);
+      el.classList.remove('is-reveal-ready');
+    });
     hasStarted = false;
     finishAt = 0;
     lastDuration = 0;
