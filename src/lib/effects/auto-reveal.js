@@ -8,11 +8,15 @@ const SELECTOR = `[data-${ATTR.anim}]`;
 export function initAutoReveals(root = document) {
   if (!root) return () => {};
   const sections = qsa(SELECTOR, root);
-  const watchers = sections.map((section) =>
-    whenVisible(section, () => {
+  const watchers = sections.map((section) => {
+    if (section.dataset.revealStart === 'early') {
+      ensureSectionReveal(section)?.ensure();
+      return () => {};
+    }
+    return whenVisible(section, () => {
       const controller = ensureSectionReveal(section);
       controller?.ensure();
-    })
-  );
+    });
+  });
   return () => watchers.forEach((stop) => stop && stop());
 }
