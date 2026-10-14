@@ -30,7 +30,9 @@ for (const [selector, count] of [['[data-uo-row]', 9], ['[data-cc-reveal]', 3]])
     const root = { dataset: {}, childNodes: rows, querySelectorAll: () => rows };
     try {
       const controller = createRevealController({ root, selector, timings: { duration: 770, stagger: 200, opacityRatio: .34 } });
+      assert.ok(rows.every(row => !row.classes.has('is-reveal-ready')));
       assert.equal(controller.ensure(), (count - 1) * 200 + 770);
+      assert.ok(rows.every(row => row.classes.has('is-reveal-ready')));
       assert.deepEqual([...timers.values()].map(timer => timer.delay), rows.map((_, i) => i * 200));
       controller.ensure();
       assert.equal(timers.size, count);
@@ -39,6 +41,11 @@ for (const [selector, count] of [['[data-uo-row]', 9], ['[data-cc-reveal]', 3]])
       controller.cancel();
       assert.equal(timers.size, 0);
       assert.ok(rows.every(row => !row.classes.has('is-reveal')));
+      assert.ok(rows.every(row => !row.classes.has('is-reveal-ready')));
+      rows[1].style.setProperty = () => { throw new Error('setup failed'); };
+      assert.throws(() => controller.ensure(), /setup failed/);
+      assert.equal(timers.size, 0);
+      assert.ok(rows.every(row => !row.classes.has('is-reveal-ready')));
     } finally {
       if (savedWindow === undefined) delete globalThis.window;
       else globalThis.window = savedWindow;
