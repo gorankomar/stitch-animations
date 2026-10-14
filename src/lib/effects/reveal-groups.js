@@ -131,6 +131,8 @@ export function createRevealController(options = {}) {
 
   const timeouts = new Set();
   const hardAnimations = [];
+  const early = root.dataset?.revealStart === 'early';
+  const earlyBootstrap = window.__stitchEarlyReveal;
   let hasStarted = false;
   let finishAt = 0;
   let lastDuration = 0;
@@ -148,6 +150,7 @@ export function createRevealController(options = {}) {
       return animation;
     }
     const timeoutId = window.setTimeout(() => {
+      if (early && root.dataset.revealEarlyState === 'expired') return;
       el.classList.add(className);
     }, appliedDelay);
     timeouts.add(timeoutId);
@@ -195,12 +198,18 @@ export function createRevealController(options = {}) {
   const ensure = () => {
     if (!hasStarted) {
       hasStarted = true;
+      // Never re-hide an already painted hero when the head guard is absent/late.
+      if (early && !earlyBootstrap?.claim(root)) {
+        root.dataset.revealEarlyState = 'expired';
+        return 0;
+      }
       try {
         // Static content stays visible until a controller owns its entrance.
         revealEls.forEach((el) => el.classList.add('is-reveal-ready'));
         // Commit the entrance state before the first zero-delay class toggle.
         revealEls[0]?.getBoundingClientRect?.();
         lastDuration = startGroup(rootGroup, 0);
+        if (early) earlyBootstrap.scheduled(root, lastDuration);
       }
       catch (error) { cancel(); throw error; }
       finishAt = performance.now() + lastDuration;
@@ -210,6 +219,7 @@ export function createRevealController(options = {}) {
   };
 
   const cancel = () => {
+    if (early) earlyBootstrap?.release(root);
     hardAnimations.splice(0).forEach(({ animation, track }) => { animation.cancel(); track.dispose(); });
     timeouts.forEach((id) => window.clearTimeout(id));
     timeouts.clear();

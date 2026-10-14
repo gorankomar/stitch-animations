@@ -37,6 +37,7 @@ Live Global Styles is the source of truth for site tokens. The values below are 
 | Attribute | Where | Default | Options / example |
 | --- | --- | --- | --- |
 | `data-anim` | Section | None | Existing registered animation name, e.g. `hero`; enables automatic section discovery. |
+| `data-reveal-start` | Section / controller root | Visibility-triggered | `early` opts above-the-fold Soft targets into the head bootstrap described below. |
 | `data-visibility-threshold` | Section | `0.25` | Fraction from `0` to `1`; clamped to that range. |
 | `data-reveal-group` | Group wrapper | None | Presence creates a sequencing group; value is not a group ID. |
 | `data-reveal` | Entrance wrapper or element | None | Presence selects a target. `false` excludes global Soft styling, but currently does not exclude controller scheduling; remove the attribute to fully opt out. |
@@ -96,3 +97,15 @@ Numeric controller `timings.stagger` values are already milliseconds (for exampl
 `revealOffset({mode,direction,frame,element,offset,bleed})` is the pure geometry helper shared by both APIs. The tests verify all four clipping boundaries, opacity preservation and resize remeasurement.
 
 Global Styles' existing soft entrance selectors now exclude `[data-reveal-mode="hard"]`; all prior soft targets retain their appearance and timings. No global easing/duration values changed.
+
+## Early-start Reveal for heroes
+
+Use `data-reveal-start="early"` on the `[data-anim]` section to prevent the visible → hidden → entrance jump on above-the-fold content. Keep the same groups and target attributes. Install the generated `dist/embeds/reveal-early-head.html` in the page's **head**, before body paint, preserving unrelated code. It is a small synchronous preparation/fallback script, not another shared animation loader. The permanent footer router stays unchanged. `scripts/build-early-reveal.mjs` serializes the self-contained canonical `src/lib/effects/early-reveal.js`; the normal full build generates the artifact.
+
+The head script arms transparent starting content only inside marked sections. It does not set distance, easing, or durations. The usual controller commits its starting styles and uses the existing entrance schedule, starting immediately rather than waiting for IntersectionObserver. Use this only for above-the-fold sections; normal below-the-fold sections retain visibility triggering. Hard targets and `data-reveal="false"` are excluded from the pre-paint hold.
+
+The runtime must claim a section within **1800ms of the head bootstrap**. If it is absent or late, content becomes visible and the controller skips its entrance; late JavaScript must never re-hide an already displayed hero. Sections claim independently. Successful scheduling retains the hold only for the actual entrance schedule, with a guard of schedule duration + 1000ms; a claim that fails before scheduling has an 8000ms guard. Cancellation and setup failure restore visible content. No script execution means no early hiding. Reduced motion skips the early hold and entrance; switching to reduced motion releases running sections. After expiry, reset does not re-arm the hero during the same page lifecycle.
+
+The bootstrap owns `window.__stitchEarlyReveal`, HTML `data-stitch-reveal-early`, section `data-reveal-early-state`, and the injected `#stitch-early-reveal-styles`. Do not set those markers manually. Existing `.is-reveal-ready` / `.is-reveal` CSS must be present in the animation embed for the actual motion. The early hold itself does not depend on that CSS downloading.
+
+Playground trial: only the first `.header84_component` (`71e47053-f692-e1c9-9f34-0ca8511bd4e5`) opts in. Its three Reveal targets remain unchanged. The header-tag's old Webflow interaction remains as a comparison during this trial; it is not managed by our Reveal controller. No Global Styles embeds or site-wide head code are edited. Playground remains a draft and production is untouched.

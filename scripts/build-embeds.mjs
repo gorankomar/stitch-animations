@@ -33,3 +33,5 @@ await import('./build-3ds-enabled-security.mjs');
 await import('./build-rules-flow-embed.mjs');
 
 await import('./build-worldwide-markets-preview.mjs');
+
+await import('./build-early-reveal.mjs');
