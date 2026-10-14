@@ -205,10 +205,20 @@ export function createRevealController(options = {}) {
       }
       try {
         // Static content stays visible until a controller owns its entrance.
-        revealEls.forEach((el) => el.classList.add('is-reveal-ready'));
-        // Commit the entrance state before the first zero-delay class toggle.
+        const transitions = revealEls.map(el => el.style.transition || '');
+        try {
+          revealEls.forEach((el) => {
+            // Preparation must snap to the offset, never transition down to it.
+            el.style.transition = 'none';
+            el.classList.add('is-reveal-ready');
+          });
+          lastDuration = startGroup(rootGroup, 0);
+          revealEls[0]?.getBoundingClientRect?.();
+        } finally {
+          revealEls.forEach((el, index) => { el.style.transition = transitions[index]; });
+        }
+        // Commit restored transitions before the first zero-delay class toggle.
         revealEls[0]?.getBoundingClientRect?.();
-        lastDuration = startGroup(rootGroup, 0);
         if (early) earlyBootstrap.scheduled(root, lastDuration);
       }
       catch (error) { cancel(); throw error; }

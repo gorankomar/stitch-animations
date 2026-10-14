@@ -65,9 +65,12 @@ test('controller skips late/missing bootstrap; successful takeover preserves exi
     for(const expired of [false,true]) {
       const f=fixture();globalThis.window=f.win;
       installEarlyReveal(f.win,f.doc);if(expired)f.tick(1800);
+      const measuredTransitions=[];
+      f.roots[0].row.style.transition='opacity 1s linear';
+      f.roots[0].row.getBoundingClientRect=()=>{measuredTransitions.push(f.roots[0].row.style.transition);return {};};
       const c=createRevealController({root:f.roots[0],timings:{duration:770,stagger:200,opacityRatio:.34}});
       assert.equal(c.ensure(),expired?0:770);
-      if(!expired){assert.ok(f.roots[0].row.classes.has('is-reveal-ready'));f.tick(770);assert.ok(f.roots[0].row.classes.has('is-reveal'));}
+      if(!expired){assert.deepEqual(measuredTransitions,['none','opacity 1s linear']);assert.ok(f.roots[0].row.classes.has('is-reveal-ready'));f.tick(770);assert.ok(f.roots[0].row.classes.has('is-reveal'));}
       else assert.equal(f.roots[0].row.classes.size,0);
       c.cancel();assert.equal(f.roots[0].row.classes.size,0);
     }
