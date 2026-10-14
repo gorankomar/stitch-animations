@@ -1,0 +1,73 @@
+<style>
+/* Content hero: eight columns, two square-cell rows and a clear central band. */
+[data-anim="content-hero"] .content-hero-grid-embed {
+  position:absolute; inset:0; pointer-events:none; z-index:0;
+}
+[data-anim="content-hero"] .content-hero-grid {
+  /* User-approved line opacity: .18. Keep color fixed during scroll. */
+  --content-grid-line:rgba(34,45,54,.18);
+  --content-grid-stroke:.874px;
+  /* Exit cell width: 10% = ten columns; 12.5% disables horizontal tightening. */
+  --content-grid-exit-cell:10%;
+  position:absolute; left:50%; top:50%;
+  width:min(100%,1120px); aspect-ratio:1120 / 468;
+  transform:translate(-50%,-50%); pointer-events:none;
+  /* Figma fade: ellipse radii 560 × 412.5 in the 1120 × 468 artwork. */
+  -webkit-mask-image:radial-gradient(ellipse 50% 88.141% at 50% 50%,#000 0%,transparent 100%);
+  mask-image:radial-gradient(ellipse 50% 88.141% at 50% 50%,#000 0%,transparent 100%);
+}
+[data-anim="content-hero"] .content-hero-grid__plane {position:absolute;inset:0;}
+[data-anim="content-hero"] .content-hero-grid__row {
+  position:absolute; left:0; right:0; height:29.8077%;
+  border:var(--content-grid-stroke) solid var(--content-grid-line);
+  box-sizing:border-box;
+  background-image:linear-gradient(to right,var(--content-grid-line) 0,var(--content-grid-line) var(--content-grid-stroke),transparent var(--content-grid-stroke));
+  background-size:12.5% 100%;
+  background-position:center top;
+  background-repeat:repeat-x;
+}
+[data-anim="content-hero"] .content-hero-grid__row--top {top:0;}
+[data-anim="content-hero"] .content-hero-grid__row--bottom {bottom:0;}
+[data-anim="content-hero"] .content-hero-grid__rails {
+  position:absolute;left:12.5%;right:12.5%;top:29.8077%;bottom:29.8077%;
+  border-left:var(--content-grid-stroke) solid var(--content-grid-line);
+  border-right:var(--content-grid-stroke) solid var(--content-grid-line);
+}
+
+/* Native scroll progress: no entrance animation or downloaded runtime required.
+   Exit starts when the hero top reaches the viewport top. The middle band
+   grows by 56px total at full artwork size; the upper/lower cells also tighten horizontally from eight to ten columns. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    [data-anim="content-hero"] {
+      view-timeline-name: --content-hero-exit;
+      view-timeline-axis: block;
+    }
+    [data-anim="content-hero"] .content-hero-grid__row {
+      animation: content-hero-grid-compress 1s var(--motion-ease-primary) both;
+      animation-timeline: --content-hero-exit;
+      animation-range: exit 0% exit 100%;
+    }
+    [data-anim="content-hero"] .content-hero-grid__rails {
+      animation: content-hero-grid-expand 1s var(--motion-ease-primary) both;
+      animation-timeline: --content-hero-exit;
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+@keyframes content-hero-grid-compress {
+  from {height:29.8077%;background-size:12.5% 100%;}
+  to {height:23.8077%;background-size:var(--content-grid-exit-cell) 100%;}
+}
+@keyframes content-hero-grid-expand {
+  from {top:29.8077%;bottom:29.8077%;}
+  to {top:23.8077%;bottom:23.8077%;}
+}
+</style>
+<div class="content-hero-grid" aria-hidden="true">
+  <div class="content-hero-grid__plane">
+    <div class="content-hero-grid__row content-hero-grid__row--top"></div>
+    <div class="content-hero-grid__rails"></div>
+    <div class="content-hero-grid__row content-hero-grid__row--bottom"></div>
+  </div>
+</div>
