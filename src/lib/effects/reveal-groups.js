@@ -198,6 +198,10 @@ export function createRevealController(options = {}) {
   const ensure = () => {
     if (!hasStarted) {
       hasStarted = true;
+      if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+        if (early) earlyBootstrap?.release(root);
+        return 0;
+      }
       // Never re-hide an already painted hero when the head guard is absent/late.
       if (early && !earlyBootstrap?.claim(root)) {
         root.dataset.revealEarlyState = 'expired';

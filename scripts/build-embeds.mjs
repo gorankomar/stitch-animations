@@ -35,3 +35,4 @@ await import('./build-rules-flow-embed.mjs');
 await import('./build-worldwide-markets-preview.mjs');
 
 await import('./build-early-reveal.mjs');
+await import('./build-hero-styles.mjs');

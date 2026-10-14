@@ -56,3 +56,5 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Income Verification: [notes](../../src/embeds/INCOME-VERIFICATION.md), alternating three-row background marquee and expanding rings.
 
 - Issuer routing: [notes](../../src/embeds/ISSUER-ROUTING.md), right-to-left reveal and branching payment pulse.
+
+- Homepage Hero stacked windows: [static fallback and motion notes](hero.md).
