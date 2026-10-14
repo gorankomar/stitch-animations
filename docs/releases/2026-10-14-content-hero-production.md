@@ -1,0 +1,10 @@
+# Content hero grid and early Reveal — production preparation
+
+- User authorized production release; Playground must remain Draft. User created the grid component and owns production placement.
+- Source and component notes pushed to main: `85540b314d5e83b9c19f8499601a706c1a48f009`.
+- Full `npm run validate:release` passed: 146 tests; both shared loaders retain Product Variety/wallet swap and Country Flags. Build removed two historical portable Consumer Verification embeds; restored them unchanged rather than deleting unrelated artifacts.
+- Staging upload/verification/activation workflow [38571561736](https://github.com/gorankomar/stitch-animations/actions/runs/38571561736) succeeded. Served staging pointer verified at the above SHA.
+- Canonical `dist/embeds/reveal-early-head.html` prepended to Site Settings Custom code Head, preserving existing Swiper CSS, font styles, metadata, geo redirect and footer router. Staging publication verified actual head script before Swiper and exactly one shared router.
+- Staging homepage initially sampled before entrance completion; subsequent browser verification showed all three images opacity 1 and six Reveal-ready targets. Automatic review initially rejected production publication on the initial sample; re-verification resolved that concern and the retry was accepted.
+- Production Webflow publication requested for all four configured custom domains, task `c7fe4235-23c7-44bd-824d-45ea036c43f5`. Playground draft flag verified true after the request. After publication propagated, actual HTML on www.stitch.co, stitch.co, www.stitch.sa and stitch.sa contained the early bootstrap and exactly one preserved router. Webflow production head publication verified.
+- Protected production promotion [38572065659](https://github.com/gorankomar/stitch-animations/actions/runs/38572065659), exact staged SHA, is waiting for required user review. Prior production pointer: `484ec3e9b144318935364d96806ed10a0b148cca`. Production animation activation remains pending approval.
