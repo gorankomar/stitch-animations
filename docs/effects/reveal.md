@@ -109,3 +109,5 @@ The runtime must claim a section within **1800ms of the head bootstrap**. If it 
 The bootstrap owns `window.__stitchEarlyReveal`, HTML `data-stitch-reveal-early`, section `data-reveal-early-state`, and the injected `#stitch-early-reveal-styles`. Do not set those markers manually. Existing `.is-reveal-ready` / `.is-reveal` CSS must be present in the animation embed for the actual motion. The early hold itself does not depend on that CSS downloading.
 
 Playground trial: only the first `.header84_component` (`71e47053-f692-e1c9-9f34-0ca8511bd4e5`) opts in. Its three Reveal targets remain unchanged. The header-tag's old Webflow interaction remains as a comparison during this trial; it is not managed by our Reveal controller. No Global Styles embeds or site-wide head code are edited. Playground remains a draft and production is untouched.
+
+Homepage stacked-window fallback and reduced-motion behavior are documented in [Hero notes](../components/hero.md). The user moved the `early` opt-in from the content header (`data-anim="content-hero"`) to the homepage hero (`data-anim="hero"`) on 2026-10-14. Earlier trial notes above describe the original test arrangement.
