@@ -3,12 +3,12 @@
     "file": "chunks/animation-stage.Cs_CHp-U.js",
     "name": "animation-stage"
   },
-  "_auto-reveal.BBF-RdjX.js": {
-    "file": "chunks/auto-reveal.BBF-RdjX.js",
+  "_auto-reveal.FWT7341h.js": {
+    "file": "chunks/auto-reveal.FWT7341h.js",
     "name": "auto-reveal",
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js"
+      "_reveal-groups.CaSLhm-_.js"
     ]
   },
   "_connector.CbYSk2rO.js": {
@@ -30,8 +30,8 @@
       "_math.DB99t-US.js"
     ]
   },
-  "_easing.CJR8aMe3.js": {
-    "file": "chunks/easing.CJR8aMe3.js",
+  "_easing.BUsciq49.js": {
+    "file": "chunks/easing.BUsciq49.js",
     "name": "easing"
   },
   "_expanding-rings.KCV49Jke.js": {
@@ -61,12 +61,12 @@
       "_connector.CbYSk2rO.js"
     ]
   },
-  "_reveal-groups.B3_y-aei.js": {
-    "file": "chunks/reveal-groups.B3_y-aei.js",
+  "_reveal-groups.CaSLhm-_.js": {
+    "file": "chunks/reveal-groups.CaSLhm-_.js",
     "name": "reveal-groups",
     "imports": [
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "_seamless-marquee.3JGbAH9P.js": {
@@ -114,37 +114,37 @@
     ]
   },
   "src/animations/api/index.js": {
-    "file": "chunks/index.CXAo-AYD.js",
+    "file": "chunks/index.Civ3KEju.js",
     "name": "index",
     "src": "src/animations/api/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_motion.D7xsNJ3J.js",
       "_follow-group.YeBEj6oz.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_math.DB99t-US.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ],
     "css": [
       "styles/index.B6qz_xIO.css"
     ]
   },
   "src/animations/cards/index.js": {
-    "file": "chunks/index.BeqCMvkt.js",
+    "file": "chunks/index.zjagf3cF.js",
     "name": "index",
     "src": "src/animations/cards/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_dots-field.Cna3brYf.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_math.DB99t-US.js"
     ],
     "css": [
@@ -152,17 +152,17 @@
     ]
   },
   "src/animations/chart/index.js": {
-    "file": "chunks/index.DLsqH3Lz.js",
+    "file": "chunks/index.DRvs36Ij.js",
     "name": "index",
     "src": "src/animations/chart/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_value-counter.BXLPe_ym.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ],
     "css": [
       "styles/index.DkdnJZ6d.css"
@@ -178,18 +178,18 @@
     ]
   },
   "src/animations/deposits/index.js": {
-    "file": "chunks/index.DVoniKI3.js",
+    "file": "chunks/index.Qk9wXPCX.js",
     "name": "index",
     "src": "src/animations/deposits/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_dots-field.Cna3brYf.js",
       "_value-counter.BXLPe_ym.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_math.DB99t-US.js"
     ],
     "css": [
@@ -197,34 +197,34 @@
     ]
   },
   "src/animations/dots-bulge/index.js": {
-    "file": "chunks/index.BX_r4YSf.js",
+    "file": "chunks/index.D32_x4Da.js",
     "name": "index",
     "src": "src/animations/dots-bulge/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_motion.D7xsNJ3J.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ],
     "css": [
       "styles/styles.VjsnFFRN.css"
     ]
   },
   "src/animations/dots/index.js": {
-    "file": "chunks/index.CpNp63qA.js",
+    "file": "chunks/index.vIa64gZ6.js",
     "name": "index",
     "src": "src/animations/dots/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_dots-field.Cna3brYf.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_math.DB99t-US.js"
     ],
     "css": [
@@ -232,34 +232,34 @@
     ]
   },
   "src/animations/hero/index.js": {
-    "file": "chunks/index.CMlvmKqq.js",
+    "file": "chunks/index.D2eU_Teq.js",
     "name": "index",
     "src": "src/animations/hero/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_reveal-groups.CaSLhm-_.js",
+      "_auto-reveal.FWT7341h.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ],
     "css": [
       "styles/index.BRo8EV-s.css"
     ]
   },
   "src/animations/orbit/index.js": {
-    "file": "chunks/index.QWXCRMf8.js",
+    "file": "chunks/index.D7SYweMm.js",
     "name": "index",
     "src": "src/animations/orbit/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_motion.D7xsNJ3J.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_math.DB99t-US.js"
     ],
     "css": [
@@ -267,16 +267,16 @@
     ]
   },
   "src/animations/radial/index.js": {
-    "file": "chunks/index.UVv8jH-3.js",
+    "file": "chunks/index.DO0ew86p.js",
     "name": "index",
     "src": "src/animations/radial/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ],
     "css": [
       "styles/index.DYw-LbKO.css"
@@ -296,20 +296,20 @@
     ]
   },
   "src/animations/small-cards/index.js": {
-    "file": "chunks/index.DCngUoBb.js",
+    "file": "chunks/index.CNyAGUUT.js",
     "name": "index",
     "src": "src/animations/small-cards/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_dots-field.Cna3brYf.js",
       "_follow-group.YeBEj6oz.js",
       "_value-counter.BXLPe_ym.js",
       "_math.DB99t-US.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/animations/webhook/index.js": {
@@ -326,17 +326,17 @@
     ]
   },
   "src/animations/window-graphic/index.js": {
-    "file": "chunks/index.DMIhPYVw.js",
+    "file": "chunks/index.Jw2lhbAx.js",
     "name": "index",
     "src": "src/animations/window-graphic/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_auto-reveal.FWT7341h.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_value-counter.BXLPe_ym.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/embeds/3ds-enabled-security.js": {
@@ -358,10 +358,10 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_soft-path-pulse.CBA2IBFu.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
@@ -375,12 +375,12 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "src/lib/effects/code-scroll.js",
       "_follow-group.YeBEj6oz.js",
       "_connector.CbYSk2rO.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
     ],
@@ -396,11 +396,11 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_dots-field.Cna3brYf.js",
       "_motion.D7xsNJ3J.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
@@ -447,8 +447,8 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_easing.CJR8aMe3.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_easing.BUsciq49.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_connector.CbYSk2rO.js",
       "_time.SyV53jPj.js"
     ]
@@ -461,14 +461,14 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_expanding-rings.KCV49Jke.js",
       "_soft-path-pulse.CBA2IBFu.js",
       "_dots-field.Cna3brYf.js",
       "_motion.D7xsNJ3J.js",
       "_time.SyV53jPj.js",
       "_value-counter.BXLPe_ym.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_math.DB99t-US.js"
     ]
   },
@@ -480,13 +480,13 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_value-counter.BXLPe_ym.js",
       "_follow-group.YeBEj6oz.js",
       "_upward-carousel.5gdOrkXc.js",
       "_motion.D7xsNJ3J.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
     ]
@@ -509,11 +509,11 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_value-counter.BXLPe_ym.js",
       "_motion.D7xsNJ3J.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
@@ -542,10 +542,10 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_animation-stage.Cs_CHp-U.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/embeds/embedded-connectivity.js": {
@@ -582,7 +582,7 @@
     "isDynamicEntry": true,
     "imports": [
       "src/lib/effects/code-scroll.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/embeds/income-verification.js": {
@@ -608,12 +608,12 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_demo-cursor.CiMQYEry.js",
       "_follow-group.YeBEj6oz.js",
       "_value-counter.BXLPe_ym.js",
       "_motion.D7xsNJ3J.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
@@ -627,12 +627,12 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_soft-path-pulse.CBA2IBFu.js",
       "_dots-field.Cna3brYf.js",
       "_motion.D7xsNJ3J.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_math.DB99t-US.js"
     ]
   },
@@ -645,8 +645,8 @@
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
       "_demo-cursor.CiMQYEry.js",
-      "_reveal-groups.B3_y-aei.js",
-      "_easing.CJR8aMe3.js",
+      "_reveal-groups.CaSLhm-_.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_motion.D7xsNJ3J.js"
     ]
@@ -674,12 +674,12 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_value-counter.BXLPe_ym.js",
       "_upward-carousel.5gdOrkXc.js",
       "_motion.D7xsNJ3J.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/embeds/product-variety.js": {
@@ -690,10 +690,10 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
     ],
@@ -710,7 +710,7 @@
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
       "_demo-cursor.CiMQYEry.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_motion.D7xsNJ3J.js"
     ]
   },
@@ -722,12 +722,12 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_motion.D7xsNJ3J.js",
       "_soft-path-pulse.CBA2IBFu.js",
       "_time.SyV53jPj.js",
       "_upward-carousel.5gdOrkXc.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/embeds/rules-flow.js": {
@@ -738,10 +738,10 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_motion.D7xsNJ3J.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
@@ -768,10 +768,10 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
       "_motion.D7xsNJ3J.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
@@ -785,12 +785,26 @@
     "isDynamicEntry": true,
     "imports": [
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_follow-group.YeBEj6oz.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_time.SyV53jPj.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
+    ]
+  },
+  "src/embeds/workflow-flexibility.js": {
+    "file": "feature-workflow-flexibility.js",
+    "name": "feature-workflow-flexibility",
+    "src": "src/embeds/workflow-flexibility.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Cs_CHp-U.js",
+      "_reveal-groups.CaSLhm-_.js",
+      "_motion.D7xsNJ3J.js",
+      "_easing.BUsciq49.js",
+      "_time.SyV53jPj.js"
     ]
   },
   "src/embeds/worldwide-markets.js": {
@@ -821,14 +835,14 @@
     "isEntry": true,
     "imports": [
       "src/animations/api/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
       "_motion.D7xsNJ3J.js",
       "_follow-group.YeBEj6oz.js",
       "_math.DB99t-US.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/entry/feature-cards.js": {
@@ -838,11 +852,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/cards/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_follow-group.YeBEj6oz.js",
       "_math.DB99t-US.js",
       "_dots-field.Cna3brYf.js"
@@ -855,11 +869,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/chart/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_value-counter.BXLPe_ym.js"
     ]
   },
@@ -879,11 +893,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/deposits/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_dots-field.Cna3brYf.js",
       "_math.DB99t-US.js",
       "_value-counter.BXLPe_ym.js"
@@ -896,11 +910,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/dots-bulge/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_motion.D7xsNJ3J.js"
     ],
     "css": [
@@ -914,11 +928,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/dots/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_dots-field.Cna3brYf.js",
       "_math.DB99t-US.js"
     ],
@@ -933,11 +947,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/hero/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/entry/feature-orbit.js": {
@@ -947,11 +961,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/orbit/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_follow-group.YeBEj6oz.js",
       "_math.DB99t-US.js",
       "_motion.D7xsNJ3J.js"
@@ -964,11 +978,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/radial/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ]
   },
   "src/entry/feature-reference.js": {
@@ -989,11 +1003,11 @@
     "isEntry": true,
     "imports": [
       "src/animations/small-cards/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_dots-field.Cna3brYf.js",
       "_math.DB99t-US.js",
       "_follow-group.YeBEj6oz.js",
@@ -1018,12 +1032,12 @@
     "isEntry": true,
     "imports": [
       "src/animations/window-graphic/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_zoom-lens.BoPZu25O.js",
       "_dom.Ccz6pAD2.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
       "_value-counter.BXLPe_ym.js"
     ]
   },
@@ -1034,13 +1048,14 @@
     "isEntry": true,
     "imports": [
       "_dom.Ccz6pAD2.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_zoom-lens.BoPZu25O.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js"
+      "_easing.BUsciq49.js"
     ],
     "dynamicImports": [
+      "src/embeds/workflow-flexibility.js",
       "src/embeds/deposits-wallet.js",
       "src/embeds/embedded-connectivity.js",
       "src/embeds/worldwide-markets.js",
@@ -1095,6 +1110,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/workflow-flexibility.js",
       "src/embeds/embedded-connectivity.js",
       "src/embeds/deposits-wallet.js",
       "src/embeds/worldwide-markets.js",
@@ -1140,18 +1156,18 @@
       "src/animations/dots-bulge/index.js",
       "src/animations/small-cards/index.js",
       "src/animations/window-graphic/index.js",
-      "_auto-reveal.BBF-RdjX.js",
+      "_auto-reveal.FWT7341h.js",
       "_zoom-lens.BoPZu25O.js",
       "src/embeds/revolving-credit.js",
-      "_expanding-rings.KCV49Jke.js",
       "_animation-stage.Cs_CHp-U.js",
-      "_reveal-groups.B3_y-aei.js",
+      "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
-      "_easing.CJR8aMe3.js",
+      "_easing.BUsciq49.js",
+      "_motion.D7xsNJ3J.js",
+      "_expanding-rings.KCV49Jke.js",
       "_soft-path-pulse.CBA2IBFu.js",
       "_dots-field.Cna3brYf.js",
       "_math.DB99t-US.js",
-      "_motion.D7xsNJ3J.js",
       "_value-counter.BXLPe_ym.js",
       "_path-pulse.BGc1pa4x.js",
       "_connector.CbYSk2rO.js",
