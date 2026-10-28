@@ -1,26 +1,105 @@
 # Collections — Window Stack
 
-Webflow component: **Animations → Collections — Window Stack**
-Component ID: `88e6f662-b5ee-3682-da72-a4d510d4cfc9`.
-Placed on the **Animations Playground**, beside Financial Architecture.
-Only the graphic is included; no full content card was built or changed.
+Webflow component: **Animations → Collections — Window Stack**, ID
+`88e6f662-b5ee-3682-da72-a4d510d4cfc9`. Two existing instances share this
+updated definition. The Playground instance remains a draft beside Financial
+Architecture. No publication or animation-channel activation was performed.
 
-Figma source: Stitch Animation Elements, graphic `256:12908`, reference card
-`256:12907`. The graphic is 258 × 232. The original raster source windows are
-native Webflow Image elements, using permanent managed Webflow assets. The
-image contents are not editable form fields.
+Figma: https://www.figma.com/design/PCbd0DyXWAD2cDANtl7bpH/Stitch-Animation-Elements?node-id=256-12908
+Reference card `256:12907`; graphic `256:12908`, **258 × 232**.
 
-- Attach document: 288 × 201, initially at (73, 71).
-- Reassign collection record: 289 × 244, initially at (24, 23).
-- Native layout classes scale proportionally to the graphic container.
-- Right and bottom white fades match the Figma graphic.
-- Reveal at 25% visibility, 900ms with a 100ms stagger; hold 1600ms.
-- Front window exits bottom-right in 850ms as the rear moves forward.
-- Outgoing window returns behind in 550ms; hold 3500ms and repeat.
-- No floating. Offscreen/hidden-tab pause and static reduced-motion fallback.
+## Native illustration (2026-10-28)
 
-The hidden HTML Embed travels with the component. Rebuild its JavaScript with
-`node scripts/build-collections-embed.mjs`; output is
-`dist/embeds/collections-graphic.html`. Layout CSS is mirrored in
-`src/embeds/collections-graphic.css` but maintained as native Webflow styles.
-Source images are saved in `src/embeds/assets/collections/`.
+Both raster windows were replaced inside the existing component definition.
+Titles, labels, select display, comments display, upload copy, PDF hint and
+Cancel/Confirm labels are native editable Webflow text. These are illustrative
+UI displays, not an operational upload or collection form. No images remain
+inside the graphic. Original PNGs in `assets/collections/` remain reference only.
+
+- Attach document: 288 × approximately 201, at (73, 71).
+- Reassign collection record: 289 × approximately 244, at (24, 23).
+- Windows use intrinsic height with proportional minimum heights so longer copy
+  can wrap and grow; the original illustration intentionally clips the windows
+  at the frame edges and applies right/bottom white fades.
+- Body font is inherited from Webflow (`Abcdiatype, Arial, sans-serif` for EN).
+- Layout, typography, colors, shadows, query containment, aspect ratio and
+  static transforms are native Webflow styles. `collections-graphic_window`
+  remains the main window class. Object classes precede the shared
+  `collections-radius-6` utility; its proportional radius is defined once.
+- Existing **Icon - Chevron Down** is reused without internal overrides.
+  **Icons → Upload Cloud** (`d851a97b-672b-2073-661d-16b3045d78e9`) contains
+  the cloud vector recreated from the bitmap. Its viewport scales the glyph
+  within the native upload icon holder; currentColor supplies its stroke.
+- Structure: frame/query container; two window surfaces, each with title,
+  content and action row; two fade blocks; separate motion and style embeds.
+  Content groups own field/upload layout; icon holders own icon alignment.
+- `collections-scoped-style.html` is the only style exception: direction-aware
+  selectors mirror window placement and the side fade for RTL. It lives in a
+  separate style-only HtmlEmbed (`7b0089a5-e80b-f063-0cd1-9f7bddc0c601`).
+  Static appearance never depends on JavaScript or downloaded CSS.
+
+Local reference markup: `collections-windows-markup.html`; local styles:
+`collections-graphic.css` and `collections-windows-native.css`. These CSS files
+are preview references only, not deployed CSS dependencies. Webflow's native
+styles are authoritative. Local preview: `/collections-native-preview.html`
+with 180, 258 and 540px parents, static/replay and long-copy/RTL controls.
+The older `/collections.html` three-card demo is separate and unchanged.
+
+## Motion and shared delivery
+
+Source: `collections-graphic.js`; selectors `[data-collections-graphic]` and
+`[data-collections-window]`. The two windows remain in Attach/Reassign DOM
+order. `[data-collections-kind]` identifies their content. Motion owns only
+transient transform, opacity, z-index and `data-collections-state`.
+
+Original choreography/timings are explicitly retained per user request:
+900ms upward reveals, 100ms stagger, 1600ms initial hold, 850ms bottom-right
+exit/front advance, 550ms rear return, then 3500ms holds. Non-opacity movement
+reads the exact Global Styles `--motion-ease-primary` at setup; opacity uses
+linear progress. Live token inspected: `cubic-bezier(.11, .61, .27, .99)`.
+Live default/fast duration tokens are 770ms and calc(default × .6); this
+component's preserved choreography is an explicit timing exception. RTL exits
+bottom-left and mirrors stack offsets while leaving text unmirrored.
+
+Animation Stage supplies the 25% visibility clock, offscreen/hidden-tab pause,
+resize and reduced-motion handling. Static Figma layout stays visible until
+setup succeeds and the stage becomes visible. Reduced motion, setup/render
+failure and disposal restore original inline styles. Returning from reduced
+motion restarts the entrance. A Symbol-based shared mount registry prevents
+both temporary and shared bundles starting duplicate clocks.
+
+Both `page-all.js` and `page-all-lite.js` now mount this graphic, independently
+of the old `[data-anim="collections"]` demo. The shared build also emits
+`feature-collections-graphic.js`. No runtime CSS import is required.
+
+**Temporary Playground test runtime:** existing HtmlEmbed
+`88e6f662-b5ee-3682-da72-a4d510d4cfce` contains the latest standalone motion
+built by `node scripts/build-collections-embed.mjs` into
+`dist/embeds/collections-graphic.html`. Retained because the user explicitly
+requested pre-staging Playground testing. After an authorized staging release
+is merged/activated and verified through the permanent page-all-lite router,
+remove only this temporary runtime embed. Keep the style-only RTL embed,
+native markup and permanent router. No loader URLs were changed.
+
+## Verification
+
+- Webflow Designer static rendering visually compared to the Figma target;
+  Preview ran entrance and both front-window states with zero raster images.
+- Webflow desktop (630px graphic) and mobile (345px graphic) preserve 258:232
+  aspect ratio and proportional text. Native shared radius verified on all
+  fields, upload panel/icon and action displays; Base is the only variant.
+- Custom code disabled in Webflow Preview: both windows remain fully styled
+  and visible, with no inline motion transforms or opacity hiding.
+- Local simultaneous 180/258/540px parents checked; design-size title is 13.3px.
+  Longer copy grows intrinsically without internal horizontal overflow; RTL
+  placement/fade is mirrored. Actual secondary-locale copy was not changed.
+- Six focused sampling/lifecycle tests cover choreography, linear opacity,
+  invisible recycling, alternating order, duplicate mount, offscreen/hidden
+  pause, reduced motion, cleanup/remount and render-failure restoration.
+- Full build and all 209 tests pass. Shared release checker passes, including
+  Product Variety/wallet swap, Country Flags and local module/CSS dependencies.
+
+State: **saved to Webflow draft; shared source and fresh distribution saved
+locally**. No Git push/merge, staging activation, Webflow publish or production
+promotion was requested or performed. Animations Playground must never be
+published.

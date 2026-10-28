@@ -406,6 +406,17 @@
       "_math.DB99t-US.js"
     ]
   },
+  "src/embeds/collections-graphic.js": {
+    "file": "feature-collections-graphic.js",
+    "name": "feature-collections-graphic",
+    "src": "src/embeds/collections-graphic.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Cs_CHp-U.js",
+      "_motion.D7xsNJ3J.js"
+    ]
+  },
   "src/embeds/consumer-verification.js": {
     "file": "feature-consumer-verification.js",
     "name": "feature-consumer-verification",
@@ -1055,6 +1066,7 @@
       "_easing.BUsciq49.js"
     ],
     "dynamicImports": [
+      "src/embeds/collections-graphic.js",
       "src/embeds/workflow-flexibility.js",
       "src/embeds/deposits-wallet.js",
       "src/embeds/embedded-connectivity.js",
@@ -1110,6 +1122,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/collections-graphic.js",
       "src/embeds/workflow-flexibility.js",
       "src/embeds/embedded-connectivity.js",
       "src/embeds/deposits-wallet.js",
@@ -1160,10 +1173,10 @@
       "_zoom-lens.BoPZu25O.js",
       "src/embeds/revolving-credit.js",
       "_animation-stage.Cs_CHp-U.js",
+      "_motion.D7xsNJ3J.js",
       "_reveal-groups.CaSLhm-_.js",
       "_time.SyV53jPj.js",
       "_easing.BUsciq49.js",
-      "_motion.D7xsNJ3J.js",
       "_expanding-rings.KCV49Jke.js",
       "_soft-path-pulse.CBA2IBFu.js",
       "_dots-field.Cna3brYf.js",
