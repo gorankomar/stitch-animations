@@ -1,3 +1,4 @@
+import '../embeds/collections-graphic.js';
 import '../embeds/workflow-flexibility.js';
 import '../embeds/embedded-connectivity.js';
 import '../embeds/deposits-wallet.js';
