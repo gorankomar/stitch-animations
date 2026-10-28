@@ -1,3 +1,7 @@
+## Onboarding customer (2026-10-28)
+
+Added the contextual Controls sidebar and complete onboarding workflow as the ninth Platform Screens gallery item. Sidebar title is editable; Groups, Title and Items slots compose three reusable navigation groups. The full 716.2 × 1534 flow remains intact beneath the screen's canvas crop, with reusable cards, phases, event ports, arrows, endpoints and branch artwork. Static native draft only. See [implementation and verification](ONBOARDING-CUSTOMER.md).
+
 ## Ledger transaction detail (2026-10-21)
 
 Added Figma Ledger transaction detail as the eighth gallery screen, reusing the shared shell, Sidebar, Label, Button and table treatments with seven scoped native styles. New exact Info Circle icon exposes bound appearance props. Desktop and mobile compiled Preview verified; saved draft only. See [implementation and verification](LEDGER-TRANSACTION.md).

@@ -80,6 +80,7 @@ export default defineConfig({
         }
       : {
           input: {
+            'feature-workflow-flexibility': resolve(process.cwd(), 'src/embeds/workflow-flexibility.js'),
             'feature-deposits-wallet': resolve(process.cwd(), 'src/embeds/deposits-wallet.js'),
             'feature-dynamic-transaction-switching': resolve(process.cwd(), 'src/embeds/dynamic-transaction-switching.js'),
             'feature-worldwide-markets': resolve(process.cwd(), 'src/embeds/worldwide-markets.js'),

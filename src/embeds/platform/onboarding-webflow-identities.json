@@ -1,0 +1,58 @@
+{
+  "site": {
+    "siteId": "6823036cd77b3093eaf9154d",
+    "pageId": "6ad6808c9ce17b3ab0a69ea8"
+  },
+  "components": {
+    "sidebar": "fbc8003d-6354-66f0-c6ce-1601a9ba9efb",
+    "group": "49e8bcce-2a17-0c07-6ce3-ba55cd2a8b67",
+    "subitem": "6ce4eb71-53e8-6216-e823-61bef0662bd7",
+    "card": "088979fd-9937-4d9d-3e6e-ecbd72c63ae4",
+    "arrow": "bbd5b2d0-b562-e950-5599-72092cb5c794",
+    "event": "aae6b25e-d459-2f76-e2bf-c5596ebd48c1",
+    "endpoint": "c59e7336-9093-b302-6536-178c4e84c439",
+    "branch": "0cb256f5-18df-a1b3-1386-cae439585be8",
+    "flow": "f49277c4-c1ef-cc7e-ec07-ceffd47b7c97",
+    "content": "207571f4-609d-305d-679a-2dbdd5edca4a"
+  },
+  "icons": {
+    "back": {
+      "id": "32410ba7-a8fb-9d3c-8548-b474944eb9dc",
+      "name": "Icon - Arrow Left",
+      "group": "Icons",
+      "description": "Figma onboarding vector; editable dimensions, color and stroke width."
+    },
+    "layout": {
+      "id": "84adc55f-ee12-5fc6-d194-0ffa9d131ccf",
+      "name": "Icon - Layout Sidebar",
+      "group": "Icons",
+      "description": "Figma onboarding vector; editable dimensions, color and stroke width."
+    },
+    "account": {
+      "id": "4d62c4ae-cfc1-8c6e-c55a-a516f755375a",
+      "name": "Icon - User Square",
+      "group": "Icons",
+      "description": "Figma onboarding vector; editable dimensions, color and stroke width."
+    },
+    "menu": {
+      "id": "b9ad546a-d054-51e5-9d0e-e259aa956b1d",
+      "name": "Icon - Dots Vertical",
+      "group": "Icons",
+      "description": "Figma onboarding vector; editable dimensions, color and stroke width."
+    },
+    "maximize": {
+      "id": "8adeb365-328d-9c3f-7a54-7bd752326dc9",
+      "name": "Icon - Maximize",
+      "group": "Icons",
+      "description": "Figma onboarding vector; editable dimensions, color and stroke width."
+    }
+  },
+  "buttons": {
+    "solid": "1fd774a5-e963-9514-09cb-78af768404ec",
+    "icon": "59dd7fb0-4646-e40a-d8f8-0aefefc884c6"
+  },
+  "screenInstance": "43c34891-0006-00df-f924-afbf5f3d6812",
+  "galleryCard": "ebcaa652-83d8-97a5-6882-facffc4c3291",
+  "completion": "Webflow draft; no publication",
+  "figmaSession": "e1ea9a7c-c540-4c73-8b20-98ca664a7bc4"
+}

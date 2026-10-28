@@ -1,0 +1,502 @@
+const imgGroup1707482223 = "https://www.figma.com/api/mcp/asset/f272092d-373e-472d-85af-60ee01b00d67.svg";
+const imgFile05 = "https://www.figma.com/api/mcp/asset/4d9633cc-d4e0-4a9c-9f26-e89a5471d85c.svg";
+const imgDotsVertical = "https://www.figma.com/api/mcp/asset/61693f87-59d3-4446-888f-2f3374d85fdc.svg";
+const imgGroup1707482224 = "https://www.figma.com/api/mcp/asset/c71b3c98-1a06-4f1a-adce-9e4dff7adf44.svg";
+const imgPolygon2 = "https://www.figma.com/api/mcp/asset/6885fbfc-61d9-4205-ad9c-5c5051b92556.svg";
+const imgGroup1707482240 = "https://www.figma.com/api/mcp/asset/b38babbc-db03-4aa4-ac44-28eff25df81f.svg";
+const imgGroup1707482241 = "https://www.figma.com/api/mcp/asset/7e50b125-e65e-47d2-aa6c-1cf8bd7008ca.svg";
+const imgDataflow04 = "https://www.figma.com/api/mcp/asset/40eebe67-1437-45c1-b3b7-b82fb69dde31.svg";
+const imgEllipse133 = "https://www.figma.com/api/mcp/asset/916c1aba-dacf-499b-876b-173aeb05c196.svg";
+
+type EventProps = {
+  className?: string;
+  active?: "no";
+  incoming?: boolean;
+};
+
+function Event({ className, active = "no", incoming = true }: EventProps) {
+  const isNoAndIncoming = active === "no" && incoming;
+  return (
+    <div className={className || "bg-[#888] content-stretch flex h-[17px] items-center p-px relative rounded-[3px] w-[13px]"} id={isNoAndIncoming ? "node-533_36444" : "node-533_36439"}>
+      <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" id={isNoAndIncoming ? "node-533_36445" : "node-533_36440"}>
+        <div className={`col-1 ml-0 mt-0 relative row-1 ${isNoAndIncoming ? "bg-[#888] border-[1.4px] border-solid border-white content-stretch flex items-center p-[1.6px] rounded-[2px]" : "grid-cols-[max-content] grid-rows-[max-content] inline-grid place-items-start"}`} id={isNoAndIncoming ? "node-533_36446" : "node-533_36441"}>
+          <div className={`border-solid relative ${isNoAndIncoming ? "bg-white border border-[#888] h-[12px] rounded-[1px] shrink-0 w-[8px]" : "bg-[#888] border-[1.4px] border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] rounded-[2px] row-1"}`} id={isNoAndIncoming ? "node-533_36447" : "node-533_36442"}>
+            {active === "no" && !incoming && <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="533:36443" />}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Arrow({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[51px] relative w-[12px]"} data-node-id="533:36433" data-name="Arrow">
+      <div className="absolute inset-[0_16.67%]" data-node-id="533:36434">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup1707482223} />
+      </div>
+    </div>
+  );
+}
+
+export default function Group1707482492() {
+  return (
+    <div className="contents relative size-full" data-node-id="553:6352">
+      <div className="absolute content-stretch flex flex-col items-start left-0 top-0" data-node-id="553:6353">
+        <div className="content-stretch flex flex-col gap-[4px] items-center relative shrink-0" data-node-id="553:6354">
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="553:6355">
+            <div className="col-1 h-[102px] ml-[270px] mt-[14px] relative row-1 w-[13.2px]" data-node-id="553:6356" />
+            <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid col-1 content-stretch flex flex-col h-[120px] items-start justify-center ml-0 mt-0 p-[6px] relative rounded-[12px] row-1 w-[280px]" data-node-id="553:6357">
+              <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6358">
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6359">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="553:6360" data-name="file-05">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6361">
+                    Archive application
+                  </p>
+                </div>
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6362" data-name="dots-vertical">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-white content-stretch flex flex-[1_0_0] gap-[4px] items-start leading-[20px] min-h-px not-italic p-[8px] relative rounded-[8px] text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6363">
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6364">
+                  Phase:
+                </p>
+                <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6365">
+                  Tahaquq
+                </p>
+              </div>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="553:6367">
+            <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid col-1 content-stretch flex flex-col items-start justify-center ml-0 mt-0 p-[6px] relative rounded-[12px] row-1 w-[280px]" data-node-id="553:6368">
+              <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6369">
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6370">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="553:6371" data-name="file-05">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6372">
+                    Yakeen
+                  </p>
+                </div>
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6373" data-name="dots-vertical">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6374">
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6375">
+                  Phase:
+                </p>
+                <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6376">
+                  Yakeen
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#888] col-1 content-stretch flex h-[17.2px] items-center ml-[273px] mt-[34px] p-px relative rounded-[3px] row-1 w-[13.2px]" data-node-id="553:6377" data-name="Component 14">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6377;27114:72073">
+                <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6377;27118:86437">
+                  <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6377;27118:86297">
+                    <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6377;27118:86298" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="553:6379">
+            <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid col-1 content-stretch flex flex-col items-start justify-center ml-0 mt-0 p-[6px] relative rounded-[12px] row-1 w-[280px]" data-node-id="553:6380">
+              <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6381">
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6382">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="553:6383" data-name="file-05">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6384">
+                    AML
+                  </p>
+                </div>
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6385" data-name="dots-vertical">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6386">
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6387">
+                  Phase:
+                </p>
+                <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6388">
+                  Mozn AML
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#888] col-1 content-stretch flex h-[17.2px] items-center ml-[273px] mt-[32px] p-px relative rounded-[3px] row-1 w-[13.2px]" data-node-id="553:6389" data-name="Component 14">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6389;27114:72073">
+                <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6389;27118:86437">
+                  <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6389;27118:86297">
+                    <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6389;27118:86298" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="553:6391">
+            <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid col-1 content-stretch flex flex-col items-start justify-center ml-0 mt-0 p-[6px] relative rounded-[12px] row-1 w-[280px]" data-node-id="553:6392">
+              <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6393">
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6394">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="553:6395" data-name="file-05">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6396">
+                    External phase
+                  </p>
+                </div>
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6397" data-name="dots-vertical">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6398">
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6399">
+                  Phase:
+                </p>
+                <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6400">
+                  Raya User Creation
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#888] col-1 content-stretch flex h-[17.2px] items-center ml-[273px] mt-[34px] p-px relative rounded-[3px] row-1 w-[13.2px]" data-node-id="553:6401" data-name="Component 14">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6401;27114:72073">
+                <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6401;27118:86437">
+                  <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6401;27118:86297">
+                    <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6401;27118:86298" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="553:6403">
+            <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid col-1 content-stretch flex flex-col items-start justify-center ml-0 mt-0 p-[6px] relative rounded-[12px] row-1 w-[280px]" data-node-id="553:6404">
+              <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6405">
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6406">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="553:6407" data-name="file-05">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6408">
+                    Customer creation
+                  </p>
+                </div>
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6409" data-name="dots-vertical">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6410">
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6411">
+                  Phase:
+                </p>
+                <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6412">
+                  Customer creation
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#888] col-1 content-stretch flex h-[17.2px] items-center ml-[273px] mt-[34px] p-px relative rounded-[3px] row-1 w-[13.2px]" data-node-id="553:6413" data-name="Component 14">
+              <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6413;27114:72073">
+                <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6413;27118:86437">
+                  <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6413;27118:86297">
+                    <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6413;27118:86298" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="553:6415">
+            <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid col-1 content-stretch flex flex-col items-start justify-center ml-0 mt-0 p-[6px] relative rounded-[12px] row-1 w-[280px]" data-node-id="553:6416">
+              <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6417">
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6418">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="553:6419" data-name="file-05">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6420">
+                    Archive application
+                  </p>
+                </div>
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6421" data-name="dots-vertical">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6422">
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6423">
+                  Phase:
+                </p>
+                <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6424">
+                  Customer onboarded
+                </p>
+              </div>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="bg-[#121212] border-3 border-[#121212] border-solid content-stretch flex items-center justify-center px-[24px] py-[8px] relative rounded-[100px] shrink-0" data-node-id="553:6426">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white whitespace-nowrap" data-node-id="553:6427">
+              End
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[#888] content-stretch flex h-[17.2px] items-center left-0 p-px rounded-[3px] top-0 w-[13.2px]" data-node-id="553:6428" data-name="Component 12">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6428;27114:72073">
+          <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6428;27118:86437">
+            <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6428;27118:86297">
+              <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6428;27118:86298" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[#888] content-stretch flex h-[17.2px] items-center left-0 p-px rounded-[3px] top-0 w-[13.2px]" data-node-id="553:6429" data-name="Component 13">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6429;27114:72073">
+          <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6429;27118:86437">
+            <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6429;27118:86297">
+              <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6429;27118:86298" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[#888] content-stretch flex h-[17.2px] items-center left-0 p-px rounded-[3px] top-0 w-[13.2px]" data-node-id="553:6430" data-name="Component 15">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6430;27114:72073">
+          <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6430;27118:86437">
+            <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6430;27118:86297">
+              <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6430;27118:86298" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[#888] content-stretch flex h-[17.2px] items-center left-0 p-px rounded-[3px] top-0 w-[13.2px]" data-node-id="553:6431" data-name="Component 16">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6431;27114:72073">
+          <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6431;27118:86437">
+            <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6431;27118:86297">
+              <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6431;27118:86298" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[#888] content-stretch flex h-[17.2px] items-center left-0 p-px rounded-[3px] top-0 w-[13.2px]" data-node-id="553:6432" data-name="Component 14">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6432;27114:72073">
+          <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6432;27118:86437">
+            <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6432;27118:86297">
+              <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6432;27118:86298" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex flex-col h-[131px] items-center justify-center left-0 top-0 w-[444px]" data-node-id="553:6433">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] mb-[-1px] place-items-start relative shrink-0" data-node-id="553:6434">
+          <div className="col-1 h-[22px] ml-0 mt-0 relative row-1 w-[4px]" data-node-id="553:6435">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgGroup1707482224} />
+          </div>
+        </div>
+        <div className="h-[40px] mb-[-1px] relative shrink-0 w-[64px]" data-node-id="553:6438">
+          <div className="absolute inset-[1.79%_5.54%]">
+            <img alt="" className="block max-w-none size-full" src={imgPolygon2} />
+          </div>
+        </div>
+        <div className="content-stretch flex flex-[1_0_0] items-start min-h-px relative w-full" data-node-id="553:6439">
+          <div className="flex-[1_0_0] h-full min-w-px relative" data-node-id="553:6440">
+            <div className="absolute inset-[0_-0.32%_0_0]">
+              <img alt="" className="block max-w-none size-full" src={imgGroup1707482240} />
+            </div>
+          </div>
+          <div className="flex flex-[1_0_0] h-full items-center justify-center min-w-px relative" data-node-id="553:6443">
+            <div className="-scale-y-100 flex-none rotate-180 size-full">
+              <div className="relative size-full">
+                <div className="absolute inset-[0_-0.31%_0_0]">
+                  <img alt="" className="block max-w-none size-full" src={imgGroup1707482241} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[16px] top-[calc(50%-25.5px)]" data-node-id="553:6446" data-name="dataflow-04">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDataflow04} />
+        </div>
+      </div>
+      <div className="absolute content-stretch flex flex-col gap-[4px] items-center left-0 top-0 w-[280px]" data-node-id="553:6448">
+        <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid content-stretch flex flex-col items-start justify-center p-[6px] relative rounded-[12px] shrink-0 w-full" data-node-id="553:6449">
+          <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6450">
+            <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6451">
+              <div className="relative shrink-0 size-[16px]" data-node-id="553:6452" data-name="file-05">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+              </div>
+              <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6453">
+                Archive application
+              </p>
+            </div>
+            <div className="relative shrink-0 size-[16px]" data-node-id="553:6454" data-name="dots-vertical">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+            </div>
+          </div>
+          <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6455">
+            <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6456">
+              Phase:
+            </p>
+            <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6457">
+              ---
+            </p>
+          </div>
+        </div>
+        <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+        <div className="bg-[#121212] border-3 border-[#121212] border-solid content-stretch flex items-center justify-center px-[24px] py-[8px] relative rounded-[100px] shrink-0" data-node-id="553:6459">
+          <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[14px] text-center text-white whitespace-nowrap" data-node-id="553:6460">
+            End
+          </p>
+        </div>
+      </div>
+      <div className="absolute aspect-[4/4] left-0 right-0 top-0" data-node-id="553:6461">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse133} />
+      </div>
+      <div className="absolute aspect-[4/4] left-0 right-0 top-0" data-node-id="553:6462">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse133} />
+      </div>
+      <div className="absolute aspect-[4/4] left-0 right-0 top-0" data-node-id="553:6463">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse133} />
+      </div>
+      <div className="absolute aspect-[4/4] left-0 right-0 top-0" data-node-id="553:6464">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgEllipse133} />
+      </div>
+      <div className="absolute contents left-0 top-0" data-node-id="553:6465">
+        <div className="absolute h-[38.4px] left-0 top-0 w-[16px]" data-node-id="553:6466" />
+        <div className="absolute content-stretch flex flex-col gap-[4px] items-center left-0 top-0 w-[280px]" data-node-id="553:6467">
+          <div className="bg-[#f9f9f9] border border-[#d1d1d1] border-solid content-stretch flex items-center justify-center px-[24px] py-[8px] relative rounded-[100px] shrink-0" data-node-id="553:6468">
+            <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6469">
+              Start
+            </p>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="553:6471">
+            <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid col-1 content-stretch flex flex-col items-start justify-center ml-0 mt-0 p-[6px] relative rounded-[12px] row-1 w-[280px]" data-node-id="553:6472">
+              <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6473">
+                <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6474">
+                  <div className="relative shrink-0 size-[16px]" data-node-id="553:6475" data-name="file-05">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                  </div>
+                  <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6476">
+                    Application
+                  </p>
+                </div>
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6477" data-name="dots-vertical">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+                </div>
+              </div>
+              <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6478">
+                <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6479">
+                  Phase:
+                </p>
+                <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6480">
+                  Applicant information
+                </p>
+              </div>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid content-stretch flex flex-col items-start justify-center p-[6px] relative rounded-[12px] shrink-0 w-full" data-node-id="553:6482">
+            <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6483">
+              <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6484">
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6485" data-name="file-05">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6486">
+                  Reports
+                </p>
+              </div>
+              <div className="relative shrink-0 size-[16px]" data-node-id="553:6487" data-name="dots-vertical">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6488">
+              <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6489">
+                Phase:
+              </p>
+              <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6490">
+                Customer reports
+              </p>
+            </div>
+          </div>
+          <Arrow className="h-[51px] relative shrink-0 w-[12px]" />
+          <div className="bg-[#f9f9f9] border border-[#e7e7e7] border-solid content-stretch flex flex-col items-start justify-center p-[6px] relative rounded-[12px] shrink-0 w-full" data-node-id="553:6492">
+            <div className="content-stretch flex items-center justify-between p-[8px] relative shrink-0 w-full" data-node-id="553:6493">
+              <div className="content-stretch flex gap-[8px] items-center relative shrink-0" data-node-id="553:6494">
+                <div className="relative shrink-0 size-[16px]" data-node-id="553:6495" data-name="file-05">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFile05} />
+                </div>
+                <p className="[word-break:break-word] font-['Inter:Medium'] font-medium leading-[20px] not-italic relative shrink-0 text-[#121212] text-[14px] text-center whitespace-nowrap" data-node-id="553:6496">
+                  Integration
+                </p>
+              </div>
+              <div className="relative shrink-0 size-[16px]" data-node-id="553:6497" data-name="dots-vertical">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDotsVertical} />
+              </div>
+            </div>
+            <div className="[word-break:break-word] bg-white content-stretch flex gap-[4px] items-center leading-[20px] not-italic p-[8px] relative rounded-[8px] shrink-0 text-[14px] text-center w-full whitespace-nowrap" data-node-id="553:6498">
+              <p className="font-['Inter:Medium'] font-medium relative shrink-0 text-[#3d3d3d]" data-node-id="553:6499">
+                Phase:
+              </p>
+              <p className="font-['Inter:Regular'] font-normal relative shrink-0 text-[#5d5d5d]" data-node-id="553:6500">
+                Customer create
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col gap-[4px] items-start left-0 top-0 w-[13.2px]" data-node-id="553:6501">
+          <div className="bg-[#888] content-stretch flex h-[17.2px] items-center p-px relative rounded-[3px] shrink-0 w-full" data-node-id="553:6502" data-name="Component 11">
+            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6502;27114:72073">
+              <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6502;27118:86437">
+                <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6502;27118:86297">
+                  <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6502;27118:86298" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[#888] content-stretch flex h-[17.2px] items-center p-px relative rounded-[3px] shrink-0 w-full" data-node-id="553:6503" data-name="Component 12">
+            <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6503;27114:72073">
+              <div className="col-1 grid-cols-[max-content] grid-rows-[max-content] inline-grid ml-0 mt-0 place-items-start relative row-1" data-node-id="I553:6503;27118:86437">
+                <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6503;27118:86297">
+                  <div className="bg-[#888] h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6503;27118:86298" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Event className="absolute bg-[#888] content-stretch flex h-[17px] items-center left-0 p-px rounded-[3px] top-0 w-[13px]" incoming={false} />
+        <Event className="absolute bg-[#888] content-stretch flex h-[17px] items-center left-0 p-px rounded-[3px] top-0 w-[13px]" incoming={false} />
+      </div>
+      <div className="absolute bg-[#888] content-stretch flex h-[17px] items-center left-0 p-px rounded-[3px] top-0 w-[13px]" data-node-id="553:6506" data-name="Component 12">
+        <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0" data-node-id="I553:6506;27118:86563">
+          <div className="bg-[#888] border-[1.4px] border-solid border-white col-1 content-stretch flex items-center ml-0 mt-0 p-[1.6px] relative rounded-[2px] row-1" data-node-id="I553:6506;27118:86564">
+            <div className="bg-white border border-[#888] border-solid h-[12px] relative rounded-[1px] shrink-0 w-[8px]" data-node-id="I553:6506;27118:86565" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Gray/900: #3D3D3D, Gray/950: #121212, English/Text sm/Medium: Font(family: "Inter", style: Medium, size: 14, weight: 500, lineHeight: 20, letterSpacing: 0), Gray/600: #5D5D5D, English/Text sm/Regular: Font(family: "Inter", style: Regular, size: 14, weight: 400, lineHeight: 20, letterSpacing: 0), Base/White: #FFFFFF, Gray/50: #F9F9F9, Gray/200: #E7E7E7, Gray/500: #6D6D6D, Gray/400: #888888, Gray/300: #D1D1D1.
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Fill=No
+**Node ID:** 533:36424
+
+file, attachment, text, paper, pdf, report
+
+## Fill=No
+**Node ID:** 533:36429
+
+dots, vertical, line, more, options, menu
+The generated code contains image and SVG URL constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

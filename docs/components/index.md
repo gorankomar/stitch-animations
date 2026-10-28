@@ -62,3 +62,6 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Icon hover playground (local experiment): [notes](../../src/embeds/icon-playground/README.md), `/icon-playground.html`.
 
 - Platform Screens (static Webflow draft): [notes](../../src/embeds/platform/PLATFORM-SCREENS.md), shared Platform Screen shell; Dashboard, Loans, Ledgers, Cards, Person detail and Cases detail layouts; Stitch AI navigation, sidebar slots, filters, table rows, metrics, collapsed headers and empty panels.
+- Onboarding customer (Platform Screens draft): [notes](../../src/embeds/platform/ONBOARDING-CUSTOMER.md), contextual Controls sidebar with group/title/item slots and complete reusable 716.2 × 1534 workflow.
+
+- Workflow Flexibility: [notes](../../src/embeds/WORKFLOW-FLEXIBILITY.md), five-window stack with hard upward reveals, 2.5-second holds and downward rotation; Playground draft.
