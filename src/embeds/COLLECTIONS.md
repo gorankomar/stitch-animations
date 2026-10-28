@@ -111,10 +111,11 @@ Animations Playground must never be published.
 
 Release evidence: [2026-10-28 Collections staging](../../docs/releases/2026-10-28-collections-staging.md).
 
-## Production follow-up
+## Production release
 
-Native markup was published to the configured production domains on 2026-10-28.
-The exact staging release promotion is queued behind the required GitHub human
-review. The complete native static fallback is live meanwhile. See
-[production status](../../docs/releases/2026-10-28-collections-production.md);
-production animation completion must be verified after approval.
+Native markup is published to the configured production domains. After the
+user completed the required GitHub review, production promoted the exact
+staging-verified release `a2bb18cfa2215922e1c35091a59f2ab201a89fd9`.
+CloudFront invalidation, served pointer/module bytes and live desktop/mobile
+motion were verified. Playground remains an unpublished draft. See
+[production verification](../../docs/releases/2026-10-28-collections-production.md).
