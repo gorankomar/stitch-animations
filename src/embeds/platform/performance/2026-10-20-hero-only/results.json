@@ -1,0 +1,3430 @@
+{
+  "tool": "Lighthouse 13.5.0",
+  "date": "2026-10-20",
+  "browser": "Official Chrome for Testing 155.0.8059.84",
+  "reducedMotion": true,
+  "runs": [
+    {
+      "name": "desktop-html-1",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 1,
+      "score": 68.0,
+      "fcp": 1999.6718999999998,
+      "lcp": 3651.8331000000007,
+      "tbt": 17.500000000000227,
+      "cls": 0.002830090020576131,
+      "speedIndex": 2228.6729035491007,
+      "totalBytes": 1404225,
+      "requests": 78,
+      "documentBytes": 41748,
+      "pageCssBytes": 27497,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 585.4859999999969,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 244.182
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 858.253
+        }
+      ],
+      "observedFCP": 1102,
+      "observedLCP": 1102,
+      "observedSI": 1109,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:08:06.605Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404149,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74368
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49807
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58965
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57538
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 172.8100000000004,
+          "scripting": 129.8060000000004,
+          "scriptParseCompile": 2.251
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 82.35199999999989,
+          "scripting": 71.31499999999991,
+          "scriptParseCompile": 4.633
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 58.824999999999584,
+          "scripting": 44.637999999999586,
+          "scriptParseCompile": 11.930000000000001
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 56.923,
+          "scripting": 6.272999999999999,
+          "scriptParseCompile": 1.7599999999999991
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 346.9129999999967,
+        "other": 92.19600000000025,
+        "styleLayout": 68.648,
+        "scriptParseCompile": 55.03999999999998,
+        "paintCompositeRender": 10.833999999999993,
+        "parseHTML": 7.124999999999999,
+        "garbageCollection": 4.7299999999999995
+      }
+    },
+    {
+      "name": "desktop-html-2",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 2,
+      "score": 96.0,
+      "fcp": 1081.1115,
+      "lcp": 1081.1115,
+      "tbt": 0,
+      "cls": 0.002782158560254502,
+      "speedIndex": 1081.1115,
+      "totalBytes": 1404584,
+      "requests": 78,
+      "documentBytes": 41785,
+      "pageCssBytes": 27510,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 523.2130000000008,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 281.318
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 355.908
+        }
+      ],
+      "observedFCP": 637,
+      "observedLCP": 637,
+      "observedSI": 646,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:08:34.900Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404140,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74367
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49801
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58968
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57533
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 111.53900000000044,
+          "scripting": 76.45100000000043,
+          "scriptParseCompile": 2.237
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 74.22599999999963,
+          "scripting": 58.094999999999615,
+          "scriptParseCompile": 11.885
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 72.876,
+          "scripting": 34.49899999999996,
+          "scriptParseCompile": 1.508
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 69.076,
+          "scripting": 7.518999999999997,
+          "scriptParseCompile": 2.1639999999999993
+        },
+        {
+          "url": "Unattributable",
+          "total": 57.91399999999993,
+          "scripting": 7.565000000000003,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 268.2560000000001,
+        "other": 108.36100000000073,
+        "styleLayout": 64.46600000000001,
+        "scriptParseCompile": 55.616,
+        "paintCompositeRender": 16.00199999999996,
+        "parseHTML": 7.029999999999998,
+        "garbageCollection": 3.481999999999998
+      }
+    },
+    {
+      "name": "desktop-html-3",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 3,
+      "score": 94.0,
+      "fcp": 1197.489,
+      "lcp": 1197.489,
+      "tbt": 0,
+      "cls": 0.002649473448034323,
+      "speedIndex": 1197.489,
+      "totalBytes": 1404493,
+      "requests": 77,
+      "documentBytes": 41751,
+      "pageCssBytes": 27529,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 518.5860000000014,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 238.571
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 442.291
+        }
+      ],
+      "observedFCP": 681,
+      "observedLCP": 681,
+      "observedSI": 686,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:09:03.261Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404147,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74364
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49806
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58965
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57541
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 116.61100000000042,
+          "scripting": 81.4730000000004,
+          "scriptParseCompile": 2.227
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 72.895,
+          "scripting": 6.190999999999995,
+          "scriptParseCompile": 2.149999999999999
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 67.56799999999959,
+          "scripting": 52.391999999999584,
+          "scriptParseCompile": 12.183
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 65.86499999999995,
+          "scripting": 32.27899999999997,
+          "scriptParseCompile": 1.523
+        },
+        {
+          "url": "Unattributable",
+          "total": 57.59599999999993,
+          "scripting": 7.426000000000003,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 266.21200000000084,
+        "other": 101.77000000000052,
+        "styleLayout": 65.403,
+        "scriptParseCompile": 55.98399999999999,
+        "paintCompositeRender": 18.45700000000005,
+        "parseHTML": 7.557999999999999,
+        "garbageCollection": 3.2019999999999995
+      }
+    },
+    {
+      "name": "desktop-html-4",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 4,
+      "score": 92.0,
+      "fcp": 982.448,
+      "lcp": 982.448,
+      "tbt": 0,
+      "cls": 0.1259612048893851,
+      "speedIndex": 1229.963901878928,
+      "totalBytes": 1404265,
+      "requests": 77,
+      "documentBytes": 41749,
+      "pageCssBytes": 27447,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 534.0700000000018,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 164.118
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 294.46
+        }
+      ],
+      "observedFCP": 459,
+      "observedLCP": 459,
+      "observedSI": 531,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:09:31.788Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404150,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74373
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49805
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58963
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57538
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 108.73800000000034,
+          "scripting": 71.76900000000033,
+          "scriptParseCompile": 2.284
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 80.82100000000001,
+          "scripting": 7.418999999999998,
+          "scriptParseCompile": 2.1969999999999987
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 71.46799999999962,
+          "scripting": 54.35099999999963,
+          "scriptParseCompile": 12.174
+        },
+        {
+          "url": "Unattributable",
+          "total": 60.53999999999991,
+          "scripting": 7.397000000000002,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 53.902000000000065,
+          "scripting": 21.901999999999997,
+          "scriptParseCompile": 1.4429999999999998
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 264.3860000000008,
+        "other": 109.20800000000101,
+        "styleLayout": 75.039,
+        "scriptParseCompile": 56.431999999999995,
+        "paintCompositeRender": 15.96799999999998,
+        "parseHTML": 8.67,
+        "garbageCollection": 4.366999999999999
+      }
+    },
+    {
+      "name": "desktop-html-5",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 5,
+      "score": 88.0,
+      "fcp": 1562.6889999999999,
+      "lcp": 1562.6889999999999,
+      "tbt": 0,
+      "cls": 0.0026955124879607753,
+      "speedIndex": 1562.6889999999999,
+      "totalBytes": 1404433,
+      "requests": 77,
+      "documentBytes": 41750,
+      "pageCssBytes": 27543,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 529.1110000000017,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 186.436
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 419.108
+        }
+      ],
+      "observedFCP": 606,
+      "observedLCP": 606,
+      "observedSI": 646,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:10:00.600Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404151,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74377
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49802
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58966
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57535
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 110.33400000000046,
+          "scripting": 76.84000000000046,
+          "scriptParseCompile": 2.211
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 75.72599999999962,
+          "scripting": 59.216999999999615,
+          "scriptParseCompile": 12.213999999999999
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 72.94699999999992,
+          "scripting": 35.36199999999994,
+          "scriptParseCompile": 1.5030000000000001
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 71.26400000000001,
+          "scripting": 7.419,
+          "scriptParseCompile": 2.0549999999999997
+        },
+        {
+          "url": "Unattributable",
+          "total": 56.194999999999354,
+          "scripting": 7.760000000000003,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 278.1150000000002,
+        "other": 102.53500000000138,
+        "styleLayout": 62.725,
+        "scriptParseCompile": 56.24699999999995,
+        "paintCompositeRender": 18.44200000000008,
+        "parseHTML": 7.921999999999998,
+        "garbageCollection": 3.125
+      }
+    },
+    {
+      "name": "desktop-images-1",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 1,
+      "score": 96.0,
+      "fcp": 867.6592,
+      "lcp": 1105.8374999999999,
+      "tbt": 0,
+      "cls": 0.002726740616700231,
+      "speedIndex": 1301.344148919051,
+      "totalBytes": 1455840,
+      "requests": 80,
+      "documentBytes": 15448,
+      "pageCssBytes": 23833,
+      "heroImageBytes": 139135,
+      "dom": 58,
+      "mainThread": 491.17500000000166,
+      "lcpElement": "Stitch Platform - Ledgers",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 154.30299999809264
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 4.7460000019073485
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 301.71
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 72.893
+        }
+      ],
+      "observedFCP": 522,
+      "observedLCP": 534,
+      "observedSI": 541,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:07:52.246Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346609,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74371
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49802
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58965
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 105.67900000000037,
+          "scripting": 71.87100000000036,
+          "scriptParseCompile": 2.168
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 70.5539999999996,
+          "scripting": 54.2319999999996,
+          "scriptParseCompile": 12.332
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 56.888000000000005,
+          "scripting": 23.45599999999999,
+          "scriptParseCompile": 1.472
+        },
+        {
+          "url": "Unattributable",
+          "total": 54.925999999999796,
+          "scripting": 2.5419999999999994,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 270.56300000000067,
+        "other": 100.95300000000101,
+        "scriptParseCompile": 56.16200000000003,
+        "styleLayout": 50.162,
+        "parseHTML": 5.693000000000001,
+        "garbageCollection": 4.022,
+        "paintCompositeRender": 3.6199999999999837
+      }
+    },
+    {
+      "name": "desktop-images-2",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 2,
+      "score": 92.0,
+      "fcp": 1301.047,
+      "lcp": 1301.047,
+      "tbt": 0,
+      "cls": 0.002726740616700231,
+      "speedIndex": 1480.0326265574988,
+      "totalBytes": 1455947,
+      "requests": 79,
+      "documentBytes": 15446,
+      "pageCssBytes": 23790,
+      "heroImageBytes": 139144,
+      "dom": 58,
+      "mainThread": 485.5860000000021,
+      "lcpElement": "Stitch Platform - Ledgers",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 258.066
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 8.251
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 196.864
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 106.438
+        }
+      ],
+      "observedFCP": 570,
+      "observedLCP": 570,
+      "observedSI": 586,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:08:20.744Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346608,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74368
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49806
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58963
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 111.47000000000034,
+          "scripting": 75.57600000000033,
+          "scriptParseCompile": 2.27
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 71.68100000000005,
+          "scripting": 33.257999999999946,
+          "scriptParseCompile": 1.462
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 66.6839999999996,
+          "scripting": 51.4469999999996,
+          "scriptParseCompile": 12.133
+        },
+        {
+          "url": "Unattributable",
+          "total": 53.702999999999975,
+          "scripting": 6.294000000000001,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 263.5090000000013,
+        "other": 98.46600000000075,
+        "scriptParseCompile": 62.39699999999999,
+        "styleLayout": 45.14800000000001,
+        "parseHTML": 7.515999999999997,
+        "paintCompositeRender": 4.2839999999999865,
+        "garbageCollection": 4.265999999999998
+      }
+    },
+    {
+      "name": "desktop-images-3",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 3,
+      "score": 94.0,
+      "fcp": 854.2863,
+      "lcp": 1352.9184999999998,
+      "tbt": 0,
+      "cls": 0.002635229657356332,
+      "speedIndex": 1358.7971062220106,
+      "totalBytes": 1456040,
+      "requests": 79,
+      "documentBytes": 15458,
+      "pageCssBytes": 23791,
+      "heroImageBytes": 139139,
+      "dom": 58,
+      "mainThread": 470.42400000000094,
+      "lcpElement": "Stitch Platform - Ledgers",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 232.59900000190734
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 7.3019999980926515
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 350.787
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 30.565
+        }
+      ],
+      "observedFCP": 564,
+      "observedLCP": 621,
+      "observedSI": 606,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:08:48.999Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346600,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74364
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49802
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58963
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 106.94800000000039,
+          "scripting": 74.81800000000038,
+          "scriptParseCompile": 2.1489999999999996
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 69.77699999999997,
+          "scripting": 32.348999999999954,
+          "scriptParseCompile": 1.492
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 65.53299999999963,
+          "scripting": 50.646999999999636,
+          "scriptParseCompile": 12.029
+        },
+        {
+          "url": "Unattributable",
+          "total": 53.37899999999992,
+          "scripting": 4.894999999999999,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 257.6860000000005,
+        "other": 96.34100000000045,
+        "scriptParseCompile": 58.734,
+        "styleLayout": 43.480000000000004,
+        "parseHTML": 5.160000000000001,
+        "garbageCollection": 4.996,
+        "paintCompositeRender": 4.026999999999983
+      }
+    },
+    {
+      "name": "desktop-images-4",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 4,
+      "score": 96.0,
+      "fcp": 881.78,
+      "lcp": 1223.1105,
+      "tbt": 0,
+      "cls": 0.002726740616700231,
+      "speedIndex": 881.78,
+      "totalBytes": 1454887,
+      "requests": 79,
+      "documentBytes": 15450,
+      "pageCssBytes": 23555,
+      "heroImageBytes": 139141,
+      "dom": 58,
+      "mainThread": 472.47500000000224,
+      "lcpElement": "Stitch Platform - Ledgers",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 200.619
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 6.241
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 267.201
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 32.329
+        }
+      ],
+      "observedFCP": 454,
+      "observedLCP": 506,
+      "observedSI": 479,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:09:17.394Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346002,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74180
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49562
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58789
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 106.05700000000041,
+          "scripting": 72.94300000000041,
+          "scriptParseCompile": 2.133
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 77.68999999999993,
+          "scripting": 35.50100000000001,
+          "scriptParseCompile": 1.471
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 66.04399999999963,
+          "scripting": 51.16599999999963,
+          "scriptParseCompile": 12.173
+        },
+        {
+          "url": "Unattributable",
+          "total": 56.33099999999996,
+          "scripting": 4.496999999999999,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 256.0250000000012,
+        "other": 103.72400000000093,
+        "scriptParseCompile": 55.684000000000005,
+        "styleLayout": 43.524,
+        "parseHTML": 4.933999999999999,
+        "garbageCollection": 4.883999999999999,
+        "paintCompositeRender": 3.699999999999985
+      }
+    },
+    {
+      "name": "desktop-images-5",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 5,
+      "score": 92.0,
+      "fcp": 1188.05568,
+      "lcp": 1443.6384999999996,
+      "tbt": 0,
+      "cls": 0.002726740616700231,
+      "speedIndex": 1429.848631560677,
+      "totalBytes": 1456153,
+      "requests": 80,
+      "documentBytes": 15447,
+      "pageCssBytes": 23833,
+      "heroImageBytes": 139138,
+      "dom": 58,
+      "mainThread": 500.7970000000015,
+      "lcpElement": "Stitch Platform - Ledgers",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 157.04400000190734
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 5.858999998092651
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 166.92
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 309.816
+        }
+      ],
+      "observedFCP": 640,
+      "observedLCP": 640,
+      "observedSI": 708,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:09:45.857Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346606,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74365
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49806
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58964
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jQ70a32I.woff2",
+          "bytes": 12955
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 102.66800000000012,
+          "scripting": 70.85900000000012,
+          "scriptParseCompile": 2.173
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 91.1270000000001,
+          "scripting": 49.548000000000144,
+          "scriptParseCompile": 1.4909999999999999
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 76.09799999999962,
+          "scripting": 60.50499999999961,
+          "scriptParseCompile": 11.937999999999999
+        },
+        {
+          "url": "Unattributable",
+          "total": 53.66799999999986,
+          "scripting": 5.588999999999999,
+          "scriptParseCompile": 0
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 276.36000000000087,
+        "other": 110.44700000000064,
+        "scriptParseCompile": 56.549000000000035,
+        "styleLayout": 44.382999999999996,
+        "parseHTML": 4.9209999999999985,
+        "paintCompositeRender": 4.5409999999999915,
+        "garbageCollection": 3.595999999999998
+      }
+    },
+    {
+      "name": "mobile-html-1",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 1,
+      "score": 33.0,
+      "fcp": 6546.947499999999,
+      "lcp": 12276.067500000001,
+      "tbt": 1586,
+      "cls": 3.51618501152306e-05,
+      "speedIndex": 6546.947499999999,
+      "totalBytes": 1404049,
+      "requests": 78,
+      "documentBytes": 41769,
+      "pageCssBytes": 26952,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 4819.307999999984,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 193.912
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 1318.014
+        }
+      ],
+      "observedFCP": 1512,
+      "observedLCP": 1512,
+      "observedSI": 1518,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:05:42.525Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 403896,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49618
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74376
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58969
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57566
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 2860.423999999986,
+          "scripting": 2704.415999999986,
+          "scriptParseCompile": 8.876000000000001
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 380.400000000001,
+          "scripting": 334.36800000000096,
+          "scriptParseCompile": 18.323999999999998
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 319.5839999999983,
+          "scripting": 238.7239999999983,
+          "scriptParseCompile": 47.38
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 273.3759999999999,
+          "scripting": 33.98799999999999,
+          "scriptParseCompile": 8.211999999999994
+        },
+        {
+          "url": "Unattributable",
+          "total": 245.5840000000006,
+          "scripting": 11.615999999999996,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 240.37999999999965,
+          "scripting": 92.57599999999985,
+          "scriptParseCompile": 5.676
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 135.73199999999994,
+          "scripting": 64.79999999999995,
+          "scriptParseCompile": 68.41199999999999
+        },
+        {
+          "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+          "total": 50.74000000000001,
+          "scripting": 34.79200000000001,
+          "scriptParseCompile": 14.959999999999999
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 3723.3719999999826,
+        "other": 453.5920000000014,
+        "styleLayout": 289.9720000000001,
+        "scriptParseCompile": 221.0039999999999,
+        "paintCompositeRender": 66.98800000000008,
+        "parseHTML": 36.456,
+        "garbageCollection": 27.923999999999992
+      }
+    },
+    {
+      "name": "mobile-html-2",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 2,
+      "score": 53.0,
+      "fcp": 7246.429750000001,
+      "lcp": 14357.750600000007,
+      "tbt": 247,
+      "cls": 0,
+      "speedIndex": 7246.429750000001,
+      "totalBytes": 1403691,
+      "requests": 77,
+      "documentBytes": 41733,
+      "pageCssBytes": 27451,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 1992.2640000000029,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 293.476
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 1258.784
+        }
+      ],
+      "observedFCP": 1552,
+      "observedLCP": 1552,
+      "observedSI": 1555,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:06:12.226Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404036,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74368
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49799
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58968
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57534
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 457.2360000000016,
+          "scripting": 301.92000000000155,
+          "scriptParseCompile": 9.168000000000001
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 293.8999999999981,
+          "scripting": 219.96799999999809,
+          "scriptParseCompile": 48.024
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 232.67600000000004,
+          "scripting": 94.21199999999999,
+          "scriptParseCompile": 5.944
+        },
+        {
+          "url": "Unattributable",
+          "total": 215.44400000000002,
+          "scripting": 26.76400000000002,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 188.66000000000003,
+          "scripting": 27.50400000000001,
+          "scriptParseCompile": 8.483999999999993
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 135.036,
+          "scripting": 62.259999999999984,
+          "scriptParseCompile": 68.104
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 95.0600000000001,
+          "scripting": 71.2080000000001,
+          "scriptParseCompile": 18.792
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.22b66e874d42861f.js",
+          "total": 82.18799999999996,
+          "scripting": 57.22799999999996,
+          "scriptParseCompile": 1.908
+        },
+        {
+          "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+          "total": 66.08799999999997,
+          "scripting": 49.24399999999997,
+          "scriptParseCompile": 15.643999999999998
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 1049.1520000000025,
+        "other": 390.76000000000016,
+        "styleLayout": 250.69600000000003,
+        "scriptParseCompile": 223.8759999999999,
+        "parseHTML": 30.543999999999993,
+        "paintCompositeRender": 25.703999999999972,
+        "garbageCollection": 21.531999999999993
+      }
+    },
+    {
+      "name": "mobile-html-3",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 3,
+      "score": 55.00000000000001,
+      "fcp": 5981.45855,
+      "lcp": 13277.853879999999,
+      "tbt": 259.0000000000018,
+      "cls": 3.51618501152306e-05,
+      "speedIndex": 5981.45855,
+      "totalBytes": 1404342,
+      "requests": 77,
+      "documentBytes": 41741,
+      "pageCssBytes": 27516,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 2157.7799999999984,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 153.281
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 1318.029
+        }
+      ],
+      "observedFCP": 1471,
+      "observedLCP": 1471,
+      "observedSI": 1473,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:06:40.889Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404039,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74365
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49805
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58966
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57536
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 596.5360000000016,
+          "scripting": 449.4360000000017,
+          "scriptParseCompile": 8.86
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 303.4879999999987,
+          "scripting": 221.4359999999987,
+          "scriptParseCompile": 48.172
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 267.9399999999999,
+          "scripting": 126.45999999999978,
+          "scriptParseCompile": 5.867999999999999
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 222.15200000000002,
+          "scripting": 27.751999999999992,
+          "scriptParseCompile": 8.123999999999995
+        },
+        {
+          "url": "Unattributable",
+          "total": 184.3640000000002,
+          "scripting": 12.203999999999994,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 139.06399999999996,
+          "scripting": 65.87199999999994,
+          "scriptParseCompile": 69.66000000000001
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 107.06400000000016,
+          "scripting": 83.23200000000016,
+          "scriptParseCompile": 18.948000000000004
+        },
+        {
+          "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+          "total": 51.86000000000001,
+          "scripting": 35.61200000000001,
+          "scriptParseCompile": 15.075999999999999
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 1202.8279999999984,
+        "other": 384.01600000000013,
+        "styleLayout": 256.968,
+        "scriptParseCompile": 224.7,
+        "paintCompositeRender": 46.65199999999984,
+        "parseHTML": 28.13600000000001,
+        "garbageCollection": 14.479999999999995
+      }
+    },
+    {
+      "name": "mobile-html-4",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 4,
+      "score": 77.0,
+      "fcp": 2723.9384,
+      "lcp": 3335.464499999999,
+      "tbt": 427.9999999999982,
+      "cls": 3.51618501152306e-05,
+      "speedIndex": 3107.3664091825517,
+      "totalBytes": 1404224,
+      "requests": 77,
+      "documentBytes": 41751,
+      "pageCssBytes": 27505,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 2046.8280000000066,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 158.874
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 400.537
+        }
+      ],
+      "observedFCP": 559,
+      "observedLCP": 559,
+      "observedSI": 578,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:07:09.567Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404028,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74368
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49798
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58965
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57530
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 427.47200000000106,
+          "scripting": 293.8000000000011,
+          "scriptParseCompile": 9.520000000000001
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 296.0559999999982,
+          "scripting": 220.9799999999982,
+          "scriptParseCompile": 48.592
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 291.9439999999995,
+          "scripting": 132.0999999999996,
+          "scriptParseCompile": 5.843999999999999
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 277.94399999999996,
+          "scripting": 54.5,
+          "scriptParseCompile": 10.019999999999994
+        },
+        {
+          "url": "Unattributable",
+          "total": 204.33999999999975,
+          "scripting": 21.872000000000014,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 135.06399999999996,
+          "scripting": 61.783999999999956,
+          "scriptParseCompile": 69.768
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 107.02000000000001,
+          "scripting": 82.33600000000001,
+          "scriptParseCompile": 19.28
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 1057.1400000000044,
+        "other": 422.62400000000196,
+        "styleLayout": 238.98799999999997,
+        "scriptParseCompile": 227.69600000000017,
+        "paintCompositeRender": 57.61999999999986,
+        "parseHTML": 30.47999999999999,
+        "garbageCollection": 12.279999999999996
+      }
+    },
+    {
+      "name": "mobile-html-5",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 5,
+      "score": 45.0,
+      "fcp": 7079.4544399999995,
+      "lcp": 14259.90924,
+      "tbt": 513.5,
+      "cls": 0,
+      "speedIndex": 7079.4544399999995,
+      "totalBytes": 1403914,
+      "requests": 79,
+      "documentBytes": 41749,
+      "pageCssBytes": 27480,
+      "heroImageBytes": 0,
+      "dom": 1268,
+      "mainThread": 2170.9759999999937,
+      "lcpElement": "The simplest way to build financial products",
+      "lcpSelector": "div.header84_card-content > div.header84_card-content-top > div.margin-bottom > h1.heading-style-h1",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 226.24700000190734
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 1357.3249999980926
+        }
+      ],
+      "observedFCP": 1584,
+      "observedLCP": 1584,
+      "observedSI": 1584,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:07:37.882Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 404052,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74368
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49809
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58970
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4d6_ABCDiatype-Bold.woff2",
+          "bytes": 57538
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 433.90000000000146,
+          "scripting": 292.2600000000014,
+          "scriptParseCompile": 8.68
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 347.5040000000001,
+          "scripting": 300.36000000000007,
+          "scriptParseCompile": 19.099999999999998
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 280.132,
+          "scripting": 133.91999999999987,
+          "scriptParseCompile": 5.787999999999999
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 274.15999999999826,
+          "scripting": 215.4999999999983,
+          "scriptParseCompile": 47.988
+        },
+        {
+          "url": "Unattributable",
+          "total": 197.33599999999987,
+          "scripting": 9.347999999999997,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-html",
+          "total": 169.52,
+          "scripting": 31.39199999999999,
+          "scriptParseCompile": 8.183999999999997
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 143.60399999999998,
+          "scripting": 65.27599999999997,
+          "scriptParseCompile": 71.144
+        },
+        {
+          "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+          "total": 52.02799999999999,
+          "scripting": 35.644,
+          "scriptParseCompile": 15.343999999999998
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 1251.747999999995,
+        "other": 394.5479999999987,
+        "scriptParseCompile": 226.92800000000005,
+        "styleLayout": 220.43599999999998,
+        "paintCompositeRender": 28.271999999999974,
+        "parseHTML": 28.031999999999993,
+        "garbageCollection": 21.011999999999997
+      }
+    },
+    {
+      "name": "mobile-images-1",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 1,
+      "score": 38.0,
+      "fcp": 6846.684499999999,
+      "lcp": 13441.37272,
+      "tbt": 843.5,
+      "cls": 0,
+      "speedIndex": 7607.308794988694,
+      "totalBytes": 1418131,
+      "requests": 82,
+      "documentBytes": 15458,
+      "pageCssBytes": 23512,
+      "heroImageBytes": 99746,
+      "dom": 58,
+      "mainThread": 2703.1359999999922,
+      "lcpElement": "Stitch Platform - Dashboard",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 221.98
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 14.634
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 217.918
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 2032.769
+        }
+      ],
+      "observedFCP": 2487,
+      "observedLCP": 2487,
+      "observedSI": 2489,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:05:05.766Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346497,
+      "fonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74365
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49799
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58966
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 881.0280000000017,
+          "scripting": 712.1400000000017,
+          "scriptParseCompile": 11.367999999999999
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 443.1039999999997,
+          "scripting": 276.46799999999973,
+          "scriptParseCompile": 48.416
+        },
+        {
+          "url": "Unattributable",
+          "total": 331.20000000000005,
+          "scripting": 30.580000000000016,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 215.59999999999997,
+          "scripting": 107.77199999999986,
+          "scriptParseCompile": 5.9479999999999995
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 174.3760000000001,
+          "scripting": 89.62800000000009,
+          "scriptParseCompile": 77.524
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 164.50800000000007,
+          "scripting": 130.89200000000008,
+          "scriptParseCompile": 18.996000000000002
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-img",
+          "total": 86.17199999999998,
+          "scripting": 30.411999999999985,
+          "scriptParseCompile": 7.511999999999995
+        },
+        {
+          "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+          "total": 64.588,
+          "scripting": 47.708,
+          "scriptParseCompile": 15.384
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 1644.8719999999864,
+        "other": 472.24400000000514,
+        "styleLayout": 251.22400000000002,
+        "scriptParseCompile": 238.80000000000018,
+        "garbageCollection": 44.61199999999998,
+        "parseHTML": 29.783999999999995,
+        "paintCompositeRender": 21.599999999999994
+      }
+    },
+    {
+      "name": "mobile-images-2",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 2,
+      "score": 50.0,
+      "fcp": 6173.070500000001,
+      "lcp": 13008.896499999997,
+      "tbt": 400,
+      "cls": 0,
+      "speedIndex": 6173.070500000001,
+      "totalBytes": 1419758,
+      "requests": 80,
+      "documentBytes": 15450,
+      "pageCssBytes": 23611,
+      "heroImageBytes": 99757,
+      "dom": 58,
+      "mainThread": 1892.996000000002,
+      "lcpElement": "Stitch Platform - Dashboard",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 198.313
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 8.978
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 85.283
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 1209.903
+        }
+      ],
+      "observedFCP": 1502,
+      "observedLCP": 1502,
+      "observedSI": 1504,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:05:57.834Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346546,
+      "fonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74375
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49838
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58966
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 485.96000000000146,
+          "scripting": 348.67600000000147,
+          "scriptParseCompile": 9.068
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 270.632,
+          "scripting": 121.70799999999987,
+          "scriptParseCompile": 5.936
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 260.9919999999983,
+          "scripting": 198.38799999999836,
+          "scriptParseCompile": 47.544000000000004
+        },
+        {
+          "url": "Unattributable",
+          "total": 216.9600000000004,
+          "scripting": 22.903999999999993,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsT8wRTp1lOoMFE/recaptcha__en.js",
+          "total": 131.95999999999998,
+          "scripting": 59.207999999999956,
+          "scriptParseCompile": 69.19200000000001
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-img",
+          "total": 108.04799999999999,
+          "scripting": 29.192,
+          "scriptParseCompile": 7.9679999999999955
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 106.84400000000012,
+          "scripting": 80.40000000000013,
+          "scriptParseCompile": 18.216
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 1057.7760000000017,
+        "other": 388.51600000000025,
+        "scriptParseCompile": 222.38799999999998,
+        "styleLayout": 170.43999999999997,
+        "parseHTML": 21.127999999999997,
+        "garbageCollection": 17.459999999999983,
+        "paintCompositeRender": 15.287999999999961
+      }
+    },
+    {
+      "name": "mobile-images-3",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 3,
+      "score": 49.0,
+      "fcp": 6861.417749999999,
+      "lcp": 13362.261,
+      "tbt": 391.9999999999982,
+      "cls": 0,
+      "speedIndex": 6861.417749999999,
+      "totalBytes": 1419178,
+      "requests": 81,
+      "documentBytes": 15458,
+      "pageCssBytes": 23498,
+      "heroImageBytes": 99751,
+      "dom": 58,
+      "mainThread": 1814.8920000000046,
+      "lcpElement": "Stitch Platform - Dashboard",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 266.838
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 8.429
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 188.035
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 1051.251
+        }
+      ],
+      "observedFCP": 1515,
+      "observedLCP": 1515,
+      "observedSI": 1518,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:06:26.466Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346543,
+      "fonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74372
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49802
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 59002
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 429.59200000000055,
+          "scripting": 282.2920000000006,
+          "scriptParseCompile": 8.888
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 255.11199999999843,
+          "scripting": 197.09199999999845,
+          "scriptParseCompile": 47.928000000000004
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 217.98400000000004,
+          "scripting": 87.45599999999996,
+          "scriptParseCompile": 5.811999999999999
+        },
+        {
+          "url": "Unattributable",
+          "total": 195.2159999999998,
+          "scripting": 17.783999999999992,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 134.25599999999997,
+          "scripting": 62.951999999999984,
+          "scriptParseCompile": 67.88
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-img",
+          "total": 108.33599999999998,
+          "scripting": 29.015999999999995,
+          "scriptParseCompile": 9.267999999999994
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 106.45200000000004,
+          "scripting": 81.36400000000005,
+          "scriptParseCompile": 18.4
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.22b66e874d42861f.js",
+          "total": 90.28399999999995,
+          "scripting": 60.34399999999996,
+          "scriptParseCompile": 2.7680000000000002
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 996.3880000000042,
+        "other": 358.2800000000005,
+        "scriptParseCompile": 224.22,
+        "styleLayout": 183.868,
+        "garbageCollection": 21.07999999999998,
+        "parseHTML": 20.259999999999994,
+        "paintCompositeRender": 10.79599999999996
+      }
+    },
+    {
+      "name": "mobile-images-4",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 4,
+      "score": 49.0,
+      "fcp": 6995.907800000003,
+      "lcp": 14778.438000000002,
+      "tbt": 383,
+      "cls": 0,
+      "speedIndex": 6995.907800000003,
+      "totalBytes": 1417167,
+      "requests": 80,
+      "documentBytes": 15446,
+      "pageCssBytes": 23845,
+      "heroImageBytes": 99751,
+      "dom": 58,
+      "mainThread": 1865.2840000000008,
+      "lcpElement": "Stitch Platform - Dashboard",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 378.2909999980927
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 12.463000001907348
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 80.942
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 1097.737
+        }
+      ],
+      "observedFCP": 1569,
+      "observedLCP": 1569,
+      "observedSI": 1573,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:06:55.248Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346509,
+      "fonts": [
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74371
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49805
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58966
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 450.24800000000107,
+          "scripting": 290.548000000001,
+          "scriptParseCompile": 8.92
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 267.6079999999983,
+          "scripting": 203.4319999999983,
+          "scriptParseCompile": 49.016
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 261.8919999999998,
+          "scripting": 125.25599999999976,
+          "scriptParseCompile": 5.999999999999999
+        },
+        {
+          "url": "Unattributable",
+          "total": 207.0479999999998,
+          "scripting": 21.70799999999999,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "total": 132.59999999999994,
+          "scripting": 61.38799999999993,
+          "scriptParseCompile": 68.02000000000001
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 109.168,
+          "scripting": 83.66800000000002,
+          "scriptParseCompile": 18.668
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.22b66e874d42861f.js",
+          "total": 93.368,
+          "scripting": 17.427999999999997,
+          "scriptParseCompile": 2.356
+        },
+        {
+          "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+          "total": 57.839999999999996,
+          "scripting": 38.26,
+          "scriptParseCompile": 15.96
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-img",
+          "total": 55.86399999999998,
+          "scripting": 27.17999999999999,
+          "scriptParseCompile": 7.535999999999994
+        },
+        {
+          "url": "https://js-eu1.hscollectedforms.net/collectedforms.js",
+          "total": 53.239999999999995,
+          "scripting": 42.959999999999994,
+          "scriptParseCompile": 6.536
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 1014.5360000000002,
+        "other": 355.6560000000005,
+        "scriptParseCompile": 224.76800000000003,
+        "styleLayout": 219.70000000000002,
+        "garbageCollection": 22.46399999999998,
+        "parseHTML": 19.979999999999993,
+        "paintCompositeRender": 8.17999999999998
+      }
+    },
+    {
+      "name": "mobile-images-5",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 5,
+      "score": 51.0,
+      "fcp": 6106.1557600000015,
+      "lcp": 13427.945579999996,
+      "tbt": 365.9999999999982,
+      "cls": 0,
+      "speedIndex": 6106.1557600000015,
+      "totalBytes": 1420061,
+      "requests": 80,
+      "documentBytes": 15456,
+      "pageCssBytes": 23844,
+      "heroImageBytes": 99744,
+      "dom": 58,
+      "mainThread": 1810.9080000000004,
+      "lcpElement": "Stitch Platform - Dashboard",
+      "lcpSelector": "div > div.stacked-windows_position > div.stacked-windows_img-wrap > img.stacked-windows_img",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 243.145
+        },
+        {
+          "subpart": "resourceLoadDelay",
+          "label": "Resource load delay",
+          "duration": 7.065
+        },
+        {
+          "subpart": "resourceLoadDuration",
+          "label": "Resource load duration",
+          "duration": 379.339
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 857.821
+        }
+      ],
+      "observedFCP": 1487,
+      "observedLCP": 1487,
+      "observedSI": 1489,
+      "warnings": [],
+      "fetchTime": "2026-10-20T15:07:23.499Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "lighthouseVersion": "13.5.0",
+      "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "fontBytes": 346504,
+      "fonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/inconsolata/v37/QlddNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLyya15IDhunA.woff2",
+          "bytes": 29049
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/alexandria/v6/UMBCrPdDqW66y0Y2usFeQCH18mulUxBvI9r7TpbAFp4jRb0a.woff2",
+          "bytes": 12851
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOW_uCUXMRrKATt.woff2",
+          "bytes": 14859
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3CZRtWPQCuHme67tEYUIx3Kh0PHR9N6Ys93PW5fslB.woff2",
+          "bytes": 13971
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPO_-CUXMRrKATt.woff2",
+          "bytes": 14819
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YPi-OCUXMRrKATt.woff2",
+          "bytes": 15119
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/ibmplexsansarabic/v15/Qw3NZRtWPQCuHme67tEYUIx3Kh0PHR9N6YOG-eCUXMRrKATt.woff2",
+          "bytes": 14235
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "bytes": 48464
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a99518fa13073dbf25859c2_Denim-SemiBold.woff2",
+          "bytes": 74367
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb5de5151dfcdc0b6a_ABCDiatype-Regular.woff2",
+          "bytes": 49802
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6a9951bb170620577839a4da_ABCDiatype-Medium.woff2",
+          "bytes": 58968
+        }
+      ],
+      "cpuScripts": [
+        {
+          "url": "https://js-eu1.hs-analytics.net/analytics/1792505100000/146071030.js",
+          "total": 417.35200000000043,
+          "scripting": 279.53200000000044,
+          "scriptParseCompile": 9.596
+        },
+        {
+          "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.achunk.58f76f2901951073.js",
+          "total": 276.5879999999999,
+          "scripting": 131.11599999999996,
+          "scriptParseCompile": 5.791999999999999
+        },
+        {
+          "url": "https://stitch-website.webflow.io/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+          "total": 269.05199999999815,
+          "scripting": 196.57599999999815,
+          "scriptParseCompile": 48.124
+        },
+        {
+          "url": "Unattributable",
+          "total": 202.57600000000014,
+          "scripting": 17.655999999999988,
+          "scriptParseCompile": 0
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsT8wRTp1lOoMFE/recaptcha__en.js",
+          "total": 130.77999999999994,
+          "scripting": 58.62399999999995,
+          "scriptParseCompile": 68.976
+        },
+        {
+          "url": "https://script.hotjar.com/modules.0ffda9db257f7abb6cf0.js",
+          "total": 117.62400000000011,
+          "scripting": 89.9240000000001,
+          "scriptParseCompile": 19.004
+        },
+        {
+          "url": "https://stitch-website.webflow.io/tests/home-img",
+          "total": 94.14399999999998,
+          "scripting": 26.947999999999986,
+          "scriptParseCompile": 6.979999999999995
+        },
+        {
+          "url": "https://js-eu1.hscollectedforms.net/collectedforms.js",
+          "total": 53.71200000000001,
+          "scripting": 43.69200000000001,
+          "scriptParseCompile": 6.28
+        },
+        {
+          "url": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+          "total": 50.96800000000001,
+          "scripting": 34.436000000000014,
+          "scriptParseCompile": 14.887999999999998
+        }
+      ],
+      "cpuBreakdown": {
+        "scriptEvaluation": 985.5240000000014,
+        "other": 376.059999999999,
+        "scriptParseCompile": 222.928,
+        "styleLayout": 171.052,
+        "parseHTML": 25.832,
+        "garbageCollection": 19.22799999999997,
+        "paintCompositeRender": 10.283999999999969
+      }
+    }
+  ],
+  "groups": {
+    "mobile-images": {
+      "count": 5,
+      "median": {
+        "fontBytes": 346509,
+        "score": 49.0,
+        "fcp": 6846.684499999999,
+        "lcp": 13427.945579999996,
+        "tbt": 391.9999999999982,
+        "cls": 0,
+        "speedIndex": 6861.417749999999,
+        "totalBytes": 1419178,
+        "requests": 80,
+        "documentBytes": 15456,
+        "pageCssBytes": 23611,
+        "heroImageBytes": 99751,
+        "dom": 58,
+        "mainThread": 1865.2840000000008,
+        "observedFCP": 1515,
+        "observedLCP": 1515,
+        "observedSI": 1518
+      },
+      "range": {
+        "fontBytes": [
+          346497,
+          346546
+        ],
+        "score": [
+          38.0,
+          51.0
+        ],
+        "fcp": [
+          6106.1557600000015,
+          6995.907800000003
+        ],
+        "lcp": [
+          13008.896499999997,
+          14778.438000000002
+        ],
+        "tbt": [
+          365.9999999999982,
+          843.5
+        ],
+        "cls": [
+          0,
+          0
+        ],
+        "speedIndex": [
+          6106.1557600000015,
+          7607.308794988694
+        ],
+        "totalBytes": [
+          1417167,
+          1420061
+        ],
+        "requests": [
+          80,
+          82
+        ],
+        "documentBytes": [
+          15446,
+          15458
+        ],
+        "pageCssBytes": [
+          23498,
+          23845
+        ],
+        "heroImageBytes": [
+          99744,
+          99757
+        ],
+        "dom": [
+          58,
+          58
+        ],
+        "mainThread": [
+          1810.9080000000004,
+          2703.1359999999922
+        ],
+        "observedFCP": [
+          1487,
+          2487
+        ],
+        "observedLCP": [
+          1487,
+          2487
+        ],
+        "observedSI": [
+          1489,
+          2489
+        ]
+      },
+      "cpuMedian": {
+        "scriptEvaluation": 1014.5360000000002,
+        "other": 376.059999999999,
+        "styleLayout": 183.868,
+        "scriptParseCompile": 224.22,
+        "garbageCollection": 21.07999999999998,
+        "parseHTML": 21.127999999999997,
+        "paintCompositeRender": 10.79599999999996
+      }
+    },
+    "mobile-html": {
+      "count": 5,
+      "median": {
+        "fontBytes": 404036,
+        "score": 53.0,
+        "fcp": 6546.947499999999,
+        "lcp": 13277.853879999999,
+        "tbt": 427.9999999999982,
+        "cls": 3.51618501152306e-05,
+        "speedIndex": 6546.947499999999,
+        "totalBytes": 1404049,
+        "requests": 77,
+        "documentBytes": 41749,
+        "pageCssBytes": 27480,
+        "heroImageBytes": 0,
+        "dom": 1268,
+        "mainThread": 2157.7799999999984,
+        "observedFCP": 1512,
+        "observedLCP": 1512,
+        "observedSI": 1518
+      },
+      "range": {
+        "fontBytes": [
+          403896,
+          404052
+        ],
+        "score": [
+          33.0,
+          77.0
+        ],
+        "fcp": [
+          2723.9384,
+          7246.429750000001
+        ],
+        "lcp": [
+          3335.464499999999,
+          14357.750600000007
+        ],
+        "tbt": [
+          247,
+          1586
+        ],
+        "cls": [
+          0,
+          3.51618501152306e-05
+        ],
+        "speedIndex": [
+          3107.3664091825517,
+          7246.429750000001
+        ],
+        "totalBytes": [
+          1403691,
+          1404342
+        ],
+        "requests": [
+          77,
+          79
+        ],
+        "documentBytes": [
+          41733,
+          41769
+        ],
+        "pageCssBytes": [
+          26952,
+          27516
+        ],
+        "heroImageBytes": [
+          0,
+          0
+        ],
+        "dom": [
+          1268,
+          1268
+        ],
+        "mainThread": [
+          1992.2640000000029,
+          4819.307999999984
+        ],
+        "observedFCP": [
+          559,
+          1584
+        ],
+        "observedLCP": [
+          559,
+          1584
+        ],
+        "observedSI": [
+          578,
+          1584
+        ]
+      },
+      "cpuMedian": {
+        "scriptEvaluation": 1202.8279999999984,
+        "other": 394.5479999999987,
+        "styleLayout": 250.69600000000003,
+        "scriptParseCompile": 224.7,
+        "paintCompositeRender": 46.65199999999984,
+        "parseHTML": 30.47999999999999,
+        "garbageCollection": 21.011999999999997
+      }
+    },
+    "desktop-images": {
+      "count": 5,
+      "median": {
+        "fontBytes": 346606,
+        "score": 94.0,
+        "fcp": 881.78,
+        "lcp": 1301.047,
+        "tbt": 0,
+        "cls": 0.002726740616700231,
+        "speedIndex": 1358.7971062220106,
+        "totalBytes": 1455947,
+        "requests": 79,
+        "documentBytes": 15448,
+        "pageCssBytes": 23791,
+        "heroImageBytes": 139139,
+        "dom": 58,
+        "mainThread": 485.5860000000021,
+        "observedFCP": 564,
+        "observedLCP": 570,
+        "observedSI": 586
+      },
+      "range": {
+        "fontBytes": [
+          346002,
+          346609
+        ],
+        "score": [
+          92.0,
+          96.0
+        ],
+        "fcp": [
+          854.2863,
+          1301.047
+        ],
+        "lcp": [
+          1105.8374999999999,
+          1443.6384999999996
+        ],
+        "tbt": [
+          0,
+          0
+        ],
+        "cls": [
+          0.002635229657356332,
+          0.002726740616700231
+        ],
+        "speedIndex": [
+          881.78,
+          1480.0326265574988
+        ],
+        "totalBytes": [
+          1454887,
+          1456153
+        ],
+        "requests": [
+          79,
+          80
+        ],
+        "documentBytes": [
+          15446,
+          15458
+        ],
+        "pageCssBytes": [
+          23555,
+          23833
+        ],
+        "heroImageBytes": [
+          139135,
+          139144
+        ],
+        "dom": [
+          58,
+          58
+        ],
+        "mainThread": [
+          470.42400000000094,
+          500.7970000000015
+        ],
+        "observedFCP": [
+          454,
+          640
+        ],
+        "observedLCP": [
+          506,
+          640
+        ],
+        "observedSI": [
+          479,
+          708
+        ]
+      },
+      "cpuMedian": {
+        "scriptEvaluation": 263.5090000000013,
+        "other": 100.95300000000101,
+        "scriptParseCompile": 56.549000000000035,
+        "styleLayout": 44.382999999999996,
+        "parseHTML": 5.160000000000001,
+        "garbageCollection": 4.265999999999998,
+        "paintCompositeRender": 4.026999999999983
+      }
+    },
+    "desktop-html": {
+      "count": 5,
+      "median": {
+        "fontBytes": 404149,
+        "score": 92.0,
+        "fcp": 1197.489,
+        "lcp": 1197.489,
+        "tbt": 0,
+        "cls": 0.002782158560254502,
+        "speedIndex": 1229.963901878928,
+        "totalBytes": 1404433,
+        "requests": 77,
+        "documentBytes": 41750,
+        "pageCssBytes": 27510,
+        "heroImageBytes": 0,
+        "dom": 1268,
+        "mainThread": 529.1110000000017,
+        "observedFCP": 637,
+        "observedLCP": 637,
+        "observedSI": 646
+      },
+      "range": {
+        "fontBytes": [
+          404140,
+          404151
+        ],
+        "score": [
+          68.0,
+          96.0
+        ],
+        "fcp": [
+          982.448,
+          1999.6718999999998
+        ],
+        "lcp": [
+          982.448,
+          3651.8331000000007
+        ],
+        "tbt": [
+          0,
+          17.500000000000227
+        ],
+        "cls": [
+          0.002649473448034323,
+          0.1259612048893851
+        ],
+        "speedIndex": [
+          1081.1115,
+          2228.6729035491007
+        ],
+        "totalBytes": [
+          1404225,
+          1404584
+        ],
+        "requests": [
+          77,
+          78
+        ],
+        "documentBytes": [
+          41748,
+          41785
+        ],
+        "pageCssBytes": [
+          27447,
+          27543
+        ],
+        "heroImageBytes": [
+          0,
+          0
+        ],
+        "dom": [
+          1268,
+          1268
+        ],
+        "mainThread": [
+          518.5860000000014,
+          585.4859999999969
+        ],
+        "observedFCP": [
+          459,
+          1102
+        ],
+        "observedLCP": [
+          459,
+          1102
+        ],
+        "observedSI": [
+          531,
+          1109
+        ]
+      },
+      "cpuMedian": {
+        "scriptEvaluation": 268.2560000000001,
+        "other": 102.53500000000138,
+        "styleLayout": 65.403,
+        "scriptParseCompile": 55.98399999999999,
+        "paintCompositeRender": 16.00199999999996,
+        "parseHTML": 7.557999999999999,
+        "garbageCollection": 3.481999999999998
+      }
+    }
+  }
+}

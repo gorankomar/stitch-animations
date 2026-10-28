@@ -1,0 +1,88 @@
+{
+  "images": {
+    "scripts": [
+      "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js",
+      "/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+      "https://www.google.com/recaptcha/api.js",
+      "https://app.lemlist.com/api/visitors/tracking?k=N4XYKyineUoyuklDbBCGYGu68VOE8TcnTKCpjysoF98%3D&t=tea_GrNhZeJX54M6sMf3v",
+      "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6823036cd77b3093eaf9154d",
+      "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.c51f8ade.5eda688eca245518.js",
+      "https://cdn.jsdelivr.net/npm/oidc-client-ts@latest/dist/browser/oidc-client-ts.min.js",
+      "//js-eu1.hs-scripts.com/146071030.js",
+      "https://hubspotv2.use1-marketplace-1p-apps-prod-red.if.webflow.services/static/disable-hubspot-chatbot.js",
+      "https://js.hs-scripts.com/146071030.js"
+    ],
+    "stylesheets": [
+      "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/css/stitch-website.webflow.shared.c95be55e8.min.css",
+      "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/css/stitch-website.webflow.6ad7806f131c6a9ad6b61b27.6e697c464.opt.min.css",
+      "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    ],
+    "images": [
+      {
+        "width": "1440",
+        "height": "626",
+        "alt": "Stitch Platform - Dashboard",
+        "src": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp",
+        "loading": "eager",
+        "sizes": "100vw",
+        "srcset": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-800.webp 800w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard-p-1080.webp 1080w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db25162446e86cbcf67_hero-dashboard.webp 1440w",
+        "class": "stacked-windows_img"
+      },
+      {
+        "width": "1440",
+        "height": "626",
+        "alt": "Stitch Platform - Ledgers",
+        "src": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp",
+        "loading": "eager",
+        "sizes": "100vw",
+        "srcset": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db2fe0a9f1c34977b21_hero-ledgers.webp 1440w",
+        "class": "stacked-windows_img"
+      },
+      {
+        "width": "1440",
+        "height": "626",
+        "alt": "Stitch Platform - Loans",
+        "src": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp",
+        "loading": "eager",
+        "sizes": "100vw",
+        "srcset": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans-p-500.webp 500w, https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/68fd5db291e05fe3439489c0_hero-loans.webp 1440w",
+        "class": "stacked-windows_img"
+      },
+      {
+        "height": "1",
+        "width": "1",
+        "style": "display:none;",
+        "alt": "",
+        "src": "https://px.ads.linkedin.com/collect/?pid=7703041&fmt=gif"
+      }
+    ]
+  },
+  "html": {
+    "scripts": [
+      "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js",
+      "/9i1h7htkfq16NjgyMzAzNmNkNzdiMzA5M2VhZjkxNTRk/wIMpMrGRldQv0bPZ7QZu9ozbETM",
+      "https://www.google.com/recaptcha/api.js",
+      "https://app.lemlist.com/api/visitors/tracking?k=N4XYKyineUoyuklDbBCGYGu68VOE8TcnTKCpjysoF98%3D&t=tea_GrNhZeJX54M6sMf3v",
+      "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6823036cd77b3093eaf9154d",
+      "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/js/webflow.c51f8ade.5eda688eca245518.js",
+      "https://cdn.jsdelivr.net/npm/oidc-client-ts@latest/dist/browser/oidc-client-ts.min.js",
+      "//js-eu1.hs-scripts.com/146071030.js",
+      "https://hubspotv2.use1-marketplace-1p-apps-prod-red.if.webflow.services/static/disable-hubspot-chatbot.js",
+      "https://js.hs-scripts.com/146071030.js"
+    ],
+    "stylesheets": [
+      "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/css/stitch-website.webflow.shared.c95be55e8.min.css",
+      "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/css/stitch-website.webflow.6ad77c06a662623cb0a4350f.3054d879d.opt.min.css",
+      "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    ],
+    "images": [
+      {
+        "height": "1",
+        "width": "1",
+        "style": "display:none;",
+        "alt": "",
+        "src": "https://px.ads.linkedin.com/collect/?pid=7703041&fmt=gif"
+      }
+    ]
+  }
+}

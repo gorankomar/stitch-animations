@@ -1,0 +1,449 @@
+{
+  "components": [
+    {
+      "id": "becc5730-712b-0db6-0fb2-7ad7b6b89982",
+      "name": "Platform Screen",
+      "group": "Platform",
+      "description": "Shared responsive 1440:626 platform frame. Sidebar and Content slots; populate with independently configurable components."
+    },
+    {
+      "id": "d200bf1f-a196-2866-a792-f9d0a7739685",
+      "name": "Platform Table Content",
+      "group": "Platform",
+      "description": "Reusable table screen layout. Heading, Filters, Actions and Table slots. Suitable for Loans and Ledgers."
+    },
+    {
+      "id": "7716c7c8-4e5f-4f01-7df1-ddb63a5ae674",
+      "name": "Platform Filter",
+      "group": "Platform",
+      "description": "Reusable filter pill with editable Label and Icon slot."
+    },
+    {
+      "id": "93998365-26a1-d554-1004-621d57e396f9",
+      "name": "Platform Loans Table",
+      "group": "Platform",
+      "description": "Loan table header and Rows slot. Populate with editable Platform Loan Row components."
+    },
+    {
+      "id": "47b64be0-0bee-7408-4793-dfab972b11f9",
+      "name": "Platform Loan Row",
+      "group": "Platform",
+      "description": "Editable loan account, currency, product, amount, term, creation date and state. Currency Icon slot. Active and Inactive variants."
+    },
+    {
+      "id": "28ea7acf-e1a6-f34d-a986-b72850ae86a3",
+      "name": "Platform Table Action",
+      "group": "Platform",
+      "description": "Reusable outlined table action, editable Label and Icon slot."
+    }
+  ],
+  "dashboardContent": {
+    "id": "61760ccd-3d74-b35b-f035-ada49dd320b9",
+    "name": "Platform Dashboard Content"
+  },
+  "summary": {
+    "id": "da789b6e-8a7a-e5d4-6cf2-407c144b2678",
+    "name": "Platform Dashboard Summary"
+  },
+  "toolbar": {
+    "id": "59093b0b-f2cc-4d45-1223-5706479759a2",
+    "name": "Platform Dashboard Toolbar"
+  },
+  "chart": {
+    "id": "2cd9f281-5a8a-a7e0-f997-ac3e82abfff9",
+    "name": "Platform Customer Chart"
+  },
+  "columnsIcon": {
+    "id": "350ef056-860e-f6e6-ac86-f6ce6076f100",
+    "name": "Platform Icon — Columns",
+    "group": "Platform",
+    "description": "Original Figma edit-columns icon for platform table actions."
+  },
+  "slots": [
+    [
+      "Platform Screen",
+      "Sidebar",
+      "platform-screen-sidebar-slot"
+    ],
+    [
+      "Platform Screen",
+      "Content",
+      "platform-screen-content-slot"
+    ],
+    [
+      "Platform Table Content",
+      "Heading",
+      "platform-table-heading-slot"
+    ],
+    [
+      "Platform Table Content",
+      "Filters",
+      "platform-table-filters-slot"
+    ],
+    [
+      "Platform Table Content",
+      "Actions",
+      "platform-table-actions-slot"
+    ],
+    [
+      "Platform Table Content",
+      "Table",
+      "platform-table-slot"
+    ],
+    [
+      "Platform Filter",
+      "Icon",
+      "platform-filter-icon"
+    ],
+    [
+      "Platform Table Action",
+      "Icon",
+      "platform-table-action-icon"
+    ],
+    [
+      "Platform Loans Table",
+      "Rows",
+      "platform-loans-rows"
+    ],
+    [
+      "Platform Loan Row",
+      "Currency Icon",
+      "platform-loan-flag"
+    ]
+  ],
+  "properties": [
+    {
+      "label": "Platform Filter",
+      "action": "create_prop",
+      "result": [
+        {
+          "id": "e3ce1e9e-eb49-3c07-602c-60e01b1b0a44",
+          "type": "textContent",
+          "name": "Label",
+          "defaultValue": "Account number"
+        }
+      ]
+    },
+    {
+      "label": "Platform Table Action",
+      "action": "create_prop",
+      "result": [
+        {
+          "id": "92e2288e-8054-7bbb-6194-91216260b80d",
+          "type": "textContent",
+          "name": "Label",
+          "defaultValue": "Edit columns"
+        }
+      ]
+    },
+    {
+      "label": "Loan data fields",
+      "action": "create_prop",
+      "result": [
+        {
+          "id": "d647bc33-7294-fb5f-87b7-19c42e793f04",
+          "type": "textContent",
+          "name": "Account Number",
+          "defaultValue": "198100845638746"
+        },
+        {
+          "id": "bf513c17-0132-9939-d138-c7cf0cd7d1bf",
+          "type": "textContent",
+          "name": "Currency",
+          "defaultValue": "SAR"
+        },
+        {
+          "id": "8fcb0c21-e04a-e497-0012-6251515a7948",
+          "type": "textContent",
+          "name": "Product",
+          "defaultValue": "Deposit Program"
+        },
+        {
+          "id": "6f7a35ca-d3ea-e91c-e2e9-be17e8016c04",
+          "type": "textContent",
+          "name": "Amount",
+          "defaultValue": "SAR 20,000.50"
+        },
+        {
+          "id": "c7381d3e-28cc-fa5d-a068-7a9323908a4e",
+          "type": "textContent",
+          "name": "Term",
+          "defaultValue": "12 months"
+        },
+        {
+          "id": "40ca83cf-d610-cb18-9e85-9fba99301f37",
+          "type": "textContent",
+          "name": "Creation Date",
+          "defaultValue": "Oct 30,2023, 10:30 PM"
+        },
+        {
+          "id": "5f7f5c9f-2a38-faac-8d04-92456a1f72ed",
+          "type": "textContent",
+          "name": "State",
+          "defaultValue": "Active"
+        }
+      ]
+    }
+  ],
+  "loanRows": [
+    {
+      "amount": "SAR 20,000.50",
+      "term": "12 months",
+      "state": "Active"
+    },
+    {
+      "amount": "SAR 29,048.00",
+      "term": "6 months",
+      "state": "Active"
+    },
+    {
+      "amount": "SAR 29,048.00",
+      "term": "6 months",
+      "state": "Active"
+    },
+    {
+      "amount": "SAR 20,000.50",
+      "term": "12 months",
+      "state": "Active"
+    },
+    {
+      "amount": "SAR 3200.00",
+      "term": "6 months",
+      "state": "Inactive"
+    },
+    {
+      "amount": "SAR 20,000.50",
+      "term": "12 months",
+      "state": "Active"
+    },
+    {
+      "amount": "SAR 20,000.50",
+      "term": "12 months",
+      "state": "Active"
+    },
+    {
+      "amount": "SAR 29,048.00",
+      "term": "6 months",
+      "state": "Active"
+    },
+    {
+      "amount": "SAR 29,048.00",
+      "term": "6 months",
+      "state": "Inactive"
+    },
+    {
+      "amount": "SAR 29,048.00",
+      "term": "6 months",
+      "state": "Active"
+    }
+  ],
+  "markup": {
+    "Platform Screen": "<div class=\"platform-screen-shell\"><div class=\"platform-screen-sidebar-slot\"></div><div class=\"platform-screen-content-slot\"></div></div>",
+    "Platform Table Content": "<div class=\"platform-table-content\"><div class=\"platform-table-heading-slot\"></div><div class=\"platform-table-toolbar\"><div class=\"platform-table-filters-slot\"></div><div class=\"platform-table-actions-slot\"></div></div><div class=\"platform-table-slot\"></div></div>",
+    "Platform Filter": "<div class=\"platform-filter-pill\"><div class=\"platform-filter-icon\"></div><div class=\"platform-filter-label\">Account number</div></div>",
+    "Platform Table Action": "<div class=\"platform-table-action\"><div class=\"platform-table-action-icon\"></div><div class=\"platform-table-action-label\">Edit columns</div></div>",
+    "Platform Loans Table": "<div class=\"platform-loans-table\"><div class=\"platform-loan-header\"><div class=\"platform-loan-header-cell\">Account number</div><div class=\"platform-loan-header-cell\">Currency</div><div class=\"platform-loan-header-cell\">Product</div><div class=\"platform-loan-header-cell\"><div class=\"platform-loan-amount\">Amount</div></div><div class=\"platform-loan-header-cell\">Term</div><div class=\"platform-loan-header-cell\">Creation Date</div><div class=\"platform-loan-header-cell\">State</div></div><div class=\"platform-loans-rows\"></div></div>",
+    "Platform Loan Row": "<div class=\"platform-loan-grid\"><div class=\"platform-loan-cell\"><div class=\"platform-loan-account\">198100845638746</div></div><div class=\"platform-loan-cell\"><div class=\"platform-loan-currency\"><div class=\"platform-loan-flag\"></div><div class=\"platform-loan-currency-label\">SAR</div></div></div><div class=\"platform-loan-cell\"><div class=\"platform-loan-product\">Deposit Program</div></div><div class=\"platform-loan-cell\"><div class=\"platform-loan-amount\">SAR 20,000.50</div></div><div class=\"platform-loan-cell\"><div class=\"platform-loan-term\">12 months</div></div><div class=\"platform-loan-cell\"><div class=\"platform-loan-date\">Oct 30,2023, 10:30 PM</div></div><div class=\"platform-loan-cell\"><div class=\"platform-loan-status\">Active</div></div></div>"
+  },
+  "styles": {
+    "platform-screen-shell": {
+      "display": "flex",
+      "width": "100%",
+      "height": "43.4722222cqi",
+      "background-color": "#f5f5f5",
+      "overflow": "hidden"
+    },
+    "platform-screen-sidebar-slot": {
+      "width": "17.2222222cqi",
+      "height": "100%",
+      "flex-shrink": "0"
+    },
+    "platform-screen-content-slot": {
+      "flex": "1 1 0",
+      "height": "100%",
+      "min-width": "0"
+    },
+    "platform-table-content": {
+      "display": "flex",
+      "flex-direction": "column",
+      "width": "100%",
+      "height": "100%",
+      "row-gap": "1.1111111cqi",
+      "padding-top": "1.1111111cqi",
+      "padding-right": "2.2222222cqi",
+      "padding-bottom": "1.1111111cqi",
+      "padding-left": "2.2222222cqi"
+    },
+    "platform-table-heading-slot": {
+      "width": "100%",
+      "height": "2.5cqi",
+      "display": "flex",
+      "align-items": "center",
+      "flex-shrink": "0"
+    },
+    "platform-table-toolbar": {
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "space-between",
+      "width": "100%",
+      "flex-shrink": "0",
+      "height": "2.2222222cqi"
+    },
+    "platform-table-filters-slot": {
+      "display": "flex",
+      "column-gap": ".5555556cqi",
+      "align-items": "center"
+    },
+    "platform-table-actions-slot": {
+      "display": "flex",
+      "align-items": "center",
+      "column-gap": ".8333333cqi"
+    },
+    "platform-table-slot": {
+      "width": "100%"
+    },
+    "platform-filter-pill": {
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "column-gap": ".2777778cqi",
+      "padding-left": ".5555556cqi",
+      "padding-right": ".6944444cqi",
+      "padding-top": ".3472222cqi",
+      "padding-bottom": ".3472222cqi",
+      "border-radius": "5cqi",
+      "border": ".0694444cqi solid #eaecf0",
+      "color": "#344054"
+    },
+    "platform-filter-icon": {
+      "width": ".9722222cqi",
+      "height": ".9722222cqi",
+      "flex-shrink": "0",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center"
+    },
+    "platform-filter-label": {
+      "font-size": ".8333333cqi",
+      "line-height": "1.25cqi",
+      "font-weight": "500",
+      "white-space": "nowrap"
+    },
+    "platform-table-action": {
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "column-gap": ".5555556cqi",
+      "height": "2.2222222cqi",
+      "padding-left": ".8333333cqi",
+      "padding-right": ".8333333cqi",
+      "border-radius": ".4166667cqi",
+      "border": ".0694444cqi solid #d0d5dd",
+      "box-shadow": "0 .0694444cqi .0694444cqi rgba(16,24,40,.05)",
+      "color": "#344054"
+    },
+    "platform-table-action-icon": {
+      "width": "1.3888889cqi",
+      "height": "1.3888889cqi",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "flex-shrink": "0"
+    },
+    "platform-table-action-label": {
+      "font-size": ".9722222cqi",
+      "line-height": "1.3888889cqi",
+      "font-weight": "500",
+      "white-space": "nowrap"
+    },
+    "platform-loans-table": {
+      "width": "100%",
+      "border": ".0694444cqi solid #eaecf0",
+      "border-radius": ".5555556cqi",
+      "overflow": "hidden"
+    },
+    "platform-loan-grid": {
+      "display": "grid",
+      "grid-template-columns": "17.78% 8.8% 25.82% 14% 8.9% 15.3% 9.4%",
+      "width": "100%"
+    },
+    "platform-loan-header": {
+      "display": "grid",
+      "grid-template-columns": "17.78% 8.8% 25.82% 14% 8.9% 15.3% 9.4%",
+      "height": "2.5cqi",
+      "width": "100%",
+      "background-color": "rgba(255,255,255,.5)"
+    },
+    "platform-loan-header-cell": {
+      "padding-left": "1.1111111cqi",
+      "padding-right": "1.1111111cqi",
+      "display": "flex",
+      "align-items": "center",
+      "font-size": ".8333333cqi",
+      "line-height": "1.25cqi",
+      "font-weight": "500",
+      "color": "#344054",
+      "border-bottom": ".0694444cqi solid #eaecf0",
+      "white-space": "nowrap"
+    },
+    "platform-loan-cell": {
+      "padding-left": "1.1111111cqi",
+      "padding-right": "1.1111111cqi",
+      "display": "flex",
+      "align-items": "center",
+      "font-size": ".9722222cqi",
+      "line-height": "1.3888889cqi",
+      "color": "#475467",
+      "border-bottom": ".0694444cqi solid #eaecf0",
+      "white-space": "nowrap",
+      "min-width": "0",
+      "height": "2.7777778cqi"
+    },
+    "platform-loan-account": {
+      "color": "#101828",
+      "font-weight": "500",
+      "white-space": "nowrap"
+    },
+    "platform-loan-currency": {
+      "display": "flex",
+      "align-items": "center",
+      "column-gap": ".5555556cqi"
+    },
+    "platform-loan-flag": {
+      "width": "1.4583333cqi",
+      "height": ".9722222cqi",
+      "flex-shrink": "0",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center"
+    },
+    "platform-loan-amount": {
+      "display": "flex",
+      "justify-content": "flex-end",
+      "width": "100%"
+    },
+    "platform-loan-status": {
+      "background-color": "#ecfdf3",
+      "color": "#067647",
+      "font-size": ".9722222cqi",
+      "line-height": "1.3888889cqi",
+      "font-weight": "500",
+      "padding-left": ".5555556cqi",
+      "padding-right": ".5555556cqi",
+      "border-radius": ".2777778cqi"
+    },
+    "platform-native-icon": {
+      "display": "block",
+      "width": "100%",
+      "height": "100%"
+    },
+    "platform-component-auto": {
+      "display": "flex",
+      "flex-shrink": "0"
+    },
+    "platform-component-width": {
+      "width": "100%"
+    }
+  },
+  "note": "Native Webflow construction payload; slot insertion, bindings, variants, role attributes and final grid-template-columns are recorded in PLATFORM-SCREENS.md. Do not replace existing definitions by blindly importing this snapshot."
+}

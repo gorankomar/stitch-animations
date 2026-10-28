@@ -2,6 +2,8 @@
 
 Inputs: requested component/page, approved behavior, preparation or release destination, and authorized domains. See [publishing](publishing.md).
 
+For all element and component creation or edits, follow [Webflow structure and shared styles](webflow-structure-and-styles.md): preserve the visual design, minimize elements and nesting, use specific object names, and reuse compatible shared style classes. Review the Navigator hierarchy before saving.
+
 1. Read relevant component notes and inspect native properties/slots/code. Preserve reusable component internals and unrelated custom code. For illustrations follow [illustration creation](illustration-creation.md); keep proportional scaling, native styling and visible fallback.
 2. Save requested markup/style changes as drafts and use supported motion attributes. New compiled animation code must be validated/merged and activated on staging before the permanent Playground loader can run it; a draft alone does not deploy JavaScript. Local code remains local unless staging is authorized.
 3. Keep the permanent environment router in the site-wide footer and Playground page footer. It selects staging for Preview/staging and production for configured production hosts. The shared script ID prevents duplicate initialization on published Playground pages. Do not edit loader SHAs for normal releases.

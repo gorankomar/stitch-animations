@@ -4,6 +4,8 @@ Keep prompts focused on the desired result. Read only the documents relevant to 
 
 Established reusable components must retain their internal appearance unless the user explicitly requests changes. Use supported variants/props and outer layout/motion wrappers; avoid illustration CSS overriding component descendants. See docs/workflows/component-preservation-complaint.md for the recorded Credit Card complaint and integration rule.
 
+For every Webflow element/component, preserve the Figma appearance while minimizing elements and nesting. Every wrapper needs a concrete purpose; avoid redundant parent chains. Use object-specific names and reuse compatible shared classes for recurring styles (such as corner radii), keeping each shared property defined in one place. Follow docs/workflows/webflow-structure-and-styles.md; a broader variable migration is separate work.
+
 ## Project map and routing
 
 - src/animations: animation modules; src/embeds: component markup/motion/styles/assets; src/lib/effects: canonical shared effects; src/entry: shared and feature loaders. Keep this structure. legacy is read-only reference.

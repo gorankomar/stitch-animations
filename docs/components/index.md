@@ -58,3 +58,7 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Issuer routing: [notes](../../src/embeds/ISSUER-ROUTING.md), right-to-left reveal and branching payment pulse.
 
 - Homepage Hero stacked windows: [static fallback and motion notes](hero.md).
+
+- Icon hover playground (local experiment): [notes](../../src/embeds/icon-playground/README.md), `/icon-playground.html`.
+
+- Platform Screens (static Webflow draft): [notes](../../src/embeds/platform/PLATFORM-SCREENS.md), shared Platform Screen shell; Dashboard, Loans, Ledgers, Cards, Person detail and Cases detail layouts; Stitch AI navigation, sidebar slots, filters, table rows, metrics, collapsed headers and empty panels.

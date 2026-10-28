@@ -1,0 +1,10 @@
+/* Native Webflow class properties; medium breakpoint applied through Style API. */
+
+.content-hero-grid-wrap {position:absolute;top:0px;right:0px;bottom:0px;left:0px;pointer-events:none;z-index:0;}
+.content-hero-grid {position:absolute;left:50%;top:50%;width:100%;max-width:1120px;aspect-ratio:1120 / 468;transform:translate(-50%,-50%);pointer-events:none;}
+.content-hero-grid__plane {position:absolute;top:0px;right:0px;bottom:0px;left:0px;}
+.content-hero-grid__row {position:absolute;left:0px;right:0px;box-sizing:border-box;border-top-width:.874px;border-right-width:.874px;border-bottom-width:.874px;border-left-width:.874px;border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-color:rgba(34,45,54,.18);border-right-color:rgba(34,45,54,.18);border-bottom-color:rgba(34,45,54,.18);border-left-color:rgba(34,45,54,.18);background-position:50% 0%;background-repeat:repeat-x;background-image:linear-gradient(to right,var(--content-grid-line) 0,var(--content-grid-line) var(--content-grid-stroke),transparent var(--content-grid-stroke));background-size:var(--content-grid-rest-cell) 100%;}
+.content-hero-grid__row--top {top:0px;height:var(--content-grid-rest-top);}
+.content-hero-grid__row--bottom {bottom:0px;height:var(--content-grid-rest-bottom);}
+.content-hero-grid__rails {position:absolute;left:var(--content-grid-rail-inset);right:var(--content-grid-rail-inset);top:var(--content-grid-rest-top);bottom:var(--content-grid-rest-bottom);border-left-width:.874px;border-right-width:.874px;border-left-style:solid;border-right-style:solid;border-left-color:rgba(34,45,54,.18);border-right-color:rgba(34,45,54,.18);}
+@media (max-width: 991px){.content-hero-grid {height:100%;aspect-ratio:auto;}}

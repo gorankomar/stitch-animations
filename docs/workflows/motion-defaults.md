@@ -60,3 +60,7 @@ This procedure sets future implementation defaults. It does not claim that every
 ## Pulses on fading lines
 
 By default, a traveling pulse inherits the spatial fade of the line it follows. Preserve the source gradient stops and stop-opacity values while applying the canonical pulse blue (or configured color). Do not replace a fading line with a uniformly opaque pulse. The shared Path Pulse effect enables fadeWithSource by default; explicit exceptions may disable it.
+
+## Hover anticipation with a direct return
+
+For the icon motions Transactions, Deposits and Onboarding, hover-in uses an opposite-direction anticipation, a brief dwell, and a final leg using the primary default motion easing. Hover-out must return directly from the current position to the original resting position with the primary default easing; do not reverse/replay the two-leg anticipation sequence. An interrupted entry must return from its actual current position, and re-entry during return must not snap. Color-effect/opacity tracks retain their own timing and linear opacity rules. This directional behavior is the user's approved rule for these three two-way hover motions.

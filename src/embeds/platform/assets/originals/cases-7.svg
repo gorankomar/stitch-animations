@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="25.6" height="32" viewBox="0 0 25.6 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Page">
+<g id="Page background">
+<use xlink:href="#stroke0_0_295" fill="white"/>
+<mask id="stroke1_0_295" fill="white">
+<use xlink:href="#stroke0_0_295"/>
+</mask>
+<path d="M16 0H4C1.79086 0 0 1.79086 0 4V28C0 30.2091 1.79086 32 4 32H21.6C23.8091 32 25.6 30.2091 25.6 28V9.6C25.6 9.34388 25.4983 9.09826 25.3172 8.91716L16.6828 0.282843C16.5017 0.101742 16.2561 0 16 0Z" stroke-width="3" stroke="#D0D5DD" mask="url(#stroke1_0_295)"/>
+</g>
+<path id="Earmark" d="M16 0.4V5.6C16 7.80914 17.7909 9.6 20 9.6H25.2" stroke-width="1.5" stroke="#D0D5DD"/>
+</g>
+<defs>
+<path id="stroke0_0_295" d="M0 4C0 1.79086 1.79086 0 4 0H16C16.2561 0 16.5017 0.101742 16.6828 0.282843L25.3172 8.91716C25.4983 9.09826 25.6 9.34388 25.6 9.6V28C25.6 30.2091 23.8091 32 21.6 32H4C1.79086 32 0 30.2091 0 28V4Z"/>
+</defs>
+</svg>

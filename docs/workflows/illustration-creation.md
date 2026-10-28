@@ -33,6 +33,14 @@ The illustration scales as one composition with its parent's available width; he
 - Ensure nested containers do not unintentionally change the cqi reference. Do not assume cqh measures this frame when only inline-size containment exists. Inline SVGs retain their viewBox and scale to their wrapper; SVG user-space coordinates need not be rewritten into cqi.
 - Preserve Figma text content and wrapping through proportional text metrics and box sizes. Avoid clipping as a substitute for correct layout. Use overflow clipping only where the original design clips content.
 
+## Multilingual text and sizing
+
+The site is multilingual. Keep illustration text that must be translated as live HTML rather than baking it into an image or converting it to vector outlines. Use SVG for vector artwork and icon shapes; SVG text is appropriate only when it is intentionally fixed artwork and is not expected to be translated. Essential text and meaning must remain available in native markup and accessible to assistive technology.
+
+**Exception — platform screenshots:** Use a static image for a screenshot of a full software platform or interface. Do not recreate a screenshot containing thousands of interface objects as HTML or SVG; the resulting markup or vector would be unnecessarily large. Provide a separate optimized screenshot image for each required language when the screenshot contains localized text. Follow [raster image optimization](raster-image-optimization.md) for master assets, delivery formats, sizing, and visual verification.
+
+Do not size a text box only for the English copy. Prefer flexible widths, intrinsic sizing, and layouts that allow wrapping and height growth. Use minimum/maximum constraints only when they have been checked against the longest supported translation. Do not clip or hide translated text to preserve an English-only composition; if longer copy cannot fit, adjust spacing or provide a responsive composition that can reflow. Check right-to-left languages as well as longer left-to-right translations where supported.
+
 ## Where styles live
 
 **Webflow is the source of truth for deployed visual styles.** Apply all supported base layout, typography, color, border, shadow, responsive sizing, and static/fallback styles directly in native Webflow styles.
