@@ -3,7 +3,9 @@
 Webflow component: **Animations → Collections — Window Stack**, ID
 `88e6f662-b5ee-3682-da72-a4d510d4cfc9`. Two existing instances share this
 updated definition. The Playground instance remains a draft beside Financial
-Architecture. No publication or animation-channel activation was performed.
+Architecture. The staging animation channel was activated on 2026-10-28; see the release
+record below. Webflow staging publication was completed after the user
+approved publishing all pending non-draft changes. Production is unchanged.
 
 Figma: https://www.figma.com/design/PCbd0DyXWAD2cDANtl7bpH/Stitch-Animation-Elements?node-id=256-12908
 Reference card `256:12907`; graphic `256:12908`, **258 × 232**.
@@ -72,14 +74,14 @@ Both `page-all.js` and `page-all-lite.js` now mount this graphic, independently
 of the old `[data-anim="collections"]` demo. The shared build also emits
 `feature-collections-graphic.js`. No runtime CSS import is required.
 
-**Temporary Playground test runtime:** existing HtmlEmbed
-`88e6f662-b5ee-3682-da72-a4d510d4cfce` contains the latest standalone motion
+**Former temporary Playground test runtime:** HtmlEmbed
+`88e6f662-b5ee-3682-da72-a4d510d4cfce` previously contained standalone motion
 built by `node scripts/build-collections-embed.mjs` into
-`dist/embeds/collections-graphic.html`. Retained because the user explicitly
-requested pre-staging Playground testing. After an authorized staging release
-is merged/activated and verified through the permanent page-all-lite router,
-remove only this temporary runtime embed. Keep the style-only RTL embed,
-native markup and permanent router. No loader URLs were changed.
+`dist/embeds/collections-graphic.html`. It was removed after staging release
+`a2bb18cfa2215922e1c35091a59f2ab201a89fd9` was served and verified. The
+style-only RTL embed, native markup and permanent router remain. No loader
+URLs were changed. Both Playground Preview and published pages now use the
+shared loader for this graphic after Webflow publication.
 
 ## Verification
 
@@ -99,7 +101,12 @@ native markup and permanent router. No loader URLs were changed.
 - Full build and all 209 tests pass. Shared release checker passes, including
   Product Variety/wallet swap, Country Flags and local module/CSS dependencies.
 
-State: **saved to Webflow draft; shared source and fresh distribution saved
-locally**. No Git push/merge, staging activation, Webflow publish or production
-promotion was requested or performed. Animations Playground must never be
-published.
+State: **merged and staging animation release verified**; native Webflow
+component saved and published to staging on Loans
+(`/loan-management-software`). Webflow rejected single-page publishing; the
+user explicitly approved all pending non-draft changes being published to
+staging. Site publish task `ba080c9a-11ad-4f3a-80cf-d8fd1432d140` completed
+and live native markup/shared motion were verified. Production is unchanged.
+Animations Playground must never be published.
+
+Release evidence: [2026-10-28 Collections staging](../../docs/releases/2026-10-28-collections-staging.md).
