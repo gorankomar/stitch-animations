@@ -110,3 +110,11 @@ and live native markup/shared motion were verified. Production is unchanged.
 Animations Playground must never be published.
 
 Release evidence: [2026-10-28 Collections staging](../../docs/releases/2026-10-28-collections-staging.md).
+
+## Production follow-up
+
+Native markup was published to the configured production domains on 2026-10-28.
+The exact staging release promotion is queued behind the required GitHub human
+review. The complete native static fallback is live meanwhile. See
+[production status](../../docs/releases/2026-10-28-collections-production.md);
+production animation completion must be verified after approval.
