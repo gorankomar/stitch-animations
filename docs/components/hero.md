@@ -51,3 +51,24 @@ The same style embed uses native CSS view timelines, scoped to the content hero.
 Designer verification: fully visible hero retained 139.5px rows; at hero top −126px rows compressed to 121.922px; at −427px rows were 112.484px with matching rail insets. Reverse scroll restored the intermediate geometry. Saved Playground draft only.
 
 Horizontal density animates background-size from 12.5% to `--content-grid-exit-cell` (10% by default). Lower percentages increase density; 12.5% disables horizontal tightening. The center side rails retain their original horizontal positions.
+
+
+### Responsive Content Hero component (2026-10-14)
+
+User-created **Content Hero** definition `8c0f6e81-87c9-df86-0145-f6233e5277e4` contains the grid embed `8c0f6e81-87c9-df86-0145-f6233e5277f5`. Responsive updates were saved inside that definition, not on the old page-level embed. Preserve its text/link props and early Reveal attributes.
+
+At <=991px the background fills the hero height rather than shrinking to the desktop aspect ratio. Rows occupy 64px at rest and 48px at exit, fitting within native hero padding and keeping wrapping text clear. Rails move to the outer edges. Tablet/landscape cells tighten from 16.6667% to 14.2857% (six to seven); <=479px uses 25% to 20% (four to five). Desktop retains the user's 14% resting spacing and 10% exit spacing. Opacity remains .18. The user changed row easing to linear; rail easing now matches that preference so borders stay joined. Static and reduced-motion layouts share the same responsive rest values.
+
+Designer verified 320px (272px hero width, 541.78px artwork height, 381.78px content), 393px (343px artwork width, 474.59px height, 314.59px content), and 820px (738px hero width, 639px artwork height). Mobile text has 80px top/bottom clearance versus 64px grid rows. Tablet exit sample had matched row/rail sizes approximately 62.45px and tightening cell width 16.4362%. Desktop breakpoint restored afterward. Component draft and local source saved; no publication or release for this responsive change.
+
+
+Responsive band refinement: clear center holds only title + paragraph; eyebrow and CTA sit in grid rows, matching desktop composition. At <=767px the top/bottom rest rows are 116px/134px, shrinking to 100px/118px on exit. At tablet widths they use 32.5%/35%, shrinking to 29.5%/32%. Separate top/bottom animation tracks keep their matching rail boundaries joined. At 393px verified title starts at 121px versus 116px upper boundary; paragraph ends at 334.59px versus 340.59px lower boundary. At 820px verified title starts at 213.60px versus 207.67px upper boundary; paragraph ends at 408.40px versus 415.35px lower boundary. These replace the prior 64px/48px row settings. Component draft and source saved; opacity .18 retained; no publication.
+
+
+### Native grid structure (2026-10-14)
+
+Converted the grid markup to native Webflow Blocks inside Content Hero. Wrapper `986edb31-51c3-c60f-7bb8-fa2b3e223c1d` is named **Content Hero Grid — Native** and carries `aria-hidden=true`. Classes own absolute geometry, max width/aspect ratio, centering, border color/stroke, line gradient and background sizing. Medium breakpoint height 100% / aspect-ratio auto is saved natively through the Style API. Existing embed `8c0f6e81-87c9-df86-0145-f6233e5277f5` is now **Content Hero Grid — Mask & Scroll CSS**: only style content, no artwork HTML. Custom properties, mask, responsive tuning and scroll keyframes remain there. Component text/link props and Reveal attributes are preserved.
+
+Local source is split into `src/embeds/content-hero/grid-markup.html` (native hierarchy reference), `grid-native.css` (native class/breakpoint properties), and `grid-background.html` (special style-only embed). Do not paste the markup reference alongside the existing native artwork or it will duplicate the grid. Native borders retain .18 opacity. If changing line color later, update both native border colors and the embed's gradient color variable.
+
+Verified one artwork hierarchy, unchanged desktop 1120 × 468 geometry, tablet 639px height with 207.67px/223.65px rows, and mobile 474.59px height with 116px/134px rows. Mobile exit sample showed matching top row/rail ~112px, bottom row/rail ~130px, and cell width tightening to 23.75%. The rail keyframe now starts from the separate responsive top/bottom values, preventing a breakpoint-specific seam. Saved component draft and local references only; no publication.

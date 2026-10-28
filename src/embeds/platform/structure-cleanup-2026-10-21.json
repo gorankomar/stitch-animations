@@ -1,0 +1,382 @@
+{
+  "date": "2026-10-21",
+  "siteId": "6823036cd77b3093eaf9154d",
+  "pageId": "6ad6808c9ce17b3ab0a69ea8",
+  "status": "Webflow draft; no publication or animation release",
+  "rules": "docs/workflows/webflow-structure-and-styles.md",
+  "styleRenames": {
+    "platform-ui-100": "platform-dashboard-content",
+    "platform-ui-106": "platform-dashboard-summary",
+    "platform-ui-107": "platform-overview-card",
+    "platform-ui-108": "platform-overview-heading",
+    "platform-ui-109": "platform-overview-title",
+    "platform-ui-110": "platform-overview-bar",
+    "platform-ui-111": "platform-overview-deposits-segment",
+    "platform-ui-112": "platform-overview-loans-segment",
+    "platform-ui-113": "platform-overview-cards-segment",
+    "platform-ui-114": "platform-overview-metrics",
+    "platform-ui-115": "platform-overview-deposits",
+    "platform-ui-116": "platform-overview-deposits-value",
+    "platform-ui-117": "platform-overview-deposits-legend",
+    "platform-ui-118": "platform-overview-deposits-marker",
+    "platform-ui-119": "platform-overview-deposits-label",
+    "platform-ui-120": "platform-overview-loans",
+    "platform-ui-121": "platform-overview-loans-value",
+    "platform-ui-122": "platform-overview-loans-legend",
+    "platform-ui-123": "platform-overview-loans-marker",
+    "platform-ui-124": "platform-overview-loans-label",
+    "platform-ui-125": "platform-overview-cards",
+    "platform-ui-126": "platform-overview-cards-value",
+    "platform-ui-127": "platform-overview-cards-legend",
+    "platform-ui-128": "platform-overview-cards-marker",
+    "platform-ui-129": "platform-overview-cards-label",
+    "platform-ui-130": "platform-loan-summary-card",
+    "platform-ui-131": "platform-loan-summary-details",
+    "platform-ui-132": "platform-loan-summary-title",
+    "platform-ui-133": "platform-delinquency-badge",
+    "platform-ui-134": "platform-delinquency-marker",
+    "platform-ui-135": "platform-delinquency-label",
+    "platform-ui-136": "platform-loan-comparison",
+    "platform-ui-137": "platform-loan-current",
+    "platform-ui-138": "platform-loan-current-value",
+    "platform-ui-139": "platform-loan-current-label",
+    "platform-ui-140": "platform-loan-previous",
+    "platform-ui-141": "platform-loan-previous-value",
+    "platform-ui-142": "platform-loan-previous-label",
+    "platform-ui-143": "platform-loan-sparkline",
+    "platform-ui-144": "platform-loan-sparkline-plot",
+    "platform-ui-145": "platform-loan-sparkline-bounds",
+    "platform-ui-147": "platform-loan-sparkline-start-label",
+    "platform-ui-148": "platform-loan-sparkline-end-label",
+    "platform-ui-149": "platform-alert-summary-card",
+    "platform-ui-150": "platform-alert-summary-title",
+    "platform-ui-151": "platform-alert-gauge",
+    "platform-ui-152": "platform-alert-gauge-copy",
+    "platform-ui-153": "platform-alert-count",
+    "platform-ui-154": "platform-alert-label",
+    "platform-ui-155": "platform-alert-gauge-arc",
+    "platform-ui-156": "platform-alert-gauge-bounds",
+    "platform-ui-158": "platform-alert-next",
+    "platform-ui-159": "platform-alert-next-icon",
+    "platform-ui-160": "platform-dashboard-toolbar",
+    "platform-ui-161": "platform-period-tabs",
+    "platform-ui-162": "platform-period-tab-ytd",
+    "platform-ui-163": "platform-period-label-ytd",
+    "platform-ui-164": "platform-period-tab-year",
+    "platform-ui-165": "platform-period-label-year",
+    "platform-ui-166": "platform-period-tab-month",
+    "platform-ui-167": "platform-period-label-month",
+    "platform-ui-168": "platform-period-tab-week",
+    "platform-ui-169": "platform-period-label-week",
+    "platform-ui-170": "platform-dashboard-actions",
+    "platform-ui-171": "platform-date-picker",
+    "platform-ui-172": "platform-date-button",
+    "platform-ui-173": "platform-date-icon",
+    "platform-ui-175": "platform-date-label",
+    "platform-ui-176": "platform-dashboard-filter-button",
+    "platform-ui-177": "platform-dashboard-filter-icon",
+    "platform-ui-179": "platform-dashboard-filter-label",
+    "platform-ui-180": "platform-customer-chart",
+    "platform-ui-181": "platform-customer-chart-header",
+    "platform-ui-182": "platform-customer-chart-heading-row",
+    "platform-ui-183": "platform-customer-chart-title-group",
+    "platform-ui-184": "platform-customer-chart-title",
+    "platform-ui-185": "platform-customer-chart-menu",
+    "platform-ui-186": "platform-customer-chart-menu-icon",
+    "platform-ui-188": "platform-customer-chart-divider",
+    "platform-ui-190": "platform-customer-chart-body",
+    "platform-ui-191": "platform-customer-chart-plot",
+    "platform-ui-192": "platform-customer-chart-axes",
+    "platform-ui-193": "platform-customer-chart-axis-layout",
+    "platform-ui-194": "platform-customer-chart-grid",
+    "platform-ui-195": "platform-customer-grid-top",
+    "platform-ui-197": "platform-customer-grid-upper",
+    "platform-ui-199": "platform-customer-grid-middle",
+    "platform-ui-201": "platform-customer-grid-lower",
+    "platform-ui-203": "platform-customer-grid-bottom",
+    "platform-ui-205": "platform-customer-grid-baseline",
+    "platform-ui-207": "platform-customer-chart-months",
+    "platform-ui-208": "platform-customer-month-jan",
+    "platform-ui-209": "platform-customer-month-feb",
+    "platform-ui-210": "platform-customer-month-mar",
+    "platform-ui-211": "platform-customer-month-apr",
+    "platform-ui-212": "platform-customer-month-may",
+    "platform-ui-213": "platform-customer-month-jun",
+    "platform-ui-214": "platform-customer-month-jul",
+    "platform-ui-215": "platform-customer-month-aug",
+    "platform-ui-216": "platform-customer-month-sep",
+    "platform-ui-217": "platform-customer-month-oct",
+    "platform-ui-218": "platform-customer-month-nov",
+    "platform-ui-219": "platform-customer-month-dec",
+    "platform-ui-220": "platform-customer-chart-series",
+    "platform-ui-221": "platform-customer-chart-series-group",
+    "platform-ui-222": "platform-customer-chart-area-group",
+    "platform-ui-223": "platform-customer-chart-area-mask",
+    "platform-ui-225": "platform-customer-chart-projection",
+    "platform-ui-226": "platform-customer-chart-projection-bounds",
+    "platform-ui-228": "platform-customer-chart-line",
+    "platform-ui-229": "platform-customer-chart-line-bounds",
+    "platform-ui-231": "platform-customer-chart-point-group",
+    "platform-ui-232": "platform-customer-chart-point-core",
+    "platform-ui-234": "platform-customer-chart-point-halo",
+    "platform-ui-236": "platform-customer-chart-metrics",
+    "platform-ui-237": "platform-metric",
+    "platform-ui-238": "platform-metric-label",
+    "platform-ui-239": "platform-metric-value-row",
+    "platform-ui-240": "platform-metric-value",
+    "platform-ui-241": "platform-metric-change-wrap",
+    "platform-ui-242": "platform-metric-change-badge",
+    "platform-ui-243": "platform-metric-change-icon",
+    "platform-ui-245": "platform-metric-change",
+    "platform-vector-18": "platform-loan-sparkline-svg",
+    "platform-vector-19": "platform-alert-gauge-svg",
+    "platform-vector-20": "platform-alert-next-svg",
+    "platform-vector-21": "platform-date-svg",
+    "platform-vector-22": "platform-filter-svg",
+    "platform-vector-23": "platform-customer-menu-svg",
+    "platform-vector-24": "platform-customer-divider-svg",
+    "platform-vector-25": "platform-customer-grid-top-svg",
+    "platform-vector-26": "platform-customer-grid-upper-svg",
+    "platform-vector-27": "platform-customer-grid-middle-svg",
+    "platform-vector-28": "platform-customer-grid-lower-svg",
+    "platform-vector-29": "platform-customer-grid-bottom-svg",
+    "platform-vector-30": "platform-customer-grid-baseline-svg",
+    "platform-vector-32": "platform-customer-projection-svg",
+    "platform-vector-33": "platform-customer-line-svg",
+    "platform-vector-34": "platform-customer-point-core-svg",
+    "platform-vector-35": "platform-customer-point-halo-svg",
+    "platform-vector-36": "platform-metric-trend-svg",
+    "sc817-content": "platform-cards-content",
+    "sc817-heading": "platform-cards-heading",
+    "sc817-title": "platform-cards-title",
+    "sc817-visa": "platform-cards-visa",
+    "sc817-badge": "platform-cards-badge",
+    "sc817-body": "platform-cards-body",
+    "sc817-main": "platform-cards-main",
+    "sc817-details": "platform-cards-details",
+    "sc817-detail-col": "platform-cards-detail-col",
+    "sc817-line": "platform-cards-line",
+    "sc817-edit": "platform-cards-edit",
+    "sc817-card-columns": "platform-cards-card-columns",
+    "sc817-card-section": "platform-cards-card-section",
+    "sc817-section-heading": "platform-cards-section-heading",
+    "sc817-button": "platform-cards-button",
+    "sc817-cards": "platform-cards-cards",
+    "sc817-card": "platform-cards-card",
+    "sc817-card-copy": "platform-cards-card-copy",
+    "sc817-card-title": "platform-cards-card-title",
+    "sc817-card-date": "platform-cards-card-date",
+    "sc817-dots": "platform-cards-dots",
+    "sc817-icon16": "platform-cards-icon",
+    "sc817-inactive": "platform-cards-inactive",
+    "sc817-closed": "platform-cards-closed",
+    "sc817-pay": "platform-cards-pay",
+    "sc817-google-pay": "platform-cards-google-pay",
+    "sc817-transactions": "platform-cards-transactions",
+    "sc817-transactions-heading": "platform-cards-transactions-heading",
+    "sc817-filter-anchor": "platform-cards-filter-anchor",
+    "sc817-table": "platform-cards-table",
+    "sc817-row": "platform-cards-row",
+    "sc817-head": "platform-cards-head",
+    "sc817-cell": "platform-cards-cell",
+    "sc817-amount": "platform-cards-amount",
+    "sc817-type": "platform-cards-type",
+    "sc817-state": "platform-cards-state",
+    "sc817-aside": "platform-cards-aside",
+    "sc817-blocks": "platform-cards-blocks",
+    "sc817-side-heading": "platform-cards-side-heading",
+    "sc817-plus": "platform-cards-plus",
+    "sc817-block-list": "platform-cards-block-list",
+    "sc817-block": "platform-cards-block",
+    "sc817-block-copy": "platform-cards-block-copy",
+    "sc817-warning": "platform-cards-warning",
+    "sc817-block-date": "platform-cards-block-date",
+    "sc817-block-fade": "platform-cards-block-fade",
+    "sc817-customers": "platform-cards-customers",
+    "sc817-customers-heading": "platform-cards-customers-heading",
+    "sc817-customer": "platform-cards-customer",
+    "sc817-underlined": "platform-cards-underlined",
+    "sc817-primary": "platform-cards-primary",
+    "sc817-joint": "platform-cards-joint",
+    "smart-cards-filter-slot": "platform-cards-filter-slot",
+    ".platform-cards-cell.sc817-type": ".platform-cards-cell.is-type",
+    ".platform-cards-cell.sc817-state": ".platform-cards-cell.is-state",
+    ".platform-cards-badge.sc817-warning": ".platform-cards-badge.is-warning",
+    ".platform-cards-badge.sc817-primary": ".platform-cards-badge.is-primary",
+    ".platform-cards-badge.sc817-joint": ".platform-cards-badge.is-joint",
+    ".platform-cards-badge.sc817-inactive": ".platform-cards-badge.is-inactive",
+    ".platform-cards-badge.sc817-closed": ".platform-cards-badge.is-closed",
+    ".platform-cards-row.sc817-head": ".platform-cards-row.is-head",
+    ".platform-cards-cell.sc817-amount": ".platform-cards-cell.is-amount"
+  },
+  "componentCounts": [
+    {
+      "name": "Platform Navigation Item",
+      "before": 5,
+      "after": 3
+    },
+    {
+      "name": "Platform Sidebar",
+      "before": 13,
+      "after": 13
+    },
+    {
+      "name": "Platform Icon — Home",
+      "before": 4,
+      "after": 4
+    },
+    {
+      "name": "Platform Icon — Inbox",
+      "before": 4,
+      "after": 4
+    },
+    {
+      "name": "Platform Icon — Loans",
+      "before": 4,
+      "after": 4
+    },
+    {
+      "name": "Platform Icon — Collections",
+      "before": 4,
+      "after": 4
+    },
+    {
+      "name": "Platform Icon — Folder",
+      "before": 4,
+      "after": 4
+    },
+    {
+      "name": "Platform Icon — Map",
+      "before": 4,
+      "after": 4
+    },
+    {
+      "name": "Platform Icon — Reports",
+      "before": 7,
+      "after": 7
+    },
+    {
+      "name": "Platform Icon — Simulators",
+      "before": 7,
+      "after": 7
+    },
+    {
+      "name": "Platform Navigation Heading",
+      "before": 5,
+      "after": 4
+    },
+    {
+      "name": "Platform Metric",
+      "before": 12,
+      "after": 9
+    },
+    {
+      "name": "Platform Environment",
+      "before": 6,
+      "after": 5
+    },
+    {
+      "name": "Platform Screen Heading",
+      "before": 4,
+      "after": 3
+    },
+    {
+      "name": "Platform Screen",
+      "before": 6,
+      "after": 6
+    },
+    {
+      "name": "Platform Table Content",
+      "before": 11,
+      "after": 11
+    },
+    {
+      "name": "Platform Filter",
+      "before": 5,
+      "after": 3
+    },
+    {
+      "name": "Platform Loans Table",
+      "before": 20,
+      "after": 20
+    },
+    {
+      "name": "Platform Loan Row",
+      "before": 19,
+      "after": 17
+    },
+    {
+      "name": "Platform Table Action",
+      "before": 5,
+      "after": 3
+    },
+    {
+      "name": "Platform Dashboard Content",
+      "before": 6,
+      "after": 6
+    },
+    {
+      "name": "Platform Icon — Columns",
+      "before": 4,
+      "after": 4
+    },
+    {
+      "name": "Platform Dashboard Summary",
+      "before": 88,
+      "after": 87
+    },
+    {
+      "name": "Platform Dashboard Toolbar",
+      "before": 30,
+      "after": 29
+    },
+    {
+      "name": "Platform Customer Chart",
+      "before": 104,
+      "after": 91
+    },
+    {
+      "name": "Platform Ledger Row",
+      "before": 8,
+      "after": 7
+    },
+    {
+      "name": "Platform Ledgers Table",
+      "before": 18,
+      "after": 18
+    },
+    {
+      "name": "Platform Breadcrumbs",
+      "before": 5,
+      "after": 5
+    },
+    {
+      "name": "Platform Smart Cards Content",
+      "before": 329,
+      "after": 328
+    }
+  ],
+  "wrappersRemoved": 31,
+  "variantChanges": {
+    "dashboardContent": "Base only; unused Platform 817 variant deleted",
+    "filter": "Platform 817 renamed Compact; sizing difference retained",
+    "screen": "Smart Cards renamed Cards; frame difference retained"
+  },
+  "componentRename": {
+    "Platform Smart Cards Content": "Platform Cards Content"
+  },
+  "instanceRename": {
+    "Smart Cards Screen": "Cards Screen"
+  },
+  "verification": {
+    "desktopDesigner": "1,375 retained visible elements unchanged in normalized x/y/width/height within 0.2 CSS px after final root/slot flattening",
+    "firstPass": "Text and SVG bounds compared with initial measurements; top grid-line height corrected to its original 1.5296528cqi",
+    "mobileDesigner": "297px screen widths; first three heights129.109375, Cards168.5; no numbered classes; sidebar overflow clip",
+    "nativePreview": "Desktop1232px first-three535.5703125px Cards698.984375px; mobile297px first-three129.109375px Cards168.5px; custom code temporarily disabled because compiler stalled; original setting restored"
+  },
+  "notes": [
+    "Existing SVG geometry, paint IDs, masks, gradient references and external icon/logo internals preserved.",
+    "Screen measurement/query-container and shell, SVG coordinate/paint boundaries, meaningful layout groups and table cell semantics retained.",
+    "Construction HTML/JSON snapshots remain historical and must not be reapplied."
+  ]
+}

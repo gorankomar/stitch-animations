@@ -1,37 +1,51 @@
 <style>
-/* Content hero: eight columns, two square-cell rows and a clear central band. */
-[data-anim="content-hero"] .content-hero-grid-embed {
-  position:absolute; inset:0; pointer-events:none; z-index:0;
-}
+/* Native Webflow classes own markup, geometry, borders and grid backgrounds.
+   This embed supplies local tuning variables, fade masks and scroll keyframes. */
 [data-anim="content-hero"] .content-hero-grid {
   /* User-approved line opacity: .18. Keep color fixed during scroll. */
   --content-grid-line:rgba(34,45,54,.18);
   --content-grid-stroke:.874px;
   /* Exit cell width: 10% = ten columns; 12.5% disables horizontal tightening. */
   --content-grid-exit-cell:10%;
-  position:absolute; left:50%; top:50%;
-  width:min(100%,1120px); aspect-ratio:1120 / 468;
-  transform:translate(-50%,-50%); pointer-events:none;
+  --content-grid-rest-cell:14%;
+  --content-grid-rest-row:29.8077%;
+  --content-grid-rest-top:var(--content-grid-rest-row);
+  --content-grid-rest-bottom:var(--content-grid-rest-row);
+  --content-grid-exit-top:var(--content-grid-exit-row);
+  --content-grid-exit-bottom:var(--content-grid-exit-row);
+  --content-grid-exit-row:23.8077%;
+  --content-grid-rail-inset:12.5%;
   /* Figma fade: ellipse radii 560 × 412.5 in the 1120 × 468 artwork. */
   -webkit-mask-image:radial-gradient(ellipse 50% 88.141% at 50% 50%,#000 0%,transparent 100%);
   mask-image:radial-gradient(ellipse 50% 88.141% at 50% 50%,#000 0%,transparent 100%);
 }
-[data-anim="content-hero"] .content-hero-grid__plane {position:absolute;inset:0;}
-[data-anim="content-hero"] .content-hero-grid__row {
-  position:absolute; left:0; right:0; height:29.8077%;
-  border:var(--content-grid-stroke) solid var(--content-grid-line);
-  box-sizing:border-box;
-  background-image:linear-gradient(to right,var(--content-grid-line) 0,var(--content-grid-line) var(--content-grid-stroke),transparent var(--content-grid-stroke));
-  background-size:12.5% 100%;
-  background-position:center top;
-  background-repeat:repeat-x;
+/* Smaller heroes: eyebrow and CTA stay within the grid rows;
+   the clear center is reserved for the title and paragraph. */
+@media(max-width:991px) {
+  [data-anim="content-hero"] .content-hero-grid {
+    --content-grid-rest-top:32.5%;
+    --content-grid-rest-bottom:35%;
+    --content-grid-exit-top:29.5%;
+    --content-grid-exit-bottom:32%;
+    --content-grid-rest-cell:16.6667%;
+    --content-grid-exit-cell:14.2857%;
+    --content-grid-rail-inset:0%;
+  }
 }
-[data-anim="content-hero"] .content-hero-grid__row--top {top:0;}
-[data-anim="content-hero"] .content-hero-grid__row--bottom {bottom:0;}
-[data-anim="content-hero"] .content-hero-grid__rails {
-  position:absolute;left:12.5%;right:12.5%;top:29.8077%;bottom:29.8077%;
-  border-left:var(--content-grid-stroke) solid var(--content-grid-line);
-  border-right:var(--content-grid-stroke) solid var(--content-grid-line);
+@media(max-width:767px) {
+  [data-anim="content-hero"] .content-hero-grid {
+    /* 80px padding + eyebrow/CTA spacing, leaving 6px around the text band. */
+    --content-grid-rest-top:116px;
+    --content-grid-rest-bottom:134px;
+    --content-grid-exit-top:100px;
+    --content-grid-exit-bottom:118px;
+  }
+}
+@media(max-width:479px) {
+  [data-anim="content-hero"] .content-hero-grid {
+    --content-grid-rest-cell:25%;
+    --content-grid-exit-cell:20%;
+  }
 }
 
 /* Native scroll progress: no entrance animation or downloaded runtime required.
@@ -44,30 +58,30 @@
       view-timeline-axis: block;
     }
     [data-anim="content-hero"] .content-hero-grid__row {
-      animation: content-hero-grid-compress 1s var(--motion-ease-primary) both;
+      animation: content-hero-grid-compress-top 1s linear both;
       animation-timeline: --content-hero-exit;
       animation-range: exit 0% exit 100%;
     }
+    [data-anim="content-hero"] .content-hero-grid__row--bottom {
+      animation-name:content-hero-grid-compress-bottom;
+    }
     [data-anim="content-hero"] .content-hero-grid__rails {
-      animation: content-hero-grid-expand 1s var(--motion-ease-primary) both;
+      animation: content-hero-grid-expand 1s linear both;
       animation-timeline: --content-hero-exit;
       animation-range: exit 0% exit 100%;
     }
   }
 }
-@keyframes content-hero-grid-compress {
-  from {height:29.8077%;background-size:12.5% 100%;}
-  to {height:23.8077%;background-size:var(--content-grid-exit-cell) 100%;}
+@keyframes content-hero-grid-compress-top {
+  from {height:var(--content-grid-rest-top);background-size:var(--content-grid-rest-cell) 100%;}
+  to {height:var(--content-grid-exit-top);background-size:var(--content-grid-exit-cell) 100%;}
+}
+@keyframes content-hero-grid-compress-bottom {
+  from {height:var(--content-grid-rest-bottom);background-size:var(--content-grid-rest-cell) 100%;}
+  to {height:var(--content-grid-exit-bottom);background-size:var(--content-grid-exit-cell) 100%;}
 }
 @keyframes content-hero-grid-expand {
-  from {top:29.8077%;bottom:29.8077%;}
-  to {top:23.8077%;bottom:23.8077%;}
+  from {top:var(--content-grid-rest-top);bottom:var(--content-grid-rest-bottom);}
+  to {top:var(--content-grid-exit-top);bottom:var(--content-grid-exit-bottom);}
 }
 </style>
-<div class="content-hero-grid" aria-hidden="true">
-  <div class="content-hero-grid__plane">
-    <div class="content-hero-grid__row content-hero-grid__row--top"></div>
-    <div class="content-hero-grid__rails"></div>
-    <div class="content-hero-grid__row content-hero-grid__row--bottom"></div>
-  </div>
-</div>

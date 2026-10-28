@@ -1,0 +1,1052 @@
+{
+  "tool": "Lighthouse 13.5.0",
+  "date": "2026-10-20",
+  "runs": [
+    {
+      "name": "desktop-html-1",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 1,
+      "score": 84.0,
+      "fcp": 1228.8405,
+      "lcp": 1228.8405,
+      "tbt": 172,
+      "cls": 0.0021776067934068826,
+      "speedIndex": 2604.3510081847935,
+      "totalBytes": 10279877,
+      "requests": 165,
+      "documentBytes": 83826,
+      "pageCssBytes": 36820,
+      "heroImageBytes": 0,
+      "dom": 2757,
+      "mainThread": 1400.4629999999688,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 226.242
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 425.02
+        }
+      ],
+      "observedFCP": 651,
+      "observedLCP": 651,
+      "observedSI": 2293,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:46:15.730Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "cpuBreakdown": {
+        "scriptEvaluation": 668.8819999999694,
+        "other": 404.4279999999936,
+        "styleLayout": 147.94200000000035,
+        "paintCompositeRender": 80.60800000000548,
+        "scriptParseCompile": 69.18499999999996,
+        "parseHTML": 17.967999999999996,
+        "garbageCollection": 11.449999999999998
+      }
+    },
+    {
+      "name": "desktop-html-2",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 2,
+      "score": 95.0,
+      "fcp": 1015.8255000000001,
+      "lcp": 1015.8255000000001,
+      "tbt": 43.41799999999989,
+      "cls": 0.0021776067934068826,
+      "speedIndex": 1516.118978903056,
+      "totalBytes": 10859131,
+      "requests": 167,
+      "documentBytes": 83856,
+      "pageCssBytes": 36306,
+      "heroImageBytes": 0,
+      "dom": 2757,
+      "mainThread": 1130.3309999999803,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 167.068
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 273.774
+        }
+      ],
+      "observedFCP": 441,
+      "observedLCP": 441,
+      "observedSI": 1565,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:46:52.698Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "cpuBreakdown": {
+        "scriptEvaluation": 431.99899999998996,
+        "other": 393.0149999999937,
+        "styleLayout": 144.25000000000017,
+        "scriptParseCompile": 64.054,
+        "paintCompositeRender": 58.38699999999658,
+        "parseHTML": 24.529000000000025,
+        "garbageCollection": 14.097000000000001
+      }
+    },
+    {
+      "name": "desktop-html-3",
+      "mode": "desktop",
+      "kind": "html",
+      "run": 3,
+      "score": 91.0,
+      "fcp": 1214.7685000000001,
+      "lcp": 1214.7685000000001,
+      "tbt": 0,
+      "cls": 0.0021776067934068826,
+      "speedIndex": 1925.971966824415,
+      "totalBytes": 10862076,
+      "requests": 166,
+      "documentBytes": 83828,
+      "pageCssBytes": 36789,
+      "heroImageBytes": 0,
+      "dom": 2757,
+      "mainThread": 961.0689999999914,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 207.224
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 295.588
+        }
+      ],
+      "observedFCP": 503,
+      "observedLCP": 503,
+      "observedSI": 1629,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:47:29.294Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "cpuBreakdown": {
+        "other": 391.1149999999933,
+        "scriptEvaluation": 304.093000000001,
+        "styleLayout": 127.39600000000009,
+        "scriptParseCompile": 62.22400000000001,
+        "paintCompositeRender": 53.36899999999694,
+        "parseHTML": 15.43099999999999,
+        "garbageCollection": 7.441000000000007
+      }
+    },
+    {
+      "name": "desktop-images-1",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 1,
+      "score": 72.0,
+      "fcp": 2239.238,
+      "lcp": 2239.238,
+      "tbt": 0,
+      "cls": 0.0021776067934068826,
+      "speedIndex": 3846.561750661349,
+      "totalBytes": 10970750,
+      "requests": 172,
+      "documentBytes": 57582,
+      "pageCssBytes": 33078,
+      "heroImageBytes": 139132,
+      "dom": 1547,
+      "mainThread": 839.5089999999994,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 1668.82
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 419.909
+        }
+      ],
+      "observedFCP": 2089,
+      "observedLCP": 2089,
+      "observedSI": 3224,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:45:55.966Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "cpuBreakdown": {
+        "other": 321.42200000000014,
+        "scriptEvaluation": 297.8449999999999,
+        "styleLayout": 100.27299999999993,
+        "scriptParseCompile": 62.37,
+        "paintCompositeRender": 36.76999999999939,
+        "parseHTML": 13.935000000000006,
+        "garbageCollection": 6.893999999999998
+      }
+    },
+    {
+      "name": "desktop-images-2",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 2,
+      "score": 90.0,
+      "fcp": 1070.596,
+      "lcp": 1316.145,
+      "tbt": 0,
+      "cls": 0.0021776067934068826,
+      "speedIndex": 2130.122490651038,
+      "totalBytes": 10971476,
+      "requests": 172,
+      "documentBytes": 57603,
+      "pageCssBytes": 32837,
+      "heroImageBytes": 139135,
+      "dom": 1547,
+      "mainThread": 874.0079999999958,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 176.376
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 569.666
+        }
+      ],
+      "observedFCP": 746,
+      "observedLCP": 746,
+      "observedSI": 1884,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:46:35.026Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "cpuBreakdown": {
+        "scriptEvaluation": 329.8319999999985,
+        "other": 329.42099999999664,
+        "styleLayout": 96.32299999999992,
+        "scriptParseCompile": 63.36899999999997,
+        "paintCompositeRender": 33.508000000000784,
+        "parseHTML": 14.457999999999988,
+        "garbageCollection": 7.097000000000007
+      }
+    },
+    {
+      "name": "desktop-images-3",
+      "mode": "desktop",
+      "kind": "images",
+      "run": 3,
+      "score": 80.0,
+      "fcp": 1658.236,
+      "lcp": 1938.9,
+      "tbt": 0,
+      "cls": 0.0021776067934068826,
+      "speedIndex": 2510.5705748499686,
+      "totalBytes": 10970904,
+      "requests": 171,
+      "documentBytes": 57601,
+      "pageCssBytes": 33154,
+      "heroImageBytes": 139141,
+      "dom": 1547,
+      "mainThread": 912.8299999999937,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 221.45099999809264
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 406.29300000190733
+        }
+      ],
+      "observedFCP": 628,
+      "observedLCP": 628,
+      "observedSI": 1777,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:47:11.353Z",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "cpuBreakdown": {
+        "other": 379.51099999999553,
+        "scriptEvaluation": 308.50699999999966,
+        "styleLayout": 101.95199999999996,
+        "scriptParseCompile": 62.03599999999998,
+        "paintCompositeRender": 39.45499999999846,
+        "parseHTML": 13.37799999999999,
+        "garbageCollection": 7.990999999999994
+      }
+    },
+    {
+      "name": "mobile-html-1",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 1,
+      "score": 33.0,
+      "fcp": 9009.695499999998,
+      "lcp": 17011.089500000006,
+      "tbt": 1135.4999999999982,
+      "cls": 0.001307247870981286,
+      "speedIndex": 9903.418726319465,
+      "totalBytes": 10852210,
+      "requests": 164,
+      "documentBytes": 83838,
+      "pageCssBytes": 36834,
+      "heroImageBytes": 0,
+      "dom": 2757,
+      "mainThread": 5489.103999999889,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 257.75
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 2188.537
+        }
+      ],
+      "observedFCP": 2446,
+      "observedLCP": 2446,
+      "observedSI": 2685,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:44:07.926Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "cpuBreakdown": {
+        "scriptEvaluation": 2733.3159999998957,
+        "other": 1715.48399999999,
+        "styleLayout": 508.63599999999997,
+        "scriptParseCompile": 258.91999999999985,
+        "paintCompositeRender": 147.56400000000275,
+        "parseHTML": 64.11200000000001,
+        "garbageCollection": 61.07200000000002
+      }
+    },
+    {
+      "name": "mobile-html-2",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 2,
+      "score": 50.0,
+      "fcp": 8892.197,
+      "lcp": 16700.199499999995,
+      "tbt": 310.5,
+      "cls": 0.001307247870981286,
+      "speedIndex": 8978.856242927428,
+      "totalBytes": 10851354,
+      "requests": 165,
+      "documentBytes": 83828,
+      "pageCssBytes": 36789,
+      "heroImageBytes": 0,
+      "dom": 2757,
+      "mainThread": 4299.303999999934,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 239.431
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 2230.694
+        }
+      ],
+      "observedFCP": 2470,
+      "observedLCP": 2470,
+      "observedSI": 2708,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:44:52.986Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "cpuBreakdown": {
+        "other": 1667.1599999999382,
+        "scriptEvaluation": 1465.259999999991,
+        "styleLayout": 692.0519999999988,
+        "scriptParseCompile": 261.98000000000013,
+        "paintCompositeRender": 108.9560000000057,
+        "parseHTML": 61.09999999999996,
+        "garbageCollection": 42.79599999999996
+      }
+    },
+    {
+      "name": "mobile-html-3",
+      "mode": "mobile",
+      "kind": "html",
+      "run": 3,
+      "score": 43.0,
+      "fcp": 9927.705499999998,
+      "lcp": 17227.077499999996,
+      "tbt": 531.5,
+      "cls": 0.001307247870981286,
+      "speedIndex": 9927.705499999998,
+      "totalBytes": 10849696,
+      "requests": 163,
+      "documentBytes": 83827,
+      "pageCssBytes": 36820,
+      "heroImageBytes": 0,
+      "dom": 2757,
+      "mainThread": 4246.523999999957,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 228.446
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 2120.507
+        }
+      ],
+      "observedFCP": 2349,
+      "observedLCP": 2349,
+      "observedSI": 2579,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:45:35.743Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "cpuBreakdown": {
+        "scriptEvaluation": 1746.635999999935,
+        "other": 1484.8880000000133,
+        "styleLayout": 466.2720000000008,
+        "scriptParseCompile": 304.45999999999987,
+        "paintCompositeRender": 115.49600000000729,
+        "parseHTML": 86.956,
+        "garbageCollection": 41.816000000000024
+      }
+    },
+    {
+      "name": "mobile-images-1",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 1,
+      "score": 77.0,
+      "fcp": 2717.0499999999997,
+      "lcp": 3429.273999999999,
+      "tbt": 199.99999999999955,
+      "cls": 0.0012417080959365705,
+      "speedIndex": 7377.272940273571,
+      "totalBytes": 10924756,
+      "requests": 168,
+      "documentBytes": 57599,
+      "pageCssBytes": 33158,
+      "heroImageBytes": 99744,
+      "dom": 1547,
+      "mainThread": 4310.979999999956,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 1772.217
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 436.038
+        }
+      ],
+      "observedFCP": 2208,
+      "observedLCP": 2208,
+      "observedSI": 3263,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:43:32.024Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "cpuBreakdown": {
+        "other": 1719.7959999999805,
+        "scriptEvaluation": 1546.4799999999952,
+        "styleLayout": 472.5159999999999,
+        "scriptParseCompile": 252.8399999999999,
+        "paintCompositeRender": 221.8959999999813,
+        "parseHTML": 59.52399999999999,
+        "garbageCollection": 37.92799999999999
+      }
+    },
+    {
+      "name": "mobile-images-2",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 2,
+      "score": 64.0,
+      "fcp": 3363.1515,
+      "lcp": 3816.3365000000003,
+      "tbt": 405,
+      "cls": 0.001307247870981286,
+      "speedIndex": 8824.056463542165,
+      "totalBytes": 10919807,
+      "requests": 170,
+      "documentBytes": 57597,
+      "pageCssBytes": 33081,
+      "heroImageBytes": 99757,
+      "dom": 1547,
+      "mainThread": 4237.819999999945,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 1410.954
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 443.847
+        }
+      ],
+      "observedFCP": 1855,
+      "observedLCP": 1855,
+      "observedSI": 2854,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:44:31.511Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "cpuBreakdown": {
+        "scriptEvaluation": 1719.8959999999577,
+        "other": 1540.8319999999992,
+        "styleLayout": 449.8520000000004,
+        "scriptParseCompile": 252.67999999999975,
+        "paintCompositeRender": 189.1359999999878,
+        "parseHTML": 55.06800000000003,
+        "garbageCollection": 30.35600000000002
+      }
+    },
+    {
+      "name": "mobile-images-3",
+      "mode": "mobile",
+      "kind": "images",
+      "run": 3,
+      "score": 43.0,
+      "fcp": 9474.045499999997,
+      "lcp": 17979.2225,
+      "tbt": 532,
+      "cls": 0.001307247870981286,
+      "speedIndex": 9653.839290190492,
+      "totalBytes": 10921194,
+      "requests": 166,
+      "documentBytes": 57627,
+      "pageCssBytes": 33077,
+      "heroImageBytes": 99748,
+      "dom": 1547,
+      "mainThread": 4351.019999999937,
+      "lcpElement": "Stitch announces $25M series A, led by Andreessen Horowitz",
+      "lcpSelector": "main.main-wrapper > div.navbar > div.nav-banner > div",
+      "lcpParts": [
+        {
+          "subpart": "timeToFirstByte",
+          "label": "Time to first byte",
+          "duration": 186.63
+        },
+        {
+          "subpart": "elementRenderDelay",
+          "label": "Element render delay",
+          "duration": 2298.217
+        }
+      ],
+      "observedFCP": 2485,
+      "observedLCP": 2485,
+      "observedSI": 2732,
+      "warnings": [],
+      "fetchTime": "2026-10-20T14:45:14.104Z",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "cpuBreakdown": {
+        "scriptEvaluation": 1887.2199999999384,
+        "other": 1555.2799999999952,
+        "styleLayout": 437.80799999999977,
+        "scriptParseCompile": 283.4560000000003,
+        "paintCompositeRender": 93.44800000000333,
+        "parseHTML": 55.691999999999986,
+        "garbageCollection": 38.11600000000002
+      }
+    }
+  ],
+  "groups": {
+    "mobile-images": {
+      "count": 3,
+      "median": {
+        "score": 64.0,
+        "fcp": 3363.1515,
+        "lcp": 3816.3365000000003,
+        "tbt": 405,
+        "cls": 0.001307247870981286,
+        "speedIndex": 8824.056463542165,
+        "totalBytes": 10921194,
+        "requests": 168,
+        "documentBytes": 57599,
+        "pageCssBytes": 33081,
+        "heroImageBytes": 99748,
+        "dom": 1547,
+        "mainThread": 4310.979999999956,
+        "observedFCP": 2208,
+        "observedLCP": 2208,
+        "observedSI": 2854
+      },
+      "range": {
+        "score": [
+          43.0,
+          77.0
+        ],
+        "fcp": [
+          2717.0499999999997,
+          9474.045499999997
+        ],
+        "lcp": [
+          3429.273999999999,
+          17979.2225
+        ],
+        "tbt": [
+          199.99999999999955,
+          532
+        ],
+        "cls": [
+          0.0012417080959365705,
+          0.001307247870981286
+        ],
+        "speedIndex": [
+          7377.272940273571,
+          9653.839290190492
+        ],
+        "totalBytes": [
+          10919807,
+          10924756
+        ],
+        "requests": [
+          166,
+          170
+        ],
+        "documentBytes": [
+          57597,
+          57627
+        ],
+        "pageCssBytes": [
+          33077,
+          33158
+        ],
+        "heroImageBytes": [
+          99744,
+          99757
+        ],
+        "dom": [
+          1547,
+          1547
+        ],
+        "mainThread": [
+          4237.819999999945,
+          4351.019999999937
+        ],
+        "observedFCP": [
+          1855,
+          2485
+        ],
+        "observedLCP": [
+          1855,
+          2485
+        ],
+        "observedSI": [
+          2732,
+          3263
+        ]
+      },
+      "cpuMedian": {
+        "other": 1555.2799999999952,
+        "scriptEvaluation": 1719.8959999999577,
+        "styleLayout": 449.8520000000004,
+        "scriptParseCompile": 252.8399999999999,
+        "paintCompositeRender": 189.1359999999878,
+        "parseHTML": 55.691999999999986,
+        "garbageCollection": 37.92799999999999
+      }
+    },
+    "mobile-html": {
+      "count": 3,
+      "median": {
+        "score": 43.0,
+        "fcp": 9009.695499999998,
+        "lcp": 17011.089500000006,
+        "tbt": 531.5,
+        "cls": 0.001307247870981286,
+        "speedIndex": 9903.418726319465,
+        "totalBytes": 10851354,
+        "requests": 164,
+        "documentBytes": 83828,
+        "pageCssBytes": 36820,
+        "heroImageBytes": 0,
+        "dom": 2757,
+        "mainThread": 4299.303999999934,
+        "observedFCP": 2446,
+        "observedLCP": 2446,
+        "observedSI": 2685
+      },
+      "range": {
+        "score": [
+          33.0,
+          50.0
+        ],
+        "fcp": [
+          8892.197,
+          9927.705499999998
+        ],
+        "lcp": [
+          16700.199499999995,
+          17227.077499999996
+        ],
+        "tbt": [
+          310.5,
+          1135.4999999999982
+        ],
+        "cls": [
+          0.001307247870981286,
+          0.001307247870981286
+        ],
+        "speedIndex": [
+          8978.856242927428,
+          9927.705499999998
+        ],
+        "totalBytes": [
+          10849696,
+          10852210
+        ],
+        "requests": [
+          163,
+          165
+        ],
+        "documentBytes": [
+          83827,
+          83838
+        ],
+        "pageCssBytes": [
+          36789,
+          36834
+        ],
+        "heroImageBytes": [
+          0,
+          0
+        ],
+        "dom": [
+          2757,
+          2757
+        ],
+        "mainThread": [
+          4246.523999999957,
+          5489.103999999889
+        ],
+        "observedFCP": [
+          2349,
+          2470
+        ],
+        "observedLCP": [
+          2349,
+          2470
+        ],
+        "observedSI": [
+          2579,
+          2708
+        ]
+      },
+      "cpuMedian": {
+        "scriptEvaluation": 1746.635999999935,
+        "other": 1667.1599999999382,
+        "styleLayout": 508.63599999999997,
+        "scriptParseCompile": 261.98000000000013,
+        "paintCompositeRender": 115.49600000000729,
+        "parseHTML": 64.11200000000001,
+        "garbageCollection": 42.79599999999996
+      }
+    },
+    "desktop-images": {
+      "count": 3,
+      "median": {
+        "score": 80.0,
+        "fcp": 1658.236,
+        "lcp": 1938.9,
+        "tbt": 0,
+        "cls": 0.0021776067934068826,
+        "speedIndex": 2510.5705748499686,
+        "totalBytes": 10970904,
+        "requests": 172,
+        "documentBytes": 57601,
+        "pageCssBytes": 33078,
+        "heroImageBytes": 139135,
+        "dom": 1547,
+        "mainThread": 874.0079999999958,
+        "observedFCP": 746,
+        "observedLCP": 746,
+        "observedSI": 1884
+      },
+      "range": {
+        "score": [
+          72.0,
+          90.0
+        ],
+        "fcp": [
+          1070.596,
+          2239.238
+        ],
+        "lcp": [
+          1316.145,
+          2239.238
+        ],
+        "tbt": [
+          0,
+          0
+        ],
+        "cls": [
+          0.0021776067934068826,
+          0.0021776067934068826
+        ],
+        "speedIndex": [
+          2130.122490651038,
+          3846.561750661349
+        ],
+        "totalBytes": [
+          10970750,
+          10971476
+        ],
+        "requests": [
+          171,
+          172
+        ],
+        "documentBytes": [
+          57582,
+          57603
+        ],
+        "pageCssBytes": [
+          32837,
+          33154
+        ],
+        "heroImageBytes": [
+          139132,
+          139141
+        ],
+        "dom": [
+          1547,
+          1547
+        ],
+        "mainThread": [
+          839.5089999999994,
+          912.8299999999937
+        ],
+        "observedFCP": [
+          628,
+          2089
+        ],
+        "observedLCP": [
+          628,
+          2089
+        ],
+        "observedSI": [
+          1777,
+          3224
+        ]
+      },
+      "cpuMedian": {
+        "other": 329.42099999999664,
+        "scriptEvaluation": 308.50699999999966,
+        "styleLayout": 100.27299999999993,
+        "scriptParseCompile": 62.37,
+        "paintCompositeRender": 36.76999999999939,
+        "parseHTML": 13.935000000000006,
+        "garbageCollection": 7.097000000000007
+      }
+    },
+    "desktop-html": {
+      "count": 3,
+      "median": {
+        "score": 91.0,
+        "fcp": 1214.7685000000001,
+        "lcp": 1214.7685000000001,
+        "tbt": 43.41799999999989,
+        "cls": 0.0021776067934068826,
+        "speedIndex": 1925.971966824415,
+        "totalBytes": 10859131,
+        "requests": 166,
+        "documentBytes": 83828,
+        "pageCssBytes": 36789,
+        "heroImageBytes": 0,
+        "dom": 2757,
+        "mainThread": 1130.3309999999803,
+        "observedFCP": 503,
+        "observedLCP": 503,
+        "observedSI": 1629
+      },
+      "range": {
+        "score": [
+          84.0,
+          95.0
+        ],
+        "fcp": [
+          1015.8255000000001,
+          1228.8405
+        ],
+        "lcp": [
+          1015.8255000000001,
+          1228.8405
+        ],
+        "tbt": [
+          0,
+          172
+        ],
+        "cls": [
+          0.0021776067934068826,
+          0.0021776067934068826
+        ],
+        "speedIndex": [
+          1516.118978903056,
+          2604.3510081847935
+        ],
+        "totalBytes": [
+          10279877,
+          10862076
+        ],
+        "requests": [
+          165,
+          167
+        ],
+        "documentBytes": [
+          83826,
+          83856
+        ],
+        "pageCssBytes": [
+          36306,
+          36820
+        ],
+        "heroImageBytes": [
+          0,
+          0
+        ],
+        "dom": [
+          2757,
+          2757
+        ],
+        "mainThread": [
+          961.0689999999914,
+          1400.4629999999688
+        ],
+        "observedFCP": [
+          441,
+          651
+        ],
+        "observedLCP": [
+          441,
+          651
+        ],
+        "observedSI": [
+          1565,
+          2293
+        ]
+      },
+      "cpuMedian": {
+        "scriptEvaluation": 431.99899999998996,
+        "other": 393.0149999999937,
+        "styleLayout": 144.25000000000017,
+        "paintCompositeRender": 58.38699999999658,
+        "scriptParseCompile": 64.054,
+        "parseHTML": 17.967999999999996,
+        "garbageCollection": 11.449999999999998
+      }
+    }
+  }
+}
