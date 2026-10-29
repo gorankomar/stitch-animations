@@ -71,3 +71,7 @@ A regression test first reproduced the stale completion revealing dots at the ne
 ## Landscape spacing refinement — 2026-10-29
 
 At the user's clarification, tighten the complete nine-dot Landscape arrangement, rather than moving only the two endpoints. Scale every dot's angular offset from the top of its ring by 0.9: inner angles -127.8/-52.2°, middle -135.9/-90/-44.1°, outer -158.4/-117/-63/-21.6°. This reduces spacing consistently by 10% along each arc and keeps endpoint dots away from the ring's tapered ends. Compact, component appearance and timing remain unchanged. Runtime, static fallbacks, saved Webflow draft embed and localhost markup are synchronized. The 15 relevant motion/geometry tests pass, including static/runtime alignment across formats and counts. Browser review checked both Landscape widths. Motion remains local pending staging.
+
+## Staging delivery — 2026-10-29
+
+All approved changes are merged in PR #61 and staging-verified at `94bba7a2d6da02df2751348a75275863020a1eaf`. Compact/Landscape, ring-count geometry, reveal and immediate Pointer Follow now run through the permanent Playground staging loader. See [release evidence](../releases/2026-10-29-orbit-staging.md). Playground remains a saved draft; production is unchanged. Earlier local-pending notes above are historical preparation states.
