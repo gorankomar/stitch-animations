@@ -1,3 +1,5 @@
+@import "../../embeds/orbit-graphic/orbit-graphic.css";
+@import "../../embeds/orbit-graphic/ring-count-fallback.css";
 .orbit_wrap {
   --ring-count: 3;
   --ring-base-radius: 32cqh;
