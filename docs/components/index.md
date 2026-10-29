@@ -65,3 +65,5 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Onboarding customer (Platform Screens draft): [notes](../../src/embeds/platform/ONBOARDING-CUSTOMER.md), contextual Controls sidebar with group/title/item slots and complete reusable 716.2 × 1534 workflow.
 
 - Workflow Flexibility: [notes](../../src/embeds/WORKFLOW-FLEXIBILITY.md), five-window stack with hard upward reveals, 2.5-second holds and downward rotation; Playground draft.
+
+- Omnichannel onboarding flows: [notes](omnichannel-onboarding.md), reusable native Cards screen and flexible centered Lulu signup modal; upward reveals, gentle pointer follow and User Onboarding loading-line sweep.

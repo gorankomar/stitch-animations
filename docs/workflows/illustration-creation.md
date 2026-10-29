@@ -4,7 +4,7 @@ Inputs: Figma selection URL, target Webflow component/page if known, requested c
 
 ## Defaults and destination
 
-Create and verify every new illustration in the **Animations Playground** Webflow page (site `6823036cd77b3093eaf9154d`, page `6ab4079ac7ca32e3a6c168c8`). Create reusable components as needed and add requested animation there before inserting them into other pages. Save as a draft unless another completion stage is explicitly requested.
+Create and verify every new illustration in the **Animations Playground** Webflow page (site `6823036cd77b3093eaf9154d`, page `6ab4079ac7ca32e3a6c168c8`). Create each illustration as a reusable component with portable interactions in Animations Playground. The user places those component instances on their destination pages; do not ask for placement or insert them elsewhere unless explicitly requested. Inspect existing user-placed instances during an authorized release and make sure their interactions travel with the component. Save as a draft unless another completion stage is explicitly requested.
 
 Use the body font family configured in Webflow for all illustration text. Do not copy the Figma illustration's font family. Preserve its proportional text metrics, hierarchy, and intended wrapping using the site's body font.
 
