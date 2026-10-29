@@ -44,3 +44,5 @@ The shared loader mounts Reveal on data-anim sections. Import card-lift.css thro
 Pointer Follow's data-follow-root is a consumer convention, not automatic mounting by the helper. Attribute presence enables followers: data-follow-mouse=false still matches. Call the returned disposer at teardown.
 
 See [animation recipes](../animation-recipes.md) for detailed markup and tuning. Add new reusable effects here with their contract, CSS, options, example consumer, and cleanup.
+
+Pointer Follow also accepts `independentTranslate: true` for consumers with an active entrance transform, and `isEnabled: () => boolean` to gate its clock. The default transform-based behavior is unchanged. Orbit Graphic uses individual CSS `translate` so pointer motion can run during ring reveal and Dot pop; see [Orbit Graphic](../components/orbit-graphic.md).

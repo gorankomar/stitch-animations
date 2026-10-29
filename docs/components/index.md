@@ -65,3 +65,15 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Onboarding customer (Platform Screens draft): [notes](../../src/embeds/platform/ONBOARDING-CUSTOMER.md), contextual Controls sidebar with group/title/item slots and complete reusable 716.2 × 1534 workflow.
 
 - Workflow Flexibility: [notes](../../src/embeds/WORKFLOW-FLEXIBILITY.md), five-window stack with hard upward reveals, 2.5-second holds and downward rotation; Playground draft.
+
+- Bilateral and syndicated lending: [notes](bilateral-lending.md), reusable Onboarding Customer / Cards screen stack with hero surfaces, proportional perspective and reduced-motion-aware hover; Playground and Loans page drafts.
+
+- Omnichannel onboarding flows: [notes](omnichannel-onboarding.md), native Cards screen and flexible centered Lulu signup modal; upward reveals, gentle pointer follow and User Onboarding loading-line sweep; Playground draft only.
+
+- Credit Decisioning Workflows: [notes](credit-decisioning-workflows.md), shared lending window stack with Cards Screen, populated Customer Details Window Graphic and full shared grid; Playground draft only.
+
+- Loan account management: [notes](loan-account-management.md), populated Ledger Transaction Detail screen with native Create ledger category modal, existing US flag, onboarding upward reveals and gentle pointer follow; Playground draft only.
+
+## Orbit Graphic
+
+[Orbit Graphic](orbit-graphic.md): reusable Dots → Dot → Icon slots, proportional parent-width composition, immediate Pointer Follow during the existing pop-in. Compact/Landscape variants and Number of rings (1–6/default 3). Webflow draft and [staging release](../releases/2026-10-29-orbit-staging.md) verified; Playground remains unpublished.

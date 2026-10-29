@@ -10,7 +10,7 @@ const SINGLE_OFFSET_MULTIPLIER = 0.55;
 const RETURN_FACTOR = 0.45;
 const STOP_EPSILON = 0.02;
 
-export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
+export function createFollowGroup({ root, selector = FOLLOW_SELECTOR, independentTranslate = false, isEnabled = () => true } = {}) {
   if (typeof window === 'undefined' || !root) return () => {};
 
   const elements = qsa(selector, root).filter((node) => node instanceof HTMLElement);
@@ -23,6 +23,8 @@ export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
     offsetOverride: resolveNumber(el.dataset.maxOffset),
     axis: el.dataset.axis ?? 'both',
     baseTransform: captureBaseTransform(el),
+    originalTranslate: el.style.translate,
+    originalWillChange: el.style.willChange,
     currentX: 0,
     currentY: 0
   }));
@@ -44,7 +46,7 @@ export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
       layer.strengthOverride != null
         ? layer.strengthOverride * RETURN_FACTOR
         : layer.strength * RETURN_FACTOR;
-    layer.el.style.willChange = 'transform';
+    layer.el.style.willChange = independentTranslate ? 'translate' : 'transform';
   });
 
   let targetX = 0;
@@ -73,6 +75,7 @@ export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
   };
 
   const tick = () => {
+    if (!isEnabled()) { rafId = null; return; }
     let shouldContinue = pointerActive;
     layers.forEach((layer) => {
       const targetTranslateX = layer.axis === 'y' ? 0 : targetX * layer.maxOffset;
@@ -89,6 +92,10 @@ export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
       }
 
       const translate = `translate3d(${layer.currentX.toFixed(2)}px, ${layer.currentY.toFixed(2)}px, 0)`;
+      if (independentTranslate) {
+        layer.el.style.translate = `${layer.currentX.toFixed(2)}px ${layer.currentY.toFixed(2)}px`;
+        return;
+      }
       layer.el.style.transform =
         layer.baseTransform && layer.baseTransform !== 'none'
           ? `${layer.baseTransform} ${translate}`
@@ -103,6 +110,7 @@ export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
   };
 
   const setTargetFromEvent = (event) => {
+    if (!isEnabled()) return;
     const point = getPointerPoint(event);
     if (!point) return;
     const width = bounds.width || 1;
@@ -122,6 +130,7 @@ export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
   };
 
   const handlePointerEnter = () => {
+    if (!isEnabled()) return;
     pointerActive = true;
     updateBounds();
     startLoop();
@@ -156,8 +165,9 @@ export function createFollowGroup({ root, selector = FOLLOW_SELECTOR } = {}) {
     root.removeEventListener('touchend', resetTarget);
     root.removeEventListener('touchcancel', resetTarget);
     layers.forEach((layer) => {
-      layer.el.style.removeProperty('transform');
-      layer.el.style.removeProperty('will-change');
+      if (independentTranslate) layer.el.style.translate = layer.originalTranslate;
+      else layer.el.style.removeProperty('transform');
+      layer.el.style.willChange = layer.originalWillChange;
     });
   };
 }
