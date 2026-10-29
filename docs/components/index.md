@@ -68,7 +68,7 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 
 - Bilateral and syndicated lending: [notes](bilateral-lending.md), reusable Onboarding Customer / Cards screen stack with hero surfaces, proportional perspective and reduced-motion-aware hover; Playground and Loans page drafts.
 
-- Omnichannel onboarding flows: [notes](omnichannel-onboarding.md), native Cards screen and flexible centered Lulu signup modal; upward reveals, gentle pointer follow and User Onboarding loading-line sweep; Playground draft only.
+- Omnichannel onboarding flows: [notes](omnichannel-onboarding.md), reusable native Cards screen and flexible centered Lulu signup modal; upward reveals, gentle pointer follow and User Onboarding loading-line sweep.
 
 - Credit Decisioning Workflows: [notes](credit-decisioning-workflows.md), shared lending window stack with Cards Screen, populated Customer Details Window Graphic and full shared grid; Playground draft only.
 

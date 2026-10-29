@@ -17,3 +17,7 @@ Verified Designer and native Preview. Desktop parent 551.60px: English stage 324
 Playground metadata confirmed draft:true. No other Webflow page was edited; no site/shared definition or loader was modified; no publication, GitHub merge, staging activation or production promotion.
 
 Final verification: Preview root receives oc-revealing on scroll; both reveal tracks resolve to cubic-bezier(0.11,0.61,0.27,0.99) for movement and linear for opacity. Final opacities are .55 and 1, with identity reveal transforms. Mobile Preview at 345px parent width is 203.16px high, modal fully contained and centered within .01px; pointer transform is none at the mobile breakpoint. Desktop Preview restored. Screenshot: `/tmp/omnichannel-onboarding-playground.jpg`.
+
+## Production preparation, 2026-10-29
+
+The user created reusable component `3a021236-71fa-3378-02f4-9ac3a82bbc1a` and placed instance `a4d85ccf-3ff0-ff82-2c43-c96367c3821a` on Onboarding (`683985973318268374ad45e6`). Both IX3 interactions were changed from Playground-only page scope to this component scope, so user-placed instances receive motion. The user owns placement; future illustrations must be reusable components in Playground with portable motion. Release evidence will be recorded separately.

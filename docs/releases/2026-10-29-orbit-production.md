@@ -10,3 +10,7 @@ User authorized production on 2026-10-29. The exact staging-verified release is 
 - No Webflow publication, custom-code changes, or Playground publication performed. This animation-only promotion needs no page publication.
 
 Outcome: **production deployment pending approval**, not production release verified. After approval, verify workflow/invalidation completion, served production pointer and affected live interactions before recording completion.
+
+## Approval and deployment completed
+
+The user approved the protected deployment. Workflow #87 completed successfully, and the served production channel was independently confirmed to import `94bba7a2d6da02df2751348a75275863020a1eaf`. The user subsequently reported publishing the production site and confirmed everything works. That Webflow publication and interaction verification were performed by the user, not the agent. No additional production activation or Webflow publication is part of the subsequent GitHub/local-checkout synchronization.
