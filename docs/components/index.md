@@ -67,3 +67,7 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Workflow Flexibility: [notes](../../src/embeds/WORKFLOW-FLEXIBILITY.md), five-window stack with hard upward reveals, 2.5-second holds and downward rotation; Playground draft.
 
 - Omnichannel onboarding flows: [notes](omnichannel-onboarding.md), reusable native Cards screen and flexible centered Lulu signup modal; upward reveals, gentle pointer follow and User Onboarding loading-line sweep.
+
+## Orbit Graphic
+
+[Orbit Graphic](orbit-graphic.md): reusable Dots → Dot → Icon slots, proportional parent-width composition, immediate Pointer Follow during the existing pop-in. Webflow draft saved; revised motion is local pending an authorized staging release.
