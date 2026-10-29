@@ -66,7 +66,13 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 
 - Workflow Flexibility: [notes](../../src/embeds/WORKFLOW-FLEXIBILITY.md), five-window stack with hard upward reveals, 2.5-second holds and downward rotation; Playground draft.
 
+- Bilateral and syndicated lending: [notes](bilateral-lending.md), reusable Onboarding Customer / Cards screen stack with hero surfaces, proportional perspective and reduced-motion-aware hover; Playground and Loans page drafts.
+
 - Omnichannel onboarding flows: [notes](omnichannel-onboarding.md), reusable native Cards screen and flexible centered Lulu signup modal; upward reveals, gentle pointer follow and User Onboarding loading-line sweep.
+
+- Credit Decisioning Workflows: [notes](credit-decisioning-workflows.md), shared lending window stack with Cards Screen, populated Customer Details Window Graphic and full shared grid; Playground draft only.
+
+- Loan account management: [notes](loan-account-management.md), populated Ledger Transaction Detail screen with native Create ledger category modal, existing US flag, onboarding upward reveals and gentle pointer follow; Playground draft only.
 
 ## Orbit Graphic
 
