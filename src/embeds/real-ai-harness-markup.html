@@ -1,0 +1,31 @@
+<div class="real-ai-harness">
+<div class="harness-frame" data-real-ai-harness>
+  <div class="harness-card" data-harness-reveal>
+    <div class="harness-card-header">
+      <img class="harness-logo" src="/src/embeds/assets/real-ai-harness/agent.svg" alt="">
+      <div class="harness-identity"><strong>Collections follow-up agent</strong><br>Custom agent · built in Agent Studio</div>
+      <div class="harness-steps">
+        <span><img src="/src/embeds/assets/real-ai-harness/check.svg" alt="">Build</span>
+        <span><img src="/src/embeds/assets/real-ai-harness/check.svg" alt="">Test</span>
+        <span>Publish</span>
+      </div>
+    </div>
+    <p class="harness-description"><strong>Description</strong><br>Review accounts 31–60 days past due and prepare a masked follow-up list for the collections team.</p>
+  </div>
+  <div class="harness-details">
+    <p class="harness-title" data-harness-reveal>Governed harness</p>
+    <div class="harness-tags" data-harness-reveal><span>Permissions</span><span>Approvals</span><span>Guardrails</span><span>Audit</span></div>
+    <div class="harness-audit" data-harness-reveal>
+      <table class="harness-rules">
+        <thead><tr><th scope="col">Rules</th><th scope="col">What matched</th><th scope="col">Decision</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">No bulk export of personal data</th><td>SSNs, Phone No, Account No</td><td><span>Blocked</span></td></tr>
+          <tr><th scope="row">Customer data stays inside Stitch</th><td>Email to Gmail</td><td><span>Blocked</span></td></tr>
+          <tr><th scope="row">Masked list in chat</th><td>31–60 day bucket, fields masked</td><td><span class="harness-allowed">Allowed</span></td></tr>
+        </tbody>
+      </table>
+      <p class="harness-footer">Every decision is recorded in the audit log</p>
+    </div>
+  </div>
+</div>
+</div>

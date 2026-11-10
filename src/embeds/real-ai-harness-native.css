@@ -1,0 +1,65 @@
+.real-ai-harness { width:100%; container-type:inline-size; }
+.harness-frame {
+  --hu:.186567164cqi;
+  --harness-edge:#e7e7e7;
+  --harness-radius:calc(8 * var(--hu));
+  box-sizing:border-box; aspect-ratio:536/399; overflow:hidden;
+  display:flex; flex-direction:column; justify-content:center; gap:calc(12 * var(--hu));
+  padding:calc(16 * var(--hu)) calc(24 * var(--hu));
+  border:calc(1 * var(--hu)) solid var(--harness-edge); border-radius:var(--harness-radius);
+  background:#f6f6f6; color:#121212;
+  font-size:calc(12 * var(--hu)); line-height:calc(18 * var(--hu));
+}
+.harness-frame p { margin:0; }
+.harness-frame strong, .harness-title, .harness-frame th { font-weight:500; }
+.harness-card {
+  flex:none; padding:calc(12 * var(--hu));
+  border:calc(1 * var(--hu)) solid #e3e3e3; border-radius:var(--harness-radius);
+  box-shadow:0 calc(1 * var(--hu)) calc(2 * var(--hu)) #0000000a; background:#fff;
+}
+.harness-card-header, .harness-steps, .harness-tags { display:flex; align-items:center; }
+.harness-card-header { gap:calc(8 * var(--hu)); }
+.harness-logo {
+  flex:none; box-sizing:content-box; padding:calc(7 * var(--hu));
+  width:calc(20 * var(--hu)); height:calc(20 * var(--hu));
+  border:calc(1 * var(--hu)) solid var(--harness-edge); border-radius:calc(6 * var(--hu));
+}
+.harness-identity, .harness-description { color:#6d6d6d; }
+.harness-identity strong, .harness-title { color:#121212; font-size:calc(14 * var(--hu)); line-height:calc(20 * var(--hu)); }
+.harness-steps { margin-inline-start:auto; gap:calc(4 * var(--hu)); }
+.harness-steps span, .harness-tags span {
+  display:flex; align-items:center; gap:calc(2 * var(--hu));
+  border:calc(1 * var(--hu)) solid var(--harness-edge); border-radius:999px;
+  font-size:calc(10 * var(--hu)); line-height:calc(14 * var(--hu)); font-weight:500; color:#3d3d3d;
+}
+.harness-steps span { padding:calc(2 * var(--hu)) calc(6 * var(--hu)) calc(2 * var(--hu)) calc(4 * var(--hu)); background:#f6f6f6; }
+.harness-steps img { width:calc(7.4 * var(--hu)); margin-inline:calc(1.8 * var(--hu)); }
+.harness-steps span:last-child { padding-inline:calc(7 * var(--hu)); border-color:#121212; background:#121212; color:#fff; }
+.harness-frame .harness-description {
+  margin-block-start:calc(10 * var(--hu)); padding-block-start:calc(10 * var(--hu));
+  border-block-start:calc(1 * var(--hu)) solid #efefef;
+}
+.harness-description strong { display:inline-block; margin-bottom:calc(2 * var(--hu)); color:#454545; }
+.harness-details { flex:none; }
+.harness-tags { gap:calc(6 * var(--hu)); margin-block:calc(6 * var(--hu)) calc(10 * var(--hu)); }
+.harness-tags span { padding:calc(3 * var(--hu)) calc(8 * var(--hu)); background:#fff; }
+.harness-audit { overflow:hidden; border:calc(1 * var(--hu)) solid var(--harness-edge); border-radius:var(--harness-radius); }
+.harness-rules {
+  width:100%; border-spacing:0; overflow:hidden; border-radius:var(--harness-radius);
+  font-size:calc(11 * var(--hu)); line-height:calc(16 * var(--hu)); color:#4b4b4b; background:#fff;
+}
+.harness-rules :is(th,td) { padding-inline:calc(12.24 * var(--hu)); text-align:left; white-space:nowrap; }
+.harness-rules thead th { height:calc(27.54 * var(--hu)); background:#f9f9f9; font-size:calc(10 * var(--hu)); }
+.harness-rules tbody :is(th,td) { height:calc(30.6 * var(--hu)); border-block-start:calc(.765 * var(--hu)) solid var(--harness-edge); }
+.harness-rules tbody th { color:#3d3d3d; width:39%; }
+.harness-rules :is(th,td):last-child { width:calc(68.85 * var(--hu)); box-sizing:border-box; }
+.harness-rules td span {
+  display:inline-block; padding-inline:calc(4.59 * var(--hu)); border-radius:calc(3.06 * var(--hu));
+  background:#fff0f0; color:#d00505; font-size:calc(9.18 * var(--hu)); line-height:calc(12.24 * var(--hu)); font-weight:500;
+}
+.harness-rules .harness-allowed { background:#edfcf2; color:#087443; }
+.harness-footer {
+  width:93.4%; box-sizing:border-box; padding:calc(4 * var(--hu)) calc(11 * var(--hu));
+  border-block-start:calc(1 * var(--hu)) solid #efefef;
+  font-size:calc(11 * var(--hu)); line-height:calc(16 * var(--hu)); background:#fafafa; color:#666;
+}

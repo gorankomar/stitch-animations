@@ -1,3 +1,4 @@
+import { init as initRealAiHarness } from '../embeds/real-ai-harness.js';
 import { init as initRealAiAgents } from '../embeds/real-ai-agents.js';
 import { init as initRealAiCopilot } from '../embeds/real-ai-copilot.js';
 import '../embeds/collections-graphic.js';
@@ -76,6 +77,7 @@ ready(() => {
   [
     initRealAiCopilot,
     initRealAiAgents,
+    initRealAiHarness,
     initCollections,
     initAccess,
     initReference,
