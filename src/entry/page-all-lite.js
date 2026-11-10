@@ -5,6 +5,10 @@ import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
   {
+    selector: '[data-real-ai-agents]',
+    load: async () => (await import('../embeds/real-ai-agents.js')).init(document)
+  },
+  {
     selector: '[data-real-ai-copilot]',
     load: async () => {
       const module = await import('../embeds/real-ai-copilot.js');

@@ -1,3 +1,4 @@
+import { init as initRealAiAgents } from '../embeds/real-ai-agents.js';
 import { init as initRealAiCopilot } from '../embeds/real-ai-copilot.js';
 import '../embeds/collections-graphic.js';
 import '../embeds/workflow-flexibility.js';
@@ -74,6 +75,7 @@ ready(() => {
   initZoomLenses(document);
   [
     initRealAiCopilot,
+    initRealAiAgents,
     initCollections,
     initAccess,
     initReference,
