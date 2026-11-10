@@ -5,6 +5,10 @@ import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
   {
+    selector: '[data-real-ai-product], .lp-solution-screen:has([data-product-bar])',
+    load: async () => (await import('../embeds/real-ai-product.js')).init(document)
+  },
+  {
     selector: '[data-real-ai-harness]',
     load: async () => (await import('../embeds/real-ai-harness.js')).init(document)
   },
