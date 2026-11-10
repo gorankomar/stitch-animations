@@ -1,0 +1,192 @@
+<style>
+.lp-solution-tabs:has(+ .lp-solution-limits) {
+  margin-bottom: 0;
+  border-bottom: 0;
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+.lp-solution-tabs .lp-solution-tab-menu { position: relative; }
+.lp-solution-tabs .lp-solution-tab { position: relative; }
+.lp-solution-tabs .lp-solution-tab.w--current {
+  background: transparent;
+  color: #121212;
+  font-weight: 700;
+}
+[data-sliding-tabs-ready] > .w-tab-menu {
+  position: relative;
+  border-bottom: 0;
+}
+[data-sliding-tabs-ready] > .w-tab-menu::after {
+  content: "";
+  position: absolute;
+  inset: auto var(--tabs-inset-right, 0px) 0 var(--tabs-inset-left, 0px);
+  height: .1875rem;
+  background: linear-gradient(to right, #ff3609 var(--tabs-progress), #e7e7e7 var(--tabs-progress));
+  pointer-events: none;
+}
+[data-sliding-tabs-ready] > .w-tab-content {
+  overflow: hidden;
+  animation-duration: var(--motion-duration-default);
+}
+[data-sliding-tabs-ready] > .w-tab-content[data-tabs-sliding] {
+  display: grid;
+}
+[data-tabs-sliding] > .w--tab-active,
+[data-tabs-sliding] > [data-tabs-outgoing] {
+  display: block;
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+@media screen and (max-width: 767px) {
+  .lp-solution-tabs .lp-solution-tab { padding: 1rem .375rem .625rem; font-size: .875rem; }
+  .lp-solution-limits { padding-inline: 1rem; }
+}
+</style>
+<script>
+window.Webflow = window.Webflow || [];
+window.Webflow.push(function () {
+  const dwell = 5000;
+  const threshold = 0.25;
+  const brakeTime = 1000;
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+  const hover = matchMedia("(any-hover: hover)");
+
+  document.querySelectorAll("[data-sliding-tabs]").forEach((root) => {
+    const menu = root.querySelector(":scope > .w-tab-menu");
+    const content = root.querySelector(":scope > .w-tab-content");
+    if (!menu || !content || root.hasAttribute("data-sliding-tabs-ready")) return;
+
+    const links = Array.from(menu.children).filter((link) => link.matches(".w-tab-link"));
+    const panes = links.map((link) => Array.from(content.children).find(
+      (pane) => pane.dataset.wTab === link.dataset.wTab
+    ));
+    const active = () => links.findIndex((link) => link.classList.contains("w--current"));
+    let selected = active();
+    if (selected < 0 || links.length < 2 || panes.some((pane) => !pane)) return;
+
+    let position = selected + threshold;
+    let visible = false;
+    let speed = 1;
+    let lastTime;
+    let frame = 0;
+    let outgoing;
+    let slides = [];
+
+    let insetLeft = 0;
+
+    function measureTrack() {
+      const style = getComputedStyle(menu);
+      insetLeft = parseFloat(style.paddingLeft) || 0;
+      menu.style.setProperty("--tabs-inset-left", style.paddingLeft);
+      menu.style.setProperty("--tabs-inset-right", style.paddingRight);
+      render();
+    }
+
+    function render() {
+      const index = Math.floor(position);
+      const link = links[index];
+      const fraction = reduced.matches ? 1 : position - index;
+      menu.style.setProperty("--tabs-progress", link.offsetLeft - insetLeft + link.offsetWidth * fraction + "px");
+    }
+
+    function clearSlide() {
+      for (const slide of slides) slide.cancel();
+      slides = [];
+      if (outgoing) {
+        outgoing.removeAttribute("data-tabs-outgoing");
+        outgoing.inert = false;
+        outgoing = undefined;
+      }
+      content.removeAttribute("data-tabs-sliding");
+    }
+
+    function slideTo(previous, next, forward) {
+      clearSlide();
+      const style = getComputedStyle(content);
+      const easing = style.getPropertyValue("--motion-ease-primary").trim();
+      const time = style.animationDuration;
+      const duration = parseFloat(time) * (time.endsWith("ms") ? 1 : 1000);
+      if (reduced.matches || !duration || !easing) return;
+
+      outgoing = panes[previous];
+      outgoing.setAttribute("data-tabs-outgoing", "");
+      outgoing.inert = true;
+      content.setAttribute("data-tabs-sliding", "");
+      const direction = forward ? 1 : -1;
+      const options = { duration, easing, fill: "both" };
+      slides = [
+        outgoing.animate([{ translate: "0" }, { translate: -direction * 100 + "%" }], options),
+        panes[next].animate([{ translate: direction * 100 + "%" }, { translate: "0" }], options)
+      ];
+      const incoming = slides[1];
+      incoming.onfinish = () => {
+        if (slides[1] === incoming) clearSlide();
+      };
+    }
+
+    function select(next, automatic) {
+      if (next < 0 || next === selected) return;
+      const previous = selected;
+      selected = next;
+      if (!automatic) position = next + threshold;
+      slideTo(previous, next, automatic || next > previous);
+    }
+
+    function targetSpeed() {
+      return (hover.matches && content.matches(":hover")) ||
+        content.matches(":focus-within") || menu.querySelector(":focus-visible") ? 0 : 1;
+    }
+
+    function refresh() {
+      render();
+      if (visible && !document.hidden && !reduced.matches && (speed || targetSpeed())) {
+        if (!frame) frame = requestAnimationFrame(tick);
+      } else {
+        cancelAnimationFrame(frame);
+        frame = 0;
+        lastTime = undefined;
+      }
+    }
+
+    function tick(now) {
+      frame = 0;
+      const delta = lastTime === undefined ? 0 : Math.min(now - lastTime, 50);
+      lastTime = now;
+      const target = targetSpeed();
+      const previousSpeed = speed;
+      speed = target ? Math.min(1, speed + delta / brakeTime) : Math.max(0, speed - delta / brakeTime);
+      position = (position + delta * (previousSpeed + speed) / (2 * dwell)) % links.length;
+      const next = Math.floor((position - threshold + links.length) % links.length);
+      if (next !== selected) {
+        links[next].click();
+        select(active(), true);
+      }
+      refresh();
+    }
+
+    new MutationObserver(() => {
+      select(active(), false);
+      refresh();
+    }).observe(menu, { subtree: true, attributes: true, attributeFilter: ["class"] });
+
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      refresh();
+    }).observe(root);
+    new ResizeObserver(measureTrack).observe(menu);
+    content.addEventListener("pointerenter", refresh);
+    content.addEventListener("pointerleave", refresh);
+    root.addEventListener("focusin", refresh);
+    root.addEventListener("focusout", () => queueMicrotask(refresh));
+    document.addEventListener("visibilitychange", refresh);
+    reduced.addEventListener("change", () => {
+      clearSlide();
+      position = selected + threshold;
+      refresh();
+    });
+    root.setAttribute("data-sliding-tabs-ready", "");
+    measureTrack();
+  });
+});
+</script>
+

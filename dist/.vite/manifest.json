@@ -712,6 +712,16 @@
       "styles/feature-product-variety.DpO7iz4Y.css"
     ]
   },
+  "src/embeds/real-ai-copilot.js": {
+    "file": "feature-real-ai-copilot.js",
+    "name": "feature-real-ai-copilot",
+    "src": "src/embeds/real-ai-copilot.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Cs_CHp-U.js"
+    ]
+  },
   "src/embeds/real-time-approvals.js": {
     "file": "feature-real-time-approvals.js",
     "name": "feature-real-time-approvals",
@@ -1066,6 +1076,7 @@
       "_easing.BUsciq49.js"
     ],
     "dynamicImports": [
+      "src/embeds/real-ai-copilot.js",
       "src/embeds/collections-graphic.js",
       "src/embeds/workflow-flexibility.js",
       "src/embeds/deposits-wallet.js",
@@ -1122,6 +1133,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/real-ai-copilot.js",
       "src/embeds/collections-graphic.js",
       "src/embeds/workflow-flexibility.js",
       "src/embeds/embedded-connectivity.js",

@@ -1,0 +1,97 @@
+.real-ai-copilot {
+  width: 100%;
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.real-ai-copilot-frame {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 536 / 399;
+  border: .187cqi solid #e7e7e7;
+  border-radius: 1.493cqi;
+  background: #f6f6f6;
+  color: #141414;
+}
+
+.real-ai-copilot-card {
+  width: 80.41cqi;
+  border-radius: 2.239cqi;
+  background: white;
+  box-shadow: 0 0 0 .161cqi rgb(234 106 18 / .18),
+    var(--copilot-shadow-x, 0cqi) var(--copilot-shadow-y, 3.856cqi) 8.033cqi -2.571cqi rgb(0 0 0 / .3),
+    var(--copilot-glow-x, 0cqi) var(--copilot-glow-y, 0cqi) 9.64cqi -2.892cqi rgb(234 106 18 / var(--copilot-glow-alpha, .35));
+}
+
+.real-ai-copilot-header,
+.real-ai-copilot-footer,
+.real-ai-copilot-attach,
+.real-ai-copilot-send {
+  display: flex;
+  align-items: center;
+}
+
+.real-ai-copilot-header {
+  gap: 1.679cqi;
+  padding: 2.239cqi 2.985cqi;
+  font-size: 2.612cqi;
+  font-weight: 500;
+  line-height: 3.731cqi;
+}
+
+.real-ai-copilot-icon { width: 2.41cqi; }
+.real-ai-copilot-close { width: 2.985cqi; margin-inline-start: auto; }
+.real-ai-copilot-divider { display: block; width: 100%; height: .187cqi; }
+.real-ai-copilot-prompt {
+  position: relative;
+  margin: 0;
+  padding: 2.985cqi;
+  min-height: 21.08cqi;
+  box-sizing: border-box;
+  font-size: 2.41cqi;
+  line-height: 3.735cqi;
+  overflow-wrap: anywhere;
+}
+
+[data-copilot-copy]::after,
+[data-copilot-typed]::after { content: "|"; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .real-ai-copilot[data-copilot-playing] [data-copilot-copy]::after,
+  .real-ai-copilot[data-copilot-playing] [data-copilot-typed]::after {
+    animation: real-ai-copilot-caret 1s step-end infinite;
+  }
+}
+
+@keyframes real-ai-copilot-caret {
+  50% { opacity: 0; }
+}
+
+.real-ai-copilot-prompt:has([data-copilot-typed]) [data-copilot-copy] { opacity: 0; }
+[data-copilot-typed] { position: absolute; inset: 2.985cqi; }
+
+.real-ai-copilot-footer { gap: 1.493cqi; padding: 2.239cqi; }
+.real-ai-copilot-attach {
+  gap: 1.119cqi;
+  padding: .746cqi 1.493cqi;
+  font-size: 2.239cqi;
+  line-height: 2.985cqi;
+  font-weight: 500;
+}
+.real-ai-copilot-attach img { width: 2.239cqi; }
+.real-ai-copilot-hint {
+  color: #999;
+  font-size: 2.612cqi;
+  line-height: 3.731cqi;
+  letter-spacing: -.052cqi;
+}
+.real-ai-copilot-send {
+  flex: none;
+  margin-inline-start: auto;
+  padding: 1.493cqi;
+  border-radius: 50%;
+  background: #141414;
+}
+.real-ai-copilot-send img { width: 2.985cqi; }
