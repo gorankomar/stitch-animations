@@ -1,3 +1,4 @@
+import { init as initRealAiCopilot } from '../embeds/real-ai-copilot.js';
 import '../embeds/collections-graphic.js';
 import '../embeds/workflow-flexibility.js';
 import '../embeds/embedded-connectivity.js';
@@ -72,6 +73,7 @@ ready(() => {
   initAutoReveals(document);
   initZoomLenses(document);
   [
+    initRealAiCopilot,
     initCollections,
     initAccess,
     initReference,
