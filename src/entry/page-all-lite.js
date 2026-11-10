@@ -4,7 +4,13 @@ import { initAutoReveals } from '../lib/effects/auto-reveal.js';
 import { initZoomLenses } from '../lib/effects/zoom-lens.js';
 
 const resolvers = [
-  {selector: '[data-real-ai-copilot]', load: () => import('../embeds/real-ai-copilot.js')},
+  {
+    selector: '[data-real-ai-copilot]',
+    load: async () => {
+      const module = await import('../embeds/real-ai-copilot.js');
+      module.init(document);
+    }
+  },
   {selector: '[data-collections-graphic]', load: () => import('../embeds/collections-graphic.js')},
   {selector: '[data-workflow-flexibility]', load: () => import('../embeds/workflow-flexibility.js')},
   {selector: '[data-deposits-wallet]', load: () => import('../embeds/deposits-wallet.js')},
