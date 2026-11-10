@@ -118,9 +118,16 @@ window.Webflow.push(function () {
         outgoing.animate([{ translate: "0" }, { translate: -direction * 100 + "%" }], options),
         panes[next].animate([{ translate: direction * 100 + "%" }, { translate: "0" }], options)
       ];
-      const incoming = slides[1];
+      const card = panes[next].querySelector(".real-ai-copilot-card");
+      if (card) {
+        slides.push(card.animate(
+          [{ translate: direction * 16 + "%" }, { translate: "0" }],
+          { ...options, delay: duration * .2 }
+        ));
+      }
+      const incoming = slides.at(-1);
       incoming.onfinish = () => {
-        if (slides[1] === incoming) clearSlide();
+        if (slides.at(-1) === incoming) clearSlide();
       };
     }
 

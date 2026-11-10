@@ -6,6 +6,7 @@
 
 .real-ai-copilot-frame {
   box-sizing: border-box;
+  overflow: hidden;
   display: grid;
   place-items: center;
   width: 100%;
@@ -43,7 +44,7 @@
 
 .real-ai-copilot-icon { width: 2.41cqi; }
 .real-ai-copilot-close { width: 2.985cqi; margin-inline-start: auto; }
-.real-ai-copilot-divider { display: block; width: 100%; height: .187cqi; }
+.real-ai-copilot-divider { display: block; width: 100%; height: .187cqi; background: #e7e7e7; }
 .real-ai-copilot-prompt {
   position: relative;
   margin: 0;
