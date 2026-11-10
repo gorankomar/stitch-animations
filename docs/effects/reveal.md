@@ -85,7 +85,7 @@ Numeric controller `timings.stagger` values are already milliseconds (for exampl
 
 ## Externally clocked tracks
 
-`createRevealTrack(element,{frame,mode,direction,offset,bleed})` returns:
+`createRevealTrack(element,{frame,mode,direction,offset,bleed,travelFraction})` returns:
 
 - `render(progress,ease,opacityProgress)`: progress clamped to 0–1; movement takes the supplied resolved primary easing, Soft opacity takes its separate raw progress, Hard does not write opacity.
 - `measure()`: refresh resting frame/target geometry on resize without retaining the current entrance translation.
@@ -113,3 +113,5 @@ Playground trial: only the first `.header84_component` (`71e47053-f692-e1c9-9f34
 Homepage stacked-window fallback and reduced-motion behavior are documented in [Hero notes](../components/hero.md). The user moved the `early` opt-in from the content header (`data-anim="content-hero"`) to the homepage hero (`data-anim="hero"`) on 2026-10-14. Earlier trial notes above describe the original test arrangement.
 
 As of 2026-10-14, the canonical early bootstrap is installed at the top of the site-wide Head custom code and published on all four production hosts. Pages opt into early behavior with `data-reveal-start="early"`; normal sections retain their visibility trigger. Playground remains Draft. See `docs/releases/2026-10-14-content-hero-production.md` for separate runtime promotion approval status.
+
+For a Hard Reveal track, `travelFraction` defaults to 1. Use 0.5 to start halfway between the resting position and the fully clipped starting position.

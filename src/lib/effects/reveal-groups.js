@@ -19,13 +19,16 @@ export function revealOffset({ mode = 'soft', direction = 'bottom-to-top', frame
 
 // An externally clocked track lets stages pause entrances offscreen/hidden.
 // Layout, reveal and pointer follow must each own a separate wrapper.
-export function createRevealTrack(element, { frame = element.parentElement, mode = element.dataset.revealMode || 'soft', direction = element.dataset.revealDirection || 'bottom-to-top', offset = 24, bleed = 0 } = {}) {
+export function createRevealTrack(element, { frame = element.parentElement, mode = element.dataset.revealMode || 'soft', direction = element.dataset.revealDirection || 'bottom-to-top', offset = 24, bleed = 0, travelFraction = 1 } = {}) {
   const saved = { transform: element.style.transform, opacity: element.style.opacity };
   let displacement = [0, 0];
   const measure = () => {
     const current = element.style.transform;
     element.style.transform = saved.transform;
     displacement = revealOffset({ mode, direction, frame: frame.getBoundingClientRect(), element: element.getBoundingClientRect(), offset, bleed });
+    if (mode === 'hard' && travelFraction !== 1) {
+      displacement = displacement.map(distance => distance * travelFraction);
+    }
     element.style.transform = current;
   };
   measure();

@@ -1,3 +1,4 @@
+import { createRevealTrack } from '../lib/effects/reveal-groups.js';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
 
 const selector = '[data-real-ai-copilot]';
@@ -7,6 +8,23 @@ export const init = stageInitializer(selector, (stage) => {
   const copy = stage.querySelector('[data-copilot-copy]');
   const icon = stage.querySelector('.real-ai-copilot-icon');
   if (!card || !copy || !icon) return;
+
+  const pane = stage.closest('.w-tab-pane');
+  const frame = card.closest('.real-ai-copilot-frame');
+  let entrance;
+
+  function revealCard({ detail: { direction, options, addAnimation } }) {
+    if (!frame) return;
+    entrance?.cancel();
+    const track = createRevealTrack(card, {
+      frame,
+      mode: 'hard',
+      direction,
+      travelFraction: 0.5
+    });
+    entrance = card.animate(track.keyframes(), { ...options, delay: options.duration * 0.2 });
+    addAnimation(entrance);
+  }
 
   const text = copy.textContent;
   const letters = typeof Intl.Segmenter === 'function'
@@ -41,7 +59,6 @@ export const init = stageInitializer(selector, (stage) => {
     if (spin) spin.currentTime = 0;
   }
 
-  const pane = stage.closest('.w-tab-pane');
   const activation = pane && new MutationObserver(() => {
     if (pane.classList.contains('w--tab-active')) start = undefined;
   });
@@ -91,7 +108,10 @@ export const init = stageInitializer(selector, (stage) => {
     throw error;
   }
 
+  pane?.addEventListener('stitch:tab-enter', revealCard);
   return () => {
+    pane?.removeEventListener('stitch:tab-enter', revealCard);
+    entrance?.cancel();
     stop();
     activation?.disconnect();
     restore();
