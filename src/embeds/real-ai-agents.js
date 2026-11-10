@@ -1,0 +1,121 @@
+import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
+import { clampProgress, createDemoCursor, sampleCursor } from '../lib/effects/demo-cursor.js';
+import { createRevealTrack } from '../lib/effects/reveal-groups.js';
+import { getDefaultDurationMs, getFastDurationMs } from '../lib/easing.js';
+import { readMotionEasingCurve } from '../lib/motion.js';
+
+const designWidth = 536;
+
+export const init = stageInitializer('[data-real-ai-agents]', stage => {
+  const frame = stage.querySelector('.agents-frame');
+  const rows = [...stage.querySelectorAll('[data-agents-reveal]')];
+  const cards = [...stage.querySelectorAll('[data-agent]')].slice(0, 2);
+  const toggles = cards.map(card => card.querySelector('.agents-toggle'));
+  const pointer = stage.querySelector('.agents-cursor');
+  const toast = stage.querySelector('.agents-toast');
+  if (!frame || rows.length !== 6 || toggles.length !== 2 || toggles.some(toggle => !toggle) || !pointer || !toast) return;
+
+  const pane = stage.closest('.w-tab-pane');
+  const ease = readMotionEasingCurve();
+  const duration = getDefaultDurationMs() / 1000;
+  const fast = getFastDurationMs() / 1000;
+  const stagger = fast * .25;
+  const arrival = duration + 5 * stagger;
+  const firstClick = arrival + duration;
+  const secondClick = firstClick + 1.25;
+  const exit = secondClick + fast;
+  const end = Math.max(exit + duration, secondClick + 1.2);
+  const tracks = rows.map(row => createRevealTrack(row, {
+    frame, offset: 16
+  }));
+  const cursor = createDemoCursor(pointer, { frame, designWidth });
+  let start, done = false, toastIndex = -1;
+
+  function reset() {
+    start = undefined;
+    done = false;
+    tracks.forEach(track => track.dispose());
+    cursor.hide();
+    cards.forEach(card => {
+      card.removeAttribute('data-agent-active');
+      card.removeAttribute('data-agent-hover');
+    });
+    toast.style.removeProperty('opacity');
+    toast.textContent = '';
+    toastIndex = -1;
+  }
+
+  const active = () => !pane || pane.classList.contains('w--tab-active');
+  let wasActive = active();
+  const activation = pane && new MutationObserver(() => {
+    const current = active();
+    if (current !== wasActive) reset();
+    wasActive = current;
+  });
+
+  const stop = animateStage(stage, {
+    update({ time, reduced, dirty }) {
+      if (reduced || !active()) {
+        if (start !== undefined) reset();
+        return;
+      }
+      if (done) return;
+      if (start === undefined || dirty) tracks.forEach(track => track.measure());
+      start ??= time;
+      const elapsed = time - start;
+      if (elapsed <= arrival) {
+        tracks.forEach((track, i) => track.render((elapsed - i * stagger) / duration, ease));
+      } else {
+        tracks.forEach(track => track.dispose());
+      }
+
+      const clicks = [firstClick, secondClick];
+      cards.forEach((card, i) => card.toggleAttribute('data-agent-active', elapsed >= clicks[i]));
+
+      if (elapsed >= arrival && elapsed < exit + duration) {
+        const rect = frame.getBoundingClientRect();
+        const scale = designWidth / rect.width;
+        const x = value => (value - rect.left - frame.clientLeft) * scale;
+        const y = value => (value - rect.top - frame.clientTop) * scale;
+        const [first, second] = toggles.map(toggle => {
+          const box = toggle.getBoundingClientRect();
+          return { x: x(box.left + box.width / 2), y: y(box.top + box.height / 2) };
+        });
+        const position = sampleCursor([
+          { time: arrival, x: designWidth + 8, y: first.y + 32 },
+          { time: firstClick - fast * .24, ...first },
+          { time: firstClick + fast * .42, ...first },
+          { time: secondClick - fast * .24, ...second },
+          { time: exit, ...second },
+          { time: exit + duration, x: designWidth + 8, y: second.y + 32 }
+        ], elapsed, ease);
+        const opacity = Math.min(clampProgress((elapsed - arrival) / fast), clampProgress((exit + duration - elapsed) / fast));
+        cursor.render({ ...position, opacity, pressed: clicks.some(click => elapsed >= click && elapsed < click + fast * .22) });
+        cards.forEach(card => {
+          const box = card.getBoundingClientRect();
+          card.toggleAttribute('data-agent-hover', opacity > 0 && position.x >= x(box.left) &&
+            position.x <= x(box.right) && position.y >= y(box.top) && position.y <= y(box.bottom));
+        });
+      } else {
+        cursor.hide();
+        cards.forEach(card => card.removeAttribute('data-agent-hover'));
+      }
+
+      const index = elapsed >= secondClick ? 1 : elapsed >= firstClick ? 0 : -1;
+      if (index >= 0) {
+        if (toastIndex !== index) toast.textContent = `✓  ${cards[index].dataset.agent} agent is active now!`;
+        toastIndex = index;
+        const age = elapsed - clicks[index];
+        toast.style.opacity = Math.min(clampProgress(age / (fast * .5)), clampProgress((1.2 - age) / fast));
+      }
+      done = elapsed >= end;
+    }
+  });
+  activation?.observe(pane, { attributes: true, attributeFilter: ['class'] });
+  return () => {
+    activation?.disconnect();
+    stop();
+    reset();
+    cursor.dispose();
+  };
+});
