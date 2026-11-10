@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real AI · Agent Harness</title>
+<link rel="stylesheet" href="/src/embeds/real-ai-harness-native.css">
+<style>
+  :root { --motion-duration-default:770ms; --motion-duration-fast:462ms; --motion-ease-primary:cubic-bezier(.11,.61,.27,.99); }
+  body { margin:24px auto; width:min(536px,calc(100% - 32px)); font-family:"ABC Diatype",Arial,sans-serif; }
+  button { margin-block-end:16px; }
+  .w-tab-pane:not(.w--tab-active) { display:none; }
+</style>
+<button type="button" data-direction="right-to-left">Reveal from right</button>
+<button type="button" data-direction="left-to-right">Reveal from left</button>
+<div class="w-tab-pane w--tab-active"></div>
+<script type="module">
+  import markup from '/src/embeds/real-ai-harness-markup.html?raw';
+  import { init } from '/src/embeds/real-ai-harness.js';
+  const pane = document.querySelector('.w-tab-pane');
+  pane.innerHTML = markup;
+  init(pane);
+  for (const button of document.querySelectorAll('button')) button.onclick = () => {
+    pane.classList.remove('w--tab-active');
+    requestAnimationFrame(() => {
+      pane.classList.add('w--tab-active');
+      pane.dispatchEvent(new CustomEvent('stitch:tab-enter', { detail: { direction: button.dataset.direction } }));
+    });
+  };
+</script>
+</html>

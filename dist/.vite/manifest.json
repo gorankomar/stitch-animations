@@ -77,9 +77,9 @@
     "file": "chunks/soft-path-pulse.CBA2IBFu.js",
     "name": "soft-path-pulse"
   },
-  "_styles.!~{00q}~.js": {
+  "_styles.!~{00r}~.js": {
     "file": "styles/styles.VjsnFFRN.css",
-    "src": "_styles.!~{00q}~.js"
+    "src": "_styles.!~{00r}~.js"
   },
   "_time.SyV53jPj.js": {
     "file": "chunks/time.SyV53jPj.js",
@@ -739,6 +739,19 @@
       "_easing.BaRGQWXz.js"
     ]
   },
+  "src/embeds/real-ai-harness.js": {
+    "file": "chunks/real-ai-harness.BkOVReDb.js",
+    "name": "real-ai-harness",
+    "src": "src/embeds/real-ai-harness.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.Cs_CHp-U.js",
+      "_reveal-groups.DVwP-wal.js",
+      "_easing.BaRGQWXz.js",
+      "_motion.D7xsNJ3J.js",
+      "_time.SyV53jPj.js"
+    ]
+  },
   "src/embeds/real-time-approvals.js": {
     "file": "feature-real-time-approvals.js",
     "name": "feature-real-time-approvals",
@@ -1093,6 +1106,7 @@
       "_easing.BaRGQWXz.js"
     ],
     "dynamicImports": [
+      "src/embeds/real-ai-harness.js",
       "src/embeds/real-ai-agents.js",
       "src/embeds/real-ai-copilot.js",
       "src/embeds/collections-graphic.js",
@@ -1151,6 +1165,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/real-ai-harness.js",
       "src/embeds/real-ai-agents.js",
       "src/embeds/real-ai-copilot.js",
       "src/embeds/collections-graphic.js",
@@ -1204,11 +1219,11 @@
       "_zoom-lens.BoPZu25O.js",
       "src/embeds/revolving-credit.js",
       "_animation-stage.Cs_CHp-U.js",
-      "_demo-cursor.CiMQYEry.js",
       "_reveal-groups.DVwP-wal.js",
       "_time.SyV53jPj.js",
       "_easing.BaRGQWXz.js",
       "_motion.D7xsNJ3J.js",
+      "_demo-cursor.CiMQYEry.js",
       "_expanding-rings.KCV49Jke.js",
       "_soft-path-pulse.CBA2IBFu.js",
       "_dots-field.Cna3brYf.js",
