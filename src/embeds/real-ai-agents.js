@@ -25,9 +25,9 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
   const secondClick = firstClick + 1.25;
   const exit = secondClick + fast;
   const end = Math.max(exit + duration, secondClick + 1.2);
-  const tracks = rows.map(row => createRevealTrack(row, {
-    frame, offset: 16
-  }));
+  let direction = 'right-to-left';
+  const makeTracks = () => rows.map(row => createRevealTrack(row, { frame, mode: 'hard', direction }));
+  let tracks = makeTracks();
   const cursor = createDemoCursor(pointer, { frame, designWidth });
   let start, done = false, toastIndex = -1;
 
@@ -46,17 +46,22 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
   }
 
   const active = () => !pane || pane.classList.contains('w--tab-active');
-  let wasActive = active();
   const activation = pane && new MutationObserver(() => {
-    const current = active();
-    if (current !== wasActive) reset();
-    wasActive = current;
+    if (!active()) reset();
   });
+  function enter({ detail }) {
+    reset();
+    direction = detail.direction === 'left-to-right' ? 'left-to-right' : 'right-to-left';
+    tracks = makeTracks();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      tracks.forEach(track => track.render(0, ease));
+    }
+  }
 
   const stop = animateStage(stage, {
     update({ time, reduced, dirty }) {
       if (reduced || !active()) {
-        if (start !== undefined) reset();
+        reset();
         return;
       }
       if (done) return;
@@ -111,8 +116,10 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
       done = elapsed >= end;
     }
   });
+  pane?.addEventListener('stitch:tab-enter', enter);
   activation?.observe(pane, { attributes: true, attributeFilter: ['class'] });
   return () => {
+    pane?.removeEventListener('stitch:tab-enter', enter);
     activation?.disconnect();
     stop();
     reset();
