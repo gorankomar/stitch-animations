@@ -10,7 +10,8 @@
   button { margin-block-end:16px; }
   .w-tab-pane:not(.w--tab-active) { display:none; }
 </style>
-<button type="button">Replay tab entrance</button>
+<button type="button" data-direction="right-to-left">Reveal from right</button>
+<button type="button" data-direction="left-to-right">Reveal from left</button>
 <div class="w-tab-pane w--tab-active"></div>
 <script type="module">
   import markup from '/src/embeds/real-ai-agents-markup.html?raw';
@@ -18,9 +19,12 @@
   const pane = document.querySelector('.w-tab-pane');
   pane.innerHTML = markup;
   init(pane);
-  document.querySelector('button').onclick = () => {
+  for (const button of document.querySelectorAll('button')) button.onclick = () => {
     pane.classList.remove('w--tab-active');
-    requestAnimationFrame(() => pane.classList.add('w--tab-active'));
+    requestAnimationFrame(() => {
+      pane.classList.add('w--tab-active');
+      pane.dispatchEvent(new CustomEvent('stitch:tab-enter', { detail: { direction: button.dataset.direction } }));
+    });
   };
 </script>
 </html>
