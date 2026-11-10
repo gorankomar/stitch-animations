@@ -118,13 +118,13 @@ window.Webflow.push(function () {
         outgoing.animate([{ translate: "0" }, { translate: -direction * 100 + "%" }], options),
         panes[next].animate([{ translate: direction * 100 + "%" }, { translate: "0" }], options)
       ];
-      const card = panes[next].querySelector(".real-ai-copilot-card");
-      if (card) {
-        slides.push(card.animate(
-          [{ translate: direction * 16 + "%" }, { translate: "0" }],
-          { ...options, delay: duration * .2 }
-        ));
-      }
+      panes[next].dispatchEvent(new CustomEvent("stitch:tab-enter", {
+        detail: {
+          direction: forward ? "right-to-left" : "left-to-right",
+          options,
+          addAnimation: animation => slides.push(animation)
+        }
+      }));
       const incoming = slides.at(-1);
       incoming.onfinish = () => {
         if (slides.at(-1) === incoming) clearSlide();
