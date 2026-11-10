@@ -1,6 +1,6 @@
 {
-  "_animation-stage.Cs_CHp-U.js": {
-    "file": "chunks/animation-stage.Cs_CHp-U.js",
+  "_animation-stage.CzNQUU6r.js": {
+    "file": "chunks/animation-stage.CzNQUU6r.js",
     "name": "animation-stage"
   },
   "_auto-reveal.CvBAHjaX.js": {
@@ -14,6 +14,10 @@
   "_connector.CbYSk2rO.js": {
     "file": "chunks/connector.CbYSk2rO.js",
     "name": "connector"
+  },
+  "_copilot-typing.DxWILm8L.js": {
+    "file": "chunks/copilot-typing.DxWILm8L.js",
+    "name": "copilot-typing"
   },
   "_demo-cursor.CiMQYEry.js": {
     "file": "chunks/demo-cursor.CiMQYEry.js",
@@ -77,9 +81,9 @@
     "file": "chunks/soft-path-pulse.CBA2IBFu.js",
     "name": "soft-path-pulse"
   },
-  "_styles.!~{00r}~.js": {
+  "_styles.!~{00s}~.js": {
     "file": "styles/styles.VjsnFFRN.css",
-    "src": "_styles.!~{00r}~.js"
+    "src": "_styles.!~{00s}~.js"
   },
   "_time.SyV53jPj.js": {
     "file": "chunks/time.SyV53jPj.js",
@@ -101,13 +105,13 @@
     ]
   },
   "src/animations/access/index.js": {
-    "file": "chunks/index.CLFb_HbQ.js",
+    "file": "chunks/index.lEz1sFd8.js",
     "name": "index",
     "src": "src/animations/access/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_connector.CbYSk2rO.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ],
     "css": [
       "styles/index._VSpLHAq.css"
@@ -283,13 +287,13 @@
     ]
   },
   "src/animations/reference/index.js": {
-    "file": "chunks/index.DRx-zz92.js",
+    "file": "chunks/index.Al0B8G2T.js",
     "name": "index",
     "src": "src/animations/reference/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_connector.CbYSk2rO.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ],
     "css": [
       "styles/index.CU8FwjsS.css"
@@ -313,13 +317,13 @@
     ]
   },
   "src/animations/webhook/index.js": {
-    "file": "chunks/index.CQPbNiG0.js",
+    "file": "chunks/index.Mf3WcpfV.js",
     "name": "index",
     "src": "src/animations/webhook/index.js",
     "isDynamicEntry": true,
     "imports": [
       "_connector.CbYSk2rO.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ],
     "css": [
       "styles/index.C4uz-dYA.css"
@@ -347,7 +351,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_expanding-rings.KCV49Jke.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ]
   },
   "src/embeds/buy-now-pay-later.js": {
@@ -357,7 +361,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_follow-group.DtSFmxkQ.js",
       "_soft-path-pulse.CBA2IBFu.js",
@@ -374,7 +378,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "src/lib/effects/code-scroll.js",
       "_follow-group.DtSFmxkQ.js",
@@ -395,7 +399,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_follow-group.DtSFmxkQ.js",
       "_dots-field.Cna3brYf.js",
@@ -413,7 +417,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_motion.D7xsNJ3J.js"
     ]
   },
@@ -424,7 +428,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_path-pulse.BGc1pa4x.js",
       "_connector.CbYSk2rO.js"
     ]
@@ -436,7 +440,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ]
   },
   "src/embeds/create-card.js": {
@@ -457,7 +461,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_easing.BaRGQWXz.js",
       "_reveal-groups.DVwP-wal.js",
       "_connector.CbYSk2rO.js",
@@ -471,7 +475,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_expanding-rings.KCV49Jke.js",
       "_soft-path-pulse.CBA2IBFu.js",
@@ -490,7 +494,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_value-counter.BXLPe_ym.js",
       "_follow-group.DtSFmxkQ.js",
@@ -519,7 +523,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_follow-group.DtSFmxkQ.js",
       "_value-counter.BXLPe_ym.js",
@@ -537,7 +541,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_path-pulse.BGc1pa4x.js",
       "_dots-field.Cna3brYf.js",
       "_motion.D7xsNJ3J.js",
@@ -554,7 +558,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_reveal-groups.DVwP-wal.js",
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_time.SyV53jPj.js",
       "_easing.BaRGQWXz.js"
     ]
@@ -567,7 +571,7 @@
     "isDynamicEntry": true,
     "imports": [
       "_expanding-rings.KCV49Jke.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ]
   },
   "src/embeds/fallback-retry.js": {
@@ -577,7 +581,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_upward-carousel.5gdOrkXc.js",
       "_dots-field.Cna3brYf.js",
       "_motion.D7xsNJ3J.js",
@@ -606,7 +610,7 @@
       "_seamless-marquee.3JGbAH9P.js",
       "_expanding-rings.KCV49Jke.js",
       "_follow-group.DtSFmxkQ.js",
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
     ]
@@ -618,7 +622,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_demo-cursor.CiMQYEry.js",
       "_follow-group.DtSFmxkQ.js",
@@ -637,7 +641,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_soft-path-pulse.CBA2IBFu.js",
       "_dots-field.Cna3brYf.js",
@@ -654,7 +658,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_demo-cursor.CiMQYEry.js",
       "_reveal-groups.DVwP-wal.js",
       "_easing.BaRGQWXz.js",
@@ -672,7 +676,7 @@
       "_seamless-marquee.3JGbAH9P.js",
       "_expanding-rings.KCV49Jke.js",
       "_follow-group.DtSFmxkQ.js",
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
     ]
@@ -684,7 +688,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_value-counter.BXLPe_ym.js",
       "_upward-carousel.5gdOrkXc.js",
@@ -700,7 +704,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_follow-group.DtSFmxkQ.js",
       "_time.SyV53jPj.js",
@@ -713,12 +717,12 @@
     ]
   },
   "src/embeds/real-ai-agents.js": {
-    "file": "chunks/real-ai-agents.CQV-HYvF.js",
+    "file": "chunks/real-ai-agents.C76ztWaf.js",
     "name": "real-ai-agents",
     "src": "src/embeds/real-ai-agents.js",
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_demo-cursor.CiMQYEry.js",
       "_reveal-groups.DVwP-wal.js",
       "_easing.BaRGQWXz.js",
@@ -733,22 +737,37 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
+      "_copilot-typing.DxWILm8L.js",
       "_reveal-groups.DVwP-wal.js",
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_time.SyV53jPj.js",
       "_easing.BaRGQWXz.js"
     ]
   },
   "src/embeds/real-ai-harness.js": {
-    "file": "chunks/real-ai-harness.BkOVReDb.js",
+    "file": "chunks/real-ai-harness.CVqpDqx3.js",
     "name": "real-ai-harness",
     "src": "src/embeds/real-ai-harness.js",
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_easing.BaRGQWXz.js",
       "_motion.D7xsNJ3J.js",
+      "_time.SyV53jPj.js"
+    ]
+  },
+  "src/embeds/real-ai-product.js": {
+    "file": "feature-real-ai-product.js",
+    "name": "feature-real-ai-product",
+    "src": "src/embeds/real-ai-product.js",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_animation-stage.CzNQUU6r.js",
+      "_copilot-typing.DxWILm8L.js",
+      "_reveal-groups.DVwP-wal.js",
+      "_easing.BaRGQWXz.js",
       "_time.SyV53jPj.js"
     ]
   },
@@ -759,7 +778,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_demo-cursor.CiMQYEry.js",
       "_easing.BaRGQWXz.js",
       "_motion.D7xsNJ3J.js"
@@ -772,7 +791,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_motion.D7xsNJ3J.js",
       "_soft-path-pulse.CBA2IBFu.js",
@@ -788,7 +807,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_follow-group.DtSFmxkQ.js",
       "_motion.D7xsNJ3J.js",
@@ -805,7 +824,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_follow-group.DtSFmxkQ.js",
       "_dom.Ccz6pAD2.js",
       "_math.DB99t-US.js"
@@ -818,7 +837,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_follow-group.DtSFmxkQ.js",
       "_motion.D7xsNJ3J.js",
@@ -835,7 +854,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_follow-group.DtSFmxkQ.js",
       "_easing.BaRGQWXz.js",
@@ -851,7 +870,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
       "_reveal-groups.DVwP-wal.js",
       "_motion.D7xsNJ3J.js",
       "_easing.BaRGQWXz.js",
@@ -865,7 +884,7 @@
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ]
   },
   "src/entry/feature-access.js": {
@@ -876,7 +895,7 @@
     "imports": [
       "src/animations/access/index.js",
       "_connector.CbYSk2rO.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ]
   },
   "src/entry/feature-api.js": {
@@ -1044,7 +1063,7 @@
     "imports": [
       "src/animations/reference/index.js",
       "_connector.CbYSk2rO.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ]
   },
   "src/entry/feature-small-cards.js": {
@@ -1073,7 +1092,7 @@
     "imports": [
       "src/animations/webhook/index.js",
       "_connector.CbYSk2rO.js",
-      "_animation-stage.Cs_CHp-U.js"
+      "_animation-stage.CzNQUU6r.js"
     ]
   },
   "src/entry/feature-window-graphic.js": {
@@ -1106,6 +1125,7 @@
       "_easing.BaRGQWXz.js"
     ],
     "dynamicImports": [
+      "src/embeds/real-ai-product.js",
       "src/embeds/real-ai-harness.js",
       "src/embeds/real-ai-agents.js",
       "src/embeds/real-ai-copilot.js",
@@ -1165,6 +1185,7 @@
     "src": "src/entry/page-all.js",
     "isEntry": true,
     "imports": [
+      "src/embeds/real-ai-product.js",
       "src/embeds/real-ai-harness.js",
       "src/embeds/real-ai-agents.js",
       "src/embeds/real-ai-copilot.js",
@@ -1218,7 +1239,8 @@
       "_auto-reveal.CvBAHjaX.js",
       "_zoom-lens.BoPZu25O.js",
       "src/embeds/revolving-credit.js",
-      "_animation-stage.Cs_CHp-U.js",
+      "_animation-stage.CzNQUU6r.js",
+      "_copilot-typing.DxWILm8L.js",
       "_reveal-groups.DVwP-wal.js",
       "_time.SyV53jPj.js",
       "_easing.BaRGQWXz.js",

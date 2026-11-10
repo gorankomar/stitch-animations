@@ -81,6 +81,7 @@ export default defineConfig({
       : {
           input: {
             'feature-collections-graphic': resolve(process.cwd(), 'src/embeds/collections-graphic.js'),
+            'feature-real-ai-product': resolve(process.cwd(), 'src/embeds/real-ai-product.js'),
             'feature-real-ai-copilot': resolve(process.cwd(), 'src/embeds/real-ai-copilot.js'),
             'feature-workflow-flexibility': resolve(process.cwd(), 'src/embeds/workflow-flexibility.js'),
             'feature-deposits-wallet': resolve(process.cwd(), 'src/embeds/deposits-wallet.js'),
