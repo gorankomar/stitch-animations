@@ -7,6 +7,10 @@ import { getPrimaryEase } from '../lib/easing.js';
 export const init = stageInitializer('[data-real-ai-product], .lp-solution-screen:has([data-product-bar])', stage => {
   const bar = stage.querySelector('[data-product-bar]');
   const barFrame = bar?.closest('.lp-product-bar-frame');
+  const title = bar?.querySelector('.lp-product-change-title');
+  const square = bar?.querySelector('.lp-product-stop-square');
+  const arrow = bar?.querySelector('.lp-product-arrow');
+  const finalTitle = title?.textContent;
   const lock = stage.querySelector('[data-product-lock]');
   const updated = stage.querySelector('[data-product-updated]');
   const fields = [...stage.querySelectorAll('[data-product-field]')].map(field => {
@@ -28,7 +32,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   let lockAt;
   let hard, travel, origin, done = false;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  if (motion.matches) return;
+  if (motion.matches) { setBarStatus(true); return; }
 
   function paused(element, frames, options) {
     const animation = element.animate(frames, { fill: 'both', ...options });
@@ -38,10 +42,17 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
     return animation;
   }
 
+  function setBarStatus(complete) {
+    if (title) title.textContent = complete ? finalTitle : 'Changing lock-in period to 3 months';
+    if (square) square.style.display = complete ? 'none' : 'block';
+    if (arrow) arrow.style.display = complete ? 'block' : 'none';
+  }
+
   function restore() {
     animations.splice(0).forEach(animation => animation.cancel());
     travel?.dispose();
     for (const field of fields) field.value.textContent = field.text;
+    setBarStatus(true);
     lock.textContent = finalLock;
     updated.style.removeProperty('visibility');
   }
@@ -54,6 +65,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
     paused(stage, [{ opacity: 0 }, { opacity: 1 }], { duration: opacityDuration, easing: 'linear' });
     travel = createRevealTrack(barFrame, { frame: stage, mode: 'hard', bleed: 4 });
     hard = paused(barFrame, travel.keyframes(), { duration, easing });
+    setBarStatus(false);
     lock.textContent = '2';
     updated.style.visibility = 'hidden';
     let delay = 0;
@@ -96,7 +108,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
         if (reduced) { done = true; restore(); stop(); return; }
         origin ??= time;
         const screenNow = (time - origin) * 1000;
-        if (barOrigin === undefined && screenNow >= lockAt) {
+        if (barOrigin === undefined) {
           // The frame itself moves in this release. Remove only its own entrance
           // translation to check its resting position, retaining the screen's motion.
           const rect = barFrame.getBoundingClientRect();
@@ -118,6 +130,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
           animation.currentTime = animation === hard ? now : screenNow;
         });
         if (screenNow >= lockAt) {
+          setBarStatus(true);
           lock.textContent = finalLock;
           updated.style.removeProperty('visibility');
         }
