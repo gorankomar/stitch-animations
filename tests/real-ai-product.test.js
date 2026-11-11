@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { init } from '../src/embeds/real-ai-product.js';
 
-test('product bar waits for its own frame, then runs the coordinated fields and cleans up', () => {
+for (const initiallyVisible of [false, true]) test(`fields start with screen; bar waits for completed lock update and viewport (initially visible: ${initiallyVisible})`, () => {
   const keys = ['document', 'window', 'matchMedia', 'IntersectionObserver', 'ResizeObserver', 'requestAnimationFrame', 'cancelAnimationFrame', 'getComputedStyle', 'DOMMatrixReadOnly'];
   const saved = keys.map(key => [key, globalThis[key]]);
   const observers = [], frames = new Map();
@@ -16,7 +16,7 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
   });
   const stage = node(), frame = node(), bar = node(), lock = node(), updated = node(), value = node(), control = node(), marker = node();
   bar.parentElement = frame; bar.closest = () => frame;
-  let restingTop = 900;
+  let restingTop = initiallyVisible ? 799 : 900;
   frame.getBoundingClientRect = () => ({ top: restingTop + 800, bottom: restingTop + 900, left: 0, right: 100 }); value.parentElement = control; value.textContent = 'USD'; lock.textContent = '3';
   const field = { querySelector: selector => selector === '[data-product-value]' ? value : marker };
   stage.querySelector = selector => ({ '[data-product-bar]': bar, '[data-product-lock]': lock, '[data-product-updated]': updated })[selector];
@@ -41,12 +41,27 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
     init(stage);
     assert.equal(observers.length, 1);
     observers[0].callback([{ isIntersecting: true, intersectionRatio: 1 }]);
-    for (let i = 0; i < 15; i++) tick();
-    assert.ok(stage.tracks[0].currentTime >= 100);
+    tick();
+    assert.equal(stage.tracks[0].currentTime, 0);
+    assert.equal(value.textContent, 'USD'); // Filling starts on the first screen frame.
+    assert.equal(lock.textContent, '2');
+    assert.equal(frame.tracks[0].currentTime, 0); // Even an onscreen bar waits for completion.
+    tick();
+    assert.equal(lock.textContent, '2');
     assert.equal(frame.tracks[0].currentTime, 0);
-    assert.equal(value.textContent, '');
-    restingTop = 799; // One pixel of the resting frame enters; translated bounds are still offscreen.
-    tick(); tick();
+    tick();
+    assert.equal(lock.textContent, '3');
+    assert.equal(frame.tracks[0].currentTime, 0);
+    if (!initiallyVisible) {
+      for (let i = 0; i < 15; i++) tick();
+      assert.equal(value.textContent, 'USD');
+      assert.equal(lock.textContent, '3');
+      assert.equal(frame.tracks[0].currentTime, 0);
+      assert.ok(!observers[0].disconnected);
+      restingTop = 799; // Resting frame enters; translated bounds remain offscreen.
+      tick();
+    }
+    tick();
     assert.ok(frame.tracks[0].currentTime > 0);
     for (let i = 0; i < 20; i++) tick();
     assert.equal(value.textContent, 'USD');

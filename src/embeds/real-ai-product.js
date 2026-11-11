@@ -23,11 +23,9 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   const easing = getPrimaryEase();
   const finalLock = lock.textContent;
   const animations = [];
-  const screenAnimations = [];
   let barOrigin;
   const fieldBeat = duration * .6;
   let lockAt;
-  let endAt;
   let hard, travel, origin, done = false;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   if (motion.matches) return;
@@ -49,16 +47,16 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   }
 
   function prepare() {
-    screenAnimations.push(paused(stage, [
+    paused(stage, [
       { transform: 'translateY(var(--reveal-offset-default, 7rem))' },
       { transform: 'translateY(0)' }
-    ], { duration, easing }));
-    screenAnimations.push(paused(stage, [{ opacity: 0 }, { opacity: 1 }], { duration: opacityDuration, easing: 'linear' }));
+    ], { duration, easing });
+    paused(stage, [{ opacity: 0 }, { opacity: 1 }], { duration: opacityDuration, easing: 'linear' });
     travel = createRevealTrack(barFrame, { frame: stage, mode: 'hard', bleed: 4 });
     hard = paused(barFrame, travel.keyframes(), { duration, easing });
     lock.textContent = '2';
     updated.style.visibility = 'hidden';
-    let delay = duration;
+    let delay = 0;
     fields.forEach(field => {
       field.delay = delay;
       field.value.textContent = '';
@@ -74,7 +72,6 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
       delay += Math.max(fieldBeat, (field.rhythm?.keys.at(-1) ?? 0) + fieldBeat * .25);
     });
     lockAt = delay;
-    endAt = lockAt + fieldBeat;
   }
 
   let stop;
@@ -99,7 +96,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
         if (reduced) { done = true; restore(); stop(); return; }
         origin ??= time;
         const screenNow = (time - origin) * 1000;
-        if (barOrigin === undefined && screenNow >= duration) {
+        if (barOrigin === undefined && screenNow >= lockAt) {
           // The frame itself moves in this release. Remove only its own entrance
           // translation to check its resting position, retaining the screen's motion.
           const rect = barFrame.getBoundingClientRect();
@@ -109,7 +106,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
             rect.left - matrix.m41 < window.innerWidth && rect.right - matrix.m41 > 0) barOrigin = time;
         }
         const now = barOrigin === undefined ? 0 : (time - barOrigin) * 1000;
-        if (now >= endAt) { done = true; restore(); stop(); return; }
+        if (barOrigin !== undefined && now >= duration && screenNow >= lockAt + fieldBeat) { done = true; restore(); stop(); return; }
         if (dirty) {
           // A paused WAAPI transform still affects layout measurements.
           hard.cancel();
@@ -118,18 +115,18 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
           hard.pause();
         }
         animations.forEach(animation => {
-          animation.currentTime = screenAnimations.includes(animation) ? screenNow : now;
+          animation.currentTime = animation === hard ? now : screenNow;
         });
-        if (now >= lockAt) {
+        if (screenNow >= lockAt) {
           lock.textContent = finalLock;
           updated.style.removeProperty('visibility');
         }
         for (const field of fields) {
-          if (now < field.delay) continue;
+          if (screenNow < field.delay) continue;
           let value = field.text;
           if (field.rhythm) {
             const { keys, letters } = field.rhythm;
-            const elapsed = now - field.delay;
+            const elapsed = screenNow - field.delay;
             const firstFuture = keys.findIndex(key => key > elapsed);
             if (firstFuture >= 0) value = letters.slice(0, firstFuture).join('');
           }
