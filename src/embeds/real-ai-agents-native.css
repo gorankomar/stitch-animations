@@ -2,7 +2,7 @@
 .real-ai-agents { container-type:inline-size; width:100%; font-family:inherit; }
 .agents-frame {
   --au:.186567164cqi;
-  position:relative; isolation:isolate; aspect-ratio:536/399; overflow:hidden;
+  position:relative; isolation:isolate; aspect-ratio:536/399; overflow:hidden; overflow-anchor:none; scroll-behavior:auto;
   box-sizing:border-box; border:1px solid #e7e7e7; border-radius:calc(8 * var(--au));
   padding:calc(24 * var(--au)) calc(40 * var(--au));
   display:flex; flex-direction:column; color:#121212; background:#f6f6f6;
@@ -25,6 +25,7 @@
   color:#6d6d6d; font-size:calc(12 * var(--au)); line-height:calc(18 * var(--au));
   transition:border-color var(--motion-duration-fast) var(--motion-ease-primary);
 }
+.agents-cards { display:block; padding:0; }
 .agents-card + .agents-card { margin-top:calc(8 * var(--au)); }
 .agents-card[data-agent-hover] { border-color:#ffa38e; }
 .agents-logo {
@@ -38,7 +39,7 @@
 .agents-title { color:#121212; font-weight:500; font-size:calc(14 * var(--au)); line-height:calc(20 * var(--au)); }
 .agents-description { grid-column:2 / -1; }
 .agents-toggle {
-  width:100%; height:calc(20 * var(--au)); position:relative; border-radius:999px; background:#e7e7e7;
+  padding:0; box-sizing:border-box; width:100%; height:calc(20 * var(--au)); position:relative; border-radius:999px; background:#e7e7e7;
   transition:background-color var(--motion-duration-fast) var(--motion-ease-primary);
 }
 .agents-toggle::after {
