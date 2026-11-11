@@ -1,3 +1,4 @@
+import { createHolderTilt } from '../lib/effects/holder-tilt.js';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
 import { copilotTyping } from '../lib/effects/copilot-typing.js';
 import { createRevealTrack, resolveRevealTimings } from '../lib/effects/reveal-groups.js';
@@ -76,9 +77,17 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   }
 
   let stop;
+  let tilt;
   try {
     const layoutTop = stage.getBoundingClientRect().top;
     prepare();
+    tilt = createHolderTilt({
+      root: stage,
+      selector: '.lp-product-tilt-plane',
+      maxTilt: 2,
+      perspective: 1800,
+      reach: 1
+    });
     // Start near the section heading, compensating for the soft reveal’s initial displacement.
     const offset = Math.max(0, stage.getBoundingClientRect().top - layoutTop);
     stop = animateStage(stage, {
@@ -116,8 +125,9 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
       }
     });
   } catch (error) {
+    tilt?.dispose();
     restore();
     throw error;
   }
-  return () => { stop(); restore(); };
+  return () => { stop(); tilt?.dispose(); restore(); };
 });

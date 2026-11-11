@@ -18,12 +18,19 @@ header{text-align:center;padding:32px 0 24px}
 .lp-product-preview-sidebar li{padding:.5cqi}
 .lp-product-preview-selected{background:#f9f9f9;font-weight:600}
 .lp-product-preview-fade{pointer-events:none;position:absolute;inset:auto 0 0;height:11.66667cqi;background:linear-gradient(transparent,rgba(255,255,255,.9) 70%,white)}
+
+.lp-product-preview-stage{position:relative;overflow:clip}
+.lp-product-tilt-plane{position:relative;transform-style:preserve-3d;transition:transform var(--motion-duration-default) var(--motion-ease-primary)}
+.lp-product-tilt-plane::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse at var(--holder-light-x,50%) var(--holder-light-y,50%),rgb(255 255 255 / 18%) 0%,rgb(255 255 255 / 4%) 45%,rgb(0 0 0 / 1.5%) 100%);opacity:var(--holder-light-opacity,0);transition:opacity var(--motion-duration-default) linear}
+@media(prefers-reduced-motion:reduce){.lp-product-tilt-plane{transition:none}}
 </style>
 </head>
 <body>
 <main>
 <header><h1>Product screen</h1></header>
-<div class="lp-product-preview-screen" data-real-ai-product>
+<div class="lp-product-preview-stage" data-real-ai-product>
+<div class="lp-product-tilt-plane">
+<div class="lp-product-preview-screen">
 <aside class="lp-product-preview-sidebar" aria-label="Controls sidebar preview">
 <span aria-hidden="true">←</span><p>Controls</p>
 <div>Workspace</div><ul><li>General</li><li>Access</li><li>Configurations</li><li>Logs</li></ul>
@@ -66,6 +73,8 @@ header{text-align:center;padding:32px 0 24px}
   </div>
 </div>
 <div class="lp-product-preview-fade" aria-hidden="true"></div>
+</div>
+</div>
 <div class="lp-product-bar-frame"><div class="lp-product-bar" data-product-bar="">
   <div class="lp-product-change"><div class="lp-product-tile"><img class="lp-product-sparkle" src="/src/embeds/assets/real-ai-product/tile.svg" alt=""></div><div><div class="lp-product-change-title">Changed lock-in period to 3 months</div><div class="lp-product-policy">Still within policy CP-04</div></div></div>
   <div class="lp-product-ask"><span>Ask for another change…</span><div class="lp-product-stop" aria-hidden="true"><div class="lp-product-stop-square"></div></div></div>
