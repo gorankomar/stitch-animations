@@ -77,3 +77,5 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 ## Orbit Graphic
 
 [Orbit Graphic](orbit-graphic.md): reusable Dots → Dot → Icon slots, proportional parent-width composition, immediate Pointer Follow during the existing pop-in. Compact/Landscape variants and Number of rings (1–6/default 3). Webflow draft and [staging release](../releases/2026-10-29-orbit-staging.md) verified; Playground remains unpublished.
+
+- Prebuilt Agents: [notes](real-ai-landing.md#prebuilt-agents-illustration), reusable Cards slot and editable Prebuilt Agent Card; seven-card Real AI tab-two draft, local catalog scroll then cursor selection.
