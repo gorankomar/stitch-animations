@@ -30,7 +30,7 @@
 .lp-product-tile{border-radius:0.66667cqi;background:#ff7f62}
 .lp-product-sparkle{display:block;width:1.66667cqi;height:1.66667cqi}
 .lp-product-stop{border-radius:50%;background:#121212}
-.lp-product-stop-icon{display:block;width:1cqi;height:1cqi}
+.lp-product-stop-square{display:block;width:1cqi;height:1cqi;background-color:#fff}
 
 .lp-product-page-title,.lp-product-card-title,.lp-product-change-title,.lp-product-breadcrumb-current{font:inherit;font-weight:600;margin:0}
 .lp-product-card-title{color:#121212;font-size:1.33333cqi;line-height:1.66667cqi}
