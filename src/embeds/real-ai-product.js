@@ -2,7 +2,7 @@ import { createHolderTilt } from '../lib/effects/holder-tilt.js';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
 import { copilotTyping } from '../lib/effects/copilot-typing.js';
 import { createRevealTrack, resolveRevealTimings } from '../lib/effects/reveal-groups.js';
-import { getPrimaryEase } from '../lib/easing.js';
+import { getFastDurationMs, getPrimaryEase } from '../lib/easing.js';
 
 export const init = stageInitializer('[data-real-ai-product], .lp-solution-screen:has([data-product-bar])', stage => {
   const bar = stage.querySelector('[data-product-bar]');
@@ -11,6 +11,9 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   const square = bar?.querySelector('.lp-product-stop-square');
   const arrow = bar?.querySelector('.lp-product-arrow');
   const finalTitle = title?.textContent;
+  const sparkle = bar?.querySelector('.lp-product-sparkle');
+  const tile = sparkle?.parentElement;
+  const tilePosition = tile?.style.position;
   const lock = stage.querySelector('[data-product-lock]');
   const updated = stage.querySelector('[data-product-updated]');
   const fields = [...stage.querySelectorAll('[data-product-field]')].map(field => {
@@ -29,6 +32,9 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   const animations = [];
   let barOrigin;
   const fieldBeat = duration * .6;
+  const completionDuration = getFastDurationMs();
+  const spinCycle = duration;
+  let spin, burst;
   let lockAt;
   let hard, travel, origin, done = false;
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
@@ -51,6 +57,8 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   function restore() {
     animations.splice(0).forEach(animation => animation.cancel());
     travel?.dispose();
+    burst?.remove();
+    if (tile && burst) tile.style.position = tilePosition;
     for (const field of fields) field.value.textContent = field.text;
     setBarStatus(true);
     lock.textContent = finalLock;
@@ -84,6 +92,14 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
       delay += Math.max(fieldBeat, (field.rhythm?.keys.at(-1) ?? 0) + fieldBeat * .25);
     });
     lockAt = delay;
+    if (sparkle?.animate) {
+      // Option 03: a clockwise quarter turn, then a stationary beat.
+      spin = paused(sparkle, [
+        { rotate: '0deg', offset: 0, easing },
+        { rotate: '90deg', offset: .6 },
+        { rotate: '90deg', offset: 1 }
+      ], { duration: spinCycle, easing: 'linear' });
+    }
   }
 
   let stop;
@@ -118,7 +134,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
             rect.left - matrix.m41 < window.innerWidth && rect.right - matrix.m41 > 0) barOrigin = time;
         }
         const now = barOrigin === undefined ? 0 : (time - barOrigin) * 1000;
-        if (barOrigin !== undefined && now >= duration && screenNow >= lockAt + fieldBeat) { done = true; restore(); stop(); return; }
+        if (barOrigin !== undefined && now >= duration && screenNow >= lockAt + Math.max(duration, completionDuration)) { done = true; restore(); stop(); return; }
         if (dirty) {
           // A paused WAAPI transform still affects layout measurements.
           hard.cancel();
@@ -126,8 +142,33 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
           hard.effect.setKeyframes(travel.keyframes());
           hard.pause();
         }
+        if (spin && !burst && screenNow >= lockAt) {
+          // Stop at the resting pose, then play option 03's double twinkle.
+          spin.cancel();
+          paused(sparkle, [
+            { scale: '1' }, { scale: '1.28', offset: .22 },
+            { scale: '.95', offset: .48 }, { scale: '1.12', offset: .7 },
+            { scale: '1' }
+          ], { duration, delay: lockAt, easing });
+          // Reuse the exact image for the smaller expanding echo.
+          burst = sparkle.cloneNode(true);
+          burst.removeAttribute('id');
+          burst.setAttribute('aria-hidden', 'true');
+          Object.assign(burst.style, {
+            position: 'absolute', left: '50%', top: '50%', margin: '0',
+            translate: '-50% -50%', pointerEvents: 'none'
+          });
+          tile.style.position = 'relative';
+          tile.append(burst);
+          paused(burst, [{ scale: '.7' }, { scale: '1.6' }],
+            { duration: completionDuration, delay: lockAt, easing });
+          paused(burst, [{ opacity: .5 }, { opacity: 0 }],
+            { duration: completionDuration, delay: lockAt, easing: 'linear' });
+        }
         animations.forEach(animation => {
-          animation.currentTime = animation === hard ? now : screenNow;
+          if (animation === spin && screenNow >= lockAt) return;
+          animation.currentTime = animation === hard ? now : animation === spin
+            ? screenNow % spinCycle : screenNow;
         });
         if (screenNow >= lockAt) {
           setBarStatus(true);
