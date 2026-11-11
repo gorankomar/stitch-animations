@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product sparkle · Motion studies</title>
+<style>
+:root{--motion-ease-primary:cubic-bezier(.11,.61,.27,.99);--motion-duration-default:770ms;--motion-duration-fast:462ms;color:#202020;background:#faf9f7;font-family:Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0}main{max-width:1160px;margin:auto;padding:60px 28px}header{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}h1{font-size:30px;letter-spacing:-1px;margin:8px 0 12px;font-weight:500}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#777}p{font-size:14px;color:#76736e;line-height:1.5;margin:0}nav{display:flex;gap:8px;flex-wrap:wrap}button{font:inherit;font-size:12px;padding:10px 14px;border:1px solid #ddd9d3;background:white;border-radius:8px;cursor:pointer}button:hover{border-color:#ff7f62}button:focus-visible{outline:2px solid #ff7f62;outline-offset:3px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{border:1px solid #e8e5e0;border-radius:14px;background:white;overflow:hidden}.stage{height:216px;display:grid;place-items:center;position:relative;background:radial-gradient(ellipse at center,#fff 25%,#fcfbfa 100%)}.tile{position:relative;display:grid;place-items:center;width:32px;height:32px;background:#ff7f62;border-radius:8px;isolation:isolate}.sparkle{display:block;width:20px;height:20px;position:relative;z-index:2}.effects{position:absolute;inset:0;pointer-events:none}.ring{position:absolute;inset:-4px;border:1px solid #ff7f62;border-radius:12px;opacity:0}.echo{position:absolute;width:20px;height:20px;left:6px;top:6px;opacity:0}.satellite{position:absolute;width:8px;height:8px;left:12px;top:12px;opacity:0;filter:brightness(0) saturate(100%) invert(67%) sepia(78%) saturate(1292%) hue-rotate(321deg)}.glint{position:absolute;inset:0;border-radius:8px;overflow:hidden;opacity:0}.glint:after{content:"";position:absolute;inset:-16px 10px;background:linear-gradient(90deg,transparent,#fff9,transparent);transform:rotate(25deg)}.info{padding:20px;border-top:1px solid #f0eeea;min-height:120px}.number{color:#a5a09a;font-size:11px;margin-right:8px}h2{font-size:15px;font-weight:500;margin:0 0 10px}.info p{font-size:12px;line-height:1.6}.status{position:absolute;bottom:22px;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:#99938b}.status[data-done=true]{color:#c16d48}.footer{display:flex;justify-content:space-between;gap:20px;margin-top:24px;font-size:11px;color:#99938b;line-height:1.5}.progress{height:2px;background:#e9e5df;margin-bottom:24px;overflow:hidden}.progress span{display:block;height:100%;width:100%;background:#ff7f62;transform-origin:left;transform:scaleX(0)}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}header{align-items:start;flex-direction:column}}@media(max-width:520px){main{padding:30px 18px}.grid{grid-template-columns:1fr}.stage{height:180px}}@media(prefers-reduced-motion:reduce){.progress{display:none}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">Product bar / motion studies</div><h1>Five ways to say “working → done”</h1><p>Same 32px tile. Different motion personalities. All options run together.</p></div><nav aria-label="Playback"><button id="replay">Replay all</button><button id="finish">Complete now</button><button id="pause">Pause</button></nav></header>
+<div class="progress"><span></span></div><div class="grid" id="grid"></div>
+<div class="footer"><span>Working for ~4 seconds → completion → brief rest → replay.</span><span>Local motion exploration · no staging changes</span></div>
+</main>
+<script type="module">
+import { getPrimaryEase, getDefaultDurationMs, getFastDurationMs } from '/src/lib/easing.js';
+const definitions=[
+ ['Steady orbit','A smooth clockwise rotation. Completion lands at rest with a fine expanding ring.'],
+ ['Quiet breathing','The sparkle gently grows and softens. Completion gives one brighter, wider bloom.'],
+ ['Quarter turns','Small clockwise turns with a pause between each. Completion adds a quick double twinkle.'],
+ ['Light sweep','The sparkle stays still while light passes across the tile. Completion sends out two tiny sparks.'],
+ ['Soft lift','A gentle lift and settle, with a slight tilt. Completion lands with a small outward ripple.']
+];
+const src='/src/embeds/assets/real-ai-product/tile.svg';
+const grid=document.querySelector('#grid');
+for(const [index,[name,description]] of definitions.entries()){
+ const article=document.createElement('article');article.className='card';
+ article.innerHTML=`<div class="stage"><div class="tile"><img class="sparkle" src="${src}" alt="White sparkle"><div class="effects" aria-hidden="true"><div class="ring"></div><img class="echo" src="${src}" alt=""><img class="satellite a" src="${src}" alt=""><img class="satellite b" src="${src}" alt=""><div class="glint"></div></div></div><span class="status">Working</span></div><div class="info"><h2><span class="number">0${index+1}</span>${name}</h2><p>${description}</p></div>`;
+ grid.append(article);
+}
+const cards=[...grid.children],ease=getPrimaryEase(),duration=getDefaultDurationMs(),fast=getFastDurationMs();
+const working=duration*5, completion=duration, total=working+completion+duration*2;
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+let tracks=[],time=0,previous=0,paused=false,completing=false,frame=0;
+function track(node,frames,options,phase='work'){
+ const animation=node.animate(frames,{duration,fill:'both',easing:ease,...options});animation.pause();animation.currentTime=0;
+ tracks.push({animation,phase});return animation;
+}
+function setup(){
+ tracks.forEach(({animation})=>animation.cancel());tracks=[];
+ cards.forEach((card,index)=>{
+  const icon=card.querySelector('.sparkle'),tile=card.querySelector('.tile'),ring=card.querySelector('.ring'),echo=card.querySelector('.echo');
+  if(index===0)track(icon,[{rotate:'0deg'},{rotate:'360deg'}],{duration:duration*2,iterations:Infinity,easing:'linear'});
+  if(index===1){
+   track(icon,[{scale:'.88'},{scale:'1.12'},{scale:'.88'}],{duration:duration*2,iterations:Infinity});
+   track(icon,[{opacity:.65},{opacity:1},{opacity:.65}],{duration:duration*2,iterations:Infinity,easing:'linear'});
+  }
+  if(index===2)track(icon,[{rotate:'0deg',offset:0,easing:ease},{rotate:'90deg',offset:.6},{rotate:'90deg',offset:1}],{duration,iterations:Infinity,easing:'linear'});
+  if(index===3){
+   track(card.querySelector('.glint'),[{translate:'-100% 0',offset:0},{translate:'100% 0',offset:.8},{translate:'100% 0',offset:1}],{duration:duration*2,iterations:Infinity});
+   // Separate the linear fade from the primary-eased travel.
+   track(card.querySelector('.glint'),[{opacity:0},{opacity:.7,offset:.35},{opacity:0,offset:.75},{opacity:0}],{duration:duration*2,iterations:Infinity,easing:'linear'});
+  }
+  if(index===4)track(icon,[{translate:'0 0',rotate:'0deg'},{translate:'0 -3px',rotate:'-8deg'},{translate:'0 0',rotate:'0deg'}],{duration:duration*2,iterations:Infinity});
+  if(index===0||index===4){
+   track(ring,[{scale:'.85'},{scale:'1.65'}],{duration:fast},'done');
+   track(ring,[{opacity:.65},{opacity:0}],{duration:fast,easing:'linear'},'done');
+  }
+  if(index===1){
+   track(echo,[{scale:'.9'},{scale:'2'}],{duration:fast},'done');
+   track(echo,[{opacity:.8},{opacity:0}],{duration:fast,easing:'linear'},'done');
+  }
+  if(index===2){
+   track(icon,[{scale:'1'},{scale:'1.28',offset:.22},{scale:'.95',offset:.48},{scale:'1.12',offset:.7},{scale:'1'}],{duration},'done');
+   track(echo,[{scale:'.7'},{scale:'1.6'}],{duration:fast},'done');
+   track(echo,[{opacity:.5},{opacity:0}],{duration:fast,easing:'linear'},'done');
+  }
+  if(index===3){
+   for(const [selector,x,y] of [['.a',-25,-20],['.b',24,15]]){
+    const spark=card.querySelector(selector);
+    track(spark,[{translate:'0 0',scale:'.4'},{translate:`${x}px ${y}px`,scale:'1.2'}],{duration:fast},'done');
+    track(spark,[{opacity:0},{opacity:1,offset:.15},{opacity:0}],{duration:fast,easing:'linear'},'done');
+   }
+  }
+  if(index===4)track(tile,[{scale:'1'},{scale:'.94',offset:.2},{scale:'1.06',offset:.5},{scale:'1'}],{duration:fast},'done');
+ });
+ time=0;completing=false;render();
+}
+function render(){
+ const done=time>=working,elapsed=time-working;
+ for(const {animation,phase} of tracks){
+  const active=phase==='done'?done:!done;
+  animation.effect.updateTiming({fill:active?'both':'none'});
+  animation.currentTime=active?(phase==='done'?elapsed:time):-1;
+ }
+ if(done&&!completing){
+  // Return the working pose to its resting pose before the completion gesture.
+  completing=true;
+ }
+ for(const card of cards){const status=card.querySelector('.status');status.textContent=done?'Done':'Working';status.dataset.done=String(done);}
+ document.querySelector('.progress span').style.transform=`scaleX(${Math.min(time/working,1)})`;
+}
+function tick(now){
+ frame=0;
+ if(!paused&&!document.hidden&&!reduced.matches){time+=previous?Math.min(now-previous,50):0;if(time>=total)setup();render();}
+ previous=now;if(!document.hidden&&!reduced.matches)frame=requestAnimationFrame(tick);
+}
+document.querySelector('#replay').onclick=()=>{setup();previous=0;};
+document.querySelector('#finish').onclick=()=>{time=working;render();previous=0;};
+document.querySelector('#pause').onclick=event=>{paused=!paused;event.target.textContent=paused?'Resume':'Pause';previous=0;};
+document.addEventListener('visibilitychange',()=>{cancelAnimationFrame(frame);previous=0;if(!document.hidden&&!reduced.matches)frame=requestAnimationFrame(tick);});
+reduced.addEventListener('change',()=>{cancelAnimationFrame(frame);setup();if(reduced.matches){time=working+completion;render();}else{previous=0;frame=requestAnimationFrame(tick);}});
+setup();if(reduced.matches){time=working+completion;render();}else frame=requestAnimationFrame(tick);
+</script></body></html>
