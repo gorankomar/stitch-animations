@@ -23,7 +23,8 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   const easing = getPrimaryEase();
   const finalLock = lock.textContent;
   const animations = [];
-  const barStart = duration;
+  const screenAnimations = [];
+  let barOrigin;
   const fieldBeat = duration * .6;
   let lockAt;
   let endAt;
@@ -48,16 +49,16 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   }
 
   function prepare() {
-    paused(stage, [
+    screenAnimations.push(paused(stage, [
       { transform: 'translateY(var(--reveal-offset-default, 7rem))' },
       { transform: 'translateY(0)' }
-    ], { duration, easing });
-    paused(stage, [{ opacity: 0 }, { opacity: 1 }], { duration: opacityDuration, easing: 'linear' });
+    ], { duration, easing }));
+    screenAnimations.push(paused(stage, [{ opacity: 0 }, { opacity: 1 }], { duration: opacityDuration, easing: 'linear' }));
     travel = createRevealTrack(barFrame, { frame: stage, mode: 'hard', bleed: 4 });
-    hard = paused(barFrame, travel.keyframes(), { duration, delay: barStart, easing });
+    hard = paused(barFrame, travel.keyframes(), { duration, easing });
     lock.textContent = '2';
     updated.style.visibility = 'hidden';
-    let delay = barStart + duration;
+    let delay = duration;
     fields.forEach(field => {
       field.delay = delay;
       field.value.textContent = '';
@@ -97,7 +98,17 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
         if (done) return;
         if (reduced) { done = true; restore(); stop(); return; }
         origin ??= time;
-        const now = (time - origin) * 1000;
+        const screenNow = (time - origin) * 1000;
+        if (barOrigin === undefined && screenNow >= duration) {
+          // The frame itself moves in this release. Remove only its own entrance
+          // translation to check its resting position, retaining the screen's motion.
+          const rect = barFrame.getBoundingClientRect();
+          const transform = getComputedStyle(barFrame).transform;
+          const matrix = new DOMMatrixReadOnly(transform === 'none' ? undefined : transform);
+          if (rect.top - matrix.m42 < window.innerHeight && rect.bottom - matrix.m42 > 0 &&
+            rect.left - matrix.m41 < window.innerWidth && rect.right - matrix.m41 > 0) barOrigin = time;
+        }
+        const now = barOrigin === undefined ? 0 : (time - barOrigin) * 1000;
         if (now >= endAt) { done = true; restore(); stop(); return; }
         if (dirty) {
           // A paused WAAPI transform still affects layout measurements.
@@ -106,7 +117,9 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
           hard.effect.setKeyframes(travel.keyframes());
           hard.pause();
         }
-        animations.forEach(animation => { animation.currentTime = now; });
+        animations.forEach(animation => {
+          animation.currentTime = screenAnimations.includes(animation) ? screenNow : now;
+        });
         if (now >= lockAt) {
           lock.textContent = finalLock;
           updated.style.removeProperty('visibility');
