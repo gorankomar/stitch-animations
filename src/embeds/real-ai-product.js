@@ -5,6 +5,7 @@ import { getPrimaryEase } from '../lib/easing.js';
 
 export const init = stageInitializer('[data-real-ai-product], .lp-solution-screen:has([data-product-bar])', stage => {
   const bar = stage.querySelector('[data-product-bar]');
+  const barFrame = bar?.closest('.lp-product-bar-frame');
   const lock = stage.querySelector('[data-product-lock]');
   const updated = stage.querySelector('[data-product-updated]');
   const fields = [...stage.querySelectorAll('[data-product-field]')].map(field => {
@@ -14,7 +15,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
       text: value?.textContent, typing: value?.dataset.productValue === 'type'
     };
   });
-  if (!bar?.animate || !lock || !updated || !fields.length ||
+  if (!barFrame?.animate || !lock || !updated || !fields.length ||
     fields.some(field => !field.value || !field.marker)) return;
 
   const { duration, opacityDuration } = resolveRevealTimings();
@@ -51,8 +52,8 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
       { transform: 'translateY(0)' }
     ], { duration, easing });
     paused(stage, [{ opacity: 0 }, { opacity: 1 }], { duration: opacityDuration, easing: 'linear' });
-    travel = createRevealTrack(bar, { frame: bar.parentElement, mode: 'hard', bleed: 4 });
-    hard = paused(bar, travel.keyframes(), { duration, delay: barStart, easing });
+    travel = createRevealTrack(barFrame, { frame: stage, mode: 'hard', bleed: 4 });
+    hard = paused(barFrame, travel.keyframes(), { duration, delay: barStart, easing });
     lock.textContent = '2';
     updated.style.visibility = 'hidden';
     let delay = barStart + duration;

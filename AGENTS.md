@@ -20,6 +20,8 @@ For every Webflow element/component, preserve the Figma appearance while minimiz
 
 # GitHub completion scope
 
+- “Push to staging” means GitHub push and merge, staging animation activation, and verification in Webflow Preview only. Do not publish any Webflow page or site.
+
 - “Push and merge” includes all approved work from the current chat: animation source, assets, reusable effects, documentation, project instructions, tests, and fresh generated distribution files. Fetch current main, resolve conflicts, validate, push, and merge into main without asking the user to perform Git steps. Preserve unrelated work from other chats; do not silently omit chat-owned documentation.
 - Legacy “middle” includes that same GitHub scope, verified staging animation activation and saved Webflow drafts; page publication and production activation remain unauthorized. Visual approval alone does not authorize production. Normal release requests are publish to staging or publish to production.
 
