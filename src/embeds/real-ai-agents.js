@@ -7,18 +7,22 @@ import { readMotionEasingCurve } from '../lib/motion.js';
 const designWidth = 536;
 
 export function getAgentsTimeline(rowCount, duration, fast) {
-  const stagger = fast * .25;
+  // Keep the complete sequence inside the existing five-second tab dwell.
+  const pace = Math.min(1, 4.8 / (5 * duration + 2 * fast));
+  duration *= pace;
+  fast *= pace;
+  const stagger = Math.min(fast * .125, duration * .6 / Math.max(1, rowCount - 1));
   const arrival = duration + (rowCount - 1) * stagger;
-  // Browse the full catalog before the existing two-toggle demonstration.
-  const scrollStart = arrival + fast;
-  const scrollDuration = duration * 3;
-  const returnStart = scrollStart + scrollDuration + duration;
-  const cursorStart = returnStart + scrollDuration + fast;
-  const firstClick = cursorStart + duration;
-  const secondClick = firstClick + 1.25;
-  const exit = secondClick + fast;
-  const end = Math.max(exit + duration, secondClick + 1.2);
-  return { stagger, arrival, scrollStart, scrollDuration, returnStart, cursorStart, firstClick, secondClick, exit, end };
+  const scrollStart = duration;
+  const scrollDuration = duration;
+  const returnStart = scrollStart + scrollDuration;
+  const cursorStart = returnStart + scrollDuration;
+  const firstClick = cursorStart + fast;
+  const secondClick = firstClick + duration;
+  const exit = secondClick + fast * .5;
+  const toastDuration = duration + fast;
+  const end = Math.max(exit + fast, secondClick + toastDuration);
+  return { duration, fast, stagger, arrival, scrollStart, scrollDuration, returnStart, cursorStart, firstClick, secondClick, exit, toastDuration, end };
 }
 
 export const init = stageInitializer('[data-real-ai-agents]', stage => {
@@ -33,10 +37,8 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
 
   const pane = stage.closest('.w-tab-pane');
   const ease = readMotionEasingCurve();
-  const duration = getDefaultDurationMs() / 1000;
-  const fast = getFastDurationMs() / 1000;
-  const { stagger, arrival, scrollStart, scrollDuration, returnStart, cursorStart, firstClick, secondClick, exit, end } =
-    getAgentsTimeline(rows.length, duration, fast);
+  const { duration, fast, stagger, arrival, scrollStart, scrollDuration, returnStart, cursorStart, firstClick, secondClick, exit, toastDuration, end } =
+    getAgentsTimeline(rows.length, getDefaultDurationMs() / 1000, getFastDurationMs() / 1000);
   let direction = 'right-to-left';
   const makeTracks = () => rows.map(row => createRevealTrack(row, { frame, mode: 'hard', direction }));
   let tracks = makeTracks();
@@ -96,7 +98,7 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
       const clicks = [firstClick, secondClick];
       cards.forEach((card, i) => card.toggleAttribute('data-agent-active', elapsed >= clicks[i]));
 
-      if (elapsed >= cursorStart && elapsed < exit + duration) {
+      if (elapsed >= cursorStart && elapsed < exit + fast) {
         const rect = frame.getBoundingClientRect();
         const scale = designWidth / rect.width;
         const x = value => (value - rect.left - frame.clientLeft) * scale;
@@ -111,9 +113,9 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
           { time: firstClick + fast * .42, ...first },
           { time: secondClick - fast * .24, ...second },
           { time: exit, ...second },
-          { time: exit + duration, x: designWidth + 8, y: second.y + 32 }
+          { time: exit + fast, x: designWidth + 8, y: second.y + 32 }
         ], elapsed, ease);
-        const opacity = Math.min(clampProgress((elapsed - cursorStart) / fast), clampProgress((exit + duration - elapsed) / fast));
+        const opacity = Math.min(clampProgress((elapsed - cursorStart) / fast), clampProgress((exit + fast - elapsed) / fast));
         cursor.render({ ...position, opacity, pressed: clicks.some(click => elapsed >= click && elapsed < click + fast * .22) });
         cards.forEach(card => {
           const box = card.getBoundingClientRect();
@@ -130,7 +132,7 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
         if (toastIndex !== index) toast.textContent = `✓  ${cards[index].querySelector('.agents-title')?.textContent || cards[index].dataset.agent} agent is active now!`;
         toastIndex = index;
         const age = elapsed - clicks[index];
-        toast.style.opacity = Math.min(clampProgress(age / (fast * .5)), clampProgress((1.2 - age) / fast));
+        toast.style.opacity = Math.min(clampProgress(age / (fast * .5)), clampProgress((toastDuration - age) / fast));
       }
       done = elapsed >= end;
     }
