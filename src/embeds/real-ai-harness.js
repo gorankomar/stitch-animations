@@ -49,13 +49,12 @@ export const init = stageInitializer('[data-real-ai-harness]', frame => {
     if (!active() || motion.matches) return;
     const direction = event?.detail?.direction === 'left-to-right' ? 'left-to-right' : 'right-to-left';
     const duration = getDefaultDurationMs() / 1000;
-    const stagger = getFastDurationMs() / 4000;
     const ease = readMotionEasingCurve();
     const burst = getFastDurationMs() / 1000;
-    const finish = Math.max(duration + (groups.length - 1) * stagger, duration + steps.length * (duration + burst));
+    const finish = duration + steps.length * (duration + burst);
 
     try {
-      for (const group of groups) tracks.push(createRevealTrack(group, { frame, mode: 'hard', direction }));
+      for (const group of groups) tracks.push(createRevealTrack(group, { frame, mode: 'hard', direction, travelFraction: 0.5 }));
       stop = animateStage(frame, {
         update({ time, reduced, dirty }) {
           if (reduced || !active() || time >= finish) {
@@ -63,9 +62,9 @@ export const init = stageInitializer('[data-real-ai-harness]', frame => {
             return;
           }
           renderSteps(time - duration, duration, burst, ease);
-          tracks.forEach((track, i) => {
+          tracks.forEach(track => {
             if (dirty) track.measure();
-            track.render((time - i * stagger) / duration, ease);
+            track.render(time / duration, ease);
           });
         }
       });

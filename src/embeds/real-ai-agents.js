@@ -11,7 +11,7 @@ export function getAgentsTimeline(rowCount, duration, fast) {
   const pace = Math.min(1, 4.8 / (5 * duration + 2 * fast));
   duration *= pace;
   fast *= pace;
-  const stagger = Math.min(fast * .125, duration * .6 / Math.max(1, rowCount - 1));
+  const stagger = 0;
   const arrival = duration + (rowCount - 1) * stagger;
   const scrollStart = duration;
   const scrollDuration = duration;
@@ -40,7 +40,7 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
   const { duration, fast, stagger, arrival, scrollStart, scrollDuration, returnStart, cursorStart, firstClick, secondClick, exit, toastDuration, end } =
     getAgentsTimeline(rows.length, getDefaultDurationMs() / 1000, getFastDurationMs() / 1000);
   let direction = 'right-to-left';
-  const makeTracks = () => rows.map(row => createRevealTrack(row, { frame, mode: 'hard', direction }));
+  const makeTracks = () => rows.map(row => createRevealTrack(row, { frame, mode: 'hard', direction, travelFraction: 0.5 }));
   let tracks = makeTracks();
   const cursor = createDemoCursor(pointer, { frame, designWidth });
   let start, done = false, toastIndex = -1;
@@ -84,7 +84,7 @@ export const init = stageInitializer('[data-real-ai-agents]', stage => {
       start ??= time;
       const elapsed = time - start;
       if (elapsed <= arrival) {
-        tracks.forEach((track, i) => track.render((elapsed - i * stagger) / duration, ease));
+        tracks.forEach(track => track.render(elapsed / duration, ease));
       } else {
         tracks.forEach(track => track.dispose());
       }
