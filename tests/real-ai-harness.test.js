@@ -27,6 +27,7 @@ test('harness reveals before sequential statuses, pauses offscreen, replays and 
     const dispose=init(stage); init(stage);
     assert.equal(observers.length,1);
     assert.deepEqual(labels(),['Build','Test','Publish']);
+    groups.forEach(group => assert.match(group.style.transform, /translate3d\(50px,0px,0\)/));
     observers[0].cb([{isIntersecting:true,intersectionRatio:1}]);
     for(let i=0;i<6;i++)tick();
     assert.equal(steps[0].dataset.harnessState,'working');

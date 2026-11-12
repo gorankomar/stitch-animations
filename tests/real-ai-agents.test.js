@@ -7,6 +7,8 @@ test('catalog starts scrolling after the title, returns immediately, and selects
     for (const [duration, fast] of [[.77, .462], [1.2, .72], [.5, .3]]) {
       const t = getAgentsTimeline(cards + 2, duration, fast);
       assert.equal(t.scrollStart, t.duration);
+      assert.equal(t.stagger, 0);
+      assert.equal(t.arrival, t.duration);
       assert.ok(t.arrival <= t.returnStart, 'last card reveals before the bottom is reached');
       assert.equal(t.returnStart, t.scrollStart + t.scrollDuration);
       assert.equal(t.cursorStart, t.returnStart + t.scrollDuration);
