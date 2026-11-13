@@ -6,9 +6,11 @@
 <title>Real AI · Product screen preview</title>
 <link rel="stylesheet" href="/src/embeds/real-ai-product-native.css">
 <style>
+@font-face{font-family:Abcdiatype;src:url('/src/embeds/assets/real-time-approvals/body-regular.woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Abcdiatype;src:url('/src/embeds/assets/real-time-approvals/body-medium.woff2');font-weight:500 700;font-display:swap}
 *{box-sizing:border-box}
-:root{--motion-ease-primary:cubic-bezier(.11,.61,.27,.99);--motion-duration-default:770ms;--reveal-duration-default:770ms;--reveal-opacity-ratio:.34;--reveal-offset-default:7rem}
-body{margin:0;background:white;font-family:Arial,sans-serif;color:#121212}
+:root{--_typography---font-styles--body:Abcdiatype;--motion-ease-primary:cubic-bezier(.11,.61,.27,.99);--motion-duration-default:770ms;--reveal-duration-default:770ms;--reveal-opacity-ratio:.34;--reveal-offset-default:7rem}
+body{margin:0;background:white;font-family:Abcdiatype,Arial,sans-serif;color:#121212}
 main{width:min(1200px,calc(100% - 32px));margin:100vh auto 30vh;container-type:inline-size}
 header{text-align:center;padding:32px 0 24px}
 .lp-product-preview-screen{position:relative;display:flex;align-items:stretch;aspect-ratio:1200/740;overflow:hidden;background:white}
@@ -18,19 +20,12 @@ header{text-align:center;padding:32px 0 24px}
 .lp-product-preview-sidebar li{padding:.5cqi}
 .lp-product-preview-selected{background:#f9f9f9;font-weight:600}
 .lp-product-preview-fade{pointer-events:none;position:absolute;inset:auto 0 0;height:11.66667cqi;background:linear-gradient(transparent,rgba(255,255,255,.9) 70%,white)}
-
-.lp-product-preview-stage{position:relative;overflow:clip}
-.lp-product-tilt-plane{position:relative;transform-style:preserve-3d;transition:transform var(--motion-duration-default) var(--motion-ease-primary)}
-.lp-product-tilt-plane::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:radial-gradient(ellipse at var(--holder-light-x,50%) var(--holder-light-y,50%),rgb(255 255 255 / 18%) 0%,rgb(255 255 255 / 4%) 45%,rgb(0 0 0 / 1.5%) 100%);opacity:var(--holder-light-opacity,0);transition:opacity var(--motion-duration-default) linear}
-@media(prefers-reduced-motion:reduce){.lp-product-tilt-plane{transition:none}}
 </style>
 </head>
 <body>
 <main>
 <header><h1>Product screen</h1></header>
-<div class="lp-product-preview-stage" data-real-ai-product>
-<div class="lp-product-tilt-plane">
-<div class="lp-product-preview-screen">
+<div class="lp-product-preview-screen" data-real-ai-product>
 <aside class="lp-product-preview-sidebar" aria-label="Controls sidebar preview">
 <span aria-hidden="true">←</span><p>Controls</p>
 <div>Workspace</div><ul><li>General</li><li>Access</li><li>Configurations</li><li>Logs</li></ul>
@@ -39,21 +34,21 @@ header{text-align:center;padding:32px 0 24px}
 </aside>
 <div class="lp-product-content">
   <div class="lp-product-breadcrumb">Services <img class="lp-product-slash" src="/src/embeds/assets/real-ai-product/slash.svg" alt=""> <span class="lp-product-breadcrumb-current">Loans</span> <img class="lp-product-slash" src="/src/embeds/assets/real-ai-product/slash.svg" alt=""></div>
-  <div class="lp-product-heading"><h2 class="lp-product-page-title">New loan product</h2><div class="lp-product-actions"><span class="lp-product-action">Cancel</span><span class="lp-product-action lp-product-create">Create product</span></div></div>
+  <div class="lp-product-heading"><h2 class="lp-product-page-title">New loan product</h2><div class="lp-product-actions"><span class="lp-product-action">Cancel</span><span class="lp-product-action lp-product-create">Create loan product</span></div></div>
   <div class="lp-product-card">
     <h3 class="lp-product-card-title">Product details</h3>
     <div class="lp-product-details">
-      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Product name<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="type">Personal loan Direct deposit</span></div></div>
-      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Compliance currency<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select">USD</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
-      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Category<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select">Personal loan</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
-      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Type<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/type.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select">Unsecured</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
+      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Product name<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="type" data-product-placeholder="Enter product name">Personal loan Direct deposit</span></div></div>
+      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Compliance currency<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select" data-product-placeholder="Select currency">USD</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
+      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Category<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select" data-product-placeholder="Select category">Personal loan</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
+      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Type<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/type.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select" data-product-placeholder="Select type">Unsecured</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
     </div>
-    <div class="lp-product-description"><div class="lp-product-field" data-product-field=""><div class="lp-product-label">Description<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/description.svg" alt=""></div><div class="lp-product-control lp-product-area lp-product-ai"><span data-product-value="type">Personal loan for customers who get paid by direct deposit into their checking account.</span></div></div></div>
+    <div class="lp-product-description"><div class="lp-product-field" data-product-field=""><div class="lp-product-label">Description<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/description.svg" alt=""></div><div class="lp-product-control lp-product-area lp-product-ai"><span data-product-value="type" data-product-placeholder="Enter description">Personal loan for customers who get paid by direct deposit into their checking account.</span></div></div></div>
   </div>
   <div class="lp-product-card">
     <h3 class="lp-product-card-title">Deferrals</h3>
     <div class="lp-product-deferrals">
-      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Interest accrual type<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select">Daily balance</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
+      <div class="lp-product-field" data-product-field=""><div class="lp-product-label">Interest accrual type<img class="lp-product-marker" src="/src/embeds/assets/real-ai-product/marker.svg" alt=""></div><div class="lp-product-control lp-product-ai"><span data-product-value="select" data-product-placeholder="Select accrual type">Daily balance</span><img class="lp-product-chevron" src="/src/embeds/assets/real-ai-product/chevron.svg" alt=""></div></div>
       <div class="lp-product-field"><div class="lp-product-label">Lock in period<span class="lp-product-updated" data-product-updated="">Updated</span></div><div class="lp-product-control"><span data-product-lock="">3</span><span class="lp-product-unit">months</span></div></div>
     </div>
     <div class="lp-product-deferrals">
@@ -73,12 +68,11 @@ header{text-align:center;padding:32px 0 24px}
   </div>
 </div>
 <div class="lp-product-preview-fade" aria-hidden="true"></div>
-</div>
-</div>
 <div class="lp-product-bar-frame"><div class="lp-product-bar" data-product-bar="">
-  <div class="lp-product-change"><div class="lp-product-tile"><img class="lp-product-sparkle" src="/src/embeds/assets/real-ai-product/tile.svg" alt=""></div><div><div class="lp-product-change-title">Changed lock-in period to 3 months</div><div class="lp-product-policy">Still within policy CP-04</div></div></div>
-  <div class="lp-product-ask"><span>Ask for another change…</span><div class="lp-product-stop" aria-hidden="true"><img class="lp-product-arrow" src="/src/embeds/assets/real-ai-copilot/arrowup.svg" alt=""><div class="lp-product-stop-square" style="display:none"></div></div></div>
+  <div class="lp-product-change"><span class="lp-product-tile"><img class="lp-product-sparkle" src="/src/embeds/assets/real-ai-product/tile.svg" alt=""></span><div class="lp-product-message"><div class="lp-product-change-title">All required details have been completed.</div><div class="lp-product-policy">Click Create loan product to proceed.</div></div></div>
+  <div class="lp-product-ask"><span>Ask for another change…</span><span class="lp-product-stop"><img class="lp-product-arrow-icon" src="/src/embeds/assets/real-ai-copilot/arrowup.svg" alt=""><img class="lp-product-stop-icon" src="/src/embeds/assets/real-ai-product/stop.svg" alt=""></span></div>
 </div></div>
+
 </div>
 </main>
 <script type="module">
