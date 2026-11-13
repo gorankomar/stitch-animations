@@ -11,3 +11,11 @@
 - Previous production release independently served: `94bba7a2d6da02df2751348a75275863020a1eaf`.
 - Exact staging SHA queued for protected production promotion: https://github.com/gorankomar/stitch-animations/actions/runs/43460427133. Status waiting for required human environment approval.
 - Production promotion and Webflow publication remain pending. No Webflow publication performed yet. After approval, verify the production channel and publish authorized non-draft page changes to configured production domains, retaining Playground draft status; verify live interactions and update this record.
+
+## Follow-up production refresh
+
+- Previous protected promotion completed successfully; production independently confirmed serving `f1b6808879850652077701bf1c14f7a884e97a94`. Webflow domain metadata shows publication on all four hosts at 2026-11-13T16:15:54.645Z; this is observed evidence, not a claim this chat performed that publication.
+- User requested another complete merge/production release. Incorporated current main `e1e43954ca32aaeefddf2d5bcb153a109143fefa`, including localized Product AI copy and native prompt targeting, plus pending contact form native-style preservation and release evidence. No other open PRs found.
+- Full fresh validation passed all 230 tests, shared build and Product Variety/wallet swap, Country Flags and dependency checks.
+- Saved site router preserved; AI page head/footer remain empty. Playground confirmed draft:true. Production domains re-read: stitch.co, www.stitch.co, stitch.sa, www.stitch.sa.
+- New merge SHA, staging serving verification and protected production promotion results will follow deployment. Production and Webflow publication remain pending for this follow-up.
