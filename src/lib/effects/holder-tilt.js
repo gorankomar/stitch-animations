@@ -8,7 +8,7 @@ export function holderTiltTarget(box, x, y, reach = 80) {
     lightX:50+clamp(dx/(box.width/2))*50,lightY:50+clamp(dy/(box.height/2))*50,strength};
 }
 
-export function createHolderTilt({root,selector='.icon-button'}) {
+export function createHolderTilt({root,selector='.icon-button',maxTilt=17,perspective=410,reach=80}) {
   const holders=[...root.querySelectorAll(selector)];
   // Measure the resting plane once; transformed bounds must not feed back into tilt.
   let boxes=holders.map(holder=>holder.getBoundingClientRect());
@@ -17,8 +17,8 @@ export function createHolderTilt({root,selector='.icon-button'}) {
   let enabled=true,point=null,frame=0;
   function reset(){for(const holder of holders){holder.style.removeProperty('transform');holder.style.setProperty('--holder-light-opacity','0');}}
   function render(){frame=0;if(!enabled||reduced.matches||!fine.matches||!point){reset();return;}
-    for(const [index,holder] of holders.entries()){const target=holderTiltTarget(boxes[index],point.x,point.y);
-      holder.style.transform=`perspective(410px) rotateX(${target.rx}deg) rotateY(${target.ry}deg)`;
+    for(const [index,holder] of holders.entries()){const target=holderTiltTarget(boxes[index],point.x,point.y,reach);
+      holder.style.transform=`perspective(${perspective}px) rotateX(${target.rx * maxTilt / 17}deg) rotateY(${target.ry * maxTilt / 17}deg)`;
       holder.style.setProperty('--holder-light-x',`${target.lightX}%`);holder.style.setProperty('--holder-light-y',`${target.lightY}%`);
       holder.style.setProperty('--holder-light-opacity',String(target.strength));
     }

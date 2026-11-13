@@ -1,3 +1,4 @@
+import { createHolderTilt } from '../lib/effects/holder-tilt.js';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
 import { copilotTyping } from '../lib/effects/copilot-typing.js';
 import { createRevealTrack, resolveRevealTimings } from '../lib/effects/reveal-groups.js';
@@ -111,10 +112,11 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
     endAt = Math.max(lockAt + Math.max(fieldBeat, fadeDuration), lockAt + remainingTurn + fieldBeat);
   }
 
-  let stop;
+  let stop, tilt;
   try {
     const layoutTop = stage.getBoundingClientRect().top;
     prepare();
+    if (stage.querySelector('.lp-product-tilt-plane')) tilt = createHolderTilt({ root: stage, selector: '.lp-product-tilt-plane', maxTilt: 2, perspective: 1800, reach: 1 });
     // Observe the stationary clipping frame, never the translated bar itself.
     // No early root margin: a bottom-positioned frame must actually reach the viewport.
     barObserver = new IntersectionObserver(([entry]) => {
@@ -191,8 +193,9 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
       }
     });
   } catch (error) {
+    tilt?.dispose();
     restore();
     throw error;
   }
-  return () => { stop(); restore(); };
+  return () => { stop(); tilt?.dispose(); restore(); };
 });
