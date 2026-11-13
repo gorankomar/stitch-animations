@@ -1,0 +1,15 @@
+<style>
+/* Product Bar — state styling and unsupported pseudo-element effects only. */
+.lp-product-bar .lp-product-arrow,.lp-product-bar .lp-product-arrow-icon{display:block}
+.lp-product-bar .lp-product-stop-square,.lp-product-bar .lp-product-stop-icon{display:none}
+.lp-product-bar[data-product-state="working"] .lp-product-stop-square,.lp-product-bar[data-product-state="working"] .lp-product-stop-icon{display:block}
+.lp-product-bar[data-product-state="working"] .lp-product-arrow,.lp-product-bar[data-product-state="working"] .lp-product-arrow-icon{display:none}
+.lp-product-policy:empty{display:none}
+.lp-product-bar[data-product-state="typing"] .lp-product-ask>span:first-child{color:#121212;white-space:nowrap}
+.lp-product-bar[data-product-state="typing"] .lp-product-ask>span:first-child::after{content:"|";animation:lp-product-caret 1s step-end infinite}
+@keyframes lp-product-caret{50%{opacity:0}}
+.lp-product-bar::before,.lp-product-bar::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:var(--product-working-opacity,0)}
+.lp-product-bar::before{z-index:-1;box-shadow:var(--product-working-shadow,none)}
+.lp-product-bar::after{z-index:1;inset:-.08333cqi;padding:.1cqi;background:var(--product-working-outline,transparent);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor}
+.lp-solution-screen:has([data-product-state="idle"]) [data-product-value],.lp-solution-screen:has([data-product-state="typing"]) [data-product-value]{color:#888}
+</style>

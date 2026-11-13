@@ -1,3 +1,4 @@
+import { renderCopilotShadow, clearCopilotShadow } from '../lib/effects/copilot-shadow.js';
 import { copilotTyping } from '../lib/effects/copilot-typing.js';
 import { createRevealTrack } from '../lib/effects/reveal-groups.js';
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
@@ -42,13 +43,12 @@ export const init = stageInitializer(selector, (stage) => {
   let stop;
   let start;
   let shown = -1;
-  const shadowProperties = ['--copilot-shadow-x', '--copilot-shadow-y', '--copilot-glow-x', '--copilot-glow-y', '--copilot-glow-alpha'];
 
   function restore() {
     typed.remove();
     stage.removeAttribute('data-copilot-playing');
     shown = -1;
-    for (const property of shadowProperties) card.style.removeProperty(property);
+    clearCopilotShadow(card);
     if (spin) spin.currentTime = 0;
   }
 
@@ -85,12 +85,7 @@ export const init = stageInitializer(selector, (stage) => {
           else typed.remove();
         }
 
-        const angle = elapsed * 2 * Math.PI / 5.5;
-        const offsets = [3.856 * Math.sin(angle), 3.856 * Math.cos(angle),
-          -3 * Math.sin(angle), 3 * (1 - Math.cos(angle))];
-        offsets.forEach((offset, index) => card.style.setProperty(shadowProperties[index], offset + 'cqi'));
-        const pulse = 1 - Math.abs((elapsed % 2.75) / 1.375 - 1);
-        card.style.setProperty('--copilot-glow-alpha', .35 + .25 * pulse);
+        renderCopilotShadow(card, elapsed);
         if (spin) spin.currentTime = Math.min(spinTime, Math.max(0, (elapsed % 3.4 - 2.35) * 1000));
       },
     });
