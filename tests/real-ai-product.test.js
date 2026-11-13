@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { init } from '../src/embeds/real-ai-product.js';
 
-test('product bar waits for its own frame, then runs the coordinated fields and cleans up', () => {
+for (const locale of [null, 'ar', 'vi', 'id']) {
+test(`${locale || 'legacy'}: product bar waits for its own frame, then runs the coordinated fields and cleans up`, () => {
   const keys = ['document', 'window', 'matchMedia', 'IntersectionObserver', 'ResizeObserver', 'requestAnimationFrame', 'cancelAnimationFrame'];
   const saved = keys.map(key => [key, globalThis[key]]);
   const observers = [], frames = new Map();
@@ -20,7 +21,10 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
   title.textContent = 'All required details have been completed.'; policy.textContent = 'Click Create loan product to proceed.'; prompt.textContent = 'Ask for another change…';
   bar.querySelector = selector => ({ '.lp-product-change-title': title, '.lp-product-policy': policy, '.lp-product-ask > span': prompt, '.lp-product-stop': submit, '.lp-product-sparkle': icon })[selector];
   const field = { querySelector: selector => selector === '[data-product-value]' ? value : marker };
-  stage.querySelector = selector => ({ '[data-product-bar]': bar, '[data-product-lock]': lock, '[data-product-updated]': updated })[selector];
+  const localized = locale && { 'idle-title': `${locale} اسأل`, 'working-title': `${locale} Đang tạo`, request: `${locale} Buat pinjaman`, 'lock-placeholder': `${locale} الأشهر`, 'lock-working': '٦', 'placeholder-0': `${locale} Chọn tiền tệ` };
+  if (locale) { title.textContent = `${locale} اكتمل`; policy.textContent = `${locale} Tiếp tục`; prompt.textContent = `${locale} Perubahan lain…`; }
+  const completed = [title.textContent, policy.textContent, prompt.textContent];
+  stage.querySelector = selector => localized && selector.startsWith('[data-product-copy=') ? { textContent: localized[selector.match(/"(.*?)"/)[1]] } : ({ '[data-product-bar]': bar, '[data-product-lock]': lock, '[data-product-updated]': updated })[selector];
   stage.querySelectorAll = selector => selector === '[data-product-field]' ? [field] : [];
   stage.matches = () => true;
   globalThis.document = { documentElement: {}, hidden: false, addEventListener() {}, removeEventListener() {} };
@@ -45,20 +49,20 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
     for (let i = 0; i < 15; i++) tick();
     assert.ok(stage.tracks[0].currentTime >= 100);
     assert.equal(bar.tracks[0].currentTime, 0);
-    assert.equal(value.textContent, 'Select currency');
-    assert.equal(lock.textContent, 'Enter months');
-    assert.equal(title.textContent, 'Ask Stitch AI');
+    assert.equal(value.textContent, localized?.['placeholder-0'] || 'Select currency');
+    assert.equal(lock.textContent, localized?.['lock-placeholder'] || 'Enter months');
+    assert.equal(title.textContent, localized?.['idle-title'] || 'Ask Stitch AI');
     observers[0].callback([{ isIntersecting: true }]);
     tick(); tick();
     assert.ok(bar.tracks[0].currentTime > 0);
     tick(40);
     assert.equal(bar.dataset.productState, 'typing');
     assert.ok(bar.tracks[0].currentTime < 100, 'typing begins before the reveal finishes');
-    assert.match(prompt.textContent, /^C/);
+    assert.ok((localized?.request || 'Create').startsWith(prompt.textContent));
     for (let i = 0; i < 15; i++) tick();
     assert.equal(bar.dataset.productState, 'typing');
-    assert.match(prompt.textContent, /^Create/);
-    assert.equal(value.textContent, 'Select currency');
+    assert.ok(prompt.textContent.startsWith(locale || 'Create'));
+    assert.equal(value.textContent, localized?.['placeholder-0'] || 'Select currency');
     const pausedCopy = prompt.textContent;
     observers[1].callback([{ isIntersecting: false, intersectionRatio: 0 }]);
     for (let i = 0; i < 20; i++) tick();
@@ -67,16 +71,16 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
     tick();
     for (let i = 0; i < 15; i++) tick();
     assert.equal(bar.dataset.productState, 'working');
-    assert.equal(title.textContent, 'Creating personal loan...');
+    assert.equal(title.textContent, localized?.['working-title'] || 'Creating personal loan...');
     assert.ok(bar.style['--product-working-shadow']);
     assert.ok(bar.style['--product-working-opacity'] > 0);
     assert.ok(bar.style['--product-working-opacity'] < 1, 'working glow fades in instead of appearing at full opacity');
-    assert.equal(lock.textContent, '6');
+    assert.equal(lock.textContent, localized?.['lock-working'] || '6');
     assert.match(bar.style['--product-working-outline'], /^conic-gradient/);
     const workingRotation = icon.tracks[0].currentTime;
     for (let i = 0; i < 4; i++) tick();
     assert.equal(bar.dataset.productState, 'complete');
-    assert.equal(title.textContent, 'All required details have been completed.');
+    assert.equal(title.textContent, completed[0]);
     assert.ok(bar.style['--product-working-opacity'] > 0, 'effects remain visible while completion fades them out');
     assert.ok(bar.style['--product-working-opacity'] < 1);
     assert.ok(bar.style['--product-working-outline']);
@@ -91,8 +95,8 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
       lastRotation = rotation;
     }
     assert.ok(reachedUpright, 'the icon reaches a full turn and holds before cleanup');
-    assert.equal(title.textContent, 'All required details have been completed.');
-    assert.equal(policy.textContent, 'Click Create loan product to proceed.');
+    assert.equal(title.textContent, completed[0]);
+    assert.equal(policy.textContent, completed[1]);
     assert.equal(bar.style['--product-working-shadow'], undefined);
     assert.equal(bar.style['--product-working-opacity'], undefined);
     assert.equal(bar.style['--product-working-outline'], undefined);
@@ -103,7 +107,7 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
     assert.equal(frames.size, 0);
     assert.ok(bar.tracks[0].cancelled);
     const repeatDispose = init(stage);
-    assert.equal(title.textContent, 'Ask Stitch AI');
+    assert.equal(title.textContent, localized?.['idle-title'] || 'Ask Stitch AI');
     repeatDispose();
     assert.equal(value.textContent, 'USD');
     globalThis.matchMedia = () => ({ matches: true });
@@ -111,10 +115,12 @@ test('product bar waits for its own frame, then runs the coordinated fields and 
     const reducedDispose = init(stage);
     assert.equal(value.textContent, 'USD');
     assert.equal(lock.textContent, '3');
-    assert.equal(title.textContent, 'All required details have been completed.');
+    assert.equal(title.textContent, completed[0]);
     assert.equal(bar.tracks.length, trackCount);
     reducedDispose();
   } finally {
     for (const [key, value] of saved) value === undefined ? delete globalThis[key] : globalThis[key] = value;
   }
 });
+
+}

@@ -52,3 +52,5 @@
 .lp-product-bar::after{z-index:1;inset:-.08333cqi;padding:.1cqi;background:var(--product-working-outline,transparent);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor}
 [data-real-ai-product]:has([data-product-state="idle"]) [data-product-value],
 [data-real-ai-product]:has([data-product-state="typing"]) [data-product-value]{color:#888}
+
+.lp-product-copy{display:none}
