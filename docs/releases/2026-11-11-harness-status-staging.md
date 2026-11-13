@@ -8,3 +8,12 @@ Authorized staging only; user approved the local preview and requested no Webflo
 - `npm run validate:release`: 228 tests passed, all shared entries built, Product Variety/wallet swap and Country Flags inclusion/dependency checks passed.
 - Main deployment workflow activates staging only. Production and permanent loader URLs remain unchanged. Animations Playground must remain unpublished.
 - Local desktop/393px mobile visual checks and sequence/replay/offscreen/cleanup/reduced-motion behavior test passed. Webflow Preview omitted at user request.
+
+## Activation evidence
+
+- PR #79: https://github.com/gorankomar/stitch-animations/pull/79
+- Merged release: `913d869ac1cbe8e421cd1e83dadeac41e373753f`.
+- Workflow https://github.com/gorankomar/stitch-animations/actions/runs/43103222378 completed successfully, including CDN bytes/CORS verification and staging activation/invalidation.
+- Served staging channel independently verified importing that exact release SHA.
+- Real AI single-page staging publication rejected: HTTP 400, `Invalid parameter: pageId`. No site-wide publish attempted because it would include unrelated pending pages. New scoped status CSS remains in the saved component draft, absent from published staging HTML. Published motion therefore awaits publication of that draft for full appearance.
+- Animations Playground metadata confirmed `draft: true`; no Webflow publication performed. Production unchanged. Webflow Preview skipped as requested.

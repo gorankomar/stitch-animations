@@ -27,9 +27,9 @@
 }
 
 .real-ai-copilot-header,
-.real-ai-copilot-footer,
-.real-ai-copilot-attach,
-.real-ai-copilot-send {
+.real-ai-copilot-actions,
+.real-ai-copilot-attachment,
+.real-ai-copilot-submit {
   display: flex;
   align-items: center;
 }
@@ -73,26 +73,40 @@
 .real-ai-copilot-prompt:has([data-copilot-typed]) [data-copilot-copy] { opacity: 0; }
 [data-copilot-typed] { position: absolute; inset: 2.985cqi; }
 
-.real-ai-copilot-footer { gap: 1.493cqi; padding: 2.239cqi; }
-.real-ai-copilot-attach {
+/* Keep the two icon controls intrinsic; the review hint owns remaining space. */
+.real-ai-copilot-actions {
+  width: 100%;
+  box-sizing: border-box;
+  gap: 1.493cqi;
+  padding: 2.239cqi;
+}
+.real-ai-copilot-attachment {
+  flex-shrink: 0;
+  justify-content: center;
   gap: 1.119cqi;
   padding: .746cqi 1.493cqi;
+  color: #121212;
   font-size: 2.239cqi;
   line-height: 2.985cqi;
   font-weight: 500;
+  white-space: nowrap;
 }
-.real-ai-copilot-attach img { width: 2.239cqi; }
-.real-ai-copilot-hint {
+.real-ai-copilot-plus { display: block; width: 2.239cqi; height: 2.239cqi; flex-shrink: 0; }
+.real-ai-copilot-review {
+  flex: 1 1 0%;
+  min-width: 0;
+  margin: 0;
   color: #999;
   font-size: 2.612cqi;
   line-height: 3.731cqi;
   letter-spacing: -.052cqi;
 }
-.real-ai-copilot-send {
-  flex: none;
-  margin-inline-start: auto;
-  padding: 1.493cqi;
+.real-ai-copilot-submit {
+  flex-shrink: 0;
+  justify-content: center;
+  width: 5.970cqi;
+  height: 5.970cqi;
   border-radius: 50%;
   background: #141414;
 }
-.real-ai-copilot-send img { width: 2.985cqi; }
+.real-ai-copilot-arrow { display: block; width: 2.985cqi; height: 2.985cqi; flex-shrink: 0; }
