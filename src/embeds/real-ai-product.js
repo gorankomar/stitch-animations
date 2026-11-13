@@ -13,7 +13,8 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   const updated = stage.querySelector('[data-product-updated]');
   const title = bar?.querySelector('.lp-product-change-title');
   const policy = bar?.querySelector('.lp-product-policy');
-  const prompt = bar?.querySelector('.lp-product-ask > span');
+  // Target the localized prompt independently of its native Webflow element type.
+  const prompt = bar?.querySelector('.lp-product-prompt') || bar?.querySelector('.lp-product-ask > span');
   const submit = bar?.querySelector('.lp-product-stop');
   const icon = bar?.querySelector('.lp-product-sparkle');
   // Native text nodes participate in Webflow Localization; attributes are stable keys only.

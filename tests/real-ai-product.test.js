@@ -19,7 +19,7 @@ test(`${locale || 'legacy'}: product bar waits for its own frame, then runs the 
   bar.parentElement = frame; value.parentElement = control; value.dataset.productPlaceholder = 'Select currency'; value.textContent = 'USD'; lock.textContent = '3';
   const title = node(), policy = node(), prompt = node(), submit = node(), icon = node();
   title.textContent = 'All required details have been completed.'; policy.textContent = 'Click Create loan product to proceed.'; prompt.textContent = 'Ask for another change…';
-  bar.querySelector = selector => ({ '.lp-product-change-title': title, '.lp-product-policy': policy, '.lp-product-ask > span': prompt, '.lp-product-stop': submit, '.lp-product-sparkle': icon })[selector];
+  bar.querySelector = selector => ({ '.lp-product-change-title': title, '.lp-product-policy': policy, '.lp-product-prompt': prompt, '.lp-product-stop': submit, '.lp-product-sparkle': icon })[selector];
   const field = { querySelector: selector => selector === '[data-product-value]' ? value : marker };
   const localized = locale && { 'idle-title': `${locale} اسأل`, 'working-title': `${locale} Đang tạo`, request: `${locale} Buat pinjaman`, 'lock-placeholder': `${locale} الأشهر`, 'lock-working': '٦', 'placeholder-0': `${locale} Chọn tiền tệ` };
   if (locale) { title.textContent = `${locale} اكتمل`; policy.textContent = `${locale} Tiếp tục`; prompt.textContent = `${locale} Perubahan lain…`; }
