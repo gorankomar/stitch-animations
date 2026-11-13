@@ -16,11 +16,17 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   const prompt = bar?.querySelector('.lp-product-ask > span');
   const submit = bar?.querySelector('.lp-product-stop');
   const icon = bar?.querySelector('.lp-product-sparkle');
+  // Native text nodes participate in Webflow Localization; attributes are stable keys only.
+  const copy = (key, fallback) => stage.querySelector(`[data-product-copy="${key}"]`)?.textContent?.trim() || fallback;
+  const idleTitle = copy('idle-title', 'Ask Stitch AI');
+  const workingTitle = copy('working-title', 'Creating personal loan...');
+  const lockPlaceholder = copy('lock-placeholder', 'Enter months');
+  const lockWorking = copy('lock-working', '6');
   const fields = [...stage.querySelectorAll('[data-product-field]')].map((field, index) => {
     const value = field.querySelector('[data-product-value]');
     return {
       value, marker: field.querySelector('.lp-product-marker'), control: value?.parentElement,
-      placeholder: value?.dataset.productPlaceholder || placeholders[index], text: value?.textContent, typing: value?.dataset.productValue === 'type'
+      placeholder: copy(`placeholder-${index}`, value?.dataset.productPlaceholder || placeholders[index]), text: value?.textContent, typing: value?.dataset.productValue === 'type'
     };
   });
   if (!bar?.animate || !lock || !updated || !fields.length ||
@@ -32,7 +38,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
   const fadeDuration = getFastDurationMs();
   const orbitDuration = 2800;
   const typingDuration = 1400;
-  const request = copilotTyping('Create a personal loan for salaried customers with direct deposit.');
+  const request = copilotTyping(copy('request', 'Create a personal loan for salaried customers with direct deposit.'));
   // Begin during the final settling portion of the bar’s reveal.
   const typingAt = duration * .65;
   const submitAt = typingAt + typingDuration;
@@ -79,14 +85,14 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
     travel = createRevealTrack(bar, { frame: bar.parentElement, mode: 'hard', bleed: 4 });
     hard = paused(bar, travel.keyframes(), { duration, easing });
     bar.dataset.productState = 'idle';
-    if (title) title.textContent = 'Ask Stitch AI';
+    if (title) title.textContent = idleTitle;
     if (policy) policy.textContent = '';
-    if (prompt) prompt.textContent = 'Ask for another change…';
+    if (prompt) prompt.textContent = original[2];
     if (submit) paused(submit, [{ transform: 'scale(1)' }, { transform: 'scale(.82)' }, { transform: 'scale(1)' }],
       { duration: motionDuration, delay: submitAt, easing });
     if (icon) spin = paused(icon, [{ transform: 'rotate(0turn)' }, { transform: 'rotate(1turn)' }],
       { duration: motionDuration, easing });
-    lock.textContent = 'Enter months';
+    lock.textContent = lockPlaceholder;
     lock.style.color = '#888';
     updated.style.visibility = 'hidden';
     let delay = workingAt + motionDuration * .5;
@@ -151,12 +157,12 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
         });
         const working = now >= workingAt && now < lockAt;
         bar.dataset.productState = now >= lockAt ? 'complete' : working ? 'working' : now >= typingAt ? 'typing' : 'idle';
-        if (title) title.textContent = now >= lockAt ? 'All required details have been completed.' : working ? 'Creating personal loan...' : 'Ask Stitch AI';
-        if (policy) policy.textContent = now >= lockAt ? 'Click Create loan product to proceed.' : '';
+        if (title) title.textContent = now >= lockAt ? original[0] : working ? workingTitle : idleTitle;
+        if (policy) policy.textContent = now >= lockAt ? original[1] : '';
         if (prompt) {
           const progress = Math.max(0, Math.min(1, (now - typingAt) / typingDuration)) * request.total;
           const count = request.keys.filter(key => key <= progress).length;
-          prompt.textContent = now >= workingAt || now < typingAt ? 'Ask for another change…' : request.letters.slice(0, count).join('');
+          prompt.textContent = now >= workingAt || now < typingAt ? original[2] : request.letters.slice(0, count).join('');
         }
         const workTime = Math.max(0, now - workingAt);
         const orbitPhase = (workTime % orbitDuration) / orbitDuration;
@@ -178,7 +184,7 @@ export const init = stageInitializer('[data-real-ai-product], .lp-solution-scree
           lock.style.removeProperty('color');
           updated.style.removeProperty('visibility');
         }
-        if (working) lock.textContent = '6';
+        if (working) lock.textContent = lockWorking;
         for (const field of fields) {
           if (now < field.delay) continue;
           let value = field.text;
