@@ -1,0 +1,6 @@
+# Real AI product screen — staging animation
+
+- [PR #70](https://github.com/gorankomar/stitch-animations/pull/70) merged release `4fa8703109d6c8f355806173a0e6255c6f14dec3` into main after `npm run validate:release` passed 224 tests and checked both shared bundles, including Product Variety wallet swap and Country Flags.
+- The public CloudFront staging pointer advanced from `ae6685d8bd903369d4c0017fa72e351259817f57` to the merged SHA. The immutable shared entry returned HTTP 200, JavaScript MIME, and wildcard CORS for the Webflow staging origin. Verified the actual pointer body after activation.
+- Draft Animations Playground Preview with custom code enabled used the permanent staging loader. Observed the AI bar enter before the fields filled, separate selections, incremental typing through the full description, Daily balance, and lock-in 2 → 3 months.
+- Webflow declined single-page staging publication for Real AI with HTTP 400 (`Invalid parameter: pageId`). The Designer offered site-wide publication by domain. No site-wide publication was run; the new landing markup remains a saved draft change. Platform Screens and Animations Playground remain drafts. No production changes were made.

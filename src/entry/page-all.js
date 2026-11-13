@@ -1,3 +1,7 @@
+import { init as initRealAiProduct } from '../embeds/real-ai-product.js';
+import { init as initRealAiHarness } from '../embeds/real-ai-harness.js';
+import { init as initRealAiAgents } from '../embeds/real-ai-agents.js';
+import { init as initRealAiCopilot } from '../embeds/real-ai-copilot.js';
 import '../embeds/collections-graphic.js';
 import '../embeds/workflow-flexibility.js';
 import '../embeds/embedded-connectivity.js';
@@ -72,6 +76,10 @@ ready(() => {
   initAutoReveals(document);
   initZoomLenses(document);
   [
+    initRealAiProduct,
+    initRealAiCopilot,
+    initRealAiAgents,
+    initRealAiHarness,
     initCollections,
     initAccess,
     initReference,

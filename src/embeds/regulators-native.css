@@ -1,0 +1,10 @@
+.regulators{width:100%;min-width:0;}
+.regulators-frame{position:relative;width:100%;aspect-ratio:540 / 278;overflow:hidden;border:0.185185cqi solid #f9f9f9;border-radius:1.481481cqi;background-color:#fff;background-image:linear-gradient(212.48369deg,rgba(212,212,212,.37) 0%,rgba(255,255,255,.37) 48.599%,rgba(234,234,234,.37) 100%);}
+.regulators-grid{position:absolute;inset:0;pointer-events:none;}
+.regulators-pci{position:absolute;left:12.037037%;top:28.417266%;width:22.407407%;aspect-ratio:1;}
+.regulators-iso{position:absolute;left:38.703704%;top:28.417266%;width:22.407407%;aspect-ratio:1;}
+.regulators-saudi{position:absolute;left:65.37037%;top:28.417266%;width:22.407407%;aspect-ratio:1;}
+.regulators-circle{position:relative;width:100%;height:100%;border:0.185185cqi solid #efefef;border-radius:50%;background-image:linear-gradient(165deg,#fcfcfc 10.566%,#efefef 131.2%);box-shadow:0 .740741cqi 1.111111cqi -.37037cqi #10182808,0 2.222222cqi 2.962963cqi -.740741cqi #10182814;}
+.regulators-pci-icon{position:absolute;left:22.31405%;top:31.404959%;width:56.119256%;aspect-ratio:67.9043 / 44.7998;}
+.regulators-iso-icon{position:absolute;left:23.950413%;top:23.966942%;width:51.904132%;aspect-ratio:62.804 / 64;}
+.regulators-saudi-icon{position:absolute;left:33.884298%;top:30.578512%;width:32.231405%;aspect-ratio:39 / 47;}

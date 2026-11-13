@@ -1,0 +1,23 @@
+/* Unsupported perimeter motion, scoped to the reusable Harness. */
+[data-real-ai-harness] .harness-steps > span { position:relative; white-space:nowrap; flex:none; }
+[data-real-ai-harness] .harness-steps > span::before,
+[data-real-ai-harness] .harness-steps > span::after {
+  content:""; position:absolute; inset:calc(-1 * var(--hu)); pointer-events:none;
+  border-radius:inherit; padding:calc(1 * var(--hu));
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite:exclude;
+}
+[data-real-ai-harness] .harness-steps > span::before {
+  background:conic-gradient(from var(--harness-angle,0deg),transparent 0deg,#ff3609 90deg,transparent 110deg);
+  opacity:var(--harness-working,0);
+}
+[data-real-ai-harness] .harness-steps > span::after {
+  background:#ff3609; opacity:var(--harness-burst-opacity,0);
+  inset:calc((-1 - var(--harness-burst-expansion,0)) * var(--hu));
+}
+[data-real-ai-harness] .harness-steps > span[data-harness-state="pending"],
+[data-real-ai-harness] .harness-steps > span[data-harness-state="working"] {
+  background:#fff; padding-inline:calc(8 * var(--hu)) calc(6 * var(--hu));
+}
+[data-real-ai-harness] .harness-steps > span:is([data-harness-state="pending"],[data-harness-state="working"]) img { display:none; }
+[data-real-ai-harness] .harness-steps > span:last-child { background:#121212; padding:calc(3 * var(--hu)) calc(8 * var(--hu)); border:0; color:#fff; }

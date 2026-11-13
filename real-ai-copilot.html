@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real AI Copilot illustration</title>
+<link rel="stylesheet" href="/global.css">
+<link rel="stylesheet" href="/src/embeds/real-ai-copilot-native.css">
+<style>
+  body { margin: 24px; font-family: "ABC Diatype", Arial, sans-serif; }
+  main { max-width: 536px; margin-inline: auto; }
+  .w-tab-link { flex: 1; padding: 1rem 0; }
+  .w-tab-pane { display: none; min-height: 200px; }
+  .w-tab-pane.w--tab-active { display: block; }
+</style>
+<main data-sliding-tabs>
+  <div class="w-tab-menu lp-solution-tab-menu" style="display:flex; padding-inline:2.5rem">
+    <button class="w-tab-link w--current" data-w-tab="copilot">Copilot</button>
+    <button class="w-tab-link" data-w-tab="agents">Prebuilt agents</button>
+    <button class="w-tab-link" data-w-tab="harness">Agent harness</button>
+  </div>
+  <div class="w-tab-content">
+    <div class="w-tab-pane w--tab-active" data-w-tab="copilot">
+<div class="real-ai-copilot" data-real-ai-copilot>
+  <div class="real-ai-copilot-frame">
+    <div class="real-ai-copilot-card">
+      <div class="real-ai-copilot-header">
+        <img class="real-ai-copilot-icon" src="/src/embeds/assets/real-ai-copilot/icon.svg" alt="">
+        <span>Describe the product and I’ll fill all 42 settings</span>
+        <img class="real-ai-copilot-close" src="/src/embeds/assets/real-ai-copilot/xclose.svg" alt="">
+      </div>
+      <div class="real-ai-copilot-divider" aria-hidden="true"></div>
+      <p class="real-ai-copilot-prompt"><span data-copilot-copy>Personal loan for direct-deposit customers. $2,000 to $50,000 over 12 to 60 months, priced 8.9% to 14.9% APR by risk band, 1% origination fee capped at $500, paid into their checking account.</span></p>
+      <div class="real-ai-copilot-divider" aria-hidden="true"></div>
+      <div class="real-ai-copilot-actions">
+        <div class="real-ai-copilot-attachment"><img class="real-ai-copilot-plus" src="/src/embeds/assets/real-ai-copilot/plus.svg" alt=""><span>Attach</span></div>
+        <p class="real-ai-copilot-review">Fills 8 sections · you review before creating</p>
+        <div class="real-ai-copilot-submit" aria-label="Send prompt"><img class="real-ai-copilot-arrow" src="/src/embeds/assets/real-ai-copilot/arrowup.svg" alt=""></div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="w-tab-pane" data-w-tab="agents">Prebuilt agents</div>
+    <div class="w-tab-pane" data-w-tab="harness">Agent harness</div>
+  </div>
+</main>
+<script type="module">
+  import { init } from '/src/embeds/real-ai-copilot.js';
+  import tabs from '/src/embeds/real-ai-solution-tabs.html?raw';
+  const menu = document.querySelector('.w-tab-menu');
+  menu.addEventListener('click', ({ target }) => {
+    const link = target.closest('.w-tab-link');
+    if (!link) return;
+    for (const button of menu.children) button.classList.toggle('w--current', button === link);
+    for (const pane of document.querySelectorAll('.w-tab-pane')) {
+      pane.classList.toggle('w--tab-active', pane.dataset.wTab === link.dataset.wTab);
+    }
+  });
+  const template = document.createElement('template');
+  template.innerHTML = tabs;
+  document.head.append(template.content.querySelector('style'));
+  const script = document.createElement('script');
+  script.textContent = template.content.querySelector('script').textContent;
+  document.head.append(script);
+  window.Webflow.forEach(callback => callback());
+  init();
+</script>
+</html>

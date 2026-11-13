@@ -1,5 +1,5 @@
 // One visibility-aware clock per stage, with resize and reduced-motion handling.
-export function animateStage(stage, { nodes = [], threshold = 0, start = () => {}, update }) {
+export function animateStage(stage, { nodes = [], threshold = 0, rootMargin = '0px', start = () => {}, update }) {
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   let frame = 0, previous = 0, time = 0, visible = false, started = false, dirty = true, disposed = false;
   function tick(now) {
@@ -22,7 +22,7 @@ export function animateStage(stage, { nodes = [], threshold = 0, start = () => {
       visible = entry.isIntersecting && entry.intersectionRatio >= threshold;
       if (visible && !started) { started = true; start(); }
       resume();
-    }, { threshold });
+    }, { threshold, rootMargin });
     observer.observe(stage);
     resize = new ResizeObserver(invalidate);
     [stage, ...nodes].forEach(node => resize.observe(node));
