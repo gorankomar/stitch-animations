@@ -1,0 +1,64 @@
+@font-face{font-family:Abcdiatype;src:url('/src/embeds/assets/real-time-approvals/body-regular.woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Abcdiatype;src:url('/src/embeds/assets/real-time-approvals/body-medium.woff2');font-weight:500 700;font-display:swap}
+*{box-sizing:border-box}:root{--_typography---font-styles--body:Abcdiatype;--motion-ease-primary:cubic-bezier(.11,.61,.27,.99);--motion-duration-default:770ms}
+body{margin:0;background:#fff;color:#121212;font-family:Abcdiatype,Arial,sans-serif}main{max-width:1264px;margin:auto;padding:48px 32px}header{position:relative;margin-bottom:44px}header p{font-size:11px;letter-spacing:.12em;color:#777}h1{font-size:36px;font-weight:500;letter-spacing:-.035em;margin:16px 0 24px}h2{font-size:19px;font-weight:500;margin:0 0 8px}section>p,footer{font-size:14px;color:#777}section{margin-bottom:48px}.study-controls{display:flex;gap:8px}button{font:inherit;font-size:13px;padding:9px 15px;border:1px solid #ddd;border-radius:7px;background:#fff;cursor:pointer}
+.study-stage{position:relative;isolation:isolate;container-type:inline-size;width:100%;height:auto;aspect-ratio:1200/650;background:#f6f6f6;border-radius:.75rem;overflow:hidden;color:#454545;font-size:1.16667cqi;--study-bg:#f6f6f6}
+.study-prompt{position:absolute;z-index:3;left:27%;top:42%;width:46%;transform-origin:center}.study-prompt-size{transform:scale(1.24)}
+.study-fields{position:absolute;inset:0}.study-tile{position:absolute;width:46cqi;left:27cqi;top:0;font:400 1.16667cqi/1.66667cqi var(--_typography---font-styles--body);transform-origin:center}.study-tile-size{padding:1.5cqi;background:white;border:1px solid #e7e7e7;border-radius:1cqi;box-shadow:0 .3cqi 1cqi #00000003}
+.study-fade{pointer-events:none;position:absolute;z-index:4;inset:0;background:linear-gradient(var(--study-bg),transparent 22%,transparent 78%,var(--study-bg))}
+.study-row{position:absolute;left:0;display:flex;gap:2cqi;width:max-content}.study-sequence{display:flex;align-items:stretch;gap:2cqi}.study-row .study-tile{position:relative;left:auto;top:auto;width:var(--tile-width,32cqi);flex:none}.study-row .study-tile-size{height:100%;padding:1.5cqi}.study-row .study-tile{height:10cqi}.study-rows-fade{background:linear-gradient(90deg,var(--study-bg),transparent 15%,transparent 85%,var(--study-bg))}.study-stage[data-product-study="rows"] .study-fade{background:linear-gradient(var(--study-bg),transparent 14%,transparent 86%,var(--study-bg)),linear-gradient(90deg,var(--study-bg),transparent 12%,transparent 88%,var(--study-bg))}
+.study-value-empty{color:#888}.study-status{position:absolute;bottom:2cqi;left:0;right:0;text-align:center;font-size:1cqi;color:#888;z-index:5}
+@media(max-width:600px){main{padding:28px 16px}h1{font-size:29px}.study-stage{aspect-ratio:1/1} .study-prompt{top:45%}.study-prompt-size{transform:scale(1.8)}.study-stage[data-product-study="vertical"] .study-tile-size{transform:scale(1.35)}footer{line-height:1.5}}
+@media(max-width:600px){.study-stage[data-product-study="rows"] .study-fields{scale:1.7;transform-origin:center}}
+/* Requested local study states: collapse the prompt and show AI change feedback. */
+.study-prompt{z-index:6;top:50%}.study-prompt-size{transform-origin:center}.study-prompt .lp-product-bar{overflow:visible}.study-prompt .lp-product-ask{min-height:0}
+.study-tile-size{padding:1cqi}.study-toggle-group{display:flex;flex-direction:column;justify-content:center;gap:.7cqi;height:100%}
+.study-toggle{position:relative;display:inline-block;flex:none;width:3cqi;height:1.66667cqi;border-radius:2cqi;background:#e7e7e7}
+.study-toggle::after{content:"";position:absolute;top:.16667cqi;left:.16667cqi;width:1.33333cqi;height:1.33333cqi;border-radius:50%;background:white;box-shadow:0 .08cqi .2cqi #0002;transform:translateX(calc(var(--toggle-progress,0) * 1.33333cqi))}
+.study-row .study-tile{height:9cqi}.study-row .study-tile-size{padding:1cqi;display:flex;align-items:center}.study-row .study-tile-size>.lp-product-field{width:100%}.study-row .study-tile-size>.study-toggle-group{width:100%}
+.study-stage[data-product-study="vertical"] .study-tile-size{box-shadow:none}.study-stage[data-product-study="vertical"] .study-fade{background:linear-gradient(var(--study-bg),transparent 13%,transparent 87%,var(--study-bg))}
+@media(max-width:600px){.study-stage[data-product-study="vertical"] .study-tile-size{transform:none}}
+.study-prompt .lp-product-bar[data-product-state="working"] .lp-product-stop{visibility:hidden}
+/* Vertical mask retains the fixed native content size; the outer shell carries the glow. */
+.study-stage[data-product-study="vertical"] .study-prompt-size{border-radius:1.33333cqi;box-shadow:var(--product-working-shadow,none)}
+/* Keep the prompt's upper edge fixed while its lower mask rises. */
+.study-stage[data-product-study="vertical"] .study-prompt-size{transform-origin:center top}
+.study-stage[data-product-study="vertical"] .study-tile{width:32.2cqi;left:33.9cqi}
+.study-workbench{display:grid;grid-template-columns:280px minmax(0,1fr);gap:24px;align-items:start}.study-tuning{border:1px solid #e7e7e7;border-radius:12px;padding:18px;background:#fafafa;font-size:13px;max-height:calc(100vh - 48px);overflow:auto;position:sticky;top:24px}.study-tuning>summary{font-weight:500;cursor:pointer}.study-tuning>p{font-size:12px;color:#777;line-height:1.5}.study-settings-grid{display:grid;gap:17px;margin:22px 0}.study-setting label{display:block;font-size:12px;margin-bottom:7px}.study-setting-inputs{display:grid;grid-template-columns:minmax(0,1fr) 62px;gap:8px;align-items:center}.study-setting-inputs input[type=range]{width:100%;margin:0;accent-color:#ff7f62}.study-setting-inputs input[type=number]{width:62px;padding:5px;border:1px solid #ddd;border-radius:5px;font:inherit;background:#fff}.study-setting-inputs span{grid-column:1/-1;font-size:10px;color:#888}.study-control-actions{display:flex;gap:7px;flex-wrap:wrap}.study-control-actions button{font-size:11px;padding:8px 10px}.study-control-actions [role=status]{font-size:11px;color:#777;line-height:1.5;width:100%;min-height:18px}.study-settings-summary{margin-top:14px;font-size:11px}.study-settings-summary summary{cursor:pointer}.study-settings-summary textarea{margin-top:10px;width:100%;font:11px/1.6 monospace;border:1px solid #ddd;border-radius:6px;padding:8px;resize:vertical}.study-workbench>.study-stage{position:sticky;top:24px}
+@media(max-width:900px){.study-workbench{grid-template-columns:1fr}.study-tuning{position:static;max-height:none}.study-settings-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.study-workbench>.study-stage{position:static}}@media(max-width:480px){.study-settings-grid{grid-template-columns:1fr}}
+.study-stage[data-product-study="vertical"] .study-prompt-size{transform:scale(1.4)}
+@media(max-width:600px){.study-stage[data-product-study="vertical"] .study-prompt-size{transform:scale(2)}}
+/* The exit is carried by rotation; the top no longer fades cards into the backdrop. */
+.study-stage[data-product-study="vertical"] .study-fade{background:linear-gradient(transparent 0%,transparent 87%,var(--study-bg))}
+.study-stage[data-product-study="vertical"] .study-tile-size{backface-visibility:hidden}
+/* All Rolodex items, including both appearances of the bar, share the fades. */
+.study-stage[data-product-study="vertical"] .study-prompt{z-index:3;transform-origin:center;backface-visibility:hidden}
+.study-stage[data-product-study="vertical"] .study-prompt-size{transform:none;transform-origin:center top}
+.study-stage[data-product-study="vertical"] .study-fade{z-index:8;background:linear-gradient(var(--study-bg),transparent var(--study-fade-size,15%),transparent calc(100% - var(--study-fade-size,15%)),var(--study-bg))}
+.study-stage[data-product-study="vertical"] .lp-product-bar[data-product-state="typing"] .lp-product-prompt{white-space:normal;line-height:1.66667cqi}
+.study-stage[data-product-study="vertical"] .lp-product-prompt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.study-stage[data-product-study="vertical"] .lp-product-ask{align-items:center}
+/* Reserve both lines from the first character, so wrapping cannot recenter text. */
+.study-stage[data-product-study="vertical"] .lp-product-prompt{display:block;height:3.33334cqi;min-height:3.33334cqi;line-height:1.66667cqi;white-space:normal;overflow:hidden}
+
+/* Third local study: a shared tilted plane receding behind a flat AI bar. */
+.study-stage[data-product-study="crawl"]{perspective:65cqi;perspective-origin:50% 10%}
+.study-stage[data-product-study="crawl"] .study-fields{transform:rotateX(48deg) scale(1.1);transform-origin:50% 100%;transform-style:preserve-3d}
+.study-stage[data-product-study="crawl"] .study-prompt{width:46%;left:27%;z-index:6}
+.study-stage[data-product-study="crawl"] .study-prompt-size{border-radius:1.33333cqi;box-shadow:var(--product-working-shadow,none)}
+.study-stage[data-product-study="crawl"] .lp-product-prompt{display:block;height:1.66667cqi;line-height:1.66667cqi;white-space:nowrap;overflow:hidden}
+.study-stage[data-product-study="crawl"] .study-fade{z-index:4;background:linear-gradient(var(--study-bg) 0%,transparent 34%,transparent 85%,var(--study-bg)),linear-gradient(90deg,var(--study-bg),transparent 8%,transparent 92%,var(--study-bg))}
+#crawl-replay{margin:4px 0 16px}
+@media(prefers-reduced-motion:reduce){.study-stage[data-product-study="crawl"] .study-fields{transform:translateY(-5cqi) scale(.85);transform-origin:50% 0%;overflow:hidden}}
+
+.study-stage[data-product-study="crawl"] .study-tile{height:9cqi}
+.study-stage[data-product-study="crawl"] .study-tile-size{height:100%;display:flex;align-items:center;padding:.8cqi}
+.study-stage[data-product-study="crawl"] .study-tile-size>div{width:100%;min-width:0}
+.study-stage[data-product-study="crawl"] .lp-product-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.study-stage[data-product-study="crawl"] .lp-product-control{overflow:hidden}
+.study-stage[data-product-study="crawl"] [data-study-final]{white-space:nowrap}
+
+/* Client presentation: retain tuning DOM and logic for later editing. */
+.study-workbench-presentation{grid-template-columns:minmax(0,1fr)}
+.study-workbench-presentation>.study-tuning{display:none}
+.study-workbench-presentation>.study-stage{position:relative;top:auto}
