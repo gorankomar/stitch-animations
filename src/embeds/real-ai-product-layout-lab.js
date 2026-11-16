@@ -89,6 +89,7 @@ export const init = stageInitializer('[data-product-study]', stage => {
   const rows = stage.dataset.productStudy === 'rows';
   const crawl = stage.dataset.productStudy === 'crawl';
   const camera = stage.dataset.productStudy === 'camera';
+  const flatCamera = camera && stage.dataset.cameraFlat === 'true';
   let screen, cameraPlane, cameraFields = [];
   const ease = readMotionEasingCurve();
   const duration = getDefaultDurationMs() / 1000;
@@ -458,7 +459,8 @@ export const init = stageInitializer('[data-product-study]', stage => {
     const descriptionWeight=ease(clamp((u-9.35)/.6))*(1-ease(clamp((u-12.0)/.75)));
     const anchorFor=field=>width*.09+field.width*c.scale/2;
     const anchorX=width/2+(anchorFor(first)-width/2)*firstWeight+(anchorFor(description)-width/2)*descriptionWeight;
-    cameraPlane.style.transform=`translate(${anchorX}px,${height/2}px) perspective(${width*2}px) rotateX(${c.rx+drift*1.8}deg) rotateY(${c.ry+drift*2}deg) rotateZ(${c.rz}deg) scale(${c.scale/3.2}) translate(${-focusX}px,${-focusY}px)`;
+    const tilt=flatCamera?'':`perspective(${width*2}px) rotateX(${c.rx+drift*1.8}deg) rotateY(${c.ry+drift*2}deg) rotateZ(${c.rz}deg)`;
+    cameraPlane.style.transform=`translate(${anchorX}px,${height/2}px) ${tilt} scale(${c.scale/3.2}) translate(${-focusX}px,${-focusY}px)`;
     // Selector commits happen while their camera pan is still in flight.
     const starts=[5.45,7.28,8.03,8.93,9.9,12.5,13.85];
     const lengths=[1.15,.16,.16,.16,1.85,.22,1.25];
@@ -508,6 +510,7 @@ export const init = stageInitializer('[data-product-study]', stage => {
   const controller = {
     vertical: !rows && !crawl && !camera,
     camera,
+    flatCamera,
     crawl,
     restart() { elapsed = 0; render(); },
     adjust(previous) {
@@ -533,7 +536,8 @@ document.querySelector('#pause')?.addEventListener('click', event => {
   paused = !paused; event.currentTarget.textContent = paused ? 'Resume' : 'Pause';
   event.currentTarget.setAttribute('aria-pressed', String(paused));
 });
-document.querySelector('#camera-replay')?.addEventListener('click', () => studies.forEach(study => { if (study.camera) study.restart(); }));
+document.querySelector('#flat-camera-replay')?.addEventListener('click', () => studies.forEach(study => { if (study.flatCamera) study.restart(); }));
+document.querySelector('#camera-replay')?.addEventListener('click', () => studies.forEach(study => { if (study.camera && !study.flatCamera) study.restart(); }));
 document.querySelector('#crawl-replay')?.addEventListener('click', () => studies.forEach(study => { if (study.crawl) study.restart(); }));
 document.querySelector('#restart')?.addEventListener('click', () => studies.forEach(study => study.restart()));
 window.addEventListener('pagehide', dispose, {once:true});
