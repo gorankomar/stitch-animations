@@ -66,3 +66,28 @@ test('RTL first shot protects the right starting edge and preserves every later 
     assert.equal(rtl.cameraPlane.style.transform,ltr.cameraPlane.style.transform,'later shots are unchanged');
   }
 });
+
+
+test('dropdown sparkles fade, scale and rotate after commit in both camera modes',async()=>{
+  const {sampleDropdownStudy,dropdownChoices}=await import('../src/embeds/real-ai-product-dropdown-study.js');
+  for(const flatCamera of [true,false]){
+    for(const [{index,at},order] of dropdownChoices.map((item,i)=>[item,i])){
+      const s=scene();s.flatCamera=flatCamera;
+      const sample=offset=>{
+        const dropdown=sampleDropdownStudy(at+order*1.6+1.35+offset,s.ease);
+        s.selectorStates=dropdown.states;
+        render(s,dropdown.time);
+        return Number(s.cameraFields[index].marker.style.opacity);
+      };
+      assert.ok(sample(-.01)<1e-8);
+      const early=sample(.1),middle=sample(.4);
+      assert.ok(early>0&&early<middle&&middle<1,'opacity advances continuously after commit');
+      assert.match(s.cameraFields[index].marker.style.transform,/rotate\(-/);
+      assert.equal(s.cameraFields[index].value.textContent,`Final ${index}`);
+      assert.equal(sample(.86),1);
+      assert.equal(s.cameraFields[index].marker.style.transform,'scale(1) rotate(0deg)');
+      s.reduced=true;sample(.1);
+      assert.equal(s.cameraFields[index].marker.style.opacity,'1');
+    }
+  }
+});

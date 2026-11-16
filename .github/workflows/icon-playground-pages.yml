@@ -6,6 +6,7 @@ on:
     paths:
       - icon-playground.html
       - real-ai-product-layout-lab.html
+      - src/embeds/real-ai-product-dropdown-study.js
       - src/embeds/real-ai-product-layout-*.js
       - src/embeds/real-ai-product-layout-lab.css
       - src/embeds/real-ai-product-native.css
@@ -40,7 +41,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: node --test tests/holder-tilt.test.js tests/icon-*.test.js
+      - run: node --test tests/holder-tilt.test.js tests/icon-*.test.js tests/product-camera.test.js tests/product-dropdown-study.test.js tests/real-ai-product-layout-geometry.test.js
       - run: npm run build:icon-playground
       - uses: actions/upload-pages-artifact@v3
         with:

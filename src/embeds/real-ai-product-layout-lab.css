@@ -112,3 +112,9 @@ body{margin:0;background:#fff;color:#121212;font-family:Abcdiatype,Arial,sans-se
 
 /* Animated children must never become scroll anchors for the surrounding page. */
 .study-stage{overflow-anchor:none}
+
+/* Camera studies 04/05: Figma menu geometry in the native 1200px form coordinate space. */
+[data-product-study="camera"] .study-select-menu{position:absolute;top:calc(100% + .33333cqi);left:0;width:100%;padding:.33333cqi;border:.08333cqi solid #efefef;border-radius:.66667cqi;background:#fff;box-shadow:0 1cqi 1.33333cqi -.33333cqi #10182814,0 .33333cqi .5cqi -.16667cqi #10182808;font:500 1.16667cqi/1.66667cqi var(--_typography---font-styles--body,Abcdiatype),Arial,sans-serif;color:#3d3d3d;pointer-events:none;visibility:hidden}
+[data-product-study="camera"] .study-select-option{height:2.33333cqi;margin:.16667cqi 0;padding:.33333cqi .66667cqi;display:flex;align-items:center;border-radius:.33333cqi;white-space:nowrap}
+[data-product-study="camera"] .study-select-menu[data-highlight="true"] [data-selected="true"]{background:#efefef}
+[data-product-study="camera"] .lp-product-field{position:relative}

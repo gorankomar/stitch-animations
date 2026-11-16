@@ -2,7 +2,7 @@ import { renderProductWorking } from './product-working.js';
 const clamp=value=>Math.max(0,Math.min(1,value));
 const promptText='Create a personal loan for salaried customers with direct deposit.';
 
-export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true,rtl=false,copy={}}) {
+export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true,rtl=false,copy={},selectorStates,cameraLift=0}) {
     const request=copy.request||promptText;
     // Same flat, masked prompt introduction as study 03; only the form plane moves.
     const u = elapsed / duration % 16.95;
@@ -106,12 +106,12 @@ export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,s
     const firstAnchor=rtl?width-anchorFor(first):anchorFor(first);
     const anchorX=width/2+(firstAnchor-width/2)*firstWeight+(anchorFor(description)-width/2)*descriptionWeight;
     const tilt=flatCamera?'':`perspective(${width*2}px) rotateX(${c.rx+drift*1.8}deg) rotateY(${c.ry+drift*2}deg) rotateZ(${c.rz}deg)`;
-    cameraPlane.style.transform=`translate(${anchorX}px,${height/2}px) ${tilt} scale(${c.scale/3.2}) translate(${-focusX}px,${-focusY}px)`;
+    cameraPlane.style.transform=`translate(${anchorX}px,${height/2-height*.17*cameraLift}px) ${tilt} scale(${c.scale/3.2}) translate(${-focusX}px,${-focusY}px)`;
     // Selector commits happen while their camera pan is still in flight.
     const starts=[5.45,7.28,8.03,8.93,9.9,12.5,13.85];
     const lengths=[1.15,.16,.16,.16,1.85,.22,1.25];
     cameraFields.forEach(({value,final,placeholder,field},i)=>{
-      const p=reduced?1:clamp((u-starts[i])/lengths[i]);
+      const p=reduced?1:selectorStates?.[i]?.progress??clamp((u-starts[i])/lengths[i]);
       value.textContent=i===6?(p<=0?placeholder:String(Math.min(3,1+Math.floor(p*3)))):
         p<=0?placeholder:value.dataset.productValue==='select'?(p>.2?final:placeholder):final.slice(0,Math.ceil(final.length*p));
       const changed=value.dataset.productValue==='select'?p>.2:p>.08;
@@ -123,7 +123,7 @@ export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,s
       const marker=field.querySelector('.lp-product-marker, .lp-product-updated');
       if(marker){
         const badge=marker.classList.contains('lp-product-updated');
-        const iconProgress=clamp((u-starts[i]-(value.dataset.productValue==='select'?.032:.04))/(badge?.38:.85));
+        const iconProgress=selectorStates?.[i]?.iconProgress??clamp((u-starts[i]-(value.dataset.productValue==='select'?.032:.04))/(badge?.38:.85));
         marker.style.opacity=reduced?'1':String(iconProgress);
         marker.style.transform=`scale(${.35+.65*ease(reduced?1:iconProgress)}) rotate(${(badge?0:-1080)*(1-ease(reduced?1:iconProgress))}deg)`;
       }

@@ -2,6 +2,8 @@
 
 Keep prompts focused on the desired result. Read only the documents relevant to the task.
 
+Site typography: ABC Diatype for body/UI text, Denim for headings. Never use Inter; appearances of Inter in older Figma references are obsolete. Dropdown option text uses ABC Diatype Medium (font-weight: 500). Local test pages load their own fonts; in Webflow, inherit the body font variable rather than setting font families on components.
+
 Established reusable components must retain their internal appearance unless the user explicitly requests changes. Use supported variants/props and outer layout/motion wrappers; avoid illustration CSS overriding component descendants. See docs/workflows/component-preservation-complaint.md for the recorded Credit Card complaint and integration rule.
 
 For every Webflow element/component, preserve the Figma appearance while minimizing elements and nesting. Every wrapper needs a concrete purpose; avoid redundant parent chains. Use object-specific names and reuse compatible shared classes for recurring styles (such as corner radii), keeping each shared property defined in one place. The object's specific class must be Webflow's main/base class; shared utilities come afterward (for example, platform-sidebar-subitem then platform-radius-6). Keep variant-controlled appearance on the main class and verify component variants with the shared classes attached. Follow docs/workflows/webflow-structure-and-styles.md; a broader variable migration is separate work.

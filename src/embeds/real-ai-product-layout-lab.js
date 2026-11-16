@@ -1,3 +1,4 @@
+import { sampleDropdownStudy, createDropdownMenus, renderDropdownMenus } from './real-ai-product-dropdown-study.js';
 import { renderProductCamera } from '../lib/effects/product-camera.js';
 import { verticalFieldPoses, settlePromptPose, engagePromptPose, verticalEntryFocus, createEntranceClock, verticalPickupFocus } from './real-ai-product-layout-geometry.js';
 import markup from './real-ai-product-markup.html?raw';
@@ -109,6 +110,7 @@ export const init = stageInitializer('[data-product-study]', stage => {
   const animations = [], generated = [];
   let tiles = [], tracks = [], elapsed = 0;
   let height = 0, width = 0;
+  let dropdownMenus=[];
   let entryKey='', entryFocus=0, pickupFocus=0, entranceClock;
   function rebuild() {
     animations.forEach(a => a.cancel()); animations.length = 0;
@@ -133,6 +135,7 @@ export const init = stageInitializer('[data-product-study]', stage => {
         item.geometry={x:item.field.offsetLeft+item.field.offsetWidth/2,
           y:item.field.offsetTop+item.field.offsetHeight/2,width:item.field.offsetWidth};
       });
+      dropdownMenus=createDropdownMenus(cameraFields);
       screen.style.zoom='3.2';
     } else if (rows) {
       tracks = Array.from({length:3}, (_, row) => {
@@ -362,7 +365,9 @@ export const init = stageInitializer('[data-product-study]', stage => {
     });
   }
   function renderCamera(reduced) {
-    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera,rtl:stage.matches(':dir(rtl)')});
+    const dropdown=sampleDropdownStudy(elapsed/duration,ease,reduced);
+    renderProductCamera({elapsed:dropdown?dropdown.time*duration:elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera,rtl:stage.matches(':dir(rtl)'),selectorStates:dropdown?.states,cameraLift:dropdown?.lift||0});
+    if(dropdown) renderDropdownMenus(dropdownMenus,dropdown);
   }
   function render(reduced=false) {
     if(camera) renderCamera(reduced); else if(crawl) renderCrawl(reduced); else if(rows) renderRows(reduced); else renderVertical(reduced);

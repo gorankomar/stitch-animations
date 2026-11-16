@@ -198,3 +198,19 @@ Local comparison of study 04 with `data-product-study="camera" data-camera-flat=
 Studies 04/05 now share `src/lib/effects/product-camera.js` with the production Real AI product camera. The lab keeps its own native-markup cloning, measurements, controls and styles; production binds the same renderer to editable Webflow nodes.
 
 Scroll anchoring: every `.study-stage` opts out with `overflow-anchor: none`. This prevents animated content from affecting page scroll when a study is partly visible. Matches the user-confirmed native camera-holder fix in Webflow.
+
+## Study 05 dropdown exploration — 2026-11-16
+
+Local-only opt-in dropdown renderer (`real-ai-product-dropdown-study.js`) adds four 1.9-default-duration holds to the original 16.95-unit camera timeline (24.55 units, approximately 18.9s with the local 770ms token). Each menu fades/translates in over .22 units using primary movement easing and linear opacity, highlights its Figma-selected row at 1.05, commits at 1.65 and fades out over .25. All seven currency options remain present; stage clipping limits their visible portion. Menus reuse the form coordinate system and scale with the camera. A smooth 17%-stage-height upward framing shift makes room below the top selectors and accrual selector. Other studies and the native runtime keep their original timing and appearance.
+
+Values follow Figma node 673:3878: currency EUR/SAR/USD/INR/CAD/AED/GBP (USD); category Individual/Business (Individual); type Secured/Unsecured/Automotive/Property (Unsecured); accrual Keep accruing interest/Freeze interest (Keep accruing interest). Menus are decorative animation content, hidden from assistive technology, and removed with the generated scene on rebuild/disposal. Reduced motion closes menus and shows final values. Scoped local CSS supplies menu appearance without changing native component source. Local motion-token fallback remains unverified against live Global Styles.
+
+Validation: camera, dropdown timeline/commit/reset/reduced-motion and layout geometry tests pass (17 tests). Browser inspected at mobile and desktop sizes; no browser errors. No publication or release.
+
+Study 05 refinement: currency order is now SAR/USD/EUR/INR/CAD/AED/GBP, keeping selected USD in the second row above the prompt. Menu holds shortened from 1.9 to 1.6 default-duration units; selection highlight advances from 1.05 to .65 units and commit/close from 1.65 to 1.35, retaining the .25-unit closing fade. Loop is now 23.35 units (~18s locally). First three selector shots raise the form by 22.1% of stage height (was 17%); accrual retains 17%. Local only.
+
+Study 04 comparison: the tilted camera now uses the same local dropdown menus, extended timing, selected values, currency ordering and raised selector framing as study 05. Existing perspective, rotations and angular drift remain controlled by flatCamera=false. Both studies share the dropdown helper and camera-scoped menu CSS; native/Webflow runtime remains unchanged.
+
+Dropdown marker correction: selector commit remains discrete, but its label sparkle now has an independent .85-default-duration entrance from the commit time. Matches input-field linear opacity plus primary-eased scale (.35 → 1) and three-turn rotation (-1080° → 0°), instead of snapping directly to the final pose. Uses the extended dropdown clock so it advances during the camera hold. Applies to both local camera studies, with immediate completed markers under reduced motion.
+
+Dropdown typography correction: both camera studies use the existing ABC Diatype body token at weight 500 (Medium), backed by the local body-medium.woff2 face. Inter in the supplied Figma dropdown reference is obsolete and must not be carried into implementation. Site typography is ABC Diatype for body/UI and Denim for headings.
