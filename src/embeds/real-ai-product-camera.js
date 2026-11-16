@@ -18,9 +18,11 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
   const askRow=bar.querySelector('.lp-product-ask');
   if(!title||!policy||!ask||!askRow)return;
   const styles=[stage,...stage.querySelectorAll('*')].map(node=>[node,node.getAttribute('style')]);
-  const cameraFields=[...screen.querySelectorAll('[data-product-value], [data-product-lock]')].map(value=>({
+  const readCopy=(key,fallback)=>stage.querySelector(`[data-product-copy="${key}"]`)?.textContent||fallback;
+  const copy={idleTitle:readCopy('idle-title','Ask Stitch AI'),workingTitle:readCopy('working-title','Creating personal loan...'),request:readCopy('request','Create a personal loan for salaried customers with direct deposit.'),completeTitle:title.textContent,policy:policy.textContent,ask:ask.textContent};
+  const cameraFields=[...screen.querySelectorAll('[data-product-value], [data-product-lock]')].map((value,index)=>({
     value,final:value.hasAttribute('data-product-lock')?'3':value.textContent,
-    placeholder:value.dataset.productPlaceholder||'Enter months',field:value.closest('.lp-product-field')
+    placeholder:value.dataset.productPlaceholder||readCopy(value.hasAttribute('data-product-lock')?'lock-placeholder':`placeholder-${index}`,'Enter months'),field:value.closest('.lp-product-field')
   }));
   const text=[title,policy,ask,...cameraFields.map(item=>item.value)].map(node=>[node,node.textContent]);
   const initialState=bar.getAttribute('data-product-state');
@@ -33,7 +35,7 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
     screen.style.zoom='3.2';
   }
   function render(reduced){
-    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera:true});
+    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera:true,copy});
     if(matchMedia('(max-width:600px)').matches){
       const open=Math.max(0,Math.min(1,(parseFloat(bar.style.height)-4.83333)/4.33333));
       const promptWidth=width*.88/1.3;
