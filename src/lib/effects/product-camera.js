@@ -2,7 +2,7 @@ import { renderProductWorking } from './product-working.js';
 const clamp=value=>Math.max(0,Math.min(1,value));
 const promptText='Create a personal loan for salaried customers with direct deposit.';
 
-export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true,copy={}}) {
+export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true,rtl=false,copy={}}) {
     const request=copy.request||promptText;
     // Same flat, masked prompt introduction as study 03; only the form plane moves.
     const u = elapsed / duration % 16.95;
@@ -101,7 +101,10 @@ export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,s
     const description=cameraFields[4].geometry;
     const descriptionWeight=ease(clamp((u-9.35)/.6))*(1-ease(clamp((u-12.0)/.75)));
     const anchorFor=field=>width*.09+field.width*c.scale/2;
-    const anchorX=width/2+(anchorFor(first)-width/2)*firstWeight+(anchorFor(description)-width/2)*descriptionWeight;
+    // The first close-up protects the text's starting edge: left in LTR,
+    // right in RTL. Later camera anchors intentionally keep their approved path.
+    const firstAnchor=rtl?width-anchorFor(first):anchorFor(first);
+    const anchorX=width/2+(firstAnchor-width/2)*firstWeight+(anchorFor(description)-width/2)*descriptionWeight;
     const tilt=flatCamera?'':`perspective(${width*2}px) rotateX(${c.rx+drift*1.8}deg) rotateY(${c.ry+drift*2}deg) rotateZ(${c.rz}deg)`;
     cameraPlane.style.transform=`translate(${anchorX}px,${height/2}px) ${tilt} scale(${c.scale/3.2}) translate(${-focusX}px,${-focusY}px)`;
     // Selector commits happen while their camera pan is still in flight.

@@ -27,15 +27,16 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
   const text=[title,policy,ask,...cameraFields.map(item=>item.value)].map(node=>[node,node.textContent]);
   const initialState=bar.getAttribute('data-product-state');
   const ease=readMotionEasingCurve(),duration=getDefaultDurationMs()/1000;
-  let width=0,height=0,elapsed=0;
+  let width=0,height=0,elapsed=0,rtl=false;
   function measure(){
     width=stage.clientWidth;height=stage.clientHeight;
+    rtl=window.getComputedStyle(stage).direction==='rtl';
     screen.style.zoom='1';screen.style.width=`${width}px`;screen.style.minHeight=`${height}px`;
     cameraFields.forEach(item=>{const f=item.field;item.geometry={x:f.offsetLeft+f.offsetWidth/2,y:f.offsetTop+f.offsetHeight/2,width:f.offsetWidth};});
     screen.style.zoom='3.2';
   }
   function render(reduced){
-    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera:true,copy});
+    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera:true,rtl,copy});
     if(matchMedia('(max-width:600px)').matches){
       const open=Math.max(0,Math.min(1,(parseFloat(bar.style.height)-4.83333)/4.33333));
       const promptWidth=width*.88/1.3;

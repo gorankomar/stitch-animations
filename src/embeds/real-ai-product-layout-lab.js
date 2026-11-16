@@ -362,7 +362,7 @@ export const init = stageInitializer('[data-product-study]', stage => {
     });
   }
   function renderCamera(reduced) {
-    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera});
+    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera,rtl:stage.matches(':dir(rtl)')});
   }
   function render(reduced=false) {
     if(camera) renderCamera(reduced); else if(crawl) renderCrawl(reduced); else if(rows) renderRows(reduced); else renderVertical(reduced);
