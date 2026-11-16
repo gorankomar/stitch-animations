@@ -388,6 +388,22 @@ export const init = stageInitializer('[data-product-study]', stage => {
     const workingOpacity=clamp((u-collapseAt)/.3)*(1-clamp((u-15.1)/.3));
     renderProductWorking(bar,u*duration,workingOpacity);
     renderProductWorking(promptSize,u*duration,workingOpacity);
+    const sparkle=bar.querySelector('.lp-product-sparkle');
+    if(sparkle){
+      // Clockwise quarter-turn, primary-eased deceleration, then a brief rest.
+      // Sample the completion angle from the same clock so return never snaps.
+      const steppedAngle=time=>{
+        const clock=Math.max(0,time-collapseAt);
+        const turns=Math.floor(clock/1.6);
+        return (turns+ease(clamp(clock-turns*1.6)))*90;
+      };
+      let angle=u<collapseAt?0:steppedAngle(Math.min(u,15.1));
+      if(u>=15.1){
+        const home=Math.ceil(angle/360)*360;
+        angle+=(home-angle)*ease(clamp((u-15.1)/1));
+      }
+      sparkle.style.transform=`rotate(${reduced?0:angle}deg)`;
+    }
     layer.style.opacity=reduced?'1':String(introFade*(1-exit));
     // Field centers are measured in the untransformed native form. Each pose
     // changes camera position, magnification and tilt together, without touching artwork.
