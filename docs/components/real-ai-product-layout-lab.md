@@ -174,3 +174,11 @@ Outline color correction: the shell trail uses the shared effect's canonical ora
 Prompt tile motion: the orange tile's `.lp-product-sparkle` makes repeated clockwise 90° turns during Creating personal loan. Each turn uses the resolved primary easing over one default duration followed by a .2-duration rest. At completion (15.1 units), sample the exact working angle and ease back to the nearest full-turn/original orientation over one default duration; hold there through the loop. Reduced motion uses 0°. The camera stage owns this transform and clock, so visibility pause, replay and disposal stay consistent. Local preview only until the next publication request.
 
 Prompt sparkle refinement: pause between quarter-turns increased from .2 to .6 default-duration units (~462ms locally), keeping each eased turn at one default duration. Completion now advances clockwise to the next full-turn orientation using ceil(angle/360), never reversing. Supersedes the nearest-orientation return.
+
+## Mobile presentation correction — 2026-11-16
+
+At viewport widths up to 600px, foreground prompts now use a screen-space shell (34px status row plus a 64px prompt row), 88% rendered stage width, 10px source text and wrapped prompt copy. Camera/crawl's unchanged 1.3 outer scale yields 13px foreground text. The existing collapse, pause, replay and working clocks still own motion; the camera's bottom inset uses the actual mobile shell height. Hidden prompt content is clipped after collapse. Desktop sizing is unchanged and restored after resizing.
+
+Camera Product details uses four equal minmax columns on mobile instead of the desktop flexible name column plus three cqi tracks. Camera layout is measured after responsive CSS applies, preserving its close-up pans. The other three studies use larger scoped mobile field typography, controls and markers. Native shared component CSS is unchanged; all overrides belong to this local/client lab.
+
+Browser verification: 390px and 320px phone viewports, readable full prompt and collapsed status, equal camera field widths (79px at 390 viewport and 64px at 320), no page overflow, and desktop recovery to the original 478/164/220/220px proportions at a 1200px stage. Controls remain hidden and all four studies are retained.

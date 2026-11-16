@@ -376,7 +376,7 @@ export const init = stageInitializer('[data-product-study]', stage => {
     promptSize.style.transform='none';
     // The status stays above the atmosphere, with a 3cqi bottom inset.
     // Recenter using the live shell height while it expands, keeping travel smooth.
-    const shellHeight=width*(9.16666-4.33333*mask)/100*1.3;
+    const shellHeight=(matchMedia('(max-width:600px)').matches ? 34+64*(1-mask) : width*(9.16666-4.33333*mask)/100)*1.3;
     const promptTravel=(height*.5-width*.03-shellHeight/2)*ease(introFade)*(1-returnEase);
     prompt.style.transform=`translateY(calc(-50% + ${promptTravel}px)) scale(1.3)`;
     prompt.style.opacity=reduced?'0':'1';
@@ -481,7 +481,29 @@ export const init = stageInitializer('[data-product-study]', stage => {
       }
     });
   }
-  function render(reduced=false) { if(camera) renderCamera(reduced); else if(crawl) renderCrawl(reduced); else if(rows) renderRows(reduced); else renderVertical(reduced); }
+  function render(reduced=false) {
+    if(camera) renderCamera(reduced); else if(crawl) renderCrawl(reduced); else if(rows) renderRows(reduced); else renderVertical(reduced);
+    if(matchMedia('(max-width:600px)').matches) {
+      // Mobile prompt uses readable screen-space sizing, independently of the
+      // tiny form canvas. Preserve each renderer's collapse and transform clock.
+      const full=(!rows&&!crawl&&!camera)?10.83333:rows?9.25:9.16666;
+      const collapsed=4.83333;
+      const open=clamp((parseFloat(bar.style.height)-collapsed)/(full-collapsed));
+      const scale=(!rows&&!crawl&&!camera)?settings.centerScale/100:rows?1:1.3;
+      const promptWidth=width*.88/scale;
+      prompt.style.width=`${promptWidth}px`;
+      prompt.style.left=`${(width-promptWidth)/2}px`;
+      promptSize.style.transform='none';
+      const shell=34+64*open;
+      bar.style.height=`${shell}px`;
+      askRow.style.height=`${64*open}px`;
+      askRow.style.paddingBlock=`${6*open}px`;
+      if(!rows&&!crawl&&!camera){promptSize.style.height=`${shell}px`;prompt.style.height=`${shell}px`;}
+    } else if(rows||crawl||camera) {
+      prompt.style.width=''; prompt.style.left='';
+      if(rows) promptSize.style.transform='';
+    }
+  }
   render(matchMedia('(prefers-reduced-motion: reduce)').matches);
   const controller = {
     vertical: !rows && !crawl && !camera,

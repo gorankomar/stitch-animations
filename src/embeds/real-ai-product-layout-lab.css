@@ -85,3 +85,27 @@ body{margin:0;background:#fff;color:#121212;font-family:Abcdiatype,Arial,sans-se
 /* The masked native bar clipped its outline. Draw the shared trail on its full-size outer shell. */
 .study-stage[data-product-study="camera"] .study-prompt-size::after{content:"";position:absolute;inset:-.08333cqi;z-index:2;border-radius:inherit;padding:.1cqi;pointer-events:none;background:var(--product-working-outline,transparent);opacity:var(--product-working-opacity,0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor}
 .study-stage[data-product-study="camera"] .lp-product-bar::after{display:none}
+
+/* Mobile presentation: keep foreground text readable at phone widths. */
+@media(max-width:600px){
+  .study-prompt .lp-product-bar{font-size:10px;line-height:14px;border-radius:9px}
+  .study-prompt .lp-product-change{height:34px;padding:5px 8px;gap:6px}
+  .study-prompt .lp-product-message .lp-product-change-title{line-height:13px}
+  .study-prompt .lp-product-policy{font-size:8px;line-height:10px}
+  .study-prompt .lp-product-ask{padding-inline:8px;gap:6px;align-items:center;overflow:hidden}
+  .study-stage .study-prompt .lp-product-prompt{height:auto;min-height:0;max-height:56px;line-height:14px;white-space:normal;overflow-wrap:normal;display:block}
+  .study-prompt .lp-product-tile,.study-prompt .lp-product-stop{width:20px;height:20px;border-radius:5px}
+  .study-prompt .lp-product-stop{border-radius:50%}
+  .study-prompt .lp-product-sparkle{width:13px;height:13px}
+  .study-prompt .lp-product-arrow-icon,.study-prompt .lp-product-stop-icon{width:9px;height:9px}
+  .study-stage[data-product-study="camera"] .lp-product-details{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5cqi}
+}
+
+@media(max-width:600px){
+  .study-stage:not([data-product-study="camera"]) .study-tile{font-size:2cqi;line-height:2.4cqi}
+  .study-stage:not([data-product-study="camera"]) .study-tile .lp-product-control{height:5cqi}
+  .study-stage:not([data-product-study="camera"]) .study-tile .lp-product-area{height:12cqi}
+  .study-stage:not([data-product-study="camera"]) .study-tile .lp-product-marker{width:1.4cqi;height:1.4cqi}
+  .study-stage:not([data-product-study="camera"]) .study-tile .lp-product-chevron{width:2cqi;height:2cqi;flex:none}
+  .study-stage:not([data-product-study="camera"]) .study-tile-size{padding:.55cqi}
+}
