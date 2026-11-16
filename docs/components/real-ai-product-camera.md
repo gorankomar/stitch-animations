@@ -13,3 +13,5 @@ Native classes own frame sizing, clipping, cqi container, backgrounds, absolute 
 Both page-all and page-all-lite register the feature, with a standalone feature entry in Vite. New markup requires the matching shared release on staging/production; permanent loader routers stay unchanged. Release evidence belongs in docs/releases.
 
 Native field placeholders and prompt/status copy are read from the duplicated component’s localized copy source; they do not depend on lab-only data attributes. Preview testing caught and corrected this binding difference before production.
+
+RTL first-shot framing: stage computed direction is read during measurement. The product-name shot mirrors its protected 9% leading-edge margin to the right in RTL, then blends back to the approved path before the selector shots. Description and all later shots are unchanged. This is JavaScript framing, not a Webflow CSS change. Staging deployment is needed for Preview; production promotion is separate.

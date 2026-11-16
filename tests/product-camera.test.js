@@ -50,3 +50,19 @@ test('camera uses native localized status copy without changing field sequence',
   render(s,5);assert.equal(s.title.textContent,'Local creating');
   render(s,15.2);assert.equal(s.title.textContent,'Local complete');assert.equal(s.policy.textContent,'Local policy');
 });
+
+test('RTL first shot protects the right starting edge and preserves every later shot',()=>{
+  const ltr=scene(),rtl=scene();rtl.rtl=true;
+  for(const time of [5.2,5.8,6.5,7.05]){
+    render(ltr,time);render(rtl,time);
+    const x=s=>Number(s.cameraPlane.style.transform.match(/^translate\(([^p]+)px/)[1]);
+    assert.ok(Math.abs(x(ltr)+x(rtl)-ltr.width)<1e-8,'first-shot anchors mirror exactly');
+    const scale=Number(rtl.cameraPlane.style.transform.match(/scale\(([^)]+)\)/)[1])*3.2;
+    const right=x(rtl)+rtl.cameraFields[0].geometry.width*scale/2;
+    assert.ok(Math.abs(right-rtl.width*.91)<1e-8,'RTL input starts 9% inside the right edge');
+  }
+  for(const time of [7.55,8.45,9.95,12.75,13.6,15.9]){
+    render(ltr,time);render(rtl,time);
+    assert.equal(rtl.cameraPlane.style.transform,ltr.cameraPlane.style.transform,'later shots are unchanged');
+  }
+});
