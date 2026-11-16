@@ -40,7 +40,7 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
     screen.style.zoom='3.2';
   }
   function render(reduced){
-    const dropdown=hasDropdowns?sampleDropdownStudy(elapsed/duration,ease,reduced):null;
+    const dropdown=hasDropdowns?sampleDropdownStudy(elapsed/duration,ease,reduced,{speed:2,topPanSpeed:2.5}):null;
     renderProductCamera({elapsed:dropdown?dropdown.time*duration:elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera:true,rtl,copy,selectorStates:dropdown?.states,cameraLift:dropdown?.lift||0});
     if(dropdown) renderDropdownMenus(dropdownMenus,dropdown);
     if(matchMedia('(max-width:600px)').matches){

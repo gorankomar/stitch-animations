@@ -6,18 +6,29 @@ export const dropdownChoices = [
   {index:3,at:9.35,values:['Secured','Unsecured','Automotive','Property']},
   {index:5,at:12.75,values:['Keep accruing interest','Freeze interest']},
 ];
-const hold=1.6;
-export function sampleDropdownStudy(time,ease,reduced=false) {
-  const clock=time%(16.95+hold*4);
-  let mapped=clock,added=0;
+export function sampleDropdownStudy(time,ease,reduced=false,{speed=1,topPanSpeed=1}={}) {
+  const rate=Number.isFinite(speed)&&speed>0?speed:1;
+  const hold=1.6/rate;
+  const panRate=Number.isFinite(topPanSpeed)&&topPanSpeed>0?topPanSpeed:1;
+  const panDuration=.9/panRate,panSaving=.9-panDuration;
+  const clock=time%(16.95+hold*4-panSaving*2);
+  // Expand just the currency→category and category→type travel segments
+  // back into the original camera clock, preserving each pose and easing.
+  let expanded=clock;
+  for(let i=0;i<2;i++){
+    const start=dropdownChoices[i].at+hold*(i+1)-panSaving*i;
+    expanded+=clamp((clock-start)/panDuration)*panSaving;
+  }
+  let mapped=expanded,added=0;
   const states={};
-  for(const item of dropdownChoices){
-    const start=item.at+added,local=clock-start;
+  for(const [order,item] of dropdownChoices.entries()){
+    const start=item.at+added;
+    const elapsed=clock-(start-panSaving*Math.min(order,2)),local=elapsed*rate;
     states[item.index]={progress:reduced||local>=1.35?1:0,
-      iconProgress:reduced?1:clamp((local-1.35)/.85),
+      iconProgress:reduced?1:clamp((elapsed-1.35/rate)/.85),
       selected:local>=.65,opacity:reduced?0:clamp(local/.22)*(1-clamp((local-1.35)/.25)),
       reveal:ease(clamp(local/.22))};
-    mapped-=clamp(local/hold)*hold;
+    mapped-=clamp((expanded-start)/hold)*hold;
     added+=hold;
   }
   // Raise the form through all three top menus and again for accrual.

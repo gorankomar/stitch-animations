@@ -365,7 +365,7 @@ export const init = stageInitializer('[data-product-study]', stage => {
     });
   }
   function renderCamera(reduced) {
-    const dropdown=sampleDropdownStudy(elapsed/duration,ease,reduced);
+    const dropdown=sampleDropdownStudy(elapsed/duration,ease,reduced,flatCamera?{speed:2,topPanSpeed:2.5}:{});
     renderProductCamera({elapsed:dropdown?dropdown.time*duration:elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera,rtl:stage.matches(':dir(rtl)'),selectorStates:dropdown?.states,cameraLift:dropdown?.lift||0});
     if(dropdown) renderDropdownMenus(dropdownMenus,dropdown);
   }
