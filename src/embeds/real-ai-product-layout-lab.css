@@ -62,3 +62,26 @@ body{margin:0;background:#fff;color:#121212;font-family:Abcdiatype,Arial,sans-se
 .study-workbench-presentation{grid-template-columns:minmax(0,1fr)}
 .study-workbench-presentation>.study-tuning{display:none}
 .study-workbench-presentation>.study-stage{position:relative;top:auto}
+
+/* Fourth local study: native content, with camera transforms owned by its outer plane. */
+.study-stage[data-product-study="camera"]{background:#f9f9f9;--study-bg:#f9f9f9}
+.study-camera-screen{position:absolute;left:0;top:0;width:100%;transform-origin:0 0}
+.study-camera-plane{position:absolute;left:0;top:0;transform-origin:0 0}
+.study-stage[data-product-study="camera"] .study-fields{opacity:0}
+.study-stage[data-product-study="camera"] .study-fade{display:block;z-index:8;background:linear-gradient(to bottom,transparent 65%,var(--study-bg) 100%)}
+.study-stage[data-product-study="camera"] .study-prompt{width:46%;left:27%;z-index:6}
+.study-stage[data-product-study="camera"] .study-prompt-size{border-radius:1.33333cqi;box-shadow:var(--product-working-shadow,none)}
+#camera-replay{margin:4px 0 16px}
+
+/* Authorized camera composition: compact description fits the close-up with name-shot margins. */
+.study-stage[data-product-study="camera"] .lp-product-description{width:32cqi}
+.study-stage[data-product-study="camera"] .lp-product-area{height:8.5cqi}
+
+/* Status bar sits above the bottom atmosphere; shell preserves the shared glow outside its mask. */
+.study-stage[data-product-study="camera"] .study-prompt{z-index:9}
+.study-stage[data-product-study="camera"] .study-prompt-size{position:relative;isolation:isolate;box-shadow:none}
+.study-stage[data-product-study="camera"] .study-prompt-size::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;box-shadow:var(--product-working-shadow,none);opacity:var(--product-working-opacity,0)}
+
+/* The masked native bar clipped its outline. Draw the shared trail on its full-size outer shell. */
+.study-stage[data-product-study="camera"] .study-prompt-size::after{content:"";position:absolute;inset:-.08333cqi;z-index:2;border-radius:inherit;padding:.1cqi;pointer-events:none;background:var(--product-working-outline,transparent);opacity:var(--product-working-opacity,0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor}
+.study-stage[data-product-study="camera"] .lp-product-bar::after{display:none}
