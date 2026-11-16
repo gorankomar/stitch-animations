@@ -7,3 +7,7 @@ Webflow component `ab08d931-9bbf-9677-8c22-3d9bdf181830`; page `6af2c4b2616c8b94
 Production domains inspected: www.stitch.co, stitch.co, www.stitch.sa, stitch.sa. Promotion affects animations on all four production hosts; page publication is scoped to Real AI where supported. Permanent router URLs remain unchanged. Staging verification must precede promotion of the exact same SHA through the protected production environment.
 
 Validation / deployment evidence will be appended after the build and deployment complete.
+
+Full release validation passed: 243 tests, all shared entries/embeds, dependency closure, Product Variety/wallet swap and Country Flags. Pending RTL dropdown flag spacing source and notes were retained and merged with current main, together with layout-lab workflow/config/source/tests and native camera integration. Fresh full-build distribution files are included.
+
+Pre-release production pointer: `3cc5d85752380f2988181b7a8e6f04c8e914cfb4`. Pre-release staging pointer: `e198d428fb171a10a438c1ab6649c3106aa14370`. Published `/ai` router selects staging/production by hostname and is unchanged.
