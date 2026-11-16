@@ -182,3 +182,7 @@ At viewport widths up to 600px, foreground prompts now use a screen-space shell 
 Camera Product details uses four equal minmax columns on mobile instead of the desktop flexible name column plus three cqi tracks. Camera layout is measured after responsive CSS applies, preserving its close-up pans. The other three studies use larger scoped mobile field typography, controls and markers. Native shared component CSS is unchanged; all overrides belong to this local/client lab.
 
 Browser verification: 390px and 320px phone viewports, readable full prompt and collapsed status, equal camera field widths (79px at 390 viewport and 64px at 320), no page overflow, and desktop recovery to the original 478/164/220/220px proportions at a 1200px stage. Controls remain hidden and all four studies are retained.
+
+## Natural mobile prompt flow — 2026-11-16
+
+Simplified the existing mobile text rule: auto height, normal wrapping and overflow-wrap:anywhere, with the ask row aligned to flex-start. Removed the artificial text max-height and made the existing scoped selectors specific enough to override native typing nowrap and vertical-study centering. Text follows the parent's available flex width and grows downward from its top padding. No scaling or animation changes. Browser inspection at 320px confirmed wrapping and no horizontal text overflow.
