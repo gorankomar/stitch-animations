@@ -186,3 +186,7 @@ Browser verification: 390px and 320px phone viewports, readable full prompt and 
 ## Natural mobile prompt flow — 2026-11-16
 
 Simplified the existing mobile text rule: auto height, normal wrapping and overflow-wrap:anywhere, with the ask row aligned to flex-start. Removed the artificial text max-height and made the existing scoped selectors specific enough to override native typing nowrap and vertical-study centering. Text follows the parent's available flex width and grows downward from its top padding. No scaling or animation changes. Browser inspection at 320px confirmed wrapping and no horizontal text overflow.
+
+## Typing-state wrap specificity correction — 2026-11-16
+
+The native typing rule's :is() includes a legacy span:first-child alternative; its type-selector specificity beats the preceding mobile override even when the actual prompt is a div. Idle-state checks did not reveal this. Added the bar's existing [data-product-state] attribute to the existing mobile rule, with no new declarations or elements. Verified the actual paused typing state at 320px: white-space normal, two text lines (28px source height), no horizontal overflow, and visually top-aligned text. The prompt remains position:static in its normal flex row.
