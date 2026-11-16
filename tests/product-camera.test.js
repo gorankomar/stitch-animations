@@ -43,3 +43,10 @@ test('sparkle pauses between clockwise turns and completes clockwise to its home
   render(s,16.3);assert.equal(angle(s)%360,0);
   s.reduced=true;render(s,8);assert.equal(angle(s),0);assert.equal(s.prompt.style.opacity,'0');
 });
+
+test('camera uses native localized status copy without changing field sequence',()=>{
+  const s=scene();s.copy={idleTitle:'Local ask',workingTitle:'Local creating',request:'Local request',completeTitle:'Local complete',policy:'Local policy',ask:'Local next change'};
+  render(s,0);assert.equal(s.title.textContent,'Local ask');assert.equal(s.ask.textContent,'Local next change');
+  render(s,5);assert.equal(s.title.textContent,'Local creating');
+  render(s,15.2);assert.equal(s.title.textContent,'Local complete');assert.equal(s.policy.textContent,'Local policy');
+});

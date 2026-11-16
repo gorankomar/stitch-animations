@@ -2,7 +2,8 @@ import { renderProductWorking } from './product-working.js';
 const clamp=value=>Math.max(0,Math.min(1,value));
 const promptText='Create a personal loan for salaried customers with direct deposit.';
 
-export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true}) {
+export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true,copy={}}) {
+    const request=copy.request||promptText;
     // Same flat, masked prompt introduction as study 03; only the form plane moves.
     const u = elapsed / duration % 16.95;
     const typingStart=.65, typedAt=3.45, collapseAt=4.3, launch=5.2;
@@ -23,11 +24,11 @@ export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,s
     const promptTravel=(height*.5-width*.03-shellHeight/2)*ease(introFade)*(1-returnEase);
     prompt.style.transform=`translateY(calc(-50% + ${promptTravel}px)) scale(1.3)`;
     prompt.style.opacity=reduced?'0':'1';
-    title.textContent=completed?'All required details have been completed.':
-      u<collapseAt||promptReturn>=1?'Ask Stitch AI':'Creating personal loan...';
-    policy.textContent=completed?'Click Create loan product to proceed.':'';
+    title.textContent=completed?(copy.completeTitle||'All required details have been completed.'):
+      u<collapseAt||promptReturn>=1?(copy.idleTitle||'Ask Stitch AI'):(copy.workingTitle||'Creating personal loan...');
+    policy.textContent=completed?(copy.policy||'Click Create loan product to proceed.'):'';
     bar.dataset.productState=completed||returning||u<typingStart?'idle':u<collapseAt?'typing':'working';
-    ask.textContent=returning||u<=typingStart?'Ask for another change…':promptText.slice(0,Math.ceil(promptText.length*clamp((u-typingStart)/(typedAt-typingStart))));
+    ask.textContent=returning||u<=typingStart?(copy.ask||'Ask for another change…'):request.slice(0,Math.ceil(request.length*clamp((u-typingStart)/(typedAt-typingStart))));
     const workingOpacity=clamp((u-collapseAt)/.3)*(1-clamp((u-15.1)/.3));
     renderProductWorking(bar,u*duration,workingOpacity);
     renderProductWorking(promptSize,u*duration,workingOpacity);
