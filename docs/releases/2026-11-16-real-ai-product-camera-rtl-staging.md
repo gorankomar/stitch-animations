@@ -7,3 +7,11 @@ The product-name close-up mirrors its protected 9% starting-edge margin to the r
 `npm run validate:release` passed: 245 tests, complete build, dependency closure and Product Variety/wallet swap / Country Flags inclusion. Regression test samples the first-shot right margin and compares every later shot against unchanged LTR output. Fresh camera distribution files included.
 
 Actual staging SHA and Webflow Arabic Preview verification will be recorded after deployment. Production is to remain at the prior verified `d49fe61d0ed330382cbbc1e3a919b43ba055865b` release.
+
+## Staging / Preview verified
+
+Merged PR #98 as `a236d6f05101b7131ddae1d53474c910ea59027f`. [Staging workflow 43878064270](https://github.com/gorankomar/stitch-animations/actions/runs/43878064270) completed successfully; the actual staging pointer imports that SHA.
+
+Refreshed the existing Arabic Real AI Webflow Preview with custom code enabled. Captured the product-name shot while it read “قرض”, the currency selector still displayed its placeholder, and the marker was entering (opacity .111). The first field’s right inset measured ~114px in the 1280px frame, matching the intended 9% (~115px, with native zoom rounding). The start of the text is clearly visible inside the frame. No native Webflow/CSS change or page publication was needed.
+
+Production pointer was rechecked and remains `d49fe61d0ed330382cbbc1e3a919b43ba055865b`. Staging and production intentionally differ for review. This evidence-only merge uses `[skip ci]` to retain those verified channel pointers without a documentation-only deployment.
