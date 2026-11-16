@@ -15,3 +15,5 @@ Both page-all and page-all-lite register the feature, with a standalone feature 
 Native field placeholders and prompt/status copy are read from the duplicated component’s localized copy source; they do not depend on lab-only data attributes. Preview testing caught and corrected this binding difference before production.
 
 RTL first-shot framing: stage computed direction is read during measurement. The product-name shot mirrors its protected 9% leading-edge margin to the right in RTL, then blends back to the approved path before the selector shots. Description and all later shots are unchanged. This is JavaScript framing, not a Webflow CSS change. Staging deployment is needed for Preview; production promotion is separate.
+
+Scroll anchoring isolation: the animation holder must set `overflow-anchor: none` so moving descendants cannot pull the surrounding page during partial-viewport playback. User applied this on the native Webflow parent and confirmed the movement stopped (2026-11-16). The local scoped style source mirrors it; no Webflow edits are needed. Keep the opt-out on the component, not the entire page.

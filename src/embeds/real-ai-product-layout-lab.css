@@ -109,3 +109,6 @@ body{margin:0;background:#fff;color:#121212;font-family:Abcdiatype,Arial,sans-se
   .study-stage:not([data-product-study="camera"]) .study-tile .lp-product-chevron{width:2cqi;height:2cqi;flex:none}
   .study-stage:not([data-product-study="camera"]) .study-tile-size{padding:.55cqi}
 }
+
+/* Animated children must never become scroll anchors for the surrounding page. */
+.study-stage{overflow-anchor:none}
