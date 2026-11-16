@@ -15,3 +15,13 @@ Merged PR #98 as `a236d6f05101b7131ddae1d53474c910ea59027f`. [Staging workflow 4
 Refreshed the existing Arabic Real AI Webflow Preview with custom code enabled. Captured the product-name shot while it read “قرض”, the currency selector still displayed its placeholder, and the marker was entering (opacity .111). The first field’s right inset measured ~114px in the 1280px frame, matching the intended 9% (~115px, with native zoom rounding). The start of the text is clearly visible inside the frame. No native Webflow/CSS change or page publication was needed.
 
 Production pointer was rechecked and remains `d49fe61d0ed330382cbbc1e3a919b43ba055865b`. Staging and production intentionally differ for review. This evidence-only merge uses `[skip ci]` to retain those verified channel pointers without a documentation-only deployment.
+
+## Production verified
+
+User explicitly approved production promotion after Arabic Preview approval. Promoted the exact staging-tested release `a236d6f05101b7131ddae1d53474c910ea59027f` without rebuilding it. [Protected promotion workflow 43880033358](https://github.com/gorankomar/stitch-animations/actions/runs/43880033358) completed successfully after gorankomar's required Production review. No protection settings were changed. No Webflow page/site publication was performed.
+
+Actual production pointer imports `a236d6f05101b7131ddae1d53474c910ea59027f` for all four configured origins (stitch.co, www.stitch.co, stitch.sa, www.stitch.sa), with CORS `*`. The served camera JS matches its immutable manifest SHA-256 and has JavaScript MIME type. Staging retains the same SHA.
+
+GitHub queue anomaly: original dispatch [43878868438](https://github.com/gorankomar/stitch-animations/actions/runs/43878868438) remained queued with zero jobs/reviews for over six minutes; cancellation returned 409 “Cannot cancel a workflow run that has not been queued yet.” One identical protected retry reached review and completed. The jobless original made no activation; do not approve that stale run if GitHub later surfaces it. Both dispatches target the same retained SHA and the workflow serializes activation.
+
+This documentation-only completion commit uses `[skip ci]` so both verified channel pointers remain on the same tested animation release.
