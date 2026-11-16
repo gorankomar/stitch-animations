@@ -81,3 +81,7 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Regulators: [notes](regulators.md), three optimized inline compliance logos with Soft Reveal, subtle blue Card Hover and the existing full-frame grid; Playground draft only.
 
 - Prebuilt Agents: [notes](real-ai-landing.md#prebuilt-agents-illustration), reusable Cards slot and editable Prebuilt Agent Card; seven-card Real AI tab-two draft, local catalog scroll then cursor selection.
+
+- Product AI layout studies: [notes](real-ai-product-layout-lab.md), three product prompt/motion alternatives: vertical field roll, alternating rows and perspective pyramid crawl. Preview: `/real-ai-product-layout-lab.html`.
+
+- Real AI product camera: [notes](real-ai-product-camera.md), native flat camera composition from layout lab 05, replacing only the Real AI page's product-screen instance.
