@@ -92,8 +92,8 @@ body{margin:0;background:#fff;color:#121212;font-family:Abcdiatype,Arial,sans-se
   .study-prompt .lp-product-change{height:34px;padding:5px 8px;gap:6px}
   .study-prompt .lp-product-message .lp-product-change-title{line-height:13px}
   .study-prompt .lp-product-policy{font-size:8px;line-height:10px}
-  .study-prompt .lp-product-ask{padding-inline:8px;gap:6px;align-items:center;overflow:hidden}
-  .study-stage .study-prompt .lp-product-prompt{height:auto;min-height:0;max-height:56px;line-height:14px;white-space:normal;overflow-wrap:normal;display:block}
+  .study-stage .study-prompt .lp-product-ask{padding-inline:8px;gap:6px;align-items:flex-start;overflow:hidden}
+  .study-stage .study-prompt .lp-product-bar .lp-product-prompt{height:auto;min-height:0;line-height:14px;white-space:normal;overflow-wrap:anywhere;display:block}
   .study-prompt .lp-product-tile,.study-prompt .lp-product-stop{width:20px;height:20px;border-radius:5px}
   .study-prompt .lp-product-stop{border-radius:50%}
   .study-prompt .lp-product-sparkle{width:13px;height:13px}
