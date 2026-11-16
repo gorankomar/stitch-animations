@@ -13,3 +13,9 @@ Merged release `5dc028c7d31b886c0a5d8fbe7f7391e3ef3f772f`. All 252 tests pass. [
 [Pages workflow 43929370829](https://github.com/gorankomar/stitch-animations/actions/runs/43929370829) succeeded. Public /relayer/product-layout-lab/ serves productLab-BA8ksklg.js matching the validated build byte-for-byte. Version 05 has the approved faster timing; version 04 keeps default timing.
 
 [Production workflow 43929819815](https://github.com/gorankomar/stitch-animations/actions/runs/43929819815) queued for protected user approval, promoting exact staging SHA 5dc028c7d31b886c0a5d8fbe7f7391e3ef3f772f. Production remains on the prior verified release until approved and activated.
+
+## Production verified
+
+User completed protected approval. [Production workflow 43929819815](https://github.com/gorankomar/stitch-animations/actions/runs/43929819815) succeeded, promoting exact staging release `5dc028c7d31b886c0a5d8fbe7f7391e3ef3f772f`. Served production channel imports that SHA; immutable camera module matches validated build byte-for-byte, with text/javascript MIME and Access-Control-Allow-Origin: *. All four production /ai hosts return 200 with native dropdown markup and permanent router.
+
+Live browser on www.stitch.co: four menus, one shared loader, flat animated plane, inherited ABCDiatype, highlighted USD at opacity 1 before close. Faster selected timing is active through the production module; no Webflow publication or edits were needed. GitHub Pages lab already verified on the same release. All approved pending work and release evidence are merged.
