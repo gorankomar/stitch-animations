@@ -162,3 +162,9 @@ Moved the country chevron background out of the LP Contact Form Styles & Behavio
 ### Product prompt element compatibility (2026-11-13)
 
 Webflow inspection confirmed the prompt is a native Block/div with `lp-product-prompt`, containing a localized String. The runtime now targets that class, retaining the older direct-span selector as a compatibility fallback. Prompt typing/caret CSS supports both structures; local markup mirrors the native div. Preserve the translation-friendly Webflow structure. Local regression tests exercise the class target. The compatible motion-style embed is saved in Webflow; the staging runtime release is tracked in the release record.
+
+RTL dropdown flag spacing (2026-11-13): the shared contact form embed uses `.lp-country-flag:dir(rtl)` to set `margin-left:8px;margin-right:0` in both country and phone lists. LTR retains its existing right margin. Updated local source and saved Webflow component draft; not published.
+
+### Flat product camera (2026-11-16)
+
+The Solution section now uses the separate **Real AI product camera** component (`ab08d931-9bbf-9677-8c22-3d9bdf181830`), matching approved layout-lab version 05. Original LP Solution Product Screen component and other instances are unchanged. Native form and prompt remain editable; shared renderer owns the flat camera journey and status cycle. See [component notes](real-ai-product-camera.md) and the [release record](../releases/2026-11-16-real-ai-product-camera.md).

@@ -83,3 +83,5 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Prebuilt Agents: [notes](real-ai-landing.md#prebuilt-agents-illustration), reusable Cards slot and editable Prebuilt Agent Card; seven-card Real AI tab-two draft, local catalog scroll then cursor selection.
 
 - Product AI layout studies: [notes](real-ai-product-layout-lab.md), five alternatives: vertical roll, alternating rows, perspective crawl cinematic product camera and flat product camera. Client presentation: `/relayer/product-layout-lab/`.
+
+- Real AI product camera: [notes](real-ai-product-camera.md), native flat camera composition from layout lab 05 on the Real AI page.

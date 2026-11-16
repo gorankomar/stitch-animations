@@ -194,3 +194,5 @@ The native typing rule's :is() includes a legacy span:first-child alternative; i
 ## 05 / Flat product camera
 
 Local comparison of study 04 with `data-product-study="camera" data-camera-flat="true"`. Shares its complete renderer, field timings, focal coordinates, zoom, prompt/status motion, orange outline/shadow and sparkle rotation. Only the camera plane's perspective and X/Y/Z rotations (including angular drift) are omitted, leaving pure translation and scale. Study 04 is unchanged; each has its own replay button, while shared Pause/Replay controls apply to both. Existing camera-scoped styling and stage lifecycle/reduced-motion handling are reused. Published via the dedicated GitHub Pages workflow.
+
+Studies 04/05 now share `src/lib/effects/product-camera.js` with the production Real AI product camera. The lab keeps its own native-markup cloning, measurements, controls and styles; production binds the same renderer to editable Webflow nodes.
