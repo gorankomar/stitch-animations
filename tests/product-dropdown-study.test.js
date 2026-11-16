@@ -24,3 +24,19 @@ test('extended timeline loops continuously and reduced motion hides all menus',(
   assert.equal(state.lift,0);
   Object.values(state.states).forEach(s=>{assert.equal(s.opacity,0);assert.equal(s.progress,1);});
 });
+
+
+test('native menus preserve localized selected text and incomplete markup keeps legacy values',async()=>{
+  const {bindNativeDropdownMenus}=await import('../src/lib/effects/product-dropdowns.js');
+  const fields=Array.from({length:7},()=>({final:'original'}));
+  const menus=[1,2,3,5].map(index=>({dataset:{cameraDropdown:String(index)},querySelector:()=>({textContent:`Localized ${index}`})}));
+  const screen={querySelectorAll:()=>menus};
+  assert.equal(bindNativeDropdownMenus(screen,fields).length,4);
+  [1,2,3,5].forEach(index=>assert.equal(fields[index].final,`Localized ${index}`));
+  fields.forEach(field=>field.final='original');
+  screen.querySelectorAll=()=>menus.slice(0,3);
+  assert.deepEqual(bindNativeDropdownMenus(screen,fields),[]);
+  assert.ok(fields.every(field=>field.final==='original'));
+  screen.querySelectorAll=()=>[menus[0],menus[0],menus[2],menus[3]];
+  assert.deepEqual(bindNativeDropdownMenus(screen,fields),[]);
+});

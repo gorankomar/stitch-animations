@@ -1,6 +1,4 @@
 <style>
-/* Mirrors the user-applied native Webflow parent setting. */
-[data-real-ai-product-camera]{overflow-anchor:none}
 /* Component-only unsupported effects and responsive prompt typography. Native layout stays in Webflow. */
 [data-real-ai-product-camera] .lp-product-policy:empty{display:none}
 [data-real-ai-product-camera] .lp-product-copy{display:none}
@@ -27,4 +25,5 @@
 [data-real-ai-product-camera] .lp-product-details{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5cqi}
 }
 @media(prefers-reduced-motion:reduce){[data-real-ai-product-camera] .lp-product-prompt::after{animation:none}}
+[data-real-ai-product-camera] .real-ai-product-camera-menu[data-highlight="true"] [data-selected="true"]{background:#efefef}
 </style>

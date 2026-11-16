@@ -1,4 +1,5 @@
 import { animateStage, stageInitializer } from '../lib/effects/animation-stage.js';
+import { sampleDropdownStudy, renderDropdownMenus, bindNativeDropdownMenus } from '../lib/effects/product-dropdowns.js';
 import { renderProductCamera } from '../lib/effects/product-camera.js';
 import { getDefaultDurationMs } from '../lib/easing.js';
 import { readMotionEasingCurve } from '../lib/motion.js';
@@ -26,6 +27,9 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
   }));
   const text=[title,policy,ask,...cameraFields.map(item=>item.value)].map(node=>[node,node.textContent]);
   const initialState=bar.getAttribute('data-product-state');
+  // Read native, localizable menu text. Old published markup keeps its original sequence.
+  const dropdownMenus=bindNativeDropdownMenus(screen,cameraFields);
+  const hasDropdowns=dropdownMenus.length===4;
   const ease=readMotionEasingCurve(),duration=getDefaultDurationMs()/1000;
   let width=0,height=0,elapsed=0,rtl=false;
   function measure(){
@@ -36,7 +40,9 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
     screen.style.zoom='3.2';
   }
   function render(reduced){
-    renderProductCamera({elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera:true,rtl,copy});
+    const dropdown=hasDropdowns?sampleDropdownStudy(elapsed/duration,ease,reduced):null;
+    renderProductCamera({elapsed:dropdown?dropdown.time*duration:elapsed,duration,ease,reduced,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera:true,rtl,copy,selectorStates:dropdown?.states,cameraLift:dropdown?.lift||0});
+    if(dropdown) renderDropdownMenus(dropdownMenus,dropdown);
     if(matchMedia('(max-width:600px)').matches){
       const open=Math.max(0,Math.min(1,(parseFloat(bar.style.height)-4.83333)/4.33333));
       const promptWidth=width*.88/1.3;
@@ -48,6 +54,7 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
     styles.forEach(([node,value])=>value===null?node.removeAttribute('style'):node.setAttribute('style',value));
     text.forEach(([node,value])=>{node.textContent=value;});
     cameraFields.forEach(({value})=>value.classList.remove('study-value-empty'));
+    dropdownMenus.forEach(({menu})=>menu.removeAttribute('data-highlight'));
     if(initialState===null)bar.removeAttribute('data-product-state');else bar.setAttribute('data-product-state',initialState);
   }
   let stop;
