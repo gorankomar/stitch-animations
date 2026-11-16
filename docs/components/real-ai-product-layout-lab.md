@@ -190,3 +190,7 @@ Simplified the existing mobile text rule: auto height, normal wrapping and overf
 ## Typing-state wrap specificity correction — 2026-11-16
 
 The native typing rule's :is() includes a legacy span:first-child alternative; its type-selector specificity beats the preceding mobile override even when the actual prompt is a div. Idle-state checks did not reveal this. Added the bar's existing [data-product-state] attribute to the existing mobile rule, with no new declarations or elements. Verified the actual paused typing state at 320px: white-space normal, two text lines (28px source height), no horizontal overflow, and visually top-aligned text. The prompt remains position:static in its normal flex row.
+
+## 05 / Flat product camera
+
+Local comparison of study 04 with `data-product-study="camera" data-camera-flat="true"`. Shares its complete renderer, field timings, focal coordinates, zoom, prompt/status motion, orange outline/shadow and sparkle rotation. Only the camera plane's perspective and X/Y/Z rotations (including angular drift) are omitted, leaving pure translation and scale. Study 04 is unchanged; each has its own replay button, while shared Pause/Replay controls apply to both. Existing camera-scoped styling and stage lifecycle/reduced-motion handling are reused. Published via the dedicated GitHub Pages workflow.
