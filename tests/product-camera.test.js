@@ -91,3 +91,18 @@ test('dropdown sparkles fade, scale and rotate after commit in both camera modes
     }
   }
 });
+
+
+test('opt-in final frame fills the scaled layer and aligns the form top',()=>{
+  const s=scene();s.endFrameScale=1.25;
+  for(const reduced of [false,true]){
+    s.reduced=reduced;render(s,16.4);
+    const transform=s.cameraPlane.style.transform;
+    const scale=Number(transform.match(/scale\(([^)]+)\)/)[1])*3.2;
+    assert.equal(scale*.8,1);
+    assert.ok(transform.endsWith('translate(-1920px,-1040px)'));
+    // Centered outer .8 scale cancels the camera's overscan at both edges.
+    assert.equal(1200*.1+.8*(600-600*scale),0);
+    assert.equal(650*.1+.8*(325-325*scale),0);
+  }
+});
