@@ -1,0 +1,87 @@
+# Real AI LP Film player
+
+Saved to Webflow draft on 2026-11-17. Applies only to the lower LP Film poster on Real AI page `6af2c4b2616c8b948cbb3006`; the hero remains unchanged. No page publication, main merge, shared loader or animation-channel activation.
+
+## Behavior and design
+
+Figma file `PCbd0DyXWAD2cDANtl7bpH`: normal controls `675:3742`, volume hover `680:3843`, alternate icons `679:10128`. Play/pause, sound/mute, seek, buffered progress, elapsed/total time, fullscreen/exit are the entire control inventory. Speed, stop, replay and captions are not extra toolbar buttons; replay uses the play control when the film ends.
+
+The existing muted background loop and center play artwork remain visible initially. A transparent whole-poster play target starts the full film with audio after a user click, pauses/hides the background loop, and hides the shade and center artwork. Full film is not autoplayed on page load and does not loop. Its first frame is used as poster on both the full video and lower loop. Original hero poster/source are unchanged.
+
+Controls appear on pointer hover, keyboard-visible focus, and while paused. Coarse-pointer/touch devices keep controls visible after starting. The volume slider expands on volume-group hover or keyboard-visible focus, preserving Figma's 120px slider and shifting seek start from 148px to 288px in the 1024px design. Desktop controls are 44px circles with 24px exact Figma SVG icons, 20px insets/gaps, 2px tracks, orange #ff3609 progress, and 8px thumbs (16px for seek hover/drag). Time inherits the Webflow body ABC Diatype font; no component font-family override. The mobile layout uses 36px controls, 12px insets/gaps, and a 10px time readout. Parent clipping/radius remain native.
+
+Fullscreen is requested only through its explicit button. Native fullscreen is preferred, with native iOS video fullscreen where available. If a browser or embedded Preview denies the request, the player fills the available viewport with a scoped fixed-position fallback. Exit or Escape restores prior body overflow. No automatic fullscreen on mobile. Physical iOS hardware was not available for testing.
+
+## Media and assets
+
+Supplied source: `stitch-ai-full.mp4`, 1920 × 1080 H.264/AAC, 101.993 seconds. The delivery MP4 remuxes the original video/audio streams without quality loss and uses fast-start metadata. CDN base:
+
+`https://d280qq257tic0i.cloudfront.net/Stitch+Animations/releases/97b491b074b0c5a08d9674a14b6d212bb669e5a7/assets/real-ai-film/`
+
+Assets: `film.mp4`, `poster.webp`, `play.svg`, `pause.svg`, `sound.svg`, `mute.svg`, `fullscreen.svg`, `exitfullscreen.svg`. The first-frame PNG master is retained under `src/embeds/real-ai-film/assets/poster-master.png`; its 1920px-wide WebP derivative uses quality 88, visually checked against the master. This covers the normal 1024px design at approximately 2×. Exact Figma SVG exports are preserved unchanged; no redraw or unverified optimization. Their natural root geometry is 24 × 24 and rendered at that size.
+
+S3-only upload used isolated branch `codex/real-ai-full-film-assets-20261117`, commit `1375867b56beceb1298492ccf2250b748436aa6a`, workflow https://github.com/gorankomar/stitch-animations/actions/runs/44065490013. Video transport used chunks solely to avoid GitHub API file limits; the workflow reassembled the full MP4 before upload and compared CDN bytes exactly. No chunks are served. Do not merge the transport-only branch into main or activate it as an animation release. Uploaded media adds assets under the existing allowed release prefix without modifying existing release files.
+
+Control SVGs are also managed Webflow assets, so their image nodes remain native/editable:
+- Play: `6afc2e066789714871870780`
+- Pause: `6afc2e07f2d2eaae9c4fccae`
+- Sound: `6afc2e06678971487187075f`
+- Mute: `6afc2e078d1890fe0c67ffc3`
+- Fullscreen: `6afc2e06e119fedd373a1aae`
+- Exit fullscreen: `6afc2e064439e59879ca018d`
+
+## Sources and Webflow nodes
+
+`src/embeds/real-ai-film/player.js` owns initialization, playback state, seeking, volume, fullscreen and cleanup. `player.css` mirrors native Webflow structural styles. `states.css` contains unsupported state/pseudo-element/media-query rules, scoped to `[data-film-player]`. The generated `runtime.html` embeds those rules and the controller as a saved page draft; it is not a compiled shared feature. If later moved into shared delivery, register it through the normal shared-entry/release workflow and remove this one inline controller after staging verification.
+
+Run `node scripts/build-real-ai-film.mjs` to regenerate `player.html`, `runtime.html` and local `/real-ai-film.html`. No build of shared distribution files is needed for this draft-only controller. Source folders are preserved; no dependency added.
+
+- Poster root: `ee6b6bff-f60c-eab3-8f86-9a5626ff25f9`, `[data-film-player]`.
+- Full video: `ea248057-16eb-c54b-6975-aea94d9d8b81`.
+- Start target: `7fb6faa0-07f0-8d26-a34c-a9a14d7f887d`.
+- Controls: `edcbf0a8-f078-135f-a4d0-f39145b61595`.
+- Scoped runtime embed: `13f0d579-8a1b-f1b6-ebf1-21823c2f6929`.
+- Native volume input: `0ac8bc9a-2827-6bb0-d618-a71e1d5185d5`.
+- Native seek input: `e13925ad-0578-1e07-cee6-11b1df51ca39`.
+
+The importer maps HTML buttons to native Webflow Links, so role=button, tabindex=0 and Enter/Space activation are explicitly supported; clicks prevent default anchor navigation. Range inputs are native DOM elements with tag input and type range, avoiding the importer's Form-only text-input conversion. Do not add redundant form wrappers. Icons are managed Image elements with data-film-icon hooks. The control runtime hides inactive icons using hidden, supported by scoped CSS. Duplicate initialization is guarded; cleanup removes listeners and restores the initial visual state and scroll lock.
+
+## Verification
+
+Actual Webflow Preview verified full-film start with sound, background/play-art hiding, 44 × 44 controls, 24 × 24 loaded icons, ABC Diatype time font, normal and 120px expanded-volume geometry, pause, mute/unmute, keyboard volume/seek, and mobile 345px player without control overflow. Fullscreen entry/exit and hover disappearance were checked in the standalone browser preview. Unit tests cover unloaded/negative time formatting, click-only start, background pause, independent seek/volume, duplicate initialization, fullscreen fallback/overflow restoration, and listener cleanup.
+
+## Replacement full film — 2026-11-17
+
+User supplied a replacement `stitch-ai-full.mp4` with the same name. Duration remains 101.993 seconds, 1920 × 1080 H.264/AAC. Delivery remux preserves video/audio quality and enables fast-start. Current media base: `https://d280qq257tic0i.cloudfront.net/Stitch+Animations/releases/97b491b074b0c5a08d9674a14b6d212bb669e5a7/assets/real-ai-film-v2-bff954c70e2b/` (`film.mp4` and `poster.webp`). Content SHA-256 prefix is `bff954c70e2b`. The first decoded frame was extracted as `assets/full-v2-poster-master.png` and delivered as quality-88 WebP `assets/full-v2-poster.webp`; visually verified. Its appearance is unchanged from the previous first frame.
+
+Upload and exact CDN-byte comparison succeeded in https://github.com/gorankomar/stitch-animations/actions/runs/44073268566, isolated branch `codex/real-ai-full-v2-bff954c70e2b`, commit `be57f8f9d7e7c82a351288366f8e19522f0ce18b`. Updated only the full-video element source/poster and local preview media references. Current controls, both background loops and their posters remain unchanged. Saved to Webflow draft only, without publication or animation-channel activation. New control work is deferred to the next user request.
+
+## Revised control style — 2026-11-17
+
+Latest control appearance supersedes the original single-row 44px design above. Figma layout `681:3871`, user icon source `679:10129`. All six current icon exports were downloaded to `assets/control-reference-v2/` and byte-compared with the originals: identical. Reuse the managed Webflow assets, applying native `brightness(0) invert(1)` to make them fully white without changing geometry. Buttons and time/volume pills use rgba(0,0,0,.7); the enclosing control bar retains the reference's rgba(0,0,0,.43), 2px backdrop blur, 10px radius/insets/padding and 10px gaps. Buttons are 35 × 35 with 24px icons. ABC Diatype inherits from body; obsolete Inter reference is ignored.
+
+Timeline is now a separate top row: 8px rounded track and played/buffered segments, 18px thumb. The lower row holds play, the expanding volume pill and a time pill on the left, with fullscreen alone on the right. Native existing toolbar was reused; added only `film-row` (`e6225086-7943-31b5-2596-da27b7faa32f`) and `film-left` (`e6225086-7943-31b5-2596-da27b7faa32e`) to express this two-row layout. Existing buttons, range inputs and time element were moved, preserving IDs and behavior.
+
+The volume group is one 70%-black pill. Its button has transparent fill inside that shared surface to avoid double-darkening. The sound icon stays fixed while the same pill expands rightward from 35px to 175px, exposing the 120px range plus spacing. Expansion uses Global Styles fast duration and primary movement easing; opacity remains linear. In Preview these resolve to 462ms and cubic-bezier(.11,.61,.27,.99). Pointer hover and keyboard-visible focus expand it. Mobile fine-pointer preview uses a shorter 60px range; coarse-pointer devices use mute and system volume rather than an unsupported programmatic iOS volume slider.
+
+No CC control or subtitle track: no transcription connector, CLI or installed speech-recognition runtime was available in this session. The user expressly authorized omitting CC if subtitles could not be produced. No placeholder captions or invented transcript were added.
+
+Fullscreen (native or full-window fallback) now hides controls AND the cursor after 2,500ms of inactivity during playback. Pointer movement/down, keyboard activity and focus restore them and restart the timer. Paused playback, active pointer interaction and exiting fullscreen keep/show controls. The `createFilmIdle` controller owns and disposes its timer; no timer is reset on ordinary timeupdate events. Root `data-film-idle` owns visibility/cursor state. Reduced motion removes visual transitions without changing inactivity behavior.
+
+Actual saved Webflow Preview checked desktop and 393px mobile (345px video), no control overflow, 35px buttons, white icons, rgba surfaces, inherited ABC Diatype, expanding pill 175px/range 120px with unchanged sound-button x coordinate, volume input changes/unmute, fullscreen idle hidden + cursor none, and wake-up + cursor auto. All 255 repository tests pass, including the new deterministic inactivity/reset/paused/disposal test. Source, native Webflow styles/structure and scoped runtime are saved; no Webflow publication, GitHub merge or animation-channel activation.
+
+## CMS Rich Text marker support — 2026-11-17
+
+The earlier marker suggestion alone was insufficient: no marker loader had been installed. User placed the exact marker `<div data-stitch-video="real-ai"></div>` in Press item `6afc12dd06289bf688e81385` (Stitch casts Patrick J. Adams to launch Stitch AI, agentic AI for banks). Custom code was already enabled. The missing runtime is now saved as a new, independently named HtmlEmbed `12a3c867-ec7a-6837-b0eb-faba3290c584` on **Presses Template** `69fd1bd8b7dae1c93ab30a0e`, appended to the Body. Existing template embeds, CMS fields/content, site-wide code and landing player are preserved. It is not installed on Blogs Template or every site page.
+
+`cms.js` finds only exact `real-ai` markers, inserts trusted generated markup (no arbitrary dataset HTML or remote configuration), and mounts the canonical `initFilmPlayer`. The same `build-real-ai-film.mjs` produces native landing markup/runtime and self-contained `cms-runtime.html` from one shared player source. CMS runtime includes scoped base styles because native landing classes alone cannot be assumed on collection pages. `cms.css` supplies 16:9 marker geometry, clipping, initial play artwork and Rich Text-specific resets. The user's marker remains the only CMS content required; no markup needs to be pasted again.
+
+No Webflow component instance is created at runtime. The complete HTML player is inserted exactly at the marker's position between text blocks. Background cut, both posters, full film, icon assets, controls, volume pill and fullscreen idle behavior reuse the current landing configuration. Only articles containing a marker render a player. No external animation loader or release-channel change is needed for this draft runtime.
+
+Late Rich Text rendering is supported by a MutationObserver. Multiple markers are independent, duplicate initialization is guarded, removed players are disposed, and full disposal restores the original marker contents/classes. Reinstalling the generated loader disposes its prior instance before remounting. Unit tests cover exact-key selection, multiple/repeated markers, late insertion and removal/cleanup. Refreshing generated content or changing media/control source requires rebuilding and saving the generated snippets to their respective Webflow embeds; repository edits alone do not update a saved/published Webflow embed.
+
+Actual item Preview verified initial muted loop, whole-poster start, full-film playback, pause, mute, keyboard seek, loaded 24px icons, inherited ABC Diatype and 800 × 450 desktop / 345 × 194.06 mobile sizing without control overflow. All 257 tests pass. Source and Press template draft saved; no CMS item or Webflow page/site publication, GitHub merge or animation activation. The public article will need an authorized publication to receive the new template runtime.
+
+## Compact stable volume hover — 2026-11-17
+
+Desktop volume track reduced from 120px to 80px (expanded pill 175px → 135px); the existing 60px mobile fine-pointer track remains. `.film-volume-group` now owns `pointer-events: auto`, overriding the decorative control overlay's inherited `none`. This makes the complete pill—including the margin gap between icon and slider—one continuous hover target, preventing collapse/reopen while crossing that gap. Icon position, volume behavior, motion tokens and other controls are unchanged. Updated the native landing class and regenerated/saved both landing and Press CMS runtimes; no publication. Local CMS preview confirmed 80px track, group hover retained while pointer sits in the gap, and working volume adjustment.

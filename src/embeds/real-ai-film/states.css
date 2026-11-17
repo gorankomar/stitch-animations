@@ -1,0 +1,45 @@
+.lp-film-poster[data-film-player] { isolation: isolate; }
+.film-control:focus-visible, .film-start:focus-visible, .film-range:focus-visible { outline: 2px solid #ff3609; outline-offset: 4px; }
+[data-film-player] [hidden] { display: none !important; }
+[data-film-player][data-film-started="true"] .film-full-video { display: block; }
+[data-film-player][data-film-started="true"] > .real-ai-background-video,
+[data-film-player][data-film-started="true"] > .lp-film-shade { display: none; }
+[data-film-player][data-film-started="true"] > .lp-film-play { display: none; }
+[data-film-player][data-film-started="true"]:hover .film-controls,
+[data-film-player][data-film-started="true"]:has(:focus-visible) .film-controls,
+[data-film-player][data-film-started="true"][data-film-paused="true"] .film-controls { opacity: 1; visibility: visible; }
+[data-film-player]:not([data-film-started="true"]) .film-controls { opacity: 0; visibility: hidden; }
+[data-film-player] .film-volume-group .film-control { background: transparent; }
+[data-film-player] .film-volume { transition: width var(--motion-duration-fast) var(--motion-ease-primary), margin var(--motion-duration-fast) var(--motion-ease-primary), opacity var(--motion-duration-fast) linear; }
+[data-film-player] .film-volume .film-range { width: 80px; height: 24px; }
+[data-film-player] .film-volume-group:hover .film-volume,
+[data-film-player] .film-volume-group:has(:focus-visible) .film-volume { width: 80px; margin-left: 10px; margin-right: 10px; opacity: 1; }
+[data-film-player] .film-range::-webkit-slider-runnable-track { height: 8px; border-radius: 10px; background: linear-gradient(to right,#ff3609 0 var(--film-progress,0%),rgba(255,255,255,.45) var(--film-progress,0%) var(--film-buffered,0%),rgba(255,255,255,.25) var(--film-buffered,0%) 100%); }
+[data-film-player] .film-range::-webkit-slider-thumb { appearance: none; -webkit-appearance: none; width: 18px; height: 18px; margin-top: -5px; border: 0; border-radius: 50%; background: #ff3609; }
+[data-film-player] .film-range::-moz-range-track { height: 8px; border-radius: 10px; background: rgba(255,255,255,.25); }
+[data-film-player] .film-range::-moz-range-progress { height: 8px; border-radius: 10px; background: #ff3609; }
+[data-film-player] .film-range::-moz-range-thumb { width: 18px; height: 18px; border: 0; border-radius: 50%; background: #ff3609; }
+[data-film-player] .film-volume .film-range::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(to right,#ff3609 var(--film-volume,100%),rgba(255,255,255,.25) var(--film-volume,100%)); }
+[data-film-player] .film-volume .film-range::-webkit-slider-thumb { width: 8px; height: 8px; margin-top: -3px; }
+[data-film-player] .film-volume .film-range::-moz-range-track,
+[data-film-player] .film-volume .film-range::-moz-range-progress { height: 2px; }
+[data-film-player] .film-volume .film-range::-moz-range-thumb { width: 8px; height: 8px; }
+[data-film-player]:fullscreen { width: 100%; height: 100%; max-width: none; border-radius: 0; background: #000; }
+[data-film-player][data-film-expanded="true"] { position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; margin: 0; border-radius: 0; z-index: 2147483000; background: black; aspect-ratio: auto; }
+[data-film-player][data-film-idle="true"], [data-film-player][data-film-idle="true"] * { cursor: none !important; }
+[data-film-player][data-film-idle="true"] .film-controls { opacity: 0 !important; visibility: hidden !important; }
+@media (hover: none), (pointer: coarse) {
+ [data-film-player][data-film-started="true"] .film-controls { opacity: 1; visibility: visible; }
+ [data-film-player] .film-volume { display: none !important; }
+}
+@media (max-width: 479px) {
+ [data-film-player] .film-toolbar { left: 8px; right: 8px; bottom: 8px; padding: 8px; gap: 8px; }
+ [data-film-player] .film-left { gap: 8px; }
+ [data-film-player] .film-time { font-size: 10px; }
+ [data-film-player] .film-volume .film-range { width: 60px; }
+ [data-film-player] .film-volume-group:hover .film-volume,
+ [data-film-player] .film-volume-group:has(:focus-visible) .film-volume { width: 60px; margin-left: 6px; margin-right: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { [data-film-player] .film-controls, [data-film-player] .film-volume { transition: none; } }
+[data-film-player] .film-volume-group > .film-control { background: transparent; }
+[data-film-player] .film-range { -webkit-appearance: none; }

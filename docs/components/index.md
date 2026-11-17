@@ -85,3 +85,5 @@ Root: data-product-variety. Source: src/embeds/product-variety.js and product-va
 - Product AI layout studies: [notes](real-ai-product-layout-lab.md), five alternatives: vertical roll, alternating rows, perspective crawl cinematic product camera and flat product camera. Client presentation: `/relayer/product-layout-lab/`.
 
 - Real AI product camera: [notes](real-ai-product-camera.md), native flat camera composition from layout lab 05, replacing only the Real AI page’s product-screen instance.
+
+- Real AI LP Film player: [notes](real-ai-film-player.md), whole-poster full-film playback with Figma controls, volume expansion, inline mobile playback and first-frame poster; Webflow draft only.
