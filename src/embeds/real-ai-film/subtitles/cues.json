@@ -1,0 +1,202 @@
+[
+  {
+    "start": 0,
+    "end": 3.34,
+    "en": "As you all may know,\nthe new guy starts today.",
+    "ar": "كما تعلمون جميعاً،\nيبدأ زميلنا الجديد العمل اليوم.",
+    "vi": "Như mọi người đã biết,\nhôm nay người mới bắt đầu làm việc.",
+    "id": "Seperti yang kalian tahu,\norang baru mulai bekerja hari ini."
+  },
+  {
+    "start": 8.08,
+    "end": 8.88,
+    "en": "Guys,",
+    "ar": "يا جماعة،",
+    "vi": "Mọi người này,",
+    "id": "Teman-teman,"
+  },
+  {
+    "start": 9.32,
+    "end": 13.26,
+    "en": "I heard that the new guy\nis so accurate",
+    "ar": "سمعت أن زميلنا الجديد\nدقيق للغاية،",
+    "vi": "tôi nghe nói người mới\nchính xác đến mức",
+    "id": "aku dengar orang baru itu\nsangat akurat,"
+  },
+  {
+    "start": 13.26,
+    "end": 16.44,
+    "en": "that even the margin of error\navoids him.",
+    "ar": "لدرجة أن هامش الخطأ نفسه\nيتجنبه.",
+    "vi": "ngay cả sai số\ncũng phải tránh anh ấy.",
+    "id": "sampai-sampai margin kesalahan\npun menghindarinya."
+  },
+  {
+    "start": 17.56,
+    "end": 20.82,
+    "en": "I heard he can pinpoint anything.",
+    "ar": "سمعت أنه يستطيع تحديد أي شيء\nبمنتهى الدقة.",
+    "vi": "Tôi nghe nói anh ấy có thể\nxác định chính xác bất cứ thứ gì.",
+    "id": "Aku dengar dia bisa menentukan\napa pun dengan tepat."
+  },
+  {
+    "start": 21.9,
+    "end": 25.8,
+    "en": "Well, I hear he's incredibly\nefficient under pressure.",
+    "ar": "أما أنا فسمعت أنه يعمل\nبكفاءة مذهلة تحت الضغط.",
+    "vi": "Còn tôi nghe nói anh ấy làm việc\ncực kỳ hiệu quả dưới áp lực.",
+    "id": "Kalau aku dengar, dia sangat\nefisien saat berada di bawah tekanan."
+  },
+  {
+    "start": 27.8,
+    "end": 29.74,
+    "en": "I heard that he finished\nQ4 report",
+    "ar": "سمعت أنه أنهى\nتقرير الربع الرابع",
+    "vi": "Tôi nghe nói anh ấy đã hoàn thành\nbáo cáo quý IV",
+    "id": "Aku dengar dia menyelesaikan\nlaporan kuartal IV"
+  },
+  {
+    "start": 29.74,
+    "end": 30.84,
+    "en": "before Q3 even ended.",
+    "ar": "قبل أن ينتهي الربع الثالث أصلاً.",
+    "vi": "trước cả khi quý III kết thúc.",
+    "id": "bahkan sebelum kuartal III berakhir."
+  },
+  {
+    "start": 31.62,
+    "end": 33.98,
+    "en": "I hear Elon calls him for advice.",
+    "ar": "سمعت أن إيلون يتصل به\nطلباً للنصيحة.",
+    "vi": "Tôi nghe nói Elon còn gọi anh ấy\nđể xin lời khuyên.",
+    "id": "Aku dengar Elon meneleponnya\nuntuk meminta saran."
+  },
+  {
+    "start": 37.04,
+    "end": 39.64,
+    "en": "♪ Who stepped in the room\nmaking everybody freeze? ♪",
+    "ar": "♪ من دخل الغرفة\nوجعل الجميع يتجمّدون؟ ♪",
+    "vi": "♪ Ai vừa bước vào phòng\nkhiến tất cả sững người? ♪",
+    "id": "♪ Siapa yang masuk ruangan\nhingga semua terpaku? ♪"
+  },
+  {
+    "start": 39.96,
+    "end": 42.08,
+    "en": "♪ With the tailored crease\nsharp enough to make them bleed. ♪",
+    "ar": "♪ بثنية بدلة مفصّلة\nحادّة بما يكفي لتُدميهم. ♪",
+    "vi": "♪ Nếp ly trên bộ đồ may đo\nsắc đến mức khiến họ đổ máu. ♪",
+    "id": "♪ Dengan lipatan setelan jahitan khusus\nyang tajam hingga bisa melukai. ♪"
+  },
+  {
+    "start": 42.46,
+    "end": 44.6,
+    "en": "♪ Women adjusting their skirts,\nmen fixing their collars. ♪",
+    "ar": "♪ النساء يُعدّلن تنانيرهن،\nوالرجال يُسوّون ياقات قمصانهم. ♪",
+    "vi": "♪ Phụ nữ chỉnh lại váy,\nđàn ông sửa lại cổ áo. ♪",
+    "id": "♪ Para wanita merapikan rok,\npara pria membetulkan kerah. ♪"
+  },
+  {
+    "start": 44.78,
+    "end": 47.14,
+    "en": "♪ The legend walked in,\nnow we talking top dollars. ♪",
+    "ar": "♪ دخل الأسطورة،\nوالآن نتحدث عن مبالغ طائلة. ♪",
+    "vi": "♪ Huyền thoại đã bước vào,\ngiờ ta nói chuyện tiền khủng. ♪",
+    "id": "♪ Sang legenda masuk,\nkini kita bicara bayaran tertinggi. ♪"
+  },
+  {
+    "start": 47.42,
+    "end": 49.54,
+    "en": "♪ That's the kingpin,\ntell them who's running the floor. ♪",
+    "ar": "♪ إنه الزعيم،\nأخبرهم من يدير المكان. ♪",
+    "vi": "♪ Đó là ông trùm,\ncho họ biết ai làm chủ nơi này. ♪",
+    "id": "♪ Itulah sang bos,\nberi tahu siapa yang berkuasa di sini. ♪"
+  },
+  {
+    "start": 49.78,
+    "end": 52.04,
+    "en": "♪ The office kingpin,\nlock down every single door. ♪",
+    "ar": "♪ زعيم المكتب،\nأغلقوا كل باب بإحكام. ♪",
+    "vi": "♪ Ông trùm văn phòng,\nkhóa chặt từng cánh cửa. ♪",
+    "id": "♪ Sang bos kantor,\nkunci rapat setiap pintu. ♪"
+  },
+  {
+    "start": 52.28,
+    "end": 54.5,
+    "en": "♪ The board knows the name,\nyeah, the board knows the face. ♪",
+    "ar": "♪ مجلس الإدارة يعرف الاسم،\nأجل، مجلس الإدارة يعرف الوجه. ♪",
+    "vi": "♪ Hội đồng quản trị biết tên,\nđúng vậy, họ cũng biết mặt. ♪",
+    "id": "♪ Dewan direksi tahu namanya,\nya, mereka juga tahu wajahnya. ♪"
+  },
+  {
+    "start": 57.88,
+    "end": 61.76,
+    "en": "With Stitch AI,\nyou can get things done fast.",
+    "ar": "مع Stitch AI،\nيمكنك إنجاز أعمالك بسرعة.",
+    "vi": "Với Stitch AI,\nbạn có thể hoàn thành công việc nhanh chóng.",
+    "id": "Dengan Stitch AI, Anda bisa\nmenyelesaikan pekerjaan dengan cepat."
+  },
+  {
+    "start": 63.82,
+    "end": 64.96,
+    "en": "Real fast.",
+    "ar": "بسرعة فائقة.",
+    "vi": "Thật sự nhanh.",
+    "id": "Sangat cepat."
+  },
+  {
+    "start": 65.8,
+    "end": 68.32,
+    "en": "Get instant analysis\nand offload work to agents",
+    "ar": "احصل على تحليلات فورية،\nوفوّض المهام إلى وكلاء الذكاء الاصطناعي",
+    "vi": "Nhận kết quả phân tích tức thì\nvà giao việc cho các tác nhân AI",
+    "id": "Dapatkan analisis instan\ndan delegasikan pekerjaan kepada agen AI"
+  },
+  {
+    "start": 68.32,
+    "end": 70.26,
+    "en": "with pinpoint accuracy.",
+    "ar": "بدقة متناهية.",
+    "vi": "với độ chính xác cao.",
+    "id": "dengan akurasi tinggi."
+  },
+  {
+    "start": 76.62,
+    "end": 79.78,
+    "en": "",
+    "ar": "يمكن لأي شخص أن يصبح بطلاً\nمع Stitch AI.",
+    "vi": "Ai cũng có thể trở thành người hùng\nvới Stitch AI.",
+    "id": "Siapa pun bisa menjadi pahlawan\ndengan Stitch AI."
+  },
+  {
+    "start": 80.14,
+    "end": 81.94,
+    "en": "",
+    "ar": "ذكاء اصطناعي حقيقي\nللعمل المصرفي الحقيقي.",
+    "vi": "AI thực thụ\ncho nghiệp vụ ngân hàng thực tế.",
+    "id": "AI nyata\nuntuk perbankan nyata."
+  },
+  {
+    "start": 85.12,
+    "end": 86.88,
+    "en": "Spatial awareness not included.",
+    "ar": "الإدراك المكاني غير مشمول.",
+    "vi": "Không bao gồm khả năng nhận biết không gian.",
+    "id": "Kesadaran spasial tidak termasuk."
+  },
+  {
+    "start": 91.22,
+    "end": 93.02,
+    "en": "Did I mention I have excellent referrals?",
+    "ar": "هل ذكرت أن لديّ توصيات ممتازة؟",
+    "vi": "Tôi đã nói là mình có những\nlời giới thiệu rất tốt chưa?",
+    "id": "Sudah kubilang aku punya\nrekomendasi yang sangat bagus?"
+  },
+  {
+    "start": 93.9,
+    "end": 96.2,
+    "en": "Sorry, we already found\nthe perfect guy for the job.",
+    "ar": "عذراً، لقد وجدنا بالفعل\nالشخص المثالي للوظيفة.",
+    "vi": "Xin lỗi, chúng tôi đã tìm được\nngười hoàn hảo cho công việc này rồi.",
+    "id": "Maaf, kami sudah menemukan\norang yang tepat untuk pekerjaan ini."
+  }
+]

@@ -1,0 +1,673 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.34,
+    "text": "As you all may know, the new guy starts today.",
+    "words": [
+      {
+        "start": 0.0,
+        "end": 0.5,
+        "word": " As"
+      },
+      {
+        "start": 0.5,
+        "end": 0.64,
+        "word": " you"
+      },
+      {
+        "start": 0.64,
+        "end": 0.76,
+        "word": " all"
+      },
+      {
+        "start": 0.76,
+        "end": 0.88,
+        "word": " may"
+      },
+      {
+        "start": 0.88,
+        "end": 1.22,
+        "word": " know,"
+      },
+      {
+        "start": 1.54,
+        "end": 1.62,
+        "word": " the"
+      },
+      {
+        "start": 1.62,
+        "end": 1.84,
+        "word": " new"
+      },
+      {
+        "start": 1.84,
+        "end": 2.16,
+        "word": " guy"
+      },
+      {
+        "start": 2.16,
+        "end": 2.74,
+        "word": " starts"
+      },
+      {
+        "start": 2.74,
+        "end": 3.34,
+        "word": " today."
+      }
+    ]
+  },
+  {
+    "start": 8.08,
+    "end": 16.44,
+    "text": "Guys, I heard that the new guy is so accurate that even the margin of error avoids him.",
+    "words": [
+      {
+        "start": 8.08,
+        "end": 8.88,
+        "word": " Guys,"
+      },
+      {
+        "start": 9.32,
+        "end": 9.6,
+        "word": " I"
+      },
+      {
+        "start": 9.6,
+        "end": 10.0,
+        "word": " heard"
+      },
+      {
+        "start": 10.0,
+        "end": 10.6,
+        "word": " that"
+      },
+      {
+        "start": 10.6,
+        "end": 10.78,
+        "word": " the"
+      },
+      {
+        "start": 10.78,
+        "end": 11.02,
+        "word": " new"
+      },
+      {
+        "start": 11.02,
+        "end": 11.36,
+        "word": " guy"
+      },
+      {
+        "start": 11.36,
+        "end": 11.76,
+        "word": " is"
+      },
+      {
+        "start": 11.76,
+        "end": 12.48,
+        "word": " so"
+      },
+      {
+        "start": 12.48,
+        "end": 13.26,
+        "word": " accurate"
+      },
+      {
+        "start": 13.26,
+        "end": 13.98,
+        "word": " that"
+      },
+      {
+        "start": 13.98,
+        "end": 14.42,
+        "word": " even"
+      },
+      {
+        "start": 14.42,
+        "end": 14.74,
+        "word": " the"
+      },
+      {
+        "start": 14.74,
+        "end": 15.0,
+        "word": " margin"
+      },
+      {
+        "start": 15.0,
+        "end": 15.24,
+        "word": " of"
+      },
+      {
+        "start": 15.24,
+        "end": 15.62,
+        "word": " error"
+      },
+      {
+        "start": 15.62,
+        "end": 16.16,
+        "word": " avoids"
+      },
+      {
+        "start": 16.16,
+        "end": 16.44,
+        "word": " him."
+      }
+    ]
+  },
+  {
+    "start": 17.56,
+    "end": 20.82,
+    "text": "I heard he can pinpoint anything.",
+    "words": [
+      {
+        "start": 17.56,
+        "end": 17.84,
+        "word": " I"
+      },
+      {
+        "start": 17.84,
+        "end": 18.28,
+        "word": " heard"
+      },
+      {
+        "start": 18.28,
+        "end": 18.86,
+        "word": " he"
+      },
+      {
+        "start": 18.86,
+        "end": 19.2,
+        "word": " can"
+      },
+      {
+        "start": 19.2,
+        "end": 19.8,
+        "word": " pinpoint"
+      },
+      {
+        "start": 19.8,
+        "end": 20.82,
+        "word": " anything."
+      }
+    ]
+  },
+  {
+    "start": 21.9,
+    "end": 25.8,
+    "text": "Well, I hear he's incredibly efficient under pressure.",
+    "words": [
+      {
+        "start": 21.9,
+        "end": 22.16,
+        "word": " Well,"
+      },
+      {
+        "start": 22.7,
+        "end": 22.96,
+        "word": " I"
+      },
+      {
+        "start": 22.96,
+        "end": 23.22,
+        "word": " hear"
+      },
+      {
+        "start": 23.22,
+        "end": 23.6,
+        "word": " he's"
+      },
+      {
+        "start": 23.6,
+        "end": 24.04,
+        "word": " incredibly"
+      },
+      {
+        "start": 24.04,
+        "end": 24.6,
+        "word": " efficient"
+      },
+      {
+        "start": 24.6,
+        "end": 25.2,
+        "word": " under"
+      },
+      {
+        "start": 25.2,
+        "end": 25.8,
+        "word": " pressure."
+      }
+    ]
+  },
+  {
+    "start": 27.8,
+    "end": 30.84,
+    "text": "I heard that he finished Q4 report before Q3 even ended.",
+    "words": [
+      {
+        "start": 27.8,
+        "end": 28.36,
+        "word": " I"
+      },
+      {
+        "start": 28.36,
+        "end": 28.64,
+        "word": " heard"
+      },
+      {
+        "start": 28.64,
+        "end": 28.8,
+        "word": " that"
+      },
+      {
+        "start": 28.8,
+        "end": 28.86,
+        "word": " he"
+      },
+      {
+        "start": 28.86,
+        "end": 29.08,
+        "word": " finished"
+      },
+      {
+        "start": 29.08,
+        "end": 29.46,
+        "word": " Q4"
+      },
+      {
+        "start": 29.46,
+        "end": 29.74,
+        "word": " report"
+      },
+      {
+        "start": 29.74,
+        "end": 29.94,
+        "word": " before"
+      },
+      {
+        "start": 29.94,
+        "end": 30.38,
+        "word": " Q3"
+      },
+      {
+        "start": 30.38,
+        "end": 30.6,
+        "word": " even"
+      },
+      {
+        "start": 30.6,
+        "end": 30.84,
+        "word": " ended."
+      }
+    ]
+  },
+  {
+    "start": 31.62,
+    "end": 33.98,
+    "text": "I hear Elon calls him for advice.",
+    "words": [
+      {
+        "start": 31.62,
+        "end": 32.06,
+        "word": " I"
+      },
+      {
+        "start": 32.06,
+        "end": 32.28,
+        "word": " hear"
+      },
+      {
+        "start": 32.28,
+        "end": 32.7,
+        "word": " Elon"
+      },
+      {
+        "start": 32.7,
+        "end": 33.08,
+        "word": " calls"
+      },
+      {
+        "start": 33.08,
+        "end": 33.28,
+        "word": " him"
+      },
+      {
+        "start": 33.28,
+        "end": 33.46,
+        "word": " for"
+      },
+      {
+        "start": 33.46,
+        "end": 33.98,
+        "word": " advice."
+      }
+    ]
+  },
+  {
+    "start": 57.88,
+    "end": 61.76,
+    "text": "With Stitch AI, you can get things done fast.",
+    "words": [
+      {
+        "start": 57.88,
+        "end": 58.64,
+        "word": " With"
+      },
+      {
+        "start": 58.64,
+        "end": 59.1,
+        "word": " Stitch"
+      },
+      {
+        "start": 59.1,
+        "end": 59.36,
+        "word": " AI,"
+      },
+      {
+        "start": 59.74,
+        "end": 59.98,
+        "word": " you"
+      },
+      {
+        "start": 59.98,
+        "end": 60.18,
+        "word": " can"
+      },
+      {
+        "start": 60.18,
+        "end": 60.34,
+        "word": " get"
+      },
+      {
+        "start": 60.34,
+        "end": 60.66,
+        "word": " things"
+      },
+      {
+        "start": 60.66,
+        "end": 60.98,
+        "word": " done"
+      },
+      {
+        "start": 60.98,
+        "end": 61.76,
+        "word": " fast."
+      }
+    ]
+  },
+  {
+    "start": 63.820000000000014,
+    "end": 64.80000000000001,
+    "text": "Real fast.",
+    "words": [
+      {
+        "start": 63.820000000000014,
+        "end": 64.58000000000001,
+        "word": " Real"
+      },
+      {
+        "start": 64.58000000000001,
+        "end": 64.96000000000001,
+        "word": " fast."
+      }
+    ]
+  },
+  {
+    "start": 65.8,
+    "end": 70.26,
+    "text": "Get instant analysis and offload work to agents with pinpoint accuracy.",
+    "words": [
+      {
+        "start": 65.8,
+        "end": 65.96,
+        "word": " Get"
+      },
+      {
+        "start": 65.96,
+        "end": 66.36,
+        "word": " instant"
+      },
+      {
+        "start": 66.36,
+        "end": 66.84,
+        "word": " analysis"
+      },
+      {
+        "start": 66.84,
+        "end": 67.2,
+        "word": " and"
+      },
+      {
+        "start": 67.2,
+        "end": 67.58,
+        "word": " offload"
+      },
+      {
+        "start": 67.58,
+        "end": 67.8,
+        "word": " work"
+      },
+      {
+        "start": 67.8,
+        "end": 68.04,
+        "word": " to"
+      },
+      {
+        "start": 68.04,
+        "end": 68.32,
+        "word": " agents"
+      },
+      {
+        "start": 68.32,
+        "end": 68.58,
+        "word": " with"
+      },
+      {
+        "start": 68.58,
+        "end": 69.44,
+        "word": " pinpoint"
+      },
+      {
+        "start": 69.44,
+        "end": 70.26,
+        "word": " accuracy."
+      }
+    ]
+  },
+  {
+    "start": 76.62,
+    "end": 81.94,
+    "text": "Anyone can be a hero with Stitch AI. Real AI for real banking.",
+    "words": [
+      {
+        "start": 76.62,
+        "end": 77.38,
+        "word": " Anyone"
+      },
+      {
+        "start": 77.38,
+        "end": 77.64,
+        "word": " can"
+      },
+      {
+        "start": 77.64,
+        "end": 77.82,
+        "word": " be"
+      },
+      {
+        "start": 77.82,
+        "end": 78.08,
+        "word": " a"
+      },
+      {
+        "start": 78.08,
+        "end": 78.3,
+        "word": " hero"
+      },
+      {
+        "start": 78.3,
+        "end": 78.68,
+        "word": " with"
+      },
+      {
+        "start": 78.68,
+        "end": 79.12,
+        "word": " Stitch"
+      },
+      {
+        "start": 79.12,
+        "end": 79.78,
+        "word": " AI."
+      },
+      {
+        "start": 80.14,
+        "end": 80.36,
+        "word": " Real"
+      },
+      {
+        "start": 80.36,
+        "end": 80.74,
+        "word": " AI"
+      },
+      {
+        "start": 80.74,
+        "end": 81.12,
+        "word": " for"
+      },
+      {
+        "start": 81.12,
+        "end": 81.52,
+        "word": " real"
+      },
+      {
+        "start": 81.52,
+        "end": 81.94,
+        "word": " banking."
+      }
+    ]
+  },
+  {
+    "start": 85.12,
+    "end": 86.88,
+    "text": "Spatial awareness not included.",
+    "words": [
+      {
+        "start": 85.12,
+        "end": 85.64,
+        "word": " Spatial"
+      },
+      {
+        "start": 85.64,
+        "end": 85.9,
+        "word": " awareness"
+      },
+      {
+        "start": 85.9,
+        "end": 86.12,
+        "word": " not"
+      },
+      {
+        "start": 86.12,
+        "end": 86.88,
+        "word": " included."
+      }
+    ]
+  },
+  {
+    "start": 91.22,
+    "end": 93.02,
+    "text": "Did I mention I have excellent referrals?",
+    "words": [
+      {
+        "start": 91.22,
+        "end": 91.64,
+        "word": " Did"
+      },
+      {
+        "start": 91.64,
+        "end": 91.78,
+        "word": " I"
+      },
+      {
+        "start": 91.78,
+        "end": 92.0,
+        "word": " mention"
+      },
+      {
+        "start": 92.0,
+        "end": 92.16,
+        "word": " I"
+      },
+      {
+        "start": 92.16,
+        "end": 92.28,
+        "word": " have"
+      },
+      {
+        "start": 92.28,
+        "end": 92.6,
+        "word": " excellent"
+      },
+      {
+        "start": 92.6,
+        "end": 93.02,
+        "word": " referrals?"
+      }
+    ]
+  },
+  {
+    "start": 93.9,
+    "end": 96.2,
+    "text": "Sorry, we already found the perfect guy for the job.",
+    "words": [
+      {
+        "start": 93.9,
+        "end": 94.2,
+        "word": " Sorry,"
+      },
+      {
+        "start": 94.48,
+        "end": 94.56,
+        "word": " we"
+      },
+      {
+        "start": 94.56,
+        "end": 94.72,
+        "word": " already"
+      },
+      {
+        "start": 94.72,
+        "end": 94.94,
+        "word": " found"
+      },
+      {
+        "start": 94.94,
+        "end": 95.12,
+        "word": " the"
+      },
+      {
+        "start": 95.12,
+        "end": 95.32,
+        "word": " perfect"
+      },
+      {
+        "start": 95.32,
+        "end": 95.58,
+        "word": " guy"
+      },
+      {
+        "start": 95.58,
+        "end": 95.76,
+        "word": " for"
+      },
+      {
+        "start": 95.76,
+        "end": 95.88,
+        "word": " the"
+      },
+      {
+        "start": 95.88,
+        "end": 96.2,
+        "word": " job."
+      }
+    ]
+  }
+]
