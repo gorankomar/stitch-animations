@@ -99,7 +99,14 @@
  .stitch-cms-video[data-film-player] .film-subtitle-menu { right: 54px; bottom: 8px; width: 210px; max-width: calc(100% - 62px); max-height: calc(100% - 16px); }
 }
 @media (max-width: 479px) { .stitch-cms-video[data-film-player] .film-subtitle-option { margin-top: 0; margin-bottom: 0; } }
+/* Native caption nodes may follow the controls in Webflow's document order. */
+.stitch-cms-video[data-film-player] .film-caption { z-index: 1; }
+.stitch-cms-video[data-film-player] .film-controls { z-index: 2; }
 
+.stitch-cms-video[data-film-player] [data-film-language="en"] .film-subtitle-flag { --film-flag-x: -416px; --film-flag-y: -336px; }
+.stitch-cms-video[data-film-player] [data-film-language="ar"] .film-subtitle-flag { --film-flag-x: -128px; --film-flag-y: -288px; }
+.stitch-cms-video[data-film-player] [data-film-language="vi"] .film-subtitle-flag { --film-flag-x: -160px; --film-flag-y: -360px; }
+.stitch-cms-video[data-film-player] [data-film-language="id"] .film-subtitle-flag { --film-flag-x: -256px; --film-flag-y: -144px; }
 .stitch-cms-video { display: block; position: relative; width: 100%; min-width: 0; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; margin: 24px 0; isolation: isolate; background: #000; }
 .stitch-cms-video > .real-ai-background-video { display: block; position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; object-fit: cover; pointer-events: none; }
 .stitch-cms-video > .lp-film-play { display: flex; position: absolute; top: 50%; left: 50%; width: 72px; height: 72px; align-items: center; justify-content: center; transform: translate(-50%, -50%); border-radius: 50%; background: white; pointer-events: none; }

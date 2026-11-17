@@ -85,7 +85,14 @@
  [data-film-player] .film-subtitle-menu { right: 54px; bottom: 8px; width: 210px; max-width: calc(100% - 62px); max-height: calc(100% - 16px); }
 }
 @media (max-width: 479px) { [data-film-player] .film-subtitle-option { margin-top: 0; margin-bottom: 0; } }
+/* Native caption nodes may follow the controls in Webflow's document order. */
+[data-film-player] .film-caption { z-index: 1; }
+[data-film-player] .film-controls { z-index: 2; }
 
+[data-film-player] [data-film-language="en"] .film-subtitle-flag { --film-flag-x: -416px; --film-flag-y: -336px; }
+[data-film-player] [data-film-language="ar"] .film-subtitle-flag { --film-flag-x: -128px; --film-flag-y: -288px; }
+[data-film-player] [data-film-language="vi"] .film-subtitle-flag { --film-flag-x: -160px; --film-flag-y: -360px; }
+[data-film-player] [data-film-language="id"] .film-subtitle-flag { --film-flag-x: -256px; --film-flag-y: -144px; }
 </style>
 <script>
 (() => {
