@@ -1,0 +1,21 @@
+name: Temporary Real AI video upload
+on:
+  push:
+    branches: [codex/real-ai-video-upload-20261117]
+permissions:
+  contents: read
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+      - name: Upload background video only
+        run: |
+          aws s3 cp temporary-media/stitch-ai-cut-background.mp4 's3://stitch-website-animations/Stitch Animations/media/real-ai/stitch-ai-cut-background-20261117.mp4' --content-type video/mp4 --cache-control 'public,max-age=86400' --metadata purpose=temporary-real-ai-background
+          curl --fail --retry 5 --output /tmp/served.mp4 'https://d280qq257tic0i.cloudfront.net/Stitch+Animations/media/real-ai/stitch-ai-cut-background-20261117.mp4'
+          cmp temporary-media/stitch-ai-cut-background.mp4 /tmp/served.mp4
