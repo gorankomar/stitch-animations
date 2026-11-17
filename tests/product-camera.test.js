@@ -93,16 +93,16 @@ test('dropdown sparkles fade, scale and rotate after commit in both camera modes
 });
 
 
-test('opt-in final frame fills the scaled layer and aligns the form top',()=>{
+test('closer ending preserves the lock-in focal point throughout the pullback',()=>{
   const s=scene();s.endFrameScale=1.25;
-  for(const reduced of [false,true]){
-    s.reduced=reduced;render(s,16.4);
-    const transform=s.cameraPlane.style.transform;
-    const scale=Number(transform.match(/scale\(([^)]+)\)/)[1])*3.2;
-    assert.equal(scale*.8,1);
-    assert.ok(transform.endsWith('translate(-1920px,-1040px)'));
-    // Centered outer .8 scale cancels the camera's overscan at both edges.
-    assert.equal(1200*.1+.8*(600-600*scale),0);
-    assert.equal(650*.1+.8*(325-325*scale),0);
+  render(s,13.6);
+  const focal=s.cameraPlane.style.transform.match(/translate\((-[\d.]+px),(-[\d.]+px)\)$/)[0];
+  for(const time of [14,15,15.9,16.3,16.4,16.8]){
+    render(s,time);
+    assert.ok(s.cameraPlane.style.transform.endsWith(focal));
   }
+  const scale=Number(s.cameraPlane.style.transform.match(/scale\(([^)]+)\)/)[1])*3.2;
+  assert.equal(scale*.8,1,'the closer final magnification is retained');
+  s.reduced=true;render(s,16.4);
+  assert.ok(s.cameraPlane.style.transform.endsWith('translate(-1920px,-1040px)'));
 });
