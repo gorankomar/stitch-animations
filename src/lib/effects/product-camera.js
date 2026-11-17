@@ -2,7 +2,7 @@ import { renderProductWorking } from './product-working.js';
 const clamp=value=>Math.max(0,Math.min(1,value));
 const promptText='Create a personal loan for salaried customers with direct deposit.';
 
-export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true,rtl=false,copy={},selectorStates,cameraLift=0}) {
+export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,screen,cameraPlane,cameraFields,prompt,promptSize,bar,title,policy,ask,askRow,layer,width,height,flatCamera=true,rtl=false,copy={},selectorStates,cameraLift=0,endFrameScale=0}) {
     const request=copy.request||promptText;
     // Same flat, masked prompt introduction as study 03; only the form plane moves.
     const u = elapsed / duration % 16.95;
@@ -55,7 +55,7 @@ export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,s
       return cameraFields[index].geometry;
     };
     const pose=(at,index,scale,rx,ry,rz)=>({at,...center(index),scale,rx,ry,rz});
-    const wide={at:16.4,x:width/2,y:height/2,scale:1,rx:0,ry:0,rz:0};
+    const wide={at:endFrameScale===1?16.8:16.4,x:width/2,y:height/2,scale:endFrameScale||1,rx:0,ry:0,rz:0};
     const shots=[pose(launch,0,2.85,10,-12,-2.5),pose(7.05,0,3.05,-9,10,2),
       pose(7.55,1,3,-7,14,2),pose(8.45,2,3,7,-12,-1.5),pose(9.35,3,3.05,-9,12,2),
       pose(9.95,4,2.25,11,-12,-2),pose(12.0,4,2.4,-10,12,2.5),
@@ -68,9 +68,10 @@ export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,s
     // Pull back as the lock-in shot arrives, before counting begins; zoom
     // accelerates while the focal point stays fixed and tilt flattens late.
     if(b===wide && a!==wide) {
-      // A frame-filling pullback: complete the visible rush before the
-      // opacity tail hides it. Rotation keeps its own full-length smooth track.
-      const zoomProgress=clamp((u-a.at)/2.65);
+      // The fallback-size experiment keeps moving beyond the opacity tail
+      // (16.4 units), reaching its native-size endpoint at 16.8 units.
+      const zoomDuration=endFrameScale===1?wide.at-a.at:2.65;
+      const zoomProgress=clamp((u-a.at)/zoomDuration);
       current.scale=a.scale+(wide.scale-a.scale)*zoomProgress**2.4;
       // Rotation resolves gradually over the entire pullback, independently of
       // zoom acceleration. Symmetric time remapping spreads the primary curve
