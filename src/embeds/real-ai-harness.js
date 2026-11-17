@@ -8,8 +8,11 @@ export const init = stageInitializer('[data-real-ai-harness]', frame => {
   if (groups.length !== 4) return;
   const steps = [...frame.querySelectorAll('.harness-steps > span')];
   const labels = steps.map(step => [...step.childNodes].find(node => node.nodeType === 3 && node.textContent.trim()));
-  const pending = ['Build', 'Test', 'Publish'];
-  const completed = ['Built', 'Tested', 'Published'];
+  // Native text is localized by Webflow before initialization. Never inject English
+  // into older markup that does not yet contain the editable pending copy.
+  const completed = labels.map(label => label?.textContent || '');
+  const pending = steps.map((step, i) =>
+    step.querySelector?.('[data-harness-copy="pending"]')?.textContent || completed[i]);
   function renderSteps(time, duration, burst, ease) {
     steps.forEach((step, i) => {
       const local = time - i * (duration + burst);

@@ -162,3 +162,17 @@ Moved the country chevron background out of the LP Contact Form Styles & Behavio
 ### Product prompt element compatibility (2026-11-13)
 
 Webflow inspection confirmed the prompt is a native Block/div with `lp-product-prompt`, containing a localized String. The runtime now targets that class, retaining the older direct-span selector as a compatibility fallback. Prompt typing/caret CSS supports both structures; local markup mirrors the native div. Preserve the translation-friendly Webflow structure. Local regression tests exercise the class target. The compatible motion-style embed is saved in Webflow; the staging runtime release is tracked in the release record.
+
+RTL dropdown flag spacing (2026-11-13): the shared contact form embed uses `.lp-country-flag:dir(rtl)` to set `margin-left:8px;margin-right:0` in both country and phone lists. LTR retains its existing right margin. Updated local source and saved Webflow component draft; not published.
+
+### Flat product camera (2026-11-16)
+
+The Solution section now uses the separate **Real AI product camera** component (`ab08d931-9bbf-9677-8c22-3d9bdf181830`), matching approved layout-lab version 05. Original LP Solution Product Screen component and other instances are unchanged. Native form and prompt remain editable; shared renderer owns the flat camera journey and status cycle. See [component notes](real-ai-product-camera.md) and the [release record](../releases/2026-11-16-real-ai-product-camera.md).
+
+### Harness localization and RTL tab fill (2026-11-17, local preparation)
+
+Harness status text now comes from native localized markup per instance: the existing direct text node in each pill provides Built/Tested/Published, and a hidden native text span inside that pill with `data-harness-copy="pending"` provides Build/Test/Publish. These are ordinary Webflow text elements for localization, not custom-attribute string values. Keep the hidden spans hidden using the HTML `hidden` attribute. Completion, reduced motion and disposal restore the exact original localized text. Older markup without pending spans retains its localized completed text throughout the status effects rather than receiving English strings. No appearance or motion timing changes.
+
+The Solution tabs embed measures computed menu direction and both physical padding insets. RTL uses a leftward gradient and measures progress from each tab's right edge; LTR retains its existing geometry. DOM tab order, dwell and panel transition behavior remain unchanged.
+
+Follow-up: saved the hidden pending text spans and RTL underline to the Webflow draft. User owns translations. Merged staging runtime via PR #106; no Webflow publication or production promotion. User requested no additional tests or Preview checks. Behavior tests cover English/Arabic status sequencing, pause/replay/cleanup/reduced motion, plus LTR/RTL track geometry with unequal tab widths and padding.

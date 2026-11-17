@@ -1,3 +1,4 @@
+import { init as initRealAiProductCamera } from '../embeds/real-ai-product-camera.js';
 import { init as initRealAiProduct } from '../embeds/real-ai-product.js';
 import { init as initRealAiHarness } from '../embeds/real-ai-harness.js';
 import { init as initRealAiAgents } from '../embeds/real-ai-agents.js';
@@ -77,6 +78,7 @@ ready(() => {
   initZoomLenses(document);
   [
     initRealAiProduct,
+    initRealAiProductCamera,
     initRealAiCopilot,
     initRealAiAgents,
     initRealAiHarness,

@@ -1,0 +1,8 @@
+.stitch-cms-video { display: block; position: relative; width: 100%; min-width: 0; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; margin: 24px 0; isolation: isolate; background: #000; }
+.stitch-cms-video > .real-ai-background-video { display: block; position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; object-fit: cover; pointer-events: none; }
+.stitch-cms-video > .lp-film-play { display: flex; position: absolute; top: 50%; left: 50%; width: 72px; height: 72px; align-items: center; justify-content: center; transform: translate(-50%, -50%); border-radius: 50%; background: white; pointer-events: none; }
+.stitch-cms-video .stitch-cms-play-icon { display: block; width: 24px; height: 24px; max-width: none; margin: 0; }
+.stitch-cms-video .film-control { box-sizing: border-box; text-decoration: none; }
+.stitch-cms-video .film-icon { max-width: none; margin: 0; }
+.stitch-cms-video .film-time, .stitch-cms-video .film-status { font-family: inherit; font-weight: 400; }
+.stitch-cms-video .film-status { margin: 0; }
