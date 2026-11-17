@@ -81,13 +81,12 @@ export function renderProductCamera({elapsed,duration,ease,reduced=false,stage,s
       for(const key of ['rx','ry','rz']) current[key]=a[key]*(1-flatten);
       // Keep the lock-in field under the same screen-space anchor throughout
       // the pullback. Recentring on the full form here creates a vertical pan.
-      const frameProgress=endFrameScale?ease(zoomProgress):0;
-      current.x=a.x+(wide.x-a.x)*frameProgress;
-      current.y=a.y+(wide.y-a.y)*frameProgress;
+      current.x=a.x;
+      current.y=a.y;
     }
     if(!reduced && u>=wide.at) {
-      current.x=endFrameScale?wide.x:shots.at(-2).x;
-      current.y=endFrameScale?wide.y:shots.at(-2).y;
+      current.x=shots.at(-2).x;
+      current.y=shots.at(-2).y;
       current.scale=wide.scale;
     }
     const c=reduced?wide:current;
