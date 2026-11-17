@@ -14,10 +14,10 @@ for (const localized of [false, true]) test(`harness localized=${localized}: rev
   const completed = localized ? ['تم البناء','تم الاختبار','تم النشر'] : ['Built','Tested','Published'];
   steps.forEach((step,i)=>{
     step.childNodes=[{nodeType:3,textContent:completed[i]}];
-    step.querySelector=()=>({textContent:pending[i]});
+    step.querySelector=selector=>selector.includes('pending')?{textContent:pending[i]}:null;
   });
   const pane = { classList:{contains:()=>true}, addEventListener:(k,v)=>events[k]=v, removeEventListener(){} };
-  const stage = Object.assign(node(), {matches:()=>true,closest:()=>pane,querySelectorAll:s=>s==='[data-harness-reveal]'?groups:s==='.harness-steps > span'?steps:[]});
+  const stage = Object.assign(node(), {matches:()=>true,closest:()=>pane,querySelectorAll:s=>s==='[data-harness-reveal]'?groups:s==='.harness-steps > :is(span, [data-harness-step])'?steps:[]});
   globalThis.document={documentElement:{},hidden:false,addEventListener(){},removeEventListener(){}};
   globalThis.window={getComputedStyle:()=>({getPropertyValue:k=>k==='--motion-duration-default'?'100ms':k==='--motion-duration-fast'?'50ms':''})};
   globalThis.matchMedia=()=>motion;

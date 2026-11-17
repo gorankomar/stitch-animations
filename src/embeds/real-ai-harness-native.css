@@ -27,14 +27,14 @@
 .harness-identity, .harness-description { color:#6d6d6d; }
 .harness-identity strong, .harness-title { color:#121212; font-size:calc(14 * var(--hu)); line-height:calc(20 * var(--hu)); }
 .harness-steps { margin-inline-start:auto; gap:calc(4 * var(--hu)); }
-.harness-steps span, .harness-tags span {
+.harness-steps > :is(span, [data-harness-step]), .harness-tags span {
   display:flex; align-items:center; gap:calc(2 * var(--hu));
   border:calc(1 * var(--hu)) solid var(--harness-edge); border-radius:999px;
   font-size:calc(10 * var(--hu)); line-height:calc(14 * var(--hu)); font-weight:500; color:#3d3d3d;
 }
-.harness-steps span { padding:calc(2 * var(--hu)) calc(6 * var(--hu)) calc(2 * var(--hu)) calc(4 * var(--hu)); background:#f6f6f6; }
+.harness-steps > :is(span, [data-harness-step]) { padding:calc(2 * var(--hu)) calc(6 * var(--hu)) calc(2 * var(--hu)) calc(4 * var(--hu)); background:#f6f6f6; }
 .harness-steps img { width:calc(7.4 * var(--hu)); margin-inline:calc(1.8 * var(--hu)); }
-.harness-steps span:last-child { padding-inline:calc(7 * var(--hu)); border-color:#121212; background:#121212; color:#fff; }
+.harness-steps > :is(span, [data-harness-step]):last-child { padding-inline:calc(7 * var(--hu)); border-color:#121212; background:#121212; color:#fff; }
 .harness-frame .harness-description {
   margin-block-start:calc(10 * var(--hu)); padding-block-start:calc(10 * var(--hu));
   border-block-start:calc(1 * var(--hu)) solid #efefef;

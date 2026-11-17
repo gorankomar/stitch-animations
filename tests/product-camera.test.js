@@ -91,3 +91,30 @@ test('dropdown sparkles fade, scale and rotate after commit in both camera modes
     }
   }
 });
+
+
+test('closer ending preserves the lock-in focal point throughout the pullback',()=>{
+  const s=scene();s.endFrameScale=1.25;
+  render(s,13.6);
+  const focal=s.cameraPlane.style.transform.match(/translate\((-[\d.]+px),(-[\d.]+px)\)$/)[0];
+  for(const time of [14,15,15.9,16.3,16.4,16.8]){
+    render(s,time);
+    assert.ok(s.cameraPlane.style.transform.endsWith(focal));
+  }
+  const scale=Number(s.cameraPlane.style.transform.match(/scale\(([^)]+)\)/)[1])*3.2;
+  assert.equal(scale*.8,1,'the closer final magnification is retained');
+  s.reduced=true;render(s,16.4);
+  assert.ok(s.cameraPlane.style.transform.endsWith('translate(-1920px,-1040px)'));
+});
+
+
+test('fallback-size ending continues zooming after the form is fully faded',()=>{
+  const s=scene();s.endFrameScale=1;
+  const scale=()=>Number(s.cameraPlane.style.transform.match(/scale\(([^)]+)\)/)[1])*3.2;
+  render(s,16.39);const before=scale();
+  render(s,16.4);assert.ok(Number(s.layer.style.opacity)<1e-10);const atFade=scale();
+  render(s,16.6);const after=scale();
+  render(s,16.8);assert.equal(scale(),1);
+  assert.ok(before>atFade&&atFade>after&&after>1);
+  s.reduced=true;render(s,8);assert.equal(scale(),1);
+});

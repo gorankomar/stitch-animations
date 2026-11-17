@@ -132,10 +132,6 @@ Client review pack: `deliverables/stitch-ai-subtitle-review.zip`, built by `scri
 
 Actual Webflow Preview integration checks: English computed font `ABCDiatype, Arial, sans-serif`; Arabic computed font `"IBM Plex Sans Arabic", Arial, sans-serif` with RTL. The builder emits country-scoped sprite rules from the existing manifest because WHTML's inline-property importer otherwise merges all flag offsets into the base class. Explicit caption z-index 1 and control z-index 2 preserve menu stacking when the native caption paragraph follows controls in DOM order. At 393px Preview width the 345×194.0625 player contains the full 210×159 menu without scrolling. Staging activation evidence is in `docs/releases/2026-11-17-real-ai-film-subtitles-staging.md`.
 
-### RTL range fills — 2026-11-17 (saved locally)
-
-Range track gradients now use `--film-track-direction`, defaulting to `to right` and switching to `to left` on each input's `:dir(rtl)` state. This follows inherited document/ancestor direction and explicit input overrides, matching the existing native thumb and input behavior. Played, buffered and volume fills all use that direction; Firefox's track also includes the buffered segment. Rebuilt landing and CMS runtimes and local previews. All seven player/CMS behavior tests pass; browser visual verification and Webflow installation remain outstanding. No publication or release activation.
-
 
 ### RTL player controls — 2026-11-17
 
