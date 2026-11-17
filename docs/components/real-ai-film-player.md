@@ -131,3 +131,8 @@ Both exact CC files are managed Webflow assets, uploaded through Data API and by
 Client review pack: `deliverables/stitch-ai-subtitle-review.zip`, built by `scripts/build-real-ai-subtitle-review.py`. It includes a portable UTF-8 review HTML with side-by-side English references and RTL Arabic, four readable timed `.txt` files, and four `.vtt` files. All content is clearly marked draft and reviewers are asked for language/cue number/corrected text. The visible closing titles appear as reference text in the review pack but remain absent from English playback subtitles.
 
 Actual Webflow Preview integration checks: English computed font `ABCDiatype, Arial, sans-serif`; Arabic computed font `"IBM Plex Sans Arabic", Arial, sans-serif` with RTL. The builder emits country-scoped sprite rules from the existing manifest because WHTML's inline-property importer otherwise merges all flag offsets into the base class. Explicit caption z-index 1 and control z-index 2 preserve menu stacking when the native caption paragraph follows controls in DOM order. At 393px Preview width the 345×194.0625 player contains the full 210×159 menu without scrolling. Staging activation evidence is in `docs/releases/2026-11-17-real-ai-film-subtitles-staging.md`.
+
+
+### RTL player controls — 2026-11-17
+
+Played, buffered and volume track fills follow each input’s inherited direction using `:dir(rtl)` and `--film-track-direction`. The subtitle menu uses logical `inset-inline-end` at desktop and mobile sizes so it stays beside the mirrored CC control. Both generated embeds and local previews rebuilt; landing and Presses Template embeds saved without publication. Full `npm run validate:release` passes (264 tests; wallet swap and Country Flags closure verified).
