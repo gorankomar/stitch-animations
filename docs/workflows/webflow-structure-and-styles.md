@@ -12,6 +12,10 @@ Every wrapper must have a concrete purpose that cannot reasonably be handled by 
 
 Use the shallowest structure that still satisfies the design. Do not flatten meaningful semantics, remove required accessibility, or combine independent transforms in a way that breaks motion. Preserve established reusable component internals and appearance; optimize their integration using supported variants/props and only necessary outer wrappers. Follow [component preservation](component-preservation-complaint.md).
 
+## Translation-safe content
+
+Use plain div/Block containers for UI combining labels with icons, images, or alternate states. Put each translatable label in its own text-only element; never use a Span or other text element as the mixed-content container. Webflow translation can replace text-element contents and remove nested images or spans.
+
 ## Specific names and reusable classes
 
 Name elements, components, and object-specific classes for the actual object and role being created. Prefer names such as `payment-summary`, `payment-summary-total`, and `payment-summary-icon` over `wrapper-7`, `div-block`, or generic `box` names. Follow existing project conventions and avoid accidental class collisions.
