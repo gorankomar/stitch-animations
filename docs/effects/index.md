@@ -48,3 +48,5 @@ Pointer Follow's data-follow-root is a consumer convention, not automatic mounti
 See [animation recipes](../animation-recipes.md) for detailed markup and tuning. Add new reusable effects here with their contract, CSS, options, example consumer, and cleanup.
 
 Pointer Follow also accepts `independentTranslate: true` for consumers with an active entrance transform, and `isEnabled: () => boolean` to gate its clock. The default transform-based behavior is unchanged. Orbit Graphic uses individual CSS `translate` so pointer motion can run during ring reveal and Dot pop; see [Orbit Graphic](../components/orbit-graphic.md).
+
+Product Camera: `product-camera.js` exposes `renderProductCamera(state)` for caller-owned visibility clocks and native nodes. Shared by layout lab 04/05 and Real AI product camera; default flat mode omits perspective/rotations. Renderer owns camera and prompt transforms, form fill/feedback and working status; caller owns measurement, token resolution, responsive shell sizing and restoration. See [component notes](../components/real-ai-product-camera.md).

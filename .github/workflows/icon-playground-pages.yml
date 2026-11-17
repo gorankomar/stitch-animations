@@ -1,10 +1,19 @@
-name: Publish icon playground
+name: Publish client presentations
 
 on:
   push:
     branches: [main]
     paths:
       - icon-playground.html
+      - real-ai-product-layout-lab.html
+      - src/embeds/real-ai-product-dropdown-study.js
+      - src/embeds/real-ai-product-layout-*.js
+      - src/embeds/real-ai-product-layout-lab.css
+      - src/embeds/real-ai-product-native.css
+      - src/embeds/real-ai-product-markup.html
+      - src/embeds/assets/real-ai-product/**
+      - src/embeds/assets/real-ai-copilot/arrowup.svg
+      - src/embeds/assets/real-time-approvals/body-*.woff2
       - global.css
       - src/animations/icon-playground/**
       - src/embeds/icon-playground/assets/**
@@ -32,7 +41,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: node --test tests/holder-tilt.test.js tests/icon-*.test.js
+      - run: node --test tests/holder-tilt.test.js tests/icon-*.test.js tests/product-camera.test.js tests/product-dropdown-study.test.js tests/real-ai-product-layout-geometry.test.js
       - run: npm run build:icon-playground
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -47,6 +56,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy icon presentation
+      - name: Deploy client presentations
         id: deployment
         uses: actions/deploy-pages@v4

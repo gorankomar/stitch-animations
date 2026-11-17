@@ -1,0 +1,4 @@
+Open review.html in a web browser for timed English/translation comparisons.
+Arabic is right to left. Each language also has a readable UTF-8 .txt transcript and playback-ready .vtt subtitle file.
+Drafts for client review: please return the language, cue number and corrected text.
+The English reference includes the two visible closing titles solely to help translators review them; the English subtitle track intentionally omits them.

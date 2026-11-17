@@ -1,0 +1,29 @@
+<style>
+/* Component-only unsupported effects and responsive prompt typography. Native layout stays in Webflow. */
+[data-real-ai-product-camera] .lp-product-policy:empty{display:none}
+[data-real-ai-product-camera] .lp-product-copy{display:none}
+[data-real-ai-product-camera] .lp-product-stop-icon,[data-real-ai-product-camera] .lp-product-stop-square{display:none}
+[data-real-ai-product-camera] .lp-product-bar[data-product-state="working"] .lp-product-stop{visibility:hidden}
+[data-real-ai-product-camera] .lp-product-bar[data-product-state="typing"] .lp-product-prompt{color:#121212;white-space:nowrap}
+[data-real-ai-product-camera] .lp-product-bar[data-product-state="typing"] .lp-product-prompt::after{content:"|";animation:product-camera-caret 1s step-end infinite}
+@keyframes product-camera-caret{50%{opacity:0}}
+[data-real-ai-product-camera] .study-value-empty{color:#888}
+[data-real-ai-product-camera] .real-ai-product-camera-shell::before{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;pointer-events:none;box-shadow:var(--product-working-shadow,none);opacity:var(--product-working-opacity,0)}
+[data-real-ai-product-camera] .real-ai-product-camera-shell::after{content:"";position:absolute;inset:-.08333cqi;border-radius:inherit;z-index:2;padding:.1cqi;pointer-events:none;background:var(--product-working-outline,transparent);opacity:var(--product-working-opacity,0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor}
+[data-real-ai-product-camera] .lp-product-bar::before,[data-real-ai-product-camera] .lp-product-bar::after{display:none}
+@media(max-width:600px){
+[data-real-ai-product-camera] .lp-product-bar{font-size:10px;line-height:14px;border-radius:9px}
+[data-real-ai-product-camera] .lp-product-change{height:34px;padding:5px 8px;gap:6px}
+[data-real-ai-product-camera] .lp-product-message .lp-product-change-title{line-height:13px}
+[data-real-ai-product-camera] .lp-product-policy{font-size:8px;line-height:10px}
+[data-real-ai-product-camera] .lp-product-ask{padding-inline:8px;gap:6px;align-items:flex-start;overflow:hidden}
+[data-real-ai-product-camera] .lp-product-bar[data-product-state] .lp-product-prompt{height:auto;min-height:0;line-height:14px;white-space:normal;overflow-wrap:anywhere;display:block}
+[data-real-ai-product-camera] .lp-product-tile,[data-real-ai-product-camera] .lp-product-stop{width:20px;height:20px;border-radius:5px}
+[data-real-ai-product-camera] .lp-product-stop{border-radius:50%}
+[data-real-ai-product-camera] .lp-product-sparkle{width:13px;height:13px}
+[data-real-ai-product-camera] :is(.lp-product-arrow,.lp-product-arrow-icon,.lp-product-stop-icon){width:9px;height:9px}
+[data-real-ai-product-camera] .lp-product-details{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5cqi}
+}
+@media(prefers-reduced-motion:reduce){[data-real-ai-product-camera] .lp-product-prompt::after{animation:none}}
+[data-real-ai-product-camera] .real-ai-product-camera-menu[data-highlight="true"] [data-selected="true"]{background:#efefef}
+</style>
