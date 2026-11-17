@@ -9,6 +9,9 @@ class Node extends EventTarget {
   hidden = false;
   tagName = 'BUTTON';
   icons = [];
+  get textContent() { return this.children ? this.children.map(child => child.textContent).join('') : this._text || ''; }
+  set textContent(value) { this.children = undefined; this._text = value; }
+  replaceChildren(...children) { this.children = children; }
   setAttribute(k, v) { this.attributes.set(k, v); }
   removeAttribute(k) { this.attributes.delete(k); }
   querySelectorAll() { return this.icons; }
@@ -109,4 +112,117 @@ test('fullscreen idle waits 2.5s, resets on activity, and never hides paused con
   idle.dispose();
   assert.equal(current, undefined);
   assert.equal(hidden, false);
+});
+
+test('subtitle language switching renders RTL cues, supports native fullscreen and cleans up', async () => {
+  const { initFilmSubtitles } = await import('../src/embeds/real-ai-film/player.js');
+  const previous = globalThis.document;
+  const selector = new Node();
+  const overlay = new Node();
+  const status = new Node();
+  const source = { textContent: JSON.stringify(['en', 'ar', 'vi', 'id'].map(language => ({language, label: language, vtt: 'WEBVTT\n'}))) };
+  const elements = [];
+  globalThis.document = { createElement(tag) {
+    if (tag === 'span') return new Node();
+    const element = new Node();
+    element.track = { mode: 'disabled', activeCues: [] };
+    element.remove = () => { element.removed = true; };
+    elements.push(element);
+    return element;
+  } };
+  const root = { querySelector: key => ({'[data-film-subtitles]': selector, '[data-film-caption]': overlay, '[data-film-subtitle-data]': source, '[data-film-status]': status})[key] };
+  const video = new Node();
+  video.append = () => {};
+  try {
+    const dispose = initFilmSubtitles(root, video);
+    assert.ok(elements.every(element => element.track.mode === 'disabled'));
+    selector.value = 'ar';
+    selector.dispatchEvent(new Event('change'));
+    elements[1].track.activeCues = [{text:'مرحباً بكم'}];
+    elements[1].dispatchEvent(new Event('cuechange'));
+    assert.equal(elements[1].track.mode, 'hidden');
+    assert.equal(overlay.textContent, 'مرحباً بكم');
+    assert.equal(overlay.dir, 'rtl');
+    video.webkitDisplayingFullscreen = true;
+    video.dispatchEvent(new Event('webkitbeginfullscreen'));
+    assert.equal(elements[1].track.mode, 'showing');
+    assert.equal(overlay.hidden, true);
+    video.webkitDisplayingFullscreen = false;
+    video.dispatchEvent(new Event('webkitendfullscreen'));
+    assert.equal(elements[1].track.mode, 'hidden');
+    selector.value = 'vi';
+    selector.dispatchEvent(new Event('change'));
+    assert.equal(elements[1].track.mode, 'disabled');
+    assert.equal(elements[2].track.mode, 'hidden');
+    selector.value = '';
+    selector.dispatchEvent(new Event('change'));
+    assert.equal(overlay.hidden, true);
+    dispose();
+    assert.ok(elements.every(element => element.removed && element.track.mode === 'disabled'));
+  } finally { globalThis.document = previous; }
+});
+
+test('subtitle menu supports keyboard selection, outside dismissal and independent teardown', async () => {
+  const { initFilmSubtitleMenu } = await import('../src/embeds/real-ai-film/player.js');
+  const previous = globalThis.document;
+  const document = new Node();
+  globalThis.document = document;
+  let focused;
+  const trigger = new Node();
+  trigger.value = '';
+  trigger.contains = target => target === trigger;
+  trigger.focus = () => { focused = trigger; };
+  const menu = new Node();
+  const options = ['', 'en', 'ar', 'vi', 'id'].map((language, index) => {
+    const node = new Node();
+    node.dataset.filmLanguage = language;
+    node.textContent = ['Off', 'English', 'العربية', 'Tiếng Việt', 'Bahasa Indonesia'][index];
+    node.focus = () => { focused = node; };
+    return node;
+  });
+  menu.querySelectorAll = () => options;
+  menu.contains = target => options.includes(target) || target === menu;
+  const root = new Node();
+  const fullscreen = new Node();
+  fullscreen.focus = () => { focused = fullscreen; };
+  root.querySelector = selector => selector === '[data-film-subtitle-menu]' ? menu : fullscreen;
+  const key = (node, value, shiftKey = false) => {
+    const event = new Event('keydown', {cancelable: true});
+    Object.defineProperties(event, {key: {value}, shiftKey: {value: shiftKey}});
+    node.dispatchEvent(event);
+  };
+  let changes = 0;
+  trigger.addEventListener('change', () => changes++);
+  try {
+    const dispose = initFilmSubtitleMenu(root, trigger);
+    assert.equal(menu.hidden, true);
+    trigger.click();
+    assert.equal(trigger.attributes.get('aria-expanded'), 'true');
+    assert.equal(root.dataset.filmSubtitlesOpen, 'true');
+    assert.equal(focused, options[0]);
+    key(options[0], 'ArrowUp');
+    assert.equal(focused, options[4]);
+    options[2].click();
+    assert.equal(trigger.value, 'ar');
+    assert.equal(changes, 1);
+    assert.equal(options[2].attributes.get('aria-checked'), 'true');
+    assert.equal(menu.hidden, true);
+    assert.equal(focused, trigger);
+    key(trigger, 'ArrowDown');
+    assert.equal(focused, options[2]);
+    key(root, 'Escape');
+    assert.equal(menu.hidden, true);
+    assert.equal(focused, trigger);
+    trigger.click();
+    key(root, 'Tab');
+    assert.equal(focused, fullscreen);
+    assert.equal(menu.hidden, true);
+    trigger.click();
+    document.dispatchEvent(new Event('pointerdown'));
+    assert.equal(menu.hidden, true);
+    assert.equal(root.dataset.filmSubtitlesOpen, undefined);
+    dispose();
+    trigger.click();
+    assert.equal(menu.hidden, true);
+  } finally { globalThis.document = previous; }
 });
