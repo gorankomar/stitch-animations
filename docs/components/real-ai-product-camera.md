@@ -30,3 +30,8 @@ Approved faster timing: native camera opts into speed:2, topPanSpeed:2.5, matchi
 ## Widescreen Preview experiment — 2026-11-17
 
 Saved Webflow draft uses a centered 64rem maximum, 16:9 at base and small breakpoints, matching the LP film poster. Fields layer scales to 0.8 (20% smaller; supersedes the first 0.75 trial). Prompt sizing remains unchanged. The component root opts into `data-camera-end-frame="fill-top"`: the native adapter reads the outer fields-layer scale and passes its reciprocal as `endFrameScale`. The renderer compensates the outer scale for a closer final magnification. After Preview review, the pullback retains the lock-in field's focal point throughout; it no longer recenters toward the form's top. The existing `fill-top` attribute is retained as a compatibility hook for the closer scale only. Reduced motion keeps the static full-form view. Unmarked markup retains the original fixed lock-in focal point and 1x ending, including production. Existing timing, opacity, dropdowns, tokens and native field appearance remain unchanged. Staging activation is required for Preview; no Webflow publication or production promotion authorized.
+
+
+### Fallback-size ending revision
+
+The draft now uses `data-camera-end-frame="fallback"`. Its final magnification is 1x native content (the same size as Designer fallback, with the existing .8 outer layer), retaining the lock-in focal point. Pullback continues through 16.8 default-duration units; the existing linear fade ends at 16.4, so the form disappears while its camera is still moving. Existing unmarked and legacy `fill-top` instances retain their timing. Reduced motion uses the static native-size form. Preview/staging only; no Webflow publication or production promotion.

@@ -37,7 +37,7 @@ export const init = stageInitializer('[data-real-ai-product-camera]', stage => {
     rtl=window.getComputedStyle(stage).direction==='rtl';
     const layerMatrix=new DOMMatrixReadOnly(getComputedStyle(layer).transform);
     const layerScale=Math.hypot(layerMatrix.a,layerMatrix.b)||1;
-    endFrameScale=stage.dataset.cameraEndFrame==='fill-top'?1/layerScale:0;
+    endFrameScale=stage.dataset.cameraEndFrame==='fallback'?1:stage.dataset.cameraEndFrame==='fill-top'?1/layerScale:0;
     screen.style.zoom='1';screen.style.width=`${width}px`;screen.style.minHeight=`${height}px`;
     cameraFields.forEach(item=>{const f=item.field;item.geometry={x:f.offsetLeft+f.offsetWidth/2,y:f.offsetTop+f.offsetHeight/2,width:f.offsetWidth};});
     screen.style.zoom='3.2';
