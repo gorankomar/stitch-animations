@@ -6,8 +6,9 @@ import { readMotionEasingCurve } from '../lib/motion.js';
 export const init = stageInitializer('[data-real-ai-harness]', frame => {
   const groups = [...frame.querySelectorAll('[data-harness-reveal]')];
   if (groups.length !== 4) return;
-  const steps = [...frame.querySelectorAll('.harness-steps > span')];
-  const labels = steps.map(step => [...step.childNodes].find(node => node.nodeType === 3 && node.textContent.trim()));
+  const steps = [...frame.querySelectorAll('.harness-steps > :is(span, [data-harness-step])')];
+  const labels = steps.map(step => step.querySelector?.('[data-harness-copy="completed"]') ||
+    [...step.childNodes].find(node => node.nodeType === 3 && node.textContent.trim()));
   // Native text is localized by Webflow before initialization. Never inject English
   // into older markup that does not yet contain the editable pending copy.
   const completed = labels.map(label => label?.textContent || '');

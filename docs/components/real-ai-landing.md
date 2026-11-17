@@ -177,3 +177,7 @@ The Solution tabs embed measures computed menu direction and both physical paddi
 
 Behavior tests previously covered English/Arabic status sequencing, pause/replay/cleanup/reduced motion, plus LTR/RTL track geometry with unequal tab widths and padding. No additional tests or browser Preview performed for this staging request.
 Staging preparation follow-up: native hidden Build/Test/Publish spans and RTL underline saved in Webflow on the Real AI page. Existing tab timing/font settings preserved. User owns translations and requested no further tests or Preview checks. No Webflow publication or production activation.
+
+### Translation-safe Harness status containers (2026-11-17)
+
+Each pill is a native Block div (`harness-step`, `data-harness-step`), with the existing managed check image and separate text-only completed/pending spans as direct siblings. Existing text element IDs are preserved. Runtime targets the completed text element; pill styles only target direct status containers. Span-based older markup remains supported during rollout. Do not nest images or alternate-state spans inside translatable text elements. User requested no further local tests or browser Preview. Saved reusable Webflow draft; staging-only release, no Webflow publication or production activation.
