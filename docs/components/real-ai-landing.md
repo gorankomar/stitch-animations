@@ -168,3 +168,12 @@ RTL dropdown flag spacing (2026-11-13): the shared contact form embed uses `.lp-
 ### Flat product camera (2026-11-16)
 
 The Solution section now uses the separate **Real AI product camera** component (`ab08d931-9bbf-9677-8c22-3d9bdf181830`), matching approved layout-lab version 05. Original LP Solution Product Screen component and other instances are unchanged. Native form and prompt remain editable; shared renderer owns the flat camera journey and status cycle. See [component notes](real-ai-product-camera.md) and the [release record](../releases/2026-11-16-real-ai-product-camera.md).
+
+### Harness localization and RTL tab fill (2026-11-17)
+
+Harness status text now comes from native localized markup per instance: the existing direct text node in each pill provides Built/Tested/Published, and a hidden native text span inside that pill with `data-harness-copy="pending"` provides Build/Test/Publish. These are ordinary Webflow text elements for localization, not custom-attribute string values. Keep the hidden spans hidden using the HTML `hidden` attribute. Completion, reduced motion and disposal restore the exact original localized text. Older markup without pending spans retains its localized completed text throughout the status effects rather than receiving English strings. No appearance or motion timing changes.
+
+The Solution tabs embed measures computed menu direction and both physical padding insets. RTL uses a leftward gradient and measures progress from each tab's right edge; LTR retains its existing geometry. DOM tab order, dwell and panel transition behavior remain unchanged.
+
+Behavior tests previously covered English/Arabic status sequencing, pause/replay/cleanup/reduced motion, plus LTR/RTL track geometry with unequal tab widths and padding. No additional tests or browser Preview performed for this staging request.
+Staging preparation follow-up: native hidden Build/Test/Publish spans and RTL underline saved in Webflow on the Real AI page. Existing tab timing/font settings preserved. User owns translations and requested no further tests or Preview checks. No Webflow publication or production activation.

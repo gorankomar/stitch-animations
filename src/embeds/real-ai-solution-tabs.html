@@ -10,7 +10,7 @@
 .lp-solution-tabs .lp-solution-tab.w--current {
   background: transparent;
   color: #121212;
-  font-weight: 700;
+  font-weight: 600;
 }
 [data-sliding-tabs-ready] > .w-tab-menu {
   position: relative;
@@ -21,7 +21,7 @@
   position: absolute;
   inset: auto var(--tabs-inset-right, 0px) 0 var(--tabs-inset-left, 0px);
   height: .1875rem;
-  background: linear-gradient(to right, #ff3609 var(--tabs-progress), #e7e7e7 var(--tabs-progress));
+  background: linear-gradient(var(--tabs-fill-direction, to right), #ff3609 var(--tabs-progress), #e7e7e7 var(--tabs-progress));
   pointer-events: none;
 }
 [data-sliding-tabs-ready] > .w-tab-content {
@@ -41,13 +41,14 @@
   .lp-solution-tabs .lp-solution-tab { padding: 1rem .375rem .625rem; font-size: .875rem; }
   .lp-solution-limits { padding-inline: 1rem; }
 }
+.real-ai-copilot-frame { overflow: hidden; }
 </style>
 <script>
 window.Webflow = window.Webflow || [];
 window.Webflow.push(function () {
   const dwell = 5000;
-  const threshold = 0.25;
-  const brakeTime = 1000;
+  const threshold = 0.18;
+  const brakeTime = 700;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const hover = matchMedia("(any-hover: hover)");
 
@@ -73,10 +74,15 @@ window.Webflow.push(function () {
     let slides = [];
 
     let insetLeft = 0;
+    let insetRight = 0;
+    let rtl = false;
 
     function measureTrack() {
       const style = getComputedStyle(menu);
       insetLeft = parseFloat(style.paddingLeft) || 0;
+      insetRight = parseFloat(style.paddingRight) || 0;
+      rtl = style.direction === "rtl";
+      menu.style.setProperty("--tabs-fill-direction", rtl ? "to left" : "to right");
       menu.style.setProperty("--tabs-inset-left", style.paddingLeft);
       menu.style.setProperty("--tabs-inset-right", style.paddingRight);
       render();
@@ -86,7 +92,10 @@ window.Webflow.push(function () {
       const index = Math.floor(position);
       const link = links[index];
       const fraction = reduced.matches ? 1 : position - index;
-      menu.style.setProperty("--tabs-progress", link.offsetLeft - insetLeft + link.offsetWidth * fraction + "px");
+      const start = rtl
+        ? menu.clientWidth - insetRight - link.offsetLeft - link.offsetWidth
+        : link.offsetLeft - insetLeft;
+      menu.style.setProperty("--tabs-progress", start + link.offsetWidth * fraction + "px");
     }
 
     function clearSlide() {
@@ -105,7 +114,7 @@ window.Webflow.push(function () {
       const style = getComputedStyle(content);
       const easing = style.getPropertyValue("--motion-ease-primary").trim();
       const time = style.animationDuration;
-      const duration = parseFloat(time) * (time.endsWith("ms") ? 1 : 1000);
+      const duration = parseFloat(time) * (time.endsWith("ms") ? 1 : 700);
       if (reduced.matches || !duration || !easing) return;
 
       outgoing = panes[previous];
@@ -196,4 +205,3 @@ window.Webflow.push(function () {
   });
 });
 </script>
-
