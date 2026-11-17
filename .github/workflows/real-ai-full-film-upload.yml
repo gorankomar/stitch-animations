@@ -1,0 +1,23 @@
+name: Upload Real AI full film assets
+on:
+  push:
+    branches: [codex/real-ai-full-film-assets-20261117]
+permissions:
+  contents: read
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+      - name: Upload film assets without animation activation
+        run: |
+          cat temporary-media/real-ai-film/film.mp4.part* > temporary-media/real-ai-film/film.mp4
+          rm temporary-media/real-ai-film/film.mp4.part*
+          aws s3 cp temporary-media/real-ai-film/ 's3://stitch-website-animations/Stitch Animations/releases/97b491b074b0c5a08d9674a14b6d212bb669e5a7/assets/real-ai-film/' --recursive --cache-control 'public,max-age=31536000,immutable'
+          curl --fail --retry 5 --output /tmp/served.mp4 'https://d280qq257tic0i.cloudfront.net/Stitch+Animations/releases/97b491b074b0c5a08d9674a14b6d212bb669e5a7/assets/real-ai-film/film.mp4'
+          cmp temporary-media/real-ai-film/film.mp4 /tmp/served.mp4
