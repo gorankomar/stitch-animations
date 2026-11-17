@@ -83,3 +83,6 @@
  [data-film-player] .film-subtitle-menu { right: 54px; bottom: 8px; width: 210px; max-width: calc(100% - 62px); max-height: calc(100% - 16px); }
 }
 @media (max-width: 479px) { [data-film-player] .film-subtitle-option { margin-top: 0; margin-bottom: 0; } }
+/* Native caption nodes may follow the controls in Webflow's document order. */
+[data-film-player] .film-caption { z-index: 1; }
+[data-film-player] .film-controls { z-index: 2; }

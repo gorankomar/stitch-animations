@@ -45,7 +45,12 @@ const html = `<video class="film-full-video" data-film-video="true" src="${filmM
 <div class="film-right"><button class="film-subtitle-toggle film-control" data-film-subtitles value="" type="button" aria-label="Subtitle language: Off" aria-haspopup="menu" aria-expanded="false"><img class="film-icon" data-film-caption-icon="off" src="${captionsAsset}" width="24" height="24" alt=""><img class="film-icon" data-film-caption-icon="on" src="${captionsOnAsset}" width="24" height="24" alt=""></button><button class="film-control" data-film-fullscreen="true" type="button" aria-label="Enter fullscreen">${icon('fullscreen')}${icon('exitfullscreen', true)}</button></div>
 </div></div>${subtitleMenu}<p class="film-status" data-film-status="true" role="status" aria-live="polite"></p></div>`;
 const css = await readFile(directory + 'player.css', 'utf8');
-const states = await readFile(directory + 'states.css', 'utf8');
+const flagRules = languages.map(([language]) => {
+  const [x, y] = flagPositions[flagCountries[language]];
+  return `[data-film-player] [data-film-language="${language}"] .film-subtitle-flag { --film-flag-x: -${x}px; --film-flag-y: -${y}px; }`;
+}).join('\n');
+const states = await readFile(directory + 'states.css', 'utf8') + '\n' + flagRules;
+
 const js = (await transformWithEsbuild((await readFile(directory + 'player.js', 'utf8')).replaceAll('export function ', 'function '), 'film-player.js', { minifyWhitespace: true })).code;
 const embed = `<script type="application/json" data-film-subtitle-data>${subtitleData}</script>\n<style>\n${states}\n</style>\n<script>\n(() => {\n${js}\nwindow.Webflow = window.Webflow || [];\nwindow.Webflow.push(() => init());\n})();\n</script>`;
 await writeFile(directory + 'player.html', html + '\n');
