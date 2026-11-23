@@ -9,12 +9,8 @@ export function init(root = document) {
   if (typeof window === 'undefined' || !root) return () => {};
   const disposers = qsa('[data-anim="hero"]', root).map(section => {
     if (mounted.has(section)) return () => {};
-    let cleanup = () => {};
-    const setup = () => {
-      cleanup = createHeroStackController(section, ensureSectionReveal(section));
-      return cleanup;
-    };
-    const stop = section.dataset.revealStart === 'early' ? (setup(), () => cleanup()) : whenVisible(section, setup);
+    const setup = () => createHeroStackController(section, ensureSectionReveal(section));
+    const stop = section.dataset.revealStart === 'early' ? setup() : whenVisible(section, setup);
     const dispose = () => { stop(); mounted.delete(section); };
     mounted.set(section, dispose);
     return dispose;

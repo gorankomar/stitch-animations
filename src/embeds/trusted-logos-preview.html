@@ -1,0 +1,171 @@
+<style>
+/* Fixed layout cells; tight artwork scales independently inside each cell. */
+.trusted-logos-section .trusted-logos-item {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trusted-logos-section .trusted-logos-image {
+  display: block;
+  flex: none;
+  width: var(--trusted-logo-width, auto);
+  height: var(--trusted-logo-height, auto);
+  max-width: calc(100% - 1.5rem);
+  max-height: 2.375rem;
+  aspect-ratio: auto;
+  object-fit: contain;
+  /* Keep the actual image in the clipping box, including before JS runs. */
+  transform: none;
+}
+.trusted-logos-section .trusted-logos-image[data-trusted-logo-tint] {
+  filter: var(--trusted-logo-tint);
+}
+
+/* Optical corrections for the two wordmarks requested after strip review.
+   CSS applies in Designer and takes precedence over automatic inline sizing. */
+.trusted-logos-section .trusted-logos-image[src$="tanmeya-capital.svg"] {
+  width: 5.625rem;
+  height: auto;
+}
+
+.trusted-logos-viewport[data-trusted-logos-moving] { overflow: hidden; }
+.trusted-logos-viewport > .w-dyn-empty { display: none; }
+</style>
+<script>
+(() => {
+/** Proportional optical sizing in a 150 × 48 slot, independent of company names. */
+function getTrustedLogoSize(ratio) {
+  if (!Number.isFinite(ratio) || ratio <= 0) return {width:72,height:24};
+  const height=Math.min(38,Math.max(15,34/Math.sqrt(ratio)));
+  const scale=Math.min(1,111/(ratio*height));
+  return {width:ratio*height*scale,height:height*scale};
+}
+
+function sizeTrustedLogo(image) {
+  const apply=()=>{
+    if(!image.naturalWidth || !image.naturalHeight) return;
+    const ratio=image.naturalWidth/image.naturalHeight;
+    let {width,height}=getTrustedLogoSize(ratio);
+    // Viva and Peko have comparable wordmarks; give them the same optical height.
+    if ((image.src || '').endsWith('viva-finance.svg')) {
+      height=getTrustedLogoSize(50/16).height;
+      width=height*ratio;
+    }
+    image.style.setProperty('--trusted-logo-width',`${width/16}rem`);
+    image.style.setProperty('--trusted-logo-height',`${height/16}rem`);
+  };
+  if(image.complete) apply();
+  else image.addEventListener('load',apply,{once:true});
+}
+
+  let nextFilter = 0;
+
+  const applyTint = (viewport, images) => {
+    // Native Webflow variants still choose between currentColor and original artwork.
+    const tinted = images.filter(image => getComputedStyle(image).filter.startsWith('drop-shadow('));
+    if (!tinted.length) return;
+
+    let id;
+    do { id = 'trusted-logo-tint-' + ++nextFilter; } while (document.getElementById(id));
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('width', '0');
+    svg.setAttribute('height', '0');
+    svg.style.position = 'absolute';
+    svg.innerHTML = '<defs><filter id="' + id + '" x="0" y="0" width="100%" height="100%">'
+      + '<feFlood flood-color="currentColor" result="tint"/>'
+      + '<feComposite in="tint" in2="SourceAlpha" operator="in"/>'
+      + '</filter></defs>';
+    viewport.append(svg);
+
+    viewport.style.setProperty('--trusted-logo-tint', 'url("#' + id + '")');
+    tinted.forEach(image => image.setAttribute('data-trusted-logo-tint', ''));
+  };
+
+  const mount = viewport => {
+    const track = viewport.querySelector(':scope > .trusted-logos-track');
+    if (!track || track.dataset.trustedLogosMounted !== undefined) return;
+    track.dataset.trustedLogosMounted = '';
+    const originals = Array.from(track.children);
+    const preference = matchMedia('(prefers-reduced-motion: reduce)');
+    const copies = [];
+    let animation;
+    let visible = false;
+
+    const images = originals.flatMap(item => Array.from(item.querySelectorAll('img')));
+    applyTint(viewport, images);
+
+    let rebuildFrame;
+    const queueRebuild = () => {
+      if (rebuildFrame) return;
+      rebuildFrame = requestAnimationFrame(() => {
+        rebuildFrame = undefined;
+        rebuild();
+      });
+    };
+
+    for (const image of images) {
+      image.loading = 'eager';
+      sizeTrustedLogo(image);
+      if (!image.complete) image.addEventListener('load', queueRebuild, {once:true});
+    }
+
+    const updatePlayback = () => {
+      if (!animation) return;
+      if (visible && !document.hidden) animation.play();
+      else animation.pause();
+    };
+
+    const rebuild = () => {
+      const progress = animation?.effect.getComputedTiming().progress || 0;
+      animation?.cancel();
+      animation = undefined;
+      copies.splice(0).forEach(copy => copy.remove());
+      delete viewport.dataset.trustedLogosMoving;
+      if (preference.matches || !track.animate || originals.length < 2 || !viewport.clientWidth) return;
+
+      const lap = track.getBoundingClientRect().width;
+      if (!lap) return;
+      const count = Math.ceil(viewport.clientWidth / lap);
+      const fragment = document.createDocumentFragment();
+      for (let repeat = 0; repeat < count; repeat++) {
+        for (const item of originals) {
+          const copy = item.cloneNode(true);
+          copy.setAttribute('aria-hidden', 'true');
+          copy.inert = true;
+          copies.push(copy);
+          fragment.append(copy);
+        }
+      }
+      track.append(fragment);
+      viewport.scrollLeft = 0;
+      const slotWidth = originals[0].getBoundingClientRect().width;
+      const duration = lap / (slotWidth * (4.9 / 9.375)) * 1000;
+      animation = track.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(' + -lap + 'px)' }], {
+        duration,
+        easing: 'linear',
+        iterations: Infinity
+      });
+      animation.currentTime = progress * duration;
+      viewport.dataset.trustedLogosMoving = '';
+      updatePlayback();
+    };
+
+    rebuild();
+    new ResizeObserver(queueRebuild).observe(viewport);
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      updatePlayback();
+    }).observe(viewport);
+    preference.addEventListener('change', rebuild);
+    document.addEventListener('visibilitychange', updatePlayback);
+    window.addEventListener('pagehide', event => { if (!event.persisted) animation?.cancel(); });
+  };
+  const mountAll = () => {
+    document.querySelectorAll('.trusted-logos-section .trusted-logos-viewport').forEach(mount);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountAll, { once: true });
+  else requestAnimationFrame(mountAll);
+})();
+</script>

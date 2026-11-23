@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "6afed2439c4cf69ede9acf15",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.272Z",
+    "createdOn": "2026-11-19T10:41:07.985Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed242e15e880a1aedbe17",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed242e15e880a1aedbe17_index.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 180,
+      "name": "Index",
+      "slug": "index"
+    }
+  },
+  {
+    "id": "6afed2439c4cf69ede9acf15",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.986Z",
+    "createdOn": "2026-11-19T10:41:07.985Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed242e15e880a1aedbe17",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed242e15e880a1aedbe17_index.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 180,
+      "name": "Index",
+      "slug": "index"
+    }
+  },
+  {
+    "id": "6afed2439c4cf69ede9acf15",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.179Z",
+    "createdOn": "2026-11-19T10:41:07.985Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed242e15e880a1aedbe17",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed242e15e880a1aedbe17_index.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 180,
+      "name": "Index",
+      "slug": "index"
+    }
+  },
+  {
+    "id": "6afed2439c4cf69ede9acf15",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.565Z",
+    "createdOn": "2026-11-19T10:41:07.985Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed242e15e880a1aedbe17",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed242e15e880a1aedbe17_index.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 180,
+      "name": "Index",
+      "slug": "index"
+    }
+  },
+  {
+    "id": "6afed23c5de075708727571e",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.978Z",
+    "createdOn": "2026-11-19T10:41:00.023Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed23a578c4521cb846234",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed23a578c4521cb846234_algo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 170,
+      "name": "Algo",
+      "slug": "algo"
+    }
+  },
+  {
+    "id": "6afed23c5de075708727571e",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.250Z",
+    "createdOn": "2026-11-19T10:41:00.023Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed23a578c4521cb846234",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed23a578c4521cb846234_algo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 170,
+      "name": "Algo",
+      "slug": "algo"
+    }
+  },
+  {
+    "id": "6afed23c5de075708727571e",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.176Z",
+    "createdOn": "2026-11-19T10:41:00.023Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed23a578c4521cb846234",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed23a578c4521cb846234_algo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 170,
+      "name": "Algo",
+      "slug": "algo"
+    }
+  },
+  {
+    "id": "6afed23c5de075708727571e",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.563Z",
+    "createdOn": "2026-11-19T10:41:00.023Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed23a578c4521cb846234",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed23a578c4521cb846234_algo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 170,
+      "name": "Algo",
+      "slug": "algo"
+    }
+  },
+  {
+    "id": "6afed2345eb1bbe1df51b3ee",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.181Z",
+    "createdOn": "2026-11-19T10:40:52.182Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed232b786c9f9af258f6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed232b786c9f9af258f6c_tiqmo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 160,
+      "name": "Tiqmo",
+      "slug": "tiqmo"
+    }
+  },
+  {
+    "id": "6afed2345eb1bbe1df51b3ee",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.972Z",
+    "createdOn": "2026-11-19T10:40:52.182Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed232b786c9f9af258f6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed232b786c9f9af258f6c_tiqmo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 160,
+      "name": "Tiqmo",
+      "slug": "tiqmo"
+    }
+  },
+  {
+    "id": "6afed2345eb1bbe1df51b3ee",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.561Z",
+    "createdOn": "2026-11-19T10:40:52.182Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed232b786c9f9af258f6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed232b786c9f9af258f6c_tiqmo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 160,
+      "name": "Tiqmo",
+      "slug": "tiqmo"
+    }
+  },
+  {
+    "id": "6afed2345eb1bbe1df51b3ee",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.252Z",
+    "createdOn": "2026-11-19T10:40:52.182Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed232b786c9f9af258f6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed232b786c9f9af258f6c_tiqmo.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 160,
+      "name": "Tiqmo",
+      "slug": "tiqmo"
+    }
+  },
+  {
+    "id": "6afed22c9c4cf69ede9ac92e",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.971Z",
+    "createdOn": "2026-11-19T10:40:44.202Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed22af2638974575c0dcc",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed22af2638974575c0dcc_khazna.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 150,
+      "name": "Khazna",
+      "slug": "khazna"
+    }
+  },
+  {
+    "id": "6afed22c9c4cf69ede9ac92e",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.555Z",
+    "createdOn": "2026-11-19T10:40:44.202Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed22af2638974575c0dcc",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed22af2638974575c0dcc_khazna.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 150,
+      "name": "Khazna",
+      "slug": "khazna"
+    }
+  },
+  {
+    "id": "6afed22c9c4cf69ede9ac92e",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.144Z",
+    "createdOn": "2026-11-19T10:40:44.202Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed22af2638974575c0dcc",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed22af2638974575c0dcc_khazna.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 150,
+      "name": "Khazna",
+      "slug": "khazna"
+    }
+  },
+  {
+    "id": "6afed22c9c4cf69ede9ac92e",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.248Z",
+    "createdOn": "2026-11-19T10:40:44.202Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed22af2638974575c0dcc",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed22af2638974575c0dcc_khazna.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 150,
+      "name": "Khazna",
+      "slug": "khazna"
+    }
+  },
+  {
+    "id": "6afed21f3e7db6baefa0f335",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.136Z",
+    "createdOn": "2026-11-19T10:40:31.419Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21dc2d1269e5ab5d616",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21dc2d1269e5ab5d616_des-financing-corporation.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 140,
+      "name": "DES financing corporation",
+      "slug": "des-financing-corporation"
+    }
+  },
+  {
+    "id": "6afed21f3e7db6baefa0f335",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.570Z",
+    "createdOn": "2026-11-19T10:40:31.419Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21dc2d1269e5ab5d616",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21dc2d1269e5ab5d616_des-financing-corporation.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 140,
+      "name": "DES financing corporation",
+      "slug": "des-financing-corporation"
+    }
+  },
+  {
+    "id": "6afed21f3e7db6baefa0f335",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.267Z",
+    "createdOn": "2026-11-19T10:40:31.419Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21dc2d1269e5ab5d616",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21dc2d1269e5ab5d616_des-financing-corporation.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 140,
+      "name": "DES financing corporation",
+      "slug": "des-financing-corporation"
+    }
+  },
+  {
+    "id": "6afed21f3e7db6baefa0f335",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.960Z",
+    "createdOn": "2026-11-19T10:40:31.419Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21dc2d1269e5ab5d616",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21dc2d1269e5ab5d616_des-financing-corporation.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 140,
+      "name": "DES financing corporation",
+      "slug": "des-financing-corporation"
+    }
+  },
+  {
+    "id": "6afed216f28ffcae1814c216",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.554Z",
+    "createdOn": "2026-11-19T10:40:22.748Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21422ed4d45a4393c7e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21422ed4d45a4393c7e_getsabiq.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 130,
+      "name": "Getsabiq",
+      "slug": "getsabiq"
+    }
+  },
+  {
+    "id": "6afed216f28ffcae1814c216",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.246Z",
+    "createdOn": "2026-11-19T10:40:22.748Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21422ed4d45a4393c7e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21422ed4d45a4393c7e_getsabiq.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 130,
+      "name": "Getsabiq",
+      "slug": "getsabiq"
+    }
+  },
+  {
+    "id": "6afed216f28ffcae1814c216",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.958Z",
+    "createdOn": "2026-11-19T10:40:22.748Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21422ed4d45a4393c7e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21422ed4d45a4393c7e_getsabiq.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 130,
+      "name": "Getsabiq",
+      "slug": "getsabiq"
+    }
+  },
+  {
+    "id": "6afed216f28ffcae1814c216",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.140Z",
+    "createdOn": "2026-11-19T10:40:22.748Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed21422ed4d45a4393c7e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed21422ed4d45a4393c7e_getsabiq.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 130,
+      "name": "Getsabiq",
+      "slug": "getsabiq"
+    }
+  },
+  {
+    "id": "6afed20e4518eec695fbdc99",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.568Z",
+    "createdOn": "2026-11-19T10:40:14.189Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5c468142165e819ed2e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5c468142165e819ed2e_sakhi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 120,
+      "name": "Sakhi",
+      "slug": "sakhi"
+    }
+  },
+  {
+    "id": "6afed20e4518eec695fbdc99",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.173Z",
+    "createdOn": "2026-11-19T10:40:14.189Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5c468142165e819ed2e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5c468142165e819ed2e_sakhi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 120,
+      "name": "Sakhi",
+      "slug": "sakhi"
+    }
+  },
+  {
+    "id": "6afed20e4518eec695fbdc99",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.278Z",
+    "createdOn": "2026-11-19T10:40:14.189Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5c468142165e819ed2e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5c468142165e819ed2e_sakhi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 120,
+      "name": "Sakhi",
+      "slug": "sakhi"
+    }
+  },
+  {
+    "id": "6afed20e4518eec695fbdc99",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.990Z",
+    "createdOn": "2026-11-19T10:40:14.189Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5c468142165e819ed2e",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5c468142165e819ed2e_sakhi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 120,
+      "name": "Sakhi",
+      "slug": "sakhi"
+    }
+  },
+  {
+    "id": "6afed205062cffee12e205e6",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.142Z",
+    "createdOn": "2026-11-19T10:40:05.961Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed204f9fc1a31510371c6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed204f9fc1a31510371c6_loans.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 110,
+      "name": "Loans",
+      "slug": "loans"
+    }
+  },
+  {
+    "id": "6afed205062cffee12e205e6",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.243Z",
+    "createdOn": "2026-11-19T10:40:05.961Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed204f9fc1a31510371c6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed204f9fc1a31510371c6_loans.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 110,
+      "name": "Loans",
+      "slug": "loans"
+    }
+  },
+  {
+    "id": "6afed205062cffee12e205e6",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.962Z",
+    "createdOn": "2026-11-19T10:40:05.961Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed204f9fc1a31510371c6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed204f9fc1a31510371c6_loans.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 110,
+      "name": "Loans",
+      "slug": "loans"
+    }
+  },
+  {
+    "id": "6afed205062cffee12e205e6",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.534Z",
+    "createdOn": "2026-11-19T10:40:05.961Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed204f9fc1a31510371c6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed204f9fc1a31510371c6_loans.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 110,
+      "name": "Loans",
+      "slug": "loans"
+    }
+  },
+  {
+    "id": "6afed1fd4c61b589b068a740",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.241Z",
+    "createdOn": "2026-11-19T10:39:57.917Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5bae15e880a1aeffa12",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5bae15e880a1aeffa12_comera.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 100,
+      "name": "Comera",
+      "slug": "comera"
+    }
+  },
+  {
+    "id": "6afed1fd4c61b589b068a740",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.185Z",
+    "createdOn": "2026-11-19T10:39:57.917Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5bae15e880a1aeffa12",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5bae15e880a1aeffa12_comera.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 100,
+      "name": "Comera",
+      "slug": "comera"
+    }
+  },
+  {
+    "id": "6afed1fd4c61b589b068a740",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.566Z",
+    "createdOn": "2026-11-19T10:39:57.917Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5bae15e880a1aeffa12",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5bae15e880a1aeffa12_comera.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 100,
+      "name": "Comera",
+      "slug": "comera"
+    }
+  },
+  {
+    "id": "6afed1fd4c61b589b068a740",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.957Z",
+    "createdOn": "2026-11-19T10:39:57.917Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5bae15e880a1aeffa12",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5bae15e880a1aeffa12_comera.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 100,
+      "name": "Comera",
+      "slug": "comera"
+    }
+  },
+  {
+    "id": "6afed1d75eb1bbe1df518a25",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.536Z",
+    "createdOn": "2026-11-19T10:39:19.241Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5b07a05c0a9500e3377",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5b07a05c0a9500e3377_zand.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 90,
+      "name": "Zand",
+      "slug": "zand"
+    }
+  },
+  {
+    "id": "6afed1d75eb1bbe1df518a25",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.183Z",
+    "createdOn": "2026-11-19T10:39:19.241Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5b07a05c0a9500e3377",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5b07a05c0a9500e3377_zand.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 90,
+      "name": "Zand",
+      "slug": "zand"
+    }
+  },
+  {
+    "id": "6afed1d75eb1bbe1df518a25",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.239Z",
+    "createdOn": "2026-11-19T10:39:19.241Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5b07a05c0a9500e3377",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5b07a05c0a9500e3377_zand.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 90,
+      "name": "Zand",
+      "slug": "zand"
+    }
+  },
+  {
+    "id": "6afed1d75eb1bbe1df518a25",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.953Z",
+    "createdOn": "2026-11-19T10:39:19.241Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed5b07a05c0a9500e3377",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed5b07a05c0a9500e3377_zand.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 90,
+      "name": "Zand",
+      "slug": "zand"
+    }
+  },
+  {
+    "id": "6afed1cb3b885b6df864d124",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.532Z",
+    "createdOn": "2026-11-19T10:39:07.979Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1caa62d1a6e06e16394",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1caa62d1a6e06e16394_tanmeya.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 80,
+      "name": "Tanmeya",
+      "slug": "tanmeya"
+    }
+  },
+  {
+    "id": "6afed1cb3b885b6df864d124",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.236Z",
+    "createdOn": "2026-11-19T10:39:07.979Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1caa62d1a6e06e16394",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1caa62d1a6e06e16394_tanmeya.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 80,
+      "name": "Tanmeya",
+      "slug": "tanmeya"
+    }
+  },
+  {
+    "id": "6afed1cb3b885b6df864d124",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.138Z",
+    "createdOn": "2026-11-19T10:39:07.979Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1caa62d1a6e06e16394",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1caa62d1a6e06e16394_tanmeya.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 80,
+      "name": "Tanmeya",
+      "slug": "tanmeya"
+    }
+  },
+  {
+    "id": "6afed1cb3b885b6df864d124",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.950Z",
+    "createdOn": "2026-11-19T10:39:07.979Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1caa62d1a6e06e16394",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1caa62d1a6e06e16394_tanmeya.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 80,
+      "name": "Tanmeya",
+      "slug": "tanmeya"
+    }
+  },
+  {
+    "id": "6afed1a04518eec695fb9f06",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.234Z",
+    "createdOn": "2026-11-19T10:38:24.794Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed19e2edb1aa88608f009",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed19e2edb1aa88608f009_noqodi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 70,
+      "name": "Noqodi",
+      "slug": "noqodi"
+    }
+  },
+  {
+    "id": "6afed1a04518eec695fb9f06",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.941Z",
+    "createdOn": "2026-11-19T10:38:24.794Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed19e2edb1aa88608f009",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed19e2edb1aa88608f009_noqodi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 70,
+      "name": "Noqodi",
+      "slug": "noqodi"
+    }
+  },
+  {
+    "id": "6afed1a04518eec695fb9f06",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.130Z",
+    "createdOn": "2026-11-19T10:38:24.794Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed19e2edb1aa88608f009",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed19e2edb1aa88608f009_noqodi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 70,
+      "name": "Noqodi",
+      "slug": "noqodi"
+    }
+  },
+  {
+    "id": "6afed1a04518eec695fb9f06",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.530Z",
+    "createdOn": "2026-11-19T10:38:24.794Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed19e2edb1aa88608f009",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed19e2edb1aa88608f009_noqodi.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 70,
+      "name": "Noqodi",
+      "slug": "noqodi"
+    }
+  },
+  {
+    "id": "6afed1982edb1aa88608e5a6",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.528Z",
+    "createdOn": "2026-11-19T10:38:16.799Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1960b04fbfdfc0d2521",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1960b04fbfdfc0d2521_muhlah.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 60,
+      "name": "Muhlah",
+      "slug": "muhlah"
+    }
+  },
+  {
+    "id": "6afed1982edb1aa88608e5a6",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.134Z",
+    "createdOn": "2026-11-19T10:38:16.799Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1960b04fbfdfc0d2521",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1960b04fbfdfc0d2521_muhlah.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 60,
+      "name": "Muhlah",
+      "slug": "muhlah"
+    }
+  },
+  {
+    "id": "6afed1982edb1aa88608e5a6",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.928Z",
+    "createdOn": "2026-11-19T10:38:16.799Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1960b04fbfdfc0d2521",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1960b04fbfdfc0d2521_muhlah.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 60,
+      "name": "Muhlah",
+      "slug": "muhlah"
+    }
+  },
+  {
+    "id": "6afed1982edb1aa88608e5a6",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.230Z",
+    "createdOn": "2026-11-19T10:38:16.799Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1960b04fbfdfc0d2521",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1960b04fbfdfc0d2521_muhlah.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 60,
+      "name": "Muhlah",
+      "slug": "muhlah"
+    }
+  },
+  {
+    "id": "6afed191e5d56365adebe995",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.955Z",
+    "createdOn": "2026-11-19T10:38:09.249Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed18fe67ccb8ffc59e92d",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed18fe67ccb8ffc59e92d_yanal-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 50,
+      "name": "Yanal finance",
+      "slug": "yanal-finance"
+    }
+  },
+  {
+    "id": "6afed191e5d56365adebe995",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.226Z",
+    "createdOn": "2026-11-19T10:38:09.249Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed18fe67ccb8ffc59e92d",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed18fe67ccb8ffc59e92d_yanal-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 50,
+      "name": "Yanal finance",
+      "slug": "yanal-finance"
+    }
+  },
+  {
+    "id": "6afed191e5d56365adebe995",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.132Z",
+    "createdOn": "2026-11-19T10:38:09.249Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed18fe67ccb8ffc59e92d",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed18fe67ccb8ffc59e92d_yanal-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 50,
+      "name": "Yanal finance",
+      "slug": "yanal-finance"
+    }
+  },
+  {
+    "id": "6afed191e5d56365adebe995",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.543Z",
+    "createdOn": "2026-11-19T10:38:09.249Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed18fe67ccb8ffc59e92d",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed18fe67ccb8ffc59e92d_yanal-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 50,
+      "name": "Yanal finance",
+      "slug": "yanal-finance"
+    }
+  },
+  {
+    "id": "6afed189bdfdbdbfb3b3639f",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.514Z",
+    "createdOn": "2026-11-19T10:38:01.545Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1875eb1bbe1df515fc7",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1875eb1bbe1df515fc7_foodics.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 40,
+      "name": "Foodics",
+      "slug": "foodics"
+    }
+  },
+  {
+    "id": "6afed189bdfdbdbfb3b3639f",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.228Z",
+    "createdOn": "2026-11-19T10:38:01.545Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1875eb1bbe1df515fc7",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1875eb1bbe1df515fc7_foodics.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 40,
+      "name": "Foodics",
+      "slug": "foodics"
+    }
+  },
+  {
+    "id": "6afed189bdfdbdbfb3b3639f",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.125Z",
+    "createdOn": "2026-11-19T10:38:01.545Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1875eb1bbe1df515fc7",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1875eb1bbe1df515fc7_foodics.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 40,
+      "name": "Foodics",
+      "slug": "foodics"
+    }
+  },
+  {
+    "id": "6afed189bdfdbdbfb3b3639f",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.921Z",
+    "createdOn": "2026-11-19T10:38:01.545Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed1875eb1bbe1df515fc7",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed1875eb1bbe1df515fc7_foodics.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 40,
+      "name": "Foodics",
+      "slug": "foodics"
+    }
+  },
+  {
+    "id": "6afed1818114387c99c1b16b",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.127Z",
+    "createdOn": "2026-11-19T10:37:53.262Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed17e22947f53c1ed31a6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed17e22947f53c1ed31a6_tamam.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 30,
+      "name": "Tamam",
+      "slug": "tamam"
+    }
+  },
+  {
+    "id": "6afed1818114387c99c1b16b",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.919Z",
+    "createdOn": "2026-11-19T10:37:53.262Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed17e22947f53c1ed31a6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed17e22947f53c1ed31a6_tamam.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 30,
+      "name": "Tamam",
+      "slug": "tamam"
+    }
+  },
+  {
+    "id": "6afed1818114387c99c1b16b",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.224Z",
+    "createdOn": "2026-11-19T10:37:53.262Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed17e22947f53c1ed31a6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed17e22947f53c1ed31a6_tamam.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 30,
+      "name": "Tamam",
+      "slug": "tamam"
+    }
+  },
+  {
+    "id": "6afed1818114387c99c1b16b",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.512Z",
+    "createdOn": "2026-11-19T10:37:53.262Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed17e22947f53c1ed31a6",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed17e22947f53c1ed31a6_tamam.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 30,
+      "name": "Tamam",
+      "slug": "tamam"
+    }
+  },
+  {
+    "id": "6afed16e47f3ac4f724ca193",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T11:23:19.925Z",
+    "createdOn": "2026-11-19T10:37:34.360Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed65ba62d1a6e06e3df6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed65ba62d1a6e06e3df6c_peko.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 20,
+      "name": "Peko",
+      "slug": "peko"
+    }
+  },
+  {
+    "id": "6afed16e47f3ac4f724ca193",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:32.540Z",
+    "createdOn": "2026-11-19T10:37:34.360Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed65ba62d1a6e06e3df6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed65ba62d1a6e06e3df6c_peko.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 20,
+      "name": "Peko",
+      "slug": "peko"
+    }
+  },
+  {
+    "id": "6afed16e47f3ac4f724ca193",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:04.187Z",
+    "createdOn": "2026-11-19T10:37:34.360Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed65ba62d1a6e06e3df6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed65ba62d1a6e06e3df6c_peko.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 20,
+      "name": "Peko",
+      "slug": "peko"
+    }
+  },
+  {
+    "id": "6afed16e47f3ac4f724ca193",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T12:42:17.274Z",
+    "createdOn": "2026-11-19T10:37:34.360Z",
+    "isArchived": false,
+    "isDraft": false,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed65ba62d1a6e06e3df6c",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed65ba62d1a6e06e3df6c_peko.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 20,
+      "name": "Peko",
+      "slug": "peko"
+    }
+  },
+  {
+    "id": "6afed10f3e7db6baefa053a7",
+    "cmsLocaleId": "68248af7fd19b53d3ebf5def",
+    "lastPublished": "2026-11-19T11:30:48.282Z",
+    "lastUpdated": "2026-11-19T13:03:50.271Z",
+    "createdOn": "2026-11-19T10:35:59.517Z",
+    "isArchived": false,
+    "isDraft": true,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed24e663a31e4e9bca5af",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed24e663a31e4e9bca5af_viva-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 10,
+      "name": "Viva finance",
+      "slug": "viva-finance"
+    }
+  },
+  {
+    "id": "6afed10f3e7db6baefa053a7",
+    "cmsLocaleId": "6a6c40f6f2c3f7bb4516afad",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T13:03:50.381Z",
+    "createdOn": "2026-11-19T10:35:59.517Z",
+    "isArchived": false,
+    "isDraft": true,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed24e663a31e4e9bca5af",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed24e663a31e4e9bca5af_viva-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 10,
+      "name": "Viva finance",
+      "slug": "viva-finance"
+    }
+  },
+  {
+    "id": "6afed10f3e7db6baefa053a7",
+    "cmsLocaleId": "6a55f01c710382e0bc75fc19",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T13:03:50.380Z",
+    "createdOn": "2026-11-19T10:35:59.517Z",
+    "isArchived": false,
+    "isDraft": true,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed24e663a31e4e9bca5af",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed24e663a31e4e9bca5af_viva-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 10,
+      "name": "Viva finance",
+      "slug": "viva-finance"
+    }
+  },
+  {
+    "id": "6afed10f3e7db6baefa053a7",
+    "cmsLocaleId": "6a6c40dfbdcf449fdc3db1d3",
+    "lastPublished": "2026-11-19T12:43:16.752Z",
+    "lastUpdated": "2026-11-19T13:03:50.342Z",
+    "createdOn": "2026-11-19T10:35:59.517Z",
+    "isArchived": false,
+    "isDraft": true,
+    "fieldData": {
+      "logo": {
+        "fileId": "6afed24e663a31e4e9bca5af",
+        "url": "https://cdn.prod.website-files.com/68248af7fd19b53d3ebf5df2/6afed24e663a31e4e9bca5af_viva-finance.svg",
+        "alt": null
+      },
+      "show-in-trusted-by": true,
+      "display-order": 10,
+      "name": "Viva finance",
+      "slug": "viva-finance"
+    }
+  }
+]

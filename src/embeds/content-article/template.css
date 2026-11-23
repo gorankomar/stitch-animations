@@ -1,0 +1,156 @@
+/* Webflow's native class controls the flex gap. These rules target CMS blocks. */
+.content-article-toc[hidden] {
+  display: none !important;
+}
+
+.content-article-rich-text::before,
+.content-article-rich-text::after {
+  display: none;
+}
+
+.content-article-rich-text > *,
+.content-article-rich-text li > p {
+  margin-block: 0;
+}
+
+.content-article-rich-text > h2:not(:first-child) {
+  margin-block-start: 2rem;
+}
+
+.content-article-rich-text > :is(p, h3, h4, h5, h6) + :is(ul, ol) {
+  margin-block-start: -1rem;
+}
+
+.content-article-intro {
+  scroll-margin-top: var(--content-article-anchor-offset, 8rem);
+}
+
+.content-article-rich-text h2 {
+  scroll-margin-top: var(--content-article-heading-offset, 9rem);
+}
+
+.content-article-toc-list::before,
+.content-article-toc-list::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: .1875rem;
+  border-radius: .1875rem;
+  pointer-events: none;
+}
+
+.content-article-toc-list::before {
+  background: #d9d9d9;
+}
+
+.content-article-toc-list::after {
+  background: #121212;
+  transform-origin: top;
+  transform: scaleY(var(--content-article-progress, 0));
+  transition: transform var(--motion-duration-default) var(--motion-ease-primary);
+}
+
+.content-article-toc-link[aria-current] {
+  color: #121212;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-article-toc-list::after {
+    transition: none;
+  }
+}
+
+/* The same navigation list becomes the compact disclosure panel. */
+@media (max-width: 991px) {
+  .content-article-toc {
+    --content-article-toc-menu-duration: calc(var(--motion-duration-fast) * .25);
+    width: min(100%, calc(var(--content-article-toc-label-width, 12rem) + 4.875rem));
+  }
+
+  .content-article-toc-title {
+    display: none;
+  }
+
+  .content-article-toc-trigger::after {
+    content: "";
+    inline-size: .4375rem;
+    block-size: .4375rem;
+    flex: none;
+    border-inline-end: 1.5px solid currentColor;
+    border-block-end: 1.5px solid currentColor;
+    transform: translateY(-.125rem) rotate(45deg);
+  }
+
+  .content-article-toc-open .content-article-toc-trigger::after {
+    transform: translateY(.125rem) rotate(225deg);
+  }
+
+  .content-article-toc-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .content-article-toc-list {
+    position: absolute;
+    inset-block-start: calc(100% + .25rem);
+    inset-inline: 0;
+    max-block-size: min(50dvh, 22rem);
+    overflow-y: auto;
+    border: 1px solid #efefef;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: 0 .75rem 1rem -.25rem #10182814, 0 .25rem .375rem -.125rem #10182808;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-.375rem);
+    transition:
+      opacity var(--content-article-toc-menu-duration) linear,
+      transform var(--content-article-toc-menu-duration) var(--motion-ease-primary),
+      visibility 0s linear var(--content-article-toc-menu-duration);
+  }
+
+  .content-article-toc-open .content-article-toc-list {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+
+  .content-article-toc-list::before,
+  .content-article-toc-list::after {
+    display: none;
+  }
+
+  .content-article-toc-link {
+    border-radius: .25rem;
+    font-weight: 500;
+  }
+
+  .content-article-toc-list:not(:has([data-content-article-toc-selected])) [aria-current],
+  .content-article-toc-link:is([data-content-article-toc-selected], :hover, :focus-visible) {
+    background: #f9f9f9;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-article-toc {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-article-toc-list {
+    transition: none;
+  }
+}
+
+.content-article-copy-link [hidden] {
+  display: none !important;
+}
+
+.content-article-rich-text .content-quote-logo img {
+  border-radius: 0;
+}

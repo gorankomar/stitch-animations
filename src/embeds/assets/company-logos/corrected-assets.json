@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "viva-finance",
+    "assetId": "6b003c95184e6f01add4ccee",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b003c95184e6f01add4ccee_viva-finance.svg",
+    "bytes": 1294,
+    "sha256": "c5872a6e17de7b48e993b3e27fc97bc0b13669d9bb6f002979c9137cd2d51c42"
+  },
+  {
+    "slug": "tanmeya-capital",
+    "assetId": "6b003c96bfdcac655a1c60e4",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b003c96bfdcac655a1c60e4_tanmeya-capital.svg",
+    "bytes": 2815,
+    "sha256": "c10afb87a0012664b15004dda3e8683d8e4c17b2f0768c6d944dc209c821362a"
+  }
+]

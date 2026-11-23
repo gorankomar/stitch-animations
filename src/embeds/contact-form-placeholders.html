@@ -1,0 +1,136 @@
+<!-- Mark each input with data-placeholder-field="first-name", "last-name", or "business-email". -->
+<script>
+(() => {
+  const examples = {
+    en: ['Alex', 'Morgan'],
+    ar: ['Nour', 'Haddad'],
+    es: ['Dani', 'García'],
+    pt: ['Alex', 'Pereira'],
+    'pt-BR': ['Alex', 'Silva'],
+    zh: ['Jing', 'Wang'],
+    id: ['Eka', 'Pratama'],
+    vi: ['Minh', 'Nguyễn'],
+    ja: ['Akira', 'Tanaka'],
+    ko: ['Ji-won', 'Kim'],
+    ru: ['Sasha', 'Kim'],
+    uk: ['Sasha', 'Bondar'],
+    fr: ['Camille', 'Dubois'],
+    de: ['Andi', 'Weber'],
+    it: ['Ale', 'Rossi'],
+    nl: ['Robin', 'de Vries'],
+    pl: ['Aleks', 'Nowak'],
+    sv: ['Alex', 'Lindberg'],
+    da: ['Alex', 'Lund'],
+    no: ['Alex', 'Lund'],
+    fi: ['Ale', 'Korhonen'],
+    cs: ['Alex', 'Novák'],
+    hu: ['Alex', 'Kovács'],
+    southSlavic: ['Saša', 'Petrović'],
+    sl: ['Aleks', 'Novak'],
+    el: ['Alex', 'Pappas'],
+    ro: ['Alex', 'Popescu'],
+    tr: ['Deniz', 'Yılmaz'],
+    he: ['Noam', 'Cohen'],
+    fa: ['Azar', 'Rahimi'],
+    th: ['Petch', 'Sukhum'],
+    ms: ['Nur', 'Hassan'],
+    philippines: ['Alex', 'Reyes'],
+    india: ['Kiran', 'Sharma'],
+    pakistan: ['Noor', 'Khan'],
+    bangladesh: ['Noor', 'Rahman'],
+    ne: ['Kiran', 'Shrestha'],
+    yoruba: ['Tolu', 'Adeyemi'],
+    igbo: ['Chidera', 'Okafor'],
+    ghana: ['Anan', 'Mensah'],
+    senegal: ['Dominique', 'Diop'],
+    eastAfrica: ['Amani', 'Mwangi'],
+    southernAfrica: ['Andile', 'Dlamini'],
+    angola: ['Alex', 'Domingos'],
+    mozambique: ['Alex', 'Mabunda']
+  };
+
+  const languageAliases = {
+    bs: 'southSlavic',
+    hr: 'southSlavic',
+    sr: 'southSlavic',
+    cnr: 'southSlavic',
+    sh: 'southSlavic',
+    nb: 'no',
+    nn: 'no',
+    fil: 'philippines',
+    tl: 'philippines',
+    hi: 'india',
+    as: 'india',
+    gu: 'india',
+    kn: 'india',
+    ml: 'india',
+    mr: 'india',
+    or: 'india',
+    pa: 'india',
+    ta: 'india',
+    te: 'india',
+    ur: 'pakistan',
+    bn: 'bangladesh',
+    yo: 'yoruba',
+    ig: 'igbo',
+    ak: 'ghana',
+    wo: 'senegal',
+    sw: 'eastAfrica',
+    zu: 'southernAfrica',
+    xh: 'southernAfrica',
+    st: 'southernAfrica'
+  };
+
+  const localeAliases = {
+    'en-IN': 'india',
+    'bn-IN': 'india',
+    'ur-IN': 'india',
+    'en-PK': 'pakistan',
+    'pa-PK': 'pakistan',
+    'en-BD': 'bangladesh',
+    'en-PH': 'philippines',
+    'en-MY': 'ms',
+    'en-NG': 'igbo',
+    'en-GH': 'ghana',
+    'fr-SN': 'senegal',
+    'en-KE': 'eastAfrica',
+    'en-TZ': 'eastAfrica',
+    'en-ZA': 'southernAfrica',
+    'pt-AO': 'angola',
+    'pt-MZ': 'mozambique'
+  };
+
+  function getExample(preference) {
+    try {
+      const { language, region } = new Intl.Locale(preference);
+      const locale = `${language}-${region}`;
+      return examples[localeAliases[locale] ?? locale]
+        ?? examples[languageAliases[language] ?? language]
+        ?? examples.en;
+    } catch {
+      return examples.en;
+    }
+  }
+
+  function updatePlaceholders() {
+    const [firstName, lastName] = getExample(navigator.languages?.[0] || navigator.language);
+    const placeholders = {
+      'first-name': firstName,
+      'last-name': lastName,
+      'business-email': 'name@company.com'
+    };
+
+    for (const field of Object.keys(placeholders)) {
+      for (const input of document.querySelectorAll(`input[data-placeholder-field="${field}"]`)) {
+        input.placeholder = placeholders[field];
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updatePlaceholders, { once: true });
+  } else {
+    updatePlaceholders();
+  }
+})();
+</script>

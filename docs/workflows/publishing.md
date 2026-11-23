@@ -50,7 +50,7 @@ Webflow publication and animation channel promotion are separate operations, com
 
 ## Verification and reporting
 
-Confirm the actual published router, one active shared loader, the expected imported release SHA, successful module/CSS requests without CORS errors, and the changed interaction. Check desktop/mobile and reduced motion where relevant. Product Variety wallet swap and Country Flags must remain in the shared bundle and work wherever present. Preview success or an S3 upload alone does not prove live serving.
+Confirm the actual published router, one active shared loader, the expected imported release SHA, successful module/CSS requests without CORS errors, and the changed interaction. Check desktop/mobile and reduced motion where relevant. Preview success or an S3 upload alone does not prove live serving.
 
 For production, use the protected GitHub `production` environment, `main` branch rule and required reviewer. Complete the agent-owned work; leave a pending review to the user if the interface requires their approval. Do not weaken approval protections to finish a deployment. Only promote the exact verified staging SHA; retain prior releases and use the rollback operation when authorized.
 

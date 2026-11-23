@@ -240,7 +240,7 @@
     ]
   },
   "src/animations/hero/index.js": {
-    "file": "chunks/index.CSr2H4Nu.js",
+    "file": "chunks/index.DU0ZZI9u.js",
     "name": "index",
     "src": "src/animations/hero/index.js",
     "isDynamicEntry": true,
@@ -252,7 +252,7 @@
       "_easing.BR8Zapee.js"
     ],
     "css": [
-      "styles/index.BRo8EV-s.css"
+      "styles/index.RhBkyhYw.css"
     ]
   },
   "src/animations/orbit/index.js": {

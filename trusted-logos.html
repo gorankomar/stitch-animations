@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trusted by logos preview</title>
+<style>
+@font-face { font-family: Diatype; src: url("/src/embeds/assets/real-time-approvals/body-regular.woff2"); }
+@font-face { font-family: Diatype; font-weight: 500; src: url("/src/embeds/assets/real-time-approvals/body-medium.woff2"); }
+  body { margin: 0; color: #262626; background: #f9f9f9; font: 1rem Diatype, sans-serif; }
+  main { width: min(90%, 80rem); margin-inline: auto; }
+  section { border-inline: 1px solid #e5e5e5; padding-block: 3rem; }
+  h1 { margin: 0 0 1.5rem; font-size: 1.25rem; font-weight: 500; text-align: center; }
+  .trusted-logos-viewport {
+    --_primitives---colors--neutral: #666;
+    --_primitives---colors--neutral-light: #aaa;
+    --_primitives---colors--neutral-lighter: #ccc;
+    --_primitives---colors--neutral-darker: #222;
+    --_primitives---colors--fire-orange: #ff3609;
+    color: color-mix(in srgb, var(--_primitives---colors--neutral), var(--_primitives---colors--neutral-light));
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    direction: ltr;
+  }
+  .trusted-logos-viewport[data-color="light-gray"] {
+    color: color-mix(in srgb, var(--_primitives---colors--neutral-light), var(--_primitives---colors--neutral-lighter) 41.176%);
+  }
+  .trusted-logos-viewport[data-color="almost-black"] { color: var(--_primitives---colors--neutral-darker); }
+  .trusted-logos-viewport[data-color="fire-orange"] { color: var(--_primitives---colors--fire-orange); }
+  .trusted-logos-track { display: flex; width: max-content; }
+  .trusted-logos-item { flex: none; width: 9.375rem; overflow: hidden; }
+  .trusted-logos-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 150 / 48;
+    object-fit: contain;
+    transform: translateY(-3rem);
+    filter: drop-shadow(0 3rem 0 currentColor);
+  }
+  .trusted-logos-viewport[data-color="original-colors"] .trusted-logos-image { filter: none; transform: none; }
+  .trusted-logos-motion { position: absolute; width: 0; height: 0; overflow: hidden; }
+  .asset-review { width: 100%; border-collapse: collapse; margin-block: 1.5rem; }
+  .asset-review td, .asset-review th { text-align: left; padding: 0.3rem; border-bottom: 1px solid #e5e5e5; }
+  .asset-review img { display: block; max-width: 100%; height: auto; }
+</style>
+<main>
+  <section class="trusted-logos-section">
+    <h1 class="trusted-logos-heading">Powering financial institutions globally</h1>
+    <div class="trusted-logos-viewport w-dyn-list" tabindex="0" aria-label="Company logos">
+      <div class="trusted-logos-track w-dyn-items" role="list"></div>
+    </div>
+    <div class="trusted-logos-motion w-embed"></div>
+  </section>
+  <details>
+    <summary>Compare Figma exports with optimized logos</summary>
+    <table class="asset-review">
+      <thead><tr><th>Company</th><th>Figma export</th><th>Optimized SVG</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </details>
+</main>
+<script type="module">
+  import embedHtml from './src/embeds/trusted-logos-preview.html?raw';
+
+  const companies = [
+  {
+    "name": "Viva Finance",
+    "slug": "viva-finance"
+  },
+  {
+    "name": "Peko",
+    "slug": "peko"
+  },
+  {
+    "name": "Tamam",
+    "slug": "tamam"
+  },
+  {
+    "name": "Foodics",
+    "slug": "foodics"
+  },
+  {
+    "name": "Yanal Finance",
+    "slug": "yanal-finance"
+  },
+  {
+    "name": "Muhlah",
+    "slug": "muhlah"
+  },
+  {
+    "name": "Noqodi",
+    "slug": "noqodi"
+  },
+  {
+    "name": "Tanmeya Capital",
+    "slug": "tanmeya-capital"
+  },
+  {
+    "name": "Zand",
+    "slug": "zand"
+  },
+  {
+    "name": "Comera",
+    "slug": "comera"
+  },
+  {
+    "name": "Loan Financing",
+    "slug": "loan-financing"
+  },
+  {
+    "name": "Sakhi",
+    "slug": "sakhi"
+  },
+  {
+    "name": "Getsabiq",
+    "slug": "getsabiq"
+  },
+  {
+    "name": "DES Financing Corporation",
+    "slug": "des-financing-corporation"
+  },
+  {
+    "name": "Khazna",
+    "slug": "khazna"
+  },
+  {
+    "name": "Tiqmo",
+    "slug": "tiqmo"
+  },
+  {
+    "name": "Algo",
+    "slug": "algo"
+  },
+  {
+    "name": "Index Exchange",
+    "slug": "index-exchange"
+  },
+  {
+    "name": "Masar Alnumou Finance",
+    "slug": "masar-alnumou-finance"
+  }
+];
+  const params = new URLSearchParams(location.search);
+  const assetRoot = './src/embeds/assets/company-logos/';
+  const list = document.querySelector('.trusted-logos-track');
+  const viewport = document.querySelector('.trusted-logos-viewport');
+  viewport.dataset.color = params.get('color') || 'base';
+  const review = document.querySelector('.asset-review tbody');
+  function makeImage(path, alt) {
+    const image = new Image();
+    image.src = assetRoot + path;
+    image.alt = alt;
+    return image;
+  }
+
+  for (const [index, {name,slug}] of companies.entries()) {
+    const file = slug + '.svg';
+    const item = document.createElement('div');
+    item.className = 'trusted-logos-item w-dyn-item';
+    item.setAttribute('role', 'listitem');
+    const logo = makeImage(file, name);
+    logo.className = 'trusted-logos-image';
+    item.append(logo);
+    if (!params.has('short') || index < 3) list.append(item);
+
+    const row = review.insertRow();
+    row.insertCell().textContent = name;
+    row.insertCell().append(makeImage('original/' + file, name + ' original'));
+    row.insertCell().append(makeImage(file, name + ' optimized'));
+  }
+
+  const template = document.createElement('template');
+  template.innerHTML = embedHtml;
+  const script = template.content.querySelector('script');
+  script.remove();
+  const embed = document.querySelector('.trusted-logos-motion');
+  embed.append(template.content);
+  if (!params.has('static')) {
+    const runtime = document.createElement('script');
+    runtime.text = script.textContent;
+    embed.append(runtime);
+  }
+</script>
+</html>

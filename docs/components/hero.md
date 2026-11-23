@@ -15,7 +15,7 @@ The final composition is CSS-owned. `src/animations/hero/styles.css` is the cano
 - `.stacked-windows_skew` retains the existing 8deg skew.
 - First `.stacked-windows_position` is relative and supplies the deck's height; subsequent siblings are absolute at bottom 0. They do not accumulate vertical document flow.
 - Desktop: front offset 0/0, subsequent positions +5% X / −19% Y per index; depths 0, −2px, −3px. Mobile <=991px: anchor Y 38%, subsequent +10% X / −19% Y. Existing width, min-width, border, blur, corner radius and shadow are preserved.
-- Static CSS indexes the first eight positions. The existing layout helper still supports arbitrary counts and custom layouts through inline variables when present; the shipped hero has three screenshots.
+- Static CSS indexes the first eight positions. The shipped hero uses three screenshots and requires no runtime layout writes.
 - Image pixels have opacity 1 by default. The child images never wait for `is-inview` to become visible. Only the canonical Reveal wrappers are hidden/moved after successful setup. Unready wrappers show their final static transform and opacity.
 - Default background, border and shadow are the final visual state. No JavaScript is needed to make them appear.
 
@@ -23,11 +23,9 @@ The previous code had unconditional `img {opacity:0}` and applied the static ove
 
 ## Motion and lifecycle
 
-`src/animations/hero/index.js` initializes each hero independently, guards repeated mounts and returns cleanup. `src/lib/effects/hero-stack.js` reuses the grouped Reveal controller and stacked-windows layout helper. No separate image entrance clock or double image stagger is added. Hover enhancement becomes ready 50ms after the remaining canonical Reveal schedule finishes. It cannot change the parent's overlap geometry.
+`src/animations/hero/index.js` initializes each hero independently, guards repeated mounts and returns cleanup. The controller only orchestrates grouped Reveal. CSS applies hover immediately on fine pointers, including during another window’s entrance or when early Reveal expires. Reveal owns `transform` and opacity, while hover uses the independent `translate` property with the global motion duration and easing. The stack geometry stays CSS-owned.
 
-Early sections initialize immediately, sharing the existing page-head bootstrap and cached Reveal controller; normal sections initialize through the visibility helper. Missing/expired early setup leaves the hero static and does not activate hover readiness. Do not replay an entrance when reduced motion is subsequently turned off: content is already visible.
-
-Reduced motion bypasses grouped entrance setup; the hero's CSS keeps every Reveal target visible at rest and disables target transitions. An OS preference change to reduce cancels pending readiness and Reveal work. Screenshot position transforms remain: they express the static arrangement, not animation. Cleanup removes runtime classes, timers, media listeners and inline layout overrides, leaving the same CSS-only static composition. Partial setup failures perform the same cleanup.
+Early sections initialize immediately through the existing page-head bootstrap and cached Reveal controller. Normal sections initialize through the visibility helper. Reduced motion keeps the static layout and disables the lift. Switching the preference to reduce cancels the entrance without replaying it when the preference is switched back.
 
 Movement/fades retain live `--motion-ease-primary`, `--reveal-duration-default`, `--reveal-stagger-default`, and `--reveal-opacity-ratio`. The screenshot wrapper's existing `data-reveal-offset="120%"`, `data-reveal-duration="1400ms"`, `data-reveal-stagger="100ms"` remain unchanged. Opacity is linear.
 
@@ -41,7 +39,7 @@ Saved as a Webflow draft only. Desktop appearance and instance properties/slot c
 
 Site `6823036cd77b3093eaf9154d`, Playground `6ab4079ac7ca32e3a6c168c8`. Homepage hero element `a2918514-06c5-67bc-5c99-7cbddfb14a0c`; CSS embed `a2918514-06c5-67bc-5c99-7cbddfb14a27`. Only that visible style embed is updated; hidden legacy reference embeds, Global Styles, native artwork, head bootstrap and permanent footer routers stay untouched. Playground remains a draft; production publication is deferred by the user.
 
-Verify Preview with custom code enabled and disabled, desktop/mobile static positions and equal total height between those states, the early timeout fallback, reduced motion and two instances. `tests/hero-stack.test.js` covers independent instance state, readiness timing, reduced motion and cleanup. Browser static-layout checks must complement lifecycle tests.
+Verify Preview with custom code enabled and disabled, desktop/mobile static positions and equal total height between those states, the early timeout fallback, reduced motion and two instances. `tests/hero-stack.test.js` covers hover composition, expired startup, reduced motion and cleanup. Browser static-layout checks must complement lifecycle tests.
 
 
 ### Content grid exit scroll motion
