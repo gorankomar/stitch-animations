@@ -1,0 +1,29 @@
+/* Fixed layout cells; tight artwork scales independently inside each cell. */
+.trusted-logos-section .trusted-logos-item {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trusted-logos-section .trusted-logos-image {
+  display: block;
+  flex: none;
+  width: var(--trusted-logo-width, auto);
+  height: var(--trusted-logo-height, auto);
+  max-width: calc(100% - 1.5rem);
+  max-height: 2.375rem;
+  aspect-ratio: auto;
+  object-fit: contain;
+  /* Keep the actual image in the clipping box, including before JS runs. */
+  transform: none;
+}
+.trusted-logos-section .trusted-logos-image[data-trusted-logo-tint] {
+  filter: var(--trusted-logo-tint);
+}
+
+/* Optical corrections for the two wordmarks requested after strip review.
+   CSS applies in Designer and takes precedence over automatic inline sizing. */
+.trusted-logos-section .trusted-logos-image[src$="tanmeya-capital.svg"] {
+  width: 5.625rem;
+  height: auto;
+}

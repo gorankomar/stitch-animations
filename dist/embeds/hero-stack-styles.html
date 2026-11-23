@@ -1,12 +1,10 @@
 <style>
 .stacked-windows_wrap {
+  position: relative;
   --shadow-lg: 7rem -1rem 2rem rgba(0, 0, 0, 0.07);
 }
 
-/* global timing variables */
-.stacked-windows_wrap {
-  position: relative;
-}
+
 
 /* safari-safe layer settings */
 .stacked-windows_position {
@@ -52,20 +50,12 @@
   --reveal-offset: 70%;
   --reveal-transform: translate3d(0, var(--reveal-offset), 1px);
   --reveal-transform-active: translate3d(0, 0, 1px);
-  --base-delay: 0s;
   backface-visibility: hidden;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   background-color: var(--color-scheme-1--background-o80);
   box-shadow: var(--shadow-lg);
   border-color: rgba(0,0,0,0.1);
-  transition:
-    transform var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary) var(--base-delay),
-    background-color var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary) var(--base-delay),
-    box-shadow var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary)
-      calc(var(--base-delay) + var(--shadow-delay-offset)),
-    border-color var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary) var(--base-delay);
-  will-change: transform, background-color, box-shadow, border-color;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-style: solid;
@@ -75,61 +65,38 @@
   overflow: hidden;
 }
 
-/* IMG (opacity + grayscale transitions only here) */
-.stacked-windows_img-wrap img {
-  opacity: 1;
+/* Reveal owns transform/opacity. Translate composes the lift independently. */
+.stacked-windows_wrap .stacked-windows_img-wrap[data-reveal],
+.stacked-windows_wrap .stacked-windows_img-wrap[data-reveal].is-reveal-ready:not([data-reveal="false"]):not([data-reveal-mode="hard"]) {
   transition:
-    opacity var(--reveal-opacity-duration, var(--reveal-opacity-duration-default)) linear var(--base-delay),
-    filter var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary) var(--base-delay);
-  will-change: opacity, filter;
+    transform var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary),
+    opacity var(--reveal-opacity-duration, var(--reveal-opacity-duration-default)) linear,
+    translate var(--motion-duration-default) var(--motion-ease-primary),
+    background-color var(--motion-duration-default) var(--motion-ease-primary);
 }
 
-/* Only Reveal readiness hides/moves wrappers. Image pixels stay visible. */
 .stacked-windows_wrap .stacked-windows_img-wrap:not(.is-reveal-ready) {
   opacity: 1;
   transform: translate3d(0, 0, 1px);
 }
 
-/* ===== AFTER ENTRANCE (fast interactions, NO delay) ===== */
-.stacked-windows_wrap.is-ready .stacked-windows_img-wrap {
-  --base-delay: 0s;
-  --shadow-delay-offset: var(--reveal-duration-default);
+.stacked-windows_img-wrap img {
   transition:
-    transform var(--reveal-duration-default) var(--motion-ease-primary),
-    background-color var(--reveal-duration-default) var(--motion-ease-primary),
-    box-shadow var(--reveal-duration-default) var(--motion-ease-primary),
-    border-color var(--reveal-duration-default) var(--motion-ease-primary);
-}
-/* ensure hover media fades smoothly as well */
-.stacked-windows_wrap.is-ready .stacked-windows_img-wrap img {
-  transition:
-    opacity var(--reveal-opacity-duration, var(--reveal-opacity-duration-default)) linear,
-    filter var(--reveal-duration-default) var(--motion-ease-primary);
-}
-/* hovered card */
-.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
-  .stacked-windows_img-wrap:hover {
-  transform: translate3d(0, -10%, 1px);
-  background-color: color-mix(in srgb, var(--color-scheme-1--background-o80) 50%, transparent);
-  z-index: 5;
-}
-.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
-  .stacked-windows_img-wrap:hover img {
-  filter: none;
-  opacity: 1;
+    opacity var(--motion-duration-default) linear,
+    filter var(--motion-duration-default) var(--motion-ease-primary);
 }
 
-/* siblings only go grayscale if a card is hovered */
-.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
-  .stacked-windows_img-wrap:not(:hover) {
-  transform: translate3d(0, 0, 1px);
-  background-color: var(--color-scheme-1--background-o80);
-  z-index: 1;
-}
-.stacked-windows_wrap.is-ready:has(.stacked-windows_img-wrap:hover)
-  .stacked-windows_img-wrap:not(:hover) img {
-  filter: grayscale(100%);
-  opacity: .52;
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html:not(.wf-design-mode) .stacked-windows_wrap .stacked-windows_img-wrap:hover {
+    translate: 0 -10%;
+    background-color: color-mix(in srgb, var(--color-scheme-1--background-o80) 50%, transparent);
+  }
+
+  html:not(.wf-design-mode) .stacked-windows_wrap:has(.stacked-windows_img-wrap:hover)
+    .stacked-windows_img-wrap:not(:hover) img {
+    filter: grayscale(100%);
+    opacity: .52;
+  }
 }
 
 .stacked-windows_img {

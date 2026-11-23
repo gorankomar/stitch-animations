@@ -1,0 +1,135 @@
+[
+  {
+    "slug": "viva-finance",
+    "assetId": "6b003e94e21242798d889635",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b003e94e21242798d889635_viva-finance.svg",
+    "bytes": 1298,
+    "sha256": "3147fe9667fc24d6de1d5321bcb8dc5695b32f337b1a542410aa85eec31ab2be"
+  },
+  {
+    "slug": "peko",
+    "assetId": "6b00389bc07bde8184de421e",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389bc07bde8184de421e_peko.svg",
+    "bytes": 1464,
+    "sha256": "b33401a7602c9fee73fbbafb573eb83fe165699e2f2948f596de383c88714c89"
+  },
+  {
+    "slug": "tamam",
+    "assetId": "6b00389b01d512cb1d147328",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389b01d512cb1d147328_tamam.svg",
+    "bytes": 1174,
+    "sha256": "a1ed7c6b7800d6354227e9e118151308e6421ccded97daa28d34064b32498958"
+  },
+  {
+    "slug": "foodics",
+    "assetId": "6b00389c4dda7ca755a46068",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389c4dda7ca755a46068_foodics.svg",
+    "bytes": 3247,
+    "sha256": "9df6716c8d413355e0947645dda08c5f57cf1db151bd7fd6290e08c9b90785e1"
+  },
+  {
+    "slug": "yanal-finance",
+    "assetId": "6b00389c43479af57cf50783",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389c43479af57cf50783_yanal-finance.svg",
+    "bytes": 1525,
+    "sha256": "45117fd1188ae69c1d38f605ee569ab734af2c6c9e4cd221958dcfc3f8296869"
+  },
+  {
+    "slug": "muhlah",
+    "assetId": "6b00389dde38d81b16f0f0f3",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389dde38d81b16f0f0f3_muhlah.svg",
+    "bytes": 2753,
+    "sha256": "3c354415c6604f66e457161b14508317c53679cb8b882e7dd28f167dd3821366"
+  },
+  {
+    "slug": "noqodi",
+    "assetId": "6b00389d5cf2b9a230df1140",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389d5cf2b9a230df1140_noqodi.svg",
+    "bytes": 1860,
+    "sha256": "cef3484d983afaab900c78945ebdcb88548ed2ac308a22bdc05781ab1bc5b4ce"
+  },
+  {
+    "slug": "tanmeya-capital",
+    "assetId": "6b003c96bfdcac655a1c60e4",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b003c96bfdcac655a1c60e4_tanmeya-capital.svg",
+    "bytes": 2815,
+    "sha256": "c10afb87a0012664b15004dda3e8683d8e4c17b2f0768c6d944dc209c821362a"
+  },
+  {
+    "slug": "zand",
+    "assetId": "6b00389df8dae5adfe4bd075",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389df8dae5adfe4bd075_zand.svg",
+    "bytes": 2190,
+    "sha256": "d210abec97c646c1c54de0dc22e52f2391c79fe9c831c6e1d11e8363c75398c9"
+  },
+  {
+    "slug": "comera",
+    "assetId": "6b00389f31f60da72b8681e9",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389f31f60da72b8681e9_comera.svg",
+    "bytes": 2762,
+    "sha256": "6dd33dcfe1e524f1c10f3cd28003453850267c4b49575dce0175baa17f8a61e3"
+  },
+  {
+    "slug": "loan-financing",
+    "assetId": "6b00389f964afe2465e17169",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389f964afe2465e17169_loan-financing.svg",
+    "bytes": 2703,
+    "sha256": "e7dcdaad05e940807a42baf9d5b7c9f0ff81d5c50de333438c2c0eafab12e25f"
+  },
+  {
+    "slug": "sakhi",
+    "assetId": "6b00389fc07bde8184de4442",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b00389fc07bde8184de4442_sakhi.svg",
+    "bytes": 5189,
+    "sha256": "efaf3c1367e02b4f065b76429b42e2194670f654c1351b4504dc20834904e9ff"
+  },
+  {
+    "slug": "getsabiq",
+    "assetId": "6b0038a031f60da72b8682a3",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b0038a031f60da72b8682a3_getsabiq.svg",
+    "bytes": 2401,
+    "sha256": "8ab4d4382bf9915fe562e806a1ac5551ff48a96ddc8bdbb2c4057bb3ef8fbc2f"
+  },
+  {
+    "slug": "des-financing-corporation",
+    "assetId": "6b0038a043479af57cf50a13",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b0038a043479af57cf50a13_des-financing-corporation.svg",
+    "bytes": 9712,
+    "sha256": "2e917c41cbb6e5f482a29930a5ba29360d21de0e29226355b965f75704c37da3"
+  },
+  {
+    "slug": "khazna",
+    "assetId": "6b0038a0cf8e8e2b44e8978a",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b0038a0cf8e8e2b44e8978a_khazna.svg",
+    "bytes": 3662,
+    "sha256": "3e011c60f98f4d54aa57e37462c2c37a1d1c6a1b94b5dafa9c79e154b1c0ce91"
+  },
+  {
+    "slug": "tiqmo",
+    "assetId": "6b0038a1e0e5c9c126577435",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b0038a1e0e5c9c126577435_tiqmo.svg",
+    "bytes": 3088,
+    "sha256": "00865a09e2b17765779c198f4bd8dc58d1cbe467db5d6ad1f0aa3fef4c51ff58"
+  },
+  {
+    "slug": "algo",
+    "assetId": "6b0038a2e4ebdf4d601c7df3",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b0038a2e4ebdf4d601c7df3_algo.svg",
+    "bytes": 4966,
+    "sha256": "21ee6c019358970d7c0cd2db80d9ab029873c444a8c5695df8ad0877b76d98a6"
+  },
+  {
+    "slug": "index-exchange",
+    "assetId": "6b0038a2b67a64d1000374c0",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b0038a2b67a64d1000374c0_index-exchange.svg",
+    "bytes": 2088,
+    "sha256": "a2c774770ff2de7f6a7a01c9e54bf1203c56db2c58e345260c424710f4e2c3b4"
+  },
+  {
+    "slug": "masar-alnumou-finance",
+    "assetId": "6b0038a3c07bde8184de459f",
+    "url": "https://cdn.prod.website-files.com/6823036cd77b3093eaf9154d/6b0038a3c07bde8184de459f_masar-alnumou-finance.svg",
+    "bytes": 8716,
+    "sha256": "d77549040aef9a3b60da9669829ed319b69112ef451a5c71dc1e23784ac131e3"
+  }
+]

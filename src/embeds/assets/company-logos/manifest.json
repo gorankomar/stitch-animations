@@ -1,0 +1,396 @@
+{
+  "svgo": "4.1.0",
+  "transformPrecision": 8,
+  "plugins": [
+    "removeDoctype",
+    "removeXMLProcInst",
+    "removeComments",
+    "removeDeprecatedAttrs",
+    "removeMetadata",
+    "removeEditorsNSData",
+    "cleanupAttrs",
+    "mergeStyles",
+    "inlineStyles",
+    "minifyStyles",
+    "convertStyleToAttrs",
+    "cleanupIds",
+    "removeUselessDefs",
+    "cleanupNumericValues",
+    "cleanupListOfValues",
+    "convertColors",
+    "removeUnknownsAndDefaults",
+    "removeNonInheritableGroupAttrs",
+    "removeUselessStrokeAndFill",
+    "cleanupEnableBackground",
+    "removeHiddenElems",
+    "removeEmptyText",
+    "convertShapeToPath",
+    "convertEllipseToCircle",
+    "moveElemsAttrsToGroup",
+    "moveGroupAttrsToElems",
+    "collapseGroups",
+    "convertPathData",
+    "convertTransform",
+    "removeEmptyAttrs",
+    "removeEmptyContainers",
+    "mergePaths",
+    "removeUnusedNS",
+    "sortAttrs",
+    "sortDefsChildren",
+    "removeTitle",
+    "removeDesc",
+    "removeScripts",
+    "removeXlink",
+    "convertOneStopGradients",
+    "reusePaths"
+  ],
+  "logos": [
+    {
+      "id": "710:6534",
+      "slug": "viva-finance",
+      "name": "Viva Finance",
+      "width": 74.375,
+      "height": 21,
+      "viewBox": [
+        0,
+        0.735,
+        73.9525,
+        19.5925
+      ],
+      "ratio": 3.7745310705627153,
+      "originalBytes": 3385,
+      "optimizedBytes": 1298,
+      "precision": 2,
+      "comparisonError": 0.0004635530137981118,
+      "intrinsicDisplayWidth": 60.9,
+      "intrinsicDimensionNote": "Optical size requested for Webflow Designer; viewBox and all vector paths unchanged.",
+      "intrinsicDisplayHeight": 16.1328
+    },
+    {
+      "id": "705:6564",
+      "slug": "peko",
+      "name": "Peko",
+      "width": 49.912498474121094,
+      "height": 16.5,
+      "viewBox": [
+        0,
+        0,
+        49.9525,
+        16.14
+      ],
+      "ratio": 3.0949504337050806,
+      "originalBytes": 4687,
+      "optimizedBytes": 1464,
+      "precision": 2,
+      "comparisonError": 0.003613425925925926
+    },
+    {
+      "id": "706:6481",
+      "slug": "tamam",
+      "name": "Tamam",
+      "width": 85.84749603271484,
+      "height": 15,
+      "viewBox": [
+        0,
+        0,
+        85.89,
+        15
+      ],
+      "ratio": 5.726,
+      "originalBytes": 2837,
+      "optimizedBytes": 1174,
+      "precision": 2,
+      "comparisonError": 0.00030246913580246913
+    },
+    {
+      "id": "706:6484",
+      "slug": "foodics",
+      "name": "Foodics",
+      "width": 110.89286041259766,
+      "height": 15,
+      "viewBox": [
+        0,
+        0,
+        110.9525,
+        15
+      ],
+      "ratio": 7.396833333333333,
+      "originalBytes": 11055,
+      "optimizedBytes": 3247,
+      "precision": 2,
+      "comparisonError": 0.00040445715323166303
+    },
+    {
+      "id": "705:6585",
+      "slug": "yanal-finance",
+      "name": "Yanal Finance",
+      "width": 62.625,
+      "height": 21,
+      "viewBox": [
+        0,
+        0,
+        62.64,
+        21
+      ],
+      "ratio": 2.982857142857143,
+      "originalBytes": 3114,
+      "optimizedBytes": 1525,
+      "precision": 2,
+      "comparisonError": 0.004546069353667393
+    },
+    {
+      "id": "705:6605",
+      "slug": "muhlah",
+      "name": "Muhlah",
+      "width": 32.21052551269531,
+      "height": 25.450292587280273,
+      "viewBox": [
+        0,
+        0,
+        32.14,
+        25.4525
+      ],
+      "ratio": 1.2627443276691876,
+      "originalBytes": 7975,
+      "optimizedBytes": 2753,
+      "precision": 2,
+      "comparisonError": 0.0002989288307915759
+    },
+    {
+      "id": "708:6635",
+      "slug": "noqodi",
+      "name": "Noqodi",
+      "width": 92.12068939208984,
+      "height": 19.5,
+      "viewBox": [
+        0,
+        0,
+        91.89,
+        19.515
+      ],
+      "ratio": 4.708685626441199,
+      "originalBytes": 3555,
+      "optimizedBytes": 1860,
+      "precision": 2,
+      "comparisonError": 0.0004289669571532317
+    },
+    {
+      "id": "705:6619",
+      "slug": "tanmeya-capital",
+      "name": "Tanmeya Capital",
+      "width": 85.71429443359375,
+      "height": 23.95508575439453,
+      "viewBox": [
+        0,
+        0,
+        85.765,
+        24
+      ],
+      "ratio": 3.573541666666667,
+      "originalBytes": 13201,
+      "optimizedBytes": 2815,
+      "precision": 2,
+      "comparisonError": 0.0008019244734931009,
+      "intrinsicDisplayWidth": 90,
+      "intrinsicDimensionNote": "Optical size requested for Webflow Designer; viewBox and all vector paths unchanged."
+    },
+    {
+      "id": "705:6639",
+      "slug": "zand",
+      "name": "Zand",
+      "width": 83,
+      "height": 21.89011001586914,
+      "viewBox": [
+        4.985,
+        2.6725,
+        72.9675,
+        16.53
+      ],
+      "ratio": 4.414246823956443,
+      "originalBytes": 5800,
+      "optimizedBytes": 2190,
+      "precision": 2,
+      "comparisonError": 0.0013405501089324618
+    },
+    {
+      "id": "715:6467",
+      "slug": "comera",
+      "name": "Comera",
+      "width": 28.999998092651367,
+      "height": 38,
+      "viewBox": [
+        0,
+        0,
+        29,
+        38
+      ],
+      "ratio": 0.7631578947368421,
+      "originalBytes": 6677,
+      "optimizedBytes": 2762,
+      "precision": 2,
+      "comparisonError": 0.00026747458242556277
+    },
+    {
+      "id": "702:223",
+      "slug": "loan-financing",
+      "name": "Loan Financing",
+      "width": 41.25,
+      "height": 25.5,
+      "viewBox": [
+        0,
+        0,
+        41.265,
+        24.015
+      ],
+      "ratio": 1.7183010618363523,
+      "originalBytes": 5821,
+      "optimizedBytes": 2703,
+      "precision": 2,
+      "comparisonError": 0.001885575526506899
+    },
+    {
+      "id": "702:236",
+      "slug": "sakhi",
+      "name": "Sakhi",
+      "width": 52.423641204833984,
+      "height": 29.999996185302734,
+      "viewBox": [
+        0,
+        0,
+        52.4525,
+        30
+      ],
+      "ratio": 1.7484166666666667,
+      "originalBytes": 17194,
+      "optimizedBytes": 5189,
+      "precision": 2,
+      "comparisonError": 0.0005963598402323893
+    },
+    {
+      "id": "715:6473",
+      "slug": "getsabiq",
+      "name": "Getsabiq",
+      "width": 94.5496826171875,
+      "height": 16.5,
+      "viewBox": [
+        0,
+        0,
+        94.5775,
+        16.515
+      ],
+      "ratio": 5.7267635482894335,
+      "originalBytes": 5590,
+      "optimizedBytes": 2401,
+      "precision": 2,
+      "comparisonError": 0.0010697167755991286
+    },
+    {
+      "id": "721:6467",
+      "slug": "des-financing-corporation",
+      "name": "DES Financing Corporation",
+      "width": 56.25,
+      "height": 21,
+      "viewBox": [
+        0,
+        0,
+        56.265,
+        21
+      ],
+      "ratio": 2.6792857142857143,
+      "originalBytes": 16388,
+      "optimizedBytes": 9712,
+      "precision": 4,
+      "comparisonError": 1.652142338416848e-05
+    },
+    {
+      "id": "707:6726",
+      "slug": "khazna",
+      "name": "Khazna",
+      "width": 42.81927490234375,
+      "height": 17.50031852722168,
+      "viewBox": [
+        0,
+        0,
+        42.89,
+        17.515
+      ],
+      "ratio": 2.4487582072509277,
+      "originalBytes": 12703,
+      "optimizedBytes": 3662,
+      "precision": 2,
+      "comparisonError": 0.0012582153231663034
+    },
+    {
+      "id": "705:6642",
+      "slug": "tiqmo",
+      "name": "Tiqmo",
+      "width": 38.38775634765625,
+      "height": 32.75755310058594,
+      "viewBox": [
+        1.1725,
+        0.9225,
+        36.3425,
+        31.0925
+      ],
+      "ratio": 1.1688510090857924,
+      "originalBytes": 8414,
+      "optimizedBytes": 3088,
+      "precision": 2,
+      "comparisonError": 0.0004874727668845316
+    },
+    {
+      "id": "705:6652",
+      "slug": "algo",
+      "name": "Algo",
+      "width": 48.913047790527344,
+      "height": 21.29547691345215,
+      "viewBox": [
+        0,
+        0,
+        48.9525,
+        21.3275
+      ],
+      "ratio": 2.295276052045481,
+      "originalBytes": 17619,
+      "optimizedBytes": 4966,
+      "precision": 2,
+      "comparisonError": 0.0005964506172839506
+    },
+    {
+      "id": "715:6469",
+      "slug": "index-exchange",
+      "name": "Index Exchange",
+      "width": 60.85190963745117,
+      "height": 25.5,
+      "viewBox": [
+        0,
+        0,
+        60.89,
+        25.515
+      ],
+      "ratio": 2.386439349402312,
+      "originalBytes": 5801,
+      "optimizedBytes": 2088,
+      "precision": 2,
+      "comparisonError": 0.0006386165577342048
+    },
+    {
+      "id": "715:6468",
+      "slug": "masar-alnumou-finance",
+      "name": "Masar Alnumou Finance",
+      "width": 62.275413513183594,
+      "height": 38,
+      "viewBox": [
+        0,
+        0,
+        62.3275,
+        38
+      ],
+      "ratio": 1.6401973684210527,
+      "originalBytes": 22863,
+      "optimizedBytes": 8716,
+      "precision": 2,
+      "comparisonError": 0.0005689905591866377
+    }
+  ]
+}

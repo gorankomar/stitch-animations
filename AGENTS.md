@@ -6,7 +6,17 @@ Site typography: ABC Diatype for body/UI text, Denim for headings. Never use Int
 
 Established reusable components must retain their internal appearance unless the user explicitly requests changes. Use supported variants/props and outer layout/motion wrappers; avoid illustration CSS overriding component descendants. See docs/workflows/component-preservation-complaint.md for the recorded Credit Card complaint and integration rule.
 
+Preserve native manual scrolling in Webflow Designer, Preview, and published pages. Never enable page-wide smooth scrolling or intercept manual scrolling. Scope any requested animated jump to the explicit navigation action.
+
+Keep Webflow text that must be translated independently in separate sibling elements under a layout-only parent. Never use inline spans or nest one text element inside another to assemble localizable copy. In the blog article date row, keep the divider, script-filled minute count, and translated reading-time label as direct siblings.
+
+Set shared inheritable styles on the nearest common Webflow parent. Leave children classless when they only inherit those styles, and add a child class only for an actual difference.
+
+Use descriptive, consistent class names for rebuilt sections. Avoid numbered names and legacy aliases on rebuilt elements. Keep established shared utility names.
+
 For every Webflow element/component, preserve the Figma appearance while minimizing elements and nesting. Every wrapper needs a concrete purpose; avoid redundant parent chains. Use object-specific names and reuse compatible shared classes for recurring styles (such as corner radii), keeping each shared property defined in one place. The object's specific class must be Webflow's main/base class; shared utilities come afterward (for example, platform-sidebar-subitem then platform-radius-6). Keep variant-controlled appearance on the main class and verify component variants with the shared classes attached. Follow docs/workflows/webflow-structure-and-styles.md; a broader variable migration is separate work.
+
+Use `hide` as the only class on Webflow Code Embeds appended to a component or element. Give the embed a descriptive Navigator name when it helps people find it.
 
 Use plain div/Block containers for UI combining labels with icons, images, or alternate states. Put each translatable label in its own text-only element; never use a Span or other text element as the mixed-content container. Webflow translation can replace text-element contents and remove nested images or spans.
 
@@ -33,7 +43,7 @@ Use plain div/Block containers for UI combining labels with icons, images, or al
 
 - This repository is edited by multiple chats. Fetch origin before starting release work and base the release on current `origin/main`; preserve unrelated working-tree edits.
 - Never change Webflow's site-wide loader or activate a CloudFront channel using a feature branch built from an older main. Combine the requested feature with current main, run tests and build all shared entries, then merge before activating staging; promote the exact staging-verified SHA to production. Permanent site URLs do not change routinely.
-- Product Variety's wallet swap and Country Flags must both remain in the shared bundle. Run `node scripts/check-shared-release.mjs` after building to verify their inclusion and local module/CSS dependencies.
+- Run the shared release validation after building to verify the generated loaders and their module and CSS dependencies.
 - Preview/staging use the staging channel and production hosts use the separately approved production channel; differences must be deliberate and recorded. Do not use an older playground override to hide a missing feature in the published bundle.
 - Preserve all unrelated Webflow custom code. Publish only to the user-authorized domains. Verify the published HTML's actual loader and the affected interaction after publishing.
 - CloudFront deployment success does not prove edge caches refreshed. Verify served content before selecting CloudFront as the active loader.
