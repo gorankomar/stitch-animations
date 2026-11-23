@@ -65,19 +65,18 @@
   overflow: hidden;
 }
 
-/* Reveal owns transform/opacity. Translate composes the lift independently. */
+/* Use the Reveal transform for the lift so legacy hover transforms cannot add to it. */
 .stacked-windows_wrap .stacked-windows_img-wrap[data-reveal],
 .stacked-windows_wrap .stacked-windows_img-wrap[data-reveal].is-reveal-ready:not([data-reveal="false"]):not([data-reveal-mode="hard"]) {
   transition:
     transform var(--reveal-duration, var(--reveal-duration-default)) var(--motion-ease-primary),
     opacity var(--reveal-opacity-duration, var(--reveal-opacity-duration-default)) linear,
-    translate var(--motion-duration-default) var(--motion-ease-primary),
     background-color var(--motion-duration-default) var(--motion-ease-primary);
 }
 
 .stacked-windows_wrap .stacked-windows_img-wrap:not(.is-reveal-ready) {
   opacity: 1;
-  transform: translate3d(0, 0, 1px);
+  transform: var(--reveal-transform-active);
 }
 
 .stacked-windows_img-wrap img {
@@ -88,8 +87,14 @@
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   html:not(.wf-design-mode) .stacked-windows_wrap .stacked-windows_img-wrap:hover {
-    translate: 0 -10%;
+    /* Suppress the separate lift in older loaded hero styles. */
+    translate: none !important;
     background-color: color-mix(in srgb, var(--color-scheme-1--background-o80) 50%, transparent);
+  }
+
+  html:not(.wf-design-mode) .stacked-windows_wrap .stacked-windows_img-wrap:not(.is-reveal-ready):hover,
+  html:not(.wf-design-mode) .stacked-windows_wrap .stacked-windows_img-wrap[data-reveal].is-reveal-ready.is-reveal:not([data-reveal="false"]):not([data-reveal-mode="hard"]):hover {
+    --reveal-transform-active: translate3d(0, -10%, 1px);
   }
 
   html:not(.wf-design-mode) .stacked-windows_wrap:has(.stacked-windows_img-wrap:hover)

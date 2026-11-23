@@ -5,9 +5,9 @@ import { createHeroStackController } from '../src/lib/effects/hero-stack.js';
 
 test('hero hover composes with Reveal and is available in the static fallback', () => {
   const css = readFileSync(new URL('../src/animations/hero/styles.css', import.meta.url), 'utf8');
-  const hover = css.match(/\.stacked-windows_img-wrap:hover\s*\{([^}]+)\}/)?.[1];
-  assert.match(hover, /translate: 0 -10%/);
-  assert.doesNotMatch(hover, /transform:/);
+  assert.match(css, /:not\(\.is-reveal-ready\):hover,[^{}]+\.is-reveal[^{]*:hover\s*\{\s*--reveal-transform-active: translate3d\(0, -10%, 1px\)/);
+  assert.match(css, /:not\(\.is-reveal-ready\)\s*\{[^}]+transform: var\(--reveal-transform-active\)/);
+  assert.match(css, /\.stacked-windows_img-wrap:hover\s*\{[^}]+translate: none !important;/);
   assert.doesNotMatch(css, /\.is-ready|\.is-inview/);
 });
 

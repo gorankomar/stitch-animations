@@ -8,11 +8,11 @@
   mask-composite:exclude;
 }
 [data-real-ai-harness] .harness-steps > :is(span, [data-harness-step])::before {
-  background:conic-gradient(from var(--harness-angle,0deg),transparent 0deg,#ff3609 90deg,transparent 110deg);
+  background:conic-gradient(from var(--harness-angle,0deg),transparent 0deg,var(--_primitives---colors--fire-orange--base, #ff3609) 90deg,transparent 110deg);
   opacity:var(--harness-working,0);
 }
 [data-real-ai-harness] .harness-steps > :is(span, [data-harness-step])::after {
-  background:#ff3609; opacity:var(--harness-burst-opacity,0);
+  background:var(--_primitives---colors--fire-orange--base, #ff3609); opacity:var(--harness-burst-opacity,0);
   inset:calc((-1 - var(--harness-burst-expansion,0)) * var(--hu));
 }
 [data-real-ai-harness] .harness-steps > :is(span, [data-harness-step])[data-harness-state="pending"],
