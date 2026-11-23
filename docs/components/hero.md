@@ -23,9 +23,11 @@ The previous code had unconditional `img {opacity:0}` and applied the static ove
 
 ## Motion and lifecycle
 
-`src/animations/hero/index.js` initializes each hero independently, guards repeated mounts and returns cleanup. The controller only orchestrates grouped Reveal. CSS applies hover immediately on fine pointers, including during another window’s entrance or when early Reveal expires. Reveal owns `transform` and opacity, while hover uses the independent `translate` property with the global motion duration and easing. The stack geometry stays CSS-owned.
+`src/animations/hero/index.js` initializes each hero independently, guards repeated mounts and returns cleanup. The controller only orchestrates grouped Reveal. CSS applies hover immediately on fine pointers, including during another window’s entrance or when early Reveal expires. Hover sets the same active transform used by Reveal and the static fallback, lifting the window by 10% of its own height. Keeping the lift on one transform prevents it from adding to older embedded hover transforms. Movement uses the global primary easing. The stack geometry stays CSS-owned.
 
 Early sections initialize immediately through the existing page-head bootstrap and cached Reveal controller. Normal sections initialize through the visibility helper. Reduced motion keeps the static layout and disables the lift. Switching the preference to reduce cancels the entrance without replaying it when the preference is switched back.
+
+On 2026-11-23, the fix was saved in the shared Homepage Hero CSS embed (`5e6457b6-28df-80d3-bdb8-d0a8ba8dc7a3`). The hover rule resets the independent translation from older loaded styles. In Home Preview with custom code enabled, Dashboard, Ledgers and Loans each moved 44.7px on 447px windows. Draft only.
 
 Movement/fades retain live `--motion-ease-primary`, `--reveal-duration-default`, `--reveal-stagger-default`, and `--reveal-opacity-ratio`. The screenshot wrapper's existing `data-reveal-offset="120%"`, `data-reveal-duration="1400ms"`, `data-reveal-stagger="100ms"` remain unchanged. Opacity is linear.
 

@@ -136,3 +136,12 @@ Actual Webflow Preview integration checks: English computed font `ABCDiatype, Ar
 ### RTL player controls — 2026-11-17
 
 Played, buffered and volume track fills follow each input’s inherited direction using `:dir(rtl)` and `--film-track-direction`. The subtitle menu uses logical `inset-inline-end` at desktop and mobile sizes so it stays beside the mirrored CC control. Both generated embeds and local previews rebuilt; landing and Presses Template embeds saved without publication. Full `npm run validate:release` passes (264 tests; wallet swap and Country Flags closure verified).
+
+
+## Portable component CSS — 2026-11-18
+
+User confirmed that disabling Webflow Per page CSS fixed the film component inside CMS Rich Text and authorized embedding its native styles. The reusable site component is Videos / Anyone can be a hero (`48a4e837-313e-74cb-1cc1-e488f234b944`); its existing HtmlEmbed is `48a4e837-313e-74cb-1cc1-e488f234b948`. The complete existing embed was preserved, with scoped base CSS prepended before its state rules. No markup, player JavaScript, subtitle text, media, global settings, CMS content or template loader was changed.
+
+`component-layout.css` captures the native Webflow film classes, root max-width utility, hide utility, and mobile play-icon breakpoint from the current published full site stylesheet (`stitch-website.webflow.shared.b9ee17449.min.css`). All selectors are scoped to the film player; small scoped box-sizing and Rich Text margin/image resets preserve geometry. Global font and motion variables remain inherited. This duplication is explicitly user-authorized to make the component independent of per-page CSS pruning. Future native appearance edits must also update this file. The build script now includes this file in `runtime.html` before existing state CSS so regenerating the embed retains portability.
+
+Saved and read back the Webflow component draft: 36,662 characters, below the Embed limit. All seven existing film/CMS behavior tests pass. Isolated browser verification used the actual published component markup plus the saved embed with no Webflow stylesheet: desktop 800×450; mobile 353×198.5625 at 393px viewport, no horizontal overflow, 48px mobile poster play icon. Playback starts, pauses, and opens/closes subtitle menu. Verification screenshot: `/private/tmp/film-component-css-verified.jpg`. This is local isolation verification, not a Webflow Preview or published per-page-CSS verification. No Webflow publication, staging/production activation, GitHub merge or loader changes.
